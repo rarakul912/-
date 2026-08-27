@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///Users/raku.ra/Downloads/N2-Nichiwa-Roberto.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#191231">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 192 192%22%3E%3Crect width=%22192%22 height=%22192%22 fill=%22%23191231%22/%3E%3Crect x=%2224%22 y=%2224%22 width=%22144%22 height=%22144%22 fill=%22none%22 stroke=%22%23B98CFF%22 stroke-width=%228%22/%3E%3Ctext x=%2296%22 y=%22128%22 font-size=%2292%22 font-family=%22serif%22 font-weight=%22700%22 fill=%22%23FFC93C%22 text-anchor=%22middle%22%3E%E5%92%8C%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 192 192%22%3E%3Crect width=%22192%22 height=%22192%22 fill=%22%23191231%22/%3E%3Crect x=%2224%22 y=%2224%22 width=%22144%22 height=%22144%22 fill=%22none%22 stroke=%22%23B98CFF%22 stroke-width=%228%22/%3E%3Ctext x=%2296%22 y=%22128%22 font-size=%2292%22 font-family=%22serif%22 font-weight=%22700%22 fill=%22%23FFC93C%22 text-anchor=%22middle%22%3E%E5%92%8C%3C/text%3E%3C/svg%3E">
+<title>N2日和 — Roberto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./N2日和 — Roberto_files/css2" rel="stylesheet">
+<style>
+:root{
+  /* 紫 murasaki — primary. 山吹 yamabuki — secondary. Contrast-tested, all ≥4.5:1 */
+  --bg:#191231;           /* deep purple ink, page */
+  --surf:#241B44;         /* raised surface */
+  --surf2:#2E2455;        /* pressed / inset */
+  --bord:#4C3C80;         /* visible border */
+  --mura:#B98CFF;         /* primary purple, accent text */
+  --mura-btn:#6D3FC4;     /* purple fill, white text */
+  --mura-dim:rgba(185,140,255,.13);
+  --yama:#FFC93C;         /* secondary yellow */
+  --yama-dim:rgba(255,201,60,.13);
+  --coral:#FF6B76;        /* warning / incorrect */
+  --coral-dim:rgba(255,107,118,.15);
+  --ok:#5FD68F;           /* correct */
+  --ok-dim:rgba(95,214,143,.15);
+  --paper:#F6F1FA;        /* card paper face */
+  --paper-line:#C6B8DC;   /* genkoyoshi rule */
+  --ink:#1B1430;          /* text on paper / on yellow */
+  --txt:#F0EAFA;
+  --dim:#A79BC4;
+  --jp:"Noto Serif JP",serif;
+  --ui:"Zen Kaku Gothic New","Archivo",system-ui,-apple-system,sans-serif;
+  --disp:"Archivo","Zen Kaku Gothic New",system-ui,sans-serif;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+  font-family:var(--ui);overscroll-behavior-y:none}
+body{padding-bottom:calc(72px + var(--safe-b))}
+button{font-family:inherit;color:inherit;border:0;background:none;cursor:pointer}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.01em}
+
+/* ── halftone atmosphere ───────────────────────────── */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle at 1px 1px,rgba(185,140,255,.075) 1px,transparent 0);
+  background-size:6px 6px}
+
+/* ── top bar: countdown strip ──────────────────────── */
+.topbar{position:sticky;top:0;z-index:30;background:var(--bg);
+  border-bottom:2px solid var(--bord);padding:10px 14px 8px;
+  display:flex;align-items:center;gap:12px}
+.days{font-family:var(--disp);font-weight:800;font-size:30px;line-height:.9;color:var(--yama)}
+.days small{display:block;font-size:9px;letter-spacing:.22em;color:var(--dim);
+  font-weight:600;margin-top:4px}
+.topmeta{margin-left:auto;text-align:right;font-size:11px;color:var(--dim);line-height:1.5}
+.langtog{border:1.5px solid var(--bord);border-radius:8px;padding:7px 10px;
+  font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--dim);flex:0 0 auto}
+.langtog:active{background:var(--bord)}
+.topmeta b{color:var(--yama);font-size:13px}
+.xpbar{height:4px;background:var(--bord);border-radius:2px;margin-top:5px;width:104px;overflow:hidden}
+.xpbar i{display:block;height:100%;background:var(--yama);transition:width .5s}
+
+/* ── layout ────────────────────────────────────────── */
+main{position:relative;z-index:1;padding:16px 14px 24px;max-width:620px;margin:0 auto}
+.view{display:none}.view.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.eyebrow{font-size:10px;letter-spacing:.24em;color:var(--dim);font-weight:700;
+  text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--bord)}
+
+.card{background:var(--surf);border:1px solid var(--bord);border-radius:14px;
+  padding:16px;margin-bottom:14px}
+
+/* ── SIGNATURE: genkoyoshi 原稿用紙 square ─────────── */
+.genko{position:relative;background:var(--paper);border:2.5px solid var(--ink);
+  border-radius:3px;aspect-ratio:1;display:grid;place-items:center;overflow:hidden}
+.genko::before,.genko::after{content:"";position:absolute;background:var(--paper-line);
+  opacity:.75}
+.genko::before{left:50%;top:6%;bottom:6%;width:1px;transform:translateX(-.5px);
+  background:repeating-linear-gradient(180deg,var(--paper-line) 0 5px,transparent 5px 11px)}
+.genko::after{top:50%;left:6%;right:6%;height:1px;transform:translateY(-.5px);
+  background:repeating-linear-gradient(90deg,var(--paper-line) 0 5px,transparent 5px 11px)}
+.genko .glyph{position:relative;z-index:2;font-family:var(--jp);font-weight:700;
+  color:var(--ink);line-height:1}
+
+/* ── buttons ───────────────────────────────────────── */
+.btn{display:block;width:100%;padding:15px;border-radius:12px;font-weight:800;
+  font-size:15px;background:var(--surf);border:1.5px solid var(--bord);
+  transition:transform .1s,background .15s;text-align:center}
+.btn:active{transform:scale(.975)}
+.btn.shu{background:var(--mura-btn);border-color:var(--mura-btn);color:#fff}
+.btn.teal{background:var(--yama);border-color:var(--yama);color:var(--ink)}
+.btn.ghost{background:transparent}
+.btn.sm{padding:11px;font-size:13px}
+.row{display:flex;gap:10px}.row>*{flex:1}
+
+/* ── mission list ──────────────────────────────────── */
+.mission{display:flex;align-items:flex-start;gap:12px;padding:13px 0;
+  border-bottom:1px dashed var(--bord)}
+.mission:last-child{border:0}
+.mbox{flex:0 0 24px;height:24px;border:2px solid var(--bord);border-radius:5px;
+  display:grid;place-items:center;font-size:14px;color:var(--bg);margin-top:1px}
+.mission.done .mbox{background:var(--mura-btn);border-color:var(--mura-btn);color:#fff}
+.mission.done .mtitle{text-decoration:line-through;color:var(--dim)}
+.mtitle{font-weight:700;font-size:14.5px;line-height:1.35}
+.msub{font-size:12.5px;color:var(--dim);margin-top:3px;line-height:1.5}
+
+/* ── study card ────────────────────────────────────── */
+.stage{min-height:58vh;display:flex;flex-direction:column}
+.prompt{flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:8px 0 20px}
+.kanjibox{width:min(200px,54vw);margin:0 auto 18px}
+.kanjibox .glyph{font-size:min(118px,32vw)}
+.jpline{font-family:var(--jp);font-size:26px;line-height:1.7;font-weight:500}
+.jpbig{font-family:var(--jp);font-size:40px;font-weight:700;line-height:1.4}
+.reading{font-family:var(--jp);color:var(--mura);font-size:20px;margin-top:6px}
+.gloss{margin-top:14px;font-size:16px;line-height:1.5}
+.gloss .pt{color:var(--yama);font-weight:700}
+.gloss .en{color:var(--dim);font-size:14px;display:block;margin-top:3px}
+
+.mnemo{background:var(--mura-dim);border-left:3px solid var(--mura);
+  padding:12px 14px;border-radius:0 10px 10px 0;font-size:14px;line-height:1.65;
+  text-align:left;margin-top:16px}
+.mnemo b{color:var(--mura)}
+.trap{background:var(--coral-dim);border-left:3px solid var(--coral);
+  padding:12px 14px;border-radius:0 10px 10px 0;font-size:14px;line-height:1.65;
+  text-align:left;margin-top:12px}
+.trap b{color:var(--coral)}
+.trap .x{font-family:var(--jp);color:var(--coral);text-decoration:line-through}
+.trap .o{font-family:var(--jp);color:var(--ok)}
+
+/* ── quiz options ──────────────────────────────────── */
+.opt{width:100%;text-align:left;padding:14px;margin-bottom:9px;border-radius:11px;
+  background:var(--surf);border:1.5px solid var(--bord);font-size:15px;line-height:1.45;
+  display:flex;gap:11px;align-items:flex-start;transition:.15s}
+.opt .num{flex:0 0 22px;height:22px;border-radius:5px;background:var(--bord);
+  display:grid;place-items:center;font-size:11px;font-weight:800;margin-top:1px}
+.opt.right{background:var(--ok-dim);border-color:var(--ok)}
+.opt.right .num{background:var(--ok);color:var(--ink)}
+.opt.wrong{background:var(--coral-dim);border-color:var(--coral)}
+.opt.wrong .num{background:var(--coral);color:var(--ink)}
+.opt:disabled{opacity:1}
+.opt.right::after,.opt.wrong::after{margin-left:auto;font-weight:800;font-size:17px;
+  line-height:1.2;flex:0 0 auto;padding-left:8px}
+.opt.right::after{content:"\2713";color:var(--ok)}
+.opt.wrong::after{content:"\2715";color:var(--coral)}
+.qjp{font-family:var(--jp);font-size:20px;line-height:1.85;margin-bottom:18px}
+.qjp .blank{color:var(--yama);border-bottom:2px solid var(--yama);padding:0 20px}
+.qtag{display:inline-block;font-size:10px;letter-spacing:.14em;font-weight:800;
+  padding:4px 9px;border-radius:20px;background:var(--bord);color:var(--dim);margin-bottom:12px}
+
+.explain{margin-top:14px;background:var(--surf);border:1px solid var(--bord);
+  border-radius:11px;padding:15px;font-size:14px;line-height:1.7}
+.explain h4{margin:0 0 7px;font-size:12px;letter-spacing:.14em;color:var(--mura)}
+
+/* ── progress / HP ─────────────────────────────────── */
+.hp{height:14px;background:var(--surf2);border:2px solid var(--ink);border-radius:3px;
+  overflow:hidden;display:flex}
+.hp i{display:block;height:100%;background:var(--mura);transition:width .35s}
+.hp.boss i{background:var(--coral)}
+.counter{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);
+  margin-bottom:7px;font-weight:700;letter-spacing:.1em}
+
+/* ── mastery wall (grid of genkoyoshi cells) ───────── */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:4px}
+.cell{aspect-ratio:1;border:1px solid var(--bord);border-radius:2px;display:grid;
+  place-items:center;font-family:var(--jp);font-size:18px;color:var(--dim);
+  background:var(--surf)}
+.cell.b1{color:var(--txt)}
+.cell.b2{background:var(--yama-dim);border-color:var(--yama);color:var(--yama)}
+.cell.b3{background:var(--mura-dim);border-color:var(--mura);color:var(--mura)}
+.cell.b4{background:var(--mura-btn);border-color:var(--mura-btn);color:#fff}
+.cell.b5{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+
+.stat{display:flex;gap:10px;margin-bottom:14px}
+.stat>div{flex:1;background:var(--surf);border:1px solid var(--bord);border-radius:12px;
+  padding:12px 10px;text-align:center}
+.stat b{display:block;font-family:var(--disp);font-size:23px;font-weight:800;color:var(--yama)}
+.stat span{font-size:10px;letter-spacing:.12em;color:var(--dim);font-weight:700}
+
+/* ── bottom nav ────────────────────────────────────── */
+nav{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(25,18,49,.97);
+  backdrop-filter:blur(12px);border-top:2px solid var(--bord);
+  display:flex;padding:8px 4px calc(8px + var(--safe-b))}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:5px 2px;color:var(--dim);border-radius:10px}
+nav button .ic{font-family:var(--jp);font-size:19px;font-weight:700;line-height:1;
+  padding:5px 14px;border-radius:10px;transition:background .2s}
+nav button .lb{font-size:9px;letter-spacing:.08em;font-weight:700}
+nav button.on{color:var(--mura)}
+nav button.on .ic{background:var(--mura-dim)}
+
+.toast{box-shadow:0 6px 22px rgba(0,0,0,.5);position:fixed;left:50%;bottom:calc(88px + var(--safe-b));transform:translateX(-50%);
+  background:var(--paper);color:var(--ink);padding:11px 18px;border-radius:10px;
+  font-weight:800;font-size:13.5px;z-index:60;opacity:0;pointer-events:none;
+  transition:.3s;white-space:nowrap;max-width:90vw;overflow:hidden}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(-6px)}
+
+.muted{color:var(--dim);font-size:13.5px;line-height:1.65}
+.pill{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;
+  padding:4px 10px;border-radius:20px;border:1px solid var(--bord);color:var(--dim);
+  margin:0 6px 6px 0}
+.pill.on{background:var(--mura-btn);border-color:var(--mura-btn);color:#fff}
+select,input[type=date]{background:var(--surf);border:1.5px solid var(--bord);color:var(--txt);
+  padding:11px;border-radius:10px;font-family:inherit;font-size:14px;width:100%}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--yama);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<link rel="manifest" href="blob:null/130440e9-9ad2-4627-89ce-1a37fdbd0930"></head>
+<body>
+
+<div class="topbar">
+  <div class="days"><span id="dLeft">101</span><small id="dLabel">DAYS UNTIL DECEMBER</small></div>
+  <div class="topmeta">
+    <div><span id="lvlL">Level</span> <b id="lvl">1</b> · <span id="streak">0</span>🔥</div>
+    <div class="xpbar"><i id="xpFill" style="width:0%"></i></div>
+  </div>
+  <button id="langBtn" class="langtog">EN</button>
+</div>
+
+
+<main>
+  <section class="view on" id="v-home">
+  <div class="card" style="border-color:var(--mura)">
+    <div class="eyebrow" style="color:var(--mura)">PHASE 1 · FOUNDATION</div>
+    <h2 style="font-size:19px;line-height:1.35">こんにちは、Roberto。</h2>
+    <p class="muted" style="margin:8px 0 14px">今日もおつかれさま。 A little every day is the whole plan.</p>
+    <div class="counter"><span>TODAY'S MISSION</span><span>0/5</span></div>
+    <div class="hp"><i style="width:0%"></i></div>
+  </div>
+  <div class="card">
+    <div class="mission " data-i="0">
+      <div class="mbox"></div>
+      <div style="flex:1">
+        <div class="mtitle">Kanji · 8 cards</div>
+        <div class="msub">Radicals + mnemonic. Say it out loud. <b style="color:var(--yama)">0/8</b></div>
+      </div>
+      <div style="font-family:var(--jp);color:var(--dim);font-size:18px">漢</div>
+    </div>
+    <div class="mission " data-i="1">
+      <div class="mbox"></div>
+      <div style="flex:1">
+        <div class="mtitle">Vocabulary · 12 cards</div>
+        <div class="msub">Say the whole example, never just the word. <b style="color:var(--yama)">0/12</b></div>
+      </div>
+      <div style="font-family:var(--jp);color:var(--dim);font-size:18px">語</div>
+    </div>
+    <div class="mission " data-i="2">
+      <div class="mbox"></div>
+      <div style="flex:1">
+        <div class="mtitle">Grammar · 5 points</div>
+        <div class="msub">Read the red warning on every one. <b style="color:var(--yama)">0/5</b></div>
+      </div>
+      <div style="font-family:var(--jp);color:var(--dim);font-size:18px">文</div>
+    </div>
+    <div class="mission " data-i="3">
+      <div class="mbox"></div>
+      <div style="flex:1">
+        <div class="mtitle">Exam questions · 6</div>
+        <div class="msub">No dictionary. Time yourself. <b style="color:var(--yama)">0/6</b></div>
+      </div>
+      <div style="font-family:var(--jp);color:var(--dim);font-size:18px">問</div>
+    </div>
+    <div class="mission " data-i="4">
+      <div class="mbox"></div>
+      <div style="flex:1">
+        <div class="mtitle">EN→JP traps · 4</div>
+        <div class="msub">Where you lose the most points. <b style="color:var(--yama)">0/4</b></div>
+      </div>
+      <div style="font-family:var(--jp);color:var(--dim);font-size:18px">罠</div>
+    </div></div>
+  <button class="btn shu" id="revBtn">Review 1 cards due</button>
+  <div class="row" style="margin-top:12px">
+    <button class="btn ghost sm" onclick="nav(&#39;trap&#39;)">罠 Traps</button>
+    <button class="btn ghost sm" onclick="nav(&#39;mondai&#39;)">問 Mock test</button>
+  </div></section>
+  <section class="view" id="v-dojo"></section>
+  <section class="view" id="v-mondai"></section>
+  <section class="view" id="v-trap"></section>
+  <section class="view" id="v-stats"></section>
+</main>
+
+<nav>
+  <button data-v="home" class="on"><span class="ic">家</span><span class="lb">HOJE</span></button>
+  <button data-v="dojo"><span class="ic">道</span><span class="lb">DOJO</span></button>
+  <button data-v="mondai"><span class="ic">問</span><span class="lb">EXAME</span></button>
+  <button data-v="trap"><span class="ic">罠</span><span class="lb">ARMADILHA</span></button>
+  <button data-v="stats"><span class="ic">録</span><span class="lb">PROGRESSO</span></button>
+</nav>
+
+<div class="toast" id="toast"></div>
+<script>
+/* ═══════════════ 漢字 · KANJI N2 ═══════════════ */
+const KANJI=[
+{c:'略',on:'リャク',kun:'—',pt:'abreviar, estratégia',en:'abbreviate, strategy',mn:'田 (campo) + 各 (cada) → o general desenha <b>cada campo</b> num mapa curto: uma <b>estratégia abreviada</b>.',w:[['略語','りゃくご','sigla / abbreviation'],['省略','しょうりゃく','omissão / omission'],['戦略','せんりゃく','estratégia / strategy']]},
+{c:'承',on:'ショウ',kun:'うけたまわ(る)',pt:'consentir, receber (humilde)',en:'consent, receive',mn:'Uma mão erguida recebendo uma ordem de cima. Você <b>aceita</b> o que o chefe manda — por isso é linguagem humilde.',w:[['承知','しょうち','estar ciente / acknowledge'],['了承','りょうしょう','aprovação / consent'],['継承','けいしょう','sucessão / succession']]},
+{c:'締',on:'テイ',kun:'し(める)',pt:'apertar, fechar (prazo)',en:'tighten, close',mn:'糸 (fio) + 帝 (imperador) → o imperador <b>aperta</b> o cinto com fio. 締め切り = prazo que se <b>fecha</b>.',w:[['締切','しめきり','prazo / deadline'],['締結','ていけつ','celebrar (contrato) / conclude']]},
+{c:'被',on:'ヒ',kun:'こうむ(る)',pt:'sofrer, ser afetado',en:'suffer, incur',mn:'衤(roupa) + 皮 (pele) → vestir algo sobre a pele = <b>receber sobre si</b>. Sempre aparece em desastres: 被害.',w:[['被害','ひがい','danos / damage'],['被災者','ひさいしゃ','vítima / victim']]},
+{c:'補',on:'ホ',kun:'おぎな(う)',pt:'suplementar, remendar',en:'supplement',mn:'衤(roupa) + 甫 → <b>remendar</b> a roupa rasgada = completar o que falta.',w:[['補助','ほじょ','subsídio / assistance'],['候補','こうほ','candidato / candidate'],['補う','おぎなう','compensar / make up for']]},
+{c:'訳',on:'ヤク',kun:'わけ',pt:'traduzir; razão',en:'translate; reason',mn:'言 (palavra) + 尺 (medida) → <b>medir palavras</b> = traduzir. E わけ = a "razão" por trás das palavras.',w:[['翻訳','ほんやく','tradução / translation'],['訳','わけ','motivo / reason'],['申し訳','もうしわけ','desculpa / excuse']]},
+{c:'誘',on:'ユウ',kun:'さそ(う)',pt:'convidar, induzir',en:'invite, tempt',mn:'言 (palavra) + 秀 (excelente) → <b>palavras excelentes</b> te <b>convencem</b> a sair.',w:[['誘う','さそう','convidar / invite'],['誘惑','ゆうわく','tentação / temptation']]},
+{c:'豊',on:'ホウ',kun:'ゆた(か)',pt:'abundante, rico',en:'abundant',mn:'Um vaso 豆 transbordando de grãos — <b>colheita farta</b>.',w:[['豊か','ゆたか','abundante / rich'],['豊富','ほうふ','vasto / plentiful']]},
+{c:'賛',on:'サン',kun:'—',pt:'aprovar, elogiar',en:'approve, praise',mn:'夫夫 (dois homens) sobre 貝 (dinheiro) → dois sócios <b>concordam</b> sobre o dinheiro.',w:[['賛成','さんせい','concordar / agree'],['賞賛','しょうさん','elogio / praise']]},
+{c:'越',on:'エツ',kun:'こ(える)',pt:'atravessar, exceder',en:'cross over, exceed',mn:'走 (correr) + 戉 (machado) → correr com o machado e <b>passar por cima</b> da montanha.',w:[['越える','こえる','ultrapassar / exceed'],['引っ越し','ひっこし','mudança / moving']]},
+{c:'較',on:'カク',kun:'—',pt:'comparar',en:'compare',mn:'車 (carro) + 交 (cruzar) → dois carros lado a lado para <b>comparar</b>.',w:[['比較','ひかく','comparação / comparison']]},
+{c:'輸',on:'ユ',kun:'—',pt:'transportar',en:'transport',mn:'車 (carro) carregando mercadoria → import/export.',w:[['輸出','ゆしゅつ','exportação / export'],['輸入','ゆにゅう','importação / import'],['輸送','ゆそう','transporte / transport']]},
+{c:'遅',on:'チ',kun:'おく(れる)・おそ(い)',pt:'atrasar, lento',en:'late, slow',mn:'辶 (caminhar) + 犀 (rinoceronte) → o <b>rinoceronte anda devagar</b> e chega atrasado.',w:[['遅刻','ちこく','atraso / lateness'],['遅れる','おくれる','atrasar-se / be late']]},
+{c:'適',on:'テキ',kun:'—',pt:'adequado',en:'suitable',mn:'辶 (caminhar) + 啇 → o caminho <b>certo</b> para você.',w:[['適当','てきとう','apropriado / suitable'],['適切','てきせつ','adequado / appropriate'],['快適','かいてき','confortável / comfortable']]},
+{c:'障',on:'ショウ',kun:'さわ(る)',pt:'obstáculo',en:'hindrance',mn:'阝(muro) + 章 → um <b>muro</b> no meio do caminho.',w:[['故障','こしょう','avaria / breakdown'],['障害','しょうがい','obstáculo / obstacle'],['保障','ほしょう','garantia / guarantee']]},
+{c:'雑',on:'ザツ・ゾウ',kun:'—',pt:'misturado, desleixado',en:'miscellaneous',mn:'九 + 木 + 隹 (pássaro) → nove pássaros na árvore = <b>bagunça</b>.',w:[['複雑','ふくざつ','complicado / complex'],['雑誌','ざっし','revista / magazine']]},
+{c:'震',on:'シン',kun:'ふる(える)',pt:'tremer',en:'shake',mn:'雨 (chuva) + 辰 → o céu <b>treme</b>: terremoto.',w:[['地震','じしん','terremoto / earthquake'],['震える','ふるえる','tremer / tremble']]},
+{c:'幹',on:'カン',kun:'みき',pt:'tronco, principal',en:'trunk, main',mn:'O <b>tronco</b> da árvore = a parte principal. 新幹線 = a linha-tronco nova.',w:[['新幹線','しんかんせん','trem-bala / bullet train'],['幹部','かんぶ','executivo / executive']]},
+{c:'幼',on:'ヨウ',kun:'おさな(い)',pt:'infantil',en:'infant',mn:'幺 (fio fino) + 力 (força) → força ainda <b>fininha</b> = criança pequena.',w:[['幼稚園','ようちえん','jardim de infância / kindergarten'],['幼い','おさない','de tenra idade / young']]},
+{c:'延',on:'エン',kun:'の(びる)',pt:'estender, adiar',en:'extend, postpone',mn:'廴 (passo longo) → o prazo <b>se estica</b>.',w:[['延長','えんちょう','prorrogação / extension'],['延期','えんき','adiamento / postponement']]},
+{c:'従',on:'ジュウ',kun:'したが(う)',pt:'obedecer, seguir',en:'obey, follow',mn:'彳(andar) + duas pessoas em fila → um <b>segue</b> o outro.',w:[['従う','したがう','obedecer / follow'],['従業員','じゅうぎょういん','funcionário / employee']]},
+{c:'志',on:'シ',kun:'こころざし',pt:'vontade, ambição',en:'will, ambition',mn:'士 (samurai) + 心 (coração) → o <b>coração do samurai</b> = ambição.',w:[['意志','いし','vontade / will'],['志望','しぼう','aspiração / aspiration']]},
+{c:'恐',on:'キョウ',kun:'おそ(れる)・こわ(い)',pt:'temer',en:'fear',mn:'工 + 凡 + 心 → o coração treme. 恐れ入ります = "temo incomodar" (super educado).',w:[['恐怖','きょうふ','terror / terror'],['恐らく','おそらく','provavelmente / probably']]},
+{c:'悩',on:'ノウ',kun:'なや(む)',pt:'preocupar-se',en:'be troubled',mn:'忄(coração) + cérebro → coração + cabeça girando = <b>angústia</b>.',w:[['悩む','なやむ','sofrer, hesitar / worry'],['苦悩','くのう','angústia / anguish']]},
+{c:'慣',on:'カン',kun:'な(れる)',pt:'acostumar-se',en:'get used to',mn:'忄(coração) + 貫 (atravessar) → algo que <b>atravessa</b> o coração todo dia = hábito.',w:[['習慣','しゅうかん','hábito / habit'],['慣れる','なれる','acostumar-se / get used to']]},
+{c:'抗',on:'コウ',kun:'—',pt:'resistir',en:'resist',mn:'扌(mão) + 亢 → a mão levantada dizendo NÃO.',w:[['抵抗','ていこう','resistência / resistance'],['抗議','こうぎ','protesto / protest']]},
+{c:'招',on:'ショウ',kun:'まね(く)',pt:'convidar, provocar',en:'invite, invite trouble',mn:'扌(mão) + 召 (chamar) → acenar com a mão. Cuidado: 誤解を招く = <b>provocar</b> mal-entendido.',w:[['招待','しょうたい','convite / invitation'],['招く','まねく','convidar; causar / invite; cause']]},
+{c:'捕',on:'ホ',kun:'つか(まえる)',pt:'capturar',en:'capture',mn:'扌(mão) + 甫 → a mão que <b>agarra</b>.',w:[['逮捕','たいほ','prisão / arrest'],['捕まえる','つかまえる','pegar / catch']]},
+{c:'採',on:'サイ',kun:'と(る)',pt:'adotar, colher',en:'adopt, gather',mn:'扌(mão) + 采 → <b>colher</b> com a mão: 採用 = colher (contratar) alguém.',w:[['採用','さいよう','contratação / adoption'],['採点','さいてん','correção / grading']]},
+{c:'探',on:'タン',kun:'さが(す)',pt:'procurar',en:'search',mn:'扌(mão) enfiada num buraco fundo → <b>procurar</b> tateando.',w:[['探す','さがす','procurar / look for'],['探検','たんけん','exploração / exploration']]},
+{c:'接',on:'セツ',kun:'—',pt:'contato, conectar',en:'contact, join',mn:'扌(mão) + 妾 → duas mãos que se <b>tocam</b>.',w:[['直接','ちょくせつ','direto / direct'],['面接','めんせつ','entrevista / interview'],['接する','せっする','lidar com / deal with']]},
+{c:'提',on:'テイ',kun:'さ(げる)',pt:'apresentar, propor',en:'present, propose',mn:'扌(mão) + 是 → <b>erguer</b> na mão e mostrar.',w:[['提出','ていしゅつ','entrega / submission'],['提案','ていあん','proposta / proposal'],['前提','ぜんてい','premissa / premise']]},
+{c:'損',on:'ソン',kun:'そこ(なう)',pt:'prejuízo, perda',en:'loss, damage',mn:'扌(mão) + 員 (membro/dinheiro) → a mão <b>tira</b> do dinheiro = perda.',w:[['損害','そんがい','prejuízo / damage'],['損','そん','desvantagem / loss']]},
+{c:'敵',on:'テキ',kun:'かたき',pt:'inimigo',en:'enemy',mn:'啇 + 攵 (bater) → aquele em quem você bate.',w:[['敵','てき','inimigo / enemy'],['匹敵','ひってき','equiparar-se / rival']]},
+{c:'易',on:'イ・エキ',kun:'やさ(しい)',pt:'fácil; trocar',en:'easy; exchange',mn:'Sol 日 sobre raios → o dia é <b>fácil</b>. Mas 貿易 = comércio (trocar).',w:[['容易','ようい','fácil / easy'],['貿易','ぼうえき','comércio exterior / trade'],['安易','あんい','superficial / easygoing']]},
+{c:'暴',on:'ボウ',kun:'あば(れる)',pt:'violento',en:'violent',mn:'Sol 日 + mãos + água → o sol escaldante deixa todos <b>furiosos</b>.',w:[['暴力','ぼうりょく','violência / violence'],['暴れる','あばれる','ficar violento / rampage']]},
+{c:'替',on:'タイ',kun:'か(える)',pt:'substituir',en:'replace',mn:'夫夫 (dois homens) sobre 日 → um <b>troca de lugar</b> com o outro.',w:[['両替','りょうがえ','câmbio / money exchange'],['代替','だいたい','alternativa / substitute']]},
+{c:'枯',on:'コ',kun:'か(れる)',pt:'murchar',en:'wither',mn:'木 (árvore) + 古 (velho) → árvore velha <b>seca</b>.',w:[['枯れる','かれる','murchar / wither']]},
+{c:'欠',on:'ケツ',kun:'か(ける)',pt:'faltar',en:'lack',mn:'Uma pessoa de boca aberta bocejando → algo <b>falta</b>.',w:[['欠点','けってん','defeito / flaw'],['欠かせない','かかせない','indispensável / essential'],['不可欠','ふかけつ','imprescindível / indispensable']]},
+{c:'殖',on:'ショク',kun:'ふ(える)',pt:'multiplicar',en:'multiply',mn:'歹 + 直 → a vida se <b>multiplica</b> em linha reta.',w:[['増殖','ぞうしょく','proliferação / proliferation'],['繁殖','はんしょく','reprodução / breeding']]},
+{c:'汚',on:'オ',kun:'よご(れる)・きたな(い)',pt:'sujo',en:'dirty',mn:'氵(água) + 亏 → água torta = <b>água suja</b>.',w:[['汚染','おせん','poluição / pollution'],['汚い','きたない','sujo / dirty']]},
+{c:'沈',on:'チン',kun:'しず(む)',pt:'afundar',en:'sink',mn:'氵(água) + 冘 → cair na <b>água</b> e afundar. Também para humor: 気分が沈む.',w:[['沈む','しずむ','afundar / sink'],['沈黙','ちんもく','silêncio / silence']]},
+{c:'済',on:'サイ',kun:'す(む)',pt:'terminar; economia',en:'finish; economy',mn:'氵(água) + 斉 → atravessar a água = <b>resolver</b>. 経済 = gerir e resolver = economia.',w:[['経済','けいざい','economia / economy'],['済む','すむ','terminar, bastar / be finished'],['返済','へんさい','reembolso / repayment']]},
+{c:'測',on:'ソク',kun:'はか(る)',pt:'medir',en:'measure',mn:'氵(água) + 則 (regra) → medir a profundidade da água.',w:[['測定','そくてい','medição / measurement'],['予測','よそく','previsão / forecast']]},
+{c:'燃',on:'ネン',kun:'も(える)',pt:'queimar',en:'burn',mn:'火 (fogo) duplicado → <b>arde</b>.',w:[['燃える','もえる','queimar / burn'],['燃料','ねんりょう','combustível / fuel']]},
+{c:'班',on:'ハン',kun:'—',pt:'grupo, esquadrão',en:'squad',mn:'Duas jades 王王 partidas por uma faca → <b>dividir</b> em grupos.',w:[['班','はん','grupo / team']]},
+{c:'皮',on:'ヒ',kun:'かわ',pt:'pele, casca',en:'skin, leather',mn:'Mão puxando o couro do animal.',w:[['皮膚','ひふ','pele / skin'],['皮肉','ひにく','ironia / irony']]},
+{c:'祈',on:'キ',kun:'いの(る)',pt:'rezar',en:'pray',mn:'礻(altar) + 斤 (machado) → oferecer no altar e <b>rezar</b>.',w:[['祈る','いのる','rezar / pray']]},
+{c:'秘',on:'ヒ',kun:'ひ(める)',pt:'secreto',en:'secret',mn:'禾 (arroz) + 必 (necessário) → esconder o arroz necessário = <b>segredo</b>.',w:[['秘密','ひみつ','segredo / secret'],['秘書','ひしょ','secretário / secretary']]},
+{c:'穏',on:'オン',kun:'おだ(やか)',pt:'calmo',en:'calm',mn:'禾 (arroz) + coração escondido → com o celeiro cheio, o coração fica <b>tranquilo</b>.',w:[['穏やか','おだやか','sereno / calm'],['平穏','へいおん','tranquilidade / peace']]},
+{c:'突',on:'トツ',kun:'つ(く)',pt:'de repente, perfurar',en:'sudden, thrust',mn:'穴 (buraco) + 大 (grande) → o cachorro sai <b>de repente</b> do buraco.',w:[['突然','とつぜん','de repente / suddenly'],['衝突','しょうとつ','colisão / collision']]},
+{c:'紹',on:'ショウ',kun:'—',pt:'apresentar',en:'introduce',mn:'糸 (fio) + 召 (chamar) → o fio que <b>liga</b> duas pessoas.',w:[['紹介','しょうかい','apresentação / introduction']]},
+{c:'絶',on:'ゼツ',kun:'た(える)',pt:'cortar, extinguir',en:'sever, extinct',mn:'糸 (fio) cortado com faca → <b>rompimento total</b>. 絶対 = absoluto (nada corta).',w:[['絶対','ぜったい','absolutamente / absolutely'],['絶える','たえる','cessar / cease'],['絶滅','ぜつめつ','extinção / extinction']]},
+{c:'維',on:'イ',kun:'—',pt:'manter, fibra',en:'maintain, fiber',mn:'糸 (fio) + 隹 (pássaro) → amarrar o pássaro = <b>manter</b> preso.',w:[['維持','いじ','manutenção / maintenance'],['繊維','せんい','fibra / fiber']]},
+{c:'蓄',on:'チク',kun:'たくわ(える)',pt:'acumular',en:'store up',mn:'艹 (grama) + 畜 (gado) → guardar feno para o gado = <b>poupar</b>.',w:[['貯蓄','ちょちく','poupança / savings'],['蓄積','ちくせき','acumulação / accumulation']]},
+{c:'裁',on:'サイ',kun:'さば(く)',pt:'julgar, cortar tecido',en:'judge, cut cloth',mn:'衣 (roupa) + 戈 (lança) → cortar o tecido com precisão = <b>julgar</b>.',w:[['裁判','さいばん','julgamento / trial'],['独裁','どくさい','ditadura / dictatorship']]},
+{c:'触',on:'ショク',kun:'ふ(れる)・さわ(る)',pt:'tocar',en:'touch',mn:'角 (chifre) + 虫 → o inseto <b>toca</b> com as antenas.',w:[['接触','せっしょく','contato / contact'],['触れる','ふれる','tocar; mencionar / touch']]},
+{c:'避',on:'ヒ',kun:'さ(ける)',pt:'evitar',en:'avoid',mn:'辶 (caminhar) + 辟 → <b>desviar</b> do caminho.',w:[['避ける','さける','evitar / avoid'],['避難','ひなん','evacuação / evacuation']]},
+{c:'零',on:'レイ',kun:'—',pt:'zero',en:'zero',mn:'雨 (chuva) + 令 → gotas que somem = <b>nada</b>.',w:[['零下','れいか','abaixo de zero / below zero']]},
+{c:'項',on:'コウ',kun:'—',pt:'item, cláusula',en:'item, clause',mn:'工 + 頁 (página) → os <b>itens</b> listados na página.',w:[['項目','こうもく','item / item'],['事項','じこう','assunto / matter']]},
+{c:'額',on:'ガク',kun:'ひたい',pt:'quantia; testa',en:'amount; forehead',mn:'客 (hóspede) + 頁 (cabeça) → o valor escrito na <b>placa</b> na altura da testa.',w:[['金額','きんがく','quantia / amount'],['額','ひたい','testa / forehead']]},
+{c:'依',on:'イ',kun:'—',pt:'depender',en:'depend',mn:'亻(pessoa) + 衣 (roupa) → a pessoa <b>depende</b> da roupa.',w:[['依頼','いらい','pedido / request'],['依存','いぞん','dependência / dependence']]},
+{c:'企',on:'キ',kun:'くわだ(てる)',pt:'planejar',en:'plan',mn:'人 (pessoa) em cima de 止 (parar) → a pessoa para e <b>planeja</b>.',w:[['企業','きぎょう','empresa / company'],['企画','きかく','projeto / planning']]},
+{c:'傾',on:'ケイ',kun:'かたむ(く)',pt:'inclinar, tendência',en:'lean, tendency',mn:'亻 + 頃 → a pessoa <b>inclina</b> a cabeça. 傾向 = tendência.',w:[['傾向','けいこう','tendência / tendency'],['傾く','かたむく','inclinar-se / lean']]},
+{c:'儲',on:'—',kun:'もう(かる)',pt:'lucrar',en:'profit',mn:'亻 + 諸 → a pessoa que junta muitos = <b>lucro</b>.',w:[['儲かる','もうかる','dar lucro / be profitable']]},
+{c:'募',on:'ボ',kun:'つの(る)',pt:'recrutar, intensificar',en:'recruit',mn:'莫 + 力 → juntar forças = <b>recrutar</b>.',w:[['募集','ぼしゅう','recrutamento / recruitment'],['応募','おうぼ','candidatura / application']]}
+];
+
+/* ═══════════════ 語彙 · VOCAB N2 ═══════════════ */
+const VOCAB=[
+{w:'あいまい',r:'曖昧',pt:'vago, ambíguo',en:'vague',ex:'返事があいまいで困る。'},
+{w:'あくまで',r:'飽くまで',pt:'até o fim; meramente',en:'to the end; merely',ex:'あくまで個人の意見です。'},
+{w:'あらゆる',r:'—',pt:'todo e qualquer',en:'every possible',ex:'あらゆる方法を試した。'},
+{w:'いきなり',r:'—',pt:'de repente, sem aviso',en:'abruptly',ex:'いきなり質問された。'},
+{w:'いちいち',r:'—',pt:'um por um (com irritação)',en:'one by one, nitpicking',ex:'いちいち文句を言うな。'},
+{w:'うっかり',r:'—',pt:'por descuido',en:'carelessly',ex:'うっかり財布を忘れた。'},
+{w:'おそらく',r:'恐らく',pt:'provavelmente',en:'probably',ex:'おそらく雨が降るだろう。'},
+{w:'およそ',r:'凡そ',pt:'aproximadamente',en:'roughly',ex:'およそ三時間かかる。'},
+{w:'かえって',r:'却って',pt:'pelo contrário',en:'on the contrary',ex:'薬を飲んでかえって悪くなった。'},
+{w:'かならずしも',r:'必ずしも',pt:'não necessariamente',en:'not necessarily',ex:'高いものが必ずしもいいとは限らない。'},
+{w:'きっかけ',r:'—',pt:'gatilho, motivo inicial',en:'trigger, opportunity',ex:'留学がきっかけで日本語を始めた。'},
+{w:'くだらない',r:'—',pt:'sem valor, bobo',en:'worthless',ex:'くだらない話はやめよう。'},
+{w:'こつこつ',r:'—',pt:'com persistência, aos poucos',en:'steadily',ex:'こつこつ勉強するしかない。'},
+{w:'さすが',r:'流石',pt:'como era de esperar (elogio)',en:'as expected (impressive)',ex:'さすがプロですね。'},
+{w:'しばしば',r:'—',pt:'frequentemente',en:'often',ex:'しばしば誤解される。'},
+{w:'すでに',r:'既に',pt:'já',en:'already',ex:'すでに手遅れだ。'},
+{w:'せいぜい',r:'精々',pt:'no máximo',en:'at most',ex:'せいぜい五人しか来ない。'},
+{w:'そのうち',r:'—',pt:'em breve, um dia desses',en:'before long',ex:'そのうち慣れるよ。'},
+{w:'たしか',r:'確か',pt:'se não me engano',en:'if I recall correctly',ex:'たしか去年だったと思う。'},
+{w:'ただし',r:'但し',pt:'porém, exceto que',en:'however, provided that',ex:'入場無料。ただし予約が必要。'},
+{w:'たまたま',r:'偶々',pt:'por acaso',en:'by chance',ex:'たまたま彼に会った。'},
+{w:'ちなみに',r:'因みに',pt:'a propósito',en:'incidentally',ex:'ちなみに私も行きます。'},
+{w:'つまり',r:'—',pt:'ou seja',en:'in other words',ex:'つまり反対ということだ。'},
+{w:'とっくに',r:'—',pt:'há muito tempo (já)',en:'long ago',ex:'とっくに終わったよ。'},
+{w:'なにしろ',r:'何しろ',pt:'afinal, é que',en:'after all',ex:'なにしろ人が多いから。'},
+{w:'ひたすら',r:'—',pt:'somente, obstinadamente',en:'single-mindedly',ex:'ひたすら謝るしかなかった。'},
+{w:'まさか',r:'—',pt:'não me diga, jamais',en:'no way',ex:'まさか彼が来るとは。'},
+{w:'めったに',r:'滅多に',pt:'raramente (+neg)',en:'rarely',ex:'めったに怒らない人だ。'},
+{w:'やむを得ない',r:'止むを得ない',pt:'inevitável',en:'unavoidable',ex:'やむを得ない事情で欠席した。'},
+{w:'あくび',r:'欠伸',pt:'bocejo',en:'yawn',ex:'会議中にあくびが出た。'},
+{w:'あこがれる',r:'憧れる',pt:'admirar, sonhar com',en:'long for',ex:'東京の生活に憧れる。'},
+{w:'あつかう',r:'扱う',pt:'lidar com, tratar',en:'handle, deal with',ex:'この店は輸入品を扱う。'},
+{w:'あらためて',r:'改めて',pt:'de novo, formalmente',en:'anew, formally',ex:'改めてご連絡します。'},
+{w:'いだく',r:'抱く',pt:'nutrir (sentimento)',en:'harbor (feeling)',ex:'疑問を抱く。'},
+{w:'うかがう',r:'伺う',pt:'perguntar/visitar (humilde)',en:'ask/visit (humble)',ex:'明日お伺いします。'},
+{w:'うらぎる',r:'裏切る',pt:'trair',en:'betray',ex:'期待を裏切る結果だった。'},
+{w:'おぎなう',r:'補う',pt:'compensar',en:'make up for',ex:'経験不足を努力で補う。'},
+{w:'おさえる',r:'抑える',pt:'conter, reprimir',en:'suppress',ex:'怒りを抑えた。'},
+{w:'かかわる',r:'関わる',pt:'estar envolvido; afetar',en:'be involved; affect',ex:'命に関わる問題だ。'},
+{w:'かたよる',r:'偏る',pt:'ser tendencioso, desequilibrado',en:'be biased',ex:'栄養が偏っている。'},
+{w:'きづく',r:'気づく',pt:'perceber',en:'notice',ex:'間違いに気づかなかった。'},
+{w:'くりかえす',r:'繰り返す',pt:'repetir',en:'repeat',ex:'同じミスを繰り返す。'},
+{w:'こだわる',r:'拘る',pt:'ser exigente com, apegar-se',en:'be particular about',ex:'味にこだわる店。'},
+{w:'しめる',r:'占める',pt:'ocupar (proporção)',en:'occupy, account for',ex:'全体の三割を占める。'},
+{w:'すすめる',r:'勧める',pt:'recomendar',en:'recommend',ex:'医者に禁煙を勧められた。'},
+{w:'そなえる',r:'備える',pt:'preparar-se, equipar',en:'prepare for',ex:'地震に備える。'},
+{w:'たえる',r:'耐える',pt:'suportar',en:'endure',ex:'暑さに耐えられない。'},
+{w:'つとめる',r:'努める',pt:'esforçar-se',en:'strive',ex:'改善に努めます。'},
+{w:'なやむ',r:'悩む',pt:'sofrer, hesitar',en:'be troubled',ex:'進路について悩んでいる。'},
+{w:'のぞむ',r:'望む',pt:'desejar',en:'wish',ex:'平和を望む。'},
+{w:'はたす',r:'果たす',pt:'cumprir',en:'fulfill',ex:'責任を果たす。'},
+{w:'ひかえる',r:'控える',pt:'abster-se; estar próximo',en:'refrain; be upcoming',ex:'塩分を控える。'},
+{w:'ふくむ',r:'含む',pt:'incluir, conter',en:'include',ex:'税を含む価格。'},
+{w:'まかせる',r:'任せる',pt:'confiar a, deixar por conta',en:'entrust',ex:'君に任せるよ。'},
+{w:'めざす',r:'目指す',pt:'almejar',en:'aim for',ex:'N2合格を目指す。'},
+{w:'もとづく',r:'基づく',pt:'basear-se em',en:'be based on',ex:'事実に基づく話。'},
+{w:'いっぱん',r:'一般',pt:'geral, comum',en:'general',ex:'一般的な考え方。'},
+{w:'えいきょう',r:'影響',pt:'influência',en:'influence',ex:'天候の影響を受けた。'},
+{w:'おうじる',r:'応じる',pt:'responder a, conforme',en:'respond to, according to',ex:'収入に応じて税金が決まる。'},
+{w:'かんきょう',r:'環境',pt:'ambiente',en:'environment',ex:'職場の環境を改善する。'},
+{w:'きぼ',r:'規模',pt:'escala',en:'scale',ex:'大規模な工事。'},
+{w:'げんいん',r:'原因',pt:'causa',en:'cause',ex:'火事の原因を調べる。'},
+{w:'こうか',r:'効果',pt:'efeito',en:'effect',ex:'薬の効果が出た。'},
+{w:'さべつ',r:'差別',pt:'discriminação',en:'discrimination',ex:'差別をなくす。'},
+{w:'しげん',r:'資源',pt:'recurso',en:'resource',ex:'限りある資源。'},
+{w:'じょうきょう',r:'状況',pt:'situação',en:'situation',ex:'状況が変わった。'},
+{w:'せいげん',r:'制限',pt:'limite, restrição',en:'restriction',ex:'時間制限がある。'},
+{w:'そうとう',r:'相当',pt:'considerável; equivalente',en:'considerable; equivalent',ex:'相当な費用がかかる。'},
+{w:'たいしょう',r:'対象',pt:'alvo, público-alvo',en:'target',ex:'学生を対象にした調査。'},
+{w:'ちょうさ',r:'調査',pt:'pesquisa, investigação',en:'survey',ex:'アンケート調査を行う。'},
+{w:'てきせつ',r:'適切',pt:'apropriado',en:'appropriate',ex:'適切な対応が必要だ。'},
+{w:'とくちょう',r:'特徴',pt:'característica',en:'characteristic',ex:'この製品の特徴。'},
+{w:'はんい',r:'範囲',pt:'alcance, âmbito',en:'range, scope',ex:'試験範囲を確認する。'},
+{w:'ふきゅう',r:'普及',pt:'difusão, popularização',en:'spread, diffusion',ex:'スマホが普及した。'},
+{w:'へいきん',r:'平均',pt:'média',en:'average',ex:'平均点は70点だった。'},
+{w:'ほうしん',r:'方針',pt:'diretriz, política',en:'policy',ex:'会社の方針が変わる。'},
+{w:'むしろ',r:'寧ろ',pt:'antes, na verdade',en:'rather',ex:'安いより、むしろ質が大事だ。'},
+{w:'ようきゅう',r:'要求',pt:'exigência',en:'demand',ex:'高い要求に応える。'},
+{w:'よそく',r:'予測',pt:'previsão',en:'forecast',ex:'予測が外れた。'},
+{w:'りえき',r:'利益',pt:'lucro, benefício',en:'profit',ex:'会社の利益が増えた。'},
+{w:'れいがい',r:'例外',pt:'exceção',en:'exception',ex:'例外は認めない。'}
+];
+
+/* ═══════════════ 文法 · GRAMMAR N2 ═══════════════ */
+const GRAMMAR=[
+{g:'～わけではない',f:'V/A普通形 + わけではない',pt:'não é que... / nem por isso',en:'it doesn\'t mean that...',ex:'嫌いなわけではないが、あまり食べない。',tx:'Não odeio, só não como muito.',trap:'PT "não quer dizer que" — mas <b>NUNCA</b> use com intenção ("não quero dizer" = 言いたくない). わけではない nega uma <b>conclusão</b>, não um desejo.'},
+{g:'～わけがない',f:'V/A普通形 + わけがない',pt:'é impossível que',en:'there\'s no way that',ex:'あの人が来るわけがない。',tx:'Não tem a menor chance dele vir.',trap:'≠ わけではない! がない = 0% possibilidade. ではない = "não é bem assim". Uma letra muda tudo.'},
+{g:'～わけにはいかない',f:'V辞書形 + わけにはいかない',pt:'não posso (por obrigação social/moral)',en:'can\'t (socially/morally)',ex:'約束したから、行かないわけにはいかない。',tx:'Prometi, então não dá pra não ir.',trap:'Não é "não consigo" (できない = habilidade). É <b>não me é permitido moralmente</b>. Compare: 泳げない (não sei nadar) vs 泳ぐわけにはいかない (não seria certo nadar agora).'},
+{g:'～ものだ',f:'V辞書形/A + ものだ',pt:'é da natureza de; costumava',en:'it\'s the nature of; used to',ex:'年を取ると忘れっぽくなるものだ。',tx:'Com a idade a gente esquece mesmo.',trap:'Verdade <b>geral</b>, não fato específico. 「昨日は寒いものだ」✗ — para ontem use だった.'},
+{g:'～ものの',f:'V/A普通形 + ものの',pt:'embora (formal, escrito)',en:'although',ex:'申し込んだものの、まだ返事がない。',tx:'Me inscrevi, mas ainda sem resposta.',trap:'Só para <b>fato consumado</b>. Não use para hipótese. Registro escrito — não fale isso num bar.'},
+{g:'～ものだから',f:'普通形 + ものだから',pt:'é que... (desculpa)',en:'because (excuse)',ex:'電車が遅れたものだから、遅刻しました。',tx:'É que o trem atrasou, por isso me atrasei.',trap:'Sempre soa como <b>desculpa</b>. Não use para dar boas notícias.'},
+{g:'～ざるを得ない',f:'Vない形(ない削除) + ざるを得ない',pt:'não tenho escolha senão',en:'have no choice but to',ex:'台風なので中止せざるを得ない。',tx:'Com o tufão, não há como não cancelar.',trap:'する → <b>せ</b>ざるを得ない (irregular!). Não é なければならない (dever); é <b>ausência de alternativa</b>, com tom de resignação.'},
+{g:'～に違いない',f:'普通形 + に違いない',pt:'com certeza deve ser',en:'must be, no doubt',ex:'彼は知っていたに違いない。',tx:'Ele com certeza sabia.',trap:'Certeza <b>subjetiva</b> forte. ≠ はず (dedução lógica) e ≠ べき (dever). O EN "must" cobre os três — o japonês não.'},
+{g:'～はずだ / はずがない',f:'普通形 + はずだ',pt:'era de se esperar / não deveria',en:'supposed to be',ex:'彼は今日来るはずだったのに。',tx:'Ele deveria vir hoje...',trap:'PT "devia" ≠ べき. はず = <b>expectativa lógica</b>; べき = <b>obrigação moral</b>. 「早く寝るはずだ」✗ (você quis dizer 寝るべきだ).'},
+{g:'～べきだ',f:'V辞書形 + べきだ',pt:'deve (moral)',en:'ought to',ex:'もっと早く相談すべきだった。',tx:'Eu devia ter consultado antes.',trap:'する→<b>す</b>べき (forma clássica preferida). Nunca use com você mesmo em contexto formal para se gabar.'},
+{g:'～ようがない',f:'Vます形 + ようがない',pt:'não há como',en:'there\'s no way to',ex:'連絡先が分からないので、知らせようがない。',tx:'Não sei o contato, não tenho como avisar.',trap:'Falta de <b>meio</b>, não de permissão. ≠ わけにはいかない.'},
+{g:'～かねない',f:'Vます形 + かねない',pt:'pode acabar (algo ruim)',en:'might well (negative)',ex:'このままでは事故になりかねない。',tx:'Desse jeito pode dar acidente.',trap:'⚠ Só para coisas <b>ruins</b>. 「合格しかねない」✗. E かねる (sem ない) = "não posso" (educado). Formas quase iguais, sentidos opostos.'},
+{g:'～かねる',f:'Vます形 + かねる',pt:'não posso (recusa educada)',en:'be unable to (polite)',ex:'その件については分かりかねます。',tx:'Sobre isso, não tenho como responder.',trap:'É recusa <b>educada de atendimento</b>, não incapacidade física.'},
+{g:'～得る / 得ない',f:'Vます形 + うる/えない',pt:'é possível / impossível',en:'can / cannot possibly',ex:'誰にでも起こり得ることだ。',tx:'É algo que pode acontecer com qualquer um.',trap:'Possibilidade <b>teórica</b>, não habilidade pessoal. 「泳ぎ得る」soa estranho — use 泳げる.'},
+{g:'～に際して',f:'N/V辞書形 + に際して',pt:'por ocasião de',en:'on the occasion of',ex:'開会に際して一言申し上げます。',tx:'Na abertura, gostaria de dizer algumas palavras.',trap:'Só para ocasiões <b>especiais/formais</b>. Não use para rotina diária.'},
+{g:'～に先立って',f:'N + に先立って',pt:'antes de (evento formal)',en:'prior to',ex:'出発に先立って、説明会を行う。',tx:'Antes da partida, faremos uma reunião.',trap:'≠ 前に (comum). Exige evento <b>planejado e formal</b>.'},
+{g:'～をきっかけに',f:'N + をきっかけに',pt:'tendo como estopim',en:'triggered by',ex:'留学をきっかけに考え方が変わった。',tx:'O intercâmbio mudou meu jeito de pensar.',trap:'O resultado deve ser uma <b>mudança</b>. Não use para causa mecânica (use ため / によって).'},
+{g:'～を契機に',f:'N + を契機に',pt:'aproveitando o momento de',en:'taking as a turning point',ex:'定年を契機に田舎に移った。',tx:'Com a aposentadoria, mudei para o interior.',trap:'Versão formal/escrita de をきっかけに.'},
+{g:'～に応じて',f:'N + に応じて',pt:'conforme, de acordo com (variando)',en:'in accordance with (varying)',ex:'収入に応じて会費が変わる。',tx:'A taxa varia conforme a renda.',trap:'Exige <b>variação proporcional</b>. Se nada varia, use に従って ou によって.'},
+{g:'～に基づいて',f:'N + に基づいて',pt:'com base em',en:'based on',ex:'調査結果に基づいて対策を立てる。',tx:'Com base na pesquisa, criamos medidas.',trap:'Base = dados, lei, fato. 「気持ちに基づいて」soa esquisito.'},
+{g:'～にわたって',f:'N(período/extensão) + にわたって',pt:'ao longo de, por toda a extensão',en:'over, spanning',ex:'三日間にわたって会議が開かれた。',tx:'A reunião durou três dias.',trap:'≠ 間 (durante). にわたって enfatiza a <b>amplitude</b>. Sempre com período/área longa.'},
+{g:'～を通じて / を通して',f:'N + を通じて',pt:'através de; ao longo de',en:'through, throughout',ex:'友人を通じて知り合った。',tx:'Nos conhecemos por meio de um amigo.',trap:'PT "através de" também vira によって (agente). を通じて = <b>intermediário/meio</b>.'},
+{g:'～に対して',f:'N + に対して',pt:'em relação a; em contraste com',en:'toward; in contrast',ex:'客に対して失礼な態度をとる。',tx:'Teve uma atitude grosseira com o cliente.',trap:'⚠ O grande erro: について = <b>sobre um tema</b>; に対して = <b>direcionado a alguém</b>; にとって = <b>do ponto de vista de</b>. O PT "para/sobre" cobre os três.'},
+{g:'～にとって',f:'N + にとって',pt:'para (do ponto de vista de)',en:'for, from the standpoint of',ex:'私にとって日本語は難しい。',tx:'Para mim, japonês é difícil.',trap:'Só com <b>avaliação</b> (difícil, importante, precioso). 「私にとって本を買った」✗ → use に.'},
+{g:'～において',f:'N(lugar/tempo/campo) + において',pt:'em (formal)',en:'in, at (formal)',ex:'会議は東京において開催される。',tx:'A reunião será em Tóquio.',trap:'Versão escrita de で. Não use com verbos de movimento cotidianos.'},
+{g:'～ばかりか / ばかりでなく',f:'普通形 + ばかりか',pt:'não só... como também',en:'not only... but also',ex:'雨ばかりか風も強くなった。',tx:'Não só choveu como ventou forte.',trap:'A segunda parte deve <b>escalar</b>. Se for igual, use だけでなく.'},
+{g:'～どころか',f:'普通形 + どころか',pt:'longe de, muito pelo contrário',en:'far from',ex:'漢字どころかひらがなも読めない。',tx:'Longe de kanji, ele nem lê hiragana.',trap:'Inverte a expectativa. Não é "além disso" — é <b>contradição</b>.'},
+{g:'～に限らず',f:'N + に限らず',pt:'não apenas',en:'not limited to',ex:'若者に限らず、高齢者も使っている。',tx:'Não só jovens, idosos também usam.',trap:'Diferente de に限って ("justo quando/logo ele") e に限る ("nada melhor que").'},
+{g:'～に限る',f:'N/V辞書形 + に限る',pt:'nada melhor que',en:'nothing beats',ex:'疲れた時は寝るに限る。',tx:'Quando cansado, nada melhor que dormir.',trap:'Opinião pessoal enfática. Não significa "limitar".'},
+{g:'～に限って',f:'N + に限って',pt:'logo justamente (azar)',en:'of all times/people',ex:'急いでいる時に限って電車が遅れる。',tx:'Justo quando estou com pressa o trem atrasa.',trap:'Carrega <b>ironia/azar</b>. Não use neutro.'},
+{g:'～上で',f:'V た形/N の + 上で',pt:'depois de (e com base nisso)',en:'after doing (and then)',ex:'よく考えた上で決めます。',tx:'Vou decidir depois de pensar bem.',trap:'≠ てから (simples sequência). 上で = a 1ª ação <b>fundamenta</b> a 2ª.'},
+{g:'～上に',f:'普通形 + 上に',pt:'além de',en:'in addition to',ex:'この店は安い上においしい。',tx:'Além de barato, é gostoso.',trap:'Ambas as partes devem ter a <b>mesma polaridade</b> (as duas boas ou as duas ruins).'},
+{g:'～次第',f:'Vます形 + 次第',pt:'assim que',en:'as soon as',ex:'着き次第、連絡します。',tx:'Assim que chegar, aviso.',trap:'⚠ Nunca use com <b>passado</b>. 「着き次第連絡した」✗. Só futuro/intenção.'},
+{g:'～次第だ / 次第で',f:'N + 次第だ',pt:'depende de',en:'depends on',ex:'結果は君の努力次第だ。',tx:'O resultado depende do seu esforço.',trap:'Mesma palavra, função totalmente diferente da de cima. Veja se vem depois de <b>ます形</b> (assim que) ou de <b>substantivo</b> (depende).'},
+{g:'～たとたん',f:'Vた形 + とたん',pt:'no instante em que',en:'the moment that',ex:'ドアを開けたとたん、猫が逃げた。',tx:'No instante em que abri a porta, o gato fugiu.',trap:'Só para o <b>passado</b> e algo <b>inesperado</b>. Não use com sua própria intenção.'},
+{g:'～かと思うと',f:'Vた形 + かと思うと',pt:'mal... e já',en:'no sooner than',ex:'泣いたかと思うと、もう笑っている。',tx:'Mal chorou e já está rindo.',trap:'Observação de <b>terceiros</b>. Não use para si mesmo.'},
+{g:'～てしょうがない',f:'Vて/Aくて + しょうがない',pt:'não aguento de tão',en:'unbearably',ex:'眠くてしょうがない。',tx:'Estou morto de sono.',trap:'Só para <b>sensações/emoções</b> involuntárias, não para ações.'},
+{g:'～てたまらない',f:'Vて/Aくて + たまらない',pt:'insuportavelmente',en:'unbearably',ex:'国の家族に会いたくてたまらない。',tx:'Morro de saudade da família.',trap:'Sentimento <b>seu</b>. Para terceiros use ～がっている.'},
+{g:'～ないことには',f:'Vない形 + ことには',pt:'se não... não dá',en:'unless',ex:'やってみないことには分からない。',tx:'Sem tentar, não dá pra saber.',trap:'A segunda oração <b>precisa</b> ser negativa. Erro clássico: terminar em afirmativa.'},
+{g:'～に過ぎない',f:'N/V普通形 + に過ぎない',pt:'não passa de',en:'merely',ex:'それは言い訳に過ぎない。',tx:'Isso não passa de desculpa.',trap:'Sempre <b>diminui</b> o valor. Não é "exceder" apesar do kanji 過.'},
+{g:'～ほかない / よりほかない',f:'V辞書形 + ほかない',pt:'só resta',en:'have no choice but',ex:'諦めるほかない。',tx:'Só resta desistir.',trap:'Sinônimo de しかない, mais escrito. Compare com ざるを得ない (mais formal ainda).'},
+{g:'～としても',f:'普通形 + としても',pt:'mesmo que (hipótese)',en:'even if',ex:'雨が降ったとしても行く。',tx:'Mesmo que chova, eu vou.',trap:'<b>Hipótese</b>. Para fato real use ても/のに. PT "mesmo que" cobre os dois.'},
+{g:'～わりに',f:'普通形 + わりに',pt:'para o que era de esperar',en:'considering, for',ex:'値段のわりにおいしい。',tx:'Para o preço, é bom.',trap:'Compara com o <b>padrão esperado</b>. Diferente de ながら (concessivo).'},
+{g:'～ながら(も)',f:'Vます形/A/N + ながらも',pt:'embora',en:'although',ex:'知っていながら、黙っていた。',tx:'Mesmo sabendo, ficou calado.',trap:'⚠ Não confundir com o ながら de "enquanto". Aqui é <b>concessivo</b>. O contexto decide.'},
+{g:'～つつ / つつある',f:'Vます形 + つつある',pt:'está progressivamente',en:'be in the process of',ex:'状況は改善しつつある。',tx:'A situação está melhorando.',trap:'つつある = <b>mudança gradual em curso</b>. ≠ ている simples. Registro escrito.'},
+{g:'～かのようだ',f:'普通形 + かのようだ',pt:'como se (irreal)',en:'as if',ex:'まるで夢を見ているかのようだ。',tx:'É como se estivesse sonhando.',trap:'Explicitamente <b>irreal</b>. ようだ sozinho pode ser real.'},
+{g:'～のみならず',f:'普通形 + のみならず',pt:'não somente (escrito)',en:'not only (formal)',ex:'国内のみならず海外でも人気だ。',tx:'É popular não só no país como no exterior.',trap:'Registro <b>bem formal</b>. Em fala use だけでなく.'},
+{g:'～に他ならない',f:'N + に他ならない',pt:'nada mais é que',en:'is nothing other than',ex:'成功は努力の結果に他ならない。',tx:'O sucesso nada mais é que fruto do esforço.',trap:'Ênfase <b>positiva/afirmativa</b>. Oposto de に過ぎない.'},
+{g:'～てからでないと',f:'Vて形 + からでないと',pt:'se não fizer antes, não dá',en:'unless you first',ex:'許可をもらってからでないと入れない。',tx:'Sem permissão antes, não se entra.',trap:'Segunda parte <b>negativa obrigatória</b>.'},
+{g:'～ばかりに',f:'普通形 + ばかりに',pt:'só porque (e deu ruim)',en:'simply because (bad result)',ex:'一言言ったばかりに嫌われた。',tx:'Só porque falei uma coisa, me odiaram.',trap:'⚠ Resultado sempre <b>ruim e lamentado</b>. Não é o ばかり de "só/apenas".'},
+{g:'～こそ',f:'N + こそ',pt:'justamente, precisamente',en:'precisely',ex:'今年こそ合格する。',tx:'É este ano que eu passo.',trap:'Ênfase. 「今年こそ」= este ano sim (os outros não deram). Roberto: essa é a sua frase.'},
+{g:'～てはじめて',f:'Vて形 + はじめて',pt:'só depois de... é que',en:'only after',ex:'失ってはじめて大切さが分かる。',tx:'Só depois de perder é que damos valor.',trap:'A percepção vem <b>depois</b>. Não use com ação planejada.'},
+{g:'～に相違ない',f:'普通形 + に相違ない',pt:'sem dúvida',en:'without doubt',ex:'犯人は彼に相違ない。',tx:'O culpado é ele, sem dúvida.',trap:'Versão jurídica/escrita de に違いない.'},
+{g:'～かぎり(は)',f:'V辞書形/ている + かぎり',pt:'enquanto, desde que',en:'as long as',ex:'体が健康なかぎり働きたい。',tx:'Enquanto estiver saudável, quero trabalhar.',trap:'Condição <b>contínua</b>. Diferente de 限る/限って acima.'},
+{g:'～まい',f:'V辞書形 + まい',pt:'não vou / não deve',en:'won\'t / probably not',ex:'二度と遅刻するまい。',tx:'Nunca mais vou me atrasar.',trap:'Negativo <b>volitivo</b> clássico. Aparece na leitura do N2. する→するまい/すまい.'},
+{g:'～ようでは',f:'普通形 + ようでは',pt:'se for assim, então',en:'if things are like this',ex:'こんな成績では合格できまい。',tx:'Com essa nota não vai passar.',trap:'Sempre com consequência <b>negativa</b>.'}
+];
+
+/* ═══ N3 語彙 ═══ */
+const VOCAB_N3=[
+{w:'あきらめる',r:'諦める',pt:'desistir',en:'give up',ex:'簡単に諦めてはいけない。'},
+{w:'あずける',r:'預ける',pt:'deixar aos cuidados de',en:'entrust, check in',ex:'荷物をホテルに預けた。'},
+{w:'あたえる',r:'与える',pt:'dar, conceder',en:'give, grant',ex:'子供に影響を与える。'},
+{w:'あわてる',r:'慌てる',pt:'apressar-se, entrar em pânico',en:'panic, rush',ex:'慌てて家を出た。'},
+{w:'いのる',r:'祈る',pt:'rezar, torcer',en:'pray, wish',ex:'ご成功をお祈りします。'},
+{w:'うかぶ',r:'浮かぶ',pt:'flutuar; vir à mente',en:'float; come to mind',ex:'いい考えが浮かんだ。'},
+{w:'うつす',r:'移す',pt:'transferir, mover',en:'move, transfer',ex:'机を隣の部屋に移した。'},
+{w:'えらぶ',r:'選ぶ',pt:'escolher',en:'choose',ex:'好きな色を選んでください。'},
+{w:'おうえん',r:'応援',pt:'apoio, torcida',en:'support, cheer',ex:'チームを応援する。'},
+{w:'おく',r:'置く',pt:'colocar, deixar',en:'put, place',ex:'かばんをそこに置いて。'},
+{w:'おこなう',r:'行う',pt:'realizar (evento)',en:'carry out, hold',ex:'来月試験が行われる。'},
+{w:'おそわる',r:'教わる',pt:'aprender com alguém',en:'be taught',ex:'母に料理を教わった。'},
+{w:'おもいだす',r:'思い出す',pt:'lembrar-se',en:'recall',ex:'名前が思い出せない。'},
+{w:'かさなる',r:'重なる',pt:'sobrepor-se, coincidir',en:'overlap',ex:'予定が重なってしまった。'},
+{w:'かたづける',r:'片付ける',pt:'arrumar, resolver',en:'tidy up, settle',ex:'部屋を片付けなさい。'},
+{w:'かんじる',r:'感じる',pt:'sentir',en:'feel',ex:'寒さを感じる。'},
+{w:'きく',r:'効く',pt:'fazer efeito',en:'take effect',ex:'この薬はよく効く。'},
+{w:'くらべる',r:'比べる',pt:'comparar',en:'compare',ex:'去年に比べて暑い。'},
+{w:'くわしい',r:'詳しい',pt:'detalhado; bem informado',en:'detailed; knowledgeable',ex:'彼は日本史に詳しい。'},
+{w:'けいけん',r:'経験',pt:'experiência',en:'experience',ex:'いい経験になった。'},
+{w:'こうかん',r:'交換',pt:'troca',en:'exchange',ex:'名刺を交換する。'},
+{w:'こまかい',r:'細かい',pt:'miúdo, minucioso',en:'fine, detailed',ex:'細かい説明はいらない。'},
+{w:'さがる',r:'下がる',pt:'baixar, recuar',en:'go down',ex:'熱が下がった。'},
+{w:'さんか',r:'参加',pt:'participação',en:'participation',ex:'会議に参加する。'},
+{w:'しかたがない',r:'仕方がない',pt:'não tem jeito',en:'it can\'t be helped',ex:'雨だから仕方がない。'},
+{w:'しつれい',r:'失礼',pt:'grosseria; com licença',en:'rudeness; excuse me',ex:'失礼なことを言った。'},
+{w:'じゅうよう',r:'重要',pt:'importante',en:'important',ex:'重要な書類です。'},
+{w:'しゅうかん',r:'習慣',pt:'hábito, costume',en:'habit, custom',ex:'早起きの習慣がある。'},
+{w:'しょうじき',r:'正直',pt:'honesto',en:'honest',ex:'正直に言うと反対だ。'},
+{w:'しらべる',r:'調べる',pt:'pesquisar, checar',en:'look up, investigate',ex:'意味を辞書で調べる。'},
+{w:'すすむ',r:'進む',pt:'avançar',en:'advance',ex:'工事が進んでいる。'},
+{w:'せいかつ',r:'生活',pt:'vida cotidiana',en:'daily life',ex:'生活が苦しい。'},
+{w:'そうだん',r:'相談',pt:'consulta, conversa',en:'consultation',ex:'先生に相談した。'},
+{w:'そだてる',r:'育てる',pt:'criar, cultivar',en:'raise, bring up',ex:'子供を育てる。'},
+{w:'たしかめる',r:'確かめる',pt:'confirmar',en:'make sure',ex:'予約を確かめてください。'},
+{w:'たすける',r:'助ける',pt:'ajudar, salvar',en:'help, rescue',ex:'困っている人を助ける。'},
+{w:'たてる',r:'立てる',pt:'erguer; traçar (plano)',en:'set up; make (plan)',ex:'計画を立てる。'},
+{w:'ためる',r:'貯める',pt:'poupar, juntar',en:'save up',ex:'お金を貯めている。'},
+{w:'ちがい',r:'違い',pt:'diferença',en:'difference',ex:'二つの違いが分からない。'},
+{w:'ちゅうし',r:'中止',pt:'cancelamento',en:'cancellation',ex:'試合は中止になった。'},
+{w:'つうやく',r:'通訳',pt:'intérprete (oral)',en:'interpreter',ex:'通訳を頼んだ。'},
+{w:'つづける',r:'続ける',pt:'continuar',en:'continue',ex:'毎日続けることが大事だ。'},
+{w:'つとめる',r:'勤める',pt:'trabalhar em (empresa)',en:'be employed at',ex:'銀行に勤めている。'},
+{w:'であう',r:'出会う',pt:'encontrar-se (por acaso)',en:'encounter',ex:'駅で先生に出会った。'},
+{w:'てつだう',r:'手伝う',pt:'ajudar (numa tarefa)',en:'help out',ex:'引っ越しを手伝った。'},
+{w:'とうろく',r:'登録',pt:'registro, cadastro',en:'registration',ex:'会員登録が必要です。'},
+{w:'とどく',r:'届く',pt:'chegar (encomenda)',en:'arrive, reach',ex:'荷物が届いた。'},
+{w:'なおす',r:'直す',pt:'consertar, corrigir',en:'fix, correct',ex:'間違いを直す。'},
+{w:'なくなる',r:'無くなる',pt:'acabar, sumir',en:'run out, disappear',ex:'お金がなくなった。'},
+{w:'なやみ',r:'悩み',pt:'preocupação',en:'worry',ex:'悩みを打ち明ける。'},
+{w:'にがて',r:'苦手',pt:'não ser bom em, não gostar',en:'bad at, dislike',ex:'漢字が苦手です。'},
+{w:'ねっしん',r:'熱心',pt:'dedicado, entusiasmado',en:'enthusiastic',ex:'熱心に勉強する。'},
+{w:'のこる',r:'残る',pt:'sobrar, permanecer',en:'remain',ex:'仕事が残っている。'},
+{w:'はっけん',r:'発見',pt:'descoberta',en:'discovery',ex:'新しい星を発見した。'},
+{w:'はっぴょう',r:'発表',pt:'apresentação, anúncio',en:'announcement',ex:'結果が発表された。'},
+{w:'はんたい',r:'反対',pt:'oposição; oposto',en:'opposition; opposite',ex:'その案に反対だ。'},
+{w:'ひつよう',r:'必要',pt:'necessário',en:'necessary',ex:'許可が必要です。'},
+{w:'ふあん',r:'不安',pt:'ansiedade, insegurança',en:'anxiety',ex:'将来が不安だ。'},
+{w:'ふくざつ',r:'複雑',pt:'complicado',en:'complicated',ex:'複雑な気持ちだ。'},
+{w:'ふつう',r:'普通',pt:'normal, comum',en:'usual, ordinary',ex:'普通は八時に起きる。'},
+{w:'へんか',r:'変化',pt:'mudança',en:'change',ex:'気温の変化が激しい。'},
+{w:'ほうほう',r:'方法',pt:'método',en:'method',ex:'いい方法を考えよう。'},
+{w:'まちがえる',r:'間違える',pt:'errar, confundir',en:'make a mistake',ex:'道を間違えた。'},
+{w:'まもる',r:'守る',pt:'proteger; cumprir',en:'protect; keep (promise)',ex:'約束を守る。'},
+{w:'みつける',r:'見つける',pt:'encontrar',en:'find',ex:'いい店を見つけた。'},
+{w:'むかえる',r:'迎える',pt:'receber, ir buscar',en:'greet, pick up',ex:'空港に迎えに行く。'},
+{w:'むずかしい',r:'難しい',pt:'difícil',en:'difficult',ex:'難しい問題だ。'},
+{w:'めんどう',r:'面倒',pt:'trabalhoso, chato',en:'troublesome',ex:'面倒な手続きだ。'},
+{w:'もうしこむ',r:'申し込む',pt:'inscrever-se',en:'apply for',ex:'試験に申し込んだ。'},
+{w:'やくそく',r:'約束',pt:'promessa, compromisso',en:'promise, appointment',ex:'約束の時間に遅れた。'},
+{w:'やくにたつ',r:'役に立つ',pt:'ser útil',en:'be useful',ex:'この本は役に立つ。'},
+{w:'ゆうしょう',r:'優勝',pt:'vitória (campeonato)',en:'championship win',ex:'大会で優勝した。'},
+{w:'ようい',r:'用意',pt:'preparação',en:'preparation',ex:'夕食の用意をする。'},
+{w:'よてい',r:'予定',pt:'plano, agenda',en:'plan, schedule',ex:'来週の予定を教えて。'},
+{w:'よろこぶ',r:'喜ぶ',pt:'alegrar-se',en:'be glad',ex:'合格して喜んだ。'},
+{w:'りゆう',r:'理由',pt:'razão, motivo',en:'reason',ex:'遅れた理由を説明する。'},
+{w:'れんらく',r:'連絡',pt:'contato, aviso',en:'contact, notice',ex:'後で連絡します。'},
+{w:'わかれる',r:'別れる',pt:'separar-se, despedir-se',en:'part, break up',ex:'駅で友達と別れた。'},
+{w:'わりあい',r:'割合',pt:'proporção; relativamente',en:'ratio; relatively',ex:'合格者の割合が低い。'},
+{w:'いっしょうけんめい',r:'一生懸命',pt:'com todas as forças',en:'with all one\'s might',ex:'一生懸命練習した。'},
+{w:'きゅうに',r:'急に',pt:'de repente',en:'suddenly',ex:'急に雨が降ってきた。'},
+{w:'ぜったいに',r:'絶対に',pt:'absolutamente',en:'absolutely',ex:'絶対に諦めない。'},
+{w:'そのまま',r:'—',pt:'do jeito que está',en:'as it is',ex:'そのままにしておいて。'},
+{w:'だいたい',r:'大体',pt:'mais ou menos',en:'roughly',ex:'だいたい分かりました。'},
+{w:'とうとう',r:'—',pt:'finalmente (após espera)',en:'finally, at last',ex:'とうとう完成した。'},
+{w:'なるべく',r:'—',pt:'na medida do possível',en:'as much as possible',ex:'なるべく早く来て。'},
+{w:'はっきり',r:'—',pt:'claramente',en:'clearly',ex:'はっきり言ってください。'},
+{w:'ますます',r:'—',pt:'cada vez mais',en:'increasingly',ex:'ますます暑くなる。'},
+{w:'やっと',r:'—',pt:'enfim (com alívio)',en:'finally (relief)',ex:'やっと終わった。'}
+];
+
+/* ═══ N4 語彙 ═══ */
+const VOCAB_N4=[
+{w:'あいだ',r:'間',pt:'entre, durante',en:'between, while',ex:'夏休みの間、旅行した。'},
+{w:'あんしん',r:'安心',pt:'tranquilidade, alívio',en:'relief',ex:'無事で安心した。'},
+{w:'あんぜん',r:'安全',pt:'segurança',en:'safety',ex:'安全な場所へ行こう。'},
+{w:'いけん',r:'意見',pt:'opinião',en:'opinion',ex:'意見を聞かせてください。'},
+{w:'いじょう',r:'以上',pt:'mais de; acima',en:'more than',ex:'十人以上来た。'},
+{w:'いない',r:'以内',pt:'dentro de',en:'within',ex:'一週間以内に返す。'},
+{w:'うける',r:'受ける',pt:'receber; prestar (exame)',en:'receive; take (exam)',ex:'試験を受ける。'},
+{w:'うごく',r:'動く',pt:'mover-se, funcionar',en:'move, work',ex:'この時計は動かない。'},
+{w:'うつくしい',r:'美しい',pt:'belo',en:'beautiful',ex:'美しい景色だ。'},
+{w:'えんりょ',r:'遠慮',pt:'reserva, comedimento',en:'restraint, holding back',ex:'遠慮しないで食べて。'},
+{w:'おいわい',r:'お祝い',pt:'celebração, presente',en:'celebration, gift',ex:'合格のお祝いをする。'},
+{w:'おくれる',r:'遅れる',pt:'atrasar-se',en:'be late',ex:'電車が遅れた。'},
+{w:'おと',r:'音',pt:'som',en:'sound',ex:'変な音がする。'},
+{w:'おどろく',r:'驚く',pt:'surpreender-se',en:'be surprised',ex:'知らせに驚いた。'},
+{w:'おもいで',r:'思い出',pt:'lembrança',en:'memory',ex:'いい思い出になった。'},
+{w:'かいぎ',r:'会議',pt:'reunião',en:'meeting',ex:'会議は三時からです。'},
+{w:'かえる',r:'変える',pt:'mudar (algo)',en:'change (something)',ex:'予定を変えた。'},
+{w:'かならず',r:'必ず',pt:'sem falta',en:'without fail',ex:'必ず連絡します。'},
+{w:'かんがえ',r:'考え',pt:'ideia, pensamento',en:'idea, thought',ex:'いい考えですね。'},
+{w:'きかい',r:'機会',pt:'oportunidade',en:'opportunity',ex:'いい機会を逃した。'},
+{w:'きそく',r:'規則',pt:'regra',en:'rule',ex:'規則を守ってください。'},
+{w:'きぶん',r:'気分',pt:'humor, disposição',en:'mood, feeling',ex:'気分が悪い。'},
+{w:'きもち',r:'気持ち',pt:'sentimento',en:'feeling',ex:'気持ちが分かります。'},
+{w:'きょうみ',r:'興味',pt:'interesse',en:'interest',ex:'日本文化に興味がある。'},
+{w:'くうき',r:'空気',pt:'ar; clima (social)',en:'air; atmosphere',ex:'空気を読む。'},
+{w:'けいかく',r:'計画',pt:'plano',en:'plan',ex:'旅行の計画を立てる。'},
+{w:'けっか',r:'結果',pt:'resultado',en:'result',ex:'試験の結果が出た。'},
+{w:'げんき',r:'元気',pt:'saúde, ânimo',en:'energy, health',ex:'元気を出して。'},
+{w:'こうじ',r:'工事',pt:'obra, construção',en:'construction work',ex:'道路工事中です。'},
+{w:'こたえ',r:'答え',pt:'resposta',en:'answer',ex:'答えが分からない。'},
+{w:'こまる',r:'困る',pt:'ter dificuldade, ficar sem saída',en:'be in trouble',ex:'お金がなくて困っている。'},
+{w:'さいきん',r:'最近',pt:'recentemente',en:'recently',ex:'最近忙しい。'},
+{w:'さいご',r:'最後',pt:'último, final',en:'last, end',ex:'最後まで頑張る。'},
+{w:'さがす',r:'探す',pt:'procurar',en:'look for',ex:'アルバイトを探している。'},
+{w:'したく',r:'支度',pt:'preparativos',en:'preparations',ex:'出かける支度をする。'},
+{w:'しっぱい',r:'失敗',pt:'fracasso, erro',en:'failure',ex:'失敗を恐れるな。'},
+{w:'しなもの',r:'品物',pt:'mercadoria',en:'goods',ex:'いい品物ですね。'},
+{w:'しゅみ',r:'趣味',pt:'hobby',en:'hobby',ex:'趣味は読書です。'},
+{w:'じゅんび',r:'準備',pt:'preparação',en:'preparation',ex:'準備はできましたか。'},
+{w:'しょうかい',r:'紹介',pt:'apresentação (de alguém)',en:'introduction',ex:'友達を紹介する。'},
+{w:'しんぱい',r:'心配',pt:'preocupação',en:'worry',ex:'心配しないで。'},
+{w:'すぎる',r:'過ぎる',pt:'passar, exceder',en:'pass, exceed',ex:'もう十時を過ぎた。'},
+{w:'すごす',r:'過ごす',pt:'passar (tempo)',en:'spend (time)',ex:'休みを家で過ごした。'},
+{w:'すすめる',r:'勧める',pt:'recomendar',en:'recommend',ex:'この本を勧めます。'},
+{w:'せいかく',r:'性格',pt:'personalidade',en:'personality',ex:'明るい性格だ。'},
+{w:'せつめい',r:'説明',pt:'explicação',en:'explanation',ex:'もう一度説明してください。'},
+{w:'せわ',r:'世話',pt:'cuidado, ajuda',en:'care, help',ex:'お世話になりました。'},
+{w:'そうじ',r:'掃除',pt:'limpeza',en:'cleaning',ex:'部屋を掃除する。'},
+{w:'たいくつ',r:'退屈',pt:'entediante',en:'boring',ex:'退屈な話だった。'},
+{w:'たのしみ',r:'楽しみ',pt:'expectativa, prazer',en:'something to look forward to',ex:'旅行が楽しみだ。'},
+{w:'たりる',r:'足りる',pt:'ser suficiente',en:'be enough',ex:'お金が足りない。'},
+{w:'ちゅうい',r:'注意',pt:'atenção; advertência',en:'caution; warning',ex:'車に注意してください。'},
+{w:'つかれる',r:'疲れる',pt:'cansar-se',en:'get tired',ex:'今日はとても疲れた。'},
+{w:'つごう',r:'都合',pt:'conveniência, disponibilidade',en:'convenience, circumstances',ex:'都合が悪いです。'},
+{w:'つたえる',r:'伝える',pt:'transmitir, avisar',en:'convey, tell',ex:'課長に伝えてください。'},
+{w:'つもり',r:'—',pt:'intenção',en:'intention',ex:'来年留学するつもりだ。'},
+{w:'でかける',r:'出かける',pt:'sair',en:'go out',ex:'今から出かけます。'},
+{w:'てん',r:'点',pt:'ponto, nota',en:'point, score',ex:'その点が問題だ。'},
+{w:'とくに',r:'特に',pt:'especialmente',en:'especially',ex:'特に問題はない。'},
+{w:'なおる',r:'治る・直る',pt:'curar-se; consertar-se',en:'get better; be fixed',ex:'風邪が治った。'},
+{w:'なれる',r:'慣れる',pt:'acostumar-se',en:'get used to',ex:'日本の生活に慣れた。'},
+{w:'にる',r:'似る',pt:'parecer-se',en:'resemble',ex:'父に似ている。'},
+{w:'ねだん',r:'値段',pt:'preço',en:'price',ex:'値段が高すぎる。'},
+{w:'のりかえる',r:'乗り換える',pt:'baldear, trocar de trem',en:'transfer (trains)',ex:'新宿で乗り換える。'},
+{w:'はず',r:'—',pt:'era de se esperar',en:'supposed to',ex:'彼は来るはずだ。'},
+{w:'はずかしい',r:'恥ずかしい',pt:'envergonhado',en:'embarrassed',ex:'間違えて恥ずかしかった。'},
+{w:'ひえる',r:'冷える',pt:'esfriar',en:'get cold',ex:'夜は冷えますよ。'},
+{w:'ひらく',r:'開く',pt:'abrir-se; realizar',en:'open; hold (event)',ex:'ドアが開いた。'},
+{w:'ふとる',r:'太る',pt:'engordar',en:'gain weight',ex:'最近太ってきた。'},
+{w:'ふべん',r:'不便',pt:'inconveniente',en:'inconvenient',ex:'駅から遠くて不便だ。'},
+{w:'ほうそう',r:'放送',pt:'transmissão',en:'broadcast',ex:'ニュースを放送する。'},
+{w:'まにあう',r:'間に合う',pt:'chegar a tempo',en:'be in time',ex:'ぎりぎり間に合った。'},
+{w:'むり',r:'無理',pt:'impossível, forçado',en:'impossible, unreasonable',ex:'それは無理です。'},
+{w:'もし',r:'—',pt:'se (hipótese)',en:'if',ex:'もし雨なら中止です。'},
+{w:'やくそくする',r:'約束する',pt:'prometer',en:'promise',ex:'必ず来ると約束した。'},
+{w:'やめる',r:'辞める・止める',pt:'largar, parar',en:'quit, stop',ex:'たばこをやめた。'},
+{w:'ゆしゅつ',r:'輸出',pt:'exportação',en:'export',ex:'車を輸出する。'},
+{w:'よう',r:'用',pt:'assunto, coisa a fazer',en:'errand, business',ex:'何か用ですか。'},
+{w:'よやく',r:'予約',pt:'reserva',en:'reservation',ex:'レストランを予約した。'},
+{w:'りよう',r:'利用',pt:'uso, utilização',en:'use',ex:'図書館を利用する。'},
+{w:'るす',r:'留守',pt:'estar fora de casa',en:'being away',ex:'昨日は留守でした。'},
+{w:'わかす',r:'沸かす',pt:'ferver (água)',en:'boil (water)',ex:'お湯を沸かす。'},
+{w:'わけ',r:'訳',pt:'motivo',en:'reason',ex:'そういうわけで遅れた。'},
+{w:'わすれもの',r:'忘れ物',pt:'objeto esquecido',en:'lost item',ex:'電車に忘れ物をした。'}
+];
+
+/* ═══ 罠 · ARMADILHAS DE TRADUÇÃO LITERAL (PT/EN → JP) ═══ */
+const TRAPS=[
+{pt:'Meu amigo me deu um presente.',en:'My friend gave me a present.',
+ o:['友だちがプレゼントをあげました','友だちがプレゼントをくれました','友だちにプレゼントをもらいました','友だちがプレゼントをやりました'],a:1,
+ why:'PT tem <b>um</b> verbo "dar"; o japonês tem dois. <span class="o">くれる</span> = alguém dá <b>para mim / para o meu lado</b>. <span class="x">あげる</span> = eu dou para fora. Se o presente vem na sua direção e o sujeito é o amigo → sempre <b>くれる</b>. (もらう também é correto, mas muda o sujeito para 私: 私は友だちにもらった.)'},
+{pt:'Eu conheço o Tanaka.',en:'I know Tanaka.',
+ o:['田中さんを知ります','田中さんを知っています','田中さんを知りました','田中さんが知っています'],a:1,
+ why:'知る no presente simples <b>não existe</b> com esse sentido. 知っている não é "estou sabendo" (o ている aqui é <b>estado</b>, não progressivo). Mesma família: 住んでいる (moro), 結婚している (sou casado), 持っている (tenho).'},
+{pt:'Tem um gato debaixo da mesa.',en:'There is a cat under the table.',
+ o:['テーブルの下に猫があります','テーブルの下に猫がいます','テーブルの下は猫がいます','テーブルの下で猫がいます'],a:1,
+ why:'O PT usa "ter/haver" para tudo. O japonês separa: <b>いる</b> = seres vivos que se movem, <b>ある</b> = objetos. E o lugar de existência leva <b>に</b>, nunca で (で = onde uma <b>ação</b> acontece).'},
+{pt:'A porta abriu (sozinha).',en:'The door opened.',
+ o:['ドアを開けました','ドアが開きました','ドアが開けました','ドアを開きました'],a:1,
+ why:'PT usa o mesmo verbo "abrir" para os dois casos. Japonês tem <b>pares</b>: 開ける (eu abro, leva を) / 開く (abre-se, leva が). Estude em pares: 閉める・閉まる / 始める・始まる / 入れる・入る / 落とす・落ちる / 決める・決まる.'},
+{pt:'Eu gosto de você.',en:'I like you.',
+ o:['君を好きです','君が好きです','君に好きです','君は好きます'],a:1,
+ why:'好き é <b>adjetivo な</b>, não verbo. Literalmente "você é agradável (para mim)" — por isso o objeto leva <b>が</b>. Mesma regra: 上手・下手・分かる・できる・要る・ほしい todos levam が.'},
+{pt:'Ele quer ir ao Japão.',en:'He wants to go to Japan.',
+ o:['彼は日本に行きたいです','彼は日本に行きたがっています','彼は日本に行きたいだ','彼が日本に行きほしい'],a:1,
+ why:'～たい só para <b>a própria</b> vontade (ou pergunta direta). Para terceiros: ～たがっている, ～たいそうです ou ～たいようです. O japonês não deixa você afirmar o coração alheio.'},
+{pt:'Não é muito caro.',en:'It\'s not very expensive.',
+ o:['とても高くないです','あまり高くないです','たくさん高くないです','ずいぶん高くないです'],a:1,
+ why:'とても só combina com <b>afirmativo</b>. Com negativo o par obrigatório é <b>あまり</b>. Outros pares fixos: ぜんぜん＋negativo, めったに＋negativo, 必ずしも＋negativo.'},
+{pt:'Emprestei meu carro para ele.',en:'I lent him my car.',
+ o:['彼に車を借りました','彼に車を貸しました','彼から車を貸しました','彼に車を借してもらいました'],a:1,
+ why:'⚠ ARMADILHA PORTUGUESA: "emprestar" em PT serve para <b>dar</b> e <b>pegar</b>. Japonês separa: <b>貸す</b> = eu dou emprestado. <b>借りる</b> = eu pego emprestado. Truque: 貸す tem す de "サービス" (eu sirvo).'},
+{pt:'Aprendi japonês com o professor Sato.',en:'I learned Japanese from Prof. Sato.',
+ o:['佐藤先生に日本語を教えました','佐藤先生に日本語を習いました','佐藤先生が日本語を習いました','佐藤先生で日本語を教わりました'],a:1,
+ why:'教える = ensinar (eu passo). 習う/教わる = aprender (eu recebo). Mesma lógica de 貸す/借りる. A partícula に marca <b>a fonte</b> aqui.'},
+{pt:'Estou usando óculos e um chapéu.',en:'I\'m wearing glasses and a hat.',
+ o:['めがねを着て、帽子を着ています','めがねをかけて、帽子をかぶっています','めがねをはいて、帽子を着ています','めがねをつけて、帽子をはいています'],a:1,
+ why:'"Usar/vestir" vira 5 verbos: <b>着る</b> (tronco), <b>はく</b> (pernas/pés), <b>かぶる</b> (cabeça), <b>かける</b> (óculos), <b>する</b> (acessórios: 時計・ネクタイ・指輪).'},
+{pt:'Se chover, não vou.',en:'If it rains, I won\'t go.',
+ o:['雨が降ると、行きません','雨が降ったら、行きません','雨が降れば、行きません','雨が降るなら、行きません'],a:1,
+ why:'PT tem só "se". Japonês tem 4. <b>と</b> = consequência automática, proíbe vontade/negação na 2ª parte. <b>たら</b> = o mais livre, aceita intenção → é o certo aqui. <b>ば</b> = condição genérica, evita com verbos de ação+intenção. <b>なら</b> = "se é o caso de", reage ao que o outro disse.'},
+{pt:'Vou estudar para passar no exame.',en:'I\'ll study in order to pass the exam.',
+ o:['合格するために勉強します','合格するように勉強します','合格するのに勉強します','合格するので勉強します'],a:0,
+ why:'<b>ために</b> = objetivo que <b>eu controlo</b> (verbo volitivo). <b>ように</b> = objetivo <b>fora do meu controle</b> ou com potencial/negativo: 合格できるように, 忘れないように. Roberto: 「合格するために」e「合格できるように」ambas existem — a diferença é o verbo.'},
+{pt:'Quando eu for ao Japão, quero comprar isso.',en:'When I go to Japan, I want to buy this.',
+ o:['日本に行った時、これを買いたい','日本に行く時、これを買いたい','日本に行っている時、これを買いたい','日本に行くの時、これを買いたい'],a:1,
+ why:'O tempo dentro de 時 é <b>relativo à ação principal</b>, não à realidade. 行く時 = antes/no caminho (compra ainda não fez a viagem). 行った時 = já chegou. Se você compra <b>no Japão</b>, o correto é 日本に行った時. Aqui, "comprar isso" = souvenir antes de embarcar → 行く時. Leia sempre a lógica, não traduza o "quando".'},
+{pt:'Está frio, não está? / né?',en:'It\'s cold, isn\'t it?',
+ o:['寒いですね','寒いですか','寒くないですか','寒いでしょうか'],a:0,
+ why:'ね busca <b>concordância compartilhada</b>. Não confunda com よ (informar algo novo) nem com か (pergunta real). Erro comum de europeu: usar か demais, o que soa a interrogatório.'},
+{pt:'Você não vem? — Não, eu vou.',en:'Aren\'t you coming? — No, I am.',
+ o:['はい、行きます','いいえ、行きます','はい、行きません','ええ、行きません'],a:1,
+ why:'Em japonês はい/いいえ respondem à <b>proposição da pergunta</b>, igual ao PT aqui — mas cuidado no inverso: 「行かないんですか」→「はい、行きません」= "Isso, não vou". O EN "yes" faria você errar. Sempre confirme: はい = "sua frase está certa".'},
+{pt:'Consigo ver o mar da janela.',en:'I can see the sea from the window.',
+ o:['窓から海が見られます','窓から海が見えます','窓から海を見えます','窓から海が見ます'],a:1,
+ why:'<b>見える</b> = entra nos olhos espontaneamente (potencial natural). <b>見られる</b> = tenho a possibilidade/permissão de assistir. Par idêntico: 聞こえる (ouço sem querer) vs 聞ける (posso escutar).'},
+{pt:'Ontem, muito obrigado.',en:'Thank you for yesterday.',
+ o:['昨日はありがとうございます','昨日はありがとうございました','昨日はありがとうです','昨日でありがとうございました'],a:1,
+ why:'Ação <b>concluída</b> → forma passada ございました. Usar o presente para algo de ontem soa desatento. Igual: すみませんでした, ごちそうさまでした.'},
+{pt:'Fui obrigado a esperar duas horas pelo chefe.',en:'I was made to wait two hours by my boss.',
+ o:['部長は二時間待たせました','部長に二時間待たされました','部長に二時間待ちました','部長が二時間待たれました'],a:1,
+ why:'<b>Causativo-passivo</b> (させられる): eu fui forçado e não gostei. 待つ→待たせる→待たされる. Português precisa de perífrase ("fui obrigado a"); japonês resolve num verbo. Aparece muito no N2.'},
+{pt:'Choveu (e isso me atrapalhou).',en:'It rained on me.',
+ o:['雨が降りました','雨に降られました','雨を降らせました','雨が降らされました'],a:1,
+ why:'<b>Passiva de sofrimento</b> (迷惑の受身) — não existe em PT nem EN. 降られる = a chuva caiu e me prejudicou. Outros: 友だちに来られて勉強できなかった / 子供に泣かれた.'},
+{pt:'Estou com saudade de casa.',en:'I miss home.',
+ o:['家が寂しいです','家が恋しいです','家をミスします','家が懐かしいです'],a:1,
+ why:'"Saudade" não tem equivalente único. <b>恋しい</b> = sinto falta de algo/lugar. <b>懐かしい</b> = nostalgia calorosa do passado. <b>会いたい</b> = sinto falta de uma pessoa. <b>寂しい</b> = eu me sinto sozinho. Escolha pelo foco, nunca traduza direto.'},
+{pt:'Ele disse que vem amanhã.',en:'He said he\'s coming tomorrow.',
+ o:['彼は明日来ると思います','彼は明日来るそうです','彼は明日来そうです','彼は明日来るようです'],a:1,
+ why:'<b>そうです</b> após forma simples = <b>ouvi dizer</b>. Após ます形/adjetivo = <b>parece que vai</b> (雨が降りそう). Duas gramáticas, uma aparência. O N2 adora testar isso.'},
+{pt:'Deixei a janela aberta (de propósito).',en:'I left the window open.',
+ o:['窓が開いています','窓を開けています','窓が開けてあります','窓を開けました'],a:2,
+ why:'<b>てある</b> = alguém fez de propósito e o resultado permanece (com が). <b>ている</b> com intransitivo = estado natural. 開いている = está aberta (sem falar de agente). 開けてある = alguém deixou aberta com intenção.'},
+{pt:'Vou fazer a lição antes que eu esqueça.',en:'I\'ll do it before I forget.',
+ o:['忘れる前にやっておきます','忘れないうちにやっておきます','忘れてからやっておきます','忘れるまでやっておきます'],a:1,
+ why:'<b>～ないうちに</b> = enquanto ainda não acontece. 前に também existiria, mas ないうちに é o que o N2 cobra e carrega o senso de "aproveitar a janela". Compare: 暗くならないうちに帰ろう.'},
+{pt:'Só me resta desistir.',en:'I have no choice but to give up.',
+ o:['諦めるしかない','諦めるべきだ','諦めなければならない','諦めるはずだ'],a:0,
+ why:'O EN "have to / must" cobre 4 estruturas distintas: <b>しかない</b> (só resta), <b>なければならない</b> (regra externa), <b>べきだ</b> (dever moral), <b>ざるを得ない</b> (sem alternativa, formal). Não são intercambiáveis.'},
+{pt:'Ele não deve ter vindo — o carro não está aqui.',en:'He must not have come — the car isn\'t here.',
+ o:['彼は来なかったに違いない','彼は来ないべきだ','彼は来ないはずがない','彼は来まい'],a:0,
+ why:'Dedução forte sobre o <b>passado</b> → 過去形 + に違いない. Erro típico: usar べき (dever) para dedução, por causa do "must" do inglês.'},
+{pt:'Este livro é fácil de ler.',en:'This book is easy to read.',
+ o:['この本は読むが易しい','この本は読みやすい','この本は読むのが易しい','この本は読めやすい'],a:1,
+ why:'<b>ます形 + やすい/にくい</b> forma um adjetivo novo. 読みやすい, 使いにくい, 分かりやすい. Traduzir "fácil de" com 易しい dá frase pesada e antinatural.'},
+{pt:'Eu, eu acho que eu vou eu mesmo.',en:'I think I\'ll go myself.',
+ o:['私は私が私で行くと私は思います','自分で行こうと思います','私は自分は行くと思っています','私が私自身行きます'],a:1,
+ why:'PT e EN repetem o sujeito; japonês <b>apaga</b> tudo que o contexto já dá. Excesso de 私 soa infantil ou agressivo. Regra do N2: se dá pra omitir, omita.'},
+{pt:'Trabalho numa empresa japonesa há 3 anos.',en:'I\'ve worked at a Japanese company for 3 years.',
+ o:['三年間日本の会社で働きます','三年前から日本の会社で働いています','三年間日本の会社で働きました','三年から日本の会社に働いています'],a:1,
+ why:'Ação que começou no passado e <b>continua</b> → ている. O presente simples 働きます seria hábito futuro. E empresa como <b>local de ação</b> leva で (に só com 勤める).'},
+{pt:'Vou ver se ele está bem.',en:'I\'ll check if he\'s okay.',
+ o:['彼が大丈夫かどうか見てみます','彼は大丈夫があるか見ます','彼が大丈夫だと見てみます','彼が大丈夫なら見てみます'],a:0,
+ why:'"Se" de <b>dúvida indireta</b> = かどうか (nunca もし/たら). E ～てみる = experimentar/verificar. Dois pontos que aparecem juntos com frequência no N2.'},
+{pt:'Acabei comendo tudo.',en:'I ended up eating it all.',
+ o:['全部食べ終わりました','全部食べてしまいました','全部食べておきました','全部食べています'],a:1,
+ why:'<b>てしまう</b> ≠ "terminar de". Carrega <b>arrependimento</b> ou conclusão irreversível — exatamente o PT "acabar por". 食べ終わる seria neutro ("terminei de comer"). Na fala: 食べちゃった.'}
+];
+
+/* ═══ 過去問 · QUESTÕES ESTILO JLPT N2 ═══ */
+const MONDAI=[
+{s:'文法',q:'この問題は難しいので、先生に相談した＿決めたほうがいい。',o:['上で','上に','末に','うえは'],a:0,ex:'<b>～た上で</b> = fazer A e, <b>com base nisso</b>, decidir B. 上に = "além de". 末に = "depois de muito...(esforço)". Aqui a consulta fundamenta a decisão.'},
+{s:'文法',q:'彼は学生である＿、会社を経営している。',o:['一方で','ながらも','おかげで','からには'],a:1,ex:'<b>ながらも</b> = concessivo ("embora seja"). 一方で existe mas exige contraste entre dois lados, não entre status e ação da mesma pessoa. Cuidado: este ながら não é "enquanto".'},
+{s:'文法',q:'部長が戻り＿、すぐにご連絡いたします。',o:['次第','とたん','うちに','かぎり'],a:0,ex:'<b>ます形＋次第</b> = "assim que", só para <b>futuro</b>. とたん exige passado. Note que 次第 depois de <b>substantivo</b> significa "depende de" — função totalmente diferente.'},
+{s:'文法',q:'一度約束した＿、必ず守るべきだ。',o:['ものの','からには','わりに','ばかりに'],a:1,ex:'<b>からには</b> = "já que (fez), então naturalmente...". Sempre seguido de dever/determinação (べき・つもり・なければならない).'},
+{s:'文法',q:'この機械は操作が複雑で、素人には扱い＿。',o:['かねない','かねる','がたい','ようがない'],a:2,ex:'<b>ます形＋がたい</b> = difícil de fazer (psicológica ou praticamente). かねる seria recusa educada de atendimento; かねない significa "pode acabar acontecendo (algo ruim)".'},
+{s:'文法',q:'努力もし＿、いい結果を求めるのは無理だ。',o:['ないで','ずに','ないことには','なくて'],a:2,ex:'<b>ないことには</b> = "se não fizer, não dá". A oração final <b>precisa</b> ser negativa — 無理だ cumpre isso.'},
+{s:'文法',q:'彼女は寂しさ＿、毎日電話をかけてきた。',o:['のあまり','のうえ','のもとで','のせいで'],a:0,ex:'<b>N のあまり</b> = "de tanto (emoção)". Só com substantivos de sentimento intenso: 悲しみ・喜び・驚き・心配.'},
+{s:'文法',q:'雨が降ろうが降る＿、試合は行われる。',o:['まいが','ないが','ものが','ずが'],a:0,ex:'<b>～うが～まいが</b> = "quer... quer não". まい é a negativa volitiva clássica. Padrão fixo do N2.'},
+{s:'文法',q:'この地域では、伝統的な祭りが今も行われ＿。',o:['つつある','つつ','ている一方','かけている'],a:0,ex:'Cuidado: 行われている seria o natural. Mas entre as opções, <b>つつある</b> indica processo em curso. Note que つつある prefere verbos de <b>mudança</b> (増える・減る・変わる) — questões assim testam se você lê o verbo, não só a gramática.'},
+{s:'文法',q:'今の実力＿、合格は難しいだろう。',o:['からして','からには','として','にとって'],a:0,ex:'<b>N からして</b> = "a julgar por / já a começar por". からには exige determinação depois. として = "na qualidade de".'},
+{s:'文法',q:'テストの結果＿、クラスが決まります。',o:['次第で','次第に','しだいでは','に次第'],a:0,ex:'<b>N 次第で</b> = "depende de / conforme". 次第に (advérbio) = "gradualmente". Mesma palavra, três usos — o N2 explora isso.'},
+{s:'文法',q:'彼の説明は、専門家＿分かりにくかった。',o:['にとっても','に対しても','についても','として'],a:0,ex:'<b>にとって</b> = do ponto de vista de (com avaliação: 分かりにくい). に対して seria "direcionado ao especialista". Este é o erro nº1 de falantes de línguas latinas.'},
+{s:'文法',q:'子供＿、大人でもこのゲームは楽しめる。',o:['のみならず','をはじめ','に限らず','どころか'],a:2,ex:'<b>に限らず</b> = "não se limitando a". のみならず também caberia semanticamente, mas exige forma 普通形 ou N＋のみならず — aqui ambas funcionam; に限らず é a resposta mais natural com 「でも」na segunda parte.'},
+{s:'文法',q:'彼が犯人である＿ない。証拠がそろっている。',o:['わけでは','に違い','はずが','ものでは'],a:1,ex:'<b>に違いない</b> = certeza forte. わけではない negaria; はずがない diria que é impossível. Leia a segunda frase (as provas existem) para escolher a polaridade.'},
+{s:'文法',q:'この薬を飲め＿、すぐに熱が下がるというものでもない。',o:['ば','たら','と','なら'],a:0,ex:'Padrão fixo <b>～ばというものでもない</b> = "não é que basta fazer X". Com たら/と a colocação quebra.'},
+{s:'文法',q:'留学し＿、語学力だけでなく視野も広がった。',o:['たとたん','たおかげで','たばかりに','てはじめて'],a:1,ex:'<b>おかげで</b> = graças a (resultado <b>bom</b>). ばかりに exige resultado ruim; とたん exige evento instantâneo e surpreendente.'},
+{s:'文法',q:'締め切りが近いので、休んでいる＿。',o:['ものではない','わけにはいかない','ようがない','ほかならない'],a:1,ex:'<b>わけにはいかない</b> = não posso me dar ao luxo (impedimento moral/circunstancial), não incapacidade física.'},
+{s:'文法',q:'値段が高い＿、品質は期待外れだった。',o:['わりに','だけに','からこそ','ばかりに'],a:0,ex:'<b>わりに</b> = "para o que se esperaria". だけに daria resultado <b>coerente</b> com a expectativa (高いだけに品質もいい).'},
+{s:'語彙',q:'彼の意見は＿で、賛成も反対もしにくい。',o:['あいまい','てきとう','じみ','むだ'],a:0,ex:'<b>あいまい</b> = vago/ambíguo. 適当 tem duplo sentido (apropriado / feito de qualquer jeito) e não cabe aqui.'},
+{s:'語彙',q:'この仕事は経験が＿なので、新人には無理だ。',o:['欠かせない','足りない','required','余る'],a:0,ex:'<b>欠かせない</b> = indispensável. Vem de 欠く (faltar) + potencial negativo = "não se pode deixar faltar".'},
+{s:'語彙',q:'台風の＿で、電車が止まった。',o:['影響','効果','結果','原因'],a:0,ex:'<b>影響</b> = influência (algo externo afeta). 効果 = efeito desejado de uma ação. 原因 seria a causa em si: 台風が原因で também é possível — mas com <b>の＿で</b> o encaixe natural é 影響.'},
+{s:'語彙',q:'彼女は約束を＿、二度と信用されなくなった。',o:['裏切って','断って','失って','逃して'],a:0,ex:'<b>裏切る</b> = trair (expectativa/confiança). Colocação fixa: 期待を裏切る・信頼を裏切る.'},
+{s:'語彙',q:'食生活が＿と、健康に悪い。',o:['偏る','傾く','曲がる','ずれる'],a:0,ex:'<b>偏る</b> = desequilibrar-se, ser tendencioso (nutrição, opinião). 傾く é inclinar-se fisicamente ou tendência geral (傾向).'},
+{s:'語彙',q:'この店は素材に＿いる。',o:['こだわって','かかわって','関して','基づいて'],a:0,ex:'<b>こだわる</b> = ser exigente/obcecado por (em contexto positivo hoje). 関わる = estar envolvido.'},
+{s:'語彙',q:'彼は責任を＿、辞任した。',o:['果たさずに','守らずに','終わらずに','済まさずに'],a:0,ex:'Colocação fixa: <b>責任を果たす</b> = cumprir a responsabilidade. Memorize verbos por par com o substantivo, não isolados.'},
+{s:'語彙',q:'先生に＿された通りに書きました。',o:['指示','指導','命令','注文'],a:0,ex:'<b>指示</b> = instrução concreta. 指導 = orientação prolongada. 命令 é ordem (militar/hierárquica forte). 注文 = pedido em loja.'},
+{s:'類義',q:'「今年こそ合格したい」に最も近いのは：',o:['今年は必ず合格したい','今年も合格したい','今年しか合格できない','今年だけ合格したい'],a:0,ex:'<b>こそ</b> = ênfase de "desta vez sim" (implica tentativas anteriores). Não é だけ (só) nem も (também).'},
+{s:'類義',q:'「彼の話は信じがたい」に最も近いのは：',o:['信じるのが難しい','信じてはいけない','信じるはずがない','信じたくない'],a:0,ex:'<b>～がたい</b> = difícil de fazer. Não é proibição nem desejo.'},
+{s:'類義',q:'「雨に降られて、服がぬれた」に最も近いのは：',o:['雨が降って困った','自分で雨を降らせた','雨を待っていた','雨が降りそうだった'],a:0,ex:'Passiva de <b>sofrimento</b>: o falante foi prejudicado pelo evento. PT precisa de "acabei pegando chuva".'},
+{s:'類義',q:'「参加するかしないかは君次第だ」に最も近いのは：',o:['君が決めることだ','君は参加すべきだ','君は参加できない','君も参加する'],a:0,ex:'<b>N次第だ</b> = depende de N. Aqui a decisão é do interlocutor.'},
+{s:'類義',q:'「彼が来るわけがない」に最も近いのは：',o:['彼は絶対に来ない','彼は来ないかもしれない','彼は来なくてもいい','彼は来ないことにした'],a:0,ex:'<b>わけがない</b> = 0% de possibilidade. Compare com わけではない ("não é bem que...").'},
+{s:'並べ替え',q:'この映画は　子供　＿　＿　★　＿　人気がある。【★に入るのは？】',o:['に','限らず','大人','にも'],a:2,ex:'Ordem correta: 子供【に】【限らず】【大人】【にも】人気がある。→ ★ (3ª lacuna) = <b>大人</b>.<br>Método do 並べ替え: <b>não tente preencher da esquerda para a direita</b>. Ache primeiro o bloco fixo (aqui 「に限らず」), cole-o, e o resto se encaixa sozinho.'},
+{s:'並べ替え',q:'努力　＿　＿　★　＿　結果は出ないだろう。【★に入るのは？】',o:['し','ない','ことに','は'],a:2,ex:'Ordem correta: 努力【し】【ない】【ことに】【は】結果は出ない。→ ★ = <b>ことに</b>.<br>Bloco fixo: 「～ないことには」. Confirme sempre a polaridade: a oração final é negativa (出ない), o que valida o padrão.'},
+{s:'並べ替え',q:'この仕事は　＿　＿　★　＿　ものではない。【★に入るのは？】',o:['誰でも','簡単に','やれる','という'],a:2,ex:'Ordem correta: 誰でも【簡単に】【やれる】【という】ものではない。→ ★ = <b>やれる</b>.<br>Bloco fixo: 「～というものではない」= "não é que baste...". Encaixe o bloco no fim e monte para trás.'},
+{s:'読解',p:'近年、日本では「働き方改革」が進められている。長時間労働を減らし、社員が自分の時間を持てるようにするのが目的だ。しかし、実際には仕事量が変わらないまま労働時間だけが短縮され、かえって社員の負担が増えたという声も少なくない。制度を変えるだけでなく、仕事の進め方そのものを見直さないかぎり、真の改革は難しいだろう。',
+ q:'筆者が最も言いたいことは何か。',o:['労働時間を短くすれば改革は成功する','仕事の量ややり方を見直さなければ改革は実現しない','社員は自分の時間を持つべきではない','働き方改革はすでに成功している'],a:1,ex:'A chave está na última frase: <b>～ないかぎり…難しい</b> = "a menos que... será difícil". Em textos do N2, a <b>tese vem quase sempre no último período</b>, e conectores como しかし・かえって・～ないかぎり marcam a virada. Sublinhe-os antes de ler as alternativas.'},
+{s:'読解',p:'外国語を学ぶとき、母語に訳して理解しようとする人は多い。確かに初級のうちは有効だ。しかし中級以上になると、この習慣がかえって上達を妨げることがある。言葉には、他の言語にそのまま置き換えられない使い分けが存在するからだ。訳すのではなく、その言葉が使われる場面ごと覚えることが求められる。',
+ q:'筆者によると、中級以上の学習者に必要なのは何か。',o:['母語に正確に訳すこと','場面と一緒に言葉を覚えること','初級の勉強をやり直すこと','辞書を使わないこと'],a:1,ex:'Roberto — este texto é sobre <b>você</b>. 「訳すのではなく、場面ごと覚える」: não traduza, memorize a <b>situação</b>. Nota de leitura: 「かえって」sinaliza inversão da expectativa e quase sempre precede a tese do autor.'},
+{s:'読解',p:'図書館の利用案内：本の貸出は一人五冊まで、期間は二週間です。ただし、他の利用者の予約が入っていない場合に限り、一回だけ延長できます。延長は返却日の前日までにカウンターまたはウェブサイトでお申し込みください。返却が遅れた場合、遅れた日数だけ次回の貸出ができなくなります。',
+ q:'延長について、正しいものはどれか。',o:['何回でも延長できる','予約があっても延長できる','返却日の前日までに申し込む必要がある','電話でのみ申し込める'],a:2,ex:'Questões de <b>informação prática</b> (情報検索) se resolvem caçando as condições: 「一回だけ」「予約が入っていない場合に限り」「前日までに」「カウンターまたはウェブサイト」. Leia a pergunta <b>primeiro</b>, depois varra o texto atrás da condição — não leia tudo.'},
+{s:'文法',q:'医者に言われた＿、お酒をやめることにした。',o:['ものだから','ものの','ものなら','ものか'],a:0,ex:'<b>ものだから</b> = "é que..." (justificativa). ものの seria concessivo; ものなら hipótese improvável; ものか negação enfática.'},
+{s:'文法',q:'あの人に頼んだ＿、断られるに決まっている。',o:['ところで','ところが','ところに','ところを'],a:0,ex:'<b>Vた形＋ところで</b> = "mesmo que faça, não adianta". Sempre com resultado negativo/inútil.'},
+{s:'文法',q:'先生のご都合を＿上で、日程を決めます。',o:['伺った','聞かれた','お聞きになった','うかがわれた'],a:0,ex:'<b>伺う</b> = forma humilde de 聞く (eu pergunto). お聞きになる seria honorífica (o professor pergunta) — erro clássico de inverter 尊敬語 e 謙譲語.'},
+{s:'文法',q:'こちらの資料をご覧＿ください。',o:['になって','くださって','いただいて','に'],a:0,ex:'<b>ご覧になる</b> = honorífico de 見る. 「ご覧ください」também é correto; entre as opções, ご覧になってください é a forma completa aceitável.'},
+{s:'語彙',q:'この製品は若者を＿にした商品だ。',o:['対象','対して','向き','相手'],a:0,ex:'<b>N を対象にする</b> = ter como público-alvo. Colocação fixa muito frequente em textos de negócios do N2.'},
+{s:'語彙',q:'スマートフォンが＿したことで、生活が大きく変わった。',o:['普及','拡大','増加','発展'],a:0,ex:'<b>普及</b> = difundir-se amplamente entre a população (tecnologia, hábito). 拡大 = expandir em tamanho; 増加 = aumentar em número.'},
+{s:'語彙',q:'塩分を＿ように医者に言われた。',o:['控える','抑える','止める','減らす'],a:0,ex:'<b>控える</b> = moderar/abster-se (saúde, consumo). 抑える = reprimir (emoção, custo). Ambas são "conter" em PT — a colocação decide.'},
+{s:'類義',q:'「彼の努力を認めざるを得ない」に最も近いのは：',o:['認めないわけにはいかない','認めるつもりはない','認めるはずがない','認めてはいけない'],a:0,ex:'<b>ざるを得ない</b> ≒ <b>ないわけにはいかない</b>: ausência de alternativa. Este par aparece direto no 言い換え類義.'},
+{s:'類義',q:'「三日間にわたって会議が行われた」に最も近いのは：',o:['三日間ずっと会議が続いた','三日目に会議があった','三日以内に会議がある','三日おきに会議がある'],a:0,ex:'<b>にわたって</b> = ao longo de toda a extensão. Não confunda com ～おきに (a cada intervalo) nem com ～以内 (dentro de).'}
+];
+
+/* ═══════════════ 文法 · GRAMMAR N3 ═══════════════ */
+const GRAMMAR_N3=[
+{g:'～ば～ほど',f:'V ば形 + V辞書形 + ほど',pt:'quanto mais... mais',en:'the more... the more',ex:'練習すればするほど上手になる。',tx:'Quanto mais você pratica, melhor fica.',trap:'O verbo se <b>repete</b>: 練習すれば練習するほど. Traduzir "quanto mais" com só ほど deixa a frase incompleta.'},
+{g:'～たばかり',f:'V た形 + ばかり',pt:'acabou de',en:'just did',ex:'日本に来たばかりです。',tx:'Acabei de chegar ao Japão.',trap:'≠ ～たところ. <b>ばかり</b> é sentimento subjetivo de "faz pouco" (pode ser um mês). <b>たところ</b> é literalmente segundos atrás.'},
+{g:'～ところだ',f:'V辞書形/ている/た + ところ',pt:'está prestes a / no meio de / acabou de',en:'about to / in the middle of / just finished',ex:'今から出かけるところです。',tx:'Estou saindo agora mesmo.',trap:'Três tempos, três significados: 出かける<b>ところ</b> (vou sair agora), 出かけている<b>ところ</b> (estou no meio disso), 出かけた<b>ところ</b> (acabei de sair). O N2 testa qual forma vem antes.'},
+{g:'～ようになる',f:'V辞書形/ない形 + ようになる',pt:'passar a (mudança de capacidade/hábito)',en:'come to (do)',ex:'漢字が読めるようになった。',tx:'Passei a conseguir ler kanji.',trap:'Marca <b>mudança gradual</b>. Com verbo potencial é o padrão mais comum. 「読むようになった」= passei a ler (hábito); 「読めるようになった」= passei a conseguir ler. Não são iguais.'},
+{g:'～ことにする / ことになる',f:'V辞書形/ない形 + ことにする',pt:'decidir / ficar decidido',en:'decide to / it is decided',ex:'来年留学することにしました。',tx:'Decidi estudar fora no ano que vem.',trap:'<b>する</b> = eu decidi. <b>なる</b> = foi decidido (por circunstância ou por outros). Japonês prefere なる mesmo quando a decisão foi sua — soa menos arrogante.'},
+{g:'～らしい',f:'普通形 + らしい',pt:'parece que (ouvi/li)',en:'apparently',ex:'あの店は閉店したらしい。',tx:'Parece que aquela loja fechou.',trap:'Baseado em <b>informação externa</b>. Diferente de ようだ (sua própria observação) e de そうだ伝聞 (fonte citada). Também existe 男らしい = "másculo" — outro uso.'},
+{g:'～みたいだ',f:'普通形(だ削除) + みたいだ',pt:'parece / tipo',en:'looks like / like',ex:'雨が降ったみたいだ。',tx:'Parece que choveu.',trap:'Versão <b>coloquial</b> de ようだ. Substantivo liga direto: 子供みたい (子供のようだ). Não use みたい em redação formal.'},
+{g:'～そうだ (様態)',f:'Vます形 / Aい(い削除) + そうだ',pt:'parece que vai / tem cara de',en:'looks like it will',ex:'雨が降りそうだ。',tx:'Parece que vai chover.',trap:'⚠ Confusão nº1 do N3: 降り<b>そう</b> (parece que vai chover, eu vi o céu) vs 降る<b>そう</b> (ouvi dizer que vai chover). Forma ます = aparência; forma dicionário = boato. いい→よさそう, ない→なさそう (irregulares).'},
+{g:'～そうだ (伝聞)',f:'普通形 + そうだ',pt:'dizem que',en:'I hear that',ex:'田中さんは来月結婚するそうだ。',tx:'Dizem que o Tanaka vai se casar mês que vem.',trap:'Nunca conjuga: 「降るそうでした」✗. Coloque o tempo <b>antes</b> de そうだ: 降ったそうだ.'},
+{g:'～のに',f:'普通形 + のに',pt:'apesar de (com frustração)',en:'even though (with frustration)',ex:'約束したのに来なかった。',tx:'Apesar de ter prometido, não veio.',trap:'Carrega <b>insatisfação</b>. Nunca use com pedido ou intenção depois: 「寒いのにコートを着てください」✗ → use から/ので.'},
+{g:'～ながら',f:'Vます形 + ながら',pt:'enquanto (mesma pessoa)',en:'while doing',ex:'音楽を聞きながら勉強する。',tx:'Estudo ouvindo música.',trap:'Só quando é a <b>mesma pessoa</b> fazendo as duas coisas ao mesmo tempo. A ação <b>principal</b> vem depois de ながら. Para duas pessoas diferentes use 間に.'},
+{g:'～間に / ～間',f:'V ている/Nの + 間(に)',pt:'durante / enquanto',en:'while / during',ex:'寝ている間に地震があった。',tx:'Enquanto eu dormia, houve um terremoto.',trap:'<b>間に</b> = algo acontece num ponto dentro do período. <b>間</b> (sem に) = a ação dura o período todo. 留守の間に来た (veio em algum momento) vs 留守の間ずっと待った (esperou o tempo todo).'},
+{g:'～うちに',f:'V ている/ない形/A + うちに',pt:'enquanto ainda',en:'while still',ex:'熱いうちに食べてください。',tx:'Coma enquanto ainda está quente.',trap:'Enfatiza que a <b>condição vai acabar</b> — aproveite a janela. 間に é neutro. 「若いうちに」= enquanto ainda é jovem.'},
+{g:'～たびに',f:'V辞書形/Nの + たびに',pt:'toda vez que',en:'every time',ex:'この曲を聞くたびに国を思い出す。',tx:'Toda vez que ouço essa música, lembro do meu país.',trap:'Sempre <b>presente</b> antes de たびに, mesmo falando do passado.'},
+{g:'～とおりに',f:'V辞書形/た形/Nの + とおりに',pt:'conforme, do jeito que',en:'as, just as',ex:'説明書のとおりに組み立てた。',tx:'Montei conforme o manual.',trap:'Substantivo leva の: 予想<b>どおり</b> (leitura muda para どおり quando cola direto no substantivo). 説明のとおり = 説明どおり.'},
+{g:'～まま',f:'V た形/ない形/Nの/A + まま',pt:'deixando como está',en:'as it is, leaving it',ex:'窓を開けたまま出かけた。',tx:'Saí deixando a janela aberta.',trap:'Estado <b>não alterado</b>, geralmente com um toque de descuido. ≠ ておく (deixar de propósito para um fim). 靴のまま = de sapatos (sem tirar).'},
+{g:'～ついでに',f:'V辞書形/た形/Nの + ついでに',pt:'já que está, aproveitando',en:'while I\'m at it',ex:'買い物のついでに郵便局に寄った。',tx:'Já que fui às compras, passei no correio.',trap:'A ação <b>principal</b> é a primeira; a de ついでに é secundária. Inverter soa estranho. Não é "ao mesmo tempo" (ながら).'},
+{g:'～おかげで / ～せいで',f:'普通形/Nの + おかげで',pt:'graças a / por culpa de',en:'thanks to / because of (blame)',ex:'先生のおかげで合格できた。',tx:'Consegui passar graças ao professor.',trap:'<b>おかげで</b> só para resultado bom; <b>せいで</b> só para ruim. Português usa "por causa de" para os dois — em japonês isso vira erro de tom, não de gramática.'},
+{g:'～ため(に)',f:'普通形/Nの + ため(に)',pt:'por causa de; para',en:'because of; in order to',ex:'台風のため、電車が止まった。',tx:'Por causa do tufão, os trens pararam.',trap:'Dois sentidos. Com <b>substantivo/passado</b> = causa. Com <b>verbo volitivo no dicionário</b> = objetivo. O contexto e a forma decidem. Registro mais formal que から/ので.'},
+{g:'～によって',f:'N + によって',pt:'por (agente); dependendo de; através de',en:'by; depending on; by means of',ex:'人によって考え方が違う。',tx:'O modo de pensar varia de pessoa para pessoa.',trap:'Três usos. Na <b>passiva</b> marca o agente (発見された). Com "varia" significa "dependendo de". Não confunda com ために (objetivo).'},
+{g:'～について',f:'N + について',pt:'sobre, a respeito de',en:'about, concerning',ex:'日本の文化について研究している。',tx:'Pesquiso sobre a cultura japonesa.',trap:'⚠ Só para <b>tema</b> de fala/pesquisa/pensamento. Não use para direção de uma ação — aí é に対して. Erro clássico de português: "sobre" e "para" viram a mesma coisa na cabeça.'},
+{g:'～がる',f:'A語幹 + がる',pt:'demonstrar (sentimento de outro)',en:'show signs of (someone else\'s feeling)',ex:'子供が寒がっている。',tx:'A criança está com frio.',trap:'Adjetivos de <b>sentimento</b> (寒い・ほしい・怖い・うれしい) não podem ser afirmados de terceiros diretamente. 「彼は寒い」✗ → 彼は寒がっている. Regra que não existe em português.'},
+{g:'～すぎる',f:'Vます形 / A語幹 + すぎる',pt:'demais',en:'too much',ex:'食べすぎてお腹が痛い。',tx:'Comi demais e estou com dor de barriga.',trap:'Sempre <b>negativo</b>. 「うれしすぎる」existe na fala jovem, mas na prova evite. いい→よすぎる, ない→なさすぎる.'},
+{g:'～やすい / ～にくい',f:'Vます形 + やすい/にくい',pt:'fácil / difícil de',en:'easy / hard to',ex:'この靴は歩きやすい。',tx:'Esses sapatos são confortáveis de andar.',trap:'Vira <b>adjetivo い</b> e conjuga: 歩きやすかった, 歩きやすくない. Não escreva 「歩くのが易しい」— soa traduzido.'},
+{g:'～はじめる / ～だす',f:'Vます形 + はじめる/だす',pt:'começar a',en:'begin to',ex:'突然雨が降りだした。',tx:'De repente começou a chover.',trap:'<b>だす</b> = início <b>súbito e involuntário</b>. <b>はじめる</b> = início neutro ou planejado. 「勉強しだす」soa estranho; 「泣きだす」é natural.'},
+{g:'～ておく',f:'V て形 + おく',pt:'deixar feito (preparação)',en:'do in advance',ex:'会議の前に資料を読んでおく。',tx:'Vou ler o material antes da reunião.',trap:'⚠ Não é "colocar". É <b>preparação</b> ou <b>deixar assim de propósito</b>. Na fala vira ～とく: 買っとく.'},
+{g:'～てみる',f:'V て形 + みる',pt:'experimentar fazer',en:'try doing',ex:'この料理を食べてみてください。',tx:'Experimente este prato.',trap:'≠ ～ようとする (tentar com esforço, podendo falhar). てみる é "faço para ver o que acontece". 「泳ごうとしたができなかった」vs 「泳いでみた」.'},
+{g:'～ていく / ～てくる',f:'V て形 + いく/くる',pt:'ir seguindo / vir acontecendo',en:'go on doing / have been doing',ex:'これから寒くなっていくでしょう。',tx:'Daqui pra frente deve ir esfriando.',trap:'Eixo do <b>tempo</b>, não do espaço. <b>てくる</b> = do passado até agora (寒くなってきた). <b>ていく</b> = de agora para o futuro. Português não marca isso, então é fácil escolher errado.'},
+{g:'～てあげる / ～てくれる / ～てもらう',f:'V て形 + あげる/くれる/もらう',pt:'fazer para alguém / alguém faz para mim',en:'do for someone / someone does for me',ex:'友だちが手伝ってくれた。',tx:'Meu amigo me ajudou.',trap:'⚠ O maior obstáculo para europeus. Em português "me ajudou" é neutro; em japonês <b>omitir くれる soa frio ou até rude</b>. 「友だちが手伝った」= relato distante. E てあげる para superiores soa condescendente — use お手伝いします.'},
+{g:'～(ら)れる (受身)',f:'V ない形 + れる/られる',pt:'voz passiva',en:'passive',ex:'先生に名前を呼ばれた。',tx:'Fui chamado pelo professor.',trap:'O agente leva <b>に</b>, não によって (exceto em textos formais/criação). E a passiva japonesa costuma implicar que o falante foi <b>afetado</b> — é usada muito menos que em português.'},
+{g:'～(さ)せる (使役)',f:'V ない形 + せる/させる',pt:'fazer/deixar alguém fazer',en:'make/let someone do',ex:'母は妹に部屋を掃除させた。',tx:'A mãe fez a irmã limpar o quarto.',trap:'Com verbo <b>transitivo</b> a pessoa leva に; com <b>intransitivo</b> leva を (子供を行かせる). E させてください = "deixe-me fazer" — pedido de permissão, muito usado no trabalho.'},
+{g:'お～になる / お～する',f:'お + Vます形 + になる/する',pt:'honorífico / humilde',en:'honorific / humble',ex:'先生がお帰りになりました。',tx:'O professor já foi embora.',trap:'⚠ <b>になる</b> = o outro faz (respeito). <b>する</b> = eu faço (humildade). Inverter é o erro mais grave de 敬語 e cai direto na prova. 「お持ちします」= eu levo; 「お持ちになります」= o senhor leva.'},
+{g:'～なければならない / ～なくてもいい',f:'V ない形 + ければならない',pt:'ter que / não precisar',en:'must / don\'t have to',ex:'明日までに出さなければならない。',tx:'Tenho que entregar até amanhã.',trap:'Na fala: なきゃ / なくちゃ. E cuidado com o par: <b>なくてもいい</b> = não precisa; <b>てはいけない</b> = não pode. Português "não tem que" é ambíguo entre os dois.'},
+{g:'～てはいけない / ～てもいい',f:'V て形 + はいけない / もいい',pt:'não pode / pode',en:'must not / may',ex:'ここでたばこを吸ってはいけません。',tx:'Não se pode fumar aqui.',trap:'てはいけない é <b>proibição direta</b> — forte demais para dizer a um superior. Com chefe/cliente use ご遠慮ください.'},
+{g:'～たほうがいい',f:'V た形 / ない形 + ほうがいい',pt:'é melhor',en:'had better',ex:'早く寝たほうがいいよ。',tx:'É melhor você dormir cedo.',trap:'Afirmativo usa a forma <b>た</b> (行ったほうがいい), negativo usa <b>ない</b> (行かないほうがいい). Usar 行くほうがいい muda o sentido para comparação de opções.'},
+{g:'～ことがある',f:'V た形 + ことがある / V辞書形 + ことがある',pt:'já fez alguma vez / às vezes acontece',en:'have done before / sometimes happens',ex:'富士山に登ったことがあります。',tx:'Já subi o monte Fuji uma vez.',trap:'⚠ <b>た形</b> = experiência de vida. <b>辞書形</b> = ocorre ocasionalmente (電車が遅れることがある). Uma letra separa "já fiz" de "às vezes acontece".'},
+{g:'～ないで / ～なくて',f:'V ない形 + で / なくて',pt:'sem fazer / por não fazer',en:'without doing / because not',ex:'朝ご飯を食べないで出かけた。',tx:'Saí sem tomar café da manhã.',trap:'<b>ないで</b> = sem fazer (ação simultânea) ou "em vez de". <b>なくて</b> = causa ("por não haver..."). 分からなくて困った ✓ / 分からないで困った ✗.'},
+{g:'～し',f:'普通形 + し',pt:'e além disso (razões)',en:'and besides',ex:'安いし、おいしいし、この店が一番だ。',tx:'É barato, é gostoso — essa loja é a melhor.',trap:'Enumera <b>razões</b>, não ações em sequência. Para sequência use て形. Costuma vir em par (～し、～し).'},
+{g:'～たり～たりする',f:'V た形 + り + V た形 + りする',pt:'fazer coisas como... e...',en:'do things like... and...',ex:'休みは本を読んだり音楽を聞いたりします。',tx:'Nas folgas leio, escuto música, essas coisas.',trap:'É uma lista <b>de exemplos</b>, não uma sequência completa. Sempre feche com する e conjugue só o する final.'},
+{g:'～かどうか',f:'普通形(だ削除) + かどうか',pt:'se (ou não)',en:'whether or not',ex:'来られるかどうか分かりません。',tx:'Não sei se consigo vir.',trap:'⚠ "Se" de <b>dúvida indireta</b> nunca é もし nem たら. Se a pergunta tem 何/どこ/だれ, use só か: 何時に来るか分からない.'},
+{g:'～という',f:'N + という + N',pt:'chamado, que se chama',en:'called, named',ex:'「雪国」という小説を読んだ。',tx:'Li um romance chamado "Yukiguni".',trap:'Usa-se quando o ouvinte <b>não conhece</b> o nome. Também introduz conteúdo: 合格したという知らせ (a notícia de que passou).'},
+{g:'～ために (目的)',f:'V辞書形 / Nの + ために',pt:'para, com o objetivo de',en:'in order to',ex:'健康のために毎朝走っている。',tx:'Corro toda manhã pela saúde.',trap:'Exige verbo <b>volitivo</b> e mesmo sujeito nas duas partes. Se o verbo for potencial ou negativo, o correto é ように: 遅れないように早く出た.'},
+{g:'～ように (目的)',f:'V可能形/ない形 + ように',pt:'para que, de modo que',en:'so that',ex:'忘れないようにメモした。',tx:'Anotei para não esquecer.',trap:'Par obrigatório com ために. Regra: <b>controlo o resultado → ために</b>; <b>não controlo → ように</b>. Este par sozinho vale vários pontos na prova.'},
+{g:'～つもり / ～予定',f:'V辞書形 + つもり / Nの + 予定',pt:'pretender / estar agendado',en:'intend to / be scheduled',ex:'来年帰国するつもりです。',tx:'Pretendo voltar ao meu país ano que vem.',trap:'<b>つもり</b> = intenção pessoal (pode mudar). <b>予定</b> = agendado, já combinado. Falar 「社長は来るつもりです」sobre um superior é indelicado — use いらっしゃる予定です.'},
+{g:'～ばかり',f:'N/Vて形 + ばかり',pt:'só, o tempo todo (crítica)',en:'nothing but',ex:'弟はゲームばかりしている。',tx:'Meu irmão só joga videogame.',trap:'Carrega <b>crítica</b>. Diferente de だけ (só, neutro). E ～たばかり (acabou de) é outro padrão — não confunda.'},
+{g:'～だけでなく',f:'普通形/N + だけでなく',pt:'não só... como também',en:'not only... but also',ex:'英語だけでなく日本語も話せる。',tx:'Fala não só inglês como japonês.',trap:'A segunda parte quase sempre leva <b>も</b>. Versão N2 mais formal: のみならず / ばかりか.'},
+{g:'～こと / ～の (名詞化)',f:'V辞書形 + こと / の',pt:'nominalizador',en:'nominalizer',ex:'泳ぐのが好きです。',tx:'Gosto de nadar.',trap:'⚠ Com verbos de <b>percepção direta</b> (見る・聞く・感じる) só の: 彼が走るのを見た ✓ / 走ることを見た ✗. Com 決める・できる・約束する só こと. Em português o infinitivo cobre tudo.'},
+{g:'～場合は',f:'普通形/Nの + 場合は',pt:'no caso de',en:'in case of',ex:'雨の場合は中止します。',tx:'Em caso de chuva, cancelamos.',trap:'Registro <b>formal/escrito</b> (avisos, regulamentos). Na conversa normal use たら. Aparece muito nas questões de 情報検索.'},
+{g:'～ようとする',f:'V意向形 + とする',pt:'tentar (no momento)',en:'try to, be about to',ex:'出かけようとしたとき、電話が鳴った。',tx:'Quando eu ia sair, o telefone tocou.',trap:'≠ てみる (experimentar). ようとする é o <b>momento imediatamente anterior</b> ou uma tentativa que pode falhar. Não use para hábitos.'},
+{g:'～ば (条件)',f:'V ば形',pt:'se (condição geral)',en:'if (general condition)',ex:'このボタンを押せばドアが開きます。',tx:'Se apertar esse botão, a porta abre.',trap:'Evite ば quando a segunda parte tem <b>vontade, pedido ou convite</b> e o sujeito é o mesmo — aí prefira たら. 「東京へ行けば、連絡してください」✗ (soa forçado).'},
+{g:'～と (条件)',f:'V辞書形 + と',pt:'quando/se (resultado automático)',en:'whenever, if (automatic)',ex:'春になると桜が咲く。',tx:'Quando chega a primavera, as cerejeiras florescem.',trap:'⚠ Proíbe <b>ordem, pedido, convite ou vontade</b> depois. 「駅に着くと電話してください」✗ → use たら. Serve para leis naturais, máquinas, caminhos.'},
+{g:'～なら',f:'普通形/N + なら',pt:'se for o caso de',en:'if (given that)',ex:'日本語を勉強するなら、この本がいい。',tx:'Se você vai estudar japonês, esse livro é bom.',trap:'Reage ao que o <b>outro acabou de dizer</b>. É o único condicional que aceita o tema primeiro: 温泉なら箱根がいい. Não use para sequência temporal.'},
+{g:'～たら (条件)',f:'V た形 + ら',pt:'se / quando (o mais flexível)',en:'if / when',ex:'駅に着いたら電話してください。',tx:'Quando chegar na estação, me ligue.',trap:'O <b>coringa</b>: aceita pedido, convite, vontade. Na dúvida entre os quatro condicionais, たら costuma ser seguro. Também serve para descoberta no passado: 窓を開けたら雪が降っていた.'}
+];
+
+/* ═══ English overlay for N3 grammar ═══ */
+const EN_G3TRAP={
+'～ば～ほど':'The verb <b>repeats</b>: 練習すれば練習するほど. Rendering "the more" with ほど alone leaves the sentence unfinished.',
+'～たばかり':'≠ ～たところ. <b>ばかり</b> is the subjective feeling of "only just" (could be a month ago). <b>たところ</b> is literally seconds ago.',
+'～ところだ':'Three tenses, three meanings: 出かける<b>ところ</b> (about to leave), 出かけている<b>ところ</b> (in the middle of it), 出かけた<b>ところ</b> (just left). N2 tests which form comes first.',
+'～ようになる':'Marks <b>gradual change</b>. Most common with the potential form. 「読むようになった」= started reading (habit); 「読めるようになった」= became able to read. Not the same claim.',
+'～ことにする / ことになる':'<b>する</b> = I decided. <b>なる</b> = it was decided (by circumstance or others). Japanese reaches for なる even when it was your own call — it sounds less self-important.',
+'～らしい':'Based on <b>outside information</b>. Different from ようだ (your own observation) and そうだ伝聞 (a cited source). Note 男らしい = "manly" is a separate use.',
+'～みたいだ':'The <b>colloquial</b> version of ようだ. Nouns attach directly: 子供みたい (= 子供のようだ). Never use みたい in formal writing.',
+'～そうだ (様態)':'⚠ The number-one N3 mix-up: 降り<b>そう</b> (looks like rain — I saw the sky) vs 降る<b>そう</b> (I heard it will rain). ます-stem = appearance; dictionary form = hearsay. Irregulars: いい→よさそう, ない→なさそう.',
+'～そうだ (伝聞)':'It never conjugates: 「降るそうでした」✗. Put the tense <b>before</b> そうだ: 降ったそうだ.',
+'～のに':'Carries <b>dissatisfaction</b>. Never follow it with a request or intention: 「寒いのにコートを着てください」✗ → use から/ので.',
+'～ながら':'Only when the <b>same person</b> does both at once. The <b>main</b> action comes after ながら. For two different people use 間に.',
+'～間に / ～間':'<b>間に</b> = something happens at one point inside the period. <b>間</b> (no に) = the action fills the whole period. 留守の間に来た (came at some point) vs 留守の間ずっと待った (waited the entire time).',
+'～うちに':'Stresses that the <b>condition will end</b> — use the window while it lasts. 間に is neutral. 「若いうちに」= while still young.',
+'～たびに':'Always <b>present tense</b> before たびに, even when talking about the past.',
+'～とおりに':'Nouns take の: 予想<b>どおり</b> (the reading shifts to どおり when it attaches straight to a noun). 説明のとおり = 説明どおり.',
+'～まま':'An <b>unchanged</b> state, usually with a hint of neglect. ≠ ておく (left that way on purpose for a reason). 靴のまま = with shoes still on.',
+'～ついでに':'The <b>main</b> action is the first one; the ついでに action is incidental. Reversing them sounds odd. It is not "at the same time" (that\'s ながら).',
+'～おかげで / ～せいで':'<b>おかげで</b> only for good outcomes; <b>せいで</b> only for bad ones. English "because of" covers both — in Japanese picking wrong is a tone error, not a grammar error.',
+'～ため(に)':'Two senses. With a <b>noun or past form</b> = cause. With a <b>volitional dictionary-form verb</b> = purpose. Form and context decide. More formal than から/ので.',
+'～によって':'Three uses. In the <b>passive</b> it marks the agent (発見された). With "varies" it means "depending on". Don\'t confuse with ために (purpose).',
+'～について':'⚠ Only for the <b>topic</b> of speech, research, or thought. Not for the direction of an action — that\'s に対して. English "about" and "toward" blur together in the learner\'s head.',
+'～がる':'<b>Emotion</b> adjectives (寒い・ほしい・怖い・うれしい) can\'t be asserted of a third person directly. 「彼は寒い」✗ → 彼は寒がっている. English has no equivalent restriction.',
+'～すぎる':'Always <b>negative</b> in tone. 「うれしすぎる」exists in casual youth speech but avoid it on the exam. いい→よすぎる, ない→なさすぎる.',
+'～やすい / ～にくい':'It becomes an <b>い-adjective</b> and conjugates: 歩きやすかった, 歩きやすくない. Don\'t write 「歩くのが易しい」— it reads as translated English.',
+'～はじめる / ～だす':'<b>だす</b> = a <b>sudden, involuntary</b> start. <b>はじめる</b> = neutral or planned. 「勉強しだす」sounds odd; 「泣きだす」is natural.',
+'～ておく':'⚠ Not "to put". It means <b>preparation</b> or <b>deliberately leaving something in place</b>. In speech it contracts to ～とく: 買っとく.',
+'～てみる':'≠ ～ようとする (attempt with effort, may fail). てみる is "I do it and see what happens". Compare 泳ごうとしたができなかった vs 泳いでみた.',
+'～ていく / ～てくる':'A <b>time</b> axis, not a spatial one. <b>てくる</b> = from the past up to now (寒くなってきた). <b>ていく</b> = from now into the future. English doesn\'t mark this, so it\'s easy to pick wrong.',
+'～てあげる / ～てくれる / ～てもらう':'⚠ The single biggest hurdle for European learners. English "helped me" is neutral; in Japanese <b>dropping くれる sounds cold or even rude</b>. 「友だちが手伝った」reads like a distant report. And てあげる toward a superior sounds condescending — use お手伝いします.',
+'～(ら)れる (受身)':'The agent takes <b>に</b>, not によって (except in formal or creative-work contexts). And the Japanese passive usually implies the speaker was <b>affected</b> — it is used far less often than the English passive.',
+'～(さ)せる (使役)':'With a <b>transitive</b> verb the person takes に; with an <b>intransitive</b> one they take を (子供を行かせる). And させてください = "please let me" — a permission request you\'ll use constantly at work.',
+'お～になる / お～する':'⚠ <b>になる</b> = the other person acts (respect). <b>する</b> = I act (humility). Swapping them is the worst 敬語 error and it appears directly on the exam. 「お持ちします」= I\'ll carry it; 「お持ちになります」= you carry it.',
+'～なければならない / ～なくてもいい':'In speech: なきゃ / なくちゃ. Watch the pair: <b>なくてもいい</b> = don\'t need to; <b>てはいけない</b> = must not. English "don\'t have to" vs "must not" trips learners in both directions.',
+'～てはいけない / ～てもいい':'てはいけない is a <b>direct prohibition</b> — far too strong to aim at a superior. With a boss or client use ご遠慮ください.',
+'～たほうがいい':'The affirmative takes the <b>た</b> form (行ったほうがいい); the negative takes <b>ない</b> (行かないほうがいい). Using 行くほうがいい shifts the meaning to comparing options.',
+'～ことがある':'⚠ <b>た form</b> = life experience. <b>Dictionary form</b> = happens occasionally (電車が遅れることがある). One syllable separates "I have done it" from "it sometimes happens".',
+'～ないで / ～なくて':'<b>ないで</b> = without doing (simultaneous) or "instead of". <b>なくて</b> = cause ("because it isn\'t"). 分からなくて困った ✓ / 分からないで困った ✗.',
+'～し':'It lists <b>reasons</b>, not actions in sequence. For sequence use the て form. Usually comes in pairs (～し、～し).',
+'～たり～たりする':'A list of <b>examples</b>, not a complete sequence. Always close with する and conjugate only that final する.',
+'～かどうか':'⚠ "If" as an <b>indirect question</b> is never もし or たら. If the question contains 何/どこ/だれ, use plain か: 何時に来るか分からない.',
+'～という':'Used when the listener <b>doesn\'t know</b> the name. It also introduces content: 合格したという知らせ (the news that you passed).',
+'～ために (目的)':'Requires a <b>volitional</b> verb and the same subject in both clauses. If the verb is potential or negative, you need ように: 遅れないように早く出た.',
+'～ように (目的)':'The obligatory partner to ために. Rule: <b>I control the outcome → ために</b>; <b>I don\'t → ように</b>. This pair alone is worth several marks.',
+'～つもり / ～予定':'<b>つもり</b> = personal intention (can change). <b>予定</b> = scheduled, already arranged. Saying 「社長は来るつもりです」about a superior is rude — use いらっしゃる予定です.',
+'～ばかり':'Carries <b>criticism</b>. Different from だけ (only, neutral). And ～たばかり (just did) is a separate pattern — don\'t merge them.',
+'～だけでなく':'The second half almost always takes <b>も</b>. The formal N2 versions are のみならず / ばかりか.',
+'～こと / ～の (名詞化)':'⚠ With verbs of <b>direct perception</b> (見る・聞く・感じる) only の works: 彼が走るのを見た ✓ / 走ることを見た ✗. With 決める・できる・約束する only こと. English "-ing" and the infinitive cover both, which hides the split.',
+'～場合は':'<b>Formal / written</b> register (notices, regulations). In conversation use たら. Shows up constantly in the 情報検索 questions.',
+'～ようとする':'≠ てみる (try out). ようとする is the <b>moment just before</b> an action, or an attempt that may fail. Not for habits.',
+'～ば (条件)':'Avoid ば when the second clause contains <b>will, a request, or an invitation</b> and the subject is the same — prefer たら there.',
+'～と (条件)':'⚠ It bans <b>commands, requests, invitations and intentions</b> afterwards. 「駅に着くと電話してください」✗ → use たら. Reserve it for natural laws, machines, and directions.',
+'～なら':'Responds to what the <b>other person just said</b>. It\'s the only conditional that can take the topic first: 温泉なら箱根がいい. Not for time sequence.',
+'～たら (条件)':'The <b>all-rounder</b>: accepts requests, invitations, intentions. When torn between the four conditionals, たら is usually safe. It also marks past discovery: 窓を開けたら雪が降っていた.'
+};
+const EN_G3TX={
+'～ば～ほど':'The more you practise, the better you get.',
+'～たばかり':'I\'ve only just arrived in Japan.',
+'～ところだ':'I\'m heading out right now.',
+'～ようになる':'I\'ve become able to read kanji.',
+'～ことにする / ことになる':'I\'ve decided to study abroad next year.',
+'～らしい':'Apparently that shop has closed down.',
+'～みたいだ':'It looks like it rained.',
+'～そうだ (様態)':'It looks like it\'s going to rain.',
+'～そうだ (伝聞)':'I hear Tanaka is getting married next month.',
+'～のに':'He promised, and then he didn\'t come.',
+'～ながら':'I study while listening to music.',
+'～間に / ～間':'While I was asleep, there was an earthquake.',
+'～うちに':'Please eat it while it\'s still hot.',
+'～たびに':'Every time I hear this song I think of home.',
+'～とおりに':'I assembled it according to the manual.',
+'～まま':'I went out and left the window open.',
+'～ついでに':'While I was out shopping I dropped by the post office.',
+'～おかげで / ～せいで':'I passed thanks to my teacher.',
+'～ため(に)':'The trains stopped because of the typhoon.',
+'～によって':'The way people think varies from person to person.',
+'～について':'I\'m doing research on Japanese culture.',
+'～がる':'The child is cold.',
+'～すぎる':'I ate too much and my stomach hurts.',
+'～やすい / ～にくい':'These shoes are easy to walk in.',
+'～はじめる / ～だす':'It suddenly started raining.',
+'～ておく':'I\'ll read the materials before the meeting.',
+'～てみる':'Give this dish a try.',
+'～ていく / ～てくる':'It will probably keep getting colder from here.',
+'～てあげる / ～てくれる / ～てもらう':'My friend helped me out.',
+'～(ら)れる (受身)':'I was called on by the teacher.',
+'～(さ)せる (使役)':'Mum made my sister clean the room.',
+'お～になる / お～する':'The teacher has already gone home.',
+'～なければならない / ～なくてもいい':'I have to hand it in by tomorrow.',
+'～てはいけない / ～てもいい':'You mustn\'t smoke here.',
+'～たほうがいい':'You\'d better get to bed early.',
+'～ことがある':'I\'ve climbed Mt Fuji once.',
+'～ないで / ～なくて':'I went out without eating breakfast.',
+'～し':'It\'s cheap, it\'s tasty — this place is the best.',
+'～たり～たりする':'On my days off I read, listen to music, that sort of thing.',
+'～かどうか':'I don\'t know whether I can make it.',
+'～という':'I read a novel called "Yukiguni".',
+'～ために (目的)':'I run every morning for my health.',
+'～ように (目的)':'I made a note so I wouldn\'t forget.',
+'～つもり / ～予定':'I intend to go back home next year.',
+'～ばかり':'My little brother does nothing but play video games.',
+'～だけでなく':'She speaks not only English but Japanese too.',
+'～こと / ～の (名詞化)':'I like swimming.',
+'～場合は':'In case of rain, it will be cancelled.',
+'～ようとする':'Just as I was about to leave, the phone rang.',
+'～ば (条件)':'If you press this button, the door opens.',
+'～と (条件)':'When spring comes, the cherry blossoms bloom.',
+'～なら':'If you\'re going to study Japanese, this book is good.',
+'～たら (条件)':'When you get to the station, give me a call.'
+};
+
+/* ═══ N3 文法を狙う追加問題 ═══ */
+const MONDAI_N3=[
+{s:'文法',q:'家を＿とき、急に雨が降ってきた。',o:['出かけようとした','出かけるようにした','出かけたばかりの','出かけている'],a:0,
+ ex:'<b>V意向形＋とする</b> = o instante logo antes da ação. 「出かけようとしたとき」= bem na hora em que eu ia sair. てみる seria "experimentar"; たばかり seria "acabei de".'},
+{s:'文法',q:'空が暗い。今にも雨が＿。',o:['降りそうだ','降るそうだ','降ったらしい','降るところだ'],a:0,
+ ex:'⚠ O par mais confundido do N3. <b>ます形＋そうだ</b> = aparência (eu olhei o céu). <b>辞書形＋そうだ</b> = boato (alguém me contou). 「今にも」exige a aparência.'},
+{s:'文法',q:'富士山に登った＿がありますか。',o:['こと','もの','ところ','はず'],a:0,
+ ex:'<b>Vた形＋ことがある</b> = experiência de vida. Com o <b>辞書形</b> muda para "às vezes acontece": 電車が遅れることがある.'},
+{s:'文法',q:'明日会議があるので、資料を読んで＿。',o:['おきます','しまいます','みます','いきます'],a:0,
+ ex:'<b>ておく</b> = preparação com antecedência. てしまう traria arrependimento; てみる seria experimentar. Na fala: 読んどきます.'},
+{s:'文法',q:'先輩が仕事を手伝って＿。',o:['くれた','あげた','もらった','やった'],a:0,
+ ex:'A ação vem <b>na sua direção</b> e o sujeito é o 先輩 → <b>くれた</b>. Omitir o verbo auxiliar (「先輩が手伝った」) soa frio e distante. Este é o ponto que mais denuncia um estrangeiro.'},
+{s:'文法',q:'駅に着い＿、電話してください。',o:['たら','ると','れば','くと'],a:0,
+ ex:'⚠ <b>と</b> proíbe pedido, ordem ou convite depois. Com 「電話してください」o único condicional seguro é <b>たら</b>. Regra que vale ponto garantido na prova.'},
+{s:'文法',q:'社長はもうお帰り＿。',o:['になりました','しました','いたしました','ございました'],a:0,
+ ex:'<b>お＋ます形＋になる</b> = honorífico (o outro age). <b>お＋ます形＋する</b> = humilde (eu ajo). Inverter os dois é o erro de 敬語 mais penalizado.'},
+{s:'文法',q:'彼女がピアノを弾く＿を聞いた。',o:['の','こと','もの','ため'],a:0,
+ ex:'Verbos de <b>percepção direta</b> (見る・聞く・感じる) só aceitam <b>の</b>. 「弾くことを聞いた」✗. Já com 決める・約束する・できる só こと funciona.'},
+{s:'文法',q:'意味が分から＿困った。',o:['なくて','ないで','ずして','なく'],a:0,
+ ex:'<b>なくて</b> marca <b>causa</b> ("por não entender"). <b>ないで</b> seria "sem fazer" (ação simultânea): 朝ご飯を食べないで出かけた.'},
+{s:'文法',q:'風邪をひか＿、気をつけてください。',o:['ないように','ないために','ないので','なくても'],a:0,
+ ex:'Verbo <b>negativo</b> ou potencial → <b>ように</b>, nunca ために. Regra completa: eu controlo o resultado → ために; não controlo → ように.'}
+];
+const EN_MEX_N3=[
+'<b>V volitional + とする</b> = the instant right before an action. 「出かけようとしたとき」= just as I was about to leave. てみる would be "try out"; たばかり would be "just did".',
+'⚠ The most confused pair in N3. <b>ます-stem + そうだ</b> = appearance (I looked at the sky). <b>Dictionary form + そうだ</b> = hearsay (someone told me). 「今にも」forces the appearance reading.',
+'<b>Vた + ことがある</b> = life experience. With the <b>dictionary form</b> it flips to "sometimes happens": 電車が遅れることがある.',
+'<b>ておく</b> = doing something in advance. てしまう would add regret; てみる would be trying it out. In speech: 読んどきます.',
+'The action moves <b>toward you</b> and the subject is your senior → <b>くれた</b>. Dropping the auxiliary (「先輩が手伝った」) sounds cold and detached. Nothing marks a foreign speaker faster than this.',
+'⚠ <b>と</b> forbids a request, command or invitation afterwards. With 「電話してください」the only safe conditional is <b>たら</b>. A guaranteed mark on the exam.',
+'<b>お + ます-stem + になる</b> = honorific (the other person acts). <b>お + ます-stem + する</b> = humble (I act). Swapping them is the most heavily penalised 敬語 error.',
+'Verbs of <b>direct perception</b> (見る・聞く・感じる) take only <b>の</b>. 「弾くことを聞いた」✗. With 決める・約束する・できる, only こと works.',
+'<b>なくて</b> marks <b>cause</b> ("because I didn\'t understand"). <b>ないで</b> would be "without doing" (simultaneous): 朝ご飯を食べないで出かけた.',
+'A <b>negative</b> or potential verb takes <b>ように</b>, never ために. Full rule: I control the outcome → ために; I don\'t → ように.'
+];
+
+/* ═══ 読解 · 追加パッセージ ═══ */
+const MONDAI_READ=[
+{s:'読解',p:'社内のみなさまへ　来週月曜の定例会議ですが、会議室の工事が入るため、オンラインに変更します。開始時間は通常どおり十時です。資料は前日までに共有フォルダにアップしてください。当日は各自のパソコンからご参加をお願いします。なお、今回は録画を行いませんので、欠席される方は後日、議事録をご確認ください。',
+ q:'この知らせで最も伝えたいことは何か。',o:['会議の場所がオンラインに変わること','会議の開始時間が変わること','資料を当日提出すること','録画を見れば欠席してもよいこと'],a:0,
+ ex:'Avisos internos existem para comunicar <b>o que mudou</b>. Duas pistas fazem o trabalho: 「～ですが」abre o assunto que vai ser alterado, e 「通常どおり」diz explicitamente o que <b>não</b> mudou (o horário). 「なお」sempre introduz informação secundária — nunca é a resposta.'},
+{s:'読解',p:'失敗を恐れる人は多い。しかし、失敗そのものが問題なのではない。問題は、失敗した理由を考えずに次へ進んでしまうことだ。同じやり方を繰り返せば、当然同じ結果になる。逆に、なぜうまくいかなかったのかを一度立ち止まって整理できれば、その失敗は次の材料になる。失敗を減らそうとするより、失敗から学ぶ習慣をつけるほうがずっと役に立つ。',
+ q:'筆者の考えに合うものはどれか。',o:['失敗の原因を振り返ることが大切だ','失敗はできるだけ避けるべきだ','失敗を繰り返せば自然に上達する','失敗を恐れるのは仕方がない'],a:0,
+ ex:'Estrutura clássica de tese: <b>「～のではない。問題は～だ」</b>. O autor primeiro descarta a leitura óbvia, depois planta a verdadeira. Sempre que vir 「問題は」, sublinhe o que vem <b>depois</b> — é ali que está a resposta.'},
+{s:'読解',p:'短い昼寝が午後の集中力を高めることは、多くの研究で示されている。ただし、時間には注意が必要だ。二十分を超えると深い眠りに入ってしまい、目が覚めたあともしばらくぼんやりした状態が続く。また、夕方以降の昼寝は夜の睡眠を妨げるおそれがある。効果を得たいなら、昼過ぎに二十分以内、これが目安である。',
+ q:'昼寝について、筆者が勧めているのはどれか。',o:['昼過ぎに二十分以内で寝ること','夕方に三十分ほど寝ること','できるだけ長く寝ること','夜の睡眠時間を減らすこと'],a:0,
+ ex:'Quando o texto traz <b>números</b>, marque todos antes de ler as alternativas — as opções erradas quase sempre são números do próprio texto colocados no lugar errado. E 「ただし」anuncia a condição; condições são justamente o que a pergunta cobra.'},
+{s:'読解',p:'子どものほうが外国語を早く覚える、とよく言われる。確かに発音に関しては、幼いうちに始めたほうが有利だという研究が多い。しかし、語彙や文法の習得については、大人のほうが速いという結果も出ている。大人はすでに母語の知識があり、規則を理解して応用できるからだ。\u3000問題は、大人が「自分は遅い」と思い込んでしまうことにある。実際には、学習時間の差が結果の差になっている場合が少なくない。年齢を理由にあきらめるのは、まだ早い。',
+ q:'大人の外国語学習について、筆者はどう述べているか。',o:['語彙や文法は大人のほうが速く身につけられる','発音も文法も子どものほうが有利だ','大人は母語が邪魔になって覚えられない','大人は学習時間が足りないので不利だ'],a:0,
+ ex:'O par <b>「確かに～。しかし～」</b> é uma concessão: o autor admite um ponto para depois virar. O que vem depois de しかし é a posição dele. Aqui: pronúncia → vantagem das crianças; vocabulário e gramática → vantagem dos adultos.'},
+{s:'読解',p:'子どものほうが外国語を早く覚える、とよく言われる。確かに発音に関しては、幼いうちに始めたほうが有利だという研究が多い。しかし、語彙や文法の習得については、大人のほうが速いという結果も出ている。大人はすでに母語の知識があり、規則を理解して応用できるからだ。\u3000問題は、大人が「自分は遅い」と思い込んでしまうことにある。実際には、学習時間の差が結果の差になっている場合が少なくない。年齢を理由にあきらめるのは、まだ早い。',
+ q:'筆者が最も言いたいことは何か。',o:['年齢よりも学習時間のほうが結果を左右する','子どもの時期に始めなければ手遅れだ','発音の練習を優先すべきだ','大人は文法だけを勉強すればよい'],a:0,
+ ex:'Roberto, leia esta de novo depois de responder. O segundo parágrafo carrega a tese: 「学習時間の差が結果の差になっている」. Técnica: quando um texto tem dois parágrafos, o <b>primeiro monta o contexto</b> e o <b>segundo entrega a opinião</b>.'},
+{s:'読解',p:'在宅勤務が広まったことで、通勤時間がなくなり、自由に使える時間が増えたという声は多い。一方で、仕事と生活の境界があいまいになり、かえって働きすぎてしまう人も出てきた。会社にいれば、周りが帰る様子を見て自分も切り上げる。その手がかりが家にはない。\u3000制度として在宅勤務を認めるだけでは足りない。終わる時間を自分で決め、それを守る仕組みが要る。',
+ q:'筆者によると、在宅勤務の問題は何か。',o:['仕事を終える区切りがつけにくいこと','通勤時間が長くなること','自由な時間が減ること','会社の制度が整っていないこと'],a:0,
+ ex:'Três marcadores em sequência: 「一方で」vira o argumento, 「かえって」indica resultado contrário ao esperado, e 「だけでは足りない」abre a conclusão. Em textos do N2, siga os conectores e você chega à tese sem entender cada palavra.'},
+{s:'読解',p:'【A】学校の制服には意味がある。毎朝服を選ぶ手間が省けるし、家庭の経済状況の差も見えにくくなる。服装で判断されない環境は、子どもにとって安心できるものだ。\u3000【B】制服が経済的だという意見があるが、指定品は既製服より高いことが多い。また、服を選ぶことは自分を表現する練習でもある。その機会を学校が奪う必要はないだろう。',
+ q:'AとBの意見について、正しいものはどれか。',o:['Aは制服を支持し、Bは制服の経済的な利点に疑問を持っている','AもBも制服に反対している','Aは経済面を重視し、Bは安心感を重視している','AもBも制服の費用が高いと考えている'],a:0,
+ ex:'Questão de <b>統合理解</b> (dois textos). Método em dois passos: primeiro escreva a posição de cada autor numa palavra (A = a favor, B = contra); depois procure o <b>único ponto que os dois mencionam</b> — aqui, o dinheiro — e compare só nele. Não tente comparar tudo.'},
+{s:'読解',p:'スポーツジム　ご利用案内\u3000・平日会員：月曜〜金曜の九時〜十七時のみ利用可。月額五千円。\u3000・全日会員：営業時間内はいつでも利用可。月額八千円。\u3000・学生割引：全日会員のみ、学生証の提示で二千円引き。\u3000・見学は無料ですが、体験利用は一回千円かかります。\u3000・入会金三千円は初回のみ必要。ただし三月中の入会は無料。',
+ q:'学生が三月に全日会員として入会する場合、最初の月に払う金額はいくらか。',o:['六千円','八千円','九千円','一万一千円'],a:0,
+ ex:'Cálculo: 全日会員 8.000 − 学生割引 2.000 = 6.000. A taxa de inscrição de 3.000 seria somada, mas 「三月中の入会は無料」a isenta. Regra do <b>情報検索</b>: leia a pergunta primeiro, depois cace <b>todas</b> as condições que se aplicam a ela. Quem esquece uma linha erra.'},
+{s:'読解',p:'奨学金応募条件\u3000・本学に在籍する学部二年生以上であること。\u3000・前年度の成績が平均八十点以上であること。\u3000・他の奨学金を受けていないこと。\u3000・申請書は五月三十一日までに学生課の窓口へ提出すること（郵送不可）。\u3000・面接は六月中旬に行い、結果は七月上旬に通知します。',
+ q:'この奨学金に応募できるのはどの人か。',o:['三年生で、前年度の平均が八十五点、他の奨学金は受けていない人','一年生で、前年度の平均が九十点の人','二年生で、別の奨学金を受けている人','三年生で、六月に申請書を郵送する人'],a:0,
+ ex:'Com uma lista de requisitos, a alternativa certa é a que cumpre <b>todos</b>; cada distrator quebra exatamente um. Aqui: ① ano errado, ② já recebe outra bolsa, ③ prazo e método errados. Marque cada condição com um número e confira uma a uma.'},
+{s:'読解',p:'便利になることは、いつでも良いことだろうか。地図アプリのおかげで道に迷わなくなった。その代わり、私たちは町を覚えなくなった。翻訳アプリのおかげで意味は分かる。その代わり、辞書を引きながら考える時間は消えた。\u3000効率だけを見れば、失われたものは無駄でしかない。しかし、その無駄の中にこそ、身につくものがあったのではないか。便利さを捨てる必要はないが、何と引き換えにそれを得ているのかは、意識しておきたい。',
+ q:'筆者の主張に最も近いものはどれか。',o:['便利さによって何を失っているかを自覚するべきだ','便利な道具は使わないほうがいい','効率を最優先して考えるべきだ','地図アプリは記憶力を高めてくれる'],a:0,
+ ex:'Dois sinais fecham a questão. <b>「～ではないか」</b> é afirmação suave — costuma ser a tese. E a última frase usa 「～必要はないが、～たい」: a parte depois de が é o que o autor realmente defende. Note que ele <b>não</b> pede para abandonar a tecnologia; o distrator 2 exagera a posição dele, erro clássico.'},
+{s:'読解',p:'山田様\u3000先日お送りいただいた見積書を拝見しました。内容についておおむね問題ありませんが、二点だけ確認させてください。一点目は納期です。四月十日とありますが、こちらの都合で四月五日までにお願いできないでしょうか。二点目は数量で、百個ではなく百五十個に変更したいと考えております。\u3000変更後の金額を、今週中に再度お知らせいただけますと助かります。',
+ q:'このメールで相手に求めていることは何か。',o:['条件を変えた見積もりを出し直すこと','見積書をもう一度送り直すこと','納期に間に合うか確認すること','商品を百個だけ用意すること'],a:0,
+ ex:'Em e-mails de negócios o <b>pedido real fica no último parágrafo</b>. As formas 「～いただけますと助かります」「～いただけないでしょうか」marcam a solicitação; o que vem antes é apenas o contexto que a justifica. Leia o fim primeiro quando a pergunta for "o que ele quer?".'},
+{s:'読解',p:'日本語の「すみません」は、謝るときだけの言葉ではない。人に道を尋ねるときにも、席を譲ってもらったときにも使う。感謝を伝える場面で「ありがとう」ではなく「すみません」と言う人も多い。\u3000これは、相手に手間をかけさせたという意識が先に立つためだと言われる。つまり「すみません」は、謝罪と感謝の両方を含んだ言葉なのだ。外国語に一語で置き換えられないのは、そのためである。',
+ q:'「すみません」について、筆者はどう説明しているか。',o:['謝罪と感謝の両方の意味を持つ','謝るときにだけ使う言葉である','「ありがとう」より丁寧な言い方である','外国人には使えない言葉である'],a:0,
+ ex:'<b>「つまり」</b> é o marcador mais generoso do N2: a frase depois dele é um resumo do próprio autor, e muitas vezes é literalmente a resposta. Repare também no tema — é o seu problema de sempre: uma palavra que nenhuma outra língua cobre com um termo só.'},
+{s:'読解',p:'翻訳アプリの精度は年々上がっている。旅行や買い物の場面では、もう困ることはほとんどない。ただ、外国語を学ぶ意味がなくなったわけではない。アプリが訳すのは文の意味であって、相手との関係や場の空気ではないからだ。同じ内容でも、どう言うかで印象は大きく変わる。その選び方までは、まだ機械に任せられない。',
+ q:'筆者が外国語を学ぶ意味としてあげているのはどれか。',o:['場面に合わせた言い方を選べるようになること','旅行で困らないようになること','機械より速く訳せるようになること','文法を正確に覚えられること'],a:0,
+ ex:'<b>「～わけではない」</b> nega uma conclusão que o leitor poderia tirar, e o motivo vem logo depois em 「からだ」. Traduzido: o app entrega o <b>significado</b>, não a <b>relação</b> nem o <b>registro</b>. É exatamente a diferença entre 貸す/借りる e entre あげる/くれる.'}
+];
+const EN_MEX_READ=[
+'Internal notices exist to communicate <b>what changed</b>. Two clues do the work: 「～ですが」opens the item about to be altered, and 「通常どおり」states outright what did <b>not</b> change (the time). 「なお」always introduces secondary information — it is never the answer.',
+'The classic thesis frame: <b>「～のではない。問題は～だ」</b>. The writer first dismisses the obvious reading, then plants the real one. Whenever you see 「問題は」, underline what comes <b>after</b> it — the answer lives there.',
+'When a passage carries <b>numbers</b>, mark every one before you read the options — wrong answers are almost always the passage\'s own numbers put in the wrong slot. And 「ただし」announces the condition; conditions are precisely what the question tests.',
+'The pair <b>「確かに～。しかし～」</b> is a concession: the writer grants a point in order to overturn it. What follows しかし is his actual position. Here: pronunciation → children\'s advantage; vocabulary and grammar → adults\' advantage.',
+'Roberto, come back to this one after you answer. The second paragraph carries the thesis: 「学習時間の差が結果の差になっている」. Technique: in a two-paragraph passage the <b>first sets the scene</b> and the <b>second delivers the opinion</b>.',
+'Three markers in a row: 「一方で」turns the argument, 「かえって」signals a result opposite to expectation, and 「だけでは足りない」opens the conclusion. In N2 passages, follow the connectors and you reach the thesis without parsing every word.',
+'A <b>統合理解</b> question (two texts). Two-step method: first write each writer\'s stance in one word (A = for, B = against); then find the <b>single point both texts mention</b> — here, money — and compare only on that. Don\'t try to compare everything.',
+'The maths: 全日会員 8,000 − student discount 2,000 = 6,000. The 3,000 joining fee would be added, but 「三月中の入会は無料」waives it. The <b>情報検索</b> rule: read the question first, then hunt down <b>every</b> condition that applies to it. Miss one line and you miss the mark.',
+'With a list of requirements, the correct option satisfies <b>all</b> of them; each distractor breaks exactly one. Here: ① wrong year, ② already holds another scholarship, ③ wrong deadline and method. Number each condition and check them off one by one.',
+'Two signals close this question. <b>「～ではないか」</b> is a soft assertion — usually the thesis. And the final sentence runs 「～必要はないが、～たい」: what follows が is what the writer actually argues. Note he does <b>not</b> ask you to abandon the technology; distractor 2 overstates his position, a classic trap.',
+'In business email the <b>real request sits in the final paragraph</b>. The forms 「～いただけますと助かります」「～いただけないでしょうか」mark the ask; everything before it is context that justifies it. When the question is "what does he want?", read the end first.',
+'<b>「つまり」</b> is the most generous marker in N2 reading: the sentence after it is the writer\'s own summary, and it is often the answer verbatim. Notice the topic too — it is your recurring problem: a word no other language covers with a single term.',
+'<b>「～わけではない」</b> denies a conclusion the reader might draw, and the reason follows immediately in 「からだ」. In plain terms: the app delivers <b>meaning</b>, not <b>relationship</b> or <b>register</b>. That is exactly the difference between 貸す/借りる and between あげる/くれる.'
+];
+
+/* ═══ ENGLISH CONTENT OVERLAY — kanji mnemonics ═══ */
+const EN_KMN={
+'略':'田 (field) + 各 (each) → the general sketches <b>each field</b> onto one small map: a <b>strategy</b>, boiled down.',
+'承':'A raised hand receiving an order from above. You <b>accept</b> what the boss hands down — which is why it lives in humble speech.',
+'締':'糸 (thread) + 帝 (emperor) → the emperor <b>tightens</b> his silk belt. 締め切り = the day the door <b>closes</b>.',
+'被':'衤(clothing) + 皮 (skin) → something draped over your skin = it <b>lands on you</b>. Lives in disaster words: 被害.',
+'補':'衤(clothing) + 甫 → <b>patching</b> a torn coat = filling in what\'s missing.',
+'訳':'言 (words) + 尺 (measure) → <b>measuring words</b> = translating. And わけ = the "reason" sitting behind the words.',
+'誘':'言 (words) + 秀 (excellent) → <b>excellent words</b> talk you into going out.',
+'豊':'A vessel 豆 overflowing with grain — a <b>bumper harvest</b>.',
+'賛':'夫夫 (two men) over 貝 (money) → two partners <b>agree</b> about the money.',
+'越':'走 (run) + 戉 (axe) → run with the axe and <b>get over</b> the mountain.',
+'較':'車 (car) + 交 (cross) → two cars pulled up side by side to <b>compare</b>.',
+'輸':'車 (vehicle) hauling goods → shipping in and shipping out.',
+'遅':'辶 (walk) + 犀 (rhinoceros) → the <b>rhino walks slowly</b> and shows up late.',
+'適':'辶 (walk) + 啇 → the <b>right</b> road for you.',
+'障':'阝(wall) + 章 → a <b>wall</b> dropped in the middle of your path.',
+'雑':'九 + 木 + 隹 (bird) → nine birds in one tree = <b>chaos</b>.',
+'震':'雨 (rain) + 辰 → the sky <b>shakes</b>: earthquake.',
+'幹':'The <b>trunk</b> of the tree = the main line. 新幹線 = the new trunk line.',
+'幼':'幺 (thin thread) + 力 (strength) → strength still <b>thread-thin</b> = a small child.',
+'延':'廴 (long stride) → the deadline <b>stretches out</b>.',
+'従':'彳(walking) + two figures in file → one <b>follows</b> the other.',
+'志':'士 (samurai) + 心 (heart) → the <b>samurai\'s heart</b> = ambition.',
+'恐':'工 + 凡 + 心 → the heart shudders. 恐れ入ります = "I fear I\'m imposing" (ultra-polite).',
+'悩':'忄(heart) + a brain shape → heart and head both spinning = <b>anguish</b>.',
+'慣':'忄(heart) + 貫 (pierce through) → something that <b>runs through</b> your heart daily = a habit.',
+'抗':'扌(hand) + 亢 → the raised hand that says NO.',
+'招':'扌(hand) + 召 (summon) → waving someone over. Watch out: 誤解を招く = <b>invite</b> a misunderstanding.',
+'捕':'扌(hand) + 甫 → the hand that <b>grabs</b>.',
+'採':'扌(hand) + 采 → <b>picking</b> by hand: 採用 = picking (hiring) a person.',
+'探':'扌(hand) reaching into a deep hole → <b>groping around</b> to find something.',
+'接':'扌(hand) + 妾 → two hands that <b>touch</b>.',
+'提':'扌(hand) + 是 → <b>lifting</b> something up to show it.',
+'損':'扌(hand) + 員 (member/money) → the hand <b>takes away</b> from the money = loss.',
+'敵':'啇 + 攵 (strike) → the one you strike.',
+'易':'Sun 日 above rays → the day is <b>easy</b>. But 貿易 = trade (exchanging).',
+'暴':'Sun 日 + hands + water → the scorching sun makes everyone <b>violent</b>.',
+'替':'夫夫 (two men) over 日 → one <b>swaps places</b> with the other.',
+'枯':'木 (tree) + 古 (old) → an old tree <b>dries out</b>.',
+'欠':'A person with mouth wide open, yawning → something is <b>missing</b>.',
+'殖':'歹 + 直 → life <b>multiplies</b> straight ahead.',
+'汚':'氵(water) + 亏 → crooked water = <b>dirty water</b>.',
+'沈':'氵(water) + 冘 → drop into the <b>water</b> and sink. Also for mood: 気分が沈む.',
+'済':'氵(water) + 斉 → crossing the water = <b>getting it settled</b>. 経済 = managing and settling = economy.',
+'測':'氵(water) + 則 (rule) → measuring the depth of water.',
+'燃':'火 (fire) doubled up → it <b>blazes</b>.',
+'班':'Two jades 王王 split by a blade → <b>dividing</b> people into squads.',
+'皮':'A hand peeling the hide off an animal.',
+'祈':'礻(altar) + 斤 (axe) → make the offering at the altar and <b>pray</b>.',
+'秘':'禾 (rice) + 必 (necessary) → hiding the rice you need = a <b>secret</b>.',
+'穏':'禾 (rice) + a heart tucked away → with the granary full, the heart goes <b>calm</b>.',
+'突':'穴 (hole) + 大 → the dog bursts <b>suddenly</b> out of the hole.',
+'紹':'糸 (thread) + 召 (summon) → the thread that <b>links</b> two people.',
+'絶':'糸 (thread) cut with a blade → a <b>total break</b>. 絶対 = absolute (nothing cuts it).',
+'維':'糸 (thread) + 隹 (bird) → tie the bird down = <b>hold it in place</b>.',
+'蓄':'艹 (grass) + 畜 (livestock) → storing hay for the cattle = <b>saving up</b>.',
+'裁':'衣 (cloth) + 戈 (halberd) → cutting cloth with precision = passing <b>judgment</b>.',
+'触':'角 (horn) + 虫 (insect) → the insect <b>touches</b> with its antennae.',
+'避':'辶 (walk) + 辟 → <b>swerve off</b> the road.',
+'零':'雨 (rain) + 令 → drops that vanish = <b>nothing</b>.',
+'項':'工 + 頁 (page) → the <b>items</b> listed down the page.',
+'額':'客 (guest) + 頁 (head) → the sum written on the plaque at <b>forehead</b> height.',
+'依':'亻(person) + 衣 (clothing) → the person <b>leans on</b> the clothing.',
+'企':'人 (person) standing on 止 (stop) → the person halts and <b>plans</b>.',
+'傾':'亻 + 頃 → the person <b>tilts</b> their head. 傾向 = a tendency, a leaning.',
+'儲':'亻 + 諸 → the person who gathers many = <b>profit</b>.',
+'募':'莫 + 力 → pulling forces together = <b>recruiting</b>.'
+};
+
+/* ═══ grammar: English trap notes ═══ */
+const EN_GTRAP={
+'～わけではない':'English "it doesn\'t mean that" — but <b>never</b> use it for intent ("I didn\'t mean to" = そのつもりではなかった). わけではない denies a <b>conclusion</b>, not a wish.',
+'～わけがない':'≠ わけではない! がない = 0% chance. ではない = "it\'s not quite like that". One syllable flips the meaning.',
+'～わけにはいかない':'Not "I can\'t" in the ability sense (できない). It\'s <b>I\'m not free to</b>. Compare: 泳げない (can\'t swim) vs 泳ぐわけにはいかない (swimming wouldn\'t be right here).',
+'～ものだ':'A <b>general</b> truth, not a specific fact. 「昨日は寒いものだ」✗ — for yesterday just use だった.',
+'～ものの':'Only for something that <b>actually happened</b>. Never hypothetical. Written register — don\'t say this in a bar.',
+'～ものだから':'Always reads as an <b>excuse</b>. Don\'t use it to deliver good news.',
+'～ざるを得ない':'する → <b>せ</b>ざるを得ない (irregular!). Not なければならない (duty); this is <b>no alternative exists</b>, with a note of resignation.',
+'～に違いない':'Strong <b>subjective</b> certainty. ≠ はず (logical expectation), ≠ べき (moral duty). English "must" covers all three; Japanese doesn\'t.',
+'～はずだ / はずがない':'English "should" is the trap. はず = <b>logical expectation</b>; べき = <b>moral obligation</b>. 「早く寝るはずだ」✗ (you meant 寝るべきだ).',
+'～べきだ':'する→<b>す</b>べき (the classical form is preferred). Avoid using it about yourself when it sounds self-congratulatory.',
+'～ようがない':'No <b>means</b> available, not no permission. ≠ わけにはいかない.',
+'～かねない':'⚠ Only for <b>bad</b> outcomes. 「合格しかねない」✗. And かねる (no ない) means "I can\'t" politely. Near-identical shapes, opposite meanings.',
+'～かねる':'A polite <b>service-desk refusal</b>, not physical inability.',
+'～得る / 得ない':'<b>Theoretical</b> possibility, not personal ability. 「泳ぎ得る」sounds odd — use 泳げる.',
+'～に際して':'Only for <b>special, formal</b> occasions. Never for daily routine.',
+'～に先立って':'≠ 前に (everyday). Requires a <b>planned, formal</b> event.',
+'～をきっかけに':'The result must be a <b>change</b>. Don\'t use it for mechanical cause (use ため / によって).',
+'～を契機に':'The formal, written twin of をきっかけに.',
+'～に応じて':'Requires <b>proportional variation</b>. If nothing varies, use に従って or によって.',
+'～に基づいて':'The basis must be data, law, or fact. 「気持ちに基づいて」sounds strange.',
+'～にわたって':'≠ 間 (during). にわたって stresses the <b>span</b>. Always with a long period or wide area.',
+'～を通じて / を通して':'English "through" also maps to によって (agent). を通じて = <b>intermediary or medium</b>.',
+'～に対して':'⚠ The big one: について = <b>about a topic</b>; に対して = <b>directed at someone</b>; にとって = <b>from someone\'s standpoint</b>. English "for/about/toward" blurs all three.',
+'～にとって':'Only with an <b>evaluation</b> (hard, important, precious). 「私にとって本を買った」✗ → use に.',
+'～において':'The written version of で. Don\'t use it with everyday motion verbs.',
+'～ばかりか / ばかりでなく':'The second half must <b>escalate</b>. If it\'s just equal, use だけでなく.',
+'～どころか':'It flips the expectation. Not "on top of that" — it\'s <b>contradiction</b>.',
+'～に限らず':'Different from に限って ("of all times") and に限る ("nothing beats").',
+'～に限る':'Emphatic personal opinion. It does <b>not</b> mean "to limit".',
+'～に限って':'Carries <b>irony / bad luck</b>. Never neutral.',
+'～上で':'≠ てから (plain sequence). 上で means the first action <b>forms the basis</b> for the second.',
+'～上に':'Both halves must share the <b>same polarity</b> (both good or both bad).',
+'～次第':'⚠ Never with the <b>past</b>. 「着き次第連絡した」✗. Future and intention only.',
+'～次第だ / 次第で':'Same word, completely different job. Check what comes before: <b>ます形</b> (as soon as) or a <b>noun</b> (depends on).',
+'～たとたん':'<b>Past</b> only, and the result must be <b>unexpected</b>. Never with your own intention.',
+'～かと思うと':'An observation about <b>someone else</b>. Not about yourself.',
+'～てしょうがない':'Only for involuntary <b>sensations and emotions</b>, not actions.',
+'～てたまらない':'<b>Your own</b> feeling. For a third party use ～がっている.',
+'～ないことには':'The second clause <b>must</b> be negative. Classic error: ending it in the affirmative.',
+'～に過ぎない':'Always <b>downgrades</b> the value. Despite the kanji 過, it doesn\'t mean "exceed".',
+'～ほかない / よりほかない':'Same as しかない but more written. Compare ざるを得ない (more formal still).',
+'～としても':'<b>Hypothetical</b>. For something real, use ても/のに. English "even if / even though" hides the split.',
+'～わりに':'Compares against the <b>expected standard</b>. Different from ながら (concessive).',
+'～ながら(も)':'⚠ Not the ながら of "while doing". This one is <b>concessive</b>. Context decides.',
+'～つつ / つつある':'つつある = <b>gradual change in progress</b>. Not the same as plain ている. Written register.',
+'～かのようだ':'Explicitly <b>counterfactual</b>. Plain ようだ can be real.',
+'～のみならず':'<b>Very</b> formal. In speech use だけでなく.',
+'～に他ならない':'<b>Positive</b> emphasis. The mirror image of に過ぎない.',
+'～てからでないと':'The second half <b>must</b> be negative.',
+'～ばかりに':'⚠ The result is always <b>bad and regretted</b>. Not the ばかり of "only".',
+'～こそ':'Emphasis. 「今年こそ」= this year for real (the others didn\'t work). Roberto: this is your line.',
+'～てはじめて':'The realization comes <b>afterward</b>. Not for a planned action.',
+'～に相違ない':'The legal / written version of に違いない.',
+'～かぎり(は)':'A <b>continuing</b> condition. Different from 限る / 限って above.',
+'～まい':'The classical <b>negative volitional</b>. Shows up in N2 reading. する→するまい/すまい.',
+'～ようでは':'Always with a <b>negative</b> consequence.'
+};
+
+/* ═══ grammar: English translations of the example sentences ═══ */
+const EN_GTX={
+'～わけではない':'It\'s not that I dislike it, I just don\'t eat much of it.',
+'～わけがない':'There\'s no way he\'s coming.',
+'～わけにはいかない':'I promised, so I can\'t just not go.',
+'～ものだ':'You do get forgetful as you get older.',
+'～ものの':'I applied, but there\'s still no reply.',
+'～ものだから':'The train was delayed, that\'s why I was late.',
+'～ざるを得ない':'With the typhoon, we have no choice but to cancel.',
+'～に違いない':'He must have known.',
+'～はずだ / はずがない':'He was supposed to come today...',
+'～べきだ':'I should have consulted you sooner.',
+'～ようがない':'I don\'t have their contact details, so there\'s no way to let them know.',
+'～かねない':'At this rate it could well lead to an accident.',
+'～かねる':'I\'m afraid I can\'t answer that.',
+'～得る / 得ない':'It\'s something that can happen to anyone.',
+'～に際して':'On this opening occasion, allow me to say a few words.',
+'～に先立って':'Prior to departure, we\'ll hold a briefing.',
+'～をきっかけに':'Studying abroad changed the way I think.',
+'～を契機に':'I took retirement as my cue to move to the countryside.',
+'～に応じて':'The fee varies according to income.',
+'～に基づいて':'We\'ll draw up measures based on the survey results.',
+'～にわたって':'The conference ran over three days.',
+'～を通じて / を通して':'We met through a friend.',
+'～に対して':'He took a rude attitude toward the customer.',
+'～にとって':'For me, Japanese is hard.',
+'～において':'The meeting will be held in Tokyo.',
+'～ばかりか / ばかりでなく':'Not only did it rain, the wind picked up too.',
+'～どころか':'Forget kanji — he can\'t even read hiragana.',
+'～に限らず':'Not just young people; the elderly use it too.',
+'～に限る':'When you\'re tired, nothing beats sleep.',
+'～に限って':'Of all times, the train is late exactly when I\'m in a hurry.',
+'～上で':'I\'ll decide after thinking it over properly.',
+'～上に':'This place is cheap, and on top of that the food is good.',
+'～次第':'I\'ll contact you as soon as I arrive.',
+'～次第だ / 次第で':'The result depends on your effort.',
+'～たとたん':'The moment I opened the door, the cat bolted.',
+'～かと思うと':'One second she\'s crying, the next she\'s laughing.',
+'～てしょうがない':'I\'m unbearably sleepy.',
+'～てたまらない':'I miss my family back home so much it hurts.',
+'～ないことには':'You won\'t know unless you try.',
+'～に過ぎない':'That\'s nothing but an excuse.',
+'～ほかない / よりほかない':'There\'s nothing left but to give up.',
+'～としても':'Even if it rains, I\'m going.',
+'～わりに':'It\'s good for the price.',
+'～ながら(も)':'He kept quiet even though he knew.',
+'～つつ / つつある':'The situation is gradually improving.',
+'～かのようだ':'It\'s as if I were dreaming.',
+'～のみならず':'It\'s popular not only at home but abroad as well.',
+'～に他ならない':'Success is nothing other than the fruit of effort.',
+'～てからでないと':'You can\'t go in without getting permission first.',
+'～ばかりに':'Just because I said one thing, they turned on me.',
+'～こそ':'This year I\'m passing.',
+'～てはじめて':'Only after losing something do you see its worth.',
+'～に相違ない':'The culprit is undoubtedly him.',
+'～かぎり(は)':'I want to keep working as long as I\'m healthy.',
+'～まい':'I will never be late again.',
+'～ようでは':'With grades like these, you\'re not going to pass.'
+};
+
+/* ═══ traps: English explanations (same order as TRAPS) ═══ */
+const EN_TWHY=[
+'English has <b>one</b> verb "give"; Japanese has two. <span class="o">くれる</span> = someone gives <b>to me / toward my side</b>. <span class="x">あげる</span> = I give outward. If the gift moves toward you and the friend is the subject, it is always <b>くれる</b>. (もらう works too, but flips the subject to 私: 私は友だちにもらった.)',
+'知る in the plain present <b>does not exist</b> with this meaning. 知っている is not "I am knowing" — this ている marks a <b>state</b>, not an action in progress. Same family: 住んでいる (I live), 結婚している (I am married), 持っている (I have).',
+'English lumps everything under "there is". Japanese splits it: <b>いる</b> for living things that move, <b>ある</b> for objects. And the place of existence takes <b>に</b>, never で (で marks where an <b>action</b> happens).',
+'English uses one verb "open" for both. Japanese uses <b>pairs</b>: 開ける (I open it, takes を) / 開く (it opens, takes が). Learn them two at a time: 閉める・閉まる / 始める・始まる / 入れる・入る / 落とす・落ちる / 決める・決まる.',
+'好き is a <b>な-adjective</b>, not a verb. Literally "you are pleasing (to me)" — which is why the object takes <b>が</b>. Same rule: 上手・下手・分かる・できる・要る・ほしい all take が.',
+'～たい is only for <b>your own</b> desire (or a direct question). For a third person: ～たがっている, ～たいそうです, ～たいようです. Japanese won\'t let you assert what\'s in someone else\'s heart.',
+'とても only pairs with the <b>affirmative</b>. With a negative the required partner is <b>あまり</b>. Other fixed pairs: ぜんぜん + negative, めったに + negative, 必ずしも + negative.',
+'⚠ In English "lend" and "borrow" are already separate — good. The trap is the direction marker. <b>貸す</b> = I hand it over. <b>借りる</b> = I take it. And 彼<b>に</b>貸す (to him) vs 彼<b>から</b>借りる (from him). Get the particle wrong and the sentence reverses.',
+'教える = teach (I give out). 習う / 教わる = learn (I receive). Same logic as 貸す/借りる. The に here marks <b>the source</b>, not the recipient.',
+'"Wear" splits into five verbs: <b>着る</b> (torso), <b>はく</b> (legs and feet), <b>かぶる</b> (head), <b>かける</b> (glasses), <b>する</b> (accessories: 時計・ネクタイ・指輪).',
+'English has one "if". Japanese has four. <b>と</b> = automatic consequence; it bans intention or negation in the second clause. <b>たら</b> = the most flexible, accepts intention → correct here. <b>ば</b> = generic condition; avoid with action verbs plus intention. <b>なら</b> = "if that\'s the case", reacting to what the other person just said.',
+'<b>ために</b> = a goal <b>you control</b> (volitional verb). <b>ように</b> = a goal <b>outside your control</b>, or with a potential/negative form: 合格できるように, 忘れないように. Roberto: 「合格するために」and 「合格できるように」both exist — the verb form decides which.',
+'Tense inside 時 is <b>relative to the main action</b>, not to reality. 行く時 = before or on the way. 行った時 = already arrived. If you buy it <b>in</b> Japan, you need 日本に行った時. Here, buying it as a going-away purchase → 行く時. Read the logic; never translate "when" mechanically.',
+'ね seeks <b>shared agreement</b>. Don\'t confuse it with よ (delivering new information) or か (a real question). Common European-learner error: overusing か, which turns conversation into an interrogation.',
+'This one lines up with English here — but watch the reverse: 「行かないんですか」→「はい、行きません」= "Correct, I\'m not going." English "yes" would trip you. Always check: はい = "your sentence is accurate".',
+'<b>見える</b> = it enters your eyes on its own (natural potential). <b>見られる</b> = you have the chance or permission to watch. Identical pair: 聞こえる (I hear it without trying) vs 聞ける (I can listen to it).',
+'A <b>completed</b> action → the past form ございました. Using the present for something from yesterday sounds inattentive. Same: すみませんでした, ごちそうさまでした.',
+'<b>Causative-passive</b> (させられる): I was forced and I didn\'t like it. 待つ→待たせる→待たされる. English needs a whole phrase ("was made to"); Japanese does it in one verb. Very common on N2.',
+'The <b>suffering passive</b> (迷惑の受身) — English has no equivalent. 降られる = the rain fell and it hurt me. Others: 友だちに来られて勉強できなかった / 子供に泣かれた.',
+'"Miss" has no single equivalent. <b>恋しい</b> = I miss a thing or place. <b>懐かしい</b> = warm nostalgia for the past. <b>会いたい</b> = I miss a person. <b>寂しい</b> = I feel lonely. Pick by focus; never translate straight across.',
+'<b>そうです</b> after a plain form = <b>I heard that</b>. After ます-stem or an adjective = <b>it looks like it will</b> (雨が降りそう). Two grammar points, one surface shape. N2 loves testing this.',
+'<b>てある</b> = someone did it deliberately and the result remains (with が). <b>ている</b> with an intransitive verb = a natural state. 開いている = it\'s open (no agent mentioned). 開けてある = someone left it open on purpose.',
+'<b>～ないうちに</b> = while it still hasn\'t happened. 前に would be grammatical, but ないうちに is what N2 tests and it carries the sense of "using the window while it\'s open". Compare: 暗くならないうちに帰ろう.',
+'English "have to / must" covers four separate structures: <b>しかない</b> (nothing else left), <b>なければならない</b> (external rule), <b>べきだ</b> (moral duty), <b>ざるを得ない</b> (no alternative, formal). They are not interchangeable.',
+'Strong deduction about the <b>past</b> → past form + に違いない. Typical error: reaching for べき (duty) to express deduction, because English "must" does both jobs.',
+'<b>ます-stem + やすい / にくい</b> builds a new adjective: 読みやすい, 使いにくい, 分かりやすい. Translating "easy to" with 易しい produces a heavy, unnatural sentence.',
+'English repeats the subject; Japanese <b>drops</b> everything context already supplies. Piling up 私 sounds either childish or aggressive. N2 rule: if it can be omitted, omit it.',
+'An action that started in the past and <b>continues</b> → ている. Plain 働きます would be a future habit. And a company as the <b>site of an action</b> takes で (に only with 勤める).',
+'"If" as an <b>indirect question</b> = かどうか (never もし or たら). And ～てみる = try and see. These two show up together constantly on N2.',
+'<b>てしまう</b> ≠ "finish doing". It carries <b>regret</b> or irreversible completion — exactly English "ended up". 食べ終わる would be neutral ("finished eating"). In speech: 食べちゃった.'
+];
+
+/* ═══ mondai: English explanations (same order as MONDAI) ═══ */
+const EN_MEX=[
+'<b>～た上で</b> = do A and, <b>on that basis</b>, decide B. 上に = "on top of that". 末に = "after much (effort)". Here the consultation grounds the decision.',
+'<b>ながらも</b> = concessive ("although he is"). 一方で exists but needs a contrast between two sides, not between one person\'s status and their action. Note: this ながら is not "while".',
+'<b>ます-stem + 次第</b> = "as soon as", <b>future only</b>. とたん requires the past. Remember that 次第 after a <b>noun</b> means "depends on" — a completely different job.',
+'<b>からには</b> = "now that you have, naturally...". Always followed by duty or resolve (べき・つもり・なければならない).',
+'<b>ます-stem + がたい</b> = hard to do (psychologically or practically). かねる would be a polite service refusal; かねない means "could well end up (badly)".',
+'<b>ないことには</b> = "unless you do, it won\'t". The final clause <b>must</b> be negative — 無理だ satisfies that.',
+'<b>N のあまり</b> = "out of sheer (emotion)". Only with nouns of intense feeling: 悲しみ・喜び・驚き・心配.',
+'<b>～うが～まいが</b> = "whether or not". まい is the classical negative volitional. A fixed N2 pattern.',
+'Careful: 行われている would be the natural everyday choice. Among these options <b>つつある</b> marks a process underway. Note that つつある prefers verbs of <b>change</b> (増える・減る・変わる) — questions like this test whether you read the verb, not just the grammar.',
+'<b>N からして</b> = "judging from / starting with". からには demands resolve afterward. として = "in the capacity of".',
+'<b>N 次第で</b> = "depending on". 次第に (adverb) = "gradually". One word, three uses — N2 mines this.',
+'<b>にとって</b> = from the standpoint of, paired with an evaluation (分かりにくい). に対して would mean "directed at the expert". This is the number-one error for European-language speakers.',
+'<b>に限らず</b> = "not limited to". のみならず would also fit semantically, but with 「でも」in the second half に限らず is the natural answer.',
+'<b>に違いない</b> = strong certainty. わけではない would deny it; はずがない would call it impossible. Read the second sentence (the evidence is in) to choose the polarity.',
+'Fixed pattern <b>～ばというものでもない</b> = "it\'s not that simply doing X is enough". With たら or と the collocation breaks.',
+'<b>おかげで</b> = thanks to (a <b>good</b> result). ばかりに demands a bad result; とたん demands an instantaneous, surprising event.',
+'<b>わけにはいかない</b> = I can\'t afford to (moral or circumstantial block), not physical inability.',
+'<b>わりに</b> = "for what you\'d expect". だけに would give a result <b>consistent</b> with the expectation (高いだけに品質もいい).',
+'<b>あいまい</b> = vague, ambiguous. 適当 is double-edged (appropriate / slapdash) and doesn\'t fit here.',
+'<b>欠かせない</b> = indispensable. From 欠く (to lack) + negative potential = "cannot be allowed to be missing".',
+'<b>影響</b> = influence (an external force acting on something). 効果 = the intended effect of an action. 原因 is the cause itself: 台風が原因で is also possible — but with <b>の＿で</b> the natural fit is 影響.',
+'<b>裏切る</b> = betray (trust or expectation). Fixed collocations: 期待を裏切る・信頼を裏切る.',
+'<b>偏る</b> = become unbalanced or biased (nutrition, opinion). 傾く is to tilt physically, or a general tendency (傾向).',
+'<b>こだわる</b> = be particular about, obsess over (positive in modern usage). 関わる = be involved with.',
+'Fixed collocation: <b>責任を果たす</b> = fulfil a responsibility. Memorise verbs together with their noun, never alone.',
+'<b>指示</b> = a concrete instruction. 指導 = sustained guidance. 命令 is an order (strongly hierarchical). 注文 = an order in a shop.',
+'<b>こそ</b> = emphatic "this time for real" (implying earlier attempts). Not だけ (only) and not も (also).',
+'<b>～がたい</b> = hard to do. Not a prohibition, and not a desire.',
+'The <b>suffering</b> passive: the speaker was hurt by the event. English needs "I got caught in the rain".',
+'<b>N次第だ</b> = it depends on N. Here the decision belongs to the listener.',
+'<b>わけがない</b> = zero possibility. Compare わけではない ("it\'s not quite that...").',
+'Correct order: 子供【に】【限らず】【大人】【にも】人気がある。→ ★ (3rd blank) = <b>大人</b>.<br>Method: <b>don\'t fill left to right</b>. Find the fixed block first (here 「に限らず」), lock it in, and the rest falls into place.',
+'Correct order: 努力【し】【ない】【ことに】【は】結果は出ない。→ ★ = <b>ことに</b>.<br>Fixed block: 「～ないことには」. Always check polarity: the final clause is negative (出ない), which confirms the pattern.',
+'Correct order: 誰でも【簡単に】【やれる】【という】ものではない。→ ★ = <b>やれる</b>.<br>Fixed block: 「～というものではない」= "it\'s not that simply...". Anchor the block at the end and build backwards.',
+'The key is the final sentence: <b>～ないかぎり…難しい</b> = "unless..., it will be difficult". In N2 passages the <b>thesis almost always sits in the last sentence</b>, and markers like しかし・かえって・～ないかぎり flag the turn. Underline them before you look at the choices.',
+'Roberto — this passage is about <b>you</b>. 「訳すのではなく、場面ごと覚える」: don\'t translate, memorise the <b>situation</b>. Reading note: 「かえって」signals a reversal of expectation and almost always comes right before the author\'s thesis.',
+'<b>Information-retrieval</b> questions are solved by hunting conditions: 「一回だけ」「予約が入っていない場合に限り」「前日までに」「カウンターまたはウェブサイト」. Read the question <b>first</b>, then scan for the condition — don\'t read the whole text.',
+'<b>ものだから</b> = "it\'s because..." (justification). ものの would be concessive; ものなら an unlikely hypothesis; ものか an emphatic denial.',
+'<b>Vた + ところで</b> = "even if I do, it\'s pointless". Always with a negative or futile result.',
+'<b>伺う</b> = the humble form of 聞く (I ask). お聞きになる would be honorific (the teacher asks) — the classic error of swapping 尊敬語 and 謙譲語.',
+'<b>ご覧になる</b> = the honorific form of 見る. 「ご覧ください」is also correct; among these options ご覧になってください is the acceptable full form.',
+'<b>N を対象にする</b> = to target (an audience). A fixed collocation, very frequent in N2 business texts.',
+'<b>普及</b> = to spread widely through a population (technology, a habit). 拡大 = to grow in size; 増加 = to rise in number.',
+'<b>控える</b> = to go easy on, abstain from (health, consumption). 抑える = to suppress (emotion, cost). English "cut down / hold back" covers both; the collocation decides.',
+'<b>ざるを得ない</b> ≒ <b>ないわけにはいかない</b>: no alternative available. This pair appears directly in the paraphrase section.',
+'<b>にわたって</b> = across the whole span. Don\'t confuse it with ～おきに (at intervals) or ～以内 (within).'
+];
+
+/* ═══════════════ i18n ═══════════════ */
+const T={
+ daysTo:{pt:'DIAS ATÉ DEZEMBRO',en:'DAYS UNTIL DECEMBER'},
+ lvl:{pt:'Nível',en:'Level'},
+ p1:{pt:'FASE 1 · BASE',en:'PHASE 1 · FOUNDATION'},
+ p2:{pt:'FASE 2 · EXAME',en:'PHASE 2 · PAST PAPERS'},
+ p3:{pt:'FASE 3 · RETA FINAL',en:'PHASE 3 · FINAL STRETCH'},
+ mToday:{pt:'MISSÃO DE HOJE',en:'TODAY\'S MISSION'},
+ mK:{pt:'Kanji · # cartões',en:'Kanji · # cards'},
+ mKs:{pt:'Radicais + mnemônica. Leia em voz alta.',en:'Radicals + mnemonic. Say it out loud.'},
+ mV:{pt:'Vocabulário · # cartões',en:'Vocabulary · # cards'},
+ mVs:{pt:'Diga o exemplo inteiro, nunca só a palavra.',en:'Say the whole example, never just the word.'},
+ mG:{pt:'Gramática · # pontos',en:'Grammar · # points'},
+ mGs:{pt:'Leia o aviso vermelho de cada um.',en:'Read the red warning on every one.'},
+ mM:{pt:'Questões de prova · #',en:'Exam questions · #'},
+ mMs:{pt:'Sem dicionário. Cronometre-se.',en:'No dictionary. Time yourself.'},
+ mT:{pt:'Armadilhas PT→JP · #',en:'EN→JP traps · #'},
+ mTs:{pt:'Onde você mais perde ponto.',en:'Where you lose the most points.'},
+ mB:{pt:'Rodada de domingo',en:'Sunday round'},
+ mBs:{pt:'20 questões misturadas. Três erros e a rodada acaba.',en:'20 mixed questions. Three misses and the round ends.'},
+ streakT:{pt:'🔥 Sequência: # dias',en:'🔥 Streak: # days'},
+ revBtn:{pt:'Revisar # cartões vencidos',en:'Review # cards due'},
+ noRev:{pt:'Nenhuma revisão vencida. 立派だ。',en:'Nothing due for review. 立派だ。'},
+ traps:{pt:'罠 Armadilhas',en:'罠 Traps'},
+ mock:{pt:'問 Simulado',en:'問 Mock test'},
+ dojoT:{pt:'道場 · Treino diário',en:'道場 · Daily training'},
+ dKanji:{pt:'Kanji',en:'Kanji'},
+ dVocab:{pt:'Vocabulário',en:'Vocabulary'},
+ dGram:{pt:'Gramática',en:'Grammar'},
+ dLine:{pt:'# para revisar · # novos · # no total',en:'# due · # new · # total'},
+ mixBtn:{pt:'Revisão misturada (tudo vencido)',en:'Mixed review (everything due)'},
+ howto:{pt:'Como funciona: cada cartão que você acerta volta mais tarde (1 → 2 → 4 → 8 → 16 → 32 dias). Errou, ele volta amanhã. Não pule os vencidos — é aí que a memória se fixa.',
+        en:'How it works: every card you get right comes back later (1 → 2 → 4 → 8 → 16 → 32 days). Miss it and it returns tomorrow. Never skip the due pile — that is where memory actually forms.'},
+ box:{pt:'CAIXA',en:'BOX'},
+ show:{pt:'Mostrar resposta',en:'Show answer'},
+ gBad:{pt:'Errei',en:'Missed it'},
+ gMid:{pt:'Difícil',en:'Hard'},
+ gGood:{pt:'Sabia',en:'Knew it'},
+ quit:{pt:'Sair do baralho',en:'Leave this deck'},
+ kAsk:{pt:'Leitura + significado?',en:'Reading + meaning?'},
+ mnemo:{pt:'Mnemônica:',en:'Mnemonic:'},
+ gAsk:{pt:'Sentido, forma de ligação e a armadilha?',en:'Meaning, attachment form, and the trap?'},
+ careful:{pt:'⚠ Cuidado:',en:'⚠ Watch out:'},
+ deckDone:{pt:'Baralho concluído · # cartões',en:'Deck finished · # cards'},
+ nothingHere:{pt:'Nada pendente aqui. Tente outro baralho.',en:'Nothing pending here. Try another deck.'},
+ noDue:{pt:'Zero revisões vencidas. Faça cartões novos.',en:'No reviews due. Start some new cards.'},
+ moT:{pt:'過去問 · Simulado',en:'過去問 · Past-paper drill'},
+ moH:{pt:'Sessão de questões',en:'Question session'},
+ moD:{pt:'Formato real do N2: 文法・語彙・言い換え類義・並べ替え・読解. Explicação em português depois de cada resposta.',
+      en:'Real N2 format: 文法・語彙・言い換え類義・並べ替え・読解. Full explanation in English after every answer.'},
+ moGo:{pt:'Iniciar (10 questões)',en:'Start (10 questions)'},
+ moBoss:{pt:'まとめ · Rodada longa — 20 questões seguidas',en:'まとめ · Long round — 20 questions in a row'},
+ seen:{pt:'VISTAS',en:'SEEN'},bank:{pt:'NO BANCO',en:'IN BANK'},wins:{pt:'RODADAS',en:'ROUNDS'},
+ sess:{pt:'問 SESSÃO',en:'問 SESSION'},batt:{pt:'まとめ · RODADA',en:'まとめ · ROUND'},
+ right:{pt:'正解 · CERTO',en:'正解 · CORRECT'},wrong:{pt:'不正解 · POR QUÊ',en:'不正解 · WHY'},
+ next:{pt:'Próxima',en:'Next'},result:{pt:'Ver resultado',en:'See result'},
+ pickSec:{pt:'Selecione ao menos uma seção.',en:'Pick at least one section.'},
+ r80:{pt:'Esse é o nível de dezembro. Continue assim.',en:'That is December level. Keep it there.'},
+ r60:{pt:'Quase lá. Dá uma olhada nos erros antes de fechar o app.',en:'Almost there. Look over the misses before you close the app.'},
+ r0:{pt:'Hoje os cartões rendem mais que as questões. Volte ao dojo.',en:'Cards will pay off more than questions today. Head back to the dojo.'},
+ corr:{pt:'# de # corretas',en:'# of # correct'},
+ again:{pt:'Outra sessão',en:'Another session'},back:{pt:'Voltar',en:'Back'},
+ win:{pt:'お見事',en:'Nicely done'},lose:{pt:'ここまで',en:'That\'s the round'},res:{pt:'結果',en:'Result'},
+ trT:{pt:'罠 · Armadilhas de tradução',en:'罠 · Translation traps'},
+ trH:{pt:'Português → Japonês',en:'English → Japanese'},
+ trD:{pt:'Cada questão dá uma frase em português e quatro versões em japonês. Três são traduções literais que soam estranhas. Escolha a que um japonês diria — e leia a explicação mesmo quando acertar.',
+      en:'Each question gives an English sentence and four Japanese versions. Three are literal translations that sound off. Pick the one a Japanese person would actually say — and read the note even when you get it right.'},
+ trGo:{pt:'Começar (6 armadilhas)',en:'Start (6 traps)'},
+ trAll:{pt:'Ver todas as # explicações',en:'See all # explanations'},
+ trHow:{pt:'COMO SE DIZ EM JAPONÊS',en:'HOW DO YOU SAY THIS IN JAPANESE'},
+ trWhy:{pt:'O que acontece aqui',en:'What\'s going on here'},
+ trDone:{pt:'#/# armadilhas evitadas',en:'#/# traps avoided'},
+ trRef:{pt:'罠 · Referência completa',en:'罠 · Full reference'},
+ stT:{pt:'記録 · Progresso',en:'記録 · Progress'},
+ wallT:{pt:'Muralha dos kanji',en:'The kanji wall'},
+ wallD:{pt:'Cada quadrado é um kanji. Ele muda de cor a cada revisão certa — branco = dominado.',
+        en:'Each square is one kanji. It changes colour with every correct review — white = mastered.'},
+ weakT:{pt:'Vale revisar estes primeiro',en:'Worth reviewing these first'},
+ setT:{pt:'Ajustes',en:'Settings'},
+ examD:{pt:'Data do exame',en:'Exam date'},
+ langL:{pt:'Idioma da explicação',en:'Explanation language'},
+ lvlL:{pt:'Níveis de vocabulário ativos',en:'Active vocabulary levels'},
+ glvlL:{pt:'Níveis de gramática ativos',en:'Active grammar levels'},
+ expB:{pt:'Copiar backup do progresso',en:'Copy progress backup'},
+ impB:{pt:'Restaurar de um backup',en:'Restore from a backup'},
+ rstB:{pt:'Apagar tudo e recomeçar',en:'Erase everything and restart'},
+ tCopy:{pt:'Backup copiado',en:'Backup copied'},tRest:{pt:'Progresso restaurado',en:'Progress restored'},
+ tBad:{pt:'Backup inválido',en:'Invalid backup'},tZero:{pt:'Zerado',en:'Reset'},
+ tDate:{pt:'Data atualizada',en:'Date updated'},
+ askErase:{pt:'Apagar todo o progresso?',en:'Erase all progress?'},
+ pasteB:{pt:'Cole o backup:',en:'Paste the backup:'},copyB:{pt:'Copie:',en:'Copy this:'}
+};
+function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.replace('#',v));return s;}
+
+/* ═══════════════ 状態管理 ═══════════════ */
+const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossWins:0,
+           mondaiSeen:{},lang:'pt',levels:{v:true,w:true,x:true},glevels:{g:true,h:true}};
+let S=JSON.parse(JSON.stringify(DEF));
+const KEY='n2sprint:v2';
+Object.assign(EN_GTRAP,EN_G3TRAP);Object.assign(EN_GTX,EN_G3TX);
+MONDAI.push(...MONDAI_N3,...MONDAI_READ);EN_MEX.push(...EN_MEX_N3,...EN_MEX_READ);
+const POOL={k:KANJI,v:VOCAB,w:VOCAB_N3,x:VOCAB_N4,g:GRAMMAR,h:GRAMMAR_N3};
+const VKEYS=['v','w','x'],GKEYS=['g','h'];
+const LVNAME={v:'N2',w:'N3',x:'N4',g:'N2',h:'N3'};
+const actV=()=>VKEYS.filter(k=>S.levels[k]),actG=()=>GKEYS.filter(k=>S.glevels[k]);
+
+const store={
+  async get(){
+    try{ if(window.storage){const r=await window.storage.get(KEY); return r?JSON.parse(r.value):null;} }catch(e){}
+    try{ const r=localStorage.getItem(KEY); return r?JSON.parse(r):null; }catch(e){ return null; }
+  },
+  async set(v){
+    const j=JSON.stringify(v);
+    try{ if(window.storage){await window.storage.set(KEY,j); return;} }catch(e){}
+    try{ localStorage.setItem(KEY,j); }catch(e){}
+  }
+};
+let saveT=null;
+function save(){clearTimeout(saveT);saveT=setTimeout(()=>store.set(S),350);}
+
+const today=()=>new Date().toISOString().slice(0,10);
+function daysLeft(){
+  const d=Math.ceil((new Date(S.examDate+'T09:00:00')-new Date())/864e5);
+  return Math.max(0,d);
+}
+function toast(m){const t=document.getElementById('toast');t.innerHTML=m;t.classList.add('on');
+  clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),2100);}
+
+/* ═══════════════ SRS (Leitner) ═══════════════ */
+const IV=[0,1,2,4,8,16,32];
+function srs(id){return S.srs[id]||(S.srs[id]={b:0,due:today(),seen:0,miss:0});}
+function grade(id,ok){
+  const c=srs(id);c.seen++;
+  if(ok){c.b=Math.min(6,c.b+1);}else{c.b=Math.max(0,c.b-2);c.miss++;}
+  const d=new Date();d.setDate(d.getDate()+IV[c.b]);
+  c.due=d.toISOString().slice(0,10);
+  addXP(ok?4:1);save();
+}
+function dueList(prefix){
+  const t=today(),fresh=[],due=[];
+  POOL[prefix].forEach((x,i)=>{const id=prefix+i,c=S.srs[id];
+    if(!c)fresh.push(i);else if(c.due<=t)due.push(i);});
+  return {fresh,due};
+}
+function addXP(n){S.xp+=n;paintTop();}
+
+/* ═══════════════ 今日のミッション ═══════════════ */
+function phase(){const d=daysLeft();
+  if(d>60)return{n:L('p1'),k:8,v:12,g:5,m:6,t:4};
+  if(d>25)return{n:L('p2'),k:6,v:10,g:6,m:12,t:5};
+  return{n:L('p3'),k:4,v:8,g:4,m:16,t:6};}
+function dayRec(){const t=today();
+  if(!S.day[t])S.day[t]={k:0,v:0,g:0,m:0,t:0,boss:0};
+  return S.day[t];}
+function isBossDay(){return new Date().getDay()===0;}
+function missions(){
+  const p=phase(),d=dayRec();
+  const l=[
+    {id:'k',ic:'漢',t:L('mK',p.k),s:L('mKs'),n:d.k,g:p.k,go:()=>{nav('dojo');startDeck('k')}},
+    {id:'v',ic:'語',t:L('mV',p.v),s:L('mVs'),n:d.v,g:p.v,go:()=>{nav('dojo');startVocab()}},
+    {id:'g',ic:'文',t:L('mG',p.g),s:L('mGs'),n:d.g,g:p.g,go:()=>{nav('dojo');startGrammar()}},
+    {id:'m',ic:'問',t:L('mM',p.m),s:L('mMs'),n:d.m,g:p.m,go:()=>{nav('mondai');startMondai()}},
+    {id:'t',ic:'罠',t:L('mT',p.t),s:L('mTs'),n:d.t,g:p.t,go:()=>{nav('trap');startTrap()}}
+  ];
+  if(isBossDay())l.push({id:'boss',ic:'戦',t:L('mB'),s:L('mBs'),n:d.boss,g:1,go:()=>{nav('mondai');startBoss()}});
+  return l;
+}
+function checkStreak(){
+  const t=today();
+  const done=missions().filter(m=>m.n>=m.g).length;
+  if(done>=3&&S.lastActive!==t){
+    const y=new Date();y.setDate(y.getDate()-1);
+    S.streak=(S.lastActive===y.toISOString().slice(0,10))?S.streak+1:1;
+    S.lastActive=t;toast(L('streakT',S.streak));save();
+  }
+}
+function bump(k,n=1){const m=VKEYS.includes(k)?'v':GKEYS.includes(k)?'g':k;dayRec()[m]+=n;checkStreak();save();
+  if(cur==='home')renderHome();}
+
+/* ═══════════════ 描画 ═══════════════ */
+function paintTop(){
+  document.getElementById('dLeft').textContent=daysLeft();
+  document.getElementById('dLabel').textContent=L('daysTo');
+  document.getElementById('lvlL').textContent=L('lvl');
+  document.getElementById('lvl').textContent=Math.floor(S.xp/250)+1;
+  document.getElementById('streak').textContent=S.streak;
+  document.getElementById('xpFill').style.width=((S.xp%250)/250*100)+'%';
+  const lb=document.getElementById('langBtn');
+  if(lb)lb.textContent=S.lang==='pt'?'PT':'EN';
+}
+function setLang(l){S.lang=l;save();paintTop();nav(cur);toast(l==='pt'?'Explicações em português':'Explanations in English');}
+let cur='home';
+function nav(v){cur=v;
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
+  document.getElementById('v-'+v).classList.add('on');
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  window.scrollTo(0,0);
+  ({home:renderHome,dojo:renderDojo,mondai:renderMondai,trap:renderTrap,stats:renderStats})[v]();
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>nav(b.dataset.v));
+document.getElementById('langBtn').onclick=()=>setLang(S.lang==='pt'?'en':'pt');
+
+/* ── ホーム ── */
+function renderHome(){
+  const p=phase(),ms=missions(),done=ms.filter(m=>m.n>=m.g).length;
+  let totalDue=0;['k',...actG(),...actV()].forEach(x=>totalDue+=dueList(x).due.length);
+  document.getElementById('v-home').innerHTML=`
+  <div class="card" style="border-color:var(--mura)">
+    <div class="eyebrow" style="color:var(--mura)">${p.n}</div>
+    <h2 style="font-size:19px;line-height:1.35">${greet()}</h2>
+    <p class="muted" style="margin:8px 0 14px">${pep()}</p>
+    <div class="counter"><span>${L('mToday')}</span><span>${done}/${ms.length}</span></div>
+    <div class="hp"><i style="width:${done/ms.length*100}%"></i></div>
+  </div>
+  <div class="card">${ms.map((m,i)=>`
+    <div class="mission ${m.n>=m.g?'done':''}" data-i="${i}">
+      <div class="mbox">${m.n>=m.g?'✓':''}</div>
+      <div style="flex:1">
+        <div class="mtitle">${m.t}</div>
+        <div class="msub">${m.s} <b style="color:var(--yama)">${Math.min(m.n,m.g)}/${m.g}</b></div>
+      </div>
+      <div style="font-family:var(--jp);color:var(--dim);font-size:18px">${m.ic}</div>
+    </div>`).join('')}</div>
+  ${totalDue?`<button class="btn shu" id="revBtn">${L('revBtn',totalDue)}</button>`:
+    `<div class="card" style="text-align:center"><p class="muted" style="margin:0">${L('noRev')}</p></div>`}
+  <div class="row" style="margin-top:12px">
+    <button class="btn ghost sm" onclick="nav('trap')">${L('traps')}</button>
+    <button class="btn ghost sm" onclick="nav('mondai')">${L('mock')}</button>
+  </div>`;
+  document.querySelectorAll('#v-home .mission').forEach(el=>el.onclick=()=>ms[+el.dataset.i].go());
+  const rb=document.getElementById('revBtn');if(rb)rb.onclick=()=>{nav('dojo');startReview();};
+}
+function greet(){const h=new Date().getHours();
+  return h<11?'おはよう、Roberto。':h<18?'こんにちは、Roberto。':'こんばんは、Roberto。';}
+function pep(){
+  const d=daysLeft();
+  const a={pt:[
+    `Faltam ${d} dias. Não precisa ser um dia perfeito, só precisa ser hoje.`,
+    `Regra do dia: não traduza. Guarde a <b>situação</b>, não a palavra.`,
+    `Errar aqui é de graça. Melhor descobrir agora do que em dezembro.`,
+    `20 minutos hoje valem mais que 3 horas no domingo.`,
+    `Leia em voz alta. Seu ouvido precisa reconhecer antes do 聴解.`,
+    `Você já sabe como é a prova. Isso conta a seu favor.`,
+    `今日もおつかれさま。 Um pouco todo dia é o plano inteiro.`],
+  en:[
+    `${d} days to go. It doesn't have to be a perfect day, it just has to be today.`,
+    `Rule of the day: don't translate. Store the <b>situation</b>, not the word.`,
+    `Mistakes here are free. Better to find them now than in December.`,
+    `20 minutes today beats 3 hours on a Sunday.`,
+    `Read out loud. Your ear needs to recognise it before 聴解 does.`,
+    `You've already seen this exam once. That counts in your favour.`,
+    `今日もおつかれさま。 A little every day is the whole plan.`]}[S.lang];
+  return a[new Date().getDate()%a.length];
+}
+
+/* ═══════════════ 道場 ═══════════════ */
+let deck=null;
+function renderDojo(){
+  if(deck)return;
+  const box=(t,jp,key,col)=>{const d=dueList(key);return `
+    <button class="card" style="width:100%;text-align:left;display:flex;gap:14px;align-items:center;border-color:${col}" data-deck="${key}">
+      <div class="genko" style="flex:0 0 52px"><span class="glyph" style="font-size:30px">${jp}</span></div>
+      <div style="flex:1">
+        <div class="mtitle">${t}</div>
+        <div class="msub">${L('dLine',d.due.length,d.fresh.length,POOL[key].length)}</div>
+      </div>
+      <div style="color:${col};font-size:22px">›</div>
+    </button>`;};
+  document.getElementById('v-dojo').innerHTML=`
+  <div class="eyebrow">${L('dojoT')}</div>
+  ${box(L('dKanji'),'漢','k','var(--mura)')}
+  ${box(L('dVocab')+' N2','語','v','var(--yama)')}
+  ${box(L('dVocab')+' N3','語','w','var(--yama)')}
+  ${box(L('dVocab')+' N4','語','x','var(--yama)')}
+  ${box(L('dGram')+' N2','文','g','var(--yama)')}
+  ${box(L('dGram')+' N3','文','h','var(--yama)')}
+  <button class="btn shu" id="mixBtn" style="margin-top:6px">${L('mixBtn')}</button>
+  <p class="muted" style="margin-top:16px">${L('howto')}</p>`;
+  document.querySelectorAll('[data-deck]').forEach(b=>b.onclick=()=>startDeck(b.dataset.deck));
+  document.getElementById('mixBtn').onclick=startReview;
+}
+function startDeck(key){
+  const p=phase(),lim={k:p.k,v:p.v,w:p.v,x:p.v,g:p.g,h:p.g}[key];
+  const {fresh,due}=dueList(key);
+  const q=[...due.map(i=>({key,i})),...fresh.slice(0,lim).map(i=>({key,i}))];
+  if(!q.length){toast(L('nothingHere'));return;}
+  deck={q,idx:0,flip:false};nav('dojo');drawCard();
+}
+/* vocab mission: due items across all active levels first, then new from lowest gap */
+function startVocab(){
+  const p=phase();let q=[];
+  VKEYS.filter(k=>S.levels[k]).forEach(k=>dueList(k).due.forEach(i=>q.push({key:k,i})));
+  q.sort(()=>Math.random()-.5);
+  if(q.length<p.v){
+    for(const k of ['x','w','v']){ if(!S.levels[k])continue;
+      const f=dueList(k).fresh; for(const i of f){ if(q.length>=p.v)break; q.push({key:k,i}); }
+      if(q.length>=p.v)break; }
+  }
+  if(!q.length){toast(L('nothingHere'));return;}
+  deck={q,idx:0,flip:false};nav('dojo');drawCard();
+}
+function startGrammar(){
+  const p=phase();let q=[];
+  actG().forEach(k=>dueList(k).due.forEach(i=>q.push({key:k,i})));
+  q.sort(()=>Math.random()-.5);
+  if(q.length<p.g){for(const k of ['h','g']){ if(!S.glevels[k])continue;
+    for(const i of dueList(k).fresh){ if(q.length>=p.g)break; q.push({key:k,i}); }
+    if(q.length>=p.g)break; }}
+  if(!q.length){toast(L('nothingHere'));return;}
+  deck={q,idx:0,flip:false};nav('dojo');drawCard();
+}
+function startReview(){
+  let q=[];['k',...actG(),...actV()].forEach(k=>
+    dueList(k).due.forEach(i=>q.push({key:k,i})));
+  if(!q.length){toast(L('noDue'));return;}
+  q.sort(()=>Math.random()-.5);
+  deck={q,idx:0,flip:false};nav('dojo');drawCard();
+}
+function drawCard(){
+  if(deck.idx>=deck.q.length){const n=deck.q.length;deck=null;
+    toast(L('deckDone',n));renderDojo();return;}
+  const {key,i}=deck.q[deck.idx],item=POOL[key][i];
+  const isV=VKEYS.includes(key);
+  const front=key==='k'?kFront(item):isV?vFront(item):gFront(item);
+  const back =key==='k'?kBack(item) :isV?vBack(item) :gBack(item);
+  const c=srs(key+i);
+  const tag=key==='k'?'漢字':(isV?'語彙 ':'文法 ')+LVNAME[key];
+  document.getElementById('v-dojo').innerHTML=`
+  <div class="counter"><span>${tag} · ${L('box')} ${c.b}</span><span>${deck.idx+1} / ${deck.q.length}</span></div>
+  <div class="hp"><i style="width:${deck.idx/deck.q.length*100}%"></i></div>
+  <div class="stage"><div class="prompt">${deck.flip?back:front}</div>
+  ${deck.flip?`
+    <div class="row"><button class="btn" style="border-color:var(--coral);color:var(--coral)" data-g="0">${L('gBad')}</button>
+    <button class="btn" data-g="1">${L('gMid')}</button>
+    <button class="btn teal" data-g="2">${L('gGood')}</button></div>`:
+    `<button class="btn shu" id="flipB">${L('show')}</button>`}
+  <button class="btn ghost sm" id="quitB" style="margin-top:10px;color:var(--dim)">${L('quit')}</button></div>`;
+  const f=document.getElementById('flipB');
+  if(f)f.onclick=()=>{deck.flip=true;drawCard();};
+  document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{
+    const g=+b.dataset.g;grade(key+i,g>0);
+    if(g===0)deck.q.push(deck.q[deck.idx]);
+    bump(key);deck.idx++;deck.flip=false;drawCard();});
+  const qb=document.getElementById('quitB');if(qb)qb.onclick=()=>{deck=null;renderDojo();};
+}
+const gl=x=>S.lang==='pt'?x.pt:x.en;
+const wgl=s=>{const p=s.split(' / ');return S.lang==='pt'?p[0]:(p[1]||p[0]);};
+const kFront=k=>`<div class="kanjibox genko"><span class="glyph">${k.c}</span></div>
+  <p class="muted">${L('kAsk')}</p>`;
+const kBack=k=>`<div class="kanjibox genko" style="width:min(120px,30vw)"><span class="glyph" style="font-size:min(70px,19vw)">${k.c}</span></div>
+  <div class="reading">音 ${k.on}　訓 ${k.kun}</div>
+  <div class="gloss"><span class="pt">${gl(k)}</span><span class="en">${S.lang==='pt'?k.en:k.pt}</span></div>
+  <div class="mnemo"><b>${L('mnemo')}</b> ${S.lang==='pt'?k.mn:EN_KMN[k.c]}</div>
+  <div style="margin-top:14px;text-align:left;width:100%">${k.w.map(x=>
+    `<div style="padding:7px 0;border-bottom:1px dashed var(--bord)">
+      <span class="jpline" style="font-size:19px">${x[0]}</span>
+      <span style="color:var(--yama);font-family:var(--jp);margin-left:8px">${x[1]}</span>
+      <div class="msub">${wgl(x[2])}</div></div>`).join('')}</div>`;
+const vFront=v=>`<div class="jpbig">${v.w}</div>${v.r!=='—'?`<div class="reading">${v.r}</div>`:''}`;
+const vBack=v=>`<div class="jpbig">${v.w}</div>${v.r!=='—'?`<div class="reading">${v.r}</div>`:''}
+  <div class="gloss"><span class="pt">${gl(v)}</span><span class="en">${S.lang==='pt'?v.en:v.pt}</span></div>
+  <div class="mnemo" style="font-family:var(--jp);font-size:18px;border-color:var(--yama);background:var(--yama-dim)">${v.ex}</div>`;
+const gFront=g=>`<div class="jpbig" style="font-size:32px">${g.g}</div>
+  <p class="muted" style="margin-top:12px">${L('gAsk')}</p>`;
+const gBack=g=>`<div class="jpbig" style="font-size:30px">${g.g}</div>
+  <div class="reading" style="font-size:15px">${g.f}</div>
+  <div class="gloss"><span class="pt">${gl(g)}</span><span class="en">${S.lang==='pt'?g.en:g.pt}</span></div>
+  <div class="mnemo" style="border-color:var(--yama);background:var(--yama-dim)">
+    <span style="font-family:var(--jp);font-size:18px">${g.ex}</span><br>
+    <span class="msub">${S.lang==='pt'?g.tx:EN_GTX[g.g]}</span></div>
+  <div class="trap"><b>${L('careful')}</b> ${S.lang==='pt'?g.trap:EN_GTRAP[g.g]}</div>`;
+
+/* ═══════════════ 過去問 ═══════════════ */
+let mo=null;
+const SECS=['文法','語彙','類義','並べ替え','読解'];
+function renderMondai(){
+  if(mo)return;
+  const seen=Object.keys(S.mondaiSeen).length;
+  document.getElementById('v-mondai').innerHTML=`
+  <div class="eyebrow">${L('moT')}</div>
+  <div class="card">
+    <h2 style="font-size:17px">${L('moH')}</h2>
+    <p class="muted" style="margin:8px 0 14px">${L('moD')}</p>
+    <div id="secPills">${SECS.map(s=>`<span class="pill on" data-s="${s}">${s}</span>`).join('')}</div>
+    <button class="btn shu" id="goM" style="margin-top:12px">${L('moGo')}</button>
+  </div>
+  <button class="btn" id="goBoss" style="border-color:var(--coral);color:var(--coral)">${L('moBoss')}</button>
+  <div class="stat" style="margin-top:14px">
+    <div><b>${seen}</b><span>${L('seen')}</span></div>
+    <div><b>${MONDAI.length}</b><span>${L('bank')}</span></div>
+    <div><b>${S.bossWins}</b><span>${L('wins')}</span></div>
+  </div>`;
+  document.querySelectorAll('#secPills .pill').forEach(p=>p.onclick=()=>p.classList.toggle('on'));
+  document.getElementById('goM').onclick=()=>{
+    const on=[...document.querySelectorAll('#secPills .pill.on')].map(p=>p.dataset.s);
+    startMondai(on.length?on:SECS);};
+  document.getElementById('goBoss').onclick=startBoss;
+}
+function pick(secs,n){
+  let pool=MONDAI.map((q,i)=>({q,i})).filter(x=>!secs||secs.includes(x.q.s));
+  const unseen=pool.filter(x=>!S.mondaiSeen[x.i]);
+  pool=(unseen.length>=n?unseen:pool).sort(()=>Math.random()-.5);
+  return pool.slice(0,n);
+}
+function startMondai(secs){
+  const q=pick(secs&&secs.length?secs:null,10);
+  if(!q.length){toast(L('pickSec'));return;}
+  mo={q,idx:0,ok:0,boss:false};nav('mondai');drawQ();
+}
+function startBoss(){
+  const q=pick(null,20);
+  mo={q,idx:0,ok:0,boss:true,hp:3};nav('mondai');drawQ();
+}
+function drawQ(){
+  if(mo.idx>=mo.q.length||(mo.boss&&mo.hp<=0)){endM();return;}
+  const {q}=mo.q[mo.idx];
+  const body=q.s==='読解'
+    ? `<div class="card" style="background:var(--paper);color:var(--ink);border-color:var(--paper)">
+         <p style="font-family:var(--jp);font-size:16.5px;line-height:2.05;margin:0;text-align:justify">${q.p}</p></div>
+       <div class="qjp" style="font-size:17px">${q.q}</div>`
+    : `<div class="qjp">${q.q.replace('＿','<span class="blank"></span>')}</div>`;
+  document.getElementById('v-mondai').innerHTML=`
+  <div class="counter"><span>${mo.boss?L('batt'):L('sess')}</span>
+    <span>${mo.boss?'❤'.repeat(mo.hp):''} ${mo.idx+1} / ${mo.q.length}</span></div>
+  <div class="hp ${mo.boss?'boss':''}"><i style="width:${mo.idx/mo.q.length*100}%"></i></div>
+  <div style="margin-top:16px"><span class="qtag">${q.s}</span></div>
+  ${body}
+  <div id="opts">${q.o.map((o,k)=>`<button class="opt" data-k="${k}">
+    <span class="num">${k+1}</span><span>${o}</span></button>`).join('')}</div>
+  <div id="ex"></div>`;
+  document.querySelectorAll('#opts .opt').forEach(b=>b.onclick=()=>answer(+b.dataset.k));
+}
+function answer(k){
+  const {q,i}=mo.q[mo.idx],ok=k===q.a;
+  S.mondaiSeen[i]=(S.mondaiSeen[i]||0)+1;
+  grade('m'+i,ok);
+  if(ok){mo.ok++;addXP(6);}else if(mo.boss)mo.hp--;
+  document.querySelectorAll('#opts .opt').forEach(b=>{b.disabled=true;const n=+b.dataset.k;
+    if(n===q.a)b.classList.add('right');else if(n===k)b.classList.add('wrong');});
+  document.getElementById('ex').innerHTML=`
+    <div class="explain"><h4>${ok?L('right'):L('wrong')}</h4>${S.lang==='pt'?q.ex:EN_MEX[i]}</div>
+    <button class="btn shu" id="nx" style="margin-top:12px">${mo.idx+1>=mo.q.length?L('result'):L('next')}</button>`;
+  document.getElementById('nx').onclick=()=>{mo.idx++;bump('m');drawQ();};
+  document.getElementById('ex').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function endM(){
+  const pct=Math.round(mo.ok/mo.q.length*100),boss=mo.boss,won=boss&&mo.hp>0;
+  if(won){S.bossWins++;dayRec().boss=1;addXP(60);}
+  save();
+  const msg=pct>=80?L('r80'):pct>=60?L('r60'):L('r0');
+  document.getElementById('v-mondai').innerHTML=`
+  <div class="card" style="text-align:center;border-color:${pct>=60?'var(--ok)':'var(--coral)'}">
+    <div class="eyebrow" style="justify-content:center">${boss?(won?L('win'):L('lose')):L('res')}</div>
+    <div style="font-family:var(--disp);font-size:56px;font-weight:800;color:${pct>=60?'var(--ok)':'var(--coral)'}">${pct}%</div>
+    <p class="muted">${L('corr',mo.ok,mo.q.length)}</p>
+    <p style="margin-top:10px;font-size:14px">${msg}</p>
+  </div>
+  <button class="btn shu" id="again">${L('again')}</button>
+  <button class="btn ghost sm" id="back" style="margin-top:10px">${L('back')}</button>`;
+  mo=null;
+  document.getElementById('again').onclick=()=>startMondai();
+  document.getElementById('back').onclick=renderMondai;
+  paintTop();
+}
+
+/* ═══════════════ 罠 ═══════════════ */
+let tr=null;
+function renderTrap(){
+  if(tr)return;
+  document.getElementById('v-trap').innerHTML=`
+  <div class="eyebrow">${L('trT')}</div>
+  <div class="card" style="border-color:var(--coral)">
+    <h2 style="font-size:17px">${L('trH')}</h2>
+    <p class="muted" style="margin:8px 0 0">${L('trD')}</p>
+  </div>
+  <button class="btn shu" id="goT">${L('trGo')}</button>
+  <button class="btn ghost sm" id="listT" style="margin-top:10px">${L('trAll',TRAPS.length)}</button>`;
+  document.getElementById('goT').onclick=()=>startTrap();
+  document.getElementById('listT').onclick=listTraps;
+}
+function startTrap(){
+  const q=TRAPS.map((t,i)=>({t,i})).sort(()=>Math.random()-.5).slice(0,6);
+  tr={q,idx:0,ok:0};nav('trap');drawT();
+}
+function drawT(){
+  if(tr.idx>=tr.q.length){const o=tr.ok,n=tr.q.length;tr=null;
+    toast(L('trDone',o,n));renderTrap();return;}
+  const {t}=tr.q[tr.idx];
+  const main=S.lang==='pt'?t.pt:t.en, sub=S.lang==='pt'?t.en:t.pt;
+  document.getElementById('v-trap').innerHTML=`
+  <div class="counter"><span>罠</span><span>${tr.idx+1} / ${tr.q.length}</span></div>
+  <div class="hp boss"><i style="width:${tr.idx/tr.q.length*100}%"></i></div>
+  <div class="card" style="margin-top:16px;background:var(--paper);color:var(--ink);border-color:var(--paper)">
+    <div style="font-size:10px;letter-spacing:.2em;font-weight:800;color:#6B5A8A">${L('trHow')}</div>
+    <p style="margin:8px 0 4px;font-size:17px;font-weight:700">${main}</p>
+    <p style="margin:0;font-size:13px;color:#7A6A96">${sub}</p>
+  </div>
+  <div id="topts">${t.o.map((o,k)=>`<button class="opt" data-k="${k}">
+    <span class="num">${k+1}</span><span style="font-family:var(--jp);font-size:17px">${o}</span></button>`).join('')}</div>
+  <div id="tex"></div>`;
+  document.querySelectorAll('#topts .opt').forEach(b=>b.onclick=()=>tAns(+b.dataset.k));
+}
+function tAns(k){
+  const {t,i}=tr.q[tr.idx],ok=k===t.a;
+  if(ok){tr.ok++;addXP(5);}
+  grade('t'+i,ok);
+  document.querySelectorAll('#topts .opt').forEach(b=>{b.disabled=true;const n=+b.dataset.k;
+    if(n===t.a)b.classList.add('right');else if(n===k)b.classList.add('wrong');});
+  document.getElementById('tex').innerHTML=`
+    <div class="trap" style="margin-top:14px"><b>${ok?'正解:':L('trWhy')+':'}</b> ${S.lang==='pt'?t.why:EN_TWHY[i]}</div>
+    <button class="btn shu" id="tn" style="margin-top:12px">${L('next')}</button>`;
+  document.getElementById('tn').onclick=()=>{tr.idx++;bump('t');drawT();};
+  document.getElementById('tex').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function listTraps(){
+  document.getElementById('v-trap').innerHTML=`
+  <div class="eyebrow">${L('trRef')}</div>
+  ${TRAPS.map((t,i)=>`<div class="card">
+    <div style="font-weight:800;font-size:15px">${S.lang==='pt'?t.pt:t.en}</div>
+    <div class="jpline" style="font-size:19px;color:var(--ok);margin:8px 0">✓  ${t.o[t.a]}</div>
+    <div class="trap" style="margin:0">${S.lang==='pt'?t.why:EN_TWHY[i]}</div></div>`).join('')}
+  <button class="btn ghost sm" onclick="renderTrap()">${L('back')}</button>`;
+}
+
+/* ═══════════════ 記録 ═══════════════ */
+function renderStats(){
+  const mast=key=>POOL[key].filter((x,i)=>S.srs[key+i]&&S.srs[key+i].b>=4).length;
+  const weak=Object.entries(S.srs).filter(([k,c])=>c.miss>=2)
+    .sort((a,b)=>b[1].miss-a[1].miss).slice(0,10)
+    .map(([k,c])=>{const p=k[0],i=+k.slice(1);
+      const lab=POOL[p]?(p==='k'?POOL[p][i]?.c:GKEYS.includes(p)?POOL[p][i]?.g:POOL[p][i]?.w)
+        :p==='t'?(S.lang==='pt'?TRAPS[i]?.pt:TRAPS[i]?.en)?.slice(0,24)
+        :p==='m'?MONDAI[i]?.s+' #'+i:null;
+      return lab?`<span class="pill" style="border-color:var(--coral);color:var(--coral)">${lab} ×${c.miss}</span>`:'';}).join('');
+  const lvPill=(k,grp)=>`<span class="pill ${S[grp][k]?'on':''}" data-lv="${k}" data-grp="${grp}">${LVNAME[k]}</span>`;
+  document.getElementById('v-stats').innerHTML=`
+  <div class="eyebrow">${L('stT')}</div>
+  <div class="stat">
+    <div><b>${mast('k')}/${KANJI.length}</b><span>KANJI</span></div>
+    <div><b>${mast('v')+mast('w')+mast('x')}/${VOCAB.length+VOCAB_N3.length+VOCAB_N4.length}</b><span>語彙</span></div>
+    <div><b>${mast('g')+mast('h')}/${GRAMMAR.length+GRAMMAR_N3.length}</b><span>文法</span></div>
+  </div>
+  <div class="card">
+    <div class="eyebrow">${L('wallT')}</div>
+    <p class="muted" style="margin:-2px 0 12px">${L('wallD')}</p>
+    <div class="wall">${KANJI.map((k,i)=>{const bx=S.srs['k'+i]?S.srs['k'+i].b:-1;
+      return `<div class="cell ${bx>=5?'b5':bx>=4?'b4':bx>=3?'b3':bx>=2?'b2':bx>=0?'b1':''}">${k.c}</div>`;}).join('')}</div>
+  </div>
+  ${weak?`<div class="card"><div class="eyebrow">${L('weakT')}</div>${weak}</div>`:''}
+  <div class="card">
+    <div class="eyebrow">${L('setT')}</div>
+    <label class="msub">${L('langL')}</label>
+    <div style="margin:8px 0 14px">
+      <span class="pill ${S.lang==='pt'?'on':''}" data-lang="pt">Português</span>
+      <span class="pill ${S.lang==='en'?'on':''}" data-lang="en">English</span></div>
+    <label class="msub">${L('lvlL')}</label>
+    <div style="margin:8px 0 14px">${VKEYS.map(k=>lvPill(k,'levels')).join('')}</div>
+    <label class="msub">${L('glvlL')}</label>
+    <div style="margin:8px 0 14px">${GKEYS.map(k=>lvPill(k,'glevels')).join('')}</div>
+    <label class="msub">${L('examD')}</label>
+    <input type="date" id="exd" value="${S.examDate}" style="margin:6px 0 14px">
+    <button class="btn ghost sm" id="exp">${L('expB')}</button>
+    <button class="btn ghost sm" id="imp" style="margin-top:8px">${L('impB')}</button>
+    <button class="btn ghost sm" id="rst" style="margin-top:8px;color:var(--coral)">${L('rstB')}</button>
+  </div>`;
+  document.querySelectorAll('[data-lang]').forEach(p=>p.onclick=()=>setLang(p.dataset.lang));
+  document.querySelectorAll('[data-lv]').forEach(p=>p.onclick=()=>{
+    const k=p.dataset.lv,grp=p.dataset.grp,keys=grp==='levels'?VKEYS:GKEYS;
+    if(S[grp][k]&&keys.filter(x=>S[grp][x]).length===1)return;
+    S[grp][k]=!S[grp][k];save();renderStats();});
+  document.getElementById('exd').onchange=e=>{S.examDate=e.target.value;save();paintTop();toast(L('tDate'));};
+  document.getElementById('exp').onclick=()=>{const j=JSON.stringify(S);
+    navigator.clipboard?.writeText(j).then(()=>toast(L('tCopy')),()=>prompt(L('copyB'),j));};
+  document.getElementById('imp').onclick=()=>{const j=prompt(L('pasteB'));
+    if(!j)return;try{S=Object.assign(JSON.parse(JSON.stringify(DEF)),JSON.parse(j));
+      save();paintTop();renderStats();toast(L('tRest'));}catch(e){toast(L('tBad'));}};
+  document.getElementById('rst').onclick=()=>{if(confirm(L('askErase'))){
+    S=JSON.parse(JSON.stringify(DEF));save();paintTop();renderStats();toast(L('tZero'));}};
+}
+
+/* ═══════════════ 起動 ═══════════════ */
+(async()=>{
+  const saved=await store.get();
+  if(saved)S=Object.assign(JSON.parse(JSON.stringify(DEF)),saved);
+  if(!S.levels)S.levels={v:true,w:true,x:true};
+  if(!S.glevels)S.glevels={g:true,h:true};
+  paintTop();renderHome();
+  setInterval(paintTop,60000);
+})();
+
+</script>
+<script>
+(function(){try{
+ var ic="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 192 192%22%3E%3Crect width=%22192%22 height=%22192%22 fill=%22%23191231%22/%3E%3Crect x=%2224%22 y=%2224%22 width=%22144%22 height=%22144%22 fill=%22none%22 stroke=%22%23B98CFF%22 stroke-width=%228%22/%3E%3Ctext x=%2296%22 y=%22128%22 font-size=%2292%22 font-family=%22serif%22 font-weight=%22700%22 fill=%22%23FFC93C%22 text-anchor=%22middle%22%3E%E5%92%8C%3C/text%3E%3C/svg%3E";
+ var m={name:"N2日和 · Roberto",short_name:"N2日和",start_url:location.href,display:"standalone",
+   orientation:"portrait",background_color:"var(--ink)",theme_color:"var(--ink)",
+   icons:[{src:ic,sizes:"192x192",type:"image/svg+xml",purpose:"any maskable"},
+          {src:ic,sizes:"512x512",type:"image/svg+xml",purpose:"any maskable"}]};
+ var l=document.createElement("link");l.rel="manifest";
+ l.href=URL.createObjectURL(new Blob([JSON.stringify(m)],{type:"application/manifest+json"}));
+ document.head.appendChild(l);
+}catch(e){}})();
+</script>
+
+
+</body></html>
