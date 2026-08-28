@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0055)file:///Users/raku.ra/Downloads/N2-Nichiwa-Roberto.html -->
+<!-- saved from url=(0044)file:///Users/raku.ra/Downloads/index_2.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -12,7 +12,7 @@
 <title>N2日和 — Roberto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./N2日和 — Roberto_files/css2" rel="stylesheet">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
 :root{
   /* 紫 murasaki — primary. 山吹 yamabuki — secondary. Contrast-tested, all ≥4.5:1 */
@@ -203,6 +203,21 @@ nav button.on .ic{background:var(--mura-dim)}
   transition:.3s;white-space:nowrap;max-width:90vw;overflow:hidden}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(-6px)}
 
+#cheer{position:fixed;inset:0;z-index:70;display:grid;place-items:center;
+  pointer-events:none;opacity:0;transition:opacity .22s}
+#cheer.on{opacity:1;pointer-events:auto;background:rgba(25,18,49,.72);
+  backdrop-filter:blur(3px)}
+.cheerbox{background:var(--surf);border:2px solid var(--mura);border-radius:20px;
+  padding:22px 26px;text-align:center;max-width:min(320px,86vw);
+  box-shadow:0 14px 44px rgba(0,0,0,.55);animation:pop .3s cubic-bezier(.2,1.5,.4,1)}
+.cheerbox.big{border-color:var(--yama)}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.sprite{display:block;margin:0 auto 12px;animation:hop .62s steps(2,end) infinite alternate}
+@keyframes hop{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+.cheertxt{margin:0;font-size:16.5px;font-weight:800;line-height:1.45;color:var(--txt)}
+.cheersub{margin:8px 0 0;font-size:12.5px;color:var(--yama);font-weight:700;
+  letter-spacing:.06em}
+@media(prefers-reduced-motion:reduce){.sprite{animation:none}}
 .muted{color:var(--dim);font-size:13.5px;line-height:1.65}
 .pill{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;
   padding:4px 10px;border-radius:20px;border:1px solid var(--bord);color:var(--dim);
@@ -213,11 +228,11 @@ select,input[type=date]{background:var(--surf);border:1.5px solid var(--bord);co
 button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--yama);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-<link rel="manifest" href="blob:null/130440e9-9ad2-4627-89ce-1a37fdbd0930"></head>
+<link rel="manifest" href="blob:null/09872106-31c1-48fa-9973-59591ac2a815"></head>
 <body>
 
 <div class="topbar">
-  <div class="days"><span id="dLeft">101</span><small id="dLabel">DAYS UNTIL DECEMBER</small></div>
+  <div class="days"><span id="dLeft">100</span><small id="dLabel">DAYS UNTIL DECEMBER</small></div>
   <div class="topmeta">
     <div><span id="lvlL">Level</span> <b id="lvl">1</b> · <span id="streak">0</span>🔥</div>
     <div class="xpbar"><i id="xpFill" style="width:0%"></i></div>
@@ -231,8 +246,8 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
   <div class="card" style="border-color:var(--mura)">
     <div class="eyebrow" style="color:var(--mura)">PHASE 1 · FOUNDATION</div>
     <h2 style="font-size:19px;line-height:1.35">こんにちは、Roberto。</h2>
-    <p class="muted" style="margin:8px 0 14px">今日もおつかれさま。 A little every day is the whole plan.</p>
-    <div class="counter"><span>TODAY'S MISSION</span><span>0/5</span></div>
+    <p class="muted" style="margin:8px 0 14px">100 days to go. It doesn't have to be a perfect day, it just has to be today.</p>
+    <div class="counter"><span>TODAY'S MISSION</span><span>0/6</span></div>
     <div class="hp"><i style="width:0%"></i></div>
   </div>
   <div class="card">
@@ -263,12 +278,20 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
     <div class="mission " data-i="3">
       <div class="mbox"></div>
       <div style="flex:1">
+        <div class="mtitle">Reading · 2 passages</div>
+        <div class="msub">The biggest slice of the score. Read the connectors first. <b style="color:var(--yama)">0/2</b></div>
+      </div>
+      <div style="font-family:var(--jp);color:var(--dim);font-size:18px">読</div>
+    </div>
+    <div class="mission " data-i="4">
+      <div class="mbox"></div>
+      <div style="flex:1">
         <div class="mtitle">Exam questions · 6</div>
         <div class="msub">No dictionary. Time yourself. <b style="color:var(--yama)">0/6</b></div>
       </div>
       <div style="font-family:var(--jp);color:var(--dim);font-size:18px">問</div>
     </div>
-    <div class="mission " data-i="4">
+    <div class="mission " data-i="5">
       <div class="mbox"></div>
       <div style="flex:1">
         <div class="mtitle">EN→JP traps · 4</div>
@@ -295,6 +318,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
   <button data-v="stats"><span class="ic">録</span><span class="lb">PROGRESSO</span></button>
 </nav>
 
+<div id="cheer"></div>
 <div class="toast" id="toast"></div>
 <script>
 /* ═══════════════ 漢字 · KANJI N2 ═══════════════ */
@@ -1377,6 +1401,48 @@ const EN_MEX=[
 '<b>にわたって</b> = across the whole span. Don\'t confuse it with ～おきに (at intervals) or ～以内 (within).'
 ];
 
+const SPRITES={"dino":{"p":["#FFE9A8","#1B4F2C","#5FD68F","#141024","#FF6B76","#FFFFFF"],"g":["................","....1..1..1.....","...121121121....","..112222222211..","..122222222221..","..125322225321..","..122222222221..","..122224422221..","..112222222211..",".122000000002211",".122000000002221",".122000000002211","..122222222221..","..1221....1221..",".11111....11111.","................"]},"beetle":{"p":["#8A5520","#2A1A05","#B4802F","#141024","#FFFFFF"],"g":["................","....1......1....",".....1....1.....","......1111......",".......11.......",".....111111.....","....12222221....","....12434321....","...1100000011...","..100001100001..","..100001100001..","..100001100001..","..110000000011..",".11.10000001.11.",".1....1111....1.","................"]},"dragonfly":{"p":["#B4ECFA","#1B3A5C","#3FA8A0","#141024","#5CC8E8","#FFFFFF"],"g":["................","......1111......",".....144441.....",".....153531.....",".....144441.....","......1441......","..000014410000..",".00000144100000.","......1441......",".00000122100000.","..000014410000..","......1221......","......1441......","......1221......",".......11.......","................"]},"seal":{"p":["#3A4A66","#141024","#F2F6FC","#FF9AA6","#C9D6E8","#FFFFFF"],"g":["................","................","......0000......","....00444400....","...0444444440...","...0451445140...","...0444444440...","..044443344440..",".0.0444444440.0.",".00.04444440.00.","..004444444400..","..042222222240..","..042222222240..","...0444444440...","..000.0000.000..","................"]},"penguin":{"p":["#3C4A6B","#141024","#141024","#FFC93C","#F2F6FC"],"g":["................","......1111......","....11000011....","...1000000001...","...1042004201...","...1003333001...","...1000330001...","..110000000011..",".10004444440001.",".10044444444001.",".10044444444001.",".10044444444001.","..100444444001..","..110000000011..","...1331..1331...","................"]},"panda":{"p":["#141024","#241B44","#FF9AA6","#F2F6FC"],"g":["................",".000........000.",".0110......0110.",".01100000000110.","..003333333300..","..033333333330..","..031113311130..","..031313313130..","..031113311130..","..033332233330..",".01133333333110.",".01133333333110.",".01133333333110.","..003333333300..","...0110..0110...","................"]},"rabbit":{"p":["#5A4A6B","#141024","#FF9AA6","#F2F6FC"],"g":["....00....00....","...0320..0230...","...0320..0230...","...0320..0230...","....030..030....","....03300330....","...0033333300...","..033333333330..","..033133331330..","..033133331330..","..033332233330..",".03333333333330.",".03333333333330.",".03333333333330.","..00330..03300..","...0000..0000..."]},"cat":{"p":["#5A3A16","#141024","#FFD08A","#E8A33C","#FF9AA6"],"g":["..00........00..","..030......030..","..0330....0330..","..03030..03030..",".00333300333300.",".03333333333330.",".03003333330030.",".03113333331130.",".03333344333330.",".03333222233330.",".03322222222330.",".03322222222330.","..033222222330..","..003333333300..","...0330..0330...","................"]},"shiba":{"p":["#6B3F16","#141024","#FFF0DC","#E8A55C"],"g":["..00........00..","..030......030..","..0330....0330..","..033300003330..",".00333333333300.",".03322333322330.",".03311333311330.",".03333333333330.",".03332222223330.",".03322211222330.",".03322222222330.",".03332222223330.",".03333333333330.","..003333333300..","...0220..0220...","................"]}};
+/* pixel sprite → inline SVG (no external images, works offline) */
+function spriteSVG(name,px=7){
+  const s=SPRITES[name];if(!s)return'';
+  let r='';
+  s.g.forEach((row,y)=>{let x=0;while(x<16){
+    const c=row[x];if(c==='.'){x++;continue;}
+    let w=1;while(x+w<16&&row[x+w]===c)w++;           /* merge runs → fewer nodes */
+    r+=`<rect x="${x}" y="${y}" width="${w}" height="1" fill="${s.p[+c]}"/>`;x+=w;}});
+  return `<svg class="sprite" viewBox="0 0 16 16" width="${16*px}" height="${16*px}"
+    shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`;
+}
+const SPRITE_NAMES=Object.keys(SPRITES);
+
+/* her voice — shown verbatim, not translated */
+const CHEERS=[
+ 'えらい！💜',
+ 'Good boy, +1 XP.',
+ 'Roberto survived another day of Japanese.',
+ '日本語に勝つまで逃がさない 😈',
+ 'Hoje já chega. Vai descansar.',
+ 'Proud of you, always.'
+];
+let cheerBag=[];
+function nextCheer(){                                  /* shuffle-bag: no repeats until all seen */
+  if(!cheerBag.length){cheerBag=CHEERS.map((_,i)=>i).sort(()=>Math.random()-.5);}
+  return CHEERS[cheerBag.pop()];
+}
+function celebrate(allDone){
+  const el=document.getElementById('cheer');if(!el)return;
+  const sp=SPRITE_NAMES[Math.floor(Math.random()*SPRITE_NAMES.length)];
+  el.innerHTML=`<div class="cheerbox${allDone?' big':''}">
+    ${spriteSVG(sp,allDone?9:7)}
+    <p class="cheertxt">${nextCheer()}</p>
+    ${allDone?`<p class="cheersub">${S.lang==='pt'?'Missão de hoje completa.':'Today\'s mission complete.'}</p>`:''}
+  </div>`;
+  el.classList.add('on');
+  clearTimeout(el._t);
+  el._t=setTimeout(()=>el.classList.remove('on'),allDone?4200:2600);
+  el.onclick=()=>el.classList.remove('on');
+}
+
 /* ═══════════════ i18n ═══════════════ */
 const T={
  daysTo:{pt:'DIAS ATÉ DEZEMBRO',en:'DAYS UNTIL DECEMBER'},
@@ -1392,6 +1458,10 @@ const T={
  mG:{pt:'Gramática · # pontos',en:'Grammar · # points'},
  mGs:{pt:'Leia o aviso vermelho de cada um.',en:'Read the red warning on every one.'},
  mM:{pt:'Questões de prova · #',en:'Exam questions · #'},
+ mR:{pt:'Leitura · # textos',en:'Reading · # passages'},
+ mRs:{pt:'A maior parte da nota. Leia os conectores primeiro.',en:'The biggest slice of the score. Read the connectors first.'},
+ readBtn:{pt:'読解 · Só leitura (# textos)',en:'読解 · Reading only (# passages)'},
+ secLbl:{pt:'Seções incluídas — toque para ligar ou desligar',en:'Sections included — tap to turn on or off'},
  mMs:{pt:'Sem dicionário. Cronometre-se.',en:'No dictionary. Time yourself.'},
  mT:{pt:'Armadilhas PT→JP · #',en:'EN→JP traps · #'},
  mTs:{pt:'Onde você mais perde ponto.',en:'Where you lose the most points.'},
@@ -1525,11 +1595,11 @@ function addXP(n){S.xp+=n;paintTop();}
 
 /* ═══════════════ 今日のミッション ═══════════════ */
 function phase(){const d=daysLeft();
-  if(d>60)return{n:L('p1'),k:8,v:12,g:5,m:6,t:4};
-  if(d>25)return{n:L('p2'),k:6,v:10,g:6,m:12,t:5};
-  return{n:L('p3'),k:4,v:8,g:4,m:16,t:6};}
+  if(d>60)return{n:L('p1'),k:8,v:12,g:5,m:6,t:4,r:2};
+  if(d>25)return{n:L('p2'),k:6,v:10,g:6,m:12,t:5,r:3};
+  return{n:L('p3'),k:4,v:8,g:4,m:16,t:6,r:4};}
 function dayRec(){const t=today();
-  if(!S.day[t])S.day[t]={k:0,v:0,g:0,m:0,t:0,boss:0};
+  if(!S.day[t])S.day[t]={k:0,v:0,g:0,m:0,t:0,r:0,boss:0};
   return S.day[t];}
 function isBossDay(){return new Date().getDay()===0;}
 function missions(){
@@ -1538,6 +1608,7 @@ function missions(){
     {id:'k',ic:'漢',t:L('mK',p.k),s:L('mKs'),n:d.k,g:p.k,go:()=>{nav('dojo');startDeck('k')}},
     {id:'v',ic:'語',t:L('mV',p.v),s:L('mVs'),n:d.v,g:p.v,go:()=>{nav('dojo');startVocab()}},
     {id:'g',ic:'文',t:L('mG',p.g),s:L('mGs'),n:d.g,g:p.g,go:()=>{nav('dojo');startGrammar()}},
+    {id:'r',ic:'読',t:L('mR',p.r),s:L('mRs'),n:d.r||0,g:p.r,go:()=>{nav('mondai');startMondai(['読解'])}},
     {id:'m',ic:'問',t:L('mM',p.m),s:L('mMs'),n:d.m,g:p.m,go:()=>{nav('mondai');startMondai()}},
     {id:'t',ic:'罠',t:L('mT',p.t),s:L('mTs'),n:d.t,g:p.t,go:()=>{nav('trap');startTrap()}}
   ];
@@ -1553,7 +1624,14 @@ function checkStreak(){
     S.lastActive=t;toast(L('streakT',S.streak));save();
   }
 }
-function bump(k,n=1){const m=VKEYS.includes(k)?'v':GKEYS.includes(k)?'g':k;dayRec()[m]+=n;checkStreak();save();
+function doneCount(){return missions().filter(m=>m.n>=m.g).length;}
+function bump(k,n=1){
+  const m=VKEYS.includes(k)?'v':GKEYS.includes(k)?'g':k;
+  const before=doneCount(),total=missions().length;
+  dayRec()[m]+=n;
+  const after=doneCount();
+  checkStreak();save();
+  if(after>before)celebrate(after>=total);      /* a mission just flipped to complete */
   if(cur==='home')renderHome();}
 
 /* ═══════════════ 描画 ═══════════════ */
@@ -1752,6 +1830,7 @@ const gBack=g=>`<div class="jpbig" style="font-size:30px">${g.g}</div>
 /* ═══════════════ 過去問 ═══════════════ */
 let mo=null;
 const SECS=['文法','語彙','類義','並べ替え','読解'];
+const SECN=MONDAI.reduce((o,q)=>(o[q.s]=(o[q.s]||0)+1,o),{});
 function renderMondai(){
   if(mo)return;
   const seen=Object.keys(S.mondaiSeen).length;
@@ -1760,9 +1839,11 @@ function renderMondai(){
   <div class="card">
     <h2 style="font-size:17px">${L('moH')}</h2>
     <p class="muted" style="margin:8px 0 14px">${L('moD')}</p>
-    <div id="secPills">${SECS.map(s=>`<span class="pill on" data-s="${s}">${s}</span>`).join('')}</div>
+    <label class="msub" style="display:block;margin-bottom:8px">${L('secLbl')}</label>
+    <div id="secPills">${SECS.map(s=>`<span class="pill on" data-s="${s}">${s} ${SECN[s]||0}</span>`).join('')}</div>
     <button class="btn shu" id="goM" style="margin-top:12px">${L('moGo')}</button>
   </div>
+  <button class="btn teal" id="goRead">${L('readBtn',SECN['読解']||0)}</button>
   <button class="btn" id="goBoss" style="border-color:var(--coral);color:var(--coral)">${L('moBoss')}</button>
   <div class="stat" style="margin-top:14px">
     <div><b>${seen}</b><span>${L('seen')}</span></div>
@@ -1773,6 +1854,7 @@ function renderMondai(){
   document.getElementById('goM').onclick=()=>{
     const on=[...document.querySelectorAll('#secPills .pill.on')].map(p=>p.dataset.s);
     startMondai(on.length?on:SECS);};
+  document.getElementById('goRead').onclick=()=>startMondai(['読解']);
   document.getElementById('goBoss').onclick=startBoss;
 }
 function pick(secs,n){
@@ -1782,7 +1864,8 @@ function pick(secs,n){
   return pool.slice(0,n);
 }
 function startMondai(secs){
-  const q=pick(secs&&secs.length?secs:null,10);
+  const readOnly=secs&&secs.length===1&&secs[0]==='読解';
+  const q=pick(secs&&secs.length?secs:null,readOnly?5:10);
   if(!q.length){toast(L('pickSec'));return;}
   mo={q,idx:0,ok:0,boss:false};nav('mondai');drawQ();
 }
@@ -1819,7 +1902,7 @@ function answer(k){
   document.getElementById('ex').innerHTML=`
     <div class="explain"><h4>${ok?L('right'):L('wrong')}</h4>${S.lang==='pt'?q.ex:EN_MEX[i]}</div>
     <button class="btn shu" id="nx" style="margin-top:12px">${mo.idx+1>=mo.q.length?L('result'):L('next')}</button>`;
-  document.getElementById('nx').onclick=()=>{mo.idx++;bump('m');drawQ();};
+  document.getElementById('nx').onclick=()=>{mo.idx++;bump('m');if(q.s==='読解')bump('r');drawQ();};
   document.getElementById('ex').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function endM(){
