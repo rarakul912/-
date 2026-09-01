@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)file:///Users/raku.ra/Downloads/index_3.html -->
+<!-- saved from url=(0044)file:///Users/raku.ra/Downloads/index_5.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -203,6 +203,27 @@ nav button.on .ic{background:var(--mura-dim)}
   transition:.3s;white-space:nowrap;max-width:90vw;overflow:hidden}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(-6px)}
 
+.msrow{background:var(--surf);border:1px solid var(--bord);border-left:3px solid var(--coral);
+  border-radius:0 12px 12px 0;padding:14px;margin-bottom:12px}
+.mstag{font-size:10px;letter-spacing:.14em;font-weight:800;color:var(--coral)}
+.msq{font-family:var(--jp);font-size:17px;line-height:1.7;margin:7px 0}
+.msans{font-size:13px;line-height:1.6;margin-top:4px}
+.msans .x{color:var(--coral)}.msans .o{color:var(--ok)}
+.dots{display:flex;gap:5px;align-items:center;margin-top:9px;font-size:11px;color:var(--dim)}
+.dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--bord);display:block}
+.dots i.on{background:var(--ok);border-color:var(--ok)}
+.serifu{margin-top:11px;background:var(--mura-dim);border-radius:10px;padding:11px 13px}
+.serifu .lbl{font-size:9.5px;letter-spacing:.2em;font-weight:800;color:var(--mura)}
+.serifu .jp{font-family:var(--jp);font-size:18px;line-height:1.6;margin:6px 0 4px}
+.serifu .tr{font-size:12.5px;color:var(--dim);line-height:1.5}
+.meigen{background:var(--surf);border:1px solid var(--bord);border-top:3px solid var(--yama);
+  border-radius:0 0 14px 14px;padding:16px;margin-bottom:14px}
+.meigen .jp{font-family:var(--jp);font-size:21px;line-height:1.65;font-weight:700}
+.meigen .rd{font-family:var(--jp);font-size:12.5px;color:var(--mura);margin-top:5px}
+.meigen .src{font-size:11px;color:var(--dim);margin-top:8px;letter-spacing:.04em}
+.meigen .mn{font-size:13px;line-height:1.6;margin-top:11px;padding-top:11px;
+  border-top:1px dashed var(--bord);color:var(--txt)}
+.meigen .tr{font-size:13.5px;color:var(--yama);margin-top:7px;font-weight:700}
 #cheer{position:fixed;inset:0;z-index:70;display:grid;place-items:center;
   pointer-events:none;opacity:0;transition:opacity .22s}
 #cheer.on{opacity:1;pointer-events:auto;background:rgba(25,18,49,.72);
@@ -228,11 +249,11 @@ select,input[type=date]{background:var(--surf);border:1.5px solid var(--bord);co
 button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--yama);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-<link rel="manifest" href="blob:null/ce3d60e3-802a-4991-8e3b-c54654746bf6"></head>
+<link rel="manifest" href="blob:null/2d63eec5-197d-4e05-b86f-196021da5e6d"></head>
 <body>
 
 <div class="topbar">
-  <div class="days"><span id="dLeft">97</span><small id="dLabel">DAYS UNTIL DECEMBER</small></div>
+  <div class="days"><span id="dLeft">96</span><small id="dLabel">DAYS UNTIL DECEMBER</small></div>
   <div class="topmeta">
     <div><span id="lvlL">Level</span> <b id="lvl">1</b> · <span id="streak">0</span>🔥</div>
     <div class="xpbar"><i id="xpFill" style="width: 32%;"></i></div>
@@ -245,8 +266,8 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
   <section class="view on" id="v-home">
   <div class="card" style="border-color:var(--mura)">
     <div class="eyebrow" style="color:var(--mura)">PHASE 1 · FOUNDATION</div>
-    <h2 style="font-size:19px;line-height:1.35">こんばんは、Roberto。</h2>
-    <p class="muted" style="margin:8px 0 14px">20 minutes today beats 3 hours on a Sunday.</p>
+    <h2 style="font-size:19px;line-height:1.35">こんにちは、Roberto。</h2>
+    <p class="muted" style="margin:8px 0 14px">Rule of the day: don't translate. Store the <b>situation</b>, not the word.</p>
     <div class="counter"><span>TODAY'S MISSION</span><span>0/6</span></div>
     <div class="hp"><i style="width:0%"></i></div>
   </div>
@@ -300,6 +321,14 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
       <div style="font-family:var(--jp);color:var(--dim);font-size:18px">罠</div>
     </div></div>
   <button class="btn shu" id="revBtn">Review 21 cards due</button>
+  
+  <div class="meigen">
+  <div class="lbl" style="font-size:9.5px;letter-spacing:.2em;font-weight:800;color:var(--yama)">今日の一句</div>
+  <div class="jp">日進月歩</div><div class="rd">にっしんげっぽ</div>
+  <div class="tr">Advancing by the day, walking on by the month.</div>
+  <div class="src">— 四字熟語</div>
+  <div class="mn"><b style="color:var(--mura)">Why this matters:</b> Daily progress is invisible; monthly progress shows. That is why the kanji wall exists in this app.</div>
+</div>
   <div class="row" style="margin-top:12px">
     <button class="btn ghost sm" onclick="nav(&#39;trap&#39;)">罠 Traps</button>
     <button class="btn ghost sm" onclick="nav(&#39;mondai&#39;)">問 Mock test</button>
@@ -307,15 +336,17 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
   <section class="view" id="v-dojo"></section>
   <section class="view" id="v-mondai"></section>
   <section class="view" id="v-trap"></section>
+  <section class="view" id="v-miss"></section>
   <section class="view" id="v-stats"></section>
 </main>
 
 <nav>
-  <button data-v="home" class="on"><span class="ic">家</span><span class="lb">HOJE</span></button>
+  <button data-v="home" class="on"><span class="ic">家</span><span class="lb">TODAY</span></button>
   <button data-v="dojo"><span class="ic">道</span><span class="lb">DOJO</span></button>
-  <button data-v="mondai"><span class="ic">問</span><span class="lb">EXAME</span></button>
-  <button data-v="trap"><span class="ic">罠</span><span class="lb">ARMADILHA</span></button>
-  <button data-v="stats"><span class="ic">録</span><span class="lb">PROGRESSO</span></button>
+  <button data-v="mondai"><span class="ic">問</span><span class="lb">EXAM</span></button>
+  <button data-v="trap"><span class="ic">罠</span><span class="lb">TRAPS</span></button>
+  <button data-v="miss"><span class="ic">誤</span><span class="lb" id="nb4">ERRORS</span></button>
+  <button data-v="stats"><span class="ic">録</span><span class="lb" id="nb5">STATS</span></button>
 </nav>
 
 <div id="cheer"></div>
@@ -1412,6 +1443,331 @@ const EN_MEX_RUIGI2=[
 '題 = 題名 ≒ タイトル (title). A single syllable, easy to skim past while reading. Compare 課題 (task), 話題 (topic), 問題 (problem) — 題 shifts meaning with its partner.'
 ];
 
+/* ═══ 読解 拡張 A · 短文 ═══ */
+const MONDAI_R3A=[
+{s:'読解',p:'新しい道具が入ると、仕事は速くなる。しかし、速くなった分だけ楽になるかというと、そうでもない。空いた時間には、たいてい別の仕事が入ってくるからだ。\u3000道具が解決するのは作業の速度であって、仕事の量ではない。量を決めているのは道具ではなく、その職場の考え方のほうである。',
+ q:'筆者の考えに合うのはどれか。',o:['道具を入れても、仕事の量そのものは変わらない','新しい道具を入れれば仕事は楽になる','道具より人を増やしたほうが効果がある','速度を上げることに意味はない'],a:0,
+ ex:'Estrutura <b>期待 → 否定 → 理由</b>. A frase 「そうでもない」nega a expectativa, e 「からだ」traz o motivo. A alternativa que diz "não faz sentido aumentar a velocidade" é mais extrema que o texto: ele admite que a velocidade melhora.'},
+{s:'読解',p:'部屋を片づけられない人の多くは、片づけ方を知らないのではない。物を捨てる基準を決めていないのだ。\u3000「いつか使うかもしれない」という一言があれば、どんな物でも残せてしまう。基準がないところに手だけ動かしても、物は場所を移動するだけで、減りはしない。',
+ q:'筆者によると、部屋が片づかない原因は何か。',o:['何を捨てるかの基準が決まっていないこと','片づけの方法を知らないこと','物を置く場所が足りないこと','片づける時間が取れないこと'],a:0,
+ ex:'A frase 「～のではない。～のだ」coloca a causa verdadeira depois. A alternativa "não sabe o método" é justamente o que o autor <b>descarta</b> na primeira linha — o N2 costuma oferecer a ideia negada como distrator.'},
+{s:'読解',p:'外国語の会話で最も困るのは、単語が出てこないときではない。相手の言ったことが分からなかったとき、どう聞き返すかを知らないときである。\u3000「もう一度お願いします」だけでは足りない。速すぎたのか、単語が分からなかったのか、話の流れを見失ったのか。そこを伝えられれば、相手は言い方を変えてくれる。',
+ q:'筆者によると、会話で身につけるべきなのはどのようなことか。',o:['何が分からなかったのかを相手に伝える言い方','分からない単語をその場で調べる方法','速く話す練習','単語をできるだけ多く覚えること'],a:0,
+ ex:'Roberto, guarde esta. A tese está em 「そこを伝えられれば、相手は言い方を変えてくれる」. Repare no <b>てくれる</b>: o interlocutor ajusta <b>para você</b> — sem ele a frase soaria fria, como já vimos nas armadilhas.'},
+{s:'読解',p:'値段を下げれば売れる、と考えるのは危うい。安さで来た客は、もっと安い店が現れれば、そちらへ移る。\u3000残ってくれるのは、その店でなければならない理由を持っている客だ。その理由は、味かもしれないし、店員との会話かもしれない。いずれにしても、値段以外のところにある。',
+ q:'筆者は、店に何が必要だと考えているか。',o:['値段以外に、客がその店を選ぶ理由','近くの店より安い価格','客と長く話せる店員','味を安定させる仕組み'],a:0,
+ ex:'Cuidado com o <b>escopo</b>. O texto cita 味 e 会話 apenas como <b>exemplos</b> (「かもしれない」), e conclui 「値段以外のところにある」. A alternativa certa precisa cobrir os dois exemplos, não escolher um.'},
+{s:'読解',p:'子どもに「早くしなさい」と言い続けても、子どもは速くならない。何を、どの順番でやればいいかが見えていないからだ。\u3000「靴を履いたら、かばんを持って玄関で待っていて」と言えば、動ける。急がせる言葉ではなく、次の一手を示す言葉が要る。',
+ q:'筆者は、子どもにどのように言うべきだと述べているか。',o:['次に何をするかを具体的に示す','急ぐ理由を説明する','時間を計って競争させる','自分で順番を考えさせる'],a:0,
+ ex:'O par <b>ではなく～が要る</b> no fecho carrega a proposta. E o exemplo entre aspas mostra o formato concreto. Quando um texto curto traz uma fala entre 「」, ela quase sempre ilustra a resposta.'},
+{s:'読解',p:'会議で発言しない人が、意見を持っていないとは限らない。口に出す前に、それが十分に整理されているかどうかを自分で確かめたい、という人もいる。\u3000その場ですぐ話せる人だけを評価していると、時間をかけて考える人の意見は、いつまでも会議に届かないままになる。',
+ q:'筆者が問題だと考えているのはどのようなことか。',o:['その場で話せる人の意見だけが取り上げられること','会議で発言しない人が増えていること','会議の時間が足りないこと','意見を整理してから話す人が少ないこと'],a:0,
+ ex:'<b>～とは限らない</b> abre o texto negando um preconceito, e o problema aparece no segundo parágrafo com 「～ていると、～ない」(se continuarmos assim, isso não acontece). Essa estrutura condicional é onde mora a crítica.'},
+{s:'読解',p:'地図アプリを使うようになって、道を尋ねる機会がほとんどなくなった。便利ではある。\u3000ただ、道を尋ねると、たいてい教えてもらった以上のものが返ってきた。近道や、途中の店や、雨の日は滑るという注意。地図には載っていない情報である。',
+ q:'筆者が道を尋ねることについて述べているのはどれか。',o:['地図には出ない情報まで得られた','地図アプリより正確に道が分かった','知らない人と親しくなる機会になった','時間はかかるが確実な方法だった'],a:0,
+ ex:'A palavra-chave é 「以上のもの」= algo <b>além</b> do que se pediu, e a última frase define isso: 「地図には載っていない情報」. As outras alternativas trazem vantagens que o texto não afirma.'},
+{s:'読解',p:'健康のために運動を始める人は多いが、続く人は少ない。原因の一つは、目標の置き方にあると思う。\u3000「毎日三十分走る」と決めると、走れなかった日が失敗になる。「週に合計九十分動く」なら、雨の日に休んでも取り返せる。続けるためには、失敗しにくい形に目標を作り直すほうがいい。',
+ q:'筆者によると、運動を続けるにはどうすればよいか。',o:['達成できなかった日を取り返せる目標にする','毎日決まった時間に運動する','目標を少しずつ高くしていく','雨の日でもできる運動を選ぶ'],a:0,
+ ex:'Roberto — aplique isto ao japonês. A recomendação vem com <b>ほうがいい</b> no fim: 「失敗しにくい形に目標を作り直す」. O exemplo dos 九十分 explica <b>como</b>, e a alternativa certa é a que generaliza esse exemplo.'},
+{s:'読解',p:'以下は、あるレストランの入り口に貼られた案内である。\u3000本日のご案内\u3000本日は貸切のため、十七時から二十時までは一般のお客様のご利用をお断りしております。二十時以降は通常どおり営業いたします。\u3000なお、テイクアウトのご注文は、貸切の時間帯も裏口にて承っております。ご予約のお客様は、恐れ入りますが二十時以降の時間帯で取り直しをお願いいたします。',
+ q:'この案内の内容と合っているものはどれか。',o:['貸切の時間帯でも、持ち帰りの注文はできる','本日は一日中、店に入ることができない','予約した客は、貸切の時間帯でも入れる','二十時以降はテイクアウトのみになる'],a:0,
+ ex:'Método do 情報検索: cada frase é uma condição. 「二十時以降は通常どおり」elimina a ideia de fechar o dia todo; 「取り直しをお願い」elimina a de que reservas valem; 「テイクアウトは裏口にて承っております」confirma a certa.'},
+{s:'読解',p:'写真を撮るとき、私はまず何を撮らないかを決める。画面に入るものを減らしていくと、残ったものが何であるかがはっきりしてくるからだ。\u3000たくさん入っている写真は、見た人が何を見ればいいのか分からない。撮る側が選ばなければ、見る側は選べない。',
+ q:'筆者が写真を撮るときに大切にしていることは何か。',o:['画面に入れないものを先に決めること','できるだけ多くのものを画面に入れること','見る人が自由に解釈できるようにすること','明るさや色を丁寧に調整すること'],a:0,
+ ex:'A frase final 「撮る側が選ばなければ、見る側は選べない」é uma <b>reformulação</b> da tese de abertura. Em textos curtos, primeira e última frase costumam dizer a mesma coisa de dois jeitos — se batem, você achou a resposta.'},
+{s:'読解',p:'言葉は、使われなくなると消える。しかし、消えた言葉が指していたものまで消えるわけではない。\u3000たとえば「宵の口」という言い方を使う人は減ったが、日が暮れて間もない時間帯は今もある。言葉が減るというのは、その時間帯を細かく言い分ける必要を、私たちが感じなくなったということだ。',
+ q:'筆者は、言葉が減ることをどのように説明しているか。',o:['細かく区別する必要を感じなくなったということ','指しているものが世の中から消えたということ','新しい言葉に置き換わったということ','若い世代が言葉を知らなくなったということ'],a:0,
+ ex:'⚠ 「～わけではない」na segunda linha nega justamente o distrator mais atraente. E 「ということだ」no fim marca a definição do autor. Duas peças gramaticais decidem a questão inteira, sem precisar entender cada palavra.'},
+{s:'読解',p:'部下が同じ失敗を繰り返すとき、注意の仕方を変えても効果は薄い。多くの場合、本人は何が悪かったかを分かっている。分かっているのに直らないのは、直すための時間や手順が用意されていないからだ。\u3000注意する側がすべきなのは、強く言うことではなく、直せる条件を整えることである。',
+ q:'筆者によると、部下の失敗が直らないのはなぜか。',o:['直すための時間や手順がないから','何が悪かったのかを理解していないから','注意の仕方が弱すぎるから','本人にやる気がないから'],a:0,
+ ex:'A pergunta é なぜ, então procure 「からだ」: 「直すための時間や手順が用意されていないからだ」. As alternativas sobre não entender e sobre falta de vontade são exatamente as que o texto <b>descarta</b>.'},
+{s:'読解',p:'旅先で写真ばかり撮っていると、後で見返したときに、自分が何を見たのか思い出せないことがある。カメラを構えた瞬間、目は景色ではなく画面を見ているからだ。\u3000記録は残る。しかし記憶は残らない。両方ほしいなら、一枚撮ったらカメラを下ろして、同じものをもう一度、自分の目で見ることだ。',
+ q:'筆者は、旅先での写真についてどのように述べているか。',o:['撮ったあとに自分の目で見直すとよい','写真は撮らないほうが記憶に残る','記録より記憶のほうが価値がある','枚数を決めて撮るべきだ'],a:0,
+ ex:'A alternativa "não tirar fotos" é mais radical que o texto — ele diz 「両方ほしいなら」, ou seja, quer as duas coisas. Sempre que uma opção elimina algo que o autor quer <b>manter</b>, descarte-a.'},
+{s:'読解',p:'方言は、標準語より不正確なものだと思われがちだ。しかし実際には、その土地の暮らしに必要な区別を、標準語より細かく持っていることが多い。\u3000雪の降り方、風の向き、魚の鮮度。生活に関わるものほど、言い分ける言葉が増える。言葉の細かさは、その土地が何を大事にしてきたかを示している。',
+ q:'筆者は、方言についてどのように考えているか。',o:['その土地の暮らしに必要な区別を細かく持っている','標準語より正確に気持ちを伝えられる','若い人にも残していく必要がある','標準語の古い形を保存している'],a:0,
+ ex:'O texto abre com 「～と思われがちだ」(costuma-se pensar) e vira com 「しかし実際には」. Essa dupla é o sinal mais confiável do N2: o que vem depois de 実際には é a posição do autor.'},
+{s:'読解',p:'相手の話を聞くとき、私は相づちを打つ回数を意識して減らすようにしている。相づちが多いと、相手は話しやすくなる一方で、話を早く終わらせようともする。こちらが分かったように見えるからだ。\u3000少し黙って待つと、相手はもう一歩深いところまで話してくれることがある。',
+ q:'筆者が相づちを減らす理由は何か。',o:['相手がより深いところまで話すようになるから','相づちを打つのが苦手だから','話を早く終わらせたいから','相手の話に集中したいから'],a:0,
+ ex:'A causa aparece em duas camadas: 「分かったように見えるからだ」explica o problema, e o último parágrafo dá o resultado desejado. Quando há dois 「から」, o que responde à pergunta é o que se liga ao <b>objetivo</b> do autor.'},
+{s:'読解',p:'締め切りが遠いうちは、仕事はなかなか進まない。時間があると思うほど、始めるのが遅くなる。\u3000だから私は、本当の締め切りとは別に、自分だけの締め切りを一週間前に置くことにしている。守れなくても、一週間の余裕が残る。守れれば、見直す時間ができる。どちらに転んでも損はしない。',
+ q:'筆者が自分だけの締め切りを置く利点として述べているのはどれか。',o:['守れなくても余裕が残り、守れれば見直せる','締め切りを忘れなくなる','仕事の量を正確に見積もれる','人に迷惑をかけずに済む'],a:0,
+ ex:'「どちらに転んでも損はしない」resume as duas frases anteriores. Perguntas com 利点 pedem exatamente esse tipo de fecho — leia o último período antes de tudo.'},
+{s:'読解',p:'説明が上手な人は、難しいことを易しく言い換えているように見える。しかし実際にやっているのは、言い換えではない。聞き手が今どこまで分かっているかを確かめ、そこから一歩だけ進む、という作業である。\u3000だから同じ内容でも、相手が変われば説明も変わる。上手な説明とは、内容の性質ではなく、相手との距離の測り方なのだ。',
+ q:'筆者によると、説明が上手な人がしていることは何か。',o:['相手の理解の位置を確かめ、そこから少しだけ進むこと','難しい言葉を易しい言葉に置き換えること','相手によらず同じ説明を丁寧に繰り返すこと','内容を短くまとめて伝えること'],a:0,
+ ex:'⚠ 「～ように見える。しかし実際には～ではない」desmonta a alternativa mais óbvia (trocar palavras difíceis). O fecho 「相手との距離の測り方なのだ」confirma. Em textos assim, a resposta certa é sempre a que o autor <b>constrói</b>, nunca a que ele derruba.'}
+];
+const EN_MEX_R3A=[
+'Structure: <b>expectation → denial → reason</b>. The line 「そうでもない」denies the expectation, and 「からだ」supplies the reason. The choice saying speed is pointless overshoots the text: it grants that speed improves.',
+'The frame 「～のではない。～のだ」puts the real cause second. The choice "does not know the method" is precisely what the writer <b>rejects</b> in line one — N2 routinely offers the rejected idea as a distractor.',
+'Roberto, keep this one. The thesis is 「そこを伝えられれば、相手は言い方を変えてくれる」. Note the <b>てくれる</b>: the other person adjusts <b>for you</b> — without it the sentence would read cold, exactly as the traps section showed.',
+'Mind the <b>scope</b>. Taste and conversation appear only as <b>examples</b> (「かもしれない」), and the conclusion is 「値段以外のところにある」. The right choice has to cover both examples, not pick one.',
+'The pair <b>ではなく～が要る</b> at the close carries the proposal, and the quoted line shows its concrete shape. When a short passage includes speech in 「」, it almost always illustrates the answer.',
+'<b>～とは限らない</b> opens by denying a prejudice, and the problem surfaces in the second paragraph with 「～ていると、～ない」(if this continues, that will not happen). That conditional is where the criticism lives.',
+'The key phrase is 「以上のもの」= something <b>beyond</b> what was asked, and the final line defines it: 「地図には載っていない情報」. The other choices offer benefits the text never claims.',
+'Roberto — apply this to Japanese. The recommendation arrives with <b>ほうがいい</b> at the end: 「失敗しにくい形に目標を作り直す」. The ninety-minute example shows <b>how</b>, and the right choice is the one that generalises it.',
+'情報検索 method: every sentence is a condition. 「二十時以降は通常どおり」kills the all-day-closed idea; 「取り直しをお願い」kills the one about reservations still being valid; 「テイクアウトは裏口にて承っております」confirms the right one.',
+'The closing line 「撮る側が選ばなければ、見る側は選べない」is a <b>restatement</b> of the opening thesis. In short passages the first and last sentences tend to say the same thing two ways — when they match, you have your answer.',
+'⚠ 「～わけではない」in line two denies exactly the most attractive distractor. And 「ということだ」at the end marks the writer\u2019s own definition. Two grammar points settle the whole question, with no need to parse every word.',
+'The question asks なぜ, so hunt for 「からだ」: 「直すための時間や手順が用意されていないからだ」. The choices about not understanding and about motivation are the very ones the text <b>discards</b>.',
+'The choice "do not take photos" is more radical than the text — it says 「両方ほしいなら」, meaning the writer wants both. Whenever an option removes something the author wants to <b>keep</b>, drop it.',
+'The passage opens with 「～と思われがちだ」(people tend to think) and turns with 「しかし実際には」. That pair is N2\u2019s most reliable signal: whatever follows 実際には is the writer\u2019s position.',
+'The cause comes in two layers: 「分かったように見えるからだ」explains the problem, and the last paragraph gives the desired result. When there are two 「から」, the one that answers the question is the one tied to the writer\u2019s <b>goal</b>.',
+'「どちらに転んでも損はしない」sums up the two preceding sentences. Questions asking for 利点 want exactly that kind of closing line — read the final period before anything else.',
+'⚠ 「～ように見える。しかし実際には～ではない」dismantles the most obvious choice (swapping hard words for easy ones). The close 「相手との距離の測り方なのだ」confirms it. In passages like this the right answer is always the one the writer <b>builds</b>, never the one he knocks down.'
+];
+
+/* ═══ 読解 拡張 B · 中文（一篇に複数問） ═══ */
+const B1='人の名前が覚えられない、と悩む人は多い。だが、覚えられないのは記憶力のせいだとは限らない。\u3000名前は、その人の見た目とも、話し方とも、何の関係もない記号である。関係のない情報どうしは、頭の中で結びつきにくい。だから名前だけが単独で置かれ、やがて落ちてしまう。\u3000覚えている人の名前を思い出してみると、たいてい何かがくっついている。同じ名字の知り合いがいた、名前の由来を聞いた、初めて会った日に強い印象があった。①<u>結びつきさえあれば、名前は落ちない</u>。\u3000だから私は、名前を聞いたらその場で一つ質問をすることにしている。珍しい字ですね、どちらのご出身ですか。答えが返ってくれば、そこに結びつきが生まれる。覚えようと念じるより、はるかに確実である。';
+const B2='「若い人は本を読まなくなった」とよく言われる。しかし、統計を見ると、読んでいる文字の量そのものはむしろ増えている。画面の上で、彼らは一日じゅう何かを読んでいる。\u3000では何が減ったのか。減ったのは、一つのまとまった文章を、書かれた順に最後まで追いかける読み方である。画面上の文章は、途中で別のところへ飛べるようにできている。飛べるということは、書き手が置いた順番を無視できるということだ。\u3000順番を追う読み方には、独特の効果がある。書き手がなぜこの順で並べたのかを考えながら進むので、結論だけでなく、そこに至る道筋が頭に残る。②<u>結論だけを取り出すと、その結論はすぐに使えなくなる</u>。前提が変われば、結論も変わるからだ。\u3000読む量ではなく、読み方の種類が減っている。心配すべきはそちらだと思う。';
+const B3='ある会社が、社員食堂のメニューから写真をなくしたところ、売れ行きの偏りが小さくなったという。それまでは写真の見栄えがいい料理に注文が集中していたが、文字だけになると、人はその日の体調や好みで選ぶようになった。\u3000情報が多いほどよい選択ができる、とは限らない。目立つ情報があると、人はそれを手がかりにしてしまい、自分の中にある条件を確かめないまま決めてしまう。\u3000選びやすくするというのは、情報を増やすことではない。むしろ、決め手にならない情報をどれだけ取り除けるかにかかっている。\u3000売り場でも案内表示でも、同じことが言えるだろう。';
+const B4='職人の技術を若い世代に伝えるのは難しいと言われる。しかし、難しさの中身は、しばしば誤解されている。\u3000難しいのは、技術そのものを言葉にできないことではない。熟練した職人は、聞かれれば手順を説明できる。問題は、その手順のどこが重要で、どこは崩してもいいのかが、本人にも意識されていないことだ。\u3000長年やっているうちに、必要な動作と、たまたま身についた癖とが混ざり合う。全部まねさせれば癖まで伝わり、要点だけ教えれば足りない部分が出る。\u3000だから技術を伝える場では、教える側が自分の動作を分解し直す作業が要る。教わる側のためというより、教える側が自分の仕事を初めて理解し直す機会なのである。';
+const MONDAI_R3B=[
+{s:'読解',p:B1,q:'①結びつきさえあれば、名前は落ちないとあるが、ここでいう「結びつき」とは何か。',
+ o:['名前とその人に関する別の情報とのつながり','名前と顔かたちとの見た目の一致','初対面のときの強い印象そのもの','同じ名字の知り合いがいるという偶然'],a:0,
+ ex:'Questão de <b>指示語 ampliado</b>: o termo entre aspas foi definido no parágrafo anterior — 「関係のない情報どうしは結びつきにくい」. Os três exemplos citados (mesmo sobrenome, origem do nome, impressão forte) são <b>casos</b> da ligação, não a definição. Escolha sempre a categoria, não um exemplo dela.'},
+{s:'読解',p:B1,q:'筆者は、名前を覚えるためにどうしているか。',
+ o:['名前を聞いたその場で質問をして情報を増やす','名前を何度も口に出して繰り返す','相手の特徴と名前を結びつけて想像する','後で書き留めて見返すようにする'],a:0,
+ ex:'A ação concreta está no último parágrafo com 「～ことにしている」, que marca hábito deliberado. As outras alternativas são técnicas de memorização plausíveis mas ausentes — de novo, plausível não basta.'},
+{s:'読解',p:B2,q:'筆者によると、若い人について減っているのは何か。',
+ o:['文章を書かれた順に最後まで追う読み方','一日に読む文字の量','本を買うためのお金','文章を理解する力'],a:0,
+ ex:'A pergunta 「では何が減ったのか」está no próprio texto, e a resposta vem imediatamente depois. Note que o primeiro parágrafo <b>nega</b> a queda de quantidade (「むしろ増えている」) — o distrator mais óbvio já foi eliminado pelo autor.'},
+{s:'読解',p:B2,q:'②結論だけを取り出すと、その結論はすぐに使えなくなるとあるが、なぜか。',
+ o:['前提が変わったときに、結論も変わってしまうから','結論は短いのですぐに忘れてしまうから','結論だけでは他人に説明できないから','結論には書き手の考えが入っていないから'],a:0,
+ ex:'Para なぜ com trecho sublinhado, a resposta está na frase <b>imediatamente seguinte</b>: 「前提が変われば、結論も変わるからだ」. Esta é a regra mais rentável do 読解 — treine o reflexo de olhar a frase vizinha antes de reler o texto.'},
+{s:'読解',p:B2,q:'筆者が最も心配しているのはどのようなことか。',
+ o:['読み方の種類が失われつつあること','読む量が減っていること','紙の本が売れなくなっていること','若い人が長い文章を書けないこと'],a:0,
+ ex:'A última frase 「心配すべきはそちらだと思う」aponta para 「読み方の種類が減っている」. Em 中文, a pergunta 「最も心配している / 最も言いたい」quase sempre se resolve no <b>último período</b>.'},
+{s:'読解',p:B3,q:'社員食堂で起きた変化はどのようなものか。',
+ o:['注文が特定の料理に集中しなくなった','注文の数そのものが減った','写真のない料理が売れなくなった','社員が食事にかける時間が延びた'],a:0,
+ ex:'「売れ行きの偏りが小さくなった」= a distribuição ficou mais equilibrada. 偏り (viés, desequilíbrio) é vocabulário N2 que também aparece em 栄養が偏る. Se você não conhece a palavra, a frase seguinte a explica: 「注文が集中していたが…選ぶようになった」.'},
+{s:'読解',p:B3,q:'筆者は、選びやすくするために何が必要だと考えているか。',
+ o:['決め手にならない情報を取り除くこと','写真をやめて文字だけにすること','選択肢の数そのものを減らすこと','目立つ情報を分かりやすく並べること'],a:0,
+ ex:'⚠ A cantina é um <b>exemplo</b>; a tese é geral. A alternativa "tirar as fotos" repete o exemplo em vez de generalizá-lo. Regra: quando o texto termina com uma formulação abstrata (「情報を増やすことではない…取り除けるか」), a resposta é abstrata.'},
+{s:'読解',p:B4,q:'技術を伝える難しさについて、筆者はどのように述べているか。',
+ o:['手順のどこが重要かが、職人本人にも意識されていないこと','技術は言葉で説明できるものではないこと','若い世代に学ぶ意欲が足りないこと','手順が長すぎて覚えきれないこと'],a:0,
+ ex:'A estrutura é 「難しいのは～ではない。問題は～ことだ」. A alternativa sobre "não dá para pôr em palavras" é exatamente o que o autor nega. Sempre que aparecer 「～のではない」, marque essa ideia como <b>distrator confirmado</b>.'},
+{s:'読解',p:B4,q:'筆者によると、教える側にとって技術を伝えることはどのような機会になるか。',
+ o:['自分の仕事を分解し、改めて理解し直す機会','若い世代の考え方を知る機会','自分の技術の高さを確認する機会','作業の手順を短くする機会'],a:0,
+ ex:'A última frase usa 「～というより、～なのである」: o autor desloca o valor do aprendiz para o <b>mestre</b>. Essa construção "não tanto A, mas B" aparece muito em textos de opinião — o peso está sempre em B.'}
+];
+const EN_MEX_R3B=[
+'An <b>extended reference</b> question: the quoted term was defined in the previous paragraph — 「関係のない情報どうしは結びつきにくい」. The three cases given (same surname, origin of the name, a strong first impression) are <b>instances</b> of the link, not its definition. Always pick the category, never one of its examples.',
+'The concrete action sits in the last paragraph with 「～ことにしている」, which marks a deliberate habit. The other choices are plausible memorisation techniques that are simply absent — once again, plausible is not enough.',
+'The question 「では何が減ったのか」is in the text itself, and the answer follows immediately. Note that the first paragraph <b>denies</b> any drop in quantity (「むしろ増えている」) — the most obvious distractor has already been eliminated by the writer.',
+'For a なぜ question about an underlined stretch, the answer is in the <b>very next sentence</b>: 「前提が変われば、結論も変わるからだ」. This is the highest-yield rule in 読解 — train the reflex of checking the neighbouring sentence before rereading anything.',
+'The closing line 「心配すべきはそちらだと思う」points back to 「読み方の種類が減っている」. In 中文, questions asking 最も心配している or 最も言いたい are nearly always settled in the <b>final period</b>.',
+'「売れ行きの偏りが小さくなった」= the spread of orders evened out. 偏り (bias, imbalance) is N2 vocabulary that also turns up in 栄養が偏る. If the word is new to you, the following sentence explains it: 「注文が集中していたが…選ぶようになった」.',
+'⚠ The canteen is an <b>example</b>; the thesis is general. The choice "remove the photos" repeats the example instead of generalising it. Rule: when a passage closes on an abstract formulation (「情報を増やすことではない…取り除けるか」), the answer is abstract too.',
+'The structure is 「難しいのは～ではない。問題は～ことだ」. The choice about "cannot be put into words" is exactly what the writer denies. Whenever 「～のではない」appears, mark that idea as a <b>confirmed distractor</b>.',
+'The final sentence uses 「～というより、～なのである」: the writer shifts the value from the apprentice to the <b>master</b>. This "not so much A as B" construction is common in opinion pieces — the weight always falls on B.'
+];
+
+/* ═══ 読解 拡張 C · 統合理解 / 長文 / 情報検索 ═══ */
+const AB1='【A】社員に副業を認めるべきだと思う。一つの会社の中だけで得られる経験には限りがある。外で別の仕事をすれば、そこで身につけた見方を本業にも持ち込める。会社にとっても損はない。時間の管理は本人に任せればよく、細かく制限をつけるほど、かえって隠れて行う人が増えるだろう。\u3000【B】副業を認めること自体には反対しない。ただし、届け出だけは必要だと考える。本業に支障が出ていないか、競合する会社で働いていないかは、会社が把握しておくべき情報だからだ。禁止するのではなく、見えるようにする。それが両方にとって安全なやり方だと思う。';
+const AB2='【A】外国語は、間違いを恐れずにどんどん話すべきだ。正確さを気にして黙っていては、いつまでも上達しない。通じたという経験の積み重ねが自信になり、自信がさらに次の一言を引き出す。文法の細かい誤りは、話す量が増えれば自然に減っていくものだ。\u3000【B】たくさん話すことは確かに必要だ。しかし、間違えたまま話し続けると、その形のまま定着してしまうことがある。話す量を増やすと同時に、ときどき自分の話し方を録音して聞き返すなど、外から確かめる機会を持ったほうがいい。量だけでは、ある地点から先には進めない。';
+const LONG='「効率よく学ぶ」という言い方が、いつのまにか学び方の中心になった。短い時間で多くを覚える方法が次々に紹介され、そのとおりにやれば道は縮まるように見える。\u3000だが、効率という言葉には前提がある。何が身につけば「学べた」ことになるのかが、あらかじめ決まっている場合にだけ、効率は測れるのだ。試験のように、問われる範囲と形式が決まっているなら、たしかに効率よく準備できる。\u3000①<u>問題は、学びの多くがそういう形をしていないことである</u>。ある本を読んで、何が身につくかは読む前には分からない。分からないからこそ読む。目的地が決まっていない移動について、最短経路を計算することはできない。\u3000効率を求める気持ちが強くなると、人は次第に、あらかじめ結果の見える学びだけを選ぶようになる。範囲の決まったもの、点数のつくもの、役に立つと最初から分かっているもの。②<u>そうして選ばれなかったものの中に、後から効いてくるものが含まれている</u>。\u3000私は効率を否定したいのではない。試験の前に効率よく準備するのは当然だ。ただ、効率で測れる学びと、測れない学びとがあり、後者を切り捨てないでほしいと言いたいのである。回り道に見えた時間が、何年かたって別の場所で形になることは、珍しくない。';
+const INFO1='さくら市民センター\u3000講座のご案内\u3000①はじめての陶芸\u3000土曜10時〜12時\u30004,000円\u3000実習あり\u3000定員15名\u3000②地域の歴史を歩く\u3000日曜9時〜12時\u30002,000円\u3000実習なし（講義と見学）\u3000定員30名\u3000③やさしい着付け\u3000土曜14時〜16時\u30003,000円\u3000実習あり\u3000定員10名\u3000④パソコン入門\u3000水曜18時〜20時\u30005,000円\u3000実習あり\u3000定員12名\u3000●受講料には材料費が含まれます。ただし④のみ、テキスト代1,000円が別途必要です。\u3000●市内在住・在勤の方は受講料が一割引になります。\u3000●申込みは窓口またはホームページで。定員を超えた場合は抽選となり、結果は開講日の一週間前までに郵送でお知らせします。\u3000●抽選に外れた方には受講料をお返ししますが、振込手数料はご負担ください。';
+const MONDAI_R3C=[
+{s:'読解',p:AB1,q:'副業について、AとBが共通して述べていることは何か。',
+ o:['副業を認めること自体には賛成である','会社への届け出が必要である','時間の管理は本人に任せるべきである','制限を設けると隠れて行う人が増える'],a:0,
+ ex:'⚠ 共通点 significa o que <b>ambos</b> afirmam. B abre com 「反対しない」— logo, os dois aceitam a ideia. As demais alternativas aparecem só em um dos textos: 届け出 é exclusivo de B, 時間の管理 e 隠れて行う são exclusivos de A. Marque ao lado de cada afirmação quem a disse.'},
+{s:'読解',p:AB1,q:'会社の関わり方について、AとBはどのように述べているか。',
+ o:['Aは本人に任せるべきだとし、Bは会社が把握すべきだとしている','AもBも、会社が細かく管理すべきだとしている','Aは禁止すべきだとし、Bは自由にすべきだとしている','AもBも、会社は一切関わるべきでないとしている'],a:0,
+ ex:'Método de duas colunas: A = 本人に任せる, B = 会社が把握する. Repare que B <b>não</b> quer proibir (「禁止するのではなく」) — a alternativa que fala em controle rígido dos dois lados ignora essa negação explícita.'},
+{s:'読解',p:AB2,q:'外国語の学習について、AとBが共通して述べていることは何か。',
+ o:['たくさん話すことが必要である','録音して自分の話し方を確かめるとよい','文法の誤りは自然に減っていく','正確さより通じることを優先すべきである'],a:0,
+ ex:'Roberto — este é o seu debate. B começa com 「確かに必要だ」, concedendo o ponto de A. <b>Concessões marcam o terreno comum</b>: procure 確かに・もちろん・たしかに no texto B quando a pergunta pedir o ponto em comum.'},
+{s:'読解',p:AB2,q:'話す量について、AとBはどのように述べているか。',
+ o:['Aは量が誤りを減らすとし、Bは量だけでは限界があるとしている','AもBも、量より正確さを優先すべきだとしている','Aは量を減らすべきだとし、Bは増やすべきだとしている','AもBも、録音による確認が欠かせないとしている'],a:0,
+ ex:'A frase final de B, 「量だけでは、ある地点から先には進めない」, é a formulação exata do contraste. Em 統合理解 o segundo texto quase sempre <b>acrescenta uma condição</b> em vez de negar o primeiro — se uma alternativa põe os dois em oposição total, desconfie.'},
+{s:'読解',p:LONG,q:'①問題は、学びの多くがそういう形をしていないことであるとあるが、「そういう形」とは何か。',
+ o:['何が身につけばよいかが、あらかじめ決まっている形','短い時間で多くを覚えられる形','試験に出ないことは学ばない形','人によって学び方が違う形'],a:0,
+ ex:'指示語 aponta para trás: o parágrafo anterior define 「何が身につけば『学べた』ことになるのかが、あらかじめ決まっている場合」. Sublinhe o そういう e volte uma frase — nunca duas.'},
+{s:'読解',p:LONG,q:'②そうして選ばれなかったものとは、どのようなものか。',
+ o:['結果が前もって見えない学び','点数のつく学び','役に立つと分かっている学び','範囲が決まっている学び'],a:0,
+ ex:'Aqui a lista do texto (範囲の決まったもの・点数のつくもの・役に立つと分かっているもの) é o que <b>foi</b> escolhido. A pergunta pede o oposto. ⚠ Quando o texto enumera e a pergunta pede o que ficou <b>de fora</b>, as alternativas erradas serão itens da própria lista.'},
+{s:'読解',p:LONG,q:'筆者が最も言いたいことは何か。',
+ o:['効率で測れない学びを切り捨てないでほしい','効率を求める学び方はやめたほうがいい','試験の準備は効率よく行うべきだ','回り道こそが本当の学びである'],a:0,
+ ex:'⚠ 「私は効率を否定したいのではない」elimina de uma vez as alternativas radicais. A tese vem logo depois com 「～と言いたいのである」. Em 長文, o penúltimo parágrafo costuma trazer a <b>ressalva</b> e o último a tese — leia os dois juntos.'},
+{s:'読解',p:INFO1,q:'市内に住む人が④の講座を受ける場合、支払う金額の合計はいくらか。',
+ o:['5,500円','5,000円','4,500円','6,000円'],a:0,
+ ex:'Cálculo em duas etapas: 受講料 5,000 × 0.9 = 4,500 (desconto de 一割 para residentes), mais 1,000 de apostila — e o texto diz 「別途必要」, ou seja, <b>fora</b> do valor com desconto. Total 5,500. Quem aplica o desconto ao total erra por 100.'},
+{s:'読解',p:INFO1,q:'土曜日に実習のある講座を受けたい人が申し込めるのはどれか。',
+ o:['①と③','①と②','③と④','①のみ'],a:0,
+ ex:'Duas condições ao mesmo tempo: <b>土曜</b> e <b>実習あり</b>. ① sábado + prática ✓; ② domingo ✗; ③ sábado + prática ✓; ④ quarta ✗. Faça uma tabela mental de duas colunas e marque ○✗ — nunca resolva de cabeça quando há duas condições.'},
+{s:'読解',p:INFO1,q:'この案内の内容と合っているものはどれか。',
+ o:['抽選に外れた場合、振込手数料は自分で負担する','抽選の結果は開講日の当日に知らされる','申込みは窓口でのみ受け付けている','受講料には材料費が含まれていない'],a:0,
+ ex:'内容一致 por eliminação: 「一週間前までに郵送で」derruba a do dia da aula; 「窓口またはホームページで」derruba a do balcão apenas; 「受講料には材料費が含まれます」derruba a última. Teste as erradas, não procure a certa.'}
+];
+const EN_MEX_R3C=[
+'⚠ 共通点 means what <b>both</b> writers state. B opens with 「反対しない」— so both accept the idea. The other choices appear in only one text: 届け出 is B alone, while 時間の管理 and 隠れて行う are A alone. Note beside each claim who said it.',
+'Two-column method: A = leave it to the individual, B = the company should keep track. Note that B does <b>not</b> want a ban (「禁止するのではなく」) — the choice about tight control by both sides ignores that explicit denial.',
+'Roberto — this is your own debate. B opens with 「確かに必要だ」, conceding A\u2019s point. <b>Concessions mark the common ground</b>: look for 確かに・もちろん in text B whenever the question asks what they share.',
+'B\u2019s closing line, 「量だけでは、ある地点から先には進めない」, is the exact shape of the contrast. In 統合理解 the second text almost always <b>adds a condition</b> rather than rejecting the first — if a choice sets them in total opposition, be suspicious.',
+'指示語 points backwards: the previous paragraph defines 「何が身につけば『学べた』ことになるのかが、あらかじめ決まっている場合」. Underline the そういう and go back one sentence — never two.',
+'Here the list in the text (範囲の決まったもの・点数のつくもの・役に立つと分かっているもの) is what <b>was</b> chosen. The question asks for the opposite. ⚠ When a passage enumerates and the question asks what was left <b>out</b>, the wrong choices will be items from that very list.',
+'⚠ 「私は効率を否定したいのではない」wipes out the radical choices in one stroke. The thesis follows immediately with 「～と言いたいのである」. In 長文 the second-to-last paragraph tends to carry the <b>caveat</b> and the last one the thesis — read them together.',
+'Two-step calculation: 5,000 × 0.9 = 4,500 (the 一割 resident discount), plus 1,000 for the textbook — and the notice says 「別途必要」, meaning <b>outside</b> the discounted figure. Total 5,500. Applying the discount to the whole sum costs you 100 yen and the mark.',
+'Two conditions at once: <b>Saturday</b> and <b>has practical work</b>. ① Saturday + practical ✓; ② Sunday ✗; ③ Saturday + practical ✓; ④ Wednesday ✗. Build a two-column table and tick ○✗ — never do this in your head when two conditions apply.',
+'内容一致 by elimination: 「一週間前までに郵送で」kills the same-day choice; 「窓口またはホームページで」kills the counter-only choice; 「受講料には材料費が含まれます」kills the last one. Disprove the wrong ones instead of hunting for the right one.'
+];
+
+/* ═══ 読解 拡張 D ═══ */
+const C1='「後で読む」と決めて保存した記事を、実際に読むことは少ない。私の場合、保存した時点で、読んだような気分になってしまうらしい。\u3000保存という行為は、内容を確保したという安心を与える。安心してしまえば、急いで読む理由はなくなる。こうして記事はたまり続け、そのうち、たまっていること自体が負担になる。\u3000最近は、保存をやめて、その場で最初の三行だけ読むようにした。三行読んで続きが気になれば、そのまま最後まで読む。気にならなければ、それは自分に必要のない記事だったということだ。判断を後ろへ送らないほうが、結局は多く読める。';
+const C2='街に緑を増やすとき、木を植えれば済むと考えられがちだ。しかし、植えた後の手入れをだれが担うのかを決めておかないと、数年でかえって荒れてしまう。\u3000ある町では、植える段階から近所の住民に参加してもらう方法をとった。作業に加わった人は、その木がどこにあるかを覚えている。自分が植えたものが枯れかけていれば、気づいて水をやる。\u3000①<u>大切なのは、木の本数ではなく、木を見ている人の数である</u>。管理を役所に任せきりにした場所より、住民が関わった場所のほうが、長く緑が残るという。\u3000緑を増やす計画は、実は人の関わりを増やす計画でもある。';
+const C3='仕事を頼むとき、「なるべく早めに」と言う人がいる。言われた側は困る。早めが今日中なのか今週中なのかで、他の仕事の順番が変わってくるからだ。\u3000あいまいな期限は、相手への思いやりのつもりで使われることが多い。急がせては悪い、という気持ちである。しかし実際には、判断の手間を相手に渡しているだけだ。\u3000②<u>期限を切ることは、相手を縛ることではない</u>。いつまでに何が要るのかが分かって初めて、相手は自分の時間を組み立てられる。はっきり言うほうが、かえって相手は動きやすくなる。';
+const D1='以下は、ある会社の社内メールである。\u3000各位\u3000来月から始まる在宅勤務制度について、申請の手順をお知らせします。\u3000希望される方は、前月の二十日までに所属長の承認を得たうえで、人事部へ申請書を提出してください。承認のない申請書は受け付けられません。\u3000週の在宅日数は二日までとし、三日以上を希望される場合は、理由書を添えて別途ご相談ください。\u3000なお、入社一年未満の方は原則として対象外ですが、業務内容によっては認められる場合があります。まずは所属長にご相談ください。';
+const MONDAI_R3D=[
+{s:'読解',p:C1,q:'筆者によると、記事を保存すると読まなくなるのはなぜか。',
+ o:['保存したことで安心し、急いで読む理由がなくなるから','保存した場所を忘れてしまうから','保存した記事の数が多すぎるから','後で読むと内容が古くなってしまうから'],a:0,
+ ex:'A causa está no segundo parágrafo: 「安心してしまえば、急いで読む理由はなくなる」. A alternativa sobre a quantidade descreve a <b>consequência</b> (「たまり続け」), não a causa — distinguir causa de consequência é metade das perguntas なぜ do N2.'},
+{s:'読解',p:C1,q:'筆者が今している方法はどのようなものか。',
+ o:['その場で三行読み、続けるかどうかをすぐ決める','保存した記事を毎日決まった時間に読む','読む記事を三つまでに限る','気になった記事だけを保存する'],a:0,
+ ex:'「～ようにした」marca a mudança de hábito, e 「判断を後ろへ送らない」dá o princípio por trás dela. As alternativas erradas mantêm o ato de salvar, que é justamente o que ele abandonou.'},
+{s:'読解',p:C2,q:'①大切なのは、木の本数ではなく、木を見ている人の数であるとあるが、どういうことか。',
+ o:['木の世話をする人がいて初めて緑は残るということ','木は少ないほうが管理しやすいということ','住民の人数が多い町ほど緑が多いということ','役所の職員を増やす必要があるということ'],a:0,
+ ex:'「見ている人」não é quem olha, mas quem <b>cuida</b> — o parágrafo anterior mostra isso com 「気づいて水をやる」. Cuidado com traduções literais de palavras comuns: 見る aqui carrega o sentido de 面倒を見る.'},
+{s:'読解',p:C2,q:'筆者の考えに合うのはどれか。',
+ o:['緑を増やす計画は、人の関わりを増やす計画でもある','緑を増やすには役所の管理を強化すべきだ','住民が参加すると木を植える費用が下がる','木の種類を選ぶことが最も重要である'],a:0,
+ ex:'A última frase 「実は～でもある」reformula a tese em outro plano. O advérbio 実は sinaliza que o autor está entregando a leitura profunda — sublinhe-o sempre.'},
+{s:'読解',p:C3,q:'あいまいな期限について、筆者はどのように述べているか。',
+ o:['思いやりのつもりでも、判断の手間を相手に渡している','相手を急がせないための有効な方法である','言う側も期限を決めていないことが多い','日本語の表現としては自然なものである'],a:0,
+ ex:'A estrutura 「～つもりで使われる。しかし実際には～だけだ」opõe intenção e efeito. Quando o texto separa 「つもり」de 「実際には」, a resposta está sempre do lado do <b>efeito real</b>.'},
+{s:'読解',p:C3,q:'②期限を切ることは、相手を縛ることではないとあるが、なぜか。',
+ o:['期限が分かって初めて、相手は自分の時間を組み立てられるから','期限は後から変更できるものだから','相手も期限を知りたいと思っているから','期限がないと仕事が遅れてしまうから'],a:0,
+ ex:'A frase seguinte começa com 「いつまでに何が要るのかが分かって初めて」— e <b>～て初めて</b> é o ponto de gramática que carrega a resposta. Reconhecer o padrão gramatical resolve a questão antes de entender todo o vocabulário.'},
+{s:'読解',p:D1,q:'このメールの内容と合っているものはどれか。',
+ o:['申請書を出す前に、所属長の承認が必要である','人事部の承認を得てから所属長に提出する','週三日の在宅勤務は認められていない','入社一年未満の人は申請できない'],a:0,
+ ex:'⚠ Duas armadilhas de <b>grau</b>: 「三日以上を希望される場合は…別途ご相談ください」não é uma proibição, e 「原則として対象外ですが…認められる場合があります」não é um "não" absoluto. Palavras como 原則として e 場合があります abrem exceções — nunca leia como regra fechada.'},
+{s:'読解',p:D1,q:'入社半年の社員が在宅勤務を希望する場合、まず何をすべきか。',
+ o:['所属長に相談する','人事部に申請書を提出する','理由書を用意する','一年たつまで待つ'],a:0,
+ ex:'A última frase, 「まずは所属長にご相談ください」, responde diretamente — e a palavra まずは marca a <b>primeira</b> ação. Em textos de procedimento, procure sempre 「まず」「その後」「～たうえで」para montar a ordem correta.'},
+{s:'読解',p:'品物を長く使うと、その品物は少しずつ持ち主に合っていく。靴は足の形にしたがって変わり、道具は手のくせを覚える。\u3000新しいものに買い替えると、性能は上がっても、この積み重ねはいったん失われる。使い始めてしばらくは、前のもののほうがよかったと感じることが多いのはそのためだ。\u3000性能で比べれば新しいほうが上でも、体で比べれば必ずしもそうではない。',
+ q:'筆者は、新しい品物についてどのように述べているか。',
+ o:['性能は上がっても、体に合うまでには時間がかかる','古いものより性能が劣ることが多い','買い替えないほうが結局は得である','高いものほど長く使える'],a:0,
+ ex:'A construção 「性能では～、体では～」contrasta dois critérios. E 「必ずしもそうではない」é negação <b>parcial</b>: não diz que o novo é pior, apenas que nem sempre é melhor. Confundir negação parcial com total é erro clássico.'},
+{s:'読解',p:'注意書きを読まない人が多い、とよく言われる。しかし、読まれない注意書きには共通点がある。長いこと、そして、いつ読むべきかが書かれていないことだ。\u3000使う直前に必要な一行と、困ったときに必要な十行は、置く場所を分けるべきである。全部を同じ大きさで並べれば、どれも読まれない。\u3000読まれないのは読む側の問題だと決めつける前に、書き方を見直す余地がある。',
+ q:'筆者によると、注意書きが読まれないのはなぜか。',
+ o:['長いうえに、いつ読むべきかが示されていないから','内容が難しすぎるから','読む人が急いでいるから','字が小さくて見えにくいから'],a:0,
+ ex:'A resposta vem logo depois de 「共通点がある」, e a frase usa 「～こと、そして～こと」— duas causas ligadas. ⚠ Se a alternativa cobre só uma das duas, ela está incompleta; procure a que junta as duas.'},
+{s:'読解',p:'外国で暮らし始めた人が最初にぶつかるのは、言葉の壁ではなく、沈黙の意味の違いだと言われる。\u3000会話が途切れたとき、それを気まずいと感じて何か言わなければと思う文化もあれば、考えている時間として静かに待つ文化もある。同じ沈黙が、一方では失礼になり、他方では礼儀になる。\u3000言葉を覚えるより、この差に慣れるほうが時間がかかる。単語には辞書があるが、沈黙には辞書がないからだ。',
+ q:'筆者が言葉より難しいとしているのはどのようなことか。',
+ o:['沈黙の意味が文化によって違うことに慣れること','相手の話す速さに合わせること','敬語を正しく使い分けること','会話を途切れさせずに続けること'],a:0,
+ ex:'Roberto — isto é exatamente o seu terreno. A tese abre com 「～ではなく、～だ」e fecha com uma explicação em 「からだ」. As duas pontas do texto dizem a mesma coisa; se você achar uma, confirme na outra.'},
+{s:'読解',p:'安いものを買って何度も買い替えるより、高いものを一つ買って長く使うほうが得だ、とよく言われる。だが、これは使い方が変わらない場合の話である。\u3000生活は変わる。引っ越し、家族の増減、仕事の変化。数年後に必要なものが今と同じとは限らない。\u3000長く使う前提が崩れると、高いものを買った分だけ損が大きくなる。何を買うかを決める前に、それを何年使うつもりかを考えたほうがいい。',
+ q:'筆者の考えに合うのはどれか。',
+ o:['どれくらいの期間使うのかを先に考えるべきだ','高いものを買うのは避けたほうがよい','安いものを何度も買い替えるほうが得だ','生活が変わらないうちに買い替えるべきだ'],a:0,
+ ex:'A ressalva 「これは使い方が変わらない場合の話である」limita o senso comum, e o fecho traz o conselho com <b>ほうがいい</b>. As alternativas que escolhem caro ou barato ignoram que o autor recusa os dois extremos.'},
+{s:'読解',p:'会社の会議で、結論が出ないまま時間だけが過ぎることがある。原因は議題の多さではなく、その会議で何を決めるのかが共有されていないことにある。\u3000情報を伝える場なのか、意見を集める場なのか、決定する場なのか。三つは目的が違うのに、同じ「会議」という名前で呼ばれている。\u3000始める前に「今日は決めます」と一言添えるだけで、話し方は変わる。名前ではなく、目的を先に置くことだ。',
+ q:'筆者によると、会議で結論が出ない原因は何か。',
+ o:['その会議で何をするのかが共有されていないこと','議題の数が多すぎること','参加者の人数が多すぎること','決定できる立場の人がいないこと'],a:0,
+ ex:'「原因は～ではなく、～にある」dá causa falsa e causa verdadeira na mesma frase. A alternativa sobre o número de pautas é literalmente a que o autor <b>nega</b> — o N2 quase sempre coloca a ideia negada entre as opções.'},
+{s:'読解',p:'古い建物を残すべきかどうかという議論では、たいてい「価値があるかどうか」が問われる。しかし、価値は残してみないと分からないことがある。\u3000取り壊された後になって、あの建物が街の景色をどう支えていたかに気づく。残っているうちは、あって当たり前なので誰も見ない。\u3000だから私は、判断に迷ったときは残すほうを選ぶべきだと思う。壊すのはいつでもできるが、戻すことはできない。',
+ q:'筆者が古い建物を残すべきだと考える理由は何か。',
+ o:['壊してしまうと元に戻すことができないから','古い建物には必ず歴史的な価値があるから','街の景色は変えないほうがよいから','住民の意見がまとまらないから'],a:0,
+ ex:'O último período dá a razão em forma de contraste: 「壊すのはいつでもできるが、戻すことはできない」. Note que o autor <b>não</b> afirma que todo prédio antigo tem valor — ele diz que o valor pode ser desconhecido. Cuidado com alternativas que endurecem a posição.'},
+{s:'読解',p:'手書きのメモは、パソコンで打つより遅い。だからこそ、書きながら要点を選ぶことになる。全部は書けないので、何を残すかを考えざるを得ない。\u3000打つのが速いと、聞いたことをそのまま並べられてしまう。後で見返すと、量はあるのに、どこが大事だったのかが分からない。\u3000遅さが、選ぶ作業を強制してくれる。メモに関しては、速いことが必ずしも長所ではない。',
+ q:'筆者は、手書きのメモについてどのように述べているか。',
+ o:['速く書けないため、要点を選ぶことになる','パソコンより正確に記録できる','後から読み返しやすい形になる','時間はかかるが記憶に残りやすい'],a:0,
+ ex:'⚠ 「だからこそ」inverte o defeito em qualidade — é o eixo do texto. A alternativa sobre memória é plausível e comum em outros textos, mas <b>este</b> texto fala de seleção, não de memória. Responda a partir do texto diante de você, não do tema em geral.'},
+{s:'読解',p:'新しい土地に引っ越したとき、地図を見ずに歩いてみる日を作るようにしている。目的地を決めずに歩くと、道の幅や店の並び方から、その街の成り立ちが少しずつ見えてくる。\u3000地図を見ながら歩けば早く着く。しかし早く着いた街のことは、案外覚えていない。\u3000知らない街を知るのに近道はない、というより、近道を通ると知ることそのものが起きない。',
+ q:'筆者が地図を見ずに歩く理由は何か。',
+ o:['歩くことでその街の成り立ちが見えてくるから','地図を持つのが面倒だから','道に迷うのが楽しいから','目的地を決めるのが難しいから'],a:0,
+ ex:'A razão está no primeiro parágrafo (「成り立ちが少しずつ見えてくる」) e é reforçada no fecho. Repare na construção 「～というより、～」: o autor corrige a própria frase para uma versão mais forte — a segunda versão é sempre a que vale.'}
+];
+const EN_MEX_R3D=[
+'The cause is in the second paragraph: 「安心してしまえば、急いで読む理由はなくなる」. The choice about sheer quantity describes the <b>consequence</b> (「たまり続け」), not the cause — telling cause from consequence settles half the なぜ questions on N2.',
+'「～ようにした」marks the change of habit, and 「判断を後ろへ送らない」gives the principle behind it. The wrong choices all keep the act of saving, which is exactly what he gave up.',
+'「見ている人」does not mean someone watching, but someone <b>looking after</b> — the previous paragraph shows it with 「気づいて水をやる」. Beware of literal readings of common words: 見る here carries the sense of 面倒を見る.',
+'The closing line 「実は～でもある」restates the thesis on another level. The adverb 実は signals that the writer is handing you the deeper reading — always underline it.',
+'The frame 「～つもりで使われる。しかし実際には～だけだ」sets intention against effect. Whenever a text separates 「つもり」from 「実際には」, the answer is always on the side of the <b>actual effect</b>.',
+'The next sentence opens with 「いつまでに何が要るのかが分かって初めて」— and <b>～て初めて</b> is the grammar point carrying the answer. Recognising the pattern solves the question before you have parsed all the vocabulary.',
+'⚠ Two traps of <b>degree</b>: 「三日以上を希望される場合は…別途ご相談ください」is not a ban, and 「原則として対象外ですが…認められる場合があります」is not an absolute no. Words like 原則として and 場合があります open exceptions — never read them as closed rules.',
+'The final line, 「まずは所属長にご相談ください」, answers directly — and まずは marks the <b>first</b> action. In procedural texts, always hunt for 「まず」「その後」「～たうえで」to reconstruct the correct order.',
+'The construction 「性能では～、体では～」contrasts two criteria. And 「必ずしもそうではない」is a <b>partial</b> negation: it does not say the new one is worse, only that it is not always better. Mistaking partial negation for total negation is a classic slip.',
+'The answer follows straight after 「共通点がある」, and the sentence uses 「～こと、そして～こと」— two linked causes. ⚠ If a choice covers only one of the two, it is incomplete; find the one that joins both.',
+'Roberto — this is your exact territory. The thesis opens with 「～ではなく、～だ」and closes with an explanation in 「からだ」. Both ends of the passage say the same thing; find one and confirm on the other.',
+'The caveat 「これは使い方が変わらない場合の話である」limits the received wisdom, and the close delivers the advice with <b>ほうがいい</b>. Choices that pick expensive or cheap ignore that the writer rejects both extremes.',
+'「原因は～ではなく、～にある」gives the false cause and the real one in a single sentence. The choice about too many agenda items is literally the one the writer <b>denies</b> — N2 nearly always slips the rejected idea in among the options.',
+'The final period gives the reason as a contrast: 「壊すのはいつでもできるが、戻すことはできない」. Note the writer does <b>not</b> claim every old building has value — he says the value may be unknown. Beware of choices that harden the position.',
+'⚠ 「だからこそ」flips the drawback into a virtue — that is the hinge of the whole passage. The choice about memory is plausible and common in other texts, but <b>this</b> one is about selection, not memory. Answer from the passage in front of you, not from the topic in general.',
+'The reason sits in the first paragraph (「成り立ちが少しずつ見えてくる」) and is reinforced at the close. Note the construction 「～というより、～」: the writer corrects his own sentence into a stronger version — the second version is always the one that counts.'
+];
+
+/* ═══ 読解 拡張 E · 最終分 ═══ */
+const E1='人に道具の使い方を教えるとき、私はまず失敗のさせ方を見せることにしている。正しい持ち方だけを教えると、なぜその持ち方なのかが伝わらないからだ。\u3000わざと間違った持ち方をして、刃が滑る様子を見せる。すると相手は、正しい持ち方の意味を体で理解する。危ないから駄目だ、と言葉で言うより早い。\u3000①<u>禁止だけを伝えると、人は理由のない規則として覚えてしまう</u>。理由のない規則は、見ている人がいなくなると破られる。理由まで含めて渡しておけば、一人になっても守られる。';
+const E2='商品を売る側は、買う人が何を求めているかを調べる。しかし調査で分かるのは、たいてい今ある商品への不満であって、まだない商品への期待ではない。\u3000人は、見たことのないものを求めることができない。だから調査だけを頼りにすると、今あるものを少し改良した商品ばかりが生まれる。\u3000②<u>調査に答えられない部分にこそ、新しさの余地がある</u>。それを見つけるには、聞くのではなく、人が実際にどう行動しているかを見るしかない。言葉になっていない不便さは、動作に表れているからだ。';
+const E3='以下は、あるスポーツ施設の掲示である。\u3000夏季プールご利用について\u3000・開放期間：七月一日〜八月三十一日\u3000・時間：平日十時〜十八時／土日祝十時〜二十時\u3000・料金：大人五百円、小学生以下二百円\u3000・回数券（十一回分）：大人五千円、小学生以下二千円\u3000・小学三年生以下のお子様は、必ず保護者の同伴が必要です。\u3000・水泳帽の着用をお願いしております。お持ちでない方は受付で三百円にて販売しております。\u3000・荷物用ロッカーは百円硬貨が必要です（返却されます）。';
+const MONDAI_R3E=[
+{s:'読解',p:E1,q:'①禁止だけを伝えると、人は理由のない規則として覚えてしまうとあるが、その結果どうなるか。',
+ o:['見ている人がいなくなると守られなくなる','規則の数が増えすぎてしまう','正しい持ち方を忘れてしまう','道具を使うのを怖がるようになる'],a:0,
+ ex:'A pergunta pede o <b>resultado</b>, e ele vem na frase seguinte: 「見ている人がいなくなると破られる」. Distinga bem: 理由のない規則 é a causa, 破られる é o efeito. Perguntas com その結果 sempre olham para a frente, não para trás.'},
+{s:'読解',p:E1,q:'筆者が失敗のさせ方を見せる理由は何か。',
+ o:['正しいやり方の意味を体で理解させるため','失敗を怖がらないようにさせるため','道具の壊れやすさを知らせるため','教える時間を短くするため'],a:0,
+ ex:'O texto dá a razão duas vezes: 「なぜその持ち方なのかが伝わらないからだ」e 「正しい持ち方の意味を体で理解する」. Quando a mesma ideia aparece em dois lugares, é quase certamente a resposta.'},
+{s:'読解',p:E2,q:'筆者によると、調査で分かるのはどのようなことか。',
+ o:['今ある商品に対する不満','まだない商品への期待','買う人の生活の様子','商品の正しい値段'],a:0,
+ ex:'A frase 「調査で分かるのは、たいてい～であって、～ではない」dá o certo e o errado lado a lado. A construção <b>～であって、～ではない</b> é um presente: ela já separa a resposta do distrator para você.'},
+{s:'読解',p:E2,q:'②調査に答えられない部分を見つけるには、どうすればよいと述べているか。',
+ o:['人が実際にどう行動しているかを観察する','質問の仕方をもっと工夫する','調査の対象人数を増やす','専門家の意見を聞く'],a:0,
+ ex:'「聞くのではなく、～を見るしかない」— o par 聞く／見る organiza o parágrafo inteiro. E 「～しかない」marca a única via possível: quando esse padrão aparece, a resposta está colada nele.'},
+{s:'読解',p:E3,q:'小学二年生の子ども一人が利用する場合について、正しいものはどれか。',
+ o:['保護者が一緒でなければ利用できない','子どもだけで利用でき、料金は二百円である','水泳帽がなければ利用できない','回数券を買わなければ利用できない'],a:0,
+ ex:'A condição decisiva é 「小学三年生以下…保護者の同伴が必要」— e o segundo ano está incluído em 三年生以下. ⚠ 以下 <b>inclui</b> o número citado, exatamente como 以上. Errar isso aqui custa a questão inteira.'},
+{s:'読解',p:E3,q:'この掲示の内容と合っているものはどれか。',
+ o:['水泳帽は受付で買うことができる','ロッカーの百円は戻ってこない','土日は平日より開始時間が早い','回数券は大人の分しかない'],a:0,
+ ex:'Eliminação: 「返却されます」derruba a moeda perdida; os horários começam ambos às 十時, então "começa mais cedo" cai; 回数券 tem preço para 小学生以下 também. Detalhes entre parênteses, como （返却されます）, são exatamente onde o N2 esconde a resposta.'},
+{s:'読解',p:'約束の時間に遅れそうなとき、連絡を入れるかどうかで迷う人がいる。あと五分だから、着いてから謝ればいい、という判断である。\u3000しかし待つ側にとって、五分の遅れそのものはたいした問題ではない。困るのは、あと何分待てばいいのか分からない時間である。連絡がないと、その五分は終わりの見えない五分になる。\u3000遅れることを詫びるより先に、いつ着くかを伝えたほうがいい。相手が知りたいのは、謝罪ではなく見通しである。',
+ q:'筆者によると、遅れるときに最初に伝えるべきことは何か。',
+ o:['何時ごろ到着するかという見通し','遅れてしまったことへの謝罪','遅れることになった理由','待たせている時間の長さ'],a:0,
+ ex:'O fecho usa 「～より先に、～たほうがいい」e depois reformula com 「謝罪ではなく見通しである」. Duas frases que dizem o mesmo — quando o autor repete a ideia com palavras diferentes, ele está apontando para a resposta.'},
+{s:'読解',p:'子どもに絵を描かせると、大人が上手だと思う絵と、子ども自身が気に入っている絵は、しばしば一致しない。\u3000大人は形の正確さを見る。子どもは、描いているときに何が楽しかったかを覚えている。色を塗りつぶす手ごたえや、線が思わぬ方向に伸びた瞬間。それは仕上がりには残らない。\u3000上手だねと言われ続けた子どもは、やがて仕上がりだけを気にするようになる。描く時間の楽しさは、褒め言葉によって静かに消えていく。',
+ q:'筆者が心配しているのはどのようなことか。',
+ o:['褒められることで、描く過程の楽しさが失われること','子どもが絵を描かなくなってしまうこと','大人が子どもの絵を正しく評価できないこと','子どもが形を正確に描けなくなること'],a:0,
+ ex:'A palavra-chave é 過程 vs 仕上がり (processo vs resultado). O último parágrafo mostra o mecanismo: elogio → foco no resultado → perda do prazer. Quando um texto descreve uma <b>cadeia</b>, a preocupação do autor está no fim dela.'},
+{s:'読解',p:'方法を教えてほしい、と言われることがある。だが多くの場合、その人に足りないのは方法ではない。方法はすでに知っていて、それを続ける仕組みがないのだ。\u3000毎日十分やればいい、と教えるのは簡単だ。難しいのは、その十分をどこに置くかである。歯を磨いた後、電車に乗った直後。すでにある習慣のすぐ隣に置くと、思い出す必要がなくなる。\u3000続かないのは意志が弱いからではなく、思い出すことに頼っているからだ。',
+ q:'筆者によると、物事が続かない理由は何か。',
+ o:['思い出すことに頼っているから','正しい方法を知らないから','意志の力が足りないから','時間を長く取りすぎるから'],a:0,
+ ex:'Roberto — este é literalmente o desenho do app. A resposta está na última frase, montada como 「～ではなく、～からだ」. E ela nega diretamente duas das alternativas (方法・意志), que o texto já havia descartado antes.'},
+{s:'読解',p:'新しい機械が入ると、しばらくは以前より仕事が遅くなる。使い方を覚える時間が要るからだ。この時期に「前のほうがよかった」という声が必ず出る。\u3000問題は、その声が出る時期と、効果が出る時期がずれていることだ。効果が見え始めるころには、判断はもう終わっていることが多い。\u3000導入を決めるときには、いつ評価するのかもあわせて決めておくべきである。時期を決めずに始めると、最も成果が低い瞬間に評価されてしまう。',
+ q:'筆者は、機械を導入するときに何をすべきだと述べているか。',
+ o:['いつ効果を評価するのかを先に決めておく','社員の意見を聞いてから導入する','使い方の研修を十分に行う','古い機械をしばらく残しておく'],a:0,
+ ex:'A recomendação aparece com <b>べきである</b> no penúltimo período. As outras alternativas são medidas sensatas de gestão que o texto não menciona — em 読解, "sensato" nunca é critério; "escrito" é.'},
+{s:'読解',p:'贈り物を選ぶとき、相手が喜ぶものを、と考える。しかし本当に難しいのは、相手が自分では買わないものを見つけることだ。\u3000欲しいものは、たいてい自分で買ってしまう。買わずに残っているのは、少し高い日用品や、自分には贅沢だと感じて手が出ないものである。そこにこそ、贈り物の意味がある。\u3000喜ばれるかどうかより、その人の生活に自分では起きなかった変化を持ち込めるかどうかを考えたい。',
+ q:'筆者は、どのような贈り物がよいと考えているか。',
+ o:['相手が自分では買わないもの','相手が今いちばん欲しいもの','値段が高くて珍しいもの','毎日使う実用的なもの'],a:0,
+ ex:'⚠ 「少し高い日用品」pode atrair a alternativa sobre itens caros ou de uso diário, mas isso é <b>exemplo</b>, não critério. O critério aparece duas vezes: 「自分では買わないもの」e 「自分では起きなかった変化」. Prefira sempre o critério ao exemplo.'},
+{s:'読解',p:'注意深く聞いているつもりでも、人は相手の話の途中で、自分の返事を組み立て始めてしまう。組み立て始めた瞬間から、耳に入る言葉は、自分の考えを支える材料としてしか処理されなくなる。\u3000相手が話し終えるまで返事を考えない、というのは、思っているよりずっと難しい。だが、それができたときにだけ、予想していなかった話が聞こえてくる。\u3000会話が面白くなるのは、たいていその瞬間である。',
+ q:'筆者によると、話を聞くときに難しいのはどのようなことか。',
+ o:['相手が話し終わるまで返事を考えないこと','相手の話を最後まで覚えておくこと','自分の意見をはっきり伝えること','相手の言葉を正確に理解すること'],a:0,
+ ex:'「～というのは、思っているよりずっと難しい」nomeia a dificuldade de forma explícita. Quando o texto usa 「～のは難しい」e a pergunta pergunta 「難しいのは」, o casamento é direto — localize a expressão, não releia tudo.'},
+{s:'読解',p:'図書館で働いていたころ、返却された本の状態を見るのが好きだった。よく開かれたページは、そこだけ紙が柔らかくなる。線を引いた跡が消しきれずに残っていることもある。\u3000同じ本でも、人によって開かれる場所は違う。料理の本なら作った料理が、旅行の本なら行った土地が、そこに残っている。\u3000本は読まれることで少しずつ形を変える。書かれた内容は同じでも、読まれた記録は一冊ごとに違うのである。',
+ q:'筆者は、返却された本について何を述べているか。',
+ o:['読まれ方が本に跡として残っている','大切に扱われない本が多い','人気のある本ほど早く傷む','古い本ほど読まれた回数が多い'],a:0,
+ ex:'A tese fecha com 「読まれた記録は一冊ごとに違う」, e os exemplos (páginas macias, marcas de lápis) são os tais 跡. Repare que o texto <b>não</b> julga o estado como bom ou ruim — alternativas com juízo de valor (「大切に扱われない」) estão fora do tom do autor.'},
+{s:'読解',p:'苦手な人と仕事をすることになったとき、好きになろうと努力する必要はない。必要なのは、その人のどこが読めないのかを言葉にすることだ。\u3000返事が遅いのか、決め方が分からないのか、言い方がきついのか。苦手という一語でまとめている間は、対応の取りようがない。分けて言葉にできれば、返事が遅いなら期限を書く、決め方が読めないなら判断の基準を先に聞く、と手が打てる。\u3000苦手は、感情ではなく、情報の不足であることが多い。',
+ q:'筆者によると、苦手な人と仕事をするにはどうすればよいか。',
+ o:['何が読めないのかを具体的に言葉にする','相手を好きになる努力をする','できるだけ関わらないようにする','第三者に間に入ってもらう'],a:0,
+ ex:'A abertura já descarta uma alternativa (「好きになろうと努力する必要はない」), e a solução vem com 「必要なのは～ことだ」. Esse par <b>必要はない／必要なのは</b> na mesma frase é um marcador forte: ele entrega distrator e resposta juntos.'}
+];
+const EN_MEX_R3E=[
+'The question asks for the <b>result</b>, and it arrives in the next sentence: 「見ている人がいなくなると破られる」. Keep them apart: 理由のない規則 is the cause, 破られる is the effect. Questions with その結果 always look forward, never back.',
+'The passage gives the reason twice: 「なぜその持ち方なのかが伝わらないからだ」and 「正しい持ち方の意味を体で理解する」. When the same idea surfaces in two places, it is almost certainly the answer.',
+'The sentence 「調査で分かるのは、たいてい～であって、～ではない」lays the right and wrong side by side. The construction <b>～であって、～ではない</b> is a gift: it has already separated the answer from the distractor for you.',
+'「聞くのではなく、～を見るしかない」— the pair 聞く／見る organises the whole paragraph. And 「～しかない」marks the only available route: when that pattern appears, the answer is glued to it.',
+'The decisive condition is 「小学三年生以下…保護者の同伴が必要」— and a second-year pupil falls inside 三年生以下. ⚠ 以下 <b>includes</b> the stated number, exactly like 以上. Getting that wrong costs you the whole question.',
+'Elimination: 「返却されます」kills the lost-coin choice; both timetables start at 十時, so "starts earlier" falls; 回数券 has a price for 小学生以下 too. Details inside brackets, like （返却されます）, are exactly where N2 hides the answer.',
+'The close uses 「～より先に、～たほうがいい」and then restates it as 「謝罪ではなく見通しである」. Two sentences saying one thing — when a writer repeats an idea in different words, he is pointing at the answer.',
+'The key contrast is 過程 vs 仕上がり (process vs finished product). The last paragraph shows the mechanism: praise → focus on the result → loss of pleasure. When a passage describes a <b>chain</b>, the writer\u2019s worry sits at its end.',
+'Roberto — this is literally the design of your app. The answer is the final sentence, built as 「～ではなく、～からだ」. It directly denies two of the choices (method and willpower), which the text had already discarded earlier.',
+'The recommendation arrives with <b>べきである</b> in the second-to-last period. The other choices are sensible management measures the text never mentions — in 読解, "sensible" is never the criterion; "stated" is.',
+'⚠ 「少し高い日用品」may pull you toward the choices about expensive or everyday items, but that is an <b>example</b>, not the criterion. The criterion appears twice: 「自分では買わないもの」and 「自分では起きなかった変化」. Always prefer the criterion over the example.',
+'「～というのは、思っているよりずっと難しい」names the difficulty outright. When the text uses 「～のは難しい」and the question asks 「難しいのは」, the match is direct — locate the phrase instead of rereading everything.',
+'The thesis closes with 「読まれた記録は一冊ごとに違う」, and the examples (softened pages, pencil marks) are those 跡. Note that the text passes <b>no</b> judgement on the condition — choices carrying a value judgement (「大切に扱われない」) fall outside the writer\u2019s tone.',
+'The opening already discards one choice (「好きになろうと努力する必要はない」), and the solution follows with 「必要なのは～ことだ」. That pair <b>必要はない／必要なのは</b> inside one passage is a strong marker: it hands you the distractor and the answer together.'
+];
+
 /* ═══ ENGLISH CONTENT OVERLAY — kanji mnemonics ═══ */
 const EN_KMN={
 '略':'田 (field) + 各 (each) → the general sketches <b>each field</b> onto one small map: a <b>strategy</b>, boiled down.',
@@ -1728,6 +2084,240 @@ function celebrate(allDone){
   el.onclick=()=>el.classList.remove('on');
 }
 
+/* ═══ セリフ · 原創の少年漫画調フレーズ（既存作品の引用ではない） ═══ */
+const SERIFU={
+'～ところだ':{jp:'ちょうど今、出かけるところだ。',pt:'Estou justamente saindo agora.',en:'I am just on my way out.'},
+'～ことにする / ことになる':{jp:'俺は、あいつを信じることにした。',pt:'Decidi confiar nele.',en:'I have decided to trust him.'},
+'～らしい':{jp:'あの山には、誰も近づかないらしい。',pt:'Parece que ninguém se aproxima daquela montanha.',en:'Apparently no one goes near that mountain.'},
+'～みたいだ':{jp:'お前、少し背が伸びたみたいだな。',pt:'Parece que você cresceu um pouco.',en:'Looks like you have grown a bit.'},
+'～ながら':{jp:'歩きながら話そう。時間がない。',pt:'Vamos conversar andando. Não temos tempo.',en:'Let us talk while we walk. There is no time.'},
+'～間に / ～間':{jp:'俺が眠っている間に、何があった。',pt:'O que aconteceu enquanto eu dormia?',en:'What happened while I was asleep?'},
+'～たびに':{jp:'この曲を聞くたびに、あの日を思い出す。',pt:'Toda vez que ouço esta música, lembro daquele dia.',en:'Every time I hear this song, I think of that day.'},
+'～とおりに':{jp:'俺の言うとおりに動け。',pt:'Faça exatamente como eu disser.',en:'Move exactly as I tell you.'},
+'～ついでに':{jp:'見回りのついでに、様子を見てきた。',pt:'Aproveitei a ronda e fui dar uma olhada.',en:'I was on patrol anyway, so I went to check.'},
+'～おかげで / ～せいで':{jp:'お前が来てくれたおかげで、助かった。',pt:'Graças a você ter vindo, me salvei.',en:'Thanks to you coming, I made it.'},
+'～ため(に)':{jp:'嵐のため、船は出せない。',pt:'Por causa da tempestade, o barco não sai.',en:'Because of the storm, no ship leaves port.'},
+'～によって':{jp:'その剣は、名もなき鍛冶によって打たれた。',pt:'Aquela espada foi forjada por um ferreiro sem nome.',en:'That blade was forged by a nameless smith.'},
+'～について':{jp:'あの夜のことについては、何も聞くな。',pt:'Sobre aquela noite, não me pergunte nada.',en:'About that night, ask me nothing.'},
+'～がる':{jp:'あいつは、痛みを見せたがらない。',pt:'Ele não gosta de demonstrar dor.',en:'He never wants to show that he is hurting.'},
+'～すぎる':{jp:'お前は、優しすぎる。',pt:'Você é bom demais.',en:'You are far too kind.'},
+'～やすい / ～にくい':{jp:'この道は暗くて、迷いやすい。',pt:'Este caminho é escuro e fácil de se perder.',en:'This road is dark and easy to get lost on.'},
+'～はじめる / ～だす':{jp:'突然、雨が降りだした。',pt:'De repente começou a chover.',en:'All at once it started to rain.'},
+'～てみる':{jp:'とにかく、一度やってみろ。',pt:'De qualquer forma, tente uma vez.',en:'Whatever happens, try it once.'},
+'～ていく / ～てくる':{jp:'この先、寒くなっていくぞ。',pt:'Daqui pra frente vai esfriar.',en:'From here on it is going to get colder.'},
+'～なければならない / ～なくてもいい':{jp:'俺が行かなければならない。',pt:'Sou eu quem tem de ir.',en:'It has to be me who goes.'},
+'～てはいけない / ～てもいい':{jp:'その扉だけは、開けてはいけない。',pt:'Só aquela porta você não pode abrir.',en:'That one door you must not open.'},
+'～たほうがいい':{jp:'今夜は、休んだほうがいい。',pt:'É melhor você descansar esta noite.',en:'You had better rest tonight.'},
+'～ないで / ～なくて':{jp:'何も言わないで、ただ隣にいてくれ。',pt:'Sem dizer nada, só fica do meu lado.',en:'Say nothing. Just stay beside me.'},
+'～し':{jp:'腕は立つし、頭も切れる。厄介だ。',pt:'Luta bem e ainda é esperto. Complicado.',en:'He fights well and thinks fast. Troublesome.'},
+'～たり～たりする':{jp:'泣いたり笑ったり、忙しいやつだ。',pt:'Ora chora, ora ri — que sujeito agitado.',en:'Crying one minute, laughing the next. Busy fellow.'},
+'～かどうか':{jp:'あいつが戻るかどうかは、誰にも分からない。',pt:'Ninguém sabe se ele volta ou não.',en:'No one knows whether he will come back.'},
+'～という':{jp:'「風の丘」という場所を知っているか。',pt:'Você conhece um lugar chamado Colina do Vento?',en:'Do you know a place called Windy Hill?'},
+'～つもり / ～予定':{jp:'俺は、逃げるつもりはない。',pt:'Não tenho intenção de fugir.',en:'I have no intention of running.'},
+'～ばかり':{jp:'お前は文句ばかり言っているな。',pt:'Você só sabe reclamar.',en:'All you ever do is complain.'},
+'～だけでなく':{jp:'腕だけでなく、覚悟も必要だ。',pt:'Não basta força: é preciso determinação também.',en:'Not just skill — you need resolve as well.'},
+'～こと / ～の (名詞化)':{jp:'あいつが走るのを、初めて見た。',pt:'Foi a primeira vez que o vi correr.',en:'It was the first time I saw him run.'},
+'～場合は':{jp:'万一の場合は、この笛を吹け。',pt:'Em caso de emergência, sopre este apito.',en:'If the worst happens, blow this whistle.'},
+'～ば (条件)':{jp:'この石を押せば、道が開く。',pt:'Se empurrar esta pedra, o caminho se abre.',en:'Push this stone and the way opens.'},
+'～なら':{jp:'行くなら、今しかない。',pt:'Se é para ir, é agora ou nunca.',en:'If you are going, it has to be now.'},
+'～ざるを得ない':{jp:'ここまで来た以上、戦わざるを得ない。',pt:'Chegamos até aqui — não há como não lutar.',en:'We have come this far. There is no choice but to fight.'},
+'～わけにはいかない':{jp:'仲間を置いて、逃げるわけにはいかない。',pt:'Não posso simplesmente fugir e deixar meus companheiros.',en:'I cannot just run and leave my comrades behind.'},
+'～わけがない':{jp:'あの人が、負けるわけがない。',pt:'Não existe a menor chance dele perder.',en:'There is no way that man loses.'},
+'～わけではない':{jp:'信じていないわけではない。ただ、確かめたいだけだ。',pt:'Não é que eu não acredite. Só quero confirmar.',en:'It is not that I doubt you. I just want to make sure.'},
+'～に違いない':{jp:'あいつが、裏で糸を引いているに違いない。',pt:'É ele quem está puxando os fios, com certeza.',en:'He must be the one pulling the strings.'},
+'～かねない':{jp:'このままでは、全滅しかねないぞ。',pt:'Desse jeito a gente pode acabar sendo aniquilado.',en:'At this rate we could well be wiped out.'},
+'～かねる':{jp:'その申し出は、お受けいたしかねます。',pt:'Receio não poder aceitar essa proposta.',en:'I am afraid I cannot accept that offer.'},
+'～得る / 得ない':{jp:'それは、誰にでも起こり得ることだ。',pt:'Isso é algo que pode acontecer com qualquer um.',en:'That is something that can happen to anyone.'},
+'～てはじめて':{jp:'失って初めて、その重さが分かった。',pt:'Só depois de perder foi que entendi o peso daquilo.',en:'Only after losing it did I understand what it weighed.'},
+'～こそ':{jp:'今度こそ、決着をつける。',pt:'Desta vez sim, eu acabo com isso.',en:'This time for real, I end it.'},
+'～ないことには':{jp:'この扉を開けないことには、何も始まらない。',pt:'Sem abrir esta porta, nada começa.',en:'Unless we open this door, nothing begins.'},
+'～に過ぎない':{jp:'今のは、ただの挨拶に過ぎない。',pt:'Aquilo não passou de um cumprimento.',en:'That was nothing more than a greeting.'},
+'～まい':{jp:'二度と、同じ過ちは繰り返すまい。',pt:'Nunca mais vou repetir o mesmo erro.',en:'Never again will I repeat the same mistake.'},
+'～どころか':{jp:'休むどころか、まだ半分も来ていない。',pt:'Descansar? Não fizemos nem metade do caminho.',en:'Rest? We have not even come halfway.'},
+'～ばかりに':{jp:'一瞬ためらったばかりに、この有様だ。',pt:'Só porque hesitei um instante, olha só o resultado.',en:'Just because I hesitated for a second, look at this.'},
+'～ようがない':{jp:'こうなっては、言い訳のしようがない。',pt:'A esta altura, não há como me desculpar.',en:'At this point there is no way to excuse myself.'},
+'～ものの':{jp:'勝ったものの、失ったものは大きい。',pt:'Vencemos, mas o que perdemos foi grande.',en:'We won, but what we lost was heavy.'},
+'～ものだ':{jp:'人は、失ってから気づくものだ。',pt:'A gente só percebe depois de perder — é assim que somos.',en:'People only notice once it is gone. That is how we are.'},
+'～ものだから':{jp:'あまりに静かだったものだから、つい眠ってしまった。',pt:'É que estava tão silencioso que acabei dormindo.',en:'It was so quiet that I ended up falling asleep.'},
+'～つつ / つつある':{jp:'状況は、確実に変わりつつある。',pt:'A situação está mudando, sem dúvida.',en:'The situation is steadily changing.'},
+'～はずだ / はずがない':{jp:'あいつは、ここに来るはずだった。',pt:'Ele devia ter vindo até aqui.',en:'He was supposed to come here.'},
+'～べきだ':{jp:'今こそ、声を上げるべきだ。',pt:'É agora que devemos levantar a voz.',en:'Now is the moment we ought to speak up.'},
+'～かのようだ':{jp:'まるで、時間が止まったかのようだった。',pt:'Era como se o tempo tivesse parado.',en:'It was as if time had stopped.'},
+'～たとたん':{jp:'扉を開けたとたん、冷たい風が吹き抜けた。',pt:'No instante em que abri a porta, um vento gelado passou.',en:'The moment I opened the door, a cold wind rushed through.'},
+'～かと思うと':{jp:'消えたかと思うと、もう背後に立っていた。',pt:'Mal sumiu e já estava atrás de mim.',en:'No sooner had he vanished than he was standing behind me.'},
+'～に限る':{jp:'こういう夜は、黙って歩くに限る。',pt:'Numa noite dessas, nada melhor que caminhar em silêncio.',en:'On a night like this, nothing beats walking in silence.'},
+'～に限って':{jp:'急いでいる時に限って、あいつは現れない。',pt:'Justo quando estou com pressa, ele não aparece.',en:'Of all times, he never shows when I am in a hurry.'},
+'～に限らず':{jp:'この街に限らず、国じゅうが揺れている。',pt:'Não é só esta cidade — o país inteiro está tremendo.',en:'Not just this city — the whole country is shaking.'},
+'～次第':{jp:'準備が整い次第、出発する。',pt:'Assim que estivermos prontos, partimos.',en:'We move out as soon as preparations are done.'},
+'～次第だ / 次第で':{jp:'あとは、お前次第だ。',pt:'Daqui pra frente, depende de você.',en:'From here on, it is up to you.'},
+'～上で':{jp:'すべてを聞いた上で、決めてくれ。',pt:'Decida depois de ouvir tudo.',en:'Hear everything, and then decide.'},
+'～上に':{jp:'道は険しい上に、明かりもない。',pt:'Além de o caminho ser íngreme, não há luz.',en:'The path is steep, and on top of that there is no light.'},
+'～としても':{jp:'たとえ敵になったとしても、俺は迎えに行く。',pt:'Mesmo que você vire meu inimigo, eu vou te buscar.',en:'Even if you become my enemy, I am coming for you.'},
+'～ほかない / よりほかない':{jp:'もう、進むほかない。',pt:'Agora só resta seguir em frente.',en:'There is nothing left but to move forward.'},
+'～てたまらない':{jp:'悔しくてたまらない。',pt:'A raiva de ter perdido é insuportável.',en:'The frustration is more than I can bear.'},
+'～てしょうがない':{jp:'あの言葉が、気になってしょうがない。',pt:'Não consigo tirar aquelas palavras da cabeça.',en:'I cannot stop turning those words over in my head.'},
+'～ながら(も)':{jp:'震えながらも、あいつは前に出た。',pt:'Mesmo tremendo, ele deu um passo à frente.',en:'Trembling as he was, he stepped forward.'},
+'～に他ならない':{jp:'これは偶然ではない。努力の結果に他ならない。',pt:'Isto não é sorte. Nada mais é que fruto de esforço.',en:'This is not luck. It is nothing other than the fruit of effort.'},
+'～わりに':{jp:'新人のわりに、いい目をしている。',pt:'Para um novato, tem um bom olhar.',en:'For a rookie, he has good eyes.'},
+'～に際して':{jp:'出発に際して、一つだけ約束してくれ。',pt:'Na hora de partir, me prometa só uma coisa.',en:'As we set out, promise me just one thing.'},
+'～をきっかけに':{jp:'あの日をきっかけに、俺は変わった。',pt:'Aquele dia foi o estopim: eu mudei.',en:'That day was the trigger. I changed.'},
+'～に応じて':{jp:'相手に応じて、戦い方を変える。',pt:'Mudo o modo de lutar conforme o adversário.',en:'I change how I fight according to the opponent.'},
+'～にわたって':{jp:'三日間にわたって、雨は止まなかった。',pt:'Ao longo de três dias, a chuva não parou.',en:'For three days on end, the rain did not stop.'},
+'～に対して':{jp:'弱い者に対して、その力を使うな。',pt:'Não use essa força contra os fracos.',en:'Do not turn that power on the weak.'},
+'～にとって':{jp:'俺にとって、あいつは兄貴だ。',pt:'Para mim, ele é como um irmão mais velho.',en:'To me, he is an older brother.'},
+'～ばかりか / ばかりでなく':{jp:'傷ばかりか、心まで折れかけていた。',pt:'Não só o corpo ferido — o ânimo também estava quase quebrado.',en:'Not only wounded — his spirit was close to breaking too.'},
+'～てからでないと':{jp:'名を名乗ってからでないと、通すわけにはいかない。',pt:'Sem dizer seu nome antes, não posso deixar passar.',en:'Unless you give your name first, I cannot let you through.'},
+'～ようでは':{jp:'その程度で音を上げるようでは、先はないぞ。',pt:'Se você já reclama com tão pouco, não vai longe.',en:'If you are already groaning at this much, you will not get far.'},
+'～のみならず':{jp:'剣のみならず、心も鍛えねばならない。',pt:'Não só a espada: é preciso forjar também o coração.',en:'Not the blade alone — the heart must be forged as well.'},
+'～かぎり(は)':{jp:'息がある限り、諦めはしない。',pt:'Enquanto eu respirar, não desisto.',en:'As long as I draw breath, I will not give up.'},
+'～に相違ない':{jp:'この筆跡、あの男のものに相違ない。',pt:'Esta letra é dele, sem sombra de dúvida.',en:'This handwriting is his, beyond any doubt.'},
+'～を通じて / を通して':{jp:'その男とは、共通の友人を通じて知り合った。',pt:'Conheci esse homem por meio de um amigo em comum.',en:'I met the man through a mutual friend.'},
+'～において':{jp:'この件においては、俺が責任を取る。',pt:'Neste assunto, a responsabilidade é minha.',en:'In this matter, I take responsibility.'},
+'～に基づいて':{jp:'憶測ではなく、事実に基づいて話せ。',pt:'Fale com base nos fatos, não em suposições.',en:'Speak from the facts, not from guesswork.'},
+'～に先立って':{jp:'開戦に先立って、伝えておきたいことがある。',pt:'Antes de a batalha começar, quero te dizer uma coisa.',en:'Before the battle begins, there is something I want to tell you.'},
+'～を契機に':{jp:'あの敗北を契機に、俺たちは変わった。',pt:'Aquela derrota foi o ponto de virada: nós mudamos.',en:'That defeat was the turning point. We changed.'},
+'～てあげる / ～てくれる / ～てもらう':{jp:'よく、戻ってきてくれた。',pt:'Que bom que você voltou (para mim).',en:'Thank you for coming back to us.'},
+'～ておく':{jp:'言っておくが、俺は手加減しない。',pt:'Vou avisando desde já: não vou pegar leve.',en:'Let me say this in advance — I will not hold back.'},
+'～ようになる':{jp:'あいつの気持ちが、やっと分かるようになった。',pt:'Finalmente passei a entender o que ele sentia.',en:'I have finally come to understand how he felt.'},
+'～ように (目的)':{jp:'二度と迷わないように、この道を覚えておけ。',pt:'Grave este caminho para não se perder de novo.',en:'Memorise this road so that you never lose your way again.'},
+'～ために (目的)':{jp:'約束を守るために、ここへ戻ってきた。',pt:'Voltei aqui para cumprir a promessa.',en:'I came back here in order to keep my promise.'},
+'～そうだ (伝聞)':{jp:'西の村が落ちたそうだ。',pt:'Dizem que a aldeia do oeste caiu.',en:'Word is the western village has fallen.'},
+'～そうだ (様態)':{jp:'空が暗い。ひと雨来そうだ。',pt:'O céu está escuro. Parece que vem chuva.',en:'The sky is dark. Looks like rain is coming.'},
+'～(ら)れる (受身)':{jp:'雨に降られて、火が消えた。',pt:'Peguei chuva e o fogo apagou.',en:'We got caught in the rain and the fire went out.'},
+'～(さ)せる (使役)':{jp:'三時間も待たされた。',pt:'Me fizeram esperar três horas.',en:'They kept me waiting three hours.'},
+'お～になる / お～する':{jp:'先生が、お戻りになりました。',pt:'O mestre voltou.',en:'The master has returned.'},
+'～たら (条件)':{jp:'戻ったら、また一緒に飯を食おう。',pt:'Quando você voltar, vamos comer juntos de novo.',en:'When you get back, let us eat together again.'},
+'～と (条件)':{jp:'春になると、この丘は花で埋まる。',pt:'Quando chega a primavera, esta colina se enche de flores.',en:'When spring comes, this hill fills with flowers.'},
+'～ようとする':{jp:'立ち上がろうとしたが、足に力が入らなかった。',pt:'Tentei me levantar, mas as pernas não obedeceram.',en:'I tried to stand, but my legs would not answer.'},
+'～ことがある':{jp:'一度だけ、あの人の背中を見たことがある。',pt:'Só uma vez eu vi as costas daquele homem.',en:'Just once, I have seen that man\u2019s back.'},
+'～たばかり':{jp:'この街に来たばかりで、まだ何も分からない。',pt:'Acabei de chegar nesta cidade, ainda não sei nada.',en:'I have only just arrived in this town. I still know nothing.'},
+'～うちに':{jp:'夜が明けないうちに、ここを出る。',pt:'Saímos daqui antes de o dia amanhecer.',en:'We leave before dawn breaks.'},
+'～まま':{jp:'あいつは、背を向けたまま何も言わなかった。',pt:'Ele ficou de costas, sem dizer nada.',en:'He kept his back turned and said nothing.'},
+'～のに':{jp:'あれほど約束したのに、来なかったな。',pt:'Depois de tanto prometer, você não veio.',en:'After all those promises, you did not come.'},
+'～ば～ほど':{jp:'知れば知るほど、引き返せなくなる。',pt:'Quanto mais você sabe, menos pode voltar atrás.',en:'The more you know, the less you can turn back.'}
+};
+const SERIFU_KEYS=Object.keys(SERIFU);
+/* one quote per day, stable through the day, and a different one in the notebook */
+function meigenOf(seed){return MEIGEN[Math.abs(seed)%MEIGEN.length];}
+function meigenToday(){const d=new Date();
+  return meigenOf(d.getFullYear()*372+d.getMonth()*31+d.getDate());}
+function meigenBox(m,label){return `<div class="meigen">
+  <div class="lbl" style="font-size:9.5px;letter-spacing:.2em;font-weight:800;color:var(--yama)">${label}</div>
+  <div class="jp">${m.jp}</div><div class="rd">${m.r}</div>
+  <div class="tr">${S.lang==='pt'?m.pt:m.en}</div>
+  <div class="src">— ${m.src}</div>
+  <div class="mn"><b style="color:var(--mura)">${L('mgNote')}:</b> ${S.lang==='pt'?m.note:m.noteEn}</div>
+</div>`;}
+
+/* ═══ 名言 · パブリックドメインの文学＋ことわざ・四字熟語 ═══
+   著作権の切れた作品（著者没後70年超）と、作者のいない伝承句のみ。 */
+const MEIGEN=[
+{jp:'吾輩は猫である。名前はまだ無い。',r:'わがはいはねこである。なまえはまだない。',src:'夏目漱石『吾輩は猫である』1905',
+ pt:'Sou um gato. Ainda não tenho nome.',en:'I am a cat. As yet I have no name.',
+ note:'A abertura mais conhecida da literatura japonesa. 吾輩 é um "eu" pomposo e arcaico — o humor está no contraste entre o tom grandioso e o fato de ser um gato sem nome.',
+ noteEn:'The most famous opening in Japanese literature. 吾輩 is a pompous, archaic "I" — the joke lies in the grand tone against a nameless cat.'},
+{jp:'智に働けば角が立つ。情に棹させば流される。',r:'ちにはたらけばかどがたつ。じょうにさおさせばながされる。',src:'夏目漱石『草枕』1906',
+ pt:'Guie-se pela razão e você fere; ceda ao sentimento e é levado pela corrente.',en:'Work by reason and you rub people the wrong way; go with feeling and you are swept along.',
+ note:'Condicional ～ば em série, exatamente o padrão do N2. 角が立つ = criar atrito; 棹さす = impulsionar o barco na corrente, ou seja, seguir a maré.',
+ noteEn:'A chain of ～ば conditionals, exactly the N2 pattern. 角が立つ = to cause friction; 棹さす = to pole a boat with the current, i.e. to go along with things.'},
+{jp:'メロスは激怒した。',r:'メロスはげきどした。',src:'太宰治『走れメロス』1940',
+ pt:'Melos ficou furioso.',en:'Melos was enraged.',
+ note:'Cinco sílabas que todo japonês aprende na escola. Frase de abertura brutalmente curta — o oposto do estilo pesado que os estrangeiros costumam imitar.',
+ noteEn:'Five syllables every Japanese person learns at school. A brutally short opening line — the opposite of the heavy style foreign learners tend to imitate.'},
+{jp:'恥の多い生涯を送って来ました。',r:'はじのおおいしょうがいをおくってきました。',src:'太宰治『人間失格』1948',
+ pt:'Levei uma vida cheia de vergonha.',en:'Mine has been a life of much shame.',
+ note:'送ってきました usa ～てくる no eixo do tempo: do passado até agora. É o mesmo ～てくる que aparece nos cartões de gramática.',
+ noteEn:'送ってきました uses ～てくる on the time axis: from the past up to now. The very same ～てくる that appears on your grammar cards.'},
+{jp:'ある日の暮方の事である。',r:'あるひのくれがたのことである。',src:'芥川龍之介『羅生門』1915',
+ pt:'Foi ao anoitecer de certo dia.',en:'It happened at dusk one day.',
+ note:'～である é o registro escrito e impessoal que domina os textos de 読解. Se ele soa natural para você, os textos da prova ficam mais fáceis.',
+ noteEn:'～である is the impersonal written register that dominates 読解 passages. Once it sounds natural to you, the exam texts get easier.'},
+{jp:'天は人の上に人を造らず、人の下に人を造らず。',r:'てんはひとのうえにひとをつくらず、ひとのしたにひとをつくらず。',src:'福沢諭吉『学問のすゝめ』1872',
+ pt:'O céu não cria homens acima de homens, nem homens abaixo de homens.',en:'Heaven creates no man above another, nor any man below.',
+ note:'～ず é a negação clássica (= ～ない). Aparece em textos formais e em provérbios; reconhecê-la evita travar na leitura.',
+ noteEn:'～ず is the classical negative (= ～ない). It turns up in formal texts and proverbs; recognising it stops you stalling mid-passage.'},
+{jp:'国破れて山河在り',r:'くにやぶれてさんがあり',src:'杜甫「春望」を踏まえた慣用句',
+ pt:'O país se despedaça, mas os montes e rios permanecem.',en:'The state is shattered; mountains and rivers remain.',
+ note:'Frase feita usada no japonês moderno para o que sobrevive à ruína. 在り é o clássico de ある.',
+ noteEn:'A set phrase in modern Japanese for what survives a collapse. 在り is the classical form of ある.'},
+{jp:'月が綺麗ですね。',r:'つきがきれいですね。',src:'夏目漱石に帰される逸話',
+ pt:'A lua está linda, não está?',en:'The moon is beautiful, is it not?',
+ note:'Atribuída a Sōseki como tradução de "I love you". Historicamente duvidosa, mas culturalmente viva: mostra que em japonês o mais forte costuma ser o que não se diz.',
+ noteEn:'Attributed to Sōseki as a rendering of "I love you". Historically doubtful, culturally alive: it shows that in Japanese the strongest thing is usually what goes unsaid.'},
+{jp:'七転び八起き',r:'ななころびやおき',src:'ことわざ',
+ pt:'Cair sete vezes, levantar oito.',en:'Fall seven times, get up eight.',
+ note:'Note que são <b>oito</b>, não sete: conta-se o primeiro levantar-se, ao nascer. Reprovar uma vez é a primeira queda.',
+ noteEn:'Note that it is <b>eight</b>, not seven: the first rising, at birth, is counted. Failing once is only the first fall.'},
+{jp:'石の上にも三年',r:'いしのうえにもさんねん',src:'ことわざ',
+ pt:'Mesmo sobre uma pedra, três anos.',en:'Even on a cold stone, three years.',
+ note:'Sente-se numa pedra gelada por três anos e ela esquenta. O verbo está omitido — muito comum em provérbios.',
+ noteEn:'Sit on a cold stone for three years and it warms. The verb is omitted, as is common in proverbs.'},
+{jp:'継続は力なり',r:'けいぞくはちからなり',src:'ことわざ',
+ pt:'A continuidade é força.',en:'Persistence is strength.',
+ note:'なり é o ～だ clássico. A frase inteira tem quatro palavras e resume o funcionamento deste aplicativo.',
+ noteEn:'なり is the classical ～だ. Four words that sum up how this whole app works.'},
+{jp:'塵も積もれば山となる',r:'ちりもつもればやまとなる',src:'ことわざ',
+ pt:'Até o pó, acumulado, vira montanha.',en:'Even dust, piled up, becomes a mountain.',
+ note:'Condicional ～ば mais となる (= になる, registro formal). Doze cartões por dia durante cem dias são mil e duzentos cartões.',
+ noteEn:'A ～ば conditional plus となる (= になる, formal register). Twelve cards a day for a hundred days is twelve hundred cards.'},
+{jp:'案ずるより産むが易し',r:'あんずるよりうむがやすし',src:'ことわざ',
+ pt:'Dar à luz é mais fácil que temer o parto.',en:'Giving birth is easier than worrying about it.',
+ note:'A preocupação costuma ser maior que a prova. 易し é a forma clássica de 易しい.',
+ noteEn:'The worrying is usually bigger than the exam itself. 易し is the classical form of 易しい.'},
+{jp:'急がば回れ',r:'いそがばまわれ',src:'ことわざ',
+ pt:'Se tem pressa, dê a volta.',en:'If you are in a hurry, take the long way.',
+ note:'急がば é ～ば clássico. Aplicado ao japonês: pular a revisão dos vencidos é o atalho que sai caro.',
+ noteEn:'急がば is the classical ～ば. Applied to Japanese: skipping your due reviews is the shortcut that costs you.'},
+{jp:'好きこそものの上手なれ',r:'すきこそもののじょうずなれ',src:'ことわざ',
+ pt:'É o gosto que faz a habilidade.',en:'What you love is what you get good at.',
+ note:'Aqui está o <b>こそ</b> dos seus cartões, na forma clássica こそ〜なれ. Mesmo こそ de 「今年こそ」.',
+ noteEn:'Here is the <b>こそ</b> from your cards, in the classical こそ〜なれ pattern. The same こそ as in 「今年こそ」.'},
+{jp:'初心忘るべからず',r:'しょしんわするべからず',src:'世阿弥『花鏡』1424',
+ pt:'Não esqueça o espírito do começo.',en:'Do not forget your beginner\u2019s mind.',
+ note:'べからず é a proibição clássica (= ～てはいけない), parente do ～べきだ que você estuda. Escrito por um mestre de nō no século XV.',
+ noteEn:'べからず is the classical prohibition (= ～てはいけない), a relative of the ～べきだ on your cards. Written by a nō master in the fifteenth century.'},
+{jp:'千里の道も一歩から',r:'せんりのみちもいっぽから',src:'ことわざ',
+ pt:'Mesmo um caminho de mil léguas começa com um passo.',en:'Even a thousand-league road begins with one step.',
+ note:'も aqui é "até mesmo". Cem dias até o exame são cem primeiros passos.',
+ noteEn:'The も here means "even". A hundred days to the exam is a hundred first steps.'},
+{jp:'失敗は成功のもと',r:'しっぱいはせいこうのもと',src:'ことわざ',
+ pt:'O fracasso é a origem do sucesso.',en:'Failure is the root of success.',
+ note:'もと = origem, base. A frase mais adequada a um caderno de erros que já existe em japonês.',
+ noteEn:'もと = root, origin. The most fitting phrase in Japanese for a mistake notebook.'},
+{jp:'為せば成る、為さねば成らぬ何事も',r:'なせばなる、なさねばならぬなにごとも',src:'上杉鷹山 江戸時代',
+ pt:'Se fizer, se faz; se não fizer, nada se faz.',en:'Do it and it is done; leave it and nothing is.',
+ note:'成らぬ = 成らない, e 為さねば = 為さなければ. A ordem está invertida (何事も no fim) — inversão comum em frases de efeito.',
+ noteEn:'成らぬ = 成らない, and 為さねば = 為さなければ. The word order is inverted (何事も at the end) — common in memorable sayings.'},
+{jp:'一期一会',r:'いちごいちえ',src:'四字熟語（茶道）',
+ pt:'Um encontro, uma vez na vida.',en:'One time, one meeting.',
+ note:'Do cerimonial do chá: cada encontro acontece uma única vez e não se repete. Um dos 四字熟語 mais citados.',
+ noteEn:'From the tea ceremony: every meeting happens once and never repeats. One of the most quoted 四字熟語.'},
+{jp:'大器晩成',r:'たいきばんせい',src:'四字熟語（老子）',
+ pt:'Grandes vasos levam tempo para ficar prontos.',en:'Great vessels take long to complete.',
+ note:'Quem chega mais tarde não chega menor. Roberto: esta é para você, na segunda tentativa.',
+ noteEn:'Arriving later does not mean arriving smaller. Roberto: this one is for you, on the second attempt.'},
+{jp:'切磋琢磨',r:'せっさたくま',src:'四字熟語（詩経）',
+ pt:'Lapidar-se mutuamente pelo estudo.',en:'To polish one another through effort.',
+ note:'Os quatro kanji significam cortar, limar, entalhar e polir — o processo de trabalhar uma pedra até virar joia.',
+ noteEn:'The four kanji mean to cut, file, carve and polish — the process of working a stone into a jewel.'},
+{jp:'温故知新',r:'おんこちしん',src:'四字熟語（論語）',
+ pt:'Revisitar o velho para conhecer o novo.',en:'Study the old to understand the new.',
+ note:'Literalmente: aquecer o antigo e conhecer o novo. É a definição exata de repetição espaçada, escrita há dois mil e quinhentos anos.',
+ noteEn:'Literally: warm up the old and know the new. The exact definition of spaced repetition, written two and a half thousand years ago.'},
+{jp:'不撓不屈',r:'ふとうふくつ',src:'四字熟語',
+ pt:'Não vergar, não ceder.',en:'Unbending, unyielding.',
+ note:'撓む = curvar-se; 屈する = render-se. Dois negativos 不 seguidos, padrão muito produtivo: 不可欠・不十分・不自然.',
+ noteEn:'撓む = to bend; 屈する = to submit. Two 不 negatives in a row, a very productive pattern: 不可欠・不十分・不自然.'},
+{jp:'有言実行',r:'ゆうげんじっこう',src:'四字熟語',
+ pt:'Dizer e cumprir.',en:'Say it, then do it.',
+ note:'Inversão moderna do clássico 不言実行 (agir sem falar). Anunciar a meta e cumpri-la — diga a ela que vai passar.',
+ noteEn:'A modern flip of the classical 不言実行 (act without talking). Announce the goal and deliver it — tell her you are going to pass.'},
+{jp:'日進月歩',r:'にっしんげっぽ',src:'四字熟語',
+ pt:'Avançar a cada dia, caminhar a cada mês.',en:'Advancing by the day, walking on by the month.',
+ note:'O progresso diário é invisível; o mensal se vê. Por isso a muralha de kanji existe neste aplicativo.',
+ noteEn:'Daily progress is invisible; monthly progress shows. That is why the kanji wall exists in this app.'}
+];
+
 /* ═══════════════ i18n ═══════════════ */
 const T={
  daysTo:{pt:'DIAS ATÉ DEZEMBRO',en:'DAYS UNTIL DECEMBER'},
@@ -1822,7 +2412,28 @@ const T={
  tBad:{pt:'Backup inválido',en:'Invalid backup'},tZero:{pt:'Zerado',en:'Reset'},
  tDate:{pt:'Data atualizada',en:'Date updated'},
  askErase:{pt:'Apagar todo o progresso?',en:'Erase all progress?'},
- pasteB:{pt:'Cole o backup:',en:'Paste the backup:'},copyB:{pt:'Copie:',en:'Copy this:'}
+ pasteB:{pt:'Cole o backup:',en:'Paste the backup:'},
+ msT:{pt:'誤答ノート · Caderno de erros',en:'誤答ノート · Mistake notebook'},
+ msEmpty:{pt:'Nenhum erro em aberto. Tudo o que você errou já voltou duas vezes certo.',
+          en:'No open mistakes. Everything you missed has come back correct twice.'},
+ msIntro:{pt:'Tudo o que você erra entra aqui e só sai depois de <b>dois acertos seguidos</b>. Cada item vem com uma fala em japonês construída em cima do ponto que falhou.',
+          en:'Everything you get wrong lands here and only leaves after <b>two correct answers in a row</b>. Each item comes with a Japanese line built around the point you missed.'},
+ msQ:{pt:'Refazer questões erradas (#)',en:'Redo missed questions (#)'},
+ msC:{pt:'Rever cartões errados (#)',en:'Review missed cards (#)'},
+ msTr:{pt:'Refazer armadilhas erradas (#)',en:'Redo missed traps (#)'},
+ msList:{pt:'Lista completa',en:'Full list'},
+ msOpen:{pt:'EM ABERTO',en:'OPEN'},
+ msFixed:{pt:'RESOLVIDOS',en:'CLEARED'},
+ msMiss:{pt:'× # vezes',en:'missed # ×'},
+ msYours:{pt:'Você marcou:',en:'You picked:'},
+ msRight:{pt:'Correto:',en:'Correct:'},
+ msProg:{pt:'Sai do caderno em: ',en:'Leaves the notebook in: '},
+ msSerifu:{pt:'セリフで覚える',en:'Learn it as a line'},
+ msNone:{pt:'Nada pendente nesta categoria.',en:'Nothing pending in this category.'},
+ msDone:{pt:'Caderno de erros: # revistos',en:'Mistake notebook: # reviewed'},
+ msHome:{pt:'誤答ノート · # em aberto',en:'誤答ノート · # open'},
+ mgToday:{pt:'今日の一句',en:'今日の一句'},
+ mgNote:{pt:'Por que isto importa',en:'Why this matters'},copyB:{pt:'Copie:',en:'Copy this:'}
 };
 function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.replace('#',v));return s;}
 
@@ -1832,8 +2443,8 @@ const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossW
 let S=JSON.parse(JSON.stringify(DEF));
 const KEY='n2sprint:v2';
 Object.assign(EN_GTRAP,EN_G3TRAP);Object.assign(EN_GTX,EN_G3TX);
-MONDAI.push(...MONDAI_N3,...MONDAI_READ,...MONDAI_R2,...MONDAI_MOJI,...MONDAI_GOI,...MONDAI_BUNPO2,...MONDAI_RUIGI2);
-EN_MEX.push(...EN_MEX_N3,...EN_MEX_READ,...EN_MEX_R2,...EN_MEX_MOJI,...EN_MEX_GOI,...EN_MEX_BUNPO2,...EN_MEX_RUIGI2);
+MONDAI.push(...MONDAI_N3,...MONDAI_READ,...MONDAI_R2,...MONDAI_MOJI,...MONDAI_GOI,...MONDAI_BUNPO2,...MONDAI_RUIGI2,...MONDAI_R3A,...MONDAI_R3B,...MONDAI_R3C,...MONDAI_R3D,...MONDAI_R3E);
+EN_MEX.push(...EN_MEX_N3,...EN_MEX_READ,...EN_MEX_R2,...EN_MEX_MOJI,...EN_MEX_GOI,...EN_MEX_BUNPO2,...EN_MEX_RUIGI2,...EN_MEX_R3A,...EN_MEX_R3B,...EN_MEX_R3C,...EN_MEX_R3D,...EN_MEX_R3E);
 /* Kill answer-position bias: every item gets a fixed rotation of its options.
    Deterministic, so the layout is stable across sessions, and question indices never move. */
 MONDAI.forEach((q,i)=>{const n=q.o.length,r=((i*7)+3)%n;
@@ -1868,9 +2479,11 @@ function toast(m){const t=document.getElementById('toast');t.innerHTML=m;t.class
 /* ═══════════════ SRS (Leitner) ═══════════════ */
 const IV=[0,1,2,4,8,16,32];
 function srs(id){return S.srs[id]||(S.srs[id]={b:0,due:today(),seen:0,miss:0});}
-function grade(id,ok){
+function grade(id,ok,pick){
   const c=srs(id);c.seen++;
-  if(ok){c.b=Math.min(6,c.b+1);}else{c.b=Math.max(0,c.b-2);c.miss++;}
+  if(ok){c.b=Math.min(6,c.b+1);c.run=(c.run||0)+1;}
+  else{c.b=Math.max(0,c.b-2);c.miss++;c.run=0;c.last=today();
+       if(pick!==undefined)c.pick=pick;}
   const d=new Date();d.setDate(d.getDate()+IV[c.b]);
   c.due=d.toISOString().slice(0,10);
   addXP(ok?4:1);save();
@@ -1882,6 +2495,27 @@ function dueList(prefix){
   return {fresh,due};
 }
 function addXP(n){S.xp+=n;paintTop();}
+const RETIRE=2;                      /* two clean answers and it leaves the notebook */
+function isOpen(c){return c&&c.miss>0&&(c.run||0)<RETIRE;}
+function openMistakes(){
+  const out={q:[],card:[],trap:[]};
+  Object.entries(S.srs).forEach(([k,c])=>{
+    if(!isOpen(c))return;
+    const p=k[0],i=+k.slice(1);
+    if(p==='m'){if(MONDAI[i])out.q.push({k,c,i});}
+    else if(p==='t'){if(TRAPS[i])out.trap.push({k,c,i});}
+    else if(POOL[p]&&POOL[p][i])out.card.push({k,c,i,pool:p});});
+  const w=x=>-(x.c.miss*10+(x.c.last?1:0));
+  Object.values(out).forEach(a=>a.sort((x,y)=>w(x)-w(y)));
+  return out;
+}
+function clearedCount(){return Object.values(S.srs).filter(c=>c.miss>0&&(c.run||0)>=RETIRE).length;}
+/* pick the line that drills the exact point missed; otherwise rotate deterministically */
+function serifuFor(kind,idx){
+  if(kind==='g'&&GRAMMAR[idx]&&SERIFU[GRAMMAR[idx].g])return SERIFU[GRAMMAR[idx].g];
+  if(kind==='h'&&GRAMMAR_N3[idx]&&SERIFU[GRAMMAR_N3[idx].g])return SERIFU[GRAMMAR_N3[idx].g];
+  return SERIFU[SERIFU_KEYS[(idx*13+kind.charCodeAt(0))%SERIFU_KEYS.length]];
+}
 
 /* ═══════════════ 今日のミッション ═══════════════ */
 function phase(){const d=daysLeft();
@@ -1934,6 +2568,9 @@ function paintTop(){
   document.getElementById('xpFill').style.width=((S.xp%250)/250*100)+'%';
   const lb=document.getElementById('langBtn');
   if(lb)lb.textContent=S.lang==='pt'?'PT':'EN';
+  const nav=S.lang==='pt'?['HOJE','DOJO','EXAME','ARMAD.','ERROS','DADOS']
+                         :['TODAY','DOJO','EXAM','TRAPS','ERRORS','STATS'];
+  document.querySelectorAll('nav .lb').forEach((e,i)=>{if(nav[i])e.textContent=nav[i];});
 }
 function setLang(l){S.lang=l;save();paintTop();nav(cur);toast(l==='pt'?'Explicações em português':'Explanations in English');}
 let cur='home';
@@ -1942,7 +2579,7 @@ function nav(v){cur=v;
   document.getElementById('v-'+v).classList.add('on');
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
   window.scrollTo(0,0);
-  ({home:renderHome,dojo:renderDojo,mondai:renderMondai,trap:renderTrap,stats:renderStats})[v]();
+  ({home:renderHome,dojo:renderDojo,mondai:renderMondai,trap:renderTrap,miss:renderMiss,stats:renderStats})[v]();
 }
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>nav(b.dataset.v));
 document.getElementById('langBtn').onclick=()=>setLang(S.lang==='pt'?'en':'pt');
@@ -1970,12 +2607,16 @@ function renderHome(){
     </div>`).join('')}</div>
   ${totalDue?`<button class="btn shu" id="revBtn">${L('revBtn',totalDue)}</button>`:
     `<div class="card" style="text-align:center"><p class="muted" style="margin:0">${L('noRev')}</p></div>`}
+  ${(()=>{const m=openMistakes(),n=m.q.length+m.card.length+m.trap.length;
+    return n?`<button class="btn" id="missBtn" style="margin-top:12px;border-color:var(--coral);color:var(--coral)">${L('msHome',n)}</button>`:'';})()}
+  ${meigenBox(meigenToday(),L('mgToday'))}
   <div class="row" style="margin-top:12px">
     <button class="btn ghost sm" onclick="nav('trap')">${L('traps')}</button>
     <button class="btn ghost sm" onclick="nav('mondai')">${L('mock')}</button>
   </div>`;
   document.querySelectorAll('#v-home .mission').forEach(el=>el.onclick=()=>ms[+el.dataset.i].go());
   const rb=document.getElementById('revBtn');if(rb)rb.onclick=()=>{nav('dojo');startReview();};
+  const mb=document.getElementById('missBtn');if(mb)mb.onclick=()=>nav('miss');
 }
 function greet(){const h=new Date().getHours();
   return h<11?'おはよう、Roberto。':h<18?'こんにちは、Roberto。':'こんばんは、Roberto。';}
@@ -2064,8 +2705,9 @@ function startReview(){
   deck={q,idx:0,flip:false};nav('dojo');drawCard();
 }
 function drawCard(){
-  if(deck.idx>=deck.q.length){const n=deck.q.length;deck=null;
-    toast(L('deckDone',n));renderDojo();return;}
+  if(deck.idx>=deck.q.length){const n=deck.q.length;
+    const back=deck.from;deck=null;toast(L('deckDone',n));
+    if(back==='miss'){nav('miss');}else{renderDojo();}return;}
   const {key,i}=deck.q[deck.idx],item=POOL[key][i];
   const isV=VKEYS.includes(key);
   const front=key==='k'?kFront(item):isV?vFront(item):gFront(item);
@@ -2185,7 +2827,7 @@ function drawQ(){
 function answer(k){
   const {q,i}=mo.q[mo.idx],ok=k===q.a;
   S.mondaiSeen[i]=(S.mondaiSeen[i]||0)+1;
-  grade('m'+i,ok);
+  grade('m'+i,ok,ok?undefined:k);
   if(ok){mo.ok++;addXP(6);}else if(mo.boss)mo.hp--;
   document.querySelectorAll('#opts .opt').forEach(b=>{b.disabled=true;const n=+b.dataset.k;
     if(n===q.a)b.classList.add('right');else if(n===k)b.classList.add('wrong');});
@@ -2196,7 +2838,7 @@ function answer(k){
   document.getElementById('ex').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function endM(){
-  const pct=Math.round(mo.ok/mo.q.length*100),boss=mo.boss,won=boss&&mo.hp>0;
+  const pct=Math.round(mo.ok/mo.q.length*100),boss=mo.boss,won=boss&&mo.hp>0,from=mo.from;
   if(won){S.bossWins++;dayRec().boss=1;addXP(60);}
   save();
   const msg=pct>=80?L('r80'):pct>=60?L('r60'):L('r0');
@@ -2210,8 +2852,8 @@ function endM(){
   <button class="btn shu" id="again">${L('again')}</button>
   <button class="btn ghost sm" id="back" style="margin-top:10px">${L('back')}</button>`;
   mo=null;
-  document.getElementById('again').onclick=()=>startMondai();
-  document.getElementById('back').onclick=renderMondai;
+  document.getElementById('again').onclick=()=>from==='miss'?startMissQuiz():startMondai();
+  document.getElementById('back').onclick=()=>from==='miss'?nav('miss'):renderMondai();
   paintTop();
 }
 
@@ -2235,8 +2877,8 @@ function startTrap(){
   tr={q,idx:0,ok:0};nav('trap');drawT();
 }
 function drawT(){
-  if(tr.idx>=tr.q.length){const o=tr.ok,n=tr.q.length;tr=null;
-    toast(L('trDone',o,n));renderTrap();return;}
+  if(tr.idx>=tr.q.length){const o=tr.ok,n=tr.q.length,back=tr.from;tr=null;
+    toast(L('trDone',o,n));if(back==='miss'){nav('miss');}else{renderTrap();}return;}
   const {t}=tr.q[tr.idx];
   const main=S.lang==='pt'?t.pt:t.en, sub=S.lang==='pt'?t.en:t.pt;
   document.getElementById('v-trap').innerHTML=`
@@ -2255,7 +2897,7 @@ function drawT(){
 function tAns(k){
   const {t,i}=tr.q[tr.idx],ok=k===t.a;
   if(ok){tr.ok++;addXP(5);}
-  grade('t'+i,ok);
+  grade('t'+i,ok,ok?undefined:k);
   document.querySelectorAll('#topts .opt').forEach(b=>{b.disabled=true;const n=+b.dataset.k;
     if(n===t.a)b.classList.add('right');else if(n===k)b.classList.add('wrong');});
   document.getElementById('tex').innerHTML=`
@@ -2274,6 +2916,71 @@ function listTraps(){
   <button class="btn ghost sm" onclick="renderTrap()">${L('back')}</button>`;
 }
 
+/* ═══════════════ 誤答ノート ═══════════════ */
+function renderMiss(){
+  if(deck||mo||tr)return;
+  const m=openMistakes(),n=m.q.length+m.card.length+m.trap.length;
+  const label=(p,i)=>p==='m'?MONDAI[i].s+' #'+i
+    :p==='t'?(S.lang==='pt'?TRAPS[i].pt:TRAPS[i].en)
+    :p==='k'?'漢字 '+KANJI[i].c
+    :GKEYS.includes(p)?'文法 '+POOL[p][i].g:'語彙 '+POOL[p][i].w;
+  const dots=c=>{const r=Math.min(c.run||0,RETIRE);
+    return `<div class="dots">${'<i class="on"></i>'.repeat(r)}${'<i></i>'.repeat(RETIRE-r)}
+      <span>${L('msProg')}${RETIRE-r}</span></div>`;};
+  const serifuBox=s=>`<div class="serifu"><div class="lbl">${L('msSerifu')}</div>
+    <div class="jp">${s.jp}</div><div class="tr">${S.lang==='pt'?s.pt:s.en}</div></div>`;
+  const rows=[];
+  m.q.forEach(({c,i})=>{const q=MONDAI[i];
+    rows.push(`<div class="msrow"><div class="mstag">${q.s} · ${L('msMiss',c.miss)}</div>
+      <div class="msq">${q.q.replace('＿','＿＿')}</div>
+      <div class="msans">${c.pick!==undefined?`<span class="x">✕ ${L('msYours')} ${q.o[c.pick]}</span><br>`:''}
+        <span class="o">✓ ${L('msRight')} ${q.o[q.a]}</span></div>
+      ${dots(c)}${serifuBox(serifuFor('m',i))}</div>`);});
+  m.card.forEach(({c,i,pool})=>{const it=POOL[pool][i];
+    const face=pool==='k'?it.c:GKEYS.includes(pool)?it.g:it.w;
+    rows.push(`<div class="msrow"><div class="mstag">${label(pool,i)} · ${L('msMiss',c.miss)}</div>
+      <div class="msq">${face}</div>
+      <div class="msans"><span class="o">${S.lang==='pt'?it.pt:it.en}</span></div>
+      ${dots(c)}${serifuBox(serifuFor(pool,i))}</div>`);});
+  m.trap.forEach(({c,i})=>{const t=TRAPS[i];
+    rows.push(`<div class="msrow"><div class="mstag">罠 · ${L('msMiss',c.miss)}</div>
+      <div class="msq" style="font-size:15px">${S.lang==='pt'?t.pt:t.en}</div>
+      <div class="msans">${c.pick!==undefined?`<span class="x">✕ ${t.o[c.pick]}</span><br>`:''}
+        <span class="o">✓ ${t.o[t.a]}</span></div>
+      ${dots(c)}${serifuBox(serifuFor('t',i))}</div>`);});
+  document.getElementById('v-miss').innerHTML=`
+  <div class="eyebrow">${L('msT')}</div>
+  ${meigenBox(meigenOf(clearedCount()*7+n*3+11),'誤答ノート')}
+  <div class="stat">
+    <div><b>${n}</b><span>${L('msOpen')}</span></div>
+    <div><b>${clearedCount()}</b><span>${L('msFixed')}</span></div>
+    <div><b>${RETIRE}</b><span>○○ → OK</span></div>
+  </div>
+  ${n?`<p class="muted" style="margin:-4px 0 14px">${L('msIntro')}</p>
+    ${m.q.length?`<button class="btn shu" id="mq">${L('msQ',m.q.length)}</button>`:''}
+    ${m.card.length?`<button class="btn teal" id="mc" style="margin-top:10px">${L('msC',m.card.length)}</button>`:''}
+    ${m.trap.length?`<button class="btn" id="mt" style="margin-top:10px;border-color:var(--coral);color:var(--coral)">${L('msTr',m.trap.length)}</button>`:''}
+    <div class="eyebrow" style="margin-top:22px">${L('msList')}</div>${rows.join('')}`
+   :`<div class="card" style="text-align:center;border-color:var(--ok)">
+      <p class="muted" style="margin:0">${L('msEmpty')}</p></div>`}`;
+  const b=(id,f)=>{const e=document.getElementById(id);if(e)e.onclick=f;};
+  b('mq',()=>startMissQuiz());b('mc',()=>startMissCards());b('mt',()=>startMissTraps());
+}
+function startMissQuiz(){
+  const q=openMistakes().q.slice(0,10).map(({i})=>({q:MONDAI[i],i}));
+  if(!q.length){toast(L('msNone'));return;}
+  mo={q,idx:0,ok:0,boss:false,from:'miss'};nav('mondai');drawQ();
+}
+function startMissCards(){
+  const q=openMistakes().card.slice(0,15).map(({i,pool})=>({key:pool,i}));
+  if(!q.length){toast(L('msNone'));return;}
+  deck={q,idx:0,flip:false,from:'miss'};nav('dojo');drawCard();
+}
+function startMissTraps(){
+  const q=openMistakes().trap.slice(0,8).map(({i})=>({t:TRAPS[i],i}));
+  if(!q.length){toast(L('msNone'));return;}
+  tr={q,idx:0,ok:0,from:'miss'};nav('trap');drawT();
+}
 /* ═══════════════ 記録 ═══════════════ */
 function renderStats(){
   const mast=key=>POOL[key].filter((x,i)=>S.srs[key+i]&&S.srs[key+i].b>=4).length;
