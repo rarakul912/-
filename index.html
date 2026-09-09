@@ -216,6 +216,12 @@ nav button.on .ic{background:var(--mura-dim)}
 .serifu .lbl{font-size:9.5px;letter-spacing:.2em;font-weight:800;color:var(--mura)}
 .serifu .jp{font-family:var(--jp);font-size:18px;line-height:1.6;margin:6px 0 4px}
 .serifu .tr{font-size:12.5px;color:var(--dim);line-height:1.5}
+.d50{background:var(--surf);border:2px solid var(--yama);border-radius:16px;
+  padding:18px;margin-bottom:14px}
+.d50 h2{font-size:19px;color:var(--yama)}
+.d50 .big{font-family:var(--disp);font-size:40px;font-weight:800;line-height:1;color:var(--txt)}
+.d50 .big small{font-size:15px;color:var(--dim);font-weight:700}
+.d50 .mix{font-size:11.5px;color:var(--dim);margin-top:9px;letter-spacing:.02em}
 .meigen{background:var(--surf);border:1px solid var(--bord);border-top:3px solid var(--yama);
   border-radius:0 0 14px 14px;padding:16px;margin-bottom:14px}
 .meigen .jp{font-family:var(--jp);font-size:21px;line-height:1.65;font-weight:700}
@@ -295,7 +301,7 @@ const KANJI=[
 {c:'豊',on:'ホウ',kun:'ゆた(か)',pt:'abundante, rico',en:'abundant',mn:'Um vaso 豆 transbordando de grãos — <b>colheita farta</b>.',w:[['豊か','ゆたか','abundante / rich'],['豊富','ほうふ','vasto / plentiful']]},
 {c:'賛',on:'サン',kun:'—',pt:'aprovar, elogiar',en:'approve, praise',mn:'夫夫 (dois homens) sobre 貝 (dinheiro) → dois sócios <b>concordam</b> sobre o dinheiro.',w:[['賛成','さんせい','concordar / agree'],['賞賛','しょうさん','elogio / praise']]},
 {c:'越',on:'エツ',kun:'こ(える)',pt:'atravessar, exceder',en:'cross over, exceed',mn:'走 (correr) + 戉 (machado) → correr com o machado e <b>passar por cima</b> da montanha.',w:[['越える','こえる','ultrapassar / exceed'],['引っ越し','ひっこし','mudança / moving']]},
-{c:'較',on:'カク',kun:'—',pt:'comparar',en:'compare',mn:'車 (carro) + 交 (cruzar) → dois carros lado a lado para <b>comparar</b>.',w:[['比較','ひかく','comparação / comparison']]},
+{c:'較',on:'カク',kun:'—',pt:'comparar',en:'compare',mn:'車 (carro) + 交 (cruzar) → dois carros lado a lado para <b>comparar</b>.',w:[['比較','ひかく','comparação / comparison'],['比較的','ひかくてき','relativamente / relatively']]},
 {c:'輸',on:'ユ',kun:'—',pt:'transportar',en:'transport',mn:'車 (carro) carregando mercadoria → import/export.',w:[['輸出','ゆしゅつ','exportação / export'],['輸入','ゆにゅう','importação / import'],['輸送','ゆそう','transporte / transport']]},
 {c:'遅',on:'チ',kun:'おく(れる)・おそ(い)',pt:'atrasar, lento',en:'late, slow',mn:'辶 (caminhar) + 犀 (rinoceronte) → o <b>rinoceronte anda devagar</b> e chega atrasado.',w:[['遅刻','ちこく','atraso / lateness'],['遅れる','おくれる','atrasar-se / be late']]},
 {c:'適',on:'テキ',kun:'—',pt:'adequado',en:'suitable',mn:'辶 (caminhar) + 啇 → o caminho <b>certo</b> para você.',w:[['適当','てきとう','apropriado / suitable'],['適切','てきせつ','adequado / appropriate'],['快適','かいてき','confortável / comfortable']]},
@@ -322,7 +328,7 @@ const KANJI=[
 {c:'易',on:'イ・エキ',kun:'やさ(しい)',pt:'fácil; trocar',en:'easy; exchange',mn:'Sol 日 sobre raios → o dia é <b>fácil</b>. Mas 貿易 = comércio (trocar).',w:[['容易','ようい','fácil / easy'],['貿易','ぼうえき','comércio exterior / trade'],['安易','あんい','superficial / easygoing']]},
 {c:'暴',on:'ボウ',kun:'あば(れる)',pt:'violento',en:'violent',mn:'Sol 日 + mãos + água → o sol escaldante deixa todos <b>furiosos</b>.',w:[['暴力','ぼうりょく','violência / violence'],['暴れる','あばれる','ficar violento / rampage']]},
 {c:'替',on:'タイ',kun:'か(える)',pt:'substituir',en:'replace',mn:'夫夫 (dois homens) sobre 日 → um <b>troca de lugar</b> com o outro.',w:[['両替','りょうがえ','câmbio / money exchange'],['代替','だいたい','alternativa / substitute']]},
-{c:'枯',on:'コ',kun:'か(れる)',pt:'murchar',en:'wither',mn:'木 (árvore) + 古 (velho) → árvore velha <b>seca</b>.',w:[['枯れる','かれる','murchar / wither']]},
+{c:'枯',on:'コ',kun:'か(れる)',pt:'murchar',en:'wither',mn:'木 (árvore) + 古 (velho) → árvore velha <b>seca</b>.',w:[['枯れる','かれる','murchar / wither'],['枯渇','こかつ','esgotamento / depletion']]},
 {c:'欠',on:'ケツ',kun:'か(ける)',pt:'faltar',en:'lack',mn:'Uma pessoa de boca aberta bocejando → algo <b>falta</b>.',w:[['欠点','けってん','defeito / flaw'],['欠かせない','かかせない','indispensável / essential'],['不可欠','ふかけつ','imprescindível / indispensable']]},
 {c:'殖',on:'ショク',kun:'ふ(える)',pt:'multiplicar',en:'multiply',mn:'歹 + 直 → a vida se <b>multiplica</b> em linha reta.',w:[['増殖','ぞうしょく','proliferação / proliferation'],['繁殖','はんしょく','reprodução / breeding']]},
 {c:'汚',on:'オ',kun:'よご(れる)・きたな(い)',pt:'sujo',en:'dirty',mn:'氵(água) + 亏 → água torta = <b>água suja</b>.',w:[['汚染','おせん','poluição / pollution'],['汚い','きたない','sujo / dirty']]},
@@ -330,26 +336,26 @@ const KANJI=[
 {c:'済',on:'サイ',kun:'す(む)',pt:'terminar; economia',en:'finish; economy',mn:'氵(água) + 斉 → atravessar a água = <b>resolver</b>. 経済 = gerir e resolver = economia.',w:[['経済','けいざい','economia / economy'],['済む','すむ','terminar, bastar / be finished'],['返済','へんさい','reembolso / repayment']]},
 {c:'測',on:'ソク',kun:'はか(る)',pt:'medir',en:'measure',mn:'氵(água) + 則 (regra) → medir a profundidade da água.',w:[['測定','そくてい','medição / measurement'],['予測','よそく','previsão / forecast']]},
 {c:'燃',on:'ネン',kun:'も(える)',pt:'queimar',en:'burn',mn:'火 (fogo) + 然, que já traz 灬 (fogo) no pé → fogo em cima, fogo embaixo: <b>arde</b>.',w:[['燃える','もえる','queimar / burn'],['燃料','ねんりょう','combustível / fuel']]},
-{c:'班',on:'ハン',kun:'—',pt:'grupo, esquadrão',en:'squad',mn:'Duas jades 王王 partidas por uma faca → <b>dividir</b> em grupos.',w:[['班','はん','grupo / team']]},
+{c:'班',on:'ハン',kun:'—',pt:'grupo, esquadrão',en:'squad',mn:'Duas jades 王王 partidas por uma faca → <b>dividir</b> em grupos.',w:[['班','はん','grupo / team'],['班長','はんちょう','líder de grupo / team leader']]},
 {c:'皮',on:'ヒ',kun:'かわ',pt:'pele, casca',en:'skin, leather',mn:'Mão puxando o couro do animal.',w:[['皮膚','ひふ','pele / skin'],['皮肉','ひにく','ironia / irony']]},
-{c:'祈',on:'キ',kun:'いの(る)',pt:'rezar',en:'pray',mn:'礻(altar) + 斤 (machado) → oferecer no altar e <b>rezar</b>.',w:[['祈る','いのる','rezar / pray']]},
+{c:'祈',on:'キ',kun:'いの(る)',pt:'rezar',en:'pray',mn:'礻(altar) + 斤 (machado) → oferecer no altar e <b>rezar</b>.',w:[['祈る','いのる','rezar / pray'],['祈願','きがん','prece, voto / prayer']]},
 {c:'秘',on:'ヒ',kun:'ひ(める)',pt:'secreto',en:'secret',mn:'禾 (arroz) + 必 (necessário) → esconder o arroz necessário = <b>segredo</b>.',w:[['秘密','ひみつ','segredo / secret'],['秘書','ひしょ','secretário / secretary']]},
 {c:'穏',on:'オン',kun:'おだ(やか)',pt:'calmo',en:'calm',mn:'禾 (arroz) + coração escondido → com o celeiro cheio, o coração fica <b>tranquilo</b>.',w:[['穏やか','おだやか','sereno / calm'],['平穏','へいおん','tranquilidade / peace']]},
 {c:'突',on:'トツ',kun:'つ(く)',pt:'de repente, perfurar',en:'sudden, thrust',mn:'穴 (buraco) + 犬 (cão) → o cão salta <b>de repente</b> para fora da toca.',w:[['突然','とつぜん','de repente / suddenly'],['衝突','しょうとつ','colisão / collision']]},
-{c:'紹',on:'ショウ',kun:'—',pt:'apresentar',en:'introduce',mn:'糸 (fio) + 召 (chamar) → o fio que <b>liga</b> duas pessoas.',w:[['紹介','しょうかい','apresentação / introduction']]},
+{c:'紹',on:'ショウ',kun:'—',pt:'apresentar',en:'introduce',mn:'糸 (fio) + 召 (chamar) → o fio que <b>liga</b> duas pessoas.',w:[['紹介','しょうかい','apresentação / introduction'],['自己紹介','じこしょうかい','autoapresentação / self-introduction']]},
 {c:'絶',on:'ゼツ',kun:'た(える)',pt:'cortar, extinguir',en:'sever, extinct',mn:'糸 (fio) cortado com faca → <b>rompimento total</b>. 絶対 = absoluto (nada corta).',w:[['絶対','ぜったい','absolutamente / absolutely'],['絶える','たえる','cessar / cease'],['絶滅','ぜつめつ','extinção / extinction']]},
 {c:'維',on:'イ',kun:'—',pt:'manter, fibra',en:'maintain, fiber',mn:'糸 (fio) + 隹 (pássaro) → amarrar o pássaro = <b>manter</b> preso.',w:[['維持','いじ','manutenção / maintenance'],['繊維','せんい','fibra / fiber']]},
 {c:'蓄',on:'チク',kun:'たくわ(える)',pt:'acumular',en:'store up',mn:'艹 (grama) + 畜 (gado) → guardar feno para o gado = <b>poupar</b>.',w:[['貯蓄','ちょちく','poupança / savings'],['蓄積','ちくせき','acumulação / accumulation']]},
 {c:'裁',on:'サイ',kun:'さば(く)',pt:'julgar, cortar tecido',en:'judge, cut cloth',mn:'衣 (roupa) + 戈 (lança) → cortar o tecido com precisão = <b>julgar</b>.',w:[['裁判','さいばん','julgamento / trial'],['独裁','どくさい','ditadura / dictatorship']]},
 {c:'触',on:'ショク',kun:'ふ(れる)・さわ(る)',pt:'tocar',en:'touch',mn:'角 (chifre) + 虫 → o inseto <b>toca</b> com as antenas.',w:[['接触','せっしょく','contato / contact'],['触れる','ふれる','tocar; mencionar / touch']]},
 {c:'避',on:'ヒ',kun:'さ(ける)',pt:'evitar',en:'avoid',mn:'辶 (caminhar) + 辟 → <b>desviar</b> do caminho.',w:[['避ける','さける','evitar / avoid'],['避難','ひなん','evacuação / evacuation']]},
-{c:'零',on:'レイ',kun:'—',pt:'zero',en:'zero',mn:'雨 (chuva) + 令 → gotas que somem = <b>nada</b>.',w:[['零下','れいか','abaixo de zero / below zero']]},
+{c:'零',on:'レイ',kun:'—',pt:'zero',en:'zero',mn:'雨 (chuva) + 令 → gotas que somem = <b>nada</b>.',w:[['零下','れいか','abaixo de zero / below zero'],['零細','れいさい','minúsculo (empresa) / very small']]},
 {c:'項',on:'コウ',kun:'—',pt:'item, cláusula',en:'item, clause',mn:'工 + 頁 (página) → os <b>itens</b> listados na página.',w:[['項目','こうもく','item / item'],['事項','じこう','assunto / matter']]},
 {c:'額',on:'ガク',kun:'ひたい',pt:'quantia; testa',en:'amount; forehead',mn:'客 (hóspede) + 頁 (cabeça) → o valor escrito na <b>placa</b> na altura da testa.',w:[['金額','きんがく','quantia / amount'],['額','ひたい','testa / forehead']]},
 {c:'依',on:'イ',kun:'—',pt:'depender',en:'depend',mn:'亻(pessoa) + 衣 (roupa) → a pessoa <b>depende</b> da roupa.',w:[['依頼','いらい','pedido / request'],['依存','いぞん','dependência / dependence']]},
 {c:'企',on:'キ',kun:'くわだ(てる)',pt:'planejar',en:'plan',mn:'人 (pessoa) em cima de 止 (parar) → a pessoa para e <b>planeja</b>.',w:[['企業','きぎょう','empresa / company'],['企画','きかく','projeto / planning']]},
 {c:'傾',on:'ケイ',kun:'かたむ(く)',pt:'inclinar, tendência',en:'lean, tendency',mn:'亻 + 頃 → a pessoa <b>inclina</b> a cabeça. 傾向 = tendência.',w:[['傾向','けいこう','tendência / tendency'],['傾く','かたむく','inclinar-se / lean']]},
-{c:'儲',on:'チョ',kun:'もう(かる)',pt:'lucrar',en:'profit',mn:'亻 + 諸 → a pessoa que junta muitos = <b>lucro</b>.',w:[['儲かる','もうかる','dar lucro / be profitable']]},
+{c:'儲',on:'チョ',kun:'もう(かる)',pt:'lucrar',en:'profit',mn:'亻 + 諸 → a pessoa que junta muitos = <b>lucro</b>.',w:[['儲かる','もうかる','dar lucro / be profitable'],['儲け','もうけ','lucro / earnings']]},
 {c:'募',on:'ボ',kun:'つの(る)',pt:'recrutar, intensificar',en:'recruit',mn:'莫 + 力 → juntar forças = <b>recrutar</b>.',w:[['募集','ぼしゅう','recrutamento / recruitment'],['応募','おうぼ','candidatura / application']]}
 ];
 
@@ -867,6 +873,428 @@ const JOSHI=[
  ex:'来るかどうか分からない。／ いつ来るか分からない。',tx:'Não sei se ele vem. / Não sei quando ele vem.',
  trap:'⚠ Se a pergunta embutida tiver 何・誰・いつ・どこ, use só <b>か</b>. Se for sim ou não, use <b>かどうか</b>. Nunca もし nem たら.'}
 ];
+
+const KANJI_B1=[
+{c:'状',on:'ジョウ',kun:'—',pt:'estado, condição',en:'condition, state',mn:'爿 (tábua) + 犬 → a "ficha" escrita sobre algo: o seu <b>estado</b>.',w:[['状態','じょうたい','estado / state'],['状況','じょうきょう','situação / situation']]},
+{c:'況',on:'キョウ',kun:'—',pt:'situação, circunstância',en:'situation',mn:'氵(água) + 兄 → como corre a água, assim corre a <b>situação</b>.',w:[['状況','じょうきょう','situação / situation'],['実況','じっきょう','transmissão ao vivo / live coverage']]},
+{c:'詳',on:'ショウ',kun:'くわ(しい)',pt:'detalhado',en:'detailed',mn:'言 (palavra) + 羊 (ovelha) → contar as ovelhas uma a uma = <b>detalhar</b>.',w:[['詳細','しょうさい','detalhes / details'],['詳しい','くわしい','detalhado; versado / detailed; well-informed']]},
+{c:'析',on:'セキ',kun:'—',pt:'analisar, decompor',en:'analyse',mn:'木 (árvore) + 斤 (machado) → rachar a madeira em pedaços = <b>analisar</b>.',w:[['分析','ぶんせき','análise / analysis'],['解析','かいせき','análise técnica / analysis']]},
+{c:'鮮',on:'セン',kun:'あざ(やか)',pt:'fresco; vívido',en:'fresh; vivid',mn:'魚 (peixe) + 羊 (ovelha) → peixe e carne recém-trazidos: <b>frescos</b>.',w:[['新鮮','しんせん','fresco / fresh'],['鮮やか','あざやか','vívido / vivid']]},
+{c:'均',on:'キン',kun:'—',pt:'igual, uniforme',en:'even, average',mn:'土 (terra) + 勻 → alisar a terra até ficar <b>plana</b> = igualar.',w:[['平均','へいきん','média / average'],['均等','きんとう','igualdade / equality']]},
+{c:'圧',on:'アツ',kun:'—',pt:'pressão',en:'pressure',mn:'厂 (penhasco) + 土 → a terra do penhasco <b>pressiona</b> por cima.',w:[['圧力','あつりょく','pressão / pressure'],['血圧','けつあつ','pressão arterial / blood pressure']]},
+{c:'域',on:'イキ',kun:'—',pt:'área, domínio',en:'area, zone',mn:'土 (terra) + 或 (delimitar) → terra com uma linha em volta: uma <b>zona</b>.',w:[['地域','ちいき','região / region'],['区域','くいき','área delimitada / zone']]},
+{c:'権',on:'ケン',kun:'—',pt:'direito, poder',en:'right, authority',mn:'木 + 雚 → o bastão de comando: quem o segura tem o <b>direito</b>.',w:[['権利','けんり','direito / right'],['政権','せいけん','governo, poder político / administration']]},
+{c:'収',on:'シュウ',kun:'おさ(める)',pt:'recolher, arrecadar',en:'collect, take in',mn:'丩 + 攵 → recolher com a mão o que estava espalhado.',w:[['収入','しゅうにゅう','renda / income'],['収納','しゅうのう','guardar, arrumação / storage']]},
+{c:'益',on:'エキ',kun:'—',pt:'ganho, benefício',en:'benefit, profit',mn:'皿 (prato) transbordando de água → <b>excedente</b>, o que sobra a mais.',w:[['利益','りえき','lucro / profit'],['有益','ゆうえき','proveitoso / beneficial']]},
+{c:'貧',on:'ヒン・ビン',kun:'まず(しい)',pt:'pobre',en:'poor',mn:'分 (dividir) + 貝 (dinheiro) → dinheiro dividido até não sobrar nada.',w:[['貧困','ひんこん','pobreza / poverty'],['貧しい','まずしい','pobre / poor']]},
+{c:'富',on:'フ',kun:'と(む)',pt:'riqueza, abundância',en:'wealth',mn:'宀 (teto) + 畐 (vaso cheio) → a casa com o celeiro cheio.',w:[['豊富','ほうふ','abundante / abundant'],['富む','とむ','ser rico em / be rich in']]},
+{c:'騒',on:'ソウ',kun:'さわ(ぐ)',pt:'barulho, alvoroço',en:'noise, commotion',mn:'馬 (cavalo) + 蚤 (pulga) → cavalo com pulga: não para quieto e faz <b>escândalo</b>.',w:[['騒音','そうおん','ruído / noise'],['騒ぐ','さわぐ','fazer barulho / make a racket']]},
+{c:'響',on:'キョウ',kun:'ひび(く)',pt:'ressoar, repercutir',en:'echo, resound',mn:'郷 (vila) + 音 (som) → o som que atravessa a vila inteira.',w:[['影響','えいきょう','influência / influence'],['響く','ひびく','ressoar / resound']]},
+{c:'肩',on:'ケン',kun:'かた',pt:'ombro',en:'shoulder',mn:'戸 (porta) + 月 (carne) → a parte do corpo que se abre como uma porta.',w:[['肩','かた','ombro / shoulder'],['肩書き','かたがき','título, cargo / job title']]},
+{c:'腕',on:'ワン',kun:'うで',pt:'braço; habilidade',en:'arm; skill',mn:'月 (carne) + 宛 → a carne que se dobra. Em japonês, 腕 também é <b>competência</b>.',w:[['腕前','うでまえ','perícia / skill'],['手腕','しゅわん','capacidade, tino / ability']]},
+{c:'肌',on:'—',kun:'はだ',pt:'pele',en:'skin',mn:'月 (carne) + 几 (mesa) → a superfície lisa do corpo.',w:[['肌','はだ','pele / skin'],['肌着','はだぎ','roupa íntima / underwear']]},
+{c:'胸',on:'キョウ',kun:'むね',pt:'peito',en:'chest, breast',mn:'月 (carne) + 匈 → onde o coração bate. 胸が痛む = doer o peito, de tristeza.',w:[['胸','むね','peito / chest'],['度胸','どきょう','coragem / nerve']]},
+{c:'腰',on:'ヨウ',kun:'こし',pt:'cintura, lombar',en:'lower back, waist',mn:'月 (carne) + 要 (essencial) → a parte <b>essencial</b> do corpo, que sustenta tudo.',w:[['腰','こし','lombar / lower back'],['腰痛','ようつう','dor lombar / back pain']]},
+{c:'床',on:'ショウ',kun:'ゆか・とこ',pt:'chão; leito',en:'floor; bed',mn:'广 (edifício) + 木 (madeira) → as tábuas da casa: o <b>chão</b>.',w:[['床','ゆか','chão / floor'],['起床','きしょう','levantar-se / getting up']]},
+{c:'柱',on:'チュウ',kun:'はしら',pt:'pilar',en:'pillar',mn:'木 (madeira) + 主 (principal) → a madeira <b>principal</b> da casa.',w:[['柱','はしら','pilar / pillar'],['電柱','でんちゅう','poste / utility pole']]},
+{c:'壁',on:'ヘキ',kun:'かべ',pt:'parede, muro',en:'wall',mn:'辟 + 土 (terra) → terra levantada que separa: o <b>muro</b>.',w:[['壁','かべ','parede / wall'],['障壁','しょうへき','barreira / barrier']]},
+{c:'棚',on:'—',kun:'たな',pt:'prateleira',en:'shelf',mn:'木 (madeira) + 朋 (dois amigos lado a lado) → tábuas paralelas: a <b>prateleira</b>.',w:[['棚','たな','prateleira / shelf'],['本棚','ほんだな','estante / bookshelf']]},
+{c:'畳',on:'ジョウ',kun:'たたみ・たた(む)',pt:'tatame; dobrar',en:'tatami; fold',mn:'Camadas empilhadas 田 sobre 且 → o que se <b>dobra</b> e se empilha.',w:[['畳','たたみ','tatame / tatami'],['折り畳む','おりたたむ','dobrar / fold up']]},
+{c:'徴',on:'チョウ',kun:'—',pt:'sinal, indício',en:'sign, symptom',mn:'彳 (andar) + 微 → o sinal discreto que se percebe pelo caminho.',w:[['特徴','とくちょう','característica / characteristic'],['象徴','しょうちょう','símbolo / symbol']]},
+{c:'微',on:'ビ',kun:'—',pt:'minúsculo, sutil',en:'minute, subtle',mn:'彳 + 散 → tão espalhado e pequeno que quase não se vê.',w:[['微妙','びみょう','sutil, delicado / subtle'],['顕微鏡','けんびきょう','microscópio / microscope']]},
+{c:'稿',on:'コウ',kun:'—',pt:'manuscrito, rascunho',en:'draft, manuscript',mn:'禾 (espiga) + 高 → palha empilhada, como folhas de papel: o <b>rascunho</b>.',w:[['原稿','げんこう','manuscrito / manuscript'],['投稿','とうこう','submissão, post / submission']]},
+{c:'覧',on:'ラン',kun:'—',pt:'ver, examinar',en:'look at, view',mn:'監 (supervisionar) + 見 (ver) → olhar de cima tudo de uma vez.',w:[['一覧','いちらん','lista, visão geral / list'],['閲覧','えつらん','consulta, leitura / browsing']]},
+{c:'販',on:'ハン',kun:'—',pt:'vender',en:'sell',mn:'貝 (dinheiro) + 反 → o dinheiro que volta para você: a <b>venda</b>.',w:[['販売','はんばい','venda / sales'],['自販機','じはんき','máquina de venda / vending machine']]},
+{c:'購',on:'コウ',kun:'—',pt:'comprar (formal)',en:'purchase',mn:'貝 (dinheiro) + 冓 → dinheiro montado numa estrutura: a <b>aquisição</b> formal.',w:[['購入','こうにゅう','compra / purchase'],['購読','こうどく','assinatura / subscription']]},
+{c:'貯',on:'チョ',kun:'た(める)',pt:'poupar, acumular',en:'save up',mn:'貝 (dinheiro) + 宁 (guardar) → o dinheiro posto de lado.',w:[['貯金','ちょきん','poupança / savings'],['貯める','ためる','juntar, poupar / save up']]},
+{c:'賃',on:'チン',kun:'—',pt:'aluguel, salário',en:'rent, wages',mn:'任 (encarregar) + 貝 (dinheiro) → o dinheiro pago por um encargo.',w:[['家賃','やちん','aluguel / rent'],['賃金','ちんぎん','salário / wages']]},
+{c:'償',on:'ショウ',kun:'つぐな(う)',pt:'compensar, indenizar',en:'compensate',mn:'亻(pessoa) + 賞 (prêmio) → a pessoa devolve o valor: <b>indeniza</b>.',w:[['補償','ほしょう','indenização / compensation'],['弁償','べんしょう','ressarcimento / making good']]},
+{c:'貢',on:'コウ',kun:'みつ(ぐ)',pt:'contribuir, tributar',en:'contribute, tribute',mn:'工 (trabalho) + 貝 (dinheiro) → entregar o fruto do trabalho.',w:[['貢献','こうけん','contribuição / contribution'],['年貢','ねんぐ','tributo anual / annual tribute']]},
+{c:'献',on:'ケン',kun:'—',pt:'oferecer, dedicar',en:'offer, dedicate',mn:'南 + 犬 → a oferenda levada ao altar.',w:[['貢献','こうけん','contribuição / contribution'],['献立','こんだて','cardápio / menu']]},
+{c:'尊',on:'ソン',kun:'とうと(い)',pt:'respeitar, nobre',en:'revere, noble',mn:'酋 (jarro de vinho) + 寸 (mão) → erguer o jarro com as duas mãos: <b>reverência</b>.',w:[['尊敬','そんけい','respeito / respect'],['尊重','そんちょう','consideração / regard']]},
+{c:'敬',on:'ケイ',kun:'うやま(う)',pt:'respeitar',en:'respect',mn:'苟 + 攵 → curvar-se diante de alguém. É o 敬 de 敬語.',w:[['敬語','けいご','linguagem honorífica / honorific speech'],['敬う','うやまう','venerar / revere']]},
+{c:'儀',on:'ギ',kun:'—',pt:'cerimônia, etiqueta',en:'ceremony, etiquette',mn:'亻(pessoa) + 義 (retidão) → a pessoa que age conforme a forma correta.',w:[['儀式','ぎしき','cerimônia / ceremony'],['礼儀','れいぎ','boas maneiras / manners']]},
+{c:'姿',on:'シ',kun:'すがた',pt:'figura, aparência',en:'figure, appearance',mn:'次 (seguinte) + 女 → a silhueta que se vê passar.',w:[['姿','すがた','figura, aparência / figure'],['姿勢','しせい','postura; atitude / posture; stance']]},
+{c:'勢',on:'セイ',kun:'いきお(い)',pt:'força, ímpeto',en:'force, momentum',mn:'埶 + 力 (força) → a energia acumulada que empurra.',w:[['勢い','いきおい','ímpeto / momentum'],['大勢','おおぜい','muita gente / a crowd']]},
+{c:'態',on:'タイ',kun:'—',pt:'atitude, forma',en:'attitude, state',mn:'能 (capacidade) + 心 (coração) → como o coração se apresenta: a <b>atitude</b>.',w:[['態度','たいど','atitude / attitude'],['状態','じょうたい','estado / state']]},
+{c:'憲',on:'ケン',kun:'—',pt:'constituição, lei fundamental',en:'constitution',mn:'害 + 心 → a norma que o coração deve seguir.',w:[['憲法','けんぽう','constituição / constitution'],['立憲','りっけん','constitucional / constitutional']]},
+{c:'律',on:'リツ',kun:'—',pt:'lei, regra',en:'law, rule',mn:'彳 (andar) + 聿 (pincel) → a regra escrita que orienta o caminho.',w:[['法律','ほうりつ','lei / law'],['規律','きりつ','disciplina / discipline']]},
+{c:'訴',on:'ソ',kun:'うった(える)',pt:'processar; apelar',en:'sue; appeal',mn:'言 (palavra) + 斥 (repelir) → levar a palavra contra alguém.',w:[['訴える','うったえる','apelar, processar / appeal, sue'],['訴訟','そしょう','processo judicial / lawsuit']]},
+{c:'執',on:'シツ・シュウ',kun:'と(る)',pt:'segurar, executar',en:'grasp, carry out',mn:'幸 + 丸 → as mãos que agarram firme e não largam.',w:[['執筆','しっぴつ','redigir / writing'],['執着','しゅうちゃく','apego, obsessão / attachment']]},
+{c:'逮',on:'タイ',kun:'—',pt:'prender, alcançar',en:'apprehend',mn:'辶 (perseguir) + 隶 → correr atrás até alcançar.',w:[['逮捕','たいほ','prisão / arrest'],['逮捕状','たいほじょう','mandado de prisão / arrest warrant']]},
+{c:'罰',on:'バツ',kun:'—',pt:'punição',en:'punishment',mn:'罒 (rede) + 言 + 刂 (faca) → apanhado na rede, julgado e cortado.',w:[['罰金','ばっきん','multa / fine'],['処罰','しょばつ','punição / punishment']]},
+{c:'犯',on:'ハン',kun:'おか(す)',pt:'cometer (crime)',en:'commit (a crime)',mn:'犭(animal) + 㔾 → o instinto animal que rompe a regra.',w:[['犯人','はんにん','culpado / culprit'],['犯罪','はんざい','crime / crime']]},
+{c:'免',on:'メン',kun:'まぬか(れる)',pt:'isentar, escapar',en:'exempt, escape',mn:'Uma figura que se desvencilha e escapa: ser <b>dispensado</b>.',w:[['免許','めんきょ','licença / licence'],['免除','めんじょ','isenção / exemption']]}
+];
+const EN_KMN_B1={
+'状':'爿 (plank) + 犬 → the written "record" of something: its <b>condition</b>.',
+'況':'氵(water) + 兄 → as the water runs, so runs the <b>situation</b>.',
+'詳':'言 (words) + 羊 (sheep) → counting the sheep one by one = going into <b>detail</b>.',
+'析':'木 (tree) + 斤 (axe) → splitting the wood into parts = to <b>analyse</b>.',
+'鮮':'魚 (fish) + 羊 (sheep) → fish and meat just brought in: <b>fresh</b>.',
+'均':'土 (earth) + 勻 → smoothing the ground until it is <b>level</b>.',
+'圧':'厂 (cliff) + 土 → the cliff\u2019s earth <b>presses down</b> from above.',
+'域':'土 (earth) + 或 (to bound) → land with a line drawn round it: a <b>zone</b>.',
+'権':'木 + 雚 → the staff of command: whoever holds it holds the <b>right</b>.',
+'収':'丩 + 攵 → gathering up by hand what was scattered.',
+'益':'皿 (dish) brimming over with water → the <b>surplus</b>, what spills beyond.',
+'貧':'分 (divide) + 貝 (money) → money split up until nothing is left.',
+'富':'宀 (roof) + 畐 (full vessel) → the house with a full storehouse.',
+'騒':'馬 (horse) + 蚤 (flea) → a horse with a flea: it will not stand still and kicks up a <b>racket</b>.',
+'響':'郷 (village) + 音 (sound) → the sound that carries across the whole village.',
+'肩':'戸 (door) + 月 (flesh) → the body part that swings open like a door.',
+'腕':'月 (flesh) + 宛 → the flesh that bends. In Japanese 腕 also means <b>skill</b>.',
+'肌':'月 (flesh) + 几 (table) → the smooth surface of the body.',
+'胸':'月 (flesh) + 匈 → where the heart beats. 胸が痛む = the chest aches, with grief.',
+'腰':'月 (flesh) + 要 (essential) → the <b>essential</b> part of the body, the one that carries everything.',
+'床':'广 (building) + 木 (wood) → the boards of the house: the <b>floor</b>.',
+'柱':'木 (wood) + 主 (main) → the <b>main</b> timber of the house.',
+'壁':'辟 + 土 (earth) → raised earth that divides: the <b>wall</b>.',
+'棚':'木 (wood) + 朋 (two friends side by side) → parallel boards: the <b>shelf</b>.',
+'畳':'Layers stacked, 田 over 且 → the thing you <b>fold</b> and pile up.',
+'徴':'彳 (walk) + 微 → the faint mark you notice along the way.',
+'微':'彳 + 散 → so scattered and small it is barely visible.',
+'稿':'禾 (grain) + 高 → stacked straw, like sheets of paper: the <b>draft</b>.',
+'覧':'監 (oversee) + 見 (look) → to take in everything from above at once.',
+'販':'貝 (money) + 反 → money coming back to you: a <b>sale</b>.',
+'購':'貝 (money) + 冓 → money built into a structure: a formal <b>purchase</b>.',
+'貯':'貝 (money) + 宁 (store) → money set aside.',
+'賃':'任 (entrust) + 貝 (money) → money paid for a duty taken on.',
+'償':'亻(person) + 賞 (prize) → the person hands the value back: <b>compensates</b>.',
+'貢':'工 (labour) + 貝 (money) → handing over the fruit of your work.',
+'献':'南 + 犬 → the offering carried to the altar.',
+'尊':'酋 (wine jar) + 寸 (hand) → lifting the jar with both hands: <b>reverence</b>.',
+'敬':'苟 + 攵 → bowing before someone. This is the 敬 of 敬語.',
+'儀':'亻(person) + 義 (righteousness) → the person who acts according to proper form.',
+'姿':'次 (next) + 女 → the silhouette you see passing by.',
+'勢':'埶 + 力 (force) → stored energy that pushes forward.',
+'態':'能 (capacity) + 心 (heart) → how the heart presents itself: <b>attitude</b>.',
+'憲':'害 + 心 → the norm the heart must follow.',
+'律':'彳 (walk) + 聿 (brush) → the written rule that guides the road.',
+'訴':'言 (words) + 斥 (repel) → bringing words against someone.',
+'執':'幸 + 丸 → hands that grip hard and will not let go.',
+'逮':'辶 (pursue) + 隶 → chasing until you catch up.',
+'罰':'罒 (net) + 言 + 刂 (blade) → caught in the net, judged, and cut.',
+'犯':'犭(beast) + 㔾 → the animal instinct that breaks the rule.',
+'免':'A figure wriggling free and escaping: to be <b>let off</b>.'
+};
+
+const KANJI_B2=[
+{c:'刻',on:'コク',kun:'きざ(む)',pt:'gravar; momento',en:'carve; moment',mn:'亥 + 刂 (faca) → entalhar marcas para contar o tempo.',w:[['深刻','しんこく','grave / serious'],['時刻','じこく','hora exata / time']]},
+{c:'鋭',on:'エイ',kun:'するど(い)',pt:'afiado, agudo',en:'sharp',mn:'金 (metal) + 兌 → o metal reduzido a uma ponta fina.',w:[['鋭い','するどい','afiado; perspicaz / sharp; keen'],['鋭角','えいかく','ângulo agudo / acute angle']]},
+{c:'鈍',on:'ドン',kun:'にぶ(い)',pt:'obtuso, lento',en:'dull, slow',mn:'金 (metal) + 屯 (amontoado) → metal grosso e sem fio.',w:[['鈍い','にぶい','embotado / dull'],['鈍感','どんかん','insensível / insensitive']]},
+{c:'幅',on:'フク',kun:'はば',pt:'largura, amplitude',en:'width, range',mn:'巾 (pano) + 畐 → a largura do tecido estendido.',w:[['幅','はば','largura / width'],['大幅','おおはば','em grande medida / substantial']]},
+{c:'枠',on:'—',kun:'わく',pt:'moldura, cota',en:'frame, quota',mn:'木 (madeira) + 卆 → o caixilho que delimita.',w:[['枠','わく','moldura, cota / frame'],['枠組み','わくぐみ','estrutura / framework']]},
+{c:'診',on:'シン',kun:'み(る)',pt:'examinar (medicina)',en:'examine medically',mn:'言 (palavra) + 㐱 → o médico pergunta antes de julgar.',w:[['診察','しんさつ','consulta / medical examination'],['診断','しんだん','diagnóstico / diagnosis']]},
+{c:'療',on:'リョウ',kun:'—',pt:'tratamento',en:'treatment',mn:'疒 (doença) + 尞 → cuidar até a doença ir embora.',w:[['治療','ちりょう','tratamento / treatment'],['医療','いりょう','assistência médica / medical care']]},
+{c:'症',on:'ショウ',kun:'—',pt:'sintoma, quadro',en:'symptom',mn:'疒 (doença) + 正 → o sinal exato da doença.',w:[['症状','しょうじょう','sintomas / symptoms'],['重症','じゅうしょう','caso grave / serious case']]},
+{c:'疲',on:'ヒ',kun:'つか(れる)',pt:'cansar-se',en:'get tired',mn:'疒 (doença) + 皮 (pele) → o corpo pesa na própria pele.',w:[['疲労','ひろう','fadiga / fatigue'],['疲れる','つかれる','cansar-se / get tired']]},
+{c:'眠',on:'ミン',kun:'ねむ(る)',pt:'dormir',en:'sleep',mn:'目 (olho) + 民 → o olho que se fecha.',w:[['睡眠','すいみん','sono / sleep'],['眠る','ねむる','dormir / sleep']]},
+{c:'覚',on:'カク',kun:'おぼ(える)・さ(める)',pt:'lembrar; despertar',en:'remember; awake',mn:'⺍ + 見 (ver) → quando você enfim vê: acorda e memoriza.',w:[['覚える','おぼえる','memorizar / memorise'],['感覚','かんかく','sensação / sensation']]},
+{c:'含',on:'ガン',kun:'ふく(む)',pt:'conter, incluir',en:'contain',mn:'今 (agora) + 口 (boca) → guardar algo dentro da boca.',w:[['含む','ふくむ','conter / include'],['含有','がんゆう','teor / content']]},
+{c:'除',on:'ジョ',kun:'のぞ(く)',pt:'remover, excluir',en:'remove, exclude',mn:'阝(monte) + 余 (sobra) → tirar do caminho o que sobra.',w:[['除く','のぞく','excluir / exclude'],['掃除','そうじ','limpeza / cleaning']]},
+{c:'訂',on:'テイ',kun:'—',pt:'corrigir (texto)',en:'correct, revise',mn:'言 (palavra) + 丁 → acertar a palavra com precisão.',w:[['訂正','ていせい','correção / correction'],['改訂','かいてい','revisão / revision']]},
+{c:'仮',on:'カ',kun:'かり',pt:'provisório',en:'temporary, provisional',mn:'亻(pessoa) + 反 (inverso) → a versão ainda não definitiva.',w:[['仮定','かてい','hipótese / assumption'],['仮に','かりに','supondo que / supposing']]},
+{c:'占',on:'セン',kun:'し(める)・うらな(う)',pt:'ocupar; adivinhar',en:'occupy; tell fortunes',mn:'卜 (adivinhação) + 口 → ler os sinais e tomar o lugar.',w:[['占める','しめる','ocupar (proporção) / account for'],['独占','どくせん','monopólio / monopoly']]},
+{c:'座',on:'ザ',kun:'すわ(る)',pt:'assento, sentar-se',en:'seat, sit',mn:'广 (edifício) + 人人 + 土 → duas pessoas sentadas no chão da sala.',w:[['座席','ざせき','assento / seat'],['座る','すわる','sentar-se / sit down']]},
+{c:'旧',on:'キュウ',kun:'—',pt:'antigo, anterior',en:'former, old',mn:'Um traço sobre 日 → o dia que já passou.',w:[['旧式','きゅうしき','modelo antigo / old-fashioned'],['復旧','ふっきゅう','restauração / restoration']]},
+{c:'臨',on:'リン',kun:'のぞ(む)',pt:'estar diante de, comparecer',en:'face, attend',mn:'臣 (súdito) + 品 → o olhar que se debruça sobre as coisas.',w:[['臨時','りんじ','extraordinário / temporary'],['臨む','のぞむ','encarar, comparecer / face']]},
+{c:'到',on:'トウ',kun:'—',pt:'chegar, atingir',en:'arrive, reach',mn:'至 (alcançar) + 刂 → chegar até o ponto final.',w:[['到着','とうちゃく','chegada / arrival'],['到底','とうてい','de jeito nenhum (+neg) / (not) possibly']]},
+{c:'途',on:'ト',kun:'—',pt:'caminho, percurso',en:'way, route',mn:'辶 (caminhar) + 余 → o trecho que ainda resta.',w:[['途中','とちゅう','no meio do caminho / on the way'],['用途','ようと','finalidade de uso / use']]},
+{c:'即',on:'ソク',kun:'—',pt:'imediatamente',en:'immediately',mn:'皀 (comida) + 卩 (ajoelhado) → sentar e comer na hora.',w:[['即座に','そくざに','no ato / on the spot'],['即日','そくじつ','no mesmo dia / same day']]},
+{c:'催',on:'サイ',kun:'もよお(す)',pt:'organizar (evento)',en:'hold an event',mn:'亻(pessoa) + 崔 → quem reúne todos para o evento.',w:[['開催','かいさい','realização / holding'],['主催','しゅさい','organização / sponsorship']]},
+{c:'贈',on:'ゾウ',kun:'おく(る)',pt:'presentear',en:'give a gift',mn:'貝 (dinheiro) + 曽 → o valor entregue de presente.',w:[['贈り物','おくりもの','presente / gift'],['贈答','ぞうとう','troca de presentes / gift exchange']]},
+{c:'祝',on:'シュク',kun:'いわ(う)',pt:'celebrar',en:'celebrate',mn:'礻(altar) + 兄 → o irmão diante do altar, dando graças.',w:[['祝日','しゅくじつ','feriado / public holiday'],['祝う','いわう','celebrar / celebrate']]},
+{c:'嘆',on:'タン',kun:'なげ(く)',pt:'lamentar',en:'lament',mn:'口 (boca) + 漢 → o suspiro que sai da boca.',w:[['嘆く','なげく','lamentar / lament'],['感嘆','かんたん','admiração / admiration']]},
+{c:'惜',on:'セキ',kun:'お(しい)',pt:'lamentável, precioso',en:'regrettable, precious',mn:'忄(coração) + 昔 (outrora) → o coração preso ao que se vai.',w:[['惜しい','おしい','uma pena / a shame'],['惜別','せきべつ','pesar da despedida / parting sorrow']]},
+{c:'憎',on:'ゾウ',kun:'にく(む)',pt:'odiar',en:'hate',mn:'忄(coração) + 曽 → o rancor acumulado no coração.',w:[['憎む','にくむ','odiar / hate'],['憎悪','ぞうお','ódio / hatred']]},
+{c:'怖',on:'フ',kun:'こわ(い)',pt:'assustador',en:'scary',mn:'忄(coração) + 布 (pano) → o coração coberto por um pano escuro.',w:[['怖い','こわい','assustador / scary'],['恐怖','きょうふ','terror / terror']]},
+{c:'濃',on:'ノウ',kun:'こ(い)',pt:'denso, forte (sabor, cor)',en:'thick, strong',mn:'氵(água) + 農 (agricultura) → água carregada de terra: <b>densa</b>.',w:[['濃い','こい','forte, denso / strong, thick'],['濃厚','のうこう','denso; alta probabilidade / thick; strong']]},
+{c:'薄',on:'ハク',kun:'うす(い)',pt:'fino, fraco',en:'thin, weak',mn:'艹 (grama) + 溥 → folha fina como capim.',w:[['薄い','うすい','fino, fraco / thin'],['薄暗い','うすぐらい','penumbroso / dim']]},
+{c:'添',on:'テン',kun:'そ(える)',pt:'anexar, acrescentar',en:'attach, add',mn:'氵(água) + 忝 → juntar mais um pouco ao que já há.',w:[['添付','てんぷ','anexo / attachment'],['添える','そえる','acrescentar, anexar / add, attach']]},
+{c:'削',on:'サク',kun:'けず(る)',pt:'raspar, cortar',en:'shave off, cut',mn:'肖 + 刂 (faca) → tirar lascas com a lâmina.',w:[['削除','さくじょ','exclusão / deletion'],['削る','けずる','raspar, reduzir / shave, cut down']]},
+{c:'甘',on:'カン',kun:'あま(い)',pt:'doce; indulgente',en:'sweet; lenient',mn:'Uma boca com algo dentro. 甘い também é <b>ser mole</b> com alguém.',w:[['甘い','あまい','doce; indulgente / sweet; lenient'],['甘やかす','あまやかす','mimar / spoil']]},
+{c:'辛',on:'シン',kun:'から(い)・つら(い)',pt:'picante; penoso',en:'spicy; hard',mn:'A faca de marcar escravos: dor. Daí 辛い (penoso) e 辛い (picante).',w:[['辛い','からい','picante / spicy'],['辛抱','しんぼう','paciência / endurance']]},
+{c:'酸',on:'サン',kun:'す(い)',pt:'ácido',en:'acid, sour',mn:'酉 (jarro de fermentação) + 夋 → o vinho que azedou.',w:[['酸素','さんそ','oxigênio / oxygen'],['酸っぱい','すっぱい','azedo / sour']]},
+{c:'蒸',on:'ジョウ',kun:'む(す)',pt:'cozinhar no vapor',en:'steam',mn:'艹 + 丞 + 灬 (fogo) → o vapor que sobe do fogo.',w:[['蒸気','じょうき','vapor / steam'],['蒸し暑い','むしあつい','abafado / muggy']]},
+{c:'沸',on:'フツ',kun:'わ(く)',pt:'ferver',en:'boil',mn:'氵(água) + 弗 → a água que salta.',w:[['沸騰','ふっとう','fervura / boiling'],['沸かす','わかす','ferver (água) / boil']]},
+{c:'溶',on:'ヨウ',kun:'と(ける)',pt:'dissolver, derreter',en:'dissolve, melt',mn:'氵(água) + 容 (conter) → o que a água absorve dentro de si.',w:[['溶ける','とける','derreter / melt'],['溶け込む','とけこむ','integrar-se / blend in']]},
+{c:'凍',on:'トウ',kun:'こお(る)',pt:'congelar',en:'freeze',mn:'冫(gelo) + 東 → o frio que vem do leste.',w:[['冷凍','れいとう','congelamento / freezing'],['凍る','こおる','congelar / freeze']]},
+{c:'混',on:'コン',kun:'ま(ざる)・こ(む)',pt:'misturar; lotar',en:'mix; be crowded',mn:'氵(água) + 昆 → águas que se juntam.',w:[['混雑','こんざつ','congestionamento / congestion'],['混ぜる','まぜる','misturar / mix']]},
+{c:'泊',on:'ハク',kun:'と(まる)',pt:'pernoitar',en:'stay overnight',mn:'氵(água) + 白 → o barco que para no porto para passar a noite.',w:[['宿泊','しゅくはく','hospedagem / lodging'],['一泊','いっぱく','uma diária / one night']]},
+{c:'浴',on:'ヨク',kun:'あ(びる)',pt:'banhar-se',en:'bathe',mn:'氵(água) + 谷 (vale) → a água que desce pelo vale sobre você.',w:[['浴びる','あびる','tomar (banho, luz) / bathe in'],['入浴','にゅうよく','banho / bathing']]},
+{c:'浮',on:'フ',kun:'う(かぶ)',pt:'flutuar; vir à mente',en:'float; come to mind',mn:'氵(água) + 孚 → a criança que boia. Ideias também 浮かぶ.',w:[['浮かぶ','うかぶ','flutuar; ocorrer / float; occur to'],['浮動','ふどう','flutuante / floating']]},
+{c:'沿',on:'エン',kun:'そ(う)',pt:'ao longo de, seguir',en:'along, follow',mn:'氵(água) + 㕣 → caminhar acompanhando o rio.',w:[['沿う','そう','seguir ao longo / go along'],['沿岸','えんがん','litoral / coast']]},
+{c:'抱',on:'ホウ',kun:'だ(く)・かか(える)',pt:'abraçar; nutrir',en:'hold; harbour',mn:'扌(mão) + 包 (envolver) → os braços que envolvem.',w:[['抱える','かかえる','carregar (problema) / be burdened with'],['抱く','いだく','nutrir (sentimento) / harbour']]},
+{c:'抜',on:'バツ',kun:'ぬ(く)',pt:'arrancar, extrair',en:'pull out',mn:'扌(mão) + 犮 → puxar com força até sair.',w:[['抜く','ぬく','arrancar; ultrapassar / pull out; overtake'],['選抜','せんばつ','seleção / selection']]},
+{c:'押',on:'オウ',kun:'お(す)',pt:'empurrar, apertar',en:'push, press',mn:'扌(mão) + 甲 (carapaça) → a mão que aperta a casca.',w:[['押す','おす','empurrar / push'],['押し付ける','おしつける','impor / force on']]},
+{c:'振',on:'シン',kun:'ふ(る)',pt:'sacudir, agitar',en:'shake, wave',mn:'扌(mão) + 辰 → a mão que balança.',w:[['振る','ふる','sacudir, acenar / shake, wave'],['振り返る','ふりかえる','olhar para trás, rever / look back']]},
+{c:'揺',on:'ヨウ',kun:'ゆ(れる)',pt:'balançar, oscilar',en:'sway, shake',mn:'扌(mão) + 䍃 → o que oscila de um lado a outro.',w:[['揺れる','ゆれる','balançar / sway'],['動揺','どうよう','abalo, perturbação / agitation']]}
+];
+const EN_KMN_B2={
+'刻':'亥 + 刂 (blade) → notching marks to count the passing of time.',
+'鋭':'金 (metal) + 兌 → metal drawn down to a fine point.',
+'鈍':'金 (metal) + 屯 (heaped up) → thick metal with no edge.',
+'幅':'巾 (cloth) + 畐 → the width of the cloth laid out.',
+'枠':'木 (wood) + 卆 → the wooden frame that bounds a space.',
+'診':'言 (words) + 㐱 → the doctor asks before judging.',
+'療':'疒 (illness) + 尞 → tending until the illness leaves.',
+'症':'疒 (illness) + 正 → the precise sign of the illness.',
+'疲':'疒 (illness) + 皮 (skin) → the body grows heavy inside its own skin.',
+'眠':'目 (eye) + 民 → the eye that closes.',
+'覚':'⺍ + 見 (see) → the moment you finally see: you wake, and you remember.',
+'含':'今 (now) + 口 (mouth) → holding something inside the mouth.',
+'除':'阝(mound) + 余 (surplus) → clearing away what is left over.',
+'訂':'言 (words) + 丁 → setting the wording exactly right.',
+'仮':'亻(person) + 反 (reverse) → the not-yet-final version.',
+'占':'卜 (divination) + 口 → reading the signs and taking the place.',
+'座':'广 (building) + 人人 + 土 → two people seated on the floor of the hall.',
+'旧':'A stroke above 日 → the day that has already gone.',
+'臨':'臣 (retainer) + 品 → the gaze that leans over things.',
+'到':'至 (reach) + 刂 → arriving all the way to the end point.',
+'途':'辶 (walk) + 余 → the stretch of road still remaining.',
+'即':'皀 (food) + 卩 (kneeling figure) → sitting down and eating right away.',
+'催':'亻(person) + 崔 → the one who gathers everybody for the event.',
+'贈':'貝 (money) + 曽 → value handed over as a gift.',
+'祝':'礻(altar) + 兄 → the elder brother before the altar, giving thanks.',
+'嘆':'口 (mouth) + 漢 → the sigh that escapes the mouth.',
+'惜':'忄(heart) + 昔 (long ago) → the heart still holding what is leaving.',
+'憎':'忄(heart) + 曽 → resentment piling up in the heart.',
+'怖':'忄(heart) + 布 (cloth) → the heart draped in a dark cloth.',
+'濃':'氵(water) + 農 (farming) → water heavy with earth: <b>thick</b>.',
+'薄':'艹 (grass) + 溥 → a leaf as thin as a blade of grass.',
+'添':'氵(water) + 忝 → adding a little more to what is already there.',
+'削':'肖 + 刂 (blade) → taking off slivers with the knife.',
+'甘':'A mouth with something held inside. 甘い also means going <b>soft</b> on someone.',
+'辛':'The blade once used to mark slaves: pain. Hence 辛い (harsh) and 辛い (spicy).',
+'酸':'酉 (fermentation jar) + 夋 → the wine that has turned.',
+'蒸':'艹 + 丞 + 灬 (fire) → steam rising off the fire.',
+'沸':'氵(water) + 弗 → water leaping up.',
+'溶':'氵(water) + 容 (contain) → what the water takes into itself.',
+'凍':'冫(ice) + 東 → the cold that comes out of the east.',
+'混':'氵(water) + 昆 → waters running together.',
+'泊':'氵(water) + 白 → the boat that stops in harbour for the night.',
+'浴':'氵(water) + 谷 (valley) → water coming down the valley over you.',
+'浮':'氵(water) + 孚 → the child that floats. Ideas 浮かぶ too.',
+'沿':'氵(water) + 㕣 → walking along beside the river.',
+'抱':'扌(hand) + 包 (wrap) → arms that wrap around.',
+'抜':'扌(hand) + 犮 → pulling hard until it comes free.',
+'押':'扌(hand) + 甲 (shell) → the hand pressing on the shell.',
+'振':'扌(hand) + 辰 → the hand that swings.',
+'揺':'扌(hand) + 䍃 → what rocks from side to side.'
+};
+
+const KANJI_B3=[
+{c:'貫',on:'カン',kun:'つらぬ(く)',pt:'atravessar; levar até o fim',en:'pierce; carry through',mn:'毌 (furar) + 貝 (moeda) → o cordão que atravessa as moedas.',w:[['一貫','いっかん','coerência / consistency'],['貫く','つらぬく','levar até o fim / carry through']]},
+{c:'徹',on:'テツ',kun:'—',pt:'penetrar, ir a fundo',en:'penetrate, thorough',mn:'彳 + 育 + 攵 → seguir até o fundo sem parar.',w:[['徹底','てってい','minuciosidade / thoroughness'],['徹夜','てつや','virar a noite / all-nighter']]},
+{c:'底',on:'テイ',kun:'そこ',pt:'fundo',en:'bottom',mn:'广 (edifício) + 氐 (baixo) → o ponto mais baixo.',w:[['底','そこ','fundo / bottom'],['海底','かいてい','fundo do mar / seabed']]},
+{c:'端',on:'タン',kun:'はし',pt:'ponta, extremidade',en:'edge, end',mn:'立 (de pé) + 耑 → onde uma coisa termina e começa outra.',w:[['端','はし','ponta / edge'],['極端','きょくたん','extremo / extreme']]},
+{c:'縮',on:'シュク',kun:'ちぢ(む)',pt:'encolher, reduzir',en:'shrink',mn:'糸 (fio) + 宿 → o fio que se recolhe.',w:[['縮小','しゅくしょう','redução / reduction'],['短縮','たんしゅく','encurtamento / shortening']]},
+{c:'拡',on:'カク',kun:'—',pt:'expandir',en:'expand',mn:'扌(mão) + 広 (amplo) → a mão que alarga.',w:[['拡大','かくだい','ampliação / expansion'],['拡張','かくちょう','extensão / extension']]},
+{c:'超',on:'チョウ',kun:'こ(える)',pt:'ultrapassar, super-',en:'exceed, super-',mn:'走 (correr) + 召 → correr além da linha.',w:[['超える','こえる','ultrapassar / exceed'],['超過','ちょうか','excesso / excess']]},
+{c:'派',on:'ハ',kun:'—',pt:'facção; enviar',en:'faction; dispatch',mn:'氵(água) + 厎 → o rio que se ramifica em braços.',w:[['派手','はで','chamativo / flashy'],['派遣','はけん','envio de pessoal / dispatch']]},
+{c:'系',on:'ケイ',kun:'—',pt:'linhagem, sistema',en:'lineage, system',mn:'Um fio pendurado do alto: a linha que liga gerações.',w:[['系統','けいとう','sistema, linhagem / system'],['体系','たいけい','arcabouço / framework']]},
+{c:'層',on:'ソウ',kun:'—',pt:'camada, estrato',en:'layer, stratum',mn:'尸 (corpo) + 曽 (empilhado) → andares empilhados.',w:[['層','そう','camada / layer'],['階層','かいそう','hierarquia / hierarchy']]},
+{c:'構',on:'コウ',kun:'かま(える)',pt:'construir, estruturar',en:'construct, structure',mn:'木 (madeira) + 冓 → as vigas armadas em estrutura.',w:[['構造','こうぞう','estrutura / structure'],['構える','かまえる','assumir postura / take a stance']]},
+{c:'築',on:'チク',kun:'きず(く)',pt:'edificar',en:'build up',mn:'竹 (bambu) + 巩 + 木 → erguer com bambu e madeira.',w:[['建築','けんちく','arquitetura / architecture'],['築く','きずく','construir (relação) / build up']]},
+{c:'倒',on:'トウ',kun:'たお(れる)',pt:'derrubar, cair',en:'knock over, collapse',mn:'亻(pessoa) + 到 (chegar) → a pessoa que chega ao chão.',w:[['倒れる','たおれる','cair, passar mal / collapse'],['面倒','めんどう','trabalhoso / troublesome']]},
+{c:'徐',on:'ジョ',kun:'—',pt:'lentamente',en:'slowly',mn:'彳 (andar) + 余 (sobra) → andar com folga, sem pressa.',w:[['徐々に','じょじょに','pouco a pouco / gradually'],['徐行','じょこう','marcha lenta / slow driving']]},
+{c:'絡',on:'ラク',kun:'から(む)',pt:'enroscar, ligar',en:'entangle, connect',mn:'糸 (fio) + 各 → fios que se enrolam uns nos outros.',w:[['連絡','れんらく','contato / contact'],['絡む','からむ','estar ligado a / be tangled with']]},
+{c:'緩',on:'カン',kun:'ゆる(い)',pt:'frouxo, brando',en:'loose, lenient',mn:'糸 (fio) + 爰 → o fio que não está esticado.',w:[['緩い','ゆるい','frouxo / loose'],['緩和','かんわ','abrandamento / easing']]},
+{c:'廃',on:'ハイ',kun:'すた(れる)',pt:'abolir, cair em desuso',en:'abolish, fall into disuse',mn:'广 (edifício) + 発 → o prédio abandonado.',w:[['廃止','はいし','abolição / abolition'],['廃棄','はいき','descarte / disposal']]},
+{c:'棄',on:'キ',kun:'—',pt:'descartar, abandonar',en:'discard, abandon',mn:'A figura de algo jogado fora com as duas mãos.',w:[['放棄','ほうき','renúncia / renunciation'],['破棄','はき','rescisão / cancellation']]},
+{c:'誤',on:'ゴ',kun:'あやま(る)',pt:'errar, equívoco',en:'err, mistake',mn:'言 (palavra) + 呉 → a palavra que sai torta.',w:[['誤解','ごかい','mal-entendido / misunderstanding'],['誤り','あやまり','erro / error']]},
+{c:'恥',on:'チ',kun:'は(ずかしい)',pt:'vergonha',en:'shame',mn:'耳 (orelha) + 心 (coração) → as orelhas ardem quando o coração se envergonha.',w:[['恥ずかしい','はずかしい','envergonhado / embarrassed'],['恥','はじ','vergonha / shame']]},
+{c:'諦',on:'テイ',kun:'あきら(める)',pt:'desistir',en:'give up',mn:'言 (palavra) + 帝 (imperador) → aceitar a palavra final e parar.',w:[['諦める','あきらめる','desistir / give up'],['諦め','あきらめ','resignação / resignation']]},
+{c:'頼',on:'ライ',kun:'たの(む)・たよ(る)',pt:'pedir; depender',en:'request; rely on',mn:'束 (feixe) + 頁 (cabeça) → confiar a alguém o feixe que você carrega.',w:[['信頼','しんらい','confiança / trust'],['頼る','たよる','depender de / rely on']]},
+{c:'頑',on:'ガン',kun:'—',pt:'teimoso, firme',en:'stubborn, sturdy',mn:'元 (origem) + 頁 (cabeça) → a cabeça que não sai do lugar.',w:[['頑張る','がんばる','esforçar-se / do your best'],['頑固','がんこ','teimoso / stubborn']]},
+{c:'肯',on:'コウ',kun:'—',pt:'assentir, afirmar',en:'affirm, consent',mn:'止 (parar) + 月 (carne) → o corpo que para e concorda.',w:[['肯定','こうてい','afirmação / affirmation'],['肯定的','こうていてき','positivo / affirmative']]},
+{c:'否',on:'ヒ',kun:'いな',pt:'negar, não',en:'deny, no',mn:'不 (não) + 口 (boca) → a boca que diz não.',w:[['否定','ひてい','negação / denial'],['安否','あんぴ','segurança de alguém / safety']]},
+{c:'是',on:'ゼ',kun:'—',pt:'correto, o justo',en:'right, correct',mn:'日 (sol) + 正 (correto) → o que está claro como o sol.',w:[['是非','ぜひ','sem falta / by all means'],['是正','ぜせい','retificação / correction']]},
+{c:'恵',on:'ケイ',kun:'めぐ(む)',pt:'graça, bênção',en:'blessing, favour',mn:'叀 + 心 (coração) → o coração que dá sem cobrar.',w:[['恵まれる','めぐまれる','ser abençoado / be blessed'],['知恵','ちえ','sabedoria prática / wisdom']]},
+{c:'励',on:'レイ',kun:'はげ(む)',pt:'esforçar-se, encorajar',en:'strive, encourage',mn:'厉 + 力 (força) → juntar forças para seguir.',w:[['励む','はげむ','dedicar-se / apply yourself'],['激励','げきれい','encorajamento / encouragement']]},
+{c:'耐',on:'タイ',kun:'た(える)',pt:'suportar, resistir',en:'endure',mn:'而 + 寸 (mão) → aguentar firme sem se mexer.',w:[['耐える','たえる','suportar / endure'],['忍耐','にんたい','perseverança / perseverance']]},
+{c:'忍',on:'ニン',kun:'しの(ぶ)',pt:'suportar em silêncio',en:'endure in silence',mn:'刃 (lâmina) sobre 心 (coração) → aguentar com uma lâmina sobre o coração.',w:[['忍耐','にんたい','perseverança / perseverance'],['忍ぶ','しのぶ','suportar calado / bear quietly']]},
+{c:'黙',on:'モク',kun:'だま(る)',pt:'calar-se',en:'be silent',mn:'黒 (preto) + 犬 (cão) → o cão preto que não late.',w:[['沈黙','ちんもく','silêncio / silence'],['黙る','だまる','calar-se / fall silent']]},
+{c:'叫',on:'キョウ',kun:'さけ(ぶ)',pt:'gritar',en:'shout',mn:'口 (boca) + 丩 → a boca que se abre com força.',w:[['叫ぶ','さけぶ','gritar / shout'],['絶叫','ぜっきょう','grito agudo / scream']]},
+{c:'笑',on:'ショウ',kun:'わら(う)',pt:'rir',en:'laugh',mn:'竹 (bambu) + 夭 → o bambu que se dobra: o corpo que ri.',w:[['笑う','わらう','rir / laugh'],['苦笑','くしょう','riso amarelo / wry smile']]},
+{c:'涙',on:'ルイ',kun:'なみだ',pt:'lágrima',en:'tear',mn:'氵(água) + 戻 (voltar) → a água que volta pelos olhos.',w:[['涙','なみだ','lágrima / tear'],['感涙','かんるい','lágrimas de emoção / tears of joy']]},
+{c:'咲',on:'—',kun:'さ(く)',pt:'florescer',en:'bloom',mn:'口 (boca) + 关 → a flor que abre a boca.',w:[['咲く','さく','florescer / bloom'],['遅咲き','おそざき','floração tardia / late bloomer']]},
+{c:'茂',on:'モ',kun:'しげ(る)',pt:'crescer viçoso',en:'grow thick',mn:'艹 (grama) + 戊 → a vegetação que cobre tudo.',w:[['茂る','しげる','viçar / grow thick'],['繁茂','はんも','vegetação densa / lush growth']]},
+{c:'摘',on:'テキ',kun:'つ(む)',pt:'colher; apontar',en:'pick; point out',mn:'扌(mão) + 啇 → os dedos que colhem um a um.',w:[['指摘','してき','apontar um ponto / pointing out'],['摘む','つむ','colher / pick']]},
+{c:'掲',on:'ケイ',kun:'かか(げる)',pt:'afixar, exibir',en:'put up, display',mn:'扌(mão) + 曷 → erguer e mostrar publicamente.',w:[['掲示','けいじ','aviso afixado / notice'],['掲載','けいさい','publicação / publication']]}
+];
+const EN_KMN_B3={
+'貫':'毌 (pierce) + 貝 (coin) → the cord running through a string of coins.',
+'徹':'彳 + 育 + 攵 → pressing all the way through without stopping.',
+'底':'广 (building) + 氐 (low) → the lowest point.',
+'端':'立 (stand) + 耑 → where one thing ends and another begins.',
+'縮':'糸 (thread) + 宿 → thread drawing itself in.',
+'拡':'扌(hand) + 広 (wide) → the hand that widens.',
+'超':'走 (run) + 召 → running past the line.',
+'派':'氵(water) + 厎 → the river branching into arms.',
+'系':'A thread hanging from above: the line that links generations.',
+'層':'尸 (body) + 曽 (piled) → storeys stacked on storeys.',
+'構':'木 (wood) + 冓 → beams assembled into a frame.',
+'築':'竹 (bamboo) + 巩 + 木 → raising something out of bamboo and timber.',
+'倒':'亻(person) + 到 (arrive) → the person who arrives at the ground.',
+'徐':'彳 (walk) + 余 (surplus) → walking with time to spare, unhurried.',
+'絡':'糸 (thread) + 各 → threads winding round one another.',
+'緩':'糸 (thread) + 爰 → thread that is not pulled taut.',
+'廃':'广 (building) + 発 → the abandoned building.',
+'棄':'The shape of something thrown away with both hands.',
+'誤':'言 (words) + 呉 → the word that comes out crooked.',
+'恥':'耳 (ear) + 心 (heart) → ears burning when the heart is ashamed.',
+'諦':'言 (words) + 帝 (emperor) → accepting the final word and stopping.',
+'頼':'束 (bundle) + 頁 (head) → entrusting someone with the bundle you carry.',
+'頑':'元 (origin) + 頁 (head) → a head that will not budge.',
+'肯':'止 (stop) + 月 (flesh) → the body that halts and agrees.',
+'否':'不 (not) + 口 (mouth) → the mouth that says no.',
+'是':'日 (sun) + 正 (correct) → what is as clear as the sun.',
+'恵':'叀 + 心 (heart) → a heart that gives without charging.',
+'励':'厉 + 力 (strength) → gathering strength to keep going.',
+'耐':'而 + 寸 (hand) → holding firm without moving.',
+'忍':'刃 (blade) over 心 (heart) → bearing it with a blade above your heart.',
+'黙':'黒 (black) + 犬 (dog) → the black dog that does not bark.',
+'叫':'口 (mouth) + 丩 → the mouth forced wide open.',
+'笑':'竹 (bamboo) + 夭 → bamboo bending: the body doubled over laughing.',
+'涙':'氵(water) + 戻 (return) → water coming back out through the eyes.',
+'咲':'口 (mouth) + 关 → the flower that opens its mouth.',
+'茂':'艹 (grass) + 戊 → vegetation covering everything over.',
+'摘':'扌(hand) + 啇 → fingers picking one at a time.',
+'掲':'扌(hand) + 曷 → raising something up for all to see.'
+};
+
+const KANJI_B4=[
+{c:'雇',on:'コ',kun:'やと(う)',pt:'contratar',en:'employ, hire',mn:'戸 (porta) + 隹 (pássaro) → o pássaro que entra pela porta e passa a trabalhar ali.',w:[['雇用','こよう','emprego / employment'],['雇う','やとう','contratar / hire']]},
+{c:'就',on:'シュウ',kun:'つ(く)',pt:'assumir (posto)',en:'take up (a post)',mn:'京 (capital) + 尤 → ir à capital e assumir o cargo.',w:[['就職','しゅうしょく','conseguir emprego / getting a job'],['就く','つく','assumir (cargo) / take up']]},
+{c:'勤',on:'キン',kun:'つと(める)',pt:'trabalhar (numa empresa)',en:'be employed',mn:'堇 + 力 (força) → aplicar a força todo dia no mesmo lugar.',w:[['勤務','きんむ','trabalho, expediente / duty'],['通勤','つうきん','deslocamento ao trabalho / commuting']]},
+{c:'僚',on:'リョウ',kun:'—',pt:'colega (de trabalho)',en:'colleague',mn:'亻(pessoa) + 尞 → as pessoas que trabalham lado a lado.',w:[['同僚','どうりょう','colega / colleague'],['官僚','かんりょう','burocrata / bureaucrat']]},
+{c:'隊',on:'タイ',kun:'—',pt:'esquadrão, tropa',en:'squad, corps',mn:'阝(monte) + 㒸 → o grupo que desce a encosta em formação.',w:[['部隊','ぶたい','unidade, tropa / unit'],['隊員','たいいん','membro da equipe / crew member']]},
+{c:'兵',on:'ヘイ',kun:'—',pt:'soldado',en:'soldier',mn:'斤 (machado) + 廾 (duas mãos) → quem segura a arma com as duas mãos.',w:[['兵士','へいし','soldado / soldier'],['兵器','へいき','armamento / weaponry']]},
+{c:'攻',on:'コウ',kun:'せ(める)',pt:'atacar',en:'attack',mn:'工 (trabalho) + 攵 (bater) → trabalhar batendo: o ataque.',w:[['攻撃','こうげき','ataque / attack'],['専攻','せんこう','especialização acadêmica / major']]},
+{c:'守',on:'シュ',kun:'まも(る)',pt:'proteger, cumprir',en:'protect, keep',mn:'宀 (teto) + 寸 (mão) → a mão que guarda a casa.',w:[['守る','まもる','proteger; cumprir / protect; keep'],['保守','ほしゅ','conservador / conservative']]},
+{c:'防',on:'ボウ',kun:'ふせ(ぐ)',pt:'prevenir, impedir',en:'prevent, defend',mn:'阝(muro) + 方 → o muro erguido de um lado.',w:[['予防','よぼう','prevenção / prevention'],['防ぐ','ふせぐ','impedir / prevent']]},
+{c:'争',on:'ソウ',kun:'あらそ(う)',pt:'disputar, brigar',en:'dispute, contend',mn:'Duas mãos puxando a mesma coisa em direções opostas.',w:[['競争','きょうそう','competição / competition'],['争う','あらそう','disputar / contend']]},
+{c:'敗',on:'ハイ',kun:'やぶ(れる)',pt:'derrota',en:'defeat',mn:'貝 (concha) + 攵 (bater) → a concha quebrada pela pancada.',w:[['失敗','しっぱい','fracasso / failure'],['敗北','はいぼく','derrota / defeat']]},
+{c:'威',on:'イ',kun:'—',pt:'autoridade, imponência',en:'authority, prestige',mn:'戈 (lança) + 女 → a força que impõe respeito.',w:[['権威','けんい','autoridade / authority'],['威力','いりょく','poder, potência / might']]},
+{c:'脅',on:'キョウ',kun:'おびや(かす)',pt:'ameaçar',en:'threaten',mn:'劦 (forças) + 月 (carne) → a pressão que aperta o corpo.',w:[['脅威','きょうい','ameaça / threat'],['脅す','おどす','ameaçar / threaten']]},
+{c:'奪',on:'ダツ',kun:'うば(う)',pt:'tomar à força',en:'snatch, deprive',mn:'大 + 隹 (pássaro) + 寸 (mão) → arrancar o pássaro da mão de alguém.',w:[['奪う','うばう','arrebatar / snatch away'],['争奪','そうだつ','disputa acirrada / scramble']]},
+{c:'襲',on:'シュウ',kun:'おそ(う)',pt:'atacar de surpresa',en:'attack, strike',mn:'龍 (dragão) + 衣 (roupa) → o dragão que cai sobre você.',w:[['襲う','おそう','atacar / attack'],['襲来','しゅうらい','investida / raid']]},
+{c:'撃',on:'ゲキ',kun:'う(つ)',pt:'golpear, atirar',en:'strike, shoot',mn:'軍 (exército) + 手 (mão) → a mão do exército que desfere o golpe.',w:[['攻撃','こうげき','ataque / attack'],['衝撃','しょうげき','choque, impacto / shock']]},
+{c:'抵',on:'テイ',kun:'—',pt:'resistir, opor',en:'resist',mn:'扌(mão) + 氐 (baixo) → a mão que empurra para baixo.',w:[['抵抗','ていこう','resistência / resistance'],['大抵','たいてい','geralmente / usually']]},
+{c:'圏',on:'ケン',kun:'—',pt:'esfera, âmbito',en:'sphere, zone',mn:'囗 (cerca) + 巻 (rolo) → o círculo traçado em volta.',w:[['圏内','けんない','dentro do alcance / within range'],['首都圏','しゅとけん','região metropolitana / metropolitan area']]},
+{c:'核',on:'カク',kun:'—',pt:'núcleo, nuclear',en:'core, nuclear',mn:'木 (árvore) + 亥 → o caroço duro dentro do fruto.',w:[['核心','かくしん','cerne / core'],['中核','ちゅうかく','núcleo central / nucleus']]},
+{c:'射',on:'シャ',kun:'い(る)',pt:'atirar, irradiar',en:'shoot, radiate',mn:'身 (corpo) + 寸 (mão) → o corpo que estica a mão e dispara.',w:[['注射','ちゅうしゃ','injeção / injection'],['反射','はんしゃ','reflexo / reflex']]},
+{c:'爆',on:'バク',kun:'—',pt:'explodir',en:'explode',mn:'火 (fogo) + 暴 (violento) → o fogo violento.',w:[['爆発','ばくはつ','explosão / explosion'],['爆音','ばくおん','estrondo / roar']]},
+{c:'検',on:'ケン',kun:'—',pt:'inspecionar, verificar',en:'inspect, examine',mn:'木 (madeira) + 僉 → examinar as tábuas uma a uma.',w:[['検査','けんさ','inspeção, exame / inspection'],['点検','てんけん','vistoria / check']]},
+{c:'査',on:'サ',kun:'—',pt:'investigar',en:'investigate',mn:'木 (madeira) + 且 → medir a madeira empilhada.',w:[['調査','ちょうさ','pesquisa / survey'],['審査','しんさ','avaliação / screening']]},
+{c:'審',on:'シン',kun:'—',pt:'julgar, examinar a fundo',en:'adjudicate, scrutinise',mn:'宀 (teto) + 番 → examinar sob o teto do tribunal.',w:[['審査','しんさ','avaliação / screening'],['審判','しんぱん','arbitragem / refereeing']]},
+{c:'証',on:'ショウ',kun:'—',pt:'prova, certificado',en:'proof, certificate',mn:'言 (palavra) + 正 (correto) → a palavra que comprova.',w:[['証明','しょうめい','comprovação / proof'],['保証','ほしょう','garantia / guarantee']]},
+{c:'拠',on:'キョ',kun:'—',pt:'base, fundamento',en:'basis, grounds',mn:'扌(mão) + 処 → aquilo em que a mão se apoia.',w:[['根拠','こんきょ','fundamento / grounds'],['証拠','しょうこ','evidência / evidence']]},
+{c:'疑',on:'ギ',kun:'うたが(う)',pt:'duvidar, suspeitar',en:'doubt, suspect',mn:'匕 + 矢 + 疋 → alguém parado sem saber para onde ir: a dúvida.',w:[['疑問','ぎもん','dúvida / question'],['疑う','うたがう','suspeitar / doubt']]},
+{c:'誠',on:'セイ',kun:'まこと',pt:'sinceridade',en:'sincerity',mn:'言 (palavra) + 成 (realizar) → a palavra que se cumpre.',w:[['誠実','せいじつ','sinceridade / sincerity'],['誠に','まことに','deveras / truly']]},
+{c:'純',on:'ジュン',kun:'—',pt:'puro',en:'pure',mn:'糸 (fio) + 屯 → o fio de uma cor só, sem mistura.',w:[['単純','たんじゅん','simples / simple'],['純粋','じゅんすい','puro / pure']]},
+{c:'単',on:'タン',kun:'—',pt:'simples, único',en:'single, simple',mn:'Uma forquilha só, sem ramificações.',w:[['単純','たんじゅん','simples / simple'],['単なる','たんなる','mero / mere']]},
+{c:'複',on:'フク',kun:'—',pt:'múltiplo, duplo',en:'multiple, compound',mn:'衤(roupa) + 复 → camadas de roupa sobrepostas.',w:[['複雑','ふくざつ','complexo / complex'],['複数','ふくすう','plural, vários / plural']]},
+{c:'程',on:'テイ',kun:'ほど',pt:'grau, medida',en:'degree, extent',mn:'禾 (espiga) + 呈 → medir a colheita: o <b>grau</b>.',w:[['程度','ていど','grau / degree'],['日程','にってい','agenda / schedule']]},
+{c:'限',on:'ゲン',kun:'かぎ(る)',pt:'limitar',en:'limit',mn:'阝(muro) + 艮 → o muro que marca até onde vai.',w:[['制限','せいげん','restrição / restriction'],['限る','かぎる','limitar / limit']]},
+{c:'割',on:'カツ',kun:'わ(る)・わり',pt:'dividir; proporção (10%)',en:'divide; 10 percent',mn:'害 + 刂 (faca) → cortar em partes. 一割 = um décimo.',w:[['割合','わりあい','proporção / ratio'],['役割','やくわり','papel, função / role']]},
+{c:'率',on:'リツ',kun:'—',pt:'taxa, índice',en:'rate, ratio',mn:'Um fio com nós dos dois lados: a proporção contada.',w:[['効率','こうりつ','eficiência / efficiency'],['確率','かくりつ','probabilidade / probability']]},
+{c:'比',on:'ヒ',kun:'くら(べる)',pt:'comparar',en:'compare',mn:'Duas pessoas lado a lado, uma medindo a outra.',w:[['比較','ひかく','comparação / comparison'],['比べる','くらべる','comparar / compare']]},
+{c:'倍',on:'バイ',kun:'—',pt:'vezes, dobro',en:'times, double',mn:'亻(pessoa) + 咅 → uma pessoa mais outra: o dobro.',w:[['倍','ばい','o dobro / double'],['倍増','ばいぞう','duplicação / doubling']]},
+{c:'総',on:'ソウ',kun:'—',pt:'total, geral',en:'total, general',mn:'糸 (fio) + 忩 → todos os fios reunidos num só.',w:[['総合','そうごう','integração, geral / comprehensive'],['総額','そうがく','valor total / total sum']]},
+{c:'量',on:'リョウ',kun:'はか(る)',pt:'quantidade, medir',en:'quantity, measure',mn:'旦 + 里 → pesar a carga na balança.',w:[['数量','すうりょう','quantidade / quantity'],['大量','たいりょう','grande quantidade / large amount']]},
+{c:'容',on:'ヨウ',kun:'—',pt:'conter; aparência',en:'contain; appearance',mn:'宀 (teto) + 谷 (vale) → o espaço que cabe sob o teto.',w:[['内容','ないよう','conteúdo / content'],['容易','ようい','fácil / easy']]},
+{c:'積',on:'セキ',kun:'つ(む)',pt:'empilhar, acumular',en:'pile up, accumulate',mn:'禾 (espiga) + 責 → empilhar a colheita.',w:[['面積','めんせき','área / area'],['積み重ねる','つみかさねる','acumular / build up']]},
+{c:'密',on:'ミツ',kun:'—',pt:'denso; secreto',en:'dense; secret',mn:'宀 (teto) + 必 + 山 → escondido e apertado sob o teto da montanha.',w:[['秘密','ひみつ','segredo / secret'],['密度','みつど','densidade / density']]},
+{c:'簡',on:'カン',kun:'—',pt:'simples, conciso',en:'simple, brief',mn:'竹 (bambu) + 間 → a tira de bambu curta em que se escrevia o essencial.',w:[['簡単','かんたん','simples / simple'],['簡潔','かんけつ','conciso / concise']]},
+{c:'潔',on:'ケツ',kun:'いさぎよ(い)',pt:'limpo, íntegro',en:'clean, upright',mn:'氵(água) + 絜 → lavado até ficar sem mancha.',w:[['清潔','せいけつ','higiênico / clean'],['潔白','けっぱく','inocência / innocence']]},
+{c:'厳',on:'ゲン',kun:'きび(しい)',pt:'severo, rigoroso',en:'strict, severe',mn:'A boca que grita ordens do alto do penhasco.',w:[['厳しい','きびしい','severo / strict'],['厳密','げんみつ','rigoroso / rigorous']]},
+{c:'捨',on:'シャ',kun:'す(てる)',pt:'jogar fora, abandonar',en:'throw away',mn:'扌(mão) + 舎 (cabana) → a mão que deixa para trás.',w:[['捨てる','すてる','jogar fora / throw away'],['取捨','しゅしゃ','seleção, escolher e descartar / selection']]},
+{c:'拾',on:'シュウ',kun:'ひろ(う)',pt:'apanhar do chão',en:'pick up',mn:'扌(mão) + 合 (juntar) → a mão que junta o que caiu.',w:[['拾う','ひろう','apanhar / pick up'],['収拾','しゅうしゅう','pôr ordem / settling']]},
+{c:'誇',on:'コ',kun:'ほこ(る)',pt:'orgulhar-se',en:'take pride',mn:'言 (palavra) + 夸 → falar grande do que se tem.',w:[['誇り','ほこり','orgulho / pride'],['誇張','こちょう','exagero / exaggeration']]},
+{c:'賢',on:'ケン',kun:'かしこ(い)',pt:'sábio, esperto',en:'wise, clever',mn:'臤 + 貝 → quem sabe guardar o que vale.',w:[['賢い','かしこい','inteligente / clever'],['賢明','けんめい','sensato / wise']]},
+{c:'優',on:'ユウ',kun:'やさ(しい)・すぐ(れる)',pt:'gentil; superior',en:'gentle; superior',mn:'亻(pessoa) + 憂 (preocupação) → quem se preocupa com o outro: gentil, e por isso <b>excelente</b>.',w:[['優秀','ゆうしゅう','excelente / outstanding'],['優先','ゆうせん','prioridade / priority']]},
+{c:'劣',on:'レツ',kun:'おと(る)',pt:'ser inferior',en:'be inferior',mn:'少 (pouco) + 力 (força) → pouca força: fica atrás.',w:[['劣る','おとる','ser inferior / be inferior'],['劣悪','れつあく','péssimo / inferior']]},
+{c:'秀',on:'シュウ',kun:'ひい(でる)',pt:'sobressair',en:'excel',mn:'禾 (espiga) + 乃 → a espiga que cresce acima das outras.',w:[['優秀','ゆうしゅう','excelente / outstanding'],['秀才','しゅうさい','pessoa brilhante / bright person']]},
+{c:'脱',on:'ダツ',kun:'ぬ(ぐ)',pt:'tirar (roupa); escapar',en:'take off; escape',mn:'月 (carne) + 兌 → sair de dentro da própria casca.',w:[['脱ぐ','ぬぐ','tirar (roupa) / take off'],['脱出','だっしゅつ','fuga / escape']]},
+{c:'巡',on:'ジュン',kun:'めぐ(る)',pt:'circular, percorrer',en:'go around, tour',mn:'辶 (caminhar) + 巛 (correntes) → andar em círculo como a água.',w:[['巡る','めぐる','percorrer; girar em torno de / go around'],['一巡','いちじゅん','uma volta / one round']]},
+{c:'訪',on:'ホウ',kun:'たず(ねる)・おとず(れる)',pt:'visitar',en:'visit',mn:'言 (palavra) + 方 (direção) → ir com a palavra na direção de alguém.',w:[['訪問','ほうもん','visita / visit'],['訪れる','おとずれる','visitar; chegar (estação) / visit; arrive']]},
+{c:'迎',on:'ゲイ',kun:'むか(える)',pt:'receber, ir buscar',en:'welcome, meet',mn:'辶 (caminhar) + 卬 → sair ao encontro de quem chega.',w:[['迎える','むかえる','receber / welcome'],['歓迎','かんげい','boas-vindas / welcome']]},
+{c:'遭',on:'ソウ',kun:'あ(う)',pt:'deparar-se (com algo ruim)',en:'encounter (something bad)',mn:'辶 (caminhar) + 曹 → topar com algo no caminho, sem querer.',w:[['遭遇','そうぐう','deparar-se / encounter'],['遭う','あう','sofrer (um acidente) / meet with']]},
+{c:'遇',on:'グウ',kun:'—',pt:'encontro; tratamento',en:'encounter; treatment',mn:'辶 (caminhar) + 禺 → o encontro que acontece pelo caminho.',w:[['待遇','たいぐう','tratamento, condições / treatment'],['遭遇','そうぐう','deparar-se / encounter']]},
+{c:'誉',on:'ヨ',kun:'ほま(れ)',pt:'honra, glória',en:'honour',mn:'与 + 言 (palavra) → a palavra que se dá a alguém em reconhecimento.',w:[['名誉','めいよ','honra / honour'],['栄誉','えいよ','glória / glory']]},
+{c:'匿',on:'トク',kun:'—',pt:'esconder',en:'conceal',mn:'匚 (caixa) + 若 → guardar dentro da caixa, fora da vista.',w:[['匿名','とくめい','anonimato / anonymity'],['隠匿','いんとく','ocultação / concealment']]},
+{c:'隠',on:'イン',kun:'かく(す)',pt:'esconder',en:'hide',mn:'阝(monte) + 㥯 → esconder-se atrás do morro.',w:[['隠す','かくす','esconder / hide'],['隠れる','かくれる','esconder-se / hide (oneself)']]},
+{c:'魅',on:'ミ',kun:'—',pt:'encantar, fascinar',en:'charm, fascinate',mn:'鬼 (espírito) + 未 → o encanto que enfeitiça.',w:[['魅力','みりょく','charme, atrativo / appeal'],['魅了','みりょう','fascínio / fascination']]},
+{c:'惑',on:'ワク',kun:'まど(う)',pt:'confundir, perturbar',en:'bewilder',mn:'或 (talvez) + 心 (coração) → o coração indeciso.',w:[['迷惑','めいわく','incômodo / nuisance'],['誘惑','ゆうわく','tentação / temptation']]}
+];
+const EN_KMN_B4={
+'雇':'戸 (door) + 隹 (bird) → the bird that comes in the door and starts working there.',
+'就':'京 (capital) + 尤 → going to the capital and taking up the post.',
+'勤':'堇 + 力 (strength) → putting your strength into the same place every day.',
+'僚':'亻(person) + 尞 → the people who work side by side.',
+'隊':'阝(hill) + 㒸 → the group coming down the slope in formation.',
+'兵':'斤 (axe) + 廾 (two hands) → the one who grips the weapon with both hands.',
+'攻':'工 (work) + 攵 (strike) → working by striking: the attack.',
+'守':'宀 (roof) + 寸 (hand) → the hand that guards the house.',
+'防':'阝(wall) + 方 → the wall raised on one side.',
+'争':'Two hands pulling the same thing in opposite directions.',
+'敗':'貝 (shell) + 攵 (strike) → the shell broken by the blow.',
+'威':'戈 (halberd) + 女 → the force that commands respect.',
+'脅':'劦 (forces) + 月 (flesh) → pressure squeezing the body.',
+'奪':'大 + 隹 (bird) + 寸 (hand) → tearing the bird out of someone\u2019s hand.',
+'襲':'龍 (dragon) + 衣 (garment) → the dragon coming down on you.',
+'撃':'軍 (army) + 手 (hand) → the army\u2019s hand delivering the blow.',
+'抵':'扌(hand) + 氐 (low) → the hand pushing back down.',
+'圏':'囗 (enclosure) + 巻 (roll) → the circle drawn around something.',
+'核':'木 (tree) + 亥 → the hard stone inside the fruit.',
+'射':'身 (body) + 寸 (hand) → the body extending a hand and letting fly.',
+'爆':'火 (fire) + 暴 (violent) → violent fire.',
+'検':'木 (wood) + 僉 → checking the boards one by one.',
+'査':'木 (wood) + 且 → measuring the stacked timber.',
+'審':'宀 (roof) + 番 → examining under the roof of the court.',
+'証':'言 (words) + 正 (correct) → the word that proves it.',
+'拠':'扌(hand) + 処 → what the hand rests on.',
+'疑':'匕 + 矢 + 疋 → someone halted, unsure which way to go: doubt.',
+'誠':'言 (words) + 成 (accomplish) → the word that is carried out.',
+'純':'糸 (thread) + 屯 → thread of a single colour, unmixed.',
+'単':'A single-pronged fork, with no branches.',
+'複':'衤(clothing) + 复 → layers of clothing over one another.',
+'程':'禾 (grain) + 呈 → measuring the harvest: the <b>degree</b>.',
+'限':'阝(wall) + 艮 → the wall that marks how far it goes.',
+'割':'害 + 刂 (blade) → cutting into parts. 一割 = one tenth.',
+'率':'A cord with knots on both sides: the counted proportion.',
+'比':'Two people side by side, one measured against the other.',
+'倍':'亻(person) + 咅 → one person plus another: double.',
+'総':'糸 (thread) + 忩 → all the threads gathered into one.',
+'量':'旦 + 里 → weighing the load on the scales.',
+'容':'宀 (roof) + 谷 (valley) → the space that fits under the roof.',
+'積':'禾 (grain) + 責 → stacking up the harvest.',
+'密':'宀 (roof) + 必 + 山 → hidden and packed tight under the mountain roof.',
+'簡':'竹 (bamboo) + 間 → the short bamboo strip on which only the essentials were written.',
+'潔':'氵(water) + 絜 → washed until no stain is left.',
+'厳':'A mouth shouting orders from the top of the cliff.',
+'捨':'扌(hand) + 舎 (hut) → the hand that leaves it behind.',
+'拾':'扌(hand) + 合 (join) → the hand gathering up what has fallen.',
+'誇':'言 (words) + 夸 → speaking big about what you have.',
+'賢':'臤 + 貝 → the one who knows how to keep what is valuable.',
+'優':'亻(person) + 憂 (concern) → one who worries about others: gentle, and therefore <b>outstanding</b>.',
+'劣':'少 (few) + 力 (strength) → little strength: it falls behind.',
+'秀':'禾 (grain) + 乃 → the ear of grain that grows above the rest.',
+'脱':'月 (flesh) + 兌 → coming out of your own shell.',
+'巡':'辶 (walk) + 巛 (currents) → moving in a circle like water.',
+'訪':'言 (words) + 方 (direction) → going with your words in someone\u2019s direction.',
+'迎':'辶 (walk) + 卬 → going out to meet the one arriving.',
+'遭':'辶 (walk) + 曹 → running into something on the road, unintentionally.',
+'遇':'辶 (walk) + 禺 → the meeting that happens along the way.',
+'誉':'与 + 言 (words) → the word given to someone in recognition.',
+'匿':'匚 (box) + 若 → keeping it inside the box, out of sight.',
+'隠':'阝(hill) + 㥯 → hiding behind the rise.',
+'魅':'鬼 (spirit) + 未 → the charm that bewitches.',
+'惑':'或 (perhaps) + 心 (heart) → the heart that cannot decide.'
+};
 
 /* ═══ N2+ 上級語彙 · 複合動詞・慣用句・抽象名詞・硬い副詞 ═══ */
 const VOCAB_N2H=[
@@ -2971,15 +3399,28 @@ const T={
  msDone:{pt:'Caderno de erros: # revistos',en:'Mistake notebook: # reviewed'},
  msHome:{pt:'誤答ノート · # em aberto',en:'誤答ノート · # open'},
  mgToday:{pt:'今日の一句',en:'今日の一句'},
- mgNote:{pt:'Por que isto importa',en:'Why this matters'},copyB:{pt:'Copie:',en:'Copy this:'}
+ mgNote:{pt:'Por que isto importa',en:'Why this matters'},
+ d50T:{pt:'今日の50問',en:'今日の50問'},
+ d50Sub:{pt:'Um conjunto novo todo dia, montado às 4h. Questões inéditas primeiro, depois as que você errou.',
+         en:'A fresh set every day, dealt at 4am. Unseen questions first, then the ones you got wrong.'},
+ d50Go:{pt:'Continuar — # restantes',en:'Continue — # to go'},
+ d50New:{pt:'Começar as 50 de hoje',en:'Start today\'s 50'},
+ d50Done:{pt:'As 50 de hoje estão feitas.',en:'Today\'s 50 are done.'},
+ d50Again:{pt:'Refazer o conjunto de hoje',en:'Run today\'s set again'},
+ d50Mix:{pt:'# inéditas · # revisões · # erros seus',en:'# unseen · # review · # your misses'},
+ d50Score:{pt:'Acertos de hoje: #/#',en:'Today: #/# correct'},
+ d50Home:{pt:'今日の50問 · #/50',en:'今日の50問 · #/50'},copyB:{pt:'Copie:',en:'Copy this:'}
 };
 function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.replace('#',v));return s;}
 
 /* ═══════════════ 状態管理 ═══════════════ */
 const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossWins:0,
-           mondaiSeen:{},lang:'pt',levels:{y:true,v:true,w:true,x:true},glevels:{g:true,h:true,e:true,j:true,c:true,p:true}};
+           mondaiSeen:{},lang:'pt',levels:{y:true,v:true,w:true,x:true},glevels:{g:true,h:true,e:true,j:true,c:true,p:true},d50:null};
 let S=JSON.parse(JSON.stringify(DEF));
 const KEY='n2sprint:v2';
+/* APPEND ONLY — the original 66 keep indices 0-65, so every k-record stays valid */
+KANJI.push(...KANJI_B1,...KANJI_B2,...KANJI_B3,...KANJI_B4);
+Object.assign(EN_KMN,EN_KMN_B1,EN_KMN_B2,EN_KMN_B3,EN_KMN_B4);
 Object.assign(EN_GTRAP,EN_G3TRAP);Object.assign(EN_GTX,EN_G3TX);
 /* the four expression decks carry [translation, note] pairs — fold them into the same lookup */
 [EN_KEIGO,EN_JITA,EN_SETSU,EN_JOSHI].forEach(o=>Object.entries(o).forEach(([k,[tx,trap]])=>{
@@ -3026,9 +3467,12 @@ const GEN=[],GEN_EN=[];
 const _SEEN=new Set([...MONDAI,...MONDAI_N3,...MONDAI_READ,...MONDAI_R2,...MONDAI_MOJI,
   ...MONDAI_GOI,...MONDAI_BUNPO2,...MONDAI_RUIGI2,...MONDAI_R3A,...MONDAI_R3B,
   ...MONDAI_R3C,...MONDAI_R3D,...MONDAI_R3E].map(q=>q.q));
+function _hash(s){let x=5381;for(let i=0;i<s.length;i++)x=((x*33)^s.charCodeAt(i))>>>0;return x.toString(36);}
 function _add(item,en){
   if(_SEEN.has(item.q))return;
-  _SEEN.add(item.q);GEN.push(item);GEN_EN.push(en);}
+  _SEEN.add(item.q);
+  item.id='q'+_hash(item.q+'|'+item.o[item.a]);   /* stable across future additions */
+  GEN.push(item);GEN_EN.push(en);}
 
 /* ── ① 漢字の読み（KANJIの熟語から） ── */
 KANJI.forEach((k,ki)=>k.w.forEach(([word,read,gloss],wi)=>{
@@ -3130,10 +3574,108 @@ Object.entries(_BASE).forEach(([base,kinds],bi)=>{
   });
 });
 
+/* ── ⑤ 助詞の選択（カードの例文から、答えが一意に決まるものだけ） ── */
+const _PARTS=['に','で','を','が','は','と','へ','から','まで','ばかり','だけ','しか','さえ','ほど'];
+JOSHI.forEach((p,pi)=>{
+  p.ex.split('／').map(s=>s.trim()).forEach((sent,hi)=>{
+    if(!sent||sent.length<6)return;
+    /* 見出しに出ている助詞のうち、この文に実際にあるものだけを抜く */
+    const cands=p.g.replace(/[（）()]/g,'').split(/[\/／]/).map(s=>s.trim())
+      .filter(s=>_PARTS.includes(s)&&sent.includes(s));
+    if(cands.length!==1)return;
+    const ans=cands[0];
+    const idx=sent.indexOf(ans);
+    if(idx<1)return;
+    const q=sent.slice(0,idx)+'（　）'+sent.slice(idx+ans.length);
+    const seed=pi*53+hi;
+    const wrong=_pick(_PARTS.filter(x=>x!==ans&&!sent.includes(x)),3,seed);
+    if(wrong.length<3)return;
+    const opts=[ans,...wrong];
+    if(new Set(opts).size<4)return;
+    const a=Math.floor(_rng(seed+2)*4);
+    [opts[0],opts[a]]=[opts[a],opts[0]];
+    _add({s:'文法',q,o:opts,a,
+      ex:'正解は<b>'+ans+'</b>。'+p.trap.replace(/<[^>]+>/g,'')},
+     'The answer is <b>'+ans+'</b>. '+(EN_JOSHI[p.g]?EN_JOSHI[p.g][1].replace(/<[^>]+>/g,''):''));
+  });
+});
+
+/* ── ⑥ 自他動詞の助詞選択（動詞が決まれば助詞は一意） ── */
+JITA.forEach((p,pi)=>{
+  if(_JSKIP.has(p.g))return;
+  const [tv,iv]=p.g.split(' / ').map(s=>s.trim());
+  p.ex.split('／').map(s=>s.trim()).forEach((sent,hi)=>{
+    const verb=hi===0?tv:iv, par=hi===0?'を':'が';
+    const m=sent.match(new RegExp('^(.+?)'+par+'(.*)。$'));
+    if(!m)return;
+    const seed=pi*71+hi;
+    const wrong=_pick(['に','で','は','へ','から','も'].filter(x=>x!==par),3,seed);
+    if(wrong.length<3)return;
+    const opts=[par,...wrong];
+    const a=Math.floor(_rng(seed+4)*4);
+    [opts[0],opts[a]]=[opts[a],opts[0]];
+    _add({s:'文法',q:m[1]+'（　）'+m[2]+'。',o:opts,a,
+      ex:'<b>'+verb+'</b>は'+(par==='を'?'<b>他動詞</b>なので、対象は<b>を</b>':'<b>自動詞</b>なので、主体は<b>が</b>')+
+         'を取ります。動詞が決まれば助詞は一つに決まります。対は '+p.g+'。'},
+     '<b>'+verb+'</b> is '+(par==='を'?'<b>transitive</b>, so its object takes <b>を</b>':'<b>intransitive</b>, so its subject takes <b>が</b>')+
+     '. Once the verb is fixed, the particle is fixed too. The pair is '+p.g+'.');
+  });
+});
+
+/* ── ⑦ 接続表現の穴埋め ── */
+const _CONN=SETSU.map(s=>s.g.split(/[\/／]/)[0].trim()).filter(s=>!s.includes('～')&&!s.includes('。'));
+SETSU.forEach((s,si)=>{
+  const head=s.g.split(/[\/／]/)[0].trim();
+  if(head.includes('～')||head.includes('。'))return;
+  const idx=s.ex.indexOf(head);
+  if(idx<0)return;
+  const q=s.ex.slice(0,idx)+'（　）'+s.ex.slice(idx+head.length);
+  if(q.length<10)return;
+  const seed=si*89;
+  const wrong=_pick(_CONN.filter(c=>c!==head&&!s.ex.includes(c)),3,seed);
+  if(wrong.length<3)return;
+  const opts=[head,...wrong];
+  if(new Set(opts).size<4)return;
+  const a=Math.floor(_rng(seed+6)*4);
+  [opts[0],opts[a]]=[opts[a],opts[0]];
+  _add({s:'文法',q,o:opts,a,
+    ex:'正解は<b>'+head+'</b>（'+s.pt+'）。'+s.trap.replace(/<[^>]+>/g,'')},
+   'The answer is <b>'+head+'</b> ('+s.en+'). '+(EN_SETSU[s.g]?EN_SETSU[s.g][1].replace(/<[^>]+>/g,''):''));
+});
+
+/* ── ⑧ 敬語を文中で選ぶ ── */
+KEIGO.forEach((k,ki)=>{
+  const head=k.g.split(/[\/／]/)[0].trim();
+  if(head.includes('～')||head.includes('お')&&head.includes('になる')&&head.length<6)return;
+  const stem=head.replace(/る$/,'');
+  const idx=k.ex.indexOf(stem);
+  if(idx<0||stem.length<2)return;
+  const tail=k.ex.slice(idx+stem.length);
+  const q=k.ex.slice(0,idx)+'（　）'+tail;
+  if(q.indexOf('（　）')<2)return;
+  const seed=ki*101;
+  const kind=/尊敬/.test(k.f)?'尊敬語':/謙譲/.test(k.f)?'謙譲語':null;
+  if(!kind)return;
+  const base=(k.f.match(/^(.+?)\s*の/)||[])[1]||'';
+  const alt=[];KEIGO.forEach(o=>{if(base&&o.f.includes(base))alt.push(o.g.split(/[\/／]/)[0].trim());});
+  const wrong=_pick(_ALLK.filter(x=>x!==head&&!alt.includes(x)&&!x.includes('～')),3,seed);
+  if(wrong.length<3)return;
+  const opts=[stem,...wrong.map(w=>w.replace(/る$/,''))];
+  if(new Set(opts).size<4)return;
+  const a=Math.floor(_rng(seed+8)*4);
+  [opts[0],opts[a]]=[opts[a],opts[0]];
+  _add({s:'文法',q,o:opts,a,
+    ex:'<b>'+head+'</b>（'+k.f+'）。'+k.trap.replace(/<[^>]+>/g,'')},
+   '<b>'+head+'</b> — '+(EN_KEIGO[k.g]?EN_KEIGO[k.g][1].replace(/<[^>]+>/g,''):k.en));
+});
+
 MONDAI.push(...MONDAI_N3,...MONDAI_READ,...MONDAI_R2,...MONDAI_MOJI,...MONDAI_GOI,...MONDAI_BUNPO2,...MONDAI_RUIGI2,...MONDAI_R3A,...MONDAI_R3B,...MONDAI_R3C,...MONDAI_R3D,...MONDAI_R3E,...GEN);
 EN_MEX.push(...EN_MEX_N3,...EN_MEX_READ,...EN_MEX_R2,...EN_MEX_MOJI,...EN_MEX_GOI,...EN_MEX_BUNPO2,...EN_MEX_RUIGI2,...EN_MEX_R3A,...EN_MEX_R3B,...EN_MEX_R3C,...EN_MEX_R3D,...EN_MEX_R3E,...GEN_EN);
 /* Kill answer-position bias: every item gets a fixed rotation of its options.
    Deterministic, so the layout is stable across sessions, and question indices never move. */
+const QKEY=q=>q.id||('m'+MONDAI.indexOf(q));
+const QBYKEY={};
+MONDAI.forEach((q,i)=>{QBYKEY[q.id||('m'+i)]=i;});
 MONDAI.forEach((q,i)=>{const n=q.o.length,r=((i*7)+3)%n;
   q.o=q.o.slice(r).concat(q.o.slice(0,r));q.a=(q.a-r+n)%n;});
 const POOL={k:KANJI,v:VOCAB,w:VOCAB_N3,x:VOCAB_N4,y:VOCAB_N2H,
@@ -3190,7 +3732,8 @@ function openMistakes(){
   Object.entries(S.srs).forEach(([k,c])=>{
     if(!isOpen(c))return;
     const p=k[0],i=+k.slice(1);
-    if(p==='m'){if(MONDAI[i])out.q.push({k,c,i});}
+    if(p==='m'&&/^m\d+$/.test(k)){if(MONDAI[i])out.q.push({k,c,i});}
+    else if(p==='q'&&QBYKEY[k]!==undefined){out.q.push({k,c,i:QBYKEY[k]});}
     else if(p==='t'){if(TRAPS[i])out.trap.push({k,c,i});}
     else if(POOL[p]&&POOL[p][i])out.card.push({k,c,i,pool:p});});
   const w=x=>-(x.c.miss*10+(x.c.last?1:0));
@@ -3284,6 +3827,17 @@ function renderHome(){
     <div class="counter"><span>${L('mToday')}</span><span>${done}/${ms.length}</span></div>
     <div class="hp"><i style="width:${done/ms.length*100}%"></i></div>
   </div>
+  ${(()=>{const st=d50State(),left=st.ids.length-st.pos,pct=st.pos/st.ids.length*100;
+    return `<div class="d50">
+      <h2>${L('d50T')}</h2>
+      <div class="big" style="margin:10px 0 2px">${st.pos}<small> / ${st.ids.length}</small></div>
+      <div class="hp" style="margin-top:8px"><i style="width:${pct}%"></i></div>
+      <div class="mix">${L('d50Mix',st.fresh,st.due,st.open)}</div>
+      ${st.pos>0?`<div class="mix">${L('d50Score',st.ok,st.pos)}</div>`:''}
+      <p class="muted" style="margin:10px 0 12px;font-size:12.5px">${L('d50Sub')}</p>
+      ${left>0?`<button class="btn teal" id="d50Btn">${st.pos>0?L('d50Go',left):L('d50New')}</button>`
+             :`<button class="btn ghost sm" id="d50Btn">${L('d50Again')}</button>`}
+    </div>`;})()}
   <div class="card">${ms.map((m,i)=>`
     <div class="mission ${m.n>=m.g?'done':''}" data-i="${i}">
       <div class="mbox">${m.n>=m.g?'✓':''}</div>
@@ -3305,6 +3859,8 @@ function renderHome(){
   document.querySelectorAll('#v-home .mission').forEach(el=>el.onclick=()=>ms[+el.dataset.i].go());
   const rb=document.getElementById('revBtn');if(rb)rb.onclick=()=>{nav('dojo');startReview();};
   const mb=document.getElementById('missBtn');if(mb)mb.onclick=()=>nav('miss');
+  const db=document.getElementById('d50Btn');
+  if(db)db.onclick=()=>startDaily(d50State().pos>=d50State().ids.length);
 }
 function greet(){const h=new Date().getHours();
   return h<11?'おはよう、Roberto。':h<18?'こんにちは、Roberto。':'こんばんは、Roberto。';}
@@ -3524,13 +4080,15 @@ function drawQ(){
 function answer(k){
   const {q,i}=mo.q[mo.idx],ok=k===q.a;
   S.mondaiSeen[i]=(S.mondaiSeen[i]||0)+1;
-  grade('m'+i,ok,ok?undefined:k);
+  grade(q.id||('m'+i),ok,ok?undefined:k);
   if(ok){mo.ok++;addXP(6);}else if(mo.boss)mo.hp--;
   document.querySelectorAll('#opts .opt').forEach(b=>{b.disabled=true;const n=+b.dataset.k;
     if(n===q.a)b.classList.add('right');else if(n===k)b.classList.add('wrong');});
   document.getElementById('ex').innerHTML=`
     <div class="explain"><h4>${ok?L('right'):L('wrong')}</h4>${S.lang==='pt'?q.ex:EN_MEX[i]}</div>
     <button class="btn shu" id="nx" style="margin-top:12px">${mo.idx+1>=mo.q.length?L('result'):L('next')}</button>`;
+  if(mo.from==='d50'&&S.d50){S.d50.pos=Math.min(S.d50.pos+1,S.d50.ids.length);
+    if(ok)S.d50.ok++;save();if(cur==='home')renderHome();}
   document.getElementById('nx').onclick=()=>{mo.idx++;bump('m');if(q.s==='読解')bump('r');drawQ();};
   document.getElementById('ex').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
@@ -3549,8 +4107,10 @@ function endM(){
   <button class="btn shu" id="again">${L('again')}</button>
   <button class="btn ghost sm" id="back" style="margin-top:10px">${L('back')}</button>`;
   mo=null;
-  document.getElementById('again').onclick=()=>from==='miss'?startMissQuiz():startMondai();
-  document.getElementById('back').onclick=()=>from==='miss'?nav('miss'):renderMondai();
+  document.getElementById('again').onclick=()=>from==='miss'?startMissQuiz()
+    :from==='d50'?startDaily(false):startMondai();
+  document.getElementById('back').onclick=()=>from==='miss'?nav('miss')
+    :from==='d50'?nav('home'):renderMondai();
   paintTop();
 }
 
@@ -3613,6 +4173,46 @@ function listTraps(){
   <button class="btn ghost sm" onclick="renderTrap()">${L('back')}</button>`;
 }
 
+/* ═══════════════ 今日の50問 ═══════════════ */
+const D50=50;
+/* the day flips at 04:00, so a late-night session still counts as the same day */
+function studyDay(){const d=new Date(Date.now()-4*3600*1000);return d.toISOString().slice(0,10);}
+function _dseed(){const d=studyDay();let x=0;for(let i=0;i<d.length;i++)x=((x*31)+d.charCodeAt(i))>>>0;return x;}
+/* 60% never seen · 25% seen-and-passed (spaced review) · 15% still open in the notebook */
+function dailySet(){
+  const seed=_dseed(),t=today();
+  const open=[],due=[],fresh=[];
+  MONDAI.forEach((q,i)=>{
+    const c=S.srs[q.id||('m'+i)];
+    if(!c){fresh.push(i);return;}
+    if(isOpen(c)){open.push(i);return;}
+    if(!c.due||c.due<=t)due.push(i);});
+  const take=(arr,n,salt)=>{
+    const a=arr.slice().sort((x,y)=>_rng(seed+salt+x)-_rng(seed+salt+y));
+    return a.slice(0,n);};
+  let pick=[...take(open,Math.round(D50*0.15),11),
+            ...take(due,Math.round(D50*0.25),29),
+            ...take(fresh,D50,7)];
+  pick=[...new Set(pick)].slice(0,D50);
+  if(pick.length<D50){                       /* bank exhausted: top up with anything */
+    const rest=MONDAI.map((q,i)=>i).filter(i=>!pick.includes(i));
+    pick=pick.concat(take(rest,D50-pick.length,53));}
+  return {ids:pick.sort((a,b)=>_rng(seed+a)-_rng(seed+b)),
+          open:open.length,due:due.length,fresh:fresh.length};
+}
+function d50State(){
+  const d=studyDay();
+  if(!S.d50||S.d50.day!==d){const s=dailySet();
+    S.d50={day:d,ids:s.ids,pos:0,ok:0,open:s.open,due:s.due,fresh:s.fresh};save();}
+  return S.d50;
+}
+function startDaily(reset){
+  const st=d50State();
+  if(reset){st.pos=0;st.ok=0;save();}
+  if(st.pos>=st.ids.length){toast(L('d50Done'));return;}
+  const q=st.ids.slice(st.pos).map(i=>({q:MONDAI[i],i}));
+  mo={q,idx:0,ok:0,boss:false,from:'d50'};nav('mondai');drawQ();
+}
 /* ═══════════════ 誤答ノート ═══════════════ */
 function renderMiss(){
   if(deck||mo||tr)return;
