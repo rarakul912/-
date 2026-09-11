@@ -3457,6 +3457,22 @@ function _variants(r){
     if('んう'.includes(c))v.add(r.slice(0,i)+(c==='ん'?'う':'ん')+r.slice(i+1));}
   v.delete(r);return [...v];
 }
+/* small ゃゅょ only follow the い-row; っ never starts or ends a reading */
+const _YOUON=new Set(['き','し','ち','に','ひ','み','り','ぎ','じ','ぢ','び','ぴ']);
+function _kanaOK(s){
+  for(let i=0;i<s.length;i++){
+    if('ゃゅょ'.includes(s[i])&&!_YOUON.has(s[i-1]))return false;
+    if(s[i]==='っ'&&(i===0||i===s.length-1))return false;
+    if(s[i]==='ん'&&i===0)return false;}
+  return true;
+}
+function _dist(a,b){
+  const m=a.length,n=b.length,d=Array.from({length:m+1},(_,i)=>[i,...Array(n).fill(0)]);
+  for(let j=0;j<=n;j++)d[0][j]=j;
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return d[m][n];
+}
 const _REAL=new Set();                     /* 実在する読みは誤答に使わない */
 KANJI.forEach(k=>k.w.forEach(w=>_REAL.add(w[1])));
 [...VOCAB,...VOCAB_N3,...VOCAB_N4,...VOCAB_N2H].forEach(v=>_REAL.add(v.w));
@@ -3477,9 +3493,14 @@ function _add(item,en){
 /* ── ① 漢字の読み（KANJIの熟語から） ── */
 KANJI.forEach((k,ki)=>k.w.forEach(([word,read,gloss],wi)=>{
   const seed=ki*31+wi;
-  const cand=_variants(read).filter(x=>!_REAL.has(x));
+  const truth=KANJI.flatMap(x=>x.w).filter(x=>x[0]===word).map(x=>x[1]);
+  const near=[..._REAL].filter(x=>Math.abs(x.length-read.length)<=1&&!truth.includes(x));
+  const cand=[...new Set([..._variants(read).filter(x=>!_REAL.has(x)),...near])]
+    .filter(x=>x!==read&&!truth.includes(x)&&_kanaOK(x));
   if(cand.length<3)return;
-  const wrong=_pick(cand,3,seed);
+  const wrong=cand
+    .map(x=>[x,_dist(x,read)*10+(x.length===read.length?0:3)+_rng(seed*13+x.length)])
+    .sort((a,b)=>a[1]-b[1]).slice(0,3).map(x=>x[0]);
   if(wrong.length<3)return;
   const opts=[read,...wrong];
   const a=Math.floor(_rng(seed+7)*4);
@@ -3497,7 +3518,11 @@ JITA.forEach((p,pi)=>{
   const [tv,iv]=p.g.split(' / ').map(s=>s.trim());
   const halves=p.ex.split('／').map(s=>s.trim());
   if(halves.length<2)return;
-  const other=JITA[(pi+7)%JITA.length].g.split(' / ').map(s=>s.trim());
+  const shape=s=>s.slice(-2);
+  const twin=JITA.filter((o,oi)=>oi!==pi&&shape(o.g.split(' / ')[0])===shape(tv))[0]
+           ||JITA.filter((o,oi)=>oi!==pi&&o.g.split(' / ')[1].trim().slice(-1)===iv.slice(-1))[0]
+           ||JITA[(pi+7)%JITA.length];
+  const other=twin.g.split(' / ').map(s=>s.trim());
   [[halves[0],'を',tv],[halves[1],'が',iv]].forEach(([sent,par,ans],hi)=>{
     const m=sent.match(new RegExp('^(.+?)'+par));
     if(!m)return;
@@ -3528,9 +3553,11 @@ Object.entries(_BASE).forEach(([base,kinds],bi)=>{
   ['尊敬語','謙譲語'].forEach((kind,ki)=>{
     const right=kinds[kind];if(!right.length)return;
     const ans=right[0];
-    const banned=[...kinds.尊敬語,...kinds.謙譲語];       /* 別解を誤答に混ぜない */
     const seed=bi*23+ki;
-    const wrong=_pick(_ALLK.filter(x=>!banned.includes(x)),3,seed);
+    const banned=right;
+    const opposite=(kinds[kind==='尊敬語'?'謙譲語':'尊敬語']||[]).filter(x=>!banned.includes(x));
+    const rest=_pick(_ALLK.filter(x=>!banned.includes(x)&&!opposite.includes(x)),3,seed);
+    const wrong=[...opposite,...rest].slice(0,3);
     if(wrong.length<3)return;
     const opts=[ans,...wrong];
     const a=Math.floor(_rng(seed+5)*4);
@@ -3562,7 +3589,20 @@ Object.entries(_BASE).forEach(([base,kinds],bi)=>{
     const pool=deck.filter(o=>o!==v)
       .map(o=>(o.ex.includes(o.w)?o.w:o.r))
       .filter(s=>s&&s.length>=2&&cls(s)===tc&&!q.includes(s));
-    const wrong=_pick(pool.filter(x=>x&&x!==target&&x.length>=2),3,seed,[target]);
+    const toks=s=>new Set(String(s).toLowerCase().replace(/[(),;.]/g,' ').split(/\s+/).filter(w=>w.length>3));
+    const at=toks(v.pt+' '+v.en);
+    const score=s=>{const o=deck.find(d=>(d.ex.includes(d.w)?d.w:d.r)===s);
+      if(!o)return 0;
+      const ot=toks(o.pt+' '+o.en);
+      let shared=0;ot.forEach(w=>{if(at.has(w))shared++;});
+      if(shared>=Math.min(at.size,ot.size)&&shared>0)return -1;
+      return shared*4+(s.length===target.length?2:0);};
+    const jitter=s=>{let x=seed;for(let i=0;i<s.length;i++)x=((x*33)^s.charCodeAt(i))>>>0;
+      return _rng(x)*3;};                       /* same word, different question → different rank */
+    const ranked=pool.filter(x=>x&&x!==target&&x.length>=2)
+      .map(x=>[x,score(x)+jitter(x)]).filter(x=>x[1]>=0)
+      .sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
+    const wrong=[...new Set(ranked)].slice(0,3);
     if(wrong.length<3)return;
     const opts=[target,...wrong];
     if(new Set(opts).size<4)return;
