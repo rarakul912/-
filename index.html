@@ -1296,6 +1296,285 @@ const EN_KMN_B4={
 '惑':'或 (perhaps) + 心 (heart) → the heart that cannot decide.'
 };
 
+const GRAMMAR_REQ=[
+{g:'～につき',f:'N + につき',pt:'por causa de; por unidade de',en:'due to; per',ex:'工事中につき、通行止めです。',tx:'Por estar em obras, a passagem está fechada.',
+ trap:'⚠ Dois sentidos distintos. Em <b>avisos</b> = causa (formal, escrito). Com <b>número</b> = "por": 一人につき二枚 (duas folhas por pessoa). O contexto decide; a forma é idêntica.'},
+{g:'～を問わず',f:'N + を問わず',pt:'independentemente de',en:'regardless of',ex:'経験の有無を問わず応募できます。',tx:'Pode candidatar-se com ou sem experiência.',
+ trap:'Usa-se com substantivos que formam <b>par ou escala</b>: 年齢・性別・経験の有無・昼夜. Não combina com um único item isolado.'},
+{g:'～に限り',f:'N + に限り',pt:'somente no caso de (concessão)',en:'only in the case of',ex:'先着百名に限り割引いたします。',tx:'Desconto apenas para os cem primeiros.',
+ trap:'⚠ Não confunda com に限って (ironia) nem に限る (nada melhor que). に限り é <b>linguagem de aviso</b> e concede um benefício a um grupo restrito.'},
+{g:'～に限って～ない',f:'N + に限って + 否定',pt:'justo esse não',en:'that one in particular does not',ex:'うちの子に限って、嘘はつきません。',tx:'Meu filho, justamente ele, não mentiria.',
+ trap:'⚠ Expressa <b>confiança pessoal</b> num caso específico, sempre com negativa. É diferente do に限って de azar (急いでいる時に限って), que vem com afirmativa.'},
+{g:'～にかかわらず',f:'N / V辞書形＋V ない形 + にかかわらず',pt:'independentemente de',en:'regardless of',ex:'天候にかかわらず、決行します。',tx:'Vai acontecer, faça chuva ou faça sol.',
+ trap:'⚠ Distinga de <b>にもかかわらず</b> (apesar de, contraste real). かかわらず = a variável não importa; もかかわらず = o obstáculo existia e mesmo assim.'},
+{g:'～以来',f:'N / V て形 + 以来',pt:'desde (que)',en:'ever since',ex:'卒業して以来、彼には会っていない。',tx:'Desde que me formei, não o vejo.',
+ trap:'⚠ Só para um ponto do <b>passado</b> cuja situação continua até agora. Nunca com futuro, e nunca com um período curto: 「昨日以来」soa estranho.'},
+{g:'～をはじめ',f:'N + をはじめ(として)',pt:'a começar por, entre os quais',en:'starting with, including',ex:'社長をはじめ、全社員が出席した。',tx:'A começar pelo presidente, todos os funcionários compareceram.',
+ trap:'O substantivo citado é o <b>exemplo mais representativo</b> de um grupo maior. Se não houver grupo depois, a frase fica incompleta.'},
+{g:'～のもとで / のもとに',f:'N + のもとで / のもとに',pt:'sob (orientação, condição)',en:'under (guidance, conditions)',ex:'先生のもとで研究を続けた。',tx:'Continuei a pesquisa sob a orientação do professor.',
+ trap:'<b>のもとで</b> = sob a supervisão de alguém (lugar/pessoa). <b>のもとに</b> = sob uma condição ou premissa: 合意のもとに.'},
+{g:'～はもとより',f:'N + はもとより',pt:'não só... como é óbvio',en:'not only... but of course also',ex:'漢字はもとより、ひらがなも苦手だ。',tx:'Kanji nem se fala, ele tem dificuldade até com hiragana.',
+ trap:'Mais forte que だけでなく: o primeiro item é tão evidente que <b>nem precisaria ser dito</b>. Registro escrito; em fala use もちろん.'},
+{g:'～からには',f:'普通形 + からには',pt:'já que (então naturalmente)',en:'now that, since',ex:'引き受けたからには、最後までやる。',tx:'Já que aceitei, vou até o fim.',
+ trap:'⚠ A segunda oração <b>tem de</b> trazer determinação ou dever: べきだ・つもりだ・なければならない. Um fato neutro depois soa errado.'},
+{g:'～ことなく',f:'V辞書形 + ことなく',pt:'sem (jamais)',en:'without ever',ex:'一度も休むことなく通い続けた。',tx:'Continuei indo sem faltar uma única vez.',
+ trap:'Versão <b>escrita</b> de ～ないで. Combina com advérbios de totalidade: 一度も・少しも・最後まで.'},
+{g:'～にもかかわらず',f:'普通形 / N + にもかかわらず',pt:'apesar de',en:'in spite of',ex:'大雨にもかかわらず、多くの人が集まった。',tx:'Apesar da chuva forte, muita gente compareceu.',
+ trap:'⚠ Aqui existe um obstáculo <b>real</b> que foi superado. Compare com にかかわらず, onde a variável simplesmente não importa. O も faz toda a diferença.'},
+{g:'～限り',f:'V辞書形 / ている + 限り',pt:'enquanto; até onde',en:'as long as; as far as',ex:'私が知る限り、その話は本当だ。',tx:'Até onde sei, essa história é verdadeira.',
+ trap:'Dois usos: <b>condição contínua</b> (体が動く限り) e <b>limite do conhecimento</b> (見た限り・調べた限り). O segundo é muito usado para se resguardar.'},
+{g:'～というものではない',f:'普通形 + というものではない',pt:'não é que baste',en:'it is not simply that',ex:'安ければいいというものではない。',tx:'Não basta ser barato.',
+ trap:'Rejeita uma ideia <b>simplista</b>. Costuma vir depois de ば ou たら: 「～ばいいというものではない」é o molde completo.'},
+{g:'～はともかく',f:'N + はともかく',pt:'deixando de lado',en:'setting aside',ex:'値段はともかく、味は確かだ。',tx:'Deixando o preço de lado, o sabor é garantido.',
+ trap:'Põe um ponto <b>de lado</b> para focar noutro, sem negá-lo. Diferente de に関わらず, que o declara irrelevante.'},
+{g:'～というより',f:'普通形 + というより',pt:'mais do que... seria',en:'rather than, more like',ex:'冷たいというより、痛いぐらいだ。',tx:'Mais do que frio, chega a doer.',
+ trap:'⚠ Corrige a própria descrição para uma <b>mais precisa</b>. A segunda versão é a que vale — ponto que o N2 testa em 読解.'},
+{g:'～てはいられない',f:'V て形 + はいられない',pt:'não dá para ficar (assim)',en:'cannot afford to stay',ex:'のんびりしてはいられない。',tx:'Não dá para ficar relaxando.',
+ trap:'Urgência: as circunstâncias não permitem continuar no estado atual. Na fala contrai para ～てられない: 休んでられない.'},
+{g:'～から～にかけて',f:'N + から + N + にかけて',pt:'de... a (aproximadamente)',en:'from... through',ex:'夕方から夜にかけて雨が降る。',tx:'Vai chover do fim da tarde até a noite.',
+ trap:'⚠ Limites <b>vagos</b>, ao contrário de から～まで, que é exato. Por isso é o padrão da previsão do tempo e dos noticiários.'},
+{g:'～に伴い / に伴って',f:'N / V辞書形 + に伴い',pt:'acompanhando, à medida que',en:'along with, as',ex:'人口の増加に伴い、住宅が不足している。',tx:'Com o aumento da população, faltam moradias.',
+ trap:'As duas mudanças ocorrem <b>juntas</b>. Registro escrito. Parente de につれて, mas に伴い aceita também eventos pontuais.'},
+{g:'～おそれがある',f:'V辞書形 / Nの + おそれがある',pt:'há risco de',en:'there is a danger that',ex:'台風が上陸するおそれがあります。',tx:'Há risco de o tufão atingir a costa.',
+ trap:'⚠ Só para coisas <b>ruins</b>, e é linguagem de notícia e aviso oficial. Para possibilidade neutra use かもしれない.'},
+{g:'～とともに',f:'N / V辞書形 + とともに',pt:'junto com; à medida que',en:'together with; as',ex:'年を取るとともに、体力が落ちる。',tx:'À medida que envelhecemos, a energia cai.',
+ trap:'Três leituras: companhia (家族とともに), simultaneidade (卒業とともに), e mudança paralela. O verbo seguinte decide qual.'},
+{g:'～きり',f:'V た形 + きり',pt:'desde então, e nada mais',en:'and that was the last of it',ex:'彼とは去年会ったきりだ。',tx:'Desde o ano passado não o vejo mais.',
+ trap:'⚠ Implica que <b>o esperado não aconteceu</b>. 出かけたきり帰らない = saiu e não voltou. Também 二人きり (só nós dois).'},
+{g:'～どころではない',f:'N / V辞書形 + どころではない',pt:'não é hora de',en:'this is no time for',ex:'忙しくて、旅行どころではない。',tx:'Estou tão ocupado que nem dá para pensar em viajar.',
+ trap:'⚠ Não confunda com どころか (inverte a expectativa). どころではない diz que as <b>circunstâncias não permitem</b>.'},
+{g:'～にしては',f:'普通形 / N + にしては',pt:'para quem/que é',en:'considering that it is',ex:'初めてにしては、よくできている。',tx:'Para uma primeira vez, está muito bom.',
+ trap:'⚠ Compare com わりに: にしては exige um <b>padrão concreto</b> (初めて・新人・子供), わりに aceita qualquer critério. E o resultado sempre contraria a expectativa.'},
+{g:'～ことか',f:'疑問詞 + 普通形 + ことか',pt:'como... (exclamação)',en:'how very...',ex:'この日をどれほど待ったことか。',tx:'Como esperei por este dia.',
+ trap:'Exclamação emotiva; exige um <b>interrogativo</b> antes (どれほど・なんと・どんなに). Registro literário, comum em 読解.'},
+{g:'～さえ～ば',f:'N + さえ + V ば形',pt:'basta que',en:'if only, as long as',ex:'薬さえ飲めば治る。',tx:'Basta tomar o remédio para melhorar.',
+ trap:'⚠ Condição <b>mínima e suficiente</b>. O さえ e o ば andam juntos: separar quebra o sentido. Diferente do さえ de "até mesmo".'},
+{g:'～あげく',f:'V た形 / Nの + あげく',pt:'depois de tanto... acabou que',en:'after all that, in the end',ex:'さんざん迷ったあげく、買わなかった。',tx:'Depois de tanto hesitar, acabei não comprando.',
+ trap:'⚠ O resultado é sempre <b>ruim ou decepcionante</b>, e o processo foi longo. Para resultado neutro use 結果.'},
+{g:'～ものではない',f:'V辞書形 + ものではない',pt:'não se deve (regra social)',en:'one should not',ex:'人前で大声を出すものではない。',tx:'Não se grita em público.',
+ trap:'⚠ Repreensão baseada no <b>bom senso comum</b>, não numa regra escrita. Soa a conselho de adulto para criança — cuidado ao usar com colegas.'}
+];
+const EN_REQ={
+'～につき':['Closed to traffic owing to construction work.','⚠ Two distinct senses. In <b>notices</b> it means cause (formal, written). With a <b>number</b> it means "per": 一人につき二枚 (two sheets per person). Context decides; the form is identical.'],
+'～を問わず':['You may apply whether or not you have experience.','Used with nouns that form a <b>pair or a scale</b>: 年齢・性別・経験の有無・昼夜. It does not work with one isolated item.'],
+'～に限り':['A discount applies to the first hundred people only.','⚠ Do not confuse it with に限って (irony) or に限る (nothing beats). に限り is <b>notice language</b>, granting a benefit to a restricted group.'],
+'～に限って～ない':['My child, of all people, would not lie.','⚠ It expresses <b>personal confidence</b> about one specific case, always with a negative. Different from the unlucky に限って (急いでいる時に限って), which takes an affirmative.'],
+'～にかかわらず':['It goes ahead rain or shine.','⚠ Distinguish it from <b>にもかかわらず</b> (in spite of, a real contrast). かかわらず = the variable does not matter; もかかわらず = the obstacle was there and it happened anyway.'],
+'～以来':['I have not seen him since I graduated.','⚠ Only for a point in the <b>past</b> whose situation continues to now. Never with the future, and never with a short span: 「昨日以来」sounds odd.'],
+'～をはじめ':['Starting with the president, every employee attended.','The noun named is the <b>most representative example</b> of a larger group. With no group following, the sentence is left hanging.'],
+'～のもとで / のもとに':['I carried on my research under the professor.','<b>のもとで</b> = under someone\u2019s supervision (place or person). <b>のもとに</b> = under a condition or premise: 合意のもとに.'],
+'～はもとより':['Kanji goes without saying; he struggles even with hiragana.','Stronger than だけでなく: the first item is so obvious it <b>would not need saying</b>. Written register; in speech use もちろん.'],
+'～からには':['Now that I have taken it on, I will see it through.','⚠ The second clause <b>must</b> carry resolve or obligation: べきだ・つもりだ・なければならない. A neutral fact afterwards sounds wrong.'],
+'～ことなく':['I kept going without missing a single day.','The <b>written</b> version of ～ないで. It pairs with adverbs of totality: 一度も・少しも・最後まで.'],
+'～にもかかわらず':['In spite of the heavy rain, a lot of people turned up.','⚠ Here a <b>real</b> obstacle was overcome. Compare にかかわらず, where the variable simply does not matter. The も makes all the difference.'],
+'～限り':['As far as I know, the story is true.','Two uses: a <b>continuing condition</b> (体が動く限り) and the <b>limit of your knowledge</b> (見た限り・調べた限り). The second is a common way of hedging.'],
+'～というものではない':['It is not enough for it just to be cheap.','It rejects an <b>oversimplified</b> idea. It usually follows ば or たら: 「～ばいいというものではない」is the full mould.'],
+'～はともかく':['Price aside, the taste is beyond doubt.','It sets a point <b>aside</b> to focus on another, without denying it. Different from に関わらず, which declares it irrelevant.'],
+'～というより':['More than cold, it is almost painful.','⚠ It corrects the writer\u2019s own description to a <b>more accurate</b> one. The second version is the one that counts — a point N2 tests in reading.'],
+'～てはいられない':['I cannot afford to take it easy.','Urgency: circumstances will not let the current state continue. In speech it contracts to ～てられない: 休んでられない.'],
+'～から～にかけて':['It will rain from late afternoon through the evening.','⚠ The boundaries are <b>vague</b>, unlike から～まで, which is exact. That is why it is the standard of weather forecasts and news bulletins.'],
+'～に伴い / に伴って':['As the population grows, housing runs short.','The two changes happen <b>together</b>. Written register. A relative of につれて, but に伴い also accepts one-off events.'],
+'～おそれがある':['There is a risk the typhoon will make landfall.','⚠ Only for <b>bad</b> outcomes, and it is the language of news and official warnings. For a neutral possibility use かもしれない.'],
+'～とともに':['As we age, our stamina drops.','Three readings: company (家族とともに), simultaneity (卒業とともに), and parallel change. The following verb tells you which.'],
+'～きり':['I have not seen him since last year.','⚠ It implies that <b>what you expected never happened</b>. 出かけたきり帰らない = went out and never came back. Also 二人きり (just the two of us).'],
+'～どころではない':['I am far too busy to even think about a trip.','⚠ Do not confuse it with どころか (which inverts expectation). どころではない says the <b>circumstances do not allow it</b>.'],
+'～にしては':['For a first attempt, it is very well done.','⚠ Compare with わりに: にしては needs a <b>concrete benchmark</b> (初めて・新人・子供), while わりに takes any criterion. And the result always runs against expectation.'],
+'～ことか':['How long I have waited for this day.','An emotional exclamation; it requires an <b>interrogative</b> in front (どれほど・なんと・どんなに). Literary register, common in reading passages.'],
+'～さえ～ば':['Just take the medicine and you will get better.','⚠ A <b>minimum sufficient</b> condition. さえ and ば travel together: separating them breaks the meaning. Different from the さえ meaning "even".'],
+'～あげく':['After endless dithering, I did not buy it after all.','⚠ The outcome is always <b>bad or disappointing</b>, and the process was long. For a neutral result use 結果.'],
+'～ものではない':['You do not raise your voice in public.','⚠ A reproach based on <b>common decency</b>, not a written rule. It sounds like an adult correcting a child — be careful using it with peers.']
+};
+
+const VOCAB_REQ2=[
+{w:'めんせつ',r:'面接',pt:'entrevista (de emprego)',en:'job interview',ex:'来週、会社の面接を受ける。'},
+{w:'かこまれる',r:'囲まれる',pt:'estar cercado por',en:'be surrounded by',ex:'山に囲まれる静かな町だ。'},
+{w:'うつす',r:'移す',pt:'transferir, mudar de lugar',en:'move, transfer',ex:'机を窓際に移す。'},
+{w:'のぞく',r:'除く',pt:'excluir, tirar',en:'exclude, remove',ex:'日曜を除く毎日、開いています。'},
+{w:'さくじょ',r:'削除',pt:'exclusão, apagar',en:'deletion',ex:'古いファイルを削除する。'},
+{w:'おぎなう',r:'補う',pt:'compensar, suprir',en:'make up for',ex:'経験不足を努力で補う。'},
+{w:'だく',r:'抱く',pt:'abraçar, segurar no colo',en:'hold, embrace',ex:'赤ちゃんを抱く。'},
+{w:'はずかしい',r:'恥ずかしい',pt:'envergonhado',en:'embarrassed',ex:'名前を間違えるのは恥ずかしい。'},
+{w:'にる',r:'似る',pt:'parecer-se com',en:'resemble',ex:'弟は父に似ている。'},
+{w:'きんかくじ',r:'金閣寺',pt:'Kinkakuji, o Pavilhão Dourado',en:'Kinkakuji, the Golden Pavilion',ex:'京都の金閣寺を見に行った。'},
+{w:'けんちく',r:'建築',pt:'arquitetura, construção',en:'architecture',ex:'日本の伝統建築を学ぶ。'},
+{w:'ほとけさま',r:'仏様',pt:'Buda, imagem de Buda',en:'the Buddha',ex:'寺で仏様に手を合わせた。'},
+{w:'いのる',r:'祈る',pt:'rezar, torcer por',en:'pray, wish',ex:'ご成功を心から祈る。'},
+{w:'けいけん',r:'経験',pt:'experiência',en:'experience',ex:'いい経験になりました。'},
+{w:'せいかつ',r:'生活',pt:'vida, cotidiano',en:'daily life',ex:'日本での生活に慣れてきた。'},
+{w:'きのう',r:'昨日',pt:'ontem',en:'yesterday',ex:'昨日は一日中雨だった。'},
+{w:'れいとう',r:'冷凍',pt:'congelamento',en:'freezing',ex:'肉を冷凍して保存する。'},
+{w:'こおる',r:'凍る',pt:'congelar',en:'freeze over',ex:'冬の朝は道が凍る。'},
+{w:'しゅうかん',r:'習慣',pt:'hábito, costume',en:'habit, custom',ex:'早起きの習慣をつけたい。'},
+{w:'なれる',r:'慣れる',pt:'acostumar-se',en:'get used to',ex:'人はどんな環境にも慣れる。'},
+{w:'つうきん',r:'通勤',pt:'deslocamento ao trabalho',en:'commuting',ex:'通勤に一時間かかる。'},
+{w:'ごかい',r:'誤解',pt:'mal-entendido',en:'misunderstanding',ex:'誤解を招く言い方だった。'},
+{w:'ちょきん',r:'貯金',pt:'poupança',en:'savings',ex:'毎月少しずつ貯金している。'},
+{w:'やちん',r:'家賃',pt:'aluguel',en:'rent',ex:'家賃は月末に払う。'},
+{w:'つとめる',r:'勤める',pt:'trabalhar em (empresa)',en:'be employed at',ex:'父は銀行に勤める。'},
+{w:'あやまり',r:'誤り',pt:'erro',en:'error',ex:'計算に誤りがあった。'},
+{w:'こしょう',r:'故障',pt:'avaria, pane',en:'breakdown',ex:'エアコンが故障した。'},
+{w:'そこ',r:'底',pt:'fundo',en:'bottom',ex:'かばんの底に鍵があった。'},
+{w:'てってい',r:'徹底',pt:'minuciosidade, a fundo',en:'thoroughness',ex:'安全管理を徹底する。'},
+{w:'つかれる',r:'疲れる',pt:'cansar-se',en:'get tired',ex:'立ち仕事は思った以上に疲れる。'},
+{w:'やくそく',r:'約束',pt:'promessa, compromisso',en:'promise, appointment',ex:'約束の時間に遅れないで。'},
+{w:'よろこぶ',r:'喜ぶ',pt:'alegrar-se',en:'be glad',ex:'この知らせを聞けば母も喜ぶ。'},
+{w:'ようちえん',r:'幼稚園',pt:'jardim de infância',en:'kindergarten',ex:'娘は幼稚園に通っている。'},
+{w:'むかえる',r:'迎える',pt:'receber, ir buscar',en:'welcome, pick up',ex:'駅で友人を迎える。'},
+{w:'おさない',r:'幼い',pt:'de tenra idade',en:'very young',ex:'幼いころの写真が出てきた。'},
+{w:'しゅくじつ',r:'祝日',pt:'feriado nacional',en:'public holiday',ex:'来週の月曜は祝日です。'},
+{w:'いわう',r:'祝う',pt:'celebrar',en:'celebrate',ex:'家族みんなで合格を祝う。'},
+{w:'おかし',r:'お菓子',pt:'doce, guloseima',en:'sweets, snack',ex:'お土産にお菓子を買った。'},
+{w:'じょうたい',r:'状態',pt:'estado, condição',en:'state, condition',ex:'健康状態は良好です。'},
+{w:'うかがう',r:'伺う',pt:'perguntar / visitar (humilde)',en:'ask / visit (humble)',ex:'明日、三時に伺う予定です。'},
+{w:'ごかぞく',r:'ご家族',pt:'sua família (respeitoso)',en:'your family (respectful)',ex:'ご家族によろしくお伝えください。'},
+{w:'おんちゅう',r:'御中',pt:'A/C (em carta para empresa)',en:'Messrs. (to a company)',ex:'株式会社山田商事 御中'},
+{w:'どの',r:'殿',pt:'Sr./Sra. (formal, em documentos)',en:'Mr./Ms. (formal, documents)',ex:'山田太郎殿'},
+{w:'おれい',r:'お礼',pt:'agradecimento',en:'thanks, token of gratitude',ex:'お礼の手紙を書いた。'},
+{w:'れいぎ',r:'礼儀',pt:'boas maneiras, etiqueta',en:'manners, courtesy',ex:'礼儀を大切にする人だ。'},
+{w:'おがむ',r:'拝む',pt:'orar reverenciando',en:'pray with hands joined',ex:'寺で仏様を拝む。'},
+{w:'そうだんあいて',r:'相談相手',pt:'pessoa com quem desabafar',en:'someone to turn to',ex:'いい相談相手がいて助かった。'},
+{w:'はんばい',r:'販売',pt:'venda',en:'sales',ex:'来月から販売が始まる。'},
+{w:'しはらいほうほう',r:'支払い方法',pt:'forma de pagamento',en:'payment method',ex:'支払い方法をお選びください。'},
+{w:'こえる',r:'超える',pt:'ultrapassar',en:'exceed',ex:'参加者が百人を超える見込みだ。'},
+{w:'ちょうか',r:'超過',pt:'excesso',en:'excess',ex:'荷物が重量を超過している。'},
+{w:'がく',r:'額',pt:'quantia; testa',en:'amount; forehead',ex:'支払う額を確認する。'},
+{w:'きんがく',r:'金額',pt:'valor, quantia',en:'sum of money',ex:'金額が間違っていませんか。'},
+{w:'たしかめる',r:'確かめる',pt:'confirmar, verificar',en:'make sure, check',ex:'出発の時刻をもう一度確かめる。'},
+{w:'たしかに',r:'確かに',pt:'certamente, de fato',en:'certainly, indeed',ex:'確かに彼の言うとおりだ。'},
+{w:'むり',r:'無理',pt:'impossível, forçado',en:'impossible, unreasonable',ex:'一日で終わらせるのは無理だ。'},
+{w:'ない',r:'無い',pt:'não haver',en:'not exist',ex:'そんな事実は無い。'},
+{w:'しゅうにゅう',r:'収入',pt:'renda, receita',en:'income',ex:'収入が去年より増えた。'},
+{w:'おきゃくさま',r:'お客様',pt:'cliente (respeitoso)',en:'customer (respectful)',ex:'お客様のご意見を伺いたい。'},
+{w:'とどく',r:'届く',pt:'chegar (encomenda), alcançar',en:'arrive, reach',ex:'注文した本が明日届く。'},
+{w:'ねだん',r:'値段',pt:'preço',en:'price',ex:'値段のわりに質がいい。'}
+];
+
+const VOCAB_REQ=[
+{w:'さくせい',r:'作成',pt:'elaboração, redação (de documento)',en:'drawing up, creating',ex:'資料を作成する。'},
+{w:'いんさつ',r:'印刷',pt:'impressão',en:'printing',ex:'名刺を印刷に出す。'},
+{w:'しじ',r:'指示',pt:'instrução, orientação',en:'instruction',ex:'上司の指示に従う。'},
+{w:'へんしゅう',r:'編集',pt:'edição',en:'editing',ex:'動画を編集している。'},
+{w:'せいちょう',r:'成長',pt:'crescimento',en:'growth',ex:'子供の成長は早い。'},
+{w:'いんしょう',r:'印象',pt:'impressão (que algo causa)',en:'impression',ex:'第一印象が大事だ。'},
+{w:'しんじる',r:'信じる',pt:'acreditar',en:'believe',ex:'私は君を信じている。'},
+{w:'ほしょうしょ',r:'保証書',pt:'certificado de garantia',en:'warranty card',ex:'保証書は大切に保管してください。'},
+{w:'むりょう',r:'無料',pt:'gratuito',en:'free of charge',ex:'入場は無料です。'},
+{w:'しゅうり',r:'修理',pt:'conserto',en:'repair',ex:'時計の修理を頼んだ。'},
+{w:'そうしん',r:'送信',pt:'envio (eletrônico)',en:'transmission, sending',ex:'メールを送信した。'},
+{w:'ほぞん',r:'保存',pt:'salvar, conservar',en:'save, preserve',ex:'データを保存する。'},
+{w:'せっけい',r:'設計',pt:'projeto, design técnico',en:'design, planning',ex:'橋の設計を担当した。'},
+{w:'けんせつ',r:'建設',pt:'construção (obra)',en:'construction',ex:'新しい病院を建設中だ。'},
+{w:'しめす',r:'示す',pt:'mostrar, indicar',en:'show, indicate',ex:'データが傾向を示している。'},
+{w:'せってい',r:'設定',pt:'configuração, ajuste',en:'setting, configuration',ex:'パスワードを設定する。'},
+{w:'しるし',r:'印',pt:'marca, sinal',en:'mark, sign',ex:'大事な箇所に印をつける。'},
+{w:'あむ',r:'編む',pt:'tricotar, tecer',en:'knit, weave',ex:'母がセーターを編んでくれた。'},
+{w:'じしん',r:'自信',pt:'autoconfiança',en:'self-confidence',ex:'自信を持って話しなさい。'},
+{w:'こうしん',r:'更新',pt:'renovação, atualização',en:'renewal, update',ex:'免許を更新した。'},
+{w:'ぎょうれつ',r:'行列',pt:'fila',en:'queue, line',ex:'店の前に行列ができている。'},
+{w:'きこう',r:'気候',pt:'clima',en:'climate',ex:'この地方は気候が穏やかだ。'},
+{w:'きのう',r:'機能',pt:'função, recurso',en:'function, feature',ex:'新しい機能が追加された。'},
+{w:'せいのう',r:'性能',pt:'desempenho (de máquina)',en:'performance, specs',ex:'性能のわりに値段が安い。'},
+{w:'れっとう',r:'列島',pt:'arquipélago',en:'archipelago',ex:'日本列島を台風が通過した。'},
+{w:'しゅうい',r:'周囲',pt:'arredores, entorno',en:'surroundings',ex:'周囲の目が気になる。'},
+{w:'かこむ',r:'囲む',pt:'cercar, rodear',en:'surround',ex:'湖は山に囲まれている。'},
+{w:'けむり',r:'煙',pt:'fumaça',en:'smoke',ex:'台所から煙が出ている。'},
+{w:'せき',r:'席',pt:'assento, lugar',en:'seat',ex:'席を譲ってもらった。'},
+{w:'うつる',r:'移る',pt:'mudar-se, transferir-se',en:'move, shift',ex:'来月、新しい部署に移る。'},
+{w:'いどう',r:'移動',pt:'deslocamento',en:'movement, transfer',ex:'会議室へ移動してください。'},
+{w:'せつぞく',r:'接続',pt:'conexão',en:'connection',ex:'ネットに接続できない。'},
+{w:'もどる',r:'戻る',pt:'voltar, retornar',en:'return, go back',ex:'すぐに席に戻ります。'},
+{w:'そふ',r:'祖父',pt:'avô',en:'grandfather',ex:'祖父は九十歳になる。'},
+{w:'そぼ',r:'祖母',pt:'avó',en:'grandmother',ex:'祖母の料理が懐かしい。'},
+{w:'まご',r:'孫',pt:'neto, neta',en:'grandchild',ex:'孫の写真を見せてくれた。'},
+{w:'むすめ',r:'娘',pt:'filha',en:'daughter',ex:'娘はもう大学生です。'},
+{w:'かのじょ',r:'彼女',pt:'ela; namorada',en:'she; girlfriend',ex:'彼女とは三年付き合っている。'},
+{w:'かれ',r:'彼',pt:'ele; namorado',en:'he; boyfriend',ex:'彼は日本語を勉強している。'},
+{w:'おこる',r:'怒る',pt:'zangar-se',en:'get angry',ex:'父に怒られた。'},
+{w:'なく',r:'泣く',pt:'chorar',en:'cry',ex:'子供が大声で泣いている。'},
+{w:'きみ',r:'君',pt:'você (informal)',en:'you (informal)',ex:'君なら絶対にできる。'},
+{w:'むすこ',r:'息子',pt:'filho',en:'son',ex:'息子が来年就職します。'},
+{w:'いき',r:'息',pt:'respiração, fôlego',en:'breath',ex:'息を切らして走ってきた。'},
+{w:'まね',r:'真似',pt:'imitação',en:'imitation',ex:'人の真似をするな。'},
+{w:'てら',r:'寺',pt:'templo budista',en:'Buddhist temple',ex:'京都には古い寺が多い。'},
+{w:'めずらしい',r:'珍しい',pt:'raro, incomum',en:'rare, unusual',ex:'君が遅刻するとは珍しい。'},
+{w:'ほとけ',r:'仏',pt:'Buda; falecido',en:'Buddha; the deceased',ex:'仏様に手を合わせる。'},
+{w:'しょうらい',r:'将来',pt:'futuro',en:'future',ex:'将来は日本で働きたい。'},
+{w:'せいと',r:'生徒',pt:'aluno (fundamental/médio)',en:'pupil, student',ex:'このクラスの生徒は三十人だ。'},
+{w:'けいえい',r:'経営',pt:'gestão, administração',en:'management',ex:'父は小さな店を経営している。'},
+{w:'いたい',r:'痛い',pt:'doloroso',en:'painful',ex:'昨日から歯が痛い。'},
+{w:'めいしん',r:'迷信',pt:'superstição',en:'superstition',ex:'それはただの迷信だ。'},
+{w:'ねこ',r:'猫',pt:'gato',en:'cat',ex:'猫を二匹飼っている。'},
+{w:'ゆき',r:'雪',pt:'neve',en:'snow',ex:'今朝から雪が降り続いている。'},
+{w:'ねぼう',r:'寝坊',pt:'dormir demais, perder a hora',en:'oversleeping',ex:'寝坊して電車に乗り遅れた。'},
+{w:'ずつう',r:'頭痛',pt:'dor de cabeça',en:'headache',ex:'ひどい頭痛がする。'},
+{w:'でんごん',r:'伝言',pt:'recado',en:'message',ex:'伝言をお願いできますか。'},
+{w:'まよう',r:'迷う',pt:'hesitar; perder-se',en:'hesitate; get lost',ex:'どちらにするか迷っている。'},
+{w:'こごえる',r:'凍える',pt:'enregelar-se',en:'be frozen stiff',ex:'手が凍えて動かない。'},
+{w:'げつまつ',r:'月末',pt:'fim do mês',en:'end of the month',ex:'支払いは月末までです。'},
+{w:'すいえい',r:'水泳',pt:'natação',en:'swimming',ex:'水泳を習い始めた。'},
+{w:'ほす',r:'干す',pt:'pôr para secar',en:'hang out to dry',ex:'洗濯物を外に干す。'},
+{w:'くろう',r:'苦労',pt:'sofrimento, esforço penoso',en:'hardship, toil',ex:'ご苦労をおかけしました。'},
+{w:'くらす',r:'暮らす',pt:'viver, levar a vida',en:'live, get by',ex:'一人で暮らしている。'},
+{w:'さら',r:'皿',pt:'prato',en:'plate, dish',ex:'皿を割ってしまった。'},
+{w:'じこ',r:'事故',pt:'acidente',en:'accident',ex:'事故で電車が止まった。'},
+{w:'ひさしぶり',r:'久しぶり',pt:'depois de muito tempo',en:'after a long time',ex:'久しぶりに友人に会った。'},
+{w:'ゆうえんち',r:'遊園地',pt:'parque de diversões',en:'amusement park',ex:'休日は遊園地が混む。'},
+{w:'えいきゅう',r:'永久',pt:'eternidade, permanente',en:'permanence, forever',ex:'永久に残る記録だ。'},
+{w:'れんぞく',r:'連続',pt:'sequência, consecutivo',en:'succession, in a row',ex:'三日連続で雨が降った。'},
+{w:'つれる',r:'連れる',pt:'levar (alguém) consigo',en:'take (someone) along',ex:'子供を連れて公園へ行く。'},
+{w:'きねん',r:'記念',pt:'comemoração, lembrança',en:'commemoration',ex:'記念に写真を撮ろう。'},
+{w:'はなたば',r:'花束',pt:'buquê',en:'bouquet',ex:'花束を贈った。'},
+{w:'ごうかく',r:'合格',pt:'aprovação (em exame)',en:'passing an exam',ex:'今年こそ試験に合格したい。'},
+{w:'はれる',r:'晴れる',pt:'abrir o tempo',en:'clear up',ex:'午後には晴れるでしょう。'},
+{w:'かいせい',r:'快晴',pt:'céu totalmente limpo',en:'perfectly clear weather',ex:'今日は快晴だ。'},
+{w:'しゅっちょう',r:'出張',pt:'viagem de negócios',en:'business trip',ex:'来週、大阪へ出張する。'},
+{w:'きんちょう',r:'緊張',pt:'tensão, nervosismo',en:'tension, nerves',ex:'面接で緊張してしまった。'},
+{w:'くも',r:'雲',pt:'nuvem',en:'cloud',ex:'空に雲一つない。'},
+{w:'くもり',r:'曇り',pt:'nublado',en:'cloudy',ex:'明日は曇りのち雨です。'},
+{w:'じたく',r:'自宅',pt:'a própria casa',en:'one\u2019s own home',ex:'自宅で仕事をしている。'},
+{w:'きたく',r:'帰宅',pt:'voltar para casa',en:'returning home',ex:'帰宅が遅くなった。'},
+{w:'かし',r:'菓子',pt:'doce, guloseima',en:'sweets, confectionery',ex:'お菓子を持って伺います。'},
+{w:'とくい',r:'得意',pt:'ser bom em; orgulhoso',en:'good at; proud',ex:'彼は数学が得意だ。'},
+{w:'こきゅう',r:'呼吸',pt:'respiração',en:'breathing',ex:'深く呼吸してください。'},
+{w:'よぶ',r:'呼ぶ',pt:'chamar',en:'call',ex:'タクシーを呼んでもらえますか。'},
+{w:'ねがう',r:'願う',pt:'desejar, rogar',en:'wish, request',ex:'ご協力をお願いします。'},
+{w:'さまざま',r:'様々',pt:'variados, diversos',en:'various',ex:'様々な意見が出た。'},
+{w:'ようす',r:'様子',pt:'aspecto, situação',en:'appearance, state of things',ex:'彼の様子がおかしい。'},
+{w:'みな',r:'皆',pt:'todos',en:'everyone',ex:'皆で協力しよう。'},
+{w:'いそがしい',r:'忙しい',pt:'ocupado',en:'busy',ex:'今週はとても忙しい。'},
+{w:'おみまい',r:'お見舞い',pt:'visita a um doente',en:'visiting the sick',ex:'友人のお見舞いに行った。'},
+{w:'びょうどう',r:'平等',pt:'igualdade',en:'equality',ex:'全員を平等に扱う。'},
+{w:'へいわ',r:'平和',pt:'paz',en:'peace',ex:'平和を願っている。'},
+{w:'じゅんばん',r:'順番',pt:'ordem, vez',en:'order, turn',ex:'順番にお呼びします。'},
+{w:'こうふく',r:'幸福',pt:'felicidade',en:'happiness',ex:'幸福な家庭を築きたい。'},
+{w:'さいわい',r:'幸い',pt:'felizmente; ficarei grato',en:'fortunately; I would appreciate',ex:'ご返信いただければ幸いです。'},
+{w:'きゅう',r:'旧',pt:'antigo, anterior',en:'former, old',ex:'旧システムはもう使えない。'},
+{w:'かえす',r:'返す',pt:'devolver',en:'return, give back',ex:'借りた本を返す。'},
+{w:'ちょうじょう',r:'頂上',pt:'cume, topo',en:'summit',ex:'ついに頂上に着いた。'},
+{w:'いただく',r:'頂く',pt:'receber (humilde)',en:'receive (humble)',ex:'ご意見を頂きました。'},
+{w:'はいけん',r:'拝見',pt:'ver (humilde)',en:'see, look at (humble)',ex:'お写真を拝見しました。'},
+{w:'すもう',r:'相撲',pt:'sumô',en:'sumo',ex:'相撲を見に行った。'},
+{w:'しゅしょう',r:'首相',pt:'primeiro-ministro',en:'prime minister',ex:'首相が記者会見を開いた。'},
+{w:'しょうひん',r:'商品',pt:'mercadoria, produto',en:'goods, product',ex:'この商品は人気がある。'},
+{w:'そくたつ',r:'速達',pt:'correio expresso',en:'express mail',ex:'速達で送ってください。'},
+{w:'しはらい',r:'支払い',pt:'pagamento',en:'payment',ex:'支払い方法を選んでください。'},
+{w:'ささえる',r:'支える',pt:'apoiar, sustentar',en:'support',ex:'家族が私を支えてくれた。'},
+{w:'かくじつ',r:'確実',pt:'seguro, certo',en:'certain, reliable',ex:'確実な方法を選ぼう。'},
+{w:'ぶじ',r:'無事',pt:'são e salvo',en:'safe and sound',ex:'無事に到着しました。'},
+{w:'かくにん',r:'確認',pt:'confirmação',en:'confirmation',ex:'予約を確認してください。'},
+{w:'みとめる',r:'認める',pt:'reconhecer, admitir',en:'acknowledge, admit',ex:'自分の誤りを認めた。'},
+{w:'おさめる',r:'収める',pt:'guardar; obter',en:'put away; obtain',ex:'大会で好成績を収めた。'},
+{w:'だいとうりょう',r:'大統領',pt:'presidente (de país)',en:'president (of a country)',ex:'大統領が来日した。'},
+{w:'りょうしゅうしょ',r:'領収書',pt:'recibo',en:'receipt',ex:'領収書をお願いします。'},
+{w:'しょくひ',r:'食費',pt:'gastos com alimentação',en:'food expenses',ex:'今月は食費がかさんだ。'},
+{w:'よくじつ',r:'翌日',pt:'o dia seguinte',en:'the next day',ex:'翌日に返事が来た。'},
+{w:'ぬの',r:'布',pt:'tecido, pano',en:'cloth, fabric',ex:'布でカバーを作った。'},
+{w:'もうふ',r:'毛布',pt:'cobertor',en:'blanket',ex:'寒いので毛布をもう一枚ください。'},
+{w:'さいふ',r:'財布',pt:'carteira (de dinheiro)',en:'wallet, purse',ex:'財布を落としてしまった。'},
+{w:'ざいさん',r:'財産',pt:'bens, patrimônio',en:'property, assets',ex:'財産を相続した。'},
+{w:'かちかん',r:'価値観',pt:'sistema de valores',en:'values, outlook',ex:'価値観の違いは大きい。'}
+];
+
 /* ═══ N2+ 上級語彙 · 複合動詞・慣用句・抽象名詞・硬い副詞 ═══ */
 const VOCAB_N2H=[
 /* --- 複合動詞 --- */
@@ -3317,6 +3596,7 @@ const T={
  dKanji:{pt:'Kanji',en:'Kanji'},
  dVocab:{pt:'Vocabulário',en:'Vocabulary'},
  dGram:{pt:'Gramática',en:'Grammar'},
+ dSchool:{pt:'school study',en:'school study'},
  dLine:{pt:'# para revisar · # novos · # no total',en:'# due · # new · # total'},
  mixBtn:{pt:'Revisão misturada (tudo vencido)',en:'Mixed review (everything due)'},
  howto:{pt:'Como funciona: cada cartão que você acerta volta mais tarde (1 → 2 → 4 → 8 → 16 → 32 dias). Errou, ele volta amanhã. Não pule os vencidos — é aí que a memória se fixa.',
@@ -3415,15 +3695,16 @@ function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.r
 
 /* ═══════════════ 状態管理 ═══════════════ */
 const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossWins:0,
-           mondaiSeen:{},lang:'pt',levels:{y:true,v:true,w:true,x:true},glevels:{g:true,h:true,e:true,j:true,c:true,p:true},d50:null};
+           mondaiSeen:{},lang:'pt',levels:{z:true,y:true,v:true,w:true,x:true},glevels:{n:true,g:true,h:true,e:true,j:true,c:true,p:true},d50:null};
 let S=JSON.parse(JSON.stringify(DEF));
 const KEY='n2sprint:v2';
 /* APPEND ONLY — the original 66 keep indices 0-65, so every k-record stays valid */
+VOCAB_REQ.push(...VOCAB_REQ2);   /* append only — existing z-indices unchanged */
 KANJI.push(...KANJI_B1,...KANJI_B2,...KANJI_B3,...KANJI_B4);
 Object.assign(EN_KMN,EN_KMN_B1,EN_KMN_B2,EN_KMN_B3,EN_KMN_B4);
 Object.assign(EN_GTRAP,EN_G3TRAP);Object.assign(EN_GTX,EN_G3TX);
 /* the four expression decks carry [translation, note] pairs — fold them into the same lookup */
-[EN_KEIGO,EN_JITA,EN_SETSU,EN_JOSHI].forEach(o=>Object.entries(o).forEach(([k,[tx,trap]])=>{
+[EN_KEIGO,EN_JITA,EN_SETSU,EN_JOSHI,EN_REQ].forEach(o=>Object.entries(o).forEach(([k,[tx,trap]])=>{
   EN_GTX[k]=tx;EN_GTRAP[k]=trap;}));
 /* ═══════════════ 自動生成ドリル ═══════════════
    検証済みのカードデータから機械的に問題を作る。
@@ -3572,9 +3853,12 @@ Object.entries(_BASE).forEach(([base,kinds],bi)=>{
 });
 
 /* ── ④ 語彙の文脈規定（例文から語を抜く） ── */
-[['v',VOCAB],['w',VOCAB_N3],['x',VOCAB_N4],['y',VOCAB_N2H]].forEach(([key,deck])=>{
+[['v',VOCAB],['w',VOCAB_N3],['x',VOCAB_N4],['y',VOCAB_N2H],['z',VOCAB_REQ]].forEach(([key,deck])=>{
   deck.forEach((v,vi)=>{
-    const target=v.ex.includes(v.w)?v.w:(v.r!=='—'&&v.ex.includes(v.r)?v.r:null);
+    /* most decks keep the word in w; the school deck keeps the kanji in r. Take whichever
+       actually occurs in the sentence, preferring the longer (kanji) form. */
+    const cands=[v.w,v.r].filter(x=>x&&x!=='—'&&v.ex.includes(x)).sort((a,b)=>b.length-a.length);
+    const target=cands[0]||null;
     if(!target||target.length<2)return;
     const q=v.ex.replace(target,'（　）');
     if(q===v.ex)return;
@@ -3718,10 +4002,10 @@ const QBYKEY={};
 MONDAI.forEach((q,i)=>{QBYKEY[q.id||('m'+i)]=i;});
 MONDAI.forEach((q,i)=>{const n=q.o.length,r=((i*7)+3)%n;
   q.o=q.o.slice(r).concat(q.o.slice(0,r));q.a=(q.a-r+n)%n;});
-const POOL={k:KANJI,v:VOCAB,w:VOCAB_N3,x:VOCAB_N4,y:VOCAB_N2H,
-  g:GRAMMAR,h:GRAMMAR_N3,e:KEIGO,j:JITA,c:SETSU,p:JOSHI};
-const VKEYS=['y','v','w','x'],GKEYS=['g','h','e','j','c','p'];
-const LVNAME={y:'N2+',v:'N2',w:'N3',x:'N4',g:'N2',h:'N3',e:'敬語',j:'自他',c:'接続',p:'助詞'};
+const POOL={k:KANJI,v:VOCAB,w:VOCAB_N3,x:VOCAB_N4,y:VOCAB_N2H,z:VOCAB_REQ,
+  g:GRAMMAR,h:GRAMMAR_N3,n:GRAMMAR_REQ,e:KEIGO,j:JITA,c:SETSU,p:JOSHI};
+const VKEYS=['z','y','v','w','x'],GKEYS=['n','g','h','e','j','c','p'];
+const LVNAME={z:'school study',y:'N2+',v:'N2',w:'N3',x:'N4',n:'school study',g:'N2',h:'N3',e:'敬語',j:'自他',c:'接続',p:'助詞'};
 const actV=()=>VKEYS.filter(k=>S.levels[k]),actG=()=>GKEYS.filter(k=>S.glevels[k]);
 
 const store={
@@ -3943,11 +4227,13 @@ function renderDojo(){
   <div class="eyebrow" style="font-size:9px;margin:2px 0 6px">漢字</div>
   ${box(L('dKanji'),'漢','k','var(--mura)')}
   <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">語彙</div>
+  ${box(L('dSchool')+' · '+L('dVocab'),'学','z','var(--yama)')}
   ${box(L('dVocab')+' N2+','語','y','var(--yama)')}
   ${box(L('dVocab')+' N2','語','v','var(--yama)')}
   ${box(L('dVocab')+' N3','語','w','var(--yama)')}
   ${box(L('dVocab')+' N4','語','x','var(--yama)')}
   <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">文法</div>
+  ${box(L('dSchool')+' · '+L('dGram'),'学','n','var(--yama)')}
   ${box(L('dGram')+' N2','文','g','var(--yama)')}
   ${box(L('dGram')+' N3','文','h','var(--yama)')}
   <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">表現・文型</div>
@@ -3973,7 +4259,7 @@ function startVocab(){
   VKEYS.filter(k=>S.levels[k]).forEach(k=>dueList(k).due.forEach(i=>q.push({key:k,i})));
   q.sort(()=>Math.random()-.5);
   if(q.length<p.v){
-    for(const k of ['y','v','w','x']){ if(!S.levels[k])continue;
+    for(const k of VKEYS){ if(!S.levels[k])continue;
       const f=dueList(k).fresh; for(const i of f){ if(q.length>=p.v)break; q.push({key:k,i}); }
       if(q.length>=p.v)break; }
   }
@@ -3984,7 +4270,7 @@ function startGrammar(){
   const p=phase();let q=[];
   actG().forEach(k=>dueList(k).due.forEach(i=>q.push({key:k,i})));
   q.sort(()=>Math.random()-.5);
-  if(q.length<p.g){for(const k of ['e','p','c','j','g','h']){ if(!S.glevels[k])continue;
+  if(q.length<p.g){for(const k of GKEYS){ if(!S.glevels[k])continue;
     for(const i of dueList(k).fresh){ if(q.length>=p.g)break; q.push({key:k,i}); }
     if(q.length>=p.g)break; }}
   if(!q.length){toast(L('nothingHere'));return;}
@@ -4274,7 +4560,8 @@ function renderMiss(){
         <span class="o">✓ ${L('msRight')} ${q.o[q.a]}</span></div>
       ${dots(c)}${serifuBox(serifuFor('m',i))}</div>`);});
   m.card.forEach(({c,i,pool})=>{const it=POOL[pool][i];
-    const face=pool==='k'?it.c:GKEYS.includes(pool)?it.g:it.w;
+    const face=pool==='k'?it.c:GKEYS.includes(pool)?it.g
+      :(it.r&&it.r!=='—'?it.w+'　'+it.r:it.w);   /* show the kanji form too, not just kana */
     rows.push(`<div class="msrow"><div class="mstag">${label(pool,i)} · ${L('msMiss',c.miss)}</div>
       <div class="msq">${face}</div>
       <div class="msans"><span class="o">${S.lang==='pt'?it.pt:it.en}</span></div>
@@ -4379,7 +4666,7 @@ function renderStats(){
   const saved=await store.get();
   if(saved)S=Object.assign(JSON.parse(JSON.stringify(DEF)),saved);
   if(!S.levels)S.levels={y:true,v:true,w:true,x:true};
-  if(S.levels.y===undefined)S.levels.y=true;   /* older saves gain the new deck switched on */
+  VKEYS.forEach(k=>{if(S.levels[k]===undefined)S.levels[k]=true;});   /* older saves gain the new deck switched on */
   if(!S.glevels)S.glevels={g:true,h:true};
   GKEYS.forEach(k=>{if(S.glevels[k]===undefined)S.glevels[k]=true;});  /* older saves gain the new decks */
   paintTop();renderHome();
