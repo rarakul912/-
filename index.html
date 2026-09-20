@@ -12,7 +12,7 @@
 <title>N2日和 — Roberto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Noto+Serif+JP:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Archivo:wght@600;800&family=Noto+Serif+JP:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   /* 紫 murasaki — primary. 山吹 yamabuki — secondary. Contrast-tested, all ≥4.5:1 */
@@ -38,8 +38,25 @@
   --ui:"Zen Kaku Gothic New","Archivo",system-ui,-apple-system,sans-serif;
   --disp:"Archivo","Zen Kaku Gothic New",system-ui,sans-serif;
   --safe-b:env(safe-area-inset-bottom,0px);
+  --fscale:1;          /* text size */
+  --lead:1;            /* line spacing */
+  --track:0em;         /* letter spacing */
+  --wtrack:0em;        /* word spacing */
+  --tint:transparent;  /* colour wash over the page */
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body.a11y{font-family:'Atkinson Hyperlegible',var(--ui)}
+body.a11y .jpline,body.a11y .jpbig,body.a11y .qjp,body.a11y .msq{letter-spacing:.04em}
+#tint{position:fixed;inset:0;background:var(--tint);pointer-events:none;z-index:50;
+  mix-blend-mode:multiply}
+main{font-size:calc(1rem*var(--fscale));letter-spacing:var(--track);word-spacing:var(--wtrack)}
+main p,main .msub,main .muted,main .explain,main .trap,main .mnemo,main .gloss,main .qjp,main .opt{
+  line-height:calc(1.6*var(--lead))}
+.say{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+  border-radius:9px;border:1.5px solid var(--bord);background:var(--surf);
+  font-size:15px;margin-left:8px;vertical-align:middle;flex:0 0 auto}
+.say:active{background:var(--mura-btn);border-color:var(--mura-btn)}
+.saywrap{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
   font-family:var(--ui);overscroll-behavior-y:none}
 body{padding-bottom:calc(72px + var(--safe-b))}
@@ -216,6 +233,28 @@ nav button.on .ic{background:var(--mura-dim)}
 .serifu .lbl{font-size:9.5px;letter-spacing:.2em;font-weight:800;color:var(--mura)}
 .serifu .jp{font-family:var(--jp);font-size:18px;line-height:1.6;margin:6px 0 4px}
 .serifu .tr{font-size:12.5px;color:var(--dim);line-height:1.5}
+.parts{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;
+  margin:14px 0 4px}
+.part{background:var(--surf);border:1.5px solid var(--bord);border-radius:11px;
+  padding:8px 6px 6px;min-width:62px;text-align:center}
+.part svg{display:block;margin:0 auto 3px}
+.part .gl{font-family:var(--jp);font-size:19px;line-height:1;color:var(--mura);display:block;margin-bottom:3px}
+.part .nm{font-size:9.5px;color:var(--dim);line-height:1.25;display:block}
+.parts .arrow{font-size:19px;color:var(--yama);font-weight:800}
+.parts .whole{background:var(--mura-dim);border-color:var(--mura);min-width:62px}
+.parts .whole .gl{font-size:30px;color:var(--txt)}
+.radgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:9px}
+.radcell{background:var(--surf);border:1.5px solid var(--bord);border-radius:12px;
+  padding:11px 6px 8px;text-align:center}
+.radcell svg{display:block;margin:0 auto 4px}
+.radcell .gl{font-family:var(--jp);font-size:22px;color:var(--mura);display:block;line-height:1}
+.radcell .nm{font-size:9.5px;color:var(--dim);display:block;margin-top:4px;line-height:1.25}
+.radcell .ct{font-size:10px;color:var(--yama);font-weight:800;display:block;margin-top:3px}
+.famgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:7px}
+.famcell{background:var(--surf);border:1px solid var(--bord);border-radius:9px;padding:9px 4px;
+  text-align:center}
+.famcell .gl{font-family:var(--jp);font-size:24px;display:block;line-height:1.1}
+.famcell .nm{font-size:9px;color:var(--dim);display:block;margin-top:4px;line-height:1.2}
 .d50{background:var(--surf);border:2px solid var(--yama);border-radius:16px;
   padding:18px;margin-bottom:14px}
 .d50 h2{font-size:19px;color:var(--yama)}
@@ -286,6 +325,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
   <button data-v="stats"><span class="ic">録</span><span class="lb" id="nb5">DADOS</span></button>
 </nav>
 
+<div id="tint"></div>
 <div id="cheer"></div>
 <div class="toast" id="toast"></div>
 <script>
@@ -3563,6 +3603,109 @@ const MEIGEN=[
  noteEn:'Daily progress is invisible; monthly progress shows. That is why the kanji wall exists in this app.'}
 ];
 
+/* ═══ 部首の図解 · 40 drawn components + names for the rest ═══ */
+const RADICAL={
+'扌':{pt:'mão',en:'hand',d:'M12 2L12 22 M12 6L6 8 M12 12L18 10 M7 19L17 19'},
+'氵':{pt:'água',en:'water',d:'M6 4L9 7 M6 7L9 10 M6 13L9 16 M15 3L18 7 M15 14L18 18'},
+'言':{pt:'palavra, dizer',en:'word, speak',d:'M12 2L12 4 M4 6L20 6 M7 10L17 10 M7 14L17 14 M7 18L17 18'},
+'木':{pt:'árvore, madeira',en:'tree, wood',d:'M12 2L12 22 M4 8L20 8 M12 11L5 21 M12 11L19 21'},
+'貝':{pt:'dinheiro, concha',en:'money, shell',d:'M7 2L17 2 M17 2L17 15 M17 15L7 15 M7 15L7 2 M7 7L17 7 M7 11L17 11 M9 15L6 22 M15 15L18 22'},
+'亻':{pt:'pessoa',en:'person',d:'M13 2L8 11 M13 2L17 22 M9 11L6 21'},
+'辶':{pt:'caminhar, estrada',en:'walk, road',d:'M4 4L7 4 M4 10L8 10 M8 10L12 14 M3 20L10 20 M10 20L21 17'},
+'糸':{pt:'fio, linha',en:'thread',d:'M12 2L8 8 M8 8L16 8 M16 8L12 2 M12 8L12 15 M9 22L11 16 M15 22L13 16 M8 18L16 18'},
+'心':{pt:'coração',en:'heart',d:'M6 7L8 14 M8 14L12 19 M12 19L16 14 M16 14L18 7 M11 5L12 9 M13 5L12 9'},
+'月':{pt:'carne, corpo',en:'flesh, body',d:'M8 2L16 2 M16 2L16 21 M16 21L8 21 M8 21L8 2 M8 8L16 8 M8 14L16 14'},
+'阝':{pt:'monte, muro',en:'hill, wall',d:'M8 2L13 4 M13 4L8 7 M8 9L13 11 M13 11L8 14 M8 2L8 22'},
+'力':{pt:'força',en:'strength',d:'M6 4L17 4 M17 4L19 10 M19 10L12 21 M6 4L6 18'},
+'攵':{pt:'bater, ação',en:'strike, action',d:'M5 4L11 8 M16 2L11 11 M11 11L5 21 M11 11L19 20'},
+'口':{pt:'boca',en:'mouth',d:'M5 5L19 5 M19 5L19 19 M19 19L5 19 M5 19L5 5'},
+'禾':{pt:'espiga, cereal',en:'grain',d:'M12 2L12 22 M5 7L19 7 M12 7L6 12 M12 7L18 12 M12 14L6 21 M12 14L18 21'},
+'土':{pt:'terra',en:'earth',d:'M12 3L12 19 M7 9L17 9 M3 19L21 19'},
+'宀':{pt:'teto, casa',en:'roof, house',d:'M12 2L3 8 M12 2L21 8 M4 8L20 8 M4 8L4 11 M20 8L20 11'},
+'彳':{pt:'andar, passo',en:'step, go',d:'M13 2L9 9 M13 8L9 15 M11 2L11 22'},
+'刂':{pt:'faca, cortar',en:'knife, cut',d:'M9 2L9 22 M16 2L16 14 M16 14L13 21'},
+'隹':{pt:'pássaro',en:'small bird',d:'M6 6L11 2 M11 2L11 22 M5 9L16 9 M5 13L16 13 M5 17L16 17 M16 4L20 8'},
+'工':{pt:'trabalho',en:'work, craft',d:'M5 4L19 4 M12 4L12 20 M5 20L19 20'},
+'忄':{pt:'coração (lado)',en:'heart (side)',d:'M12 2L12 22 M8 6L8 13 M16 6L16 13'},
+'犬':{pt:'cão',en:'dog',d:'M4 8L18 8 M11 2L11 16 M11 16L5 22 M11 13L19 22 M17 3L20 6'},
+'艹':{pt:'planta, grama',en:'grass, plant',d:'M3 8L21 8 M8 3L8 14 M16 3L16 14'},
+'頁':{pt:'cabeça, página',en:'head, page',d:'M5 2L19 2 M12 2L12 6 M8 6L16 6 M16 6L16 17 M16 17L8 17 M8 17L8 6 M8 17L5 22 M16 17L19 22'},
+'广':{pt:'edifício',en:'building',d:'M4 3L20 3 M4 3L4 21 M4 8L11 8'},
+'衤':{pt:'roupa',en:'clothing',d:'M12 2L12 22 M12 2L7 7 M12 2L17 7 M9 11L15 11 M8 16L16 16'},
+'斤':{pt:'machado',en:'axe',d:'M6 3L16 3 M10 3L10 21 M16 3L16 12 M16 12L10 16'},
+'疒':{pt:'doença',en:'illness',d:'M6 2L18 2 M6 2L6 21 M3 8L10 8 M9 12L19 12'},
+'火':{pt:'fogo',en:'fire',d:'M12 2L12 16 M12 16L7 22 M12 16L17 22 M7 5L9 10 M17 5L15 10'},
+'竹':{pt:'bambu',en:'bamboo',d:'M6 3L6 18 M3 8L10 8 M6 3L4 6 M16 3L16 18 M13 8L20 8 M16 3L14 6'},
+'車':{pt:'veículo',en:'vehicle',d:'M4 3L20 3 M12 2L12 22 M7 8L17 8 M17 8L17 16 M17 16L7 16 M7 16L7 8 M7 12L17 12 M4 21L20 21'},
+'目':{pt:'olho',en:'eye',d:'M7 2L17 2 M17 2L17 21 M17 21L7 21 M7 21L7 2 M7 8L17 8 M7 14L17 14'},
+'手':{pt:'mão',en:'hand',d:'M4 6L18 6 M4 13L18 13 M12 2L12 20 M12 20L7 18'},
+'金':{pt:'metal, ouro',en:'metal, gold',d:'M12 2L5 10 M5 10L19 10 M19 10L12 2 M12 10L12 21 M8 14L16 14 M6 18L18 18'},
+'雨':{pt:'chuva',en:'rain',d:'M3 5L21 5 M12 3L12 5 M12 7L12 20 M8 10L8 12 M8 15L8 17 M16 10L16 12 M16 15L16 17'},
+'日':{pt:'sol, dia',en:'sun, day',d:'M6 2L18 2 M18 2L18 21 M18 21L6 21 M6 21L6 2 M6 12L18 12'},
+'女':{pt:'mulher',en:'woman',d:'M12 2L9 6 M9 6L15 6 M15 6L12 2 M4 12L20 12 M12 6L6 21 M12 6L18 21'},
+'足':{pt:'pé',en:'foot',d:'M7 2L17 2 M17 2L17 9 M17 9L7 9 M7 9L7 2 M12 9L12 15 M12 15L7 21 M12 15L17 21'},
+'走':{pt:'correr',en:'run',d:'M5 3L17 3 M11 2L11 11 M11 11L6 15 M6 20L18 20 M11 15L16 20'},
+'田':{pt:'campo, arrozal',en:'field',d:'M5 4L19 4 M19 4L19 20 M19 20L5 20 M5 20L5 4 M12 4L12 20 M5 12L19 12'},
+'人':{pt:'pessoa',en:'person',d:'M12 3L5 21 M12 3L19 21'},
+'又':{pt:'mão direita',en:'right hand',d:'M5 6L19 6 M19 6L10 21 M11 6L16 21'},
+'衣':{pt:'roupa',en:'clothing',d:'M12 2L12 8 M5 8L19 8 M12 8L6 21 M12 8L18 21 M9 13L15 13'},
+'皿':{pt:'prato, recipiente',en:'dish, vessel',d:'M5 5L5 18 M9 5L9 18 M15 5L15 18 M19 5L19 18 M3 18L21 18'},
+'角':{pt:'chifre',en:'horn',d:'M12 2L6 8 M6 8L6 21 M6 21L18 21 M18 21L18 8 M6 8L18 8 M6 14L18 14'},
+'虫':{pt:'inseto',en:'insect',d:'M8 3L16 3 M16 3L16 12 M16 12L8 12 M8 12L8 3 M12 3L12 17 M4 21L20 21 M12 17L20 21'},
+'魚':{pt:'peixe',en:'fish',d:'M12 2L6 7 M6 7L18 7 M7 11L17 11 M7 15L17 15 M5 20L7 20 M9 20L11 20 M13 20L15 20 M17 20L19 20'},
+'羊':{pt:'ovelha',en:'sheep',d:'M8 3L6 6 M16 3L18 6 M5 9L19 9 M5 14L19 14 M12 6L12 21'},
+'馬':{pt:'cavalo',en:'horse',d:'M6 3L18 3 M8 3L8 14 M6 7L16 7 M6 11L16 11 M6 14L18 14 M18 3L18 17 M5 21L7 21 M9 21L11 21 M13 21L15 21 M17 21L19 21'},
+'見':{pt:'ver',en:'see',d:'M7 2L17 2 M17 2L17 12 M17 12L7 12 M7 12L7 2 M7 7L17 7 M12 12L12 17 M12 17L7 22 M12 17L18 22'},
+'音':{pt:'som',en:'sound',d:'M12 2L12 4 M5 6L19 6 M8 10L16 10 M8 10L8 20 M8 20L16 20 M16 20L16 10 M8 15L16 15'},
+};
+const COMPNAME={
+'田':{pt:'campo',en:'field'},
+'皿':{pt:'prato',en:'dish'},
+'王':{pt:'jade, rei',en:'jade, king'},
+'又':{pt:'mão direita',en:'right hand'},
+'刀':{pt:'faca',en:'knife'},
+'立':{pt:'de pé',en:'stand'},
+'十':{pt:'dez',en:'ten'},
+'干':{pt:'secar, escudo',en:'dry, shield'},
+'正':{pt:'correto',en:'correct'},
+'水':{pt:'água',en:'water'},
+'豆':{pt:'feijão, vaso',en:'bean, vessel'},
+'匕':{pt:'colher',en:'spoon'},
+'人':{pt:'pessoa',en:'person'},
+'子':{pt:'criança',en:'child'},
+'色':{pt:'cor',en:'colour'},
+'止':{pt:'parar',en:'stop'},
+'寸':{pt:'mão, medida',en:'hand, measure'},
+'大':{pt:'grande',en:'big'},
+'小':{pt:'pequeno',en:'small'},
+'山':{pt:'montanha',en:'mountain'},
+'石':{pt:'pedra',en:'stone'},
+'米':{pt:'arroz',en:'rice'},
+'羊':{pt:'ovelha',en:'sheep'},
+'牛':{pt:'boi',en:'cow'},
+'馬':{pt:'cavalo',en:'horse'},
+'魚':{pt:'peixe',en:'fish'},
+'鳥':{pt:'pássaro',en:'bird'},
+'門':{pt:'portão',en:'gate'},
+'戸':{pt:'porta',en:'door'},
+'尸':{pt:'corpo',en:'body'},
+'穴':{pt:'buraco',en:'hole'},
+'衣':{pt:'roupa',en:'clothing'},
+'食':{pt:'comer',en:'eat'},
+'酉':{pt:'jarro de vinho',en:'wine jar'},
+'舟':{pt:'barco',en:'boat'},
+'弓':{pt:'arco',en:'bow'},
+'矢':{pt:'flecha',en:'arrow'},
+'斗':{pt:'concha de medida',en:'dipper'},
+'皮':{pt:'pele',en:'skin'},
+'耳':{pt:'orelha',en:'ear'},
+'自':{pt:'nariz, si',en:'nose, self'},
+'首':{pt:'pescoço, cabeça',en:'neck, head'},
+'風':{pt:'vento',en:'wind'},
+'虫':{pt:'inseto',en:'insect'},
+'角':{pt:'chifre',en:'horn'},
+};
+const PARTS={"略":["田","各"],"締":["糸","帝"],"被":["衤","皮"],"補":["衤","甫"],"訳":["言","尺"],"誘":["言","秀"],"賛":["夫","貝"],"越":["走","戉"],"較":["車","交"],"遅":["辶","犀"],"適":["辶","啇"],"障":["阝","章"],"雑":["九","木","隹"],"震":["雨","辰"],"幼":["幺","力"],"志":["士","心"],"恐":["工","凡","心"],"慣":["忄","貫"],"抗":["扌","亢"],"招":["扌","召"],"捕":["扌","甫"],"採":["扌","采"],"接":["扌","妾"],"提":["扌","是"],"損":["扌","員"],"敵":["啇","攵"],"枯":["木","古"],"殖":["歹","直"],"汚":["氵","亏"],"沈":["氵","冘"],"済":["氵","斉"],"測":["氵","則"],"燃":["火","然","灬"],"祈":["礻","斤"],"秘":["禾","必"],"突":["穴","犬"],"紹":["糸","召"],"維":["糸","隹"],"蓄":["艹","畜"],"裁":["衣","戈"],"触":["角","虫"],"避":["辶","辟"],"零":["雨","令"],"項":["工","頁"],"額":["客","頁"],"依":["亻","衣"],"企":["人","止"],"傾":["亻","頃"],"儲":["亻","諸"],"募":["莫","力"],"状":["爿","犬"],"況":["氵","兄"],"詳":["言","羊"],"析":["木","斤"],"鮮":["魚","羊"],"均":["土","勻"],"圧":["厂","土"],"域":["土","或"],"権":["木","雚"],"収":["丩","攵"],"貧":["分","貝"],"富":["宀","畐"],"騒":["馬","蚤"],"響":["郷","音"],"肩":["戸","月"],"腕":["月","宛"],"肌":["月","几"],"胸":["月","匈"],"腰":["月","要"],"床":["广","木"],"柱":["木","主"],"壁":["辟","土"],"棚":["木","朋"],"徴":["彳","微"],"微":["彳","散"],"稿":["禾","高"],"覧":["監","見"],"販":["貝","反"],"購":["貝","冓"],"貯":["貝","宁"],"賃":["任","貝"],"償":["亻","賞"],"貢":["工","貝"],"献":["南","犬"],"尊":["酋","寸"],"敬":["苟","攵"],"儀":["亻","義"],"姿":["次","女"],"勢":["埶","力"],"態":["能","心"],"憲":["害","心"],"律":["彳","聿"],"訴":["言","斥"],"執":["幸","丸"],"逮":["辶","隶"],"罰":["罒","言","刂"],"犯":["犭","㔾"],"刻":["亥","刂"],"鋭":["金","兌"],"鈍":["金","屯"],"幅":["巾","畐"],"枠":["木","卆"],"診":["言","㐱"],"療":["疒","尞"],"症":["疒","正"],"疲":["疒","皮"],"眠":["目","民"],"覚":["⺍","見"],"含":["今","口"],"除":["阝","余"],"訂":["言","丁"],"仮":["亻","反"],"占":["卜","口"],"座":["广","人","土"],"臨":["臣","品"],"到":["至","刂"],"途":["辶","余"],"即":["皀","卩"],"催":["亻","崔"],"贈":["貝","曽"],"祝":["礻","兄"],"嘆":["口","漢"],"惜":["忄","昔"],"憎":["忄","曽"],"怖":["忄","布"],"濃":["氵","農"],"薄":["艹","溥"],"添":["氵","忝"],"削":["肖","刂"],"酸":["酉","夋"],"蒸":["艹","丞","灬"],"沸":["氵","弗"],"溶":["氵","容"],"凍":["冫","東"],"混":["氵","昆"],"泊":["氵","白"],"浴":["氵","谷"],"浮":["氵","孚"],"沿":["氵","㕣"],"抱":["扌","包"],"抜":["扌","犮"],"押":["扌","甲"],"振":["扌","辰"],"揺":["扌","䍃"],"貫":["毌","貝"],"徹":["彳","育","攵"],"底":["广","氐"],"端":["立","耑"],"縮":["糸","宿"],"拡":["扌","広"],"超":["走","召"],"派":["氵","厎"],"層":["尸","曽"],"構":["木","冓"],"築":["竹","巩","木"],"倒":["亻","到"],"徐":["彳","余"],"絡":["糸","各"],"緩":["糸","爰"],"廃":["广","発"],"誤":["言","呉"],"恥":["耳","心"],"諦":["言","帝"],"頼":["束","頁"],"頑":["元","頁"],"肯":["止","月"],"否":["不","口"],"是":["日","正"],"恵":["叀","心"],"励":["厉","力"],"耐":["而","寸"],"忍":["刃","心"],"黙":["黒","犬"],"叫":["口","丩"],"笑":["竹","夭"],"涙":["氵","戻"],"咲":["口","关"],"茂":["艹","戊"],"摘":["扌","啇"],"掲":["扌","曷"],"雇":["戸","隹"],"就":["京","尤"],"勤":["堇","力"],"僚":["亻","尞"],"隊":["阝","㒸"],"兵":["斤","廾"],"攻":["工","攵"],"守":["宀","寸"],"防":["阝","方"],"敗":["貝","攵"],"威":["戈","女"],"脅":["劦","月"],"奪":["大","隹","寸"],"襲":["龍","衣"],"撃":["軍","手"],"抵":["扌","氐"],"圏":["囗","巻"],"核":["木","亥"],"射":["身","寸"],"爆":["火","暴"],"検":["木","僉"],"査":["木","且"],"審":["宀","番"],"証":["言","正"],"拠":["扌","処"],"疑":["匕","矢","疋"],"誠":["言","成"],"純":["糸","屯"],"複":["衤","复"],"程":["禾","呈"],"限":["阝","艮"],"割":["害","刂"],"倍":["亻","咅"],"総":["糸","忩"],"量":["旦","里"],"容":["宀","谷"],"積":["禾","責"],"密":["宀","必","山"],"簡":["竹","間"],"潔":["氵","絜"],"捨":["扌","舎"],"拾":["扌","合"],"誇":["言","夸"],"賢":["臤","貝"],"優":["亻","憂"],"劣":["少","力"],"秀":["禾","乃"],"脱":["月","兌"],"巡":["辶","巛"],"訪":["言","方"],"迎":["辶","卬"],"遭":["辶","曹"],"遇":["辶","禺"],"誉":["与","言"],"匿":["匚","若"],"隠":["阝","㥯"],"魅":["鬼","未"],"惑":["或","心"],"承":["手"],"豊":["豆"],"輸":["車"],"幹":["干"],"延":["正"],"従":["彳","止"],"悩":["忄"],"探":["扌"],"易":["日"],"暴":["日","水"],"替":["日"],"欠":["人"],"班":["王","刂"],"皮":["又"],"穏":["禾","心"],"絶":["糸","色"],"益":["皿"],"畳":["田"],"免":["人"],"旧":["日"],"甘":["口"],"辛":["立"],"系":["糸"],"棄":["木"],"争":["刀"],"単":["田"],"率":["十"],"比":["匕"],"厳":["攵"]};
 /* ═══════════════ i18n ═══════════════ */
 const T={
  daysTo:{pt:'DIAS ATÉ DEZEMBRO',en:'DAYS UNTIL DECEMBER'},
@@ -3680,6 +3823,23 @@ const T={
  msHome:{pt:'誤答ノート · # em aberto',en:'誤答ノート · # open'},
  mgToday:{pt:'今日の一句',en:'今日の一句'},
  mgNote:{pt:'Por que isto importa',en:'Why this matters'},
+ a11yT:{pt:'Leitura — ajustes',en:'Reading — adjustments'},
+ a11yNote:{pt:'Feito para dislexia. Mexa até o texto parar de cansar; nada aqui muda o conteúdo.',
+           en:'Built for dyslexia. Adjust until the text stops tiring you; none of this changes the content.'},
+ aFont:{pt:'Tamanho do texto',en:'Text size'},
+ aLead:{pt:'Espaço entre linhas',en:'Line spacing'},
+ aTrack:{pt:'Espaço entre letras',en:'Letter spacing'},
+ aDys:{pt:'Fonte de alta legibilidade',en:'High-legibility font'},
+ aTint:{pt:'Fundo colorido',en:'Colour wash'},
+ aRate:{pt:'Velocidade da voz',en:'Voice speed'},
+ aTry:{pt:'Testar a voz',en:'Test the voice'},
+ aOff:{pt:'nenhum',en:'none'},
+ radT:{pt:'部首マップ · Mapa de radicais',en:'部首マップ · Radical map'},
+ radSub:{pt:'Os kanji agrupados pela peça que têm em comum. Toque num radical para ver a família inteira.',
+         en:'Kanji grouped by the piece they share. Tap a radical to see the whole family.'},
+ radN:{pt:'# kanji',en:'# kanji'},
+ radBack:{pt:'Todos os radicais',en:'All radicals'},
+ radOpen:{pt:'Estudar estes # kanji',en:'Study these # kanji'},
  d50T:{pt:'今日の50問',en:'今日の50問'},
  d50Sub:{pt:'Um conjunto novo todo dia, montado às 4h. Questões inéditas primeiro, depois as que você errou.',
          en:'A fresh set every day, dealt at 4am. Unseen questions first, then the ones you got wrong.'},
@@ -3695,7 +3855,7 @@ function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.r
 
 /* ═══════════════ 状態管理 ═══════════════ */
 const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossWins:0,
-           mondaiSeen:{},lang:'pt',levels:{z:true,y:true,v:true,w:true,x:true},glevels:{n:true,g:true,h:true,e:true,j:true,c:true,p:true},d50:null};
+           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8},levels:{z:true,y:true,v:true,w:true,x:true},glevels:{n:true,g:true,h:true,e:true,j:true,c:true,p:true},d50:null};
 let S=JSON.parse(JSON.stringify(DEF));
 const KEY='n2sprint:v2';
 /* APPEND ONLY — the original 66 keep indices 0-65, so every k-record stays valid */
@@ -3775,9 +3935,10 @@ function _add(item,en){
 KANJI.forEach((k,ki)=>k.w.forEach(([word,read,gloss],wi)=>{
   const seed=ki*31+wi;
   const truth=KANJI.flatMap(x=>x.w).filter(x=>x[0]===word).map(x=>x[1]);
-  const near=[..._REAL].filter(x=>Math.abs(x.length-read.length)<=1&&!truth.includes(x));
-  const cand=[...new Set([..._variants(read).filter(x=>!_REAL.has(x)),...near])]
-    .filter(x=>x!==read&&!truth.includes(x)&&_kanaOK(x));
+  /* warped forms only — never another word's real reading, which would make two
+     defensible answers on screen even if only one fits this compound */
+  const cand=_variants(read)
+    .filter(x=>x!==read&&!truth.includes(x)&&!_REAL.has(x)&&_kanaOK(x));
   if(cand.length<3)return;
   const wrong=cand
     .map(x=>[x,_dist(x,read)*10+(x.length===read.length?0:3)+_rng(seed*13+x.length)])
@@ -4022,6 +4183,41 @@ const store={
 let saveT=null;
 function save(){clearTimeout(saveT);saveT=setTimeout(()=>store.set(S),350);}
 
+/* read anything aloud: Japanese in ja-JP, the explanation in his own language */
+function strip(s){return String(s).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();}
+function speak(text,lang){
+  try{
+    const S2=window.speechSynthesis;if(!S2)return;
+    S2.cancel();
+    const u=new SpeechSynthesisUtterance(strip(text));
+    u.lang=lang||'ja-JP';
+    u.rate=(S.a11y&&S.a11y.rate)||0.8;
+    S2.speak(u);
+  }catch(e){}
+}
+const uiLang=()=>S.lang==='pt'?'pt-BR':'en-US';
+function sayBtn(text,lang,label){
+  const id='say'+(sayBtn._n=(sayBtn._n||0)+1);
+  sayBtn._q=sayBtn._q||{};sayBtn._q[id]={text,lang};
+  return `<button class="say" data-say="${id}" aria-label="${label||'read aloud'}">🔊</button>`;
+}
+function wireSay(){
+  document.querySelectorAll('[data-say]').forEach(b=>{
+    const d=sayBtn._q[b.dataset.say];
+    if(d)b.onclick=e=>{e.stopPropagation();speak(d.text,d.lang);};});
+}
+function applyA11y(){
+  const a=S.a11y||{};
+  const r=document.documentElement;
+  if(!r||!r.style)return;
+  r.style.setProperty('--fscale',a.font||1);
+  r.style.setProperty('--lead',a.lead||1);
+  r.style.setProperty('--track',(a.track||0)+'em');
+  r.style.setProperty('--wtrack',(Math.round((a.track||0)*300)/100)+'em');
+  r.style.setProperty('--tint',a.tint||'transparent');
+  const b=document.body;
+  if(b&&b.classList){a.dys?b.classList.add('a11y'):b.classList.remove('a11y');}
+}
 const today=()=>new Date().toISOString().slice(0,10);
 function daysLeft(){
   const d=Math.ceil((new Date(S.examDate+'T09:00:00')-new Date())/864e5);
@@ -4303,6 +4499,7 @@ function drawCard(){
     <button class="btn teal" data-g="2">${L('gGood')}</button></div>`:
     `<button class="btn shu" id="flipB">${L('show')}</button>`}
   <button class="btn ghost sm" id="quitB" style="margin-top:10px;color:var(--dim)">${L('quit')}</button></div>`;
+  wireSay();
   const f=document.getElementById('flipB');
   if(f)f.onclick=()=>{deck.flip=true;drawCard();};
   document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{
@@ -4312,11 +4509,34 @@ function drawCard(){
   const qb=document.getElementById('quitB');if(qb)qb.onclick=()=>{deck=null;renderDojo();};
 }
 const gl=x=>S.lang==='pt'?x.pt:x.en;
+/* the kanji taken apart: each component drawn or named, then the whole character */
+function partIcon(p){
+  const r=RADICAL[p];
+  if(r)return `<svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
+    <path d="${r.d}" fill="none" stroke="var(--mura)" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  return `<span class="gl">${p}</span>`;
+}
+function partName(p){
+  const r=RADICAL[p]||COMPNAME[p];
+  return r?(S.lang==='pt'?r.pt:r.en):'';
+}
+function partsStrip(c){
+  const ps=PARTS[c];
+  if(!ps||!ps.length)return '';
+  return `<div class="parts">${ps.map(p=>
+      `<div class="part">${partIcon(p)}<span class="nm">${partName(p)||'&nbsp;'}</span></div>`).join('')}
+    <span class="arrow">→</span>
+    <div class="part whole"><span class="gl">${c}</span><span class="nm">&nbsp;</span></div>
+  </div>`;
+}
 const wgl=s=>{const p=s.split(' / ');return S.lang==='pt'?p[0]:(p[1]||p[0]);};
 const kFront=k=>`<div class="kanjibox genko"><span class="glyph">${k.c}</span></div>
   <p class="muted">${L('kAsk')}</p>`;
 const kBack=k=>`<div class="kanjibox genko" style="width:min(120px,30vw)"><span class="glyph" style="font-size:min(70px,19vw)">${k.c}</span></div>
+  ${partsStrip(k.c)}
   <div class="reading">音 ${k.on}　訓 ${k.kun}</div>
+  <div class="saywrap">${k.w.map(x=>sayBtn(x[0],'ja-JP')).join('')}</div>
   <div class="gloss"><span class="pt">${gl(k)}</span><span class="en">${S.lang==='pt'?k.en:k.pt}</span></div>
   <div class="mnemo"><b>${L('mnemo')}</b> ${S.lang==='pt'?k.mn:EN_KMN[k.c]}</div>
   <div style="margin-top:14px;text-align:left;width:100%">${k.w.map(x=>
@@ -4326,6 +4546,7 @@ const kBack=k=>`<div class="kanjibox genko" style="width:min(120px,30vw)"><span 
       <div class="msub">${wgl(x[2])}</div></div>`).join('')}</div>`;
 const vFront=v=>`<div class="jpbig">${v.w}</div>${v.r!=='—'?`<div class="reading">${v.r}</div>`:''}`;
 const vBack=v=>`<div class="jpbig">${v.w}</div>${v.r!=='—'?`<div class="reading">${v.r}</div>`:''}
+  <div class="saywrap">${sayBtn(v.r!=='—'&&/[一-龥]/.test(v.r)?v.r:v.w,'ja-JP')}${sayBtn(v.ex,'ja-JP')}</div>
   <div class="gloss"><span class="pt">${gl(v)}</span><span class="en">${S.lang==='pt'?v.en:v.pt}</span></div>
   <div class="mnemo" style="font-family:var(--jp);font-size:18px;border-color:var(--yama);background:var(--yama-dim)">${v.ex}</div>`;
 const gFront=g=>`<div class="jpbig" style="font-size:32px">${g.g}</div>
@@ -4334,7 +4555,7 @@ const gBack=g=>`<div class="jpbig" style="font-size:30px">${g.g}</div>
   <div class="reading" style="font-size:15px">${g.f}</div>
   <div class="gloss"><span class="pt">${gl(g)}</span><span class="en">${S.lang==='pt'?g.en:g.pt}</span></div>
   <div class="mnemo" style="border-color:var(--yama);background:var(--yama-dim)">
-    <span style="font-family:var(--jp);font-size:18px">${g.ex}</span><br>
+    <span style="font-family:var(--jp);font-size:18px">${g.ex}</span>${sayBtn(g.ex,'ja-JP')}<br>
     <span class="msub">${S.lang==='pt'?g.tx:EN_GTX[g.g]}</span></div>
   <div class="trap"><b>${L('careful')}</b> ${S.lang==='pt'?g.trap:EN_GTRAP[g.g]}</div>`;
 
@@ -4385,22 +4606,25 @@ function startBoss(){
   mo={q,idx:0,ok:0,boss:true,hp:3};nav('mondai');drawQ();
 }
 function drawQ(){
+  if(!mo)return;
+  while(mo.idx<mo.q.length&&!(mo.q[mo.idx]&&mo.q[mo.idx].q))mo.idx++;   /* skip anything stale */
   if(mo.idx>=mo.q.length||(mo.boss&&mo.hp<=0)){endM();return;}
   const {q}=mo.q[mo.idx];
   const body=q.s==='読解'
     ? `<div class="card" style="background:var(--paper);color:var(--ink);border-color:var(--paper)">
-         <p style="font-family:var(--jp);font-size:16.5px;line-height:2.05;margin:0;text-align:justify">${q.p}</p></div>
+         <p style="font-family:var(--jp);font-size:16.5px;line-height:2.05;margin:0;text-align:left">${q.p}</p></div>
        <div class="qjp" style="font-size:17px">${q.q}</div>`
     : `<div class="qjp">${q.q.replace('＿','<span class="blank"></span>')}</div>`;
   document.getElementById('v-mondai').innerHTML=`
   <div class="counter"><span>${mo.boss?L('batt'):L('sess')}</span>
     <span>${mo.boss?'❤'.repeat(mo.hp):''} ${mo.idx+1} / ${mo.q.length}</span></div>
   <div class="hp ${mo.boss?'boss':''}"><i style="width:${mo.idx/mo.q.length*100}%"></i></div>
-  <div style="margin-top:16px"><span class="qtag">${q.s}</span></div>
+  <div style="margin-top:16px"><span class="qtag">${q.s}</span>${sayBtn(q.s==='読解'?q.p+' '+q.q:q.q,'ja-JP')}</div>
   ${body}
   <div id="opts">${q.o.map((o,k)=>`<button class="opt" data-k="${k}">
     <span class="num">${k+1}</span><span>${o}</span></button>`).join('')}</div>
   <div id="ex"></div>`;
+  wireSay();
   document.querySelectorAll('#opts .opt').forEach(b=>b.onclick=()=>answer(+b.dataset.k));
 }
 function answer(k){
@@ -4410,11 +4634,13 @@ function answer(k){
   if(ok){mo.ok++;addXP(6);}else if(mo.boss)mo.hp--;
   document.querySelectorAll('#opts .opt').forEach(b=>{b.disabled=true;const n=+b.dataset.k;
     if(n===q.a)b.classList.add('right');else if(n===k)b.classList.add('wrong');});
+  const exSay=sayBtn(S.lang==='pt'?q.ex:EN_MEX[i],uiLang());
   document.getElementById('ex').innerHTML=`
-    <div class="explain"><h4>${ok?L('right'):L('wrong')}</h4>${S.lang==='pt'?q.ex:EN_MEX[i]}</div>
+    <div class="explain"><h4>${ok?L('right'):L('wrong')}${exSay}</h4>${S.lang==='pt'?q.ex:EN_MEX[i]}</div>
     <button class="btn shu" id="nx" style="margin-top:12px">${mo.idx+1>=mo.q.length?L('result'):L('next')}</button>`;
   if(mo.from==='d50'&&S.d50){S.d50.pos=Math.min(S.d50.pos+1,S.d50.ids.length);
     if(ok)S.d50.ok++;save();if(cur==='home')renderHome();}
+  wireSay();
   document.getElementById('nx').onclick=()=>{mo.idx++;bump('m');if(q.s==='読解')bump('r');drawQ();};
   document.getElementById('ex').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
@@ -4499,6 +4725,47 @@ function listTraps(){
   <button class="btn ghost sm" onclick="renderTrap()">${L('back')}</button>`;
 }
 
+/* ═══════════════ 部首マップ ═══════════════ */
+let radOpen=null;
+function radFamilies(){
+  const fam={};
+  KANJI.forEach((k,i)=>{(PARTS[k.c]||[]).forEach(p=>{(fam[p]=fam[p]||[]).push(i);});});
+  return Object.entries(fam).filter(([p,a])=>a.length>=2)
+    .sort((a,b)=>b[1].length-a[1].length);
+}
+function renderRad(){
+  if(radOpen){
+    const idx=radFamilies().find(f=>f[0]===radOpen);
+    const list=idx?idx[1]:[];
+    document.getElementById('v-stats').innerHTML=`
+      <div class="eyebrow">${L('radT')}</div>
+      <div class="card" style="text-align:center">
+        ${partIcon(radOpen)}
+        <div style="font-family:var(--jp);font-size:28px;color:var(--mura);margin-top:4px">${radOpen}</div>
+        <div class="muted" style="margin-top:4px">${partName(radOpen)||''}</div>
+      </div>
+      <div class="famgrid">${list.map(i=>`<div class="famcell">
+        <span class="gl">${KANJI[i].c}</span>
+        <span class="nm">${gl(KANJI[i])}</span></div>`).join('')}</div>
+      <button class="btn shu" id="radStudy" style="margin-top:14px">${L('radOpen',list.length)}</button>
+      <button class="btn ghost sm" id="radBack" style="margin-top:10px">${L('radBack')}</button>`;
+    document.getElementById('radBack').onclick=()=>{radOpen=null;renderRad();};
+    document.getElementById('radStudy').onclick=()=>{
+      deck={q:list.map(i=>({key:'k',i})),idx:0,flip:false};radOpen=null;nav('dojo');drawCard();};
+    return;
+  }
+  const fams=radFamilies();
+  document.getElementById('v-stats').innerHTML=`
+    <div class="eyebrow">${L('radT')}</div>
+    <p class="muted" style="margin:-4px 0 14px">${L('radSub')}</p>
+    <div class="radgrid">${fams.map(([p,a])=>`<button class="radcell" data-rad="${p}">
+      ${RADICAL[p]?partIcon(p):''}<span class="gl">${p}</span>
+      <span class="nm">${partName(p)||'&nbsp;'}</span>
+      <span class="ct">${L('radN',a.length)}</span></button>`).join('')}</div>
+    <button class="btn ghost sm" id="radExit" style="margin-top:16px">${L('back')}</button>`;
+  document.querySelectorAll('[data-rad]').forEach(b=>b.onclick=()=>{radOpen=b.dataset.rad;renderRad();});
+  document.getElementById('radExit').onclick=()=>{renderStats();};
+}
 /* ═══════════════ 今日の50問 ═══════════════ */
 const D50=50;
 /* the day flips at 04:00, so a late-night session still counts as the same day */
@@ -4534,6 +4801,13 @@ function d50State(){
 }
 function startDaily(reset){
   const st=d50State();
+  /* a stored set can outlive the bank it was drawn from — drop anything that no longer exists */
+  const live=st.ids.filter(i=>MONDAI[i]);
+  if(live.length!==st.ids.length){
+    st.ids=live;st.pos=Math.min(st.pos,live.length);
+    if(live.length<D50){const s=dailySet();
+      s.ids.forEach(i=>{if(st.ids.length<D50&&!st.ids.includes(i))st.ids.push(i);});}
+    save();}
   if(reset){st.pos=0;st.ok=0;save();}
   if(st.pos>=st.ids.length){toast(L('d50Done'));return;}
   const q=st.ids.slice(st.pos).map(i=>({q:MONDAI[i],i}));
@@ -4625,6 +4899,7 @@ function renderStats(){
   </div>
   <div class="card">
     <div class="eyebrow">${L('wallT')}</div>
+    <button class="btn ghost sm" id="radBtn" style="margin-bottom:12px">${L('radT')}</button>
     <p class="muted" style="margin:-2px 0 12px">${L('wallD')}</p>
     <div class="wall">${KANJI.map((k,i)=>{const bx=S.srs['k'+i]?S.srs['k'+i].b:-1;
       return `<div class="cell ${bx>=5?'b5':bx>=4?'b4':bx>=3?'b3':bx>=2?'b2':bx>=0?'b1':''}">${k.c}</div>`;}).join('')}</div>
@@ -4632,6 +4907,21 @@ function renderStats(){
   ${weak?`<div class="card"><div class="eyebrow">${L('weakT')}</div>${weak}</div>`:''}
   <div class="card">
     <div class="eyebrow">${L('setT')}</div>
+    <label class="msub" style="display:block;margin-bottom:6px">${L('a11yT')}</label>
+    <p class="muted" style="margin:0 0 12px;font-size:12.5px">${L('a11yNote')}</p>
+    ${[['font',L('aFont'),[['A',1],['A+',1.15],['A++',1.3],['A+++',1.5]]],
+       ['lead',L('aLead'),[['1.0',1],['1.3',1.3],['1.6',1.6],['2.0',2]]],
+       ['track',L('aTrack'),[['0',0],['+',0.03],['++',0.07],['+++',0.12]]],
+       ['rate',L('aRate'),[['0.6',0.6],['0.8',0.8],['1.0',1],['1.2',1.2]]]
+      ].map(([key,label,opts])=>`<label class="msub">${label}</label>
+      <div style="margin:6px 0 12px">${opts.map(([t,val])=>
+        `<span class="pill ${(S.a11y[key]||0)==val?'on':''}" data-a11y="${key}" data-val="${val}">${t}</span>`).join('')}</div>`).join('')}
+    <label class="msub">${L('aTint')}</label>
+    <div style="margin:6px 0 12px">${[[L('aOff'),'transparent'],['🟡','rgba(255,220,130,.16)'],
+      ['🔵','rgba(130,190,255,.14)'],['🟢','rgba(150,230,180,.13)'],['🟣','rgba(215,170,255,.14)']]
+      .map(([t,val])=>`<span class="pill ${S.a11y.tint===val?'on':''}" data-a11y="tint" data-val="${val}">${t}</span>`).join('')}</div>
+    <span class="pill ${S.a11y.dys?'on':''}" data-a11y="dys" data-val="toggle">${L('aDys')}</span>
+    <button class="btn ghost sm" id="sayTest" style="margin:12px 0 18px">🔊 ${L('aTry')}</button>
     <label class="msub">${L('langL')}</label>
     <div style="margin:8px 0 14px">
       <span class="pill ${S.lang==='pt'?'on':''}" data-lang="pt">Português</span>
@@ -4646,6 +4936,17 @@ function renderStats(){
     <button class="btn ghost sm" id="imp" style="margin-top:8px">${L('impB')}</button>
     <button class="btn ghost sm" id="rst" style="margin-top:8px;color:var(--coral)">${L('rstB')}</button>
   </div>`;
+  const rb2=document.getElementById('radBtn');
+  if(rb2)rb2.onclick=()=>{radOpen=null;renderRad();};
+  document.querySelectorAll('[data-a11y]').forEach(p=>p.onclick=()=>{
+    const k=p.dataset.a11y,v=p.dataset.val;
+    S.a11y[k]=(v==='toggle')?!S.a11y[k]:(k==='tint'?v:parseFloat(v));
+    save();applyA11y();renderStats();});
+  const st=document.getElementById('sayTest');
+  if(st)st.onclick=()=>speak(S.lang==='pt'
+    ?'Roberto, se você está ouvindo isto, a voz está funcionando. 日本語も読めます。'
+    :'Roberto, if you can hear this, the voice is working. 日本語も読めます。',uiLang());
+  wireSay();
   document.querySelectorAll('[data-lang]').forEach(p=>p.onclick=()=>setLang(p.dataset.lang));
   document.querySelectorAll('[data-lv]').forEach(p=>p.onclick=()=>{
     const k=p.dataset.lv,grp=p.dataset.grp,keys=grp==='levels'?VKEYS:GKEYS;
@@ -4669,7 +4970,8 @@ function renderStats(){
   VKEYS.forEach(k=>{if(S.levels[k]===undefined)S.levels[k]=true;});   /* older saves gain the new deck switched on */
   if(!S.glevels)S.glevels={g:true,h:true};
   GKEYS.forEach(k=>{if(S.glevels[k]===undefined)S.glevels[k]=true;});  /* older saves gain the new decks */
-  paintTop();renderHome();
+  if(!S.a11y)S.a11y={font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8};
+  applyA11y();paintTop();renderHome();
   setInterval(paintTop,60000);
 })();
 
