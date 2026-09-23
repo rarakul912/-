@@ -252,6 +252,19 @@ nav button.on .ic{background:var(--mura-dim)}
 .phr .tip{font-size:12.5px;line-height:1.6;margin-top:10px;padding-top:10px;
   border-top:1px dashed var(--bord)}
 .phr .tip b{color:var(--yama)}
+.bd{background:var(--surf);border:1px solid var(--bord);border-left:3px solid var(--yama);
+  border-radius:0 12px 12px 0;padding:14px;margin-bottom:12px}
+.bd .hd{font-size:10px;letter-spacing:.14em;font-weight:800;color:var(--yama)}
+.bd .wh{font-size:11px;color:var(--dim);margin-top:2px}
+.bd .out{background:var(--mura-dim);border-radius:10px;padding:12px;margin:10px 0}
+.bd .out .jp{font-family:var(--jp);font-size:17px;line-height:1.85}
+.bd .out .ph{color:var(--dim)}
+.bd .sl{margin-top:9px}
+.bd .sl .nm{font-size:10px;color:var(--yama);font-weight:700;letter-spacing:.06em}
+.bd .opt2{display:inline-block;background:var(--bg);border:1px solid var(--bord);border-radius:9px;
+  padding:6px 9px;margin:4px 4px 0 0;font-family:var(--jp);font-size:13.5px;line-height:1.4}
+.bd .opt2.on{background:var(--mura-btn);border-color:var(--mura-btn);color:#fff}
+.bd .opt2 small{display:block;font-family:var(--ui);font-size:9.5px;opacity:.72;margin-top:2px}
 .lsplay{display:flex;gap:10px;margin:14px 0}
 .lsplay .btn{flex:1}
 .lsline{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--bord);align-items:flex-start}
@@ -4011,14 +4024,14 @@ const MENSETSU=[
  ex:'その点につきましては、現時点ではお答えいたしかねます。',tx:'Sobre esse ponto, no momento não tenho como responder.',
  trap:'Útil se perguntarem algo que você não pode revelar (salário atual exato, projetos confidenciais). É uma recusa aceita, não evasiva.'},
 {g:'在留資格について',f:'外国人の転職で必ず確認される',pt:'sobre o status de residência',en:'about residence status',
- ex:'現在は技術・人文知識・国際業務の在留資格を持っております。',tx:'Atualmente tenho o status de residência de Engenheiro/Especialista em Humanidades/Serviços Internacionais.',
- trap:'⚠ Prepare esta resposta antes. Mudar de emprego exige que a nova função seja compatível com o visto — a empresa vai perguntar, e hesitar aqui preocupa o entrevistador.'},
+ ex:'現在は留学の在留資格で、内定後に就労資格へ変更する予定でおります。',tx:'Atualmente tenho visto de estudante e pretendo mudar para o de trabalho após a oferta.',
+ trap:'⚠ 留学ビザから就労ビザへの変更は<b>内定後</b>に入管へ申請する。審査に一〜二か月。四月入社なら一月までに申請したい。'},
 {g:'入社可能日',f:'いつから働けるか',pt:'quando pode começar',en:'earliest start date',
- ex:'引き継ぎを考慮し、二か月後の入社が可能です。',tx:'Considerando a passagem de trabalho, posso começar em dois meses.',
- trap:'Mencionar 引き継ぎ mostra responsabilidade com o emprego atual — o entrevistador interpreta isso como sinal de que você fará o mesmo com eles.'},
-{g:'退職願 / 退職届',f:'願＝お願い・届＝決定の通知',pt:'pedido de demissão / aviso de demissão',en:'resignation request / resignation notice',
- ex:'まずは直属の上司に退職願を提出した。',tx:'Primeiro entreguei o pedido de demissão ao meu chefe direto.',
- trap:'⚠ 退職<b>願</b> é um <b>pedido</b> (pode ser negociado). 退職<b>届</b> é a <b>notificação</b> depois de decidido (não se retira). Normalmente se entrega o 願 primeiro.'}
+ ex:'三月に卒業いたしますので、四月からの入社が可能です。',tx:'Formo-me em março, portanto posso começar em abril.',
+ trap:'卒業月と入社月をセットで言う。新卒は四月入社が基本なので、そこから逆算してビザ申請の時期も答えられるようにしておく。'},
+{g:'在留資格変更の書類',f:'内定後に入管へ出すもの',pt:'documentos da mudança de visto',en:'visa change paperwork',
+ ex:'内定通知書と卒業見込証明書を添えて、在留資格変更許可申請を行います。',tx:'Faço o pedido de mudança de status anexando a carta de oferta e o comprovante de conclusão prevista.',
+ trap:'⚠ 必要書類：内定通知書・卒業見込証明書・在学証明書・パスポート・在留カード。審査一〜二か月。'}
 ];
 const EN_MENSETSU={
 '御社 / 貴社':['I identified with your company\u2019s design approach.','⚠ The foreigner\u2019s number-one slip: 御社 (おんしゃ) in <b>speech</b>, 貴社 (きしゃ) in <b>writing</b>. 貴社 said aloud sounds like 記者 (reporter) and 帰社. In an interview, always 御社.'],
@@ -4036,9 +4049,9 @@ const EN_MENSETSU={
 'ご縁があれば':['Should the opportunity arise, I would be grateful.','ご縁 (fate, bond) avoids speaking directly of "being hired". Rejection emails use the reverse: 「今回はご縁がなかった」= not this time.'],
 '恐れ入りますが':['I am sorry, could you say that once more?','The lifeline for when you did not catch a question. Asking for a repeat is fine; answering wrongly because you did not understand is not.'],
 '～かねます':['On that point, I am unable to answer at this time.','Useful if asked something you cannot disclose (exact current salary, confidential projects). It is an accepted refusal, not evasion.'],
-'在留資格について':['I currently hold the Engineer/Specialist in Humanities/International Services residence status.','⚠ Prepare this answer in advance. Changing jobs requires the new role to match your visa — the company will ask, and hesitating here worries the interviewer.'],
-'入社可能日':['Allowing for the handover, I can start in two months.','Mentioning 引き継ぎ shows responsibility towards your current employer — the interviewer reads it as a sign you will do the same for them.'],
-'退職願 / 退職届':['First I handed my resignation request to my direct manager.','⚠ 退職<b>願</b> is a <b>request</b> (can be negotiated). 退職<b>届</b> is the <b>notice</b> once it is decided (cannot be withdrawn). Normally you hand in the 願 first.']
+'在留資格について':['I currently hold a student visa and plan to change to a work status once I have an offer.','⚠ The student-to-work change is filed <b>after</b> the offer. Screening takes one to two months, so for an April start file by January.'],
+'入社可能日':['I graduate in March, so I can start in April.','Give graduation month and start month together, and be ready with the visa timing worked back from April.'],
+'在留資格変更の書類':['I file the change-of-status application with the job offer and the certificate of expected graduation.','⚠ You need the offer letter, certificate of expected graduation, proof of enrolment, passport and residence card. Screening takes one to two months.']
 };
 
 /* ── 面接・現場の聴解（LISTEN 末尾に追加） ── */
@@ -4180,7 +4193,7 @@ const PHRASE_JOB_BASE=[
  tx:'Tenho o status "Engenheiro/Especialista em Humanidades/Serviços Internacionais", e o trabalho de projeto está dentro dele. Posso providenciar de imediato os documentos necessários.',
  trap:'⚠ ここで迷うと不安を与える。資格名を正確に言えるよう暗記する。「会社に手続きの負担がかからない」と伝わる言い方にする。'},
 {g:'入社可能日',f:'いつから来られるか',pt:'quando pode começar',en:'earliest start date',
- ex:'現職の引き継ぎを考慮いたしますと、内定をいただいてから二か月後には入社可能です。可能であれば、その範囲で調整させていただきます。',
+ ex:'現職の三月に卒業いたしますので、四月からの入社が可能です。ビザの変更手続きもそれまでに済ませる予定でおります。',
  tx:'Considerando a passagem de trabalho no emprego atual, posso começar dois meses após a oferta.',
  trap:'「すぐ辞められます」は逆効果。引き継ぎに触れると「この人は責任感がある」と伝わる。'},
 {g:'逆質問①',f:'何か質問はありますか',pt:'pergunta ao entrevistador',en:'your question to them',
@@ -4486,6 +4499,149 @@ const PHRASE_PT=[
 
 const PHRASE_JOB=[...PHRASE_JOB_BASE,...PHRASE_JOB2,...PHRASE_PT];
 const PHRASE_ARCH=[...PHRASE_ARCH_BASE,...PHRASE_ARCH2];
+/* ═══ 文を組み立てる · 単語を選んで自分の答えを作る ═══
+   型に沿って各スロットから一語ずつ選ぶ。会社や場面に合わせて差し替えられる。 */
+const BUILDER=[
+{g:'志望動機',why:'なぜこの会社か',
+ pt:'motivo da candidatura',en:'why this company',
+ frame:['【御社の特徴】','に','【惹かれた表現】','。','【自分の経験】','を活かし、','【したいこと】','と考え、志望いたしました。'],
+ slots:[
+  {n:'御社の特徴',o:[['地域に根ざした設計','projeto enraizado na comunidade'],['木造建築の技術','a técnica da construção em madeira'],['公共建築を多く手がけている点','o fato de realizarem muitas obras públicas'],
+    ['改修に力を入れている点','o empenho em reformas']]},
+  {n:'惹かれた表現',o:[['強く惹かれました','fiquei muito atraído'],['深く共感いたしました','identifiquei-me profundamente'],
+    ['以前から注目しておりました','acompanho há tempos'],['感銘を受けました','fiquei impressionado']]},
+  {n:'自分の経験',o:[['ポルトガルでの設計経験','a experiência de projeto em Portugal'],
+    ['住宅の意匠設計の経験','a experiência em projeto residencial'],
+    ['日本で学んだ木造の知識','o conhecimento de madeira adquirido no Japão'],
+    ['二つの国で学んだ視点','a perspectiva de dois países']]},
+  {n:'したいこと',o:[['多くの人が使う建物に携わりたい','trabalhar em edifícios usados por muitos'],
+    ['長く使われる建築をつくりたい','criar arquitetura que dure'],
+    ['設計から監理まで一貫して関わりたい','acompanhar do projeto à obra'],
+    ['地域に残る仕事がしたい','fazer um trabalho que fique na comunidade']]}],
+ tip:'⚠ 会社ごとに変えるのは【御社の特徴】だけ。残りは自分の軸として固定しておくと、どの会社でもぶれずに答えられる。'},
+
+{g:'自己PR・強み',why:'あなたの強みは',
+ pt:'seus pontos fortes',en:'your strengths',
+ frame:['私の強みは','【強み】','ことです。','【場面】','では、','【行動】','ました。その結果、','【結果】','。'],
+ slots:[
+  {n:'強み',o:[['言葉にならない要望を形にする','dar forma ao que não é dito'],
+    ['条件の違う相手をまとめる','alinhar partes com condições diferentes'],
+    ['現場と設計の間を調整する','mediar entre obra e projeto'],
+    ['最後まで細部を詰める','levar os detalhes até o fim']]},
+  {n:'場面',o:[['ポルトガルの住宅の案件','um projeto residencial em Portugal'],
+    ['大学の設計課題','um exercício de projeto na faculdade'],
+    ['施主の希望が割れた案件','um caso em que o cliente discordava'],
+    ['予算が限られた計画','um projeto com orçamento apertado']]},
+  {n:'行動',o:[['毎回模型をお持ちして説明し','levei uma maquete a cada reunião'],
+    ['二案を並べて比較していただき','apresentei duas opções lado a lado'],
+    ['現場に通って納まりを確認し','fui à obra verificar os detalhes'],
+    ['要望を書面にして毎回確認し','registrei os pedidos por escrito']]},
+  {n:'結果',o:[['三回の打ち合わせで合意に至りました','chegamos a acordo em três reuniões'],
+    ['工期内に収めることができました','conseguimos ficar dentro do prazo'],
+    ['ご満足いただけました','o cliente ficou satisfeito'],
+    ['設計変更を最小限に抑えられました','minimizamos as alterações']]}],
+ tip:'型は【強み】→【場面】→【行動】→【結果】。結果に数字か期間が入ると一気に具体的になる。'},
+
+{g:'弱み',why:'あなたの短所は',
+ pt:'seus pontos fracos',en:'your weaknesses',
+ frame:['【弱み】','ことがあります。そのため、今は','【対策】','ようにしております。'],
+ slots:[
+  {n:'弱み',o:[['細部にこだわりすぎて時間をかけてしまう','me prendo demais aos detalhes'],
+    ['一人で抱え込んでしまう','acabo segurando tudo sozinho'],
+    ['慎重になりすぎて判断が遅れる','fico cauteloso demais e demoro a decidir'],
+    ['日本語の敬語に迷うことがある','hesito no uso da linguagem honorífica']]},
+  {n:'対策',o:[['作業の前に優先順位と締め切りを決める','defino prioridades e prazos antes'],
+    ['早い段階で先輩に相談する','consulto um sênior logo no início'],
+    ['時間を区切って進める','trabalho com tempo delimitado'],
+    ['打ち合わせの前に表現を準備しておく','preparo as expressões antes da reunião']]}],
+ tip:'⚠ 弱みは必ず【対策】とセット。仕事に致命的なもの（時間を守れない等）は選ばない。'},
+
+{g:'ポートフォリオ説明',why:'作品の説明',
+ pt:'apresentando um projeto',en:'presenting a project',
+ frame:['こちらは','【案件】','です。','【条件】','でしたので、','【判断】','ました。その結果、','【効果】','。'],
+ slots:[
+  {n:'案件',o:[['ポルトガルで担当した住宅','uma casa que projetei em Portugal'],
+    ['大学院の設計課題','um exercício do mestrado'],
+    ['小規模な公共施設','um pequeno equipamento público'],
+    ['古い建物の改修計画','a reforma de um edifício antigo']]},
+  {n:'条件',o:[['斜面の敷地','um terreno em declive'],['南側に高い建物がある敷地','um lote com um prédio alto ao sul'],
+    ['間口の狭い敷地','um lote estreito'],['予算が限られた計画','um orçamento limitado']]},
+  {n:'判断',o:[['地形に沿って床レベルを分け','dividi os níveis acompanhando o terreno'],
+    ['光を上から取り入れ','trouxe a luz pelo alto'],
+    ['動線を一本にまとめ','concentrei a circulação num só eixo'],
+    ['既存の構造を残して使い','mantive a estrutura existente']]},
+  {n:'効果',o:[['どの部屋からも庭が見えるようになりました','todos os cômodos passaram a ver o jardim'],
+    ['狭さを感じない空間になりました','o espaço deixou de parecer apertado'],
+    ['家事の動きが短くなりました','o percurso doméstico encurtou'],
+    ['費用を抑えることができました','conseguimos conter o custo']]}],
+ tip:'⚠ 順番が命：【条件】→【判断】→【効果】。条件を先に言わないと、判断がただの好みに聞こえる。'},
+
+{g:'逆質問',why:'何か質問はありますか',
+ pt:'sua pergunta a eles',en:'your question to them',
+ frame:['【前置き】','、','【聞きたいこと】','でしょうか。'],
+ slots:[
+  {n:'前置き',o:[['一点お伺いしたいのですが','gostaria de perguntar uma coisa'],
+    ['差し支えなければ','se não houver problema'],
+    ['入社後のことでお聞きしたいのですが','sobre depois de entrar']]},
+  {n:'聞きたいこと',o:[['入社までに勉強しておくべきことはございます','há algo que eu deva estudar antes de entrar'],
+    ['意匠と構造の担当者はどのように連携されているの','como colaboram as equipes de projeto e estrutura'],
+    ['若手はどのくらいの規模の案件から担当するの','a partir de que escala os juniores assumem projetos'],
+    ['現場にはどの程度関わることができるの','quanto é possível envolver-se na obra']]}],
+ tip:'⚠ 「特にありません」は避ける。二つ用意して、一つは仕事の進め方、一つは自分の成長について聞く。'},
+
+{g:'できないと伝える',why:'施主・上司に断る',
+ pt:'dizendo que não dá',en:'saying it cannot be done',
+ frame:['【受け止め】','、','【理由】','ため、','【できないこと】','。','【代案】','はいかがでしょうか。'],
+ slots:[
+  {n:'受け止め',o:[['ご希望はよく分かるのですが','entendo bem o seu desejo'],
+    ['おっしゃることはもっともですが','o que diz faz todo sentido'],
+    ['検討いたしましたが','estudei a questão']]},
+  {n:'理由',o:[['この壁が耐力壁である','esta parede é estrutural'],
+    ['用途地域の制限がある','há restrição de zoneamento'],
+    ['ご予算を超えてしまう','ultrapassaria o orçamento'],
+    ['工期が一か月延びてしまう','o prazo se estenderia um mês']]},
+  {n:'できないこと',o:[['取り払うことができません','não é possível removê-la'],
+    ['三階建てにすることができません','não é possível fazer três pavimentos'],
+    ['この仕様では難しくなります','fica difícil com esta especificação']]},
+  {n:'代案',o:[['開口を広げるご提案','propor ampliar a abertura'],
+    ['仕上げを変更して調整する方法','ajustar mudando o acabamento'],
+    ['二階建てで広さを確保する案','garantir a área em dois pavimentos'],
+    ['一部を次の工事に回す方法','deixar parte para uma obra futura']]}],
+ tip:'⚠ 日本の現場では【代案】のない否定は通らない。受け止め → 理由 → 不可 → 代案、の四拍で覚える。'},
+
+{g:'提案する',why:'意匠の意図を語る',
+ pt:'propondo um projeto',en:'pitching a design',
+ frame:['この案では、','【操作】','ことで、','【ねらい】','を中心に据えました。'],
+ slots:[
+  {n:'操作',o:[['南側に大きな開口を取る','abrir um grande vão ao sul'],
+    ['床レベルを少しずらす','deslocar levemente os níveis'],
+    ['天井を一部だけ高くする','elevar apenas parte do forro'],
+    ['庭を建物で囲む','cercar o jardim com o edifício']]},
+  {n:'ねらい',o:[['一日を通して光が移動すること','o movimento da luz ao longo do dia'],
+    ['家族の気配が伝わること','sentir a presença da família'],
+    ['外に開きながら視線は閉じること','abrir ao exterior mas fechar aos olhares'],
+    ['季節の変化が感じられること','perceber a mudança das estações']]}],
+ tip:'意匠のプレゼンは【操作】より【ねらい】が主役。「何をしたか」ではなく「なぜそうしたか」から入る。'},
+
+{g:'遅れ・ミスを報告',why:'悪い知らせを伝える',
+ pt:'reportando um problema',en:'reporting bad news',
+ frame:['【謝罪】','。','【事実】','ており、','【影響】','見込みです。','【対応】','。'],
+ slots:[
+  {n:'謝罪',o:[['申し訳ございません','peço desculpas'],
+    ['ご迷惑をおかけしております','lamento o transtorno'],
+    ['このたびは私どもの確認不足でした','foi falha nossa de verificação']]},
+  {n:'事実',o:[['資材の入荷が遅れ','a entrega dos materiais atrasou'],
+    ['図面に記載漏れがあり','houve uma omissão no desenho'],
+    ['天候により作業が止まっ','o tempo parou os trabalhos']]},
+  {n:'影響',o:[['工期が二週間ほど延びる','o prazo deve estender-se duas semanas'],
+    ['費用が十万円ほど増える','o custo deve subir cerca de cem mil ienes'],
+    ['引き渡しが一か月遅れる','a entrega atrasará um mês']]},
+  {n:'対応',o:[['改めて工程をご説明させてください','permita-me reapresentar o cronograma'],
+    ['再発防止のため手順を見直しております','estamos revendo o processo'],
+    ['代替案を本日中にお持ちいたします','trago uma alternativa ainda hoje']]}],
+ tip:'⚠ 順番を絶対に変えない：謝罪 → 事実 → 影響 → 対応。言い訳を先に置くと信用を失う。'}
+];
+
 /* ═══════════════ i18n ═══════════════ */
 const T={
  daysTo:{pt:'DIAS ATÉ DEZEMBRO',en:'DAYS UNTIL DECEMBER'},
@@ -4612,6 +4768,11 @@ const T={
           en:'What to say in a client meeting and on site.'},
  phWhy:{pt:'Ponto de atenção',en:'Watch out'},
  phAll:{pt:'todas',en:'all'},
+ bdT:{pt:'文を組み立てる — monte a sua frase',en:'文を組み立てる — build your own line'},
+ bdS:{pt:'Escolha uma palavra por bloco. A frase se monta em cima. Troque as peças conforme a empresa e a sua situação — é isso que permite improvisar na hora.',
+      en:'Pick one word per block. The sentence assembles above. Swap the pieces for each company and situation — that is what lets you improvise on the spot.'},
+ bdPick:{pt:'escolha',en:'pick'},
+ bdReset:{pt:'Limpar',en:'Clear'},
  phIsho:{pt:'意匠設計 — o seu trabalho',en:'意匠設計 — your actual job'},
  phIshoS:{pt:'Propor, defender o projeto e negociar com estrutura, instalações e o cliente.',
           en:'Pitching, defending the design and negotiating with structure, services and the client.'},
@@ -4674,7 +4835,7 @@ function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.r
 
 /* ═══════════════ 状態管理 ═══════════════ */
 const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossWins:0,
-           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8,sayEx:false},levels:{r:true,b:true,y:true,v:true,w:true,x:true,z:true},glevels:{i:true,g:true,h:true,n:true,e:true,j:true,c:true,p:true},d50:null};
+           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8,sayEx:false},bd:{},levels:{r:true,b:true,y:true,v:true,w:true,x:true,z:true},glevels:{i:true,g:true,h:true,n:true,e:true,j:true,c:true,p:true},d50:null};
 let S=JSON.parse(JSON.stringify(DEF));
 const KEY='n2sprint:v2';
 /* APPEND ONLY — the original 66 keep indices 0-65, so every k-record stays valid */
@@ -5953,8 +6114,37 @@ function phraseCard(p){
     <div class="tip"><b>${L('phWhy')}:</b> ${p.trap}</div>
   </div>`;
 }
+function builderCard(b,bi){
+  const sel=S.bd&&S.bd[bi]||{};
+  const jp=b.frame.map(part=>{
+    if(!part.startsWith('【'))return part;
+    const name=part.slice(1,-1);
+    const si=b.slots.findIndex(s=>s.n===name);
+    const pick=sel[si];
+    return pick!==undefined
+      ? '<b>'+b.slots[si].o[pick][0]+'</b>'
+      : '<span class="ph">（'+name+'）</span>';}).join('');
+  const plain=b.frame.map(part=>{
+    if(!part.startsWith('【'))return part;
+    const si=b.slots.findIndex(s=>s.n===part.slice(1,-1));
+    return sel[si]!==undefined?b.slots[si].o[sel[si]][0]:'';}).join('');
+  const full=b.slots.every((s,si)=>sel[si]!==undefined);
+  return `<div class="bd">
+    <div class="hd">${b.g}</div>
+    <div class="wh">${S.lang==='pt'?b.pt:b.en} · ${b.why}</div>
+    <div class="out"><div class="jp">${jp}</div>
+      ${full?`<div style="margin-top:8px">${sayBtn(plain,'ja-JP')}</div>`:''}</div>
+    ${b.slots.map((s,si)=>`<div class="sl"><span class="nm">${s.n}</span><div>
+      ${s.o.map((o,oi)=>`<span class="opt2 ${sel[si]===oi?'on':''}" data-bd="${bi}" data-sl="${si}" data-op="${oi}">
+        ${o[0]}<small>${o[1]}</small></span>`).join('')}</div></div>`).join('')}
+    <div class="tip" style="font-size:12.5px;line-height:1.6;margin-top:11px;padding-top:10px;
+      border-top:1px dashed var(--bord)"><b style="color:var(--yama)">${L('phWhy')}:</b> ${b.tip}</div>
+    <button class="btn ghost sm" data-bdclr="${bi}" style="margin-top:10px">${L('bdReset')}</button>
+  </div>`;
+}
 function renderPro(){
   if(deck||mo||tr||ls)return;
+  if(!S.bd)S.bd={};
   const learned=key=>POOL[key].filter((x,i)=>S.srs[key+i]&&S.srs[key+i].b>=4).length;
   const box=(t,ic,k,col)=>{const p=POOL[k],done=learned(k);
     return `<button class="deck" data-deck="${k}" style="border-color:${col}">
@@ -5972,6 +6162,10 @@ function renderPro(){
   ${box('転職・就職','転','r','#7ED4EF')}
   ${box('建築','築','b','#7ED4EF')}
   ${box('面接の表現','面','i','#7ED4EF')}
+
+  <div class="eyebrow" style="margin-top:26px">${L('bdT')}</div>
+  <p class="muted" style="margin:-4px 0 12px;font-size:12.5px">${L('bdS')}</p>
+  ${BUILDER.map(builderCard).join('')}
 
   <div class="eyebrow" style="margin-top:26px">${L('phJob')} · ${L('phSearch',PHRASE_JOB.length)}</div>
   <p class="muted" style="margin:-4px 0 10px;font-size:12.5px">${L('phJobS')}</p>
@@ -5996,6 +6190,14 @@ function renderPro(){
   document.querySelectorAll('[data-phtab]').forEach(b=>b.onclick=()=>{proTab=+b.dataset.phtab;renderPro();});
   document.querySelectorAll('[data-artab]').forEach(b=>b.onclick=()=>{archTab=+b.dataset.artab;renderPro();});
   document.querySelectorAll('[data-istab]').forEach(b=>b.onclick=()=>{ishoTab=+b.dataset.istab;renderPro();});
+  document.querySelectorAll('[data-bd]').forEach(b=>b.onclick=()=>{
+    const bi=+b.dataset.bd,si=+b.dataset.sl,oi=+b.dataset.op;
+    if(!S.bd)S.bd={};if(!S.bd[bi])S.bd[bi]={};
+    S.bd[bi][si]=(S.bd[bi][si]===oi)?undefined:oi;
+    if(S.bd[bi][si]===undefined)delete S.bd[bi][si];
+    save();renderPro();});
+  document.querySelectorAll('[data-bdclr]').forEach(b=>b.onclick=()=>{
+    if(S.bd)delete S.bd[+b.dataset.bdclr];save();renderPro();});
   document.getElementById('proQ').onclick=startPro;
   document.getElementById('proL').onclick=startProListen;
   document.querySelectorAll('#v-pro [data-deck]').forEach(b=>b.onclick=()=>{
