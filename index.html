@@ -210,7 +210,7 @@ nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
   padding:5px 2px;color:var(--dim);border-radius:10px}
 nav button .ic{font-family:var(--jp);font-size:19px;font-weight:700;line-height:1;
   padding:5px 14px;border-radius:10px;transition:background .2s}
-nav button .lb{font-size:9px;letter-spacing:.08em;font-weight:700}
+nav button .lb{font-size:8px;letter-spacing:.02em;font-size:9px;letter-spacing:.08em;font-weight:700}
 nav button.on{color:var(--mura)}
 nav button.on .ic{background:var(--mura-dim)}
 
@@ -243,6 +243,32 @@ nav button.on .ic{background:var(--mura-dim)}
 .parts .arrow{font-size:19px;color:var(--yama);font-weight:800}
 .parts .whole{background:var(--mura-dim);border-color:var(--mura);min-width:62px}
 .parts .whole .gl{font-size:30px;color:var(--txt)}
+.phr{background:var(--surf);border:1px solid var(--bord);border-left:3px solid #7ED4EF;
+  border-radius:0 12px 12px 0;padding:14px;margin-bottom:11px}
+.phr .sc{font-size:10px;letter-spacing:.14em;font-weight:800;color:#7ED4EF}
+.phr .wh{font-size:11px;color:var(--dim);margin-top:2px}
+.phr .jp{font-family:var(--jp);font-size:17px;line-height:1.85;margin:9px 0 6px}
+.phr .tr{font-size:13px;color:var(--dim);line-height:1.55}
+.phr .tip{font-size:12.5px;line-height:1.6;margin-top:10px;padding-top:10px;
+  border-top:1px dashed var(--bord)}
+.phr .tip b{color:var(--yama)}
+.lsplay{display:flex;gap:10px;margin:14px 0}
+.lsplay .btn{flex:1}
+.lsline{display:flex;gap:10px;padding:9px 0;border-bottom:1px dashed var(--bord);align-items:flex-start}
+.lsline:last-child{border:0}
+.lsline .who{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--jp);font-size:13px;font-weight:700}
+.lsline .who.m{background:rgba(92,200,232,.18);color:#7ED4EF}
+.lsline .who.f{background:var(--mura-dim);color:var(--mura)}
+.lsline .tx{font-family:var(--jp);font-size:16px;line-height:1.75}
+.lswave{height:46px;display:flex;align-items:center;justify-content:center;gap:4px;margin:6px 0}
+.lswave i{width:5px;border-radius:3px;background:var(--mura);opacity:.35;height:12px}
+.lswave.on i{animation:wave .9s ease-in-out infinite alternate;opacity:.9}
+.lswave i:nth-child(2){animation-delay:.1s}.lswave i:nth-child(3){animation-delay:.2s}
+.lswave i:nth-child(4){animation-delay:.3s}.lswave i:nth-child(5){animation-delay:.4s}
+.lswave i:nth-child(6){animation-delay:.5s}.lswave i:nth-child(7){animation-delay:.6s}
+@keyframes wave{from{height:8px}to{height:40px}}
+@media(prefers-reduced-motion:reduce){.lswave.on i{animation:none;height:26px}}
 .radgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:9px}
 .radcell{background:var(--surf);border:1.5px solid var(--bord);border-radius:12px;
   padding:11px 6px 8px;text-align:center}
@@ -313,6 +339,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
   <section class="view" id="v-mondai"></section>
   <section class="view" id="v-trap"></section>
   <section class="view" id="v-miss"></section>
+  <section class="view" id="v-pro"></section>
   <section class="view" id="v-stats"></section>
 </main>
 
@@ -322,6 +349,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
   <button data-v="mondai"><span class="ic">問</span><span class="lb">EXAME</span></button>
   <button data-v="trap"><span class="ic">罠</span><span class="lb">ARMADILHA</span></button>
   <button data-v="miss"><span class="ic">誤</span><span class="lb" id="nb4">ERROS</span></button>
+  <button data-v="pro"><span class="ic">専</span><span class="lb">ÁREA</span></button>
   <button data-v="stats"><span class="ic">録</span><span class="lb" id="nb5">DADOS</span></button>
 </nav>
 
@@ -3706,6 +3734,722 @@ const COMPNAME={
 '角':{pt:'chifre',en:'horn'},
 };
 const PARTS={"略":["田","各"],"締":["糸","帝"],"被":["衤","皮"],"補":["衤","甫"],"訳":["言","尺"],"誘":["言","秀"],"賛":["夫","貝"],"越":["走","戉"],"較":["車","交"],"遅":["辶","犀"],"適":["辶","啇"],"障":["阝","章"],"雑":["九","木","隹"],"震":["雨","辰"],"幼":["幺","力"],"志":["士","心"],"恐":["工","凡","心"],"慣":["忄","貫"],"抗":["扌","亢"],"招":["扌","召"],"捕":["扌","甫"],"採":["扌","采"],"接":["扌","妾"],"提":["扌","是"],"損":["扌","員"],"敵":["啇","攵"],"枯":["木","古"],"殖":["歹","直"],"汚":["氵","亏"],"沈":["氵","冘"],"済":["氵","斉"],"測":["氵","則"],"燃":["火","然","灬"],"祈":["礻","斤"],"秘":["禾","必"],"突":["穴","犬"],"紹":["糸","召"],"維":["糸","隹"],"蓄":["艹","畜"],"裁":["衣","戈"],"触":["角","虫"],"避":["辶","辟"],"零":["雨","令"],"項":["工","頁"],"額":["客","頁"],"依":["亻","衣"],"企":["人","止"],"傾":["亻","頃"],"儲":["亻","諸"],"募":["莫","力"],"状":["爿","犬"],"況":["氵","兄"],"詳":["言","羊"],"析":["木","斤"],"鮮":["魚","羊"],"均":["土","勻"],"圧":["厂","土"],"域":["土","或"],"権":["木","雚"],"収":["丩","攵"],"貧":["分","貝"],"富":["宀","畐"],"騒":["馬","蚤"],"響":["郷","音"],"肩":["戸","月"],"腕":["月","宛"],"肌":["月","几"],"胸":["月","匈"],"腰":["月","要"],"床":["广","木"],"柱":["木","主"],"壁":["辟","土"],"棚":["木","朋"],"徴":["彳","微"],"微":["彳","散"],"稿":["禾","高"],"覧":["監","見"],"販":["貝","反"],"購":["貝","冓"],"貯":["貝","宁"],"賃":["任","貝"],"償":["亻","賞"],"貢":["工","貝"],"献":["南","犬"],"尊":["酋","寸"],"敬":["苟","攵"],"儀":["亻","義"],"姿":["次","女"],"勢":["埶","力"],"態":["能","心"],"憲":["害","心"],"律":["彳","聿"],"訴":["言","斥"],"執":["幸","丸"],"逮":["辶","隶"],"罰":["罒","言","刂"],"犯":["犭","㔾"],"刻":["亥","刂"],"鋭":["金","兌"],"鈍":["金","屯"],"幅":["巾","畐"],"枠":["木","卆"],"診":["言","㐱"],"療":["疒","尞"],"症":["疒","正"],"疲":["疒","皮"],"眠":["目","民"],"覚":["⺍","見"],"含":["今","口"],"除":["阝","余"],"訂":["言","丁"],"仮":["亻","反"],"占":["卜","口"],"座":["广","人","土"],"臨":["臣","品"],"到":["至","刂"],"途":["辶","余"],"即":["皀","卩"],"催":["亻","崔"],"贈":["貝","曽"],"祝":["礻","兄"],"嘆":["口","漢"],"惜":["忄","昔"],"憎":["忄","曽"],"怖":["忄","布"],"濃":["氵","農"],"薄":["艹","溥"],"添":["氵","忝"],"削":["肖","刂"],"酸":["酉","夋"],"蒸":["艹","丞","灬"],"沸":["氵","弗"],"溶":["氵","容"],"凍":["冫","東"],"混":["氵","昆"],"泊":["氵","白"],"浴":["氵","谷"],"浮":["氵","孚"],"沿":["氵","㕣"],"抱":["扌","包"],"抜":["扌","犮"],"押":["扌","甲"],"振":["扌","辰"],"揺":["扌","䍃"],"貫":["毌","貝"],"徹":["彳","育","攵"],"底":["广","氐"],"端":["立","耑"],"縮":["糸","宿"],"拡":["扌","広"],"超":["走","召"],"派":["氵","厎"],"層":["尸","曽"],"構":["木","冓"],"築":["竹","巩","木"],"倒":["亻","到"],"徐":["彳","余"],"絡":["糸","各"],"緩":["糸","爰"],"廃":["广","発"],"誤":["言","呉"],"恥":["耳","心"],"諦":["言","帝"],"頼":["束","頁"],"頑":["元","頁"],"肯":["止","月"],"否":["不","口"],"是":["日","正"],"恵":["叀","心"],"励":["厉","力"],"耐":["而","寸"],"忍":["刃","心"],"黙":["黒","犬"],"叫":["口","丩"],"笑":["竹","夭"],"涙":["氵","戻"],"咲":["口","关"],"茂":["艹","戊"],"摘":["扌","啇"],"掲":["扌","曷"],"雇":["戸","隹"],"就":["京","尤"],"勤":["堇","力"],"僚":["亻","尞"],"隊":["阝","㒸"],"兵":["斤","廾"],"攻":["工","攵"],"守":["宀","寸"],"防":["阝","方"],"敗":["貝","攵"],"威":["戈","女"],"脅":["劦","月"],"奪":["大","隹","寸"],"襲":["龍","衣"],"撃":["軍","手"],"抵":["扌","氐"],"圏":["囗","巻"],"核":["木","亥"],"射":["身","寸"],"爆":["火","暴"],"検":["木","僉"],"査":["木","且"],"審":["宀","番"],"証":["言","正"],"拠":["扌","処"],"疑":["匕","矢","疋"],"誠":["言","成"],"純":["糸","屯"],"複":["衤","复"],"程":["禾","呈"],"限":["阝","艮"],"割":["害","刂"],"倍":["亻","咅"],"総":["糸","忩"],"量":["旦","里"],"容":["宀","谷"],"積":["禾","責"],"密":["宀","必","山"],"簡":["竹","間"],"潔":["氵","絜"],"捨":["扌","舎"],"拾":["扌","合"],"誇":["言","夸"],"賢":["臤","貝"],"優":["亻","憂"],"劣":["少","力"],"秀":["禾","乃"],"脱":["月","兌"],"巡":["辶","巛"],"訪":["言","方"],"迎":["辶","卬"],"遭":["辶","曹"],"遇":["辶","禺"],"誉":["与","言"],"匿":["匚","若"],"隠":["阝","㥯"],"魅":["鬼","未"],"惑":["或","心"],"承":["手"],"豊":["豆"],"輸":["車"],"幹":["干"],"延":["正"],"従":["彳","止"],"悩":["忄"],"探":["扌"],"易":["日"],"暴":["日","水"],"替":["日"],"欠":["人"],"班":["王","刂"],"皮":["又"],"穏":["禾","心"],"絶":["糸","色"],"益":["皿"],"畳":["田"],"免":["人"],"旧":["日"],"甘":["口"],"辛":["立"],"系":["糸"],"棄":["木"],"争":["刀"],"単":["田"],"率":["十"],"比":["匕"],"厳":["攵"]};
+/* ═══ 聴解 · 原創スクリプト（本試験5形式） ═══
+   s = [話者, 台詞]  話者: 'm' 男 / 'f' 女 */
+const LISTEN=[
+/* ── 課題理解: このあと何をするか ── */
+{t:'課題理解',s:[['f','田中さん、明日の会議の資料、もうコピーした？'],['m','いえ、まだです。二十部でいいですか。'],['f','それがね、参加者が増えて二十五人になったの。でもその前に、部長に内容を確認してもらわないと。直しが入るかもしれないから。'],['m','わかりました。じゃあ、先に部長のところに行ってきます。'],['f','うん、お願い。コピーはそのあとでいいから。']],
+ q:'男の人はこのあとまず何をしますか。',o:['部長に資料を見せる','資料を二十部コピーする','資料を二十五部コピーする','参加者に連絡する'],a:0,
+ ex:'A cópia aparece primeiro e o número muda (20→25), mas 「<b>その前に</b>」coloca outra tarefa na frente. No 課題理解, o que se ouve primeiro raramente é o que se faz primeiro — espere a palavra que reordena.',
+ en:'Copying comes up first and the number changes (20→25), but 「<b>その前に</b>」puts another task ahead of it. In 課題理解, what you hear first is rarely what gets done first — wait for the word that reorders things.'},
+{t:'課題理解',s:[['m','先生、レポートの締め切りって金曜日でしたよね。'],['f','ええ。でも出す前に、テーマだけは今週中にメールで送ってね。'],['m','テーマはもう決まってるんですけど、参考文献がまだ見つからなくて。'],['f','文献はあとでいいわ。まずテーマね。']],
+ q:'学生はまず何をしなければなりませんか。',o:['テーマをメールで送る','レポートを出す','参考文献を探す','先生の研究室に行く'],a:0,
+ ex:'「決まってる」é a forma falada de <b>決まっている</b> — o ている perde o い na fala rápida. O professor responde à preocupação com os livros com 「あとでいい」: isso adia, não elimina. A prioridade é 「<b>まず</b>テーマ」.',
+ en:'「決まってる」is spoken <b>決まっている</b> — the い of ている drops in fast speech. The teacher answers the worry about sources with 「あとでいい」: that postpones it, it does not cancel it. The priority is 「<b>まず</b>テーマ」.'},
+{t:'課題理解',s:[['f','すみません、このシャツ、もう少し大きいサイズありますか。'],['m','申し訳ございません、Lは売り切れでして。お取り寄せになりますが、一週間ほどかかります。'],['f','一週間か……来週の旅行で着たかったんだけど。'],['m','でしたら、色違いでよろしければLがございますが。'],['f','あ、じゃあそれ、見せてください。']],
+ q:'女の人はこのあと何をしますか。',o:['別の色のシャツを見る','シャツを取り寄せる','別の店に行く','小さいサイズを買う'],a:0,
+ ex:'A encomenda (取り寄せ) é oferecida e depois descartada pelo prazo. A saída vem com 「<b>でしたら</b>」, que em atendimento sempre introduz a alternativa. 「じゃあそれ」fecha a decisão.',
+ en:'Ordering (取り寄せ) is offered and then dropped because of the wait. The way out comes with 「<b>でしたら</b>」, which in service Japanese always introduces the alternative. 「じゃあそれ」closes the decision.'},
+{t:'課題理解',s:[['f','ねえ、今日の夕飯カレーにしようと思うんだけど、にんじんがないの。買ってきてくれる？'],['m','いいよ。ついでに牛乳も買ってこようか。'],['f','牛乳は昨日買ったから大丈夫。あ、でも卵がもうないかも。'],['m','じゃあ、にんじんと卵ね。']],
+ q:'男の人は何を買いますか。',o:['にんじんと卵','にんじんと牛乳','牛乳と卵','にんじんと牛乳と卵'],a:0,
+ ex:'Três itens aparecem, um é retirado (牛乳は…大丈夫) e outro entra (卵). Anote cada item com ○ ou ✕ enquanto ouve — é exatamente isso que o 課題理解 testa. E o homem resume no fim: o resumo final é o gabarito.',
+ en:'Three items come up, one is withdrawn (牛乳は…大丈夫) and another is added (卵). Mark each item ○ or ✕ as you listen — that is exactly what 課題理解 tests. And he sums it up at the end: the closing summary is the answer.'},
+{t:'課題理解',s:[['m','もしもし、山田です。今日の打ち合わせ、三時からでしたよね。'],['f','はい。ただ、会議室が変わりまして、三階ではなく五階になりました。'],['m','五階ですね。わかりました。資料は印刷して持っていきます。'],['f','あ、資料はこちらで用意しますので、大丈夫ですよ。']],
+ q:'男の人がしなくてもよくなったことは何ですか。',o:['資料を印刷すること','五階に行くこと','三時に行くこと','電話をかけ直すこと'],a:0,
+ ex:'⚠ Leia a pergunta: é 「<b>しなくてもよくなった</b>」— o que <b>deixou</b> de ser necessário. 「大丈夫ですよ」aqui é recusa educada da oferta dele. No 聴解 real, perguntas negativas assim são a armadilha mais comum.',
+ en:'⚠ Read the question: it is 「<b>しなくてもよくなった</b>」— what is <b>no longer</b> needed. 「大丈夫ですよ」here is a polite refusal of his offer. On the real 聴解, negative questions like this are the most common trap.'},
+{t:'課題理解',s:[['f','住所の変更ですね。こちらの用紙に記入して、身分証明書と一緒に出してください。'],['m','身分証明書はパスポートでいいですか。'],['f','はい、大丈夫です。それと、印鑑はお持ちですか。'],['m','今日は持ってきてないんですが……。'],['f','なければサインでも結構ですよ。']],
+ q:'男の人はこのあとまず何をしますか。',o:['用紙に記入する','印鑑を取りに帰る','パスポートを取りに帰る','別の窓口に行く'],a:0,
+ ex:'O 印鑑 parece um problema, mas 「サインでも結構です」o resolve na hora. 「<b>結構です</b>」aqui significa "serve", não "não, obrigado" — o mesmo 結構 tem os dois sentidos e só o contexto decide.',
+ en:'The 印鑑 looks like a problem, but 「サインでも結構です」solves it on the spot. 「<b>結構です</b>」here means "that is fine", not "no thank you" — the same 結構 carries both senses and only context decides.'},
+
+/* ── ポイント理解: 理由・要点 ── */
+{t:'ポイント理解',s:[['m','最近、朝早く起きるようになったんだって？'],['f','うん。前は健康のためって言われてもピンとこなかったんだけど、朝の静かな時間に勉強すると、夜より頭に入るのよ。'],['m','へえ、健康のためじゃないんだ。'],['f','結果的に体の調子もいいけどね。']],
+ q:'女の人が早く起きるようになったいちばんの理由は何ですか。',o:['朝のほうが勉強がはかどるから','健康のため','夜眠れないから','仕事が早く始まるから'],a:0,
+ ex:'O 健康 aparece duas vezes, e as duas como <b>não sendo</b> o motivo: 「ピンとこなかった」e 「結果的に」(consequência, não causa). Na ポイント理解, o motivo mais óbvio costuma ser citado para ser descartado.',
+ en:'Health comes up twice, and both times as <b>not</b> the reason: 「ピンとこなかった」and 「結果的に」(a side effect, not the cause). In ポイント理解, the most obvious reason is usually mentioned in order to be ruled out.'},
+{t:'ポイント理解',s:[['f','この店、いつも混んでるね。やっぱり安いから？'],['m','いや、値段は普通だよ。ここは店長がお客さんの好みを覚えてて、何も言わなくても出してくれるんだ。それがうれしくて、みんな通うんだよ。']],
+ q:'店が混んでいる理由は何ですか。',o:['店長が客の好みを覚えているから','値段が安いから','料理の量が多いから','駅から近いから'],a:0,
+ ex:'A pergunta dela já traz uma hipótese (安いから？) e ele a nega com 「いや」. Tudo o que vem depois de uma negação é a resposta. 「覚えてて」= 覚えていて, de novo o い caindo na fala.',
+ en:'Her question carries a guess (安いから？) and he denies it with 「いや」. Everything after a denial is the answer. 「覚えてて」= 覚えていて, the い dropping out in speech again.'},
+{t:'ポイント理解',s:[['m','引っ越し、結局やめたの？'],['f','うん。駅から近いし、家賃も安かったんだけど、日当たりが悪くて。一日中暗い部屋にいるのは、ちょっとね。']],
+ q:'女の人が引っ越しをやめた理由は何ですか。',o:['部屋が暗いから','駅から遠いから','家賃が高いから','部屋が狭いから'],a:0,
+ ex:'「〜し、〜し」lista pontos <b>positivos</b>, e 「〜んだけど」vira a frase. O motivo vem depois do けど. 「ちょっとね」sozinho é um "não" educado — o japonês raramente termina a frase quando recusa.',
+ en:'「〜し、〜し」lists the <b>good</b> points, and 「〜んだけど」turns the sentence. The reason comes after けど. 「ちょっとね」on its own is a polite no — Japanese rarely finishes the sentence when refusing.'},
+{t:'ポイント理解',s:[['f','新しいプロジェクト、どうして断ったの？　忙しいから？'],['m','忙しいのはみんな同じだよ。そうじゃなくて、その分野の知識が全然なくて、チームに迷惑をかけると思ったんだ。']],
+ q:'男の人がプロジェクトを断った理由は何ですか。',o:['知識がなくて迷惑をかけると思ったから','忙しいから','チームの人と合わないから','給料が安いから'],a:0,
+ ex:'「<b>そうじゃなくて</b>」é o sinal mais claro do 聴解: tudo o que vem antes é o motivo errado, tudo o que vem depois é o certo. Treine o reflexo de prestar atenção dobrada logo após essa expressão.',
+ en:'「<b>そうじゃなくて</b>」is the clearest signal in 聴解: everything before it is the wrong reason, everything after it the right one. Train the reflex to listen twice as hard right after it.'},
+{t:'ポイント理解',s:[['m','スピーチ大会で優勝したんだってね。何がよかったと思う？'],['f','発音はそんなに上手じゃないのよ。でも、自分の失敗した話をしたら、みんなすごく笑ってくれて。内容が身近だったのがよかったみたい。']],
+ q:'女の人は何がよかったと言っていますか。',o:['話の内容が身近だったこと','発音がきれいだったこと','練習をたくさんしたこと','声が大きかったこと'],a:0,
+ ex:'Ela começa se <b>desvalorizando</b> (発音は上手じゃない) — modéstia típica japonesa, não informação. O ponto vem depois de 「でも」. Repare também no 「笑ってくれて」: てくれる de novo, o riso veio a favor dela.',
+ en:'She opens by <b>playing herself down</b> (発音は上手じゃない) — typical Japanese modesty, not information. The point comes after 「でも」. Note 「笑ってくれて」as well: てくれる again, the laughter came in her favour.'},
+{t:'ポイント理解',s:[['f','最近、紙の本に戻ったんだって？'],['m','電子書籍は便利なんだけどね。寝る前に画面を見ると眠れなくなるって気づいて。それで、夜だけは紙にしてるんだ。']],
+ q:'男の人が紙の本を読むようになった理由は何ですか。',o:['画面を見ると眠れなくなるから','紙のほうが安いから','電子書籍が壊れたから','目が疲れるから'],a:0,
+ ex:'「〜なんだけどね」concede a vantagem do digital antes de dar o motivo. E 「夜だけ」é um detalhe que as opções erradas ignoram: ele não abandonou o digital, só mudou à noite.',
+ en:'「〜なんだけどね」concedes the digital upside before giving the reason. And 「夜だけ」is a detail the wrong options ignore: he has not dropped digital, only changed at night.'},
+
+/* ── 概要理解: 言いたいこと（選択肢は印刷されない） ── */
+{t:'概要理解',s:[['m','最近、休日に何もしない人が増えているそうです。「もったいない」と言う人もいますが、私はそうは思いません。何もしない時間があるからこそ、新しいことを考える余裕が生まれるのではないでしょうか。']],
+ q:'話している人がいちばん言いたいことは何ですか。',o:['何もしない時間にも意味がある','休日は何かをするべきだ','最近の人は怠けている','休日をもっと増やすべきだ'],a:0,
+ ex:'No 概要理解 as opções nem estão impressas na prova real. Estrutura: opinião alheia (もったいない) → 「<b>私はそうは思いません</b>」→ tese. E 「〜のではないでしょうか」é afirmação suave, não dúvida.',
+ en:'On the real exam 概要理解 options are not even printed. Structure: other people\u2019s view (もったいない) → 「<b>私はそうは思いません</b>」→ thesis. And 「〜のではないでしょうか」is a soft assertion, not a doubt.'},
+{t:'概要理解',s:[['f','外国語を学ぶとき、多くの人は完璧に話そうとします。でも実際には、少しくらい文法を間違えても、相手はちゃんと理解してくれます。大切なのは、伝えようとする気持ちです。']],
+ q:'話している人の意見はどれですか。',o:['間違えても伝えようとすることが大切だ','文法は完璧にするべきだ','外国語は難しいので諦めてもいい','発音をもっと練習するべきだ'],a:0,
+ ex:'Roberto, esta é para você. 「<b>大切なのは〜です</b>」é a fórmula da tese em monólogos. Quando ouvir 大切なのは, 重要なのは ou 問題は, a próxima frase é a resposta.',
+ en:'Roberto, this one is for you. 「<b>大切なのは〜です</b>」is the thesis formula in a monologue. When you hear 大切なのは, 重要なのは or 問題は, the next sentence is the answer.'},
+{t:'概要理解',s:[['m','この町の商店街は、昔に比べて店の数が半分になりました。大型スーパーができたからだと言われます。でも、残った店は、スーパーにはない専門的な知識でお客さんをつかんでいます。数は減っても、弱くなったわけではないのです。']],
+ q:'話している人は商店街についてどう考えていますか。',o:['店は減ったが弱くなってはいない','店が減ったので将来はない','スーパーに負けてしまった','もっと店を増やすべきだ'],a:0,
+ ex:'O fecho 「〜わけではないのです」nega a conclusão que o ouvinte tiraria. A primeira metade é fato (店が半分); a segunda é opinião. Em 概要理解, fatos são contexto — a pergunta sempre é sobre a opinião.',
+ en:'The close 「〜わけではないのです」denies the conclusion the listener would draw. The first half is fact (店が半分); the second is opinion. In 概要理解 facts are context — the question is always about the opinion.'},
+{t:'概要理解',s:[['f','子どもに「早くしなさい」と言っても、なかなか早くなりません。何をどの順番ですればいいか、見えていないからです。急がせるより、次にすることを一つだけ伝えるほうが、ずっと効果があります。']],
+ q:'話している人がいちばん言いたいことは何ですか。',o:['次にすることを具体的に伝えるとよい','子どもは急がせたほうがいい','子どもに自分で考えさせるべきだ','早く起きる習慣が大切だ'],a:0,
+ ex:'「〜より〜ほうが」é comparação com recomendação embutida: o que vem depois de ほう é o que o falante defende. Este padrão aparece em quase todo 概要理解 — escute o ほうが.',
+ en:'「〜より〜ほうが」is a comparison with a recommendation built in: whatever follows ほう is what the speaker is arguing for. This pattern turns up in almost every 概要理解 — listen for the ほうが.'},
+{t:'概要理解',s:[['m','失敗したとき、すぐに次へ進む人がいます。前向きでいいように見えますが、なぜうまくいかなかったのかを考えないと、また同じ失敗をします。一度立ち止まることが、結局は近道なのです。']],
+ q:'話している人の考えに合うのはどれですか。',o:['失敗の原因を考えることが大切だ','失敗したらすぐ次へ進むべきだ','失敗はできるだけ避けるべきだ','前向きな人ほど成功する'],a:0,
+ ex:'「〜ように見えますが」: aparência admitida e depois negada. A tese fecha com 「<b>結局は</b>」— em monólogos, 結局 marca a conclusão final.',
+ en:'「〜ように見えますが」: an appearance granted and then denied. The thesis closes with 「<b>結局は</b>」— in a monologue, 結局 marks the final conclusion.'},
+
+/* ── 即時応答: 返事を選ぶ（3択） ── */
+{t:'即時応答',s:[['f','明日の会議、出られそう？']],q:'返事として最もよいものはどれですか。',o:['はい、出られると思います','はい、出てもいいです','はい、出られました'],a:0,
+ ex:'「出られそう？」pergunta sobre o <b>futuro</b> e a <b>possibilidade</b>. 出てもいい é permissão (outra coisa) e 出られました está no passado.',
+ en:'「出られそう？」asks about the <b>future</b> and <b>possibility</b>. 出てもいい is permission (a different thing) and 出られました is past tense.'},
+{t:'即時応答',s:[['m','このペン、ちょっと借りてもいい？']],q:'返事として最もよいものはどれですか。',o:['うん、どうぞ','うん、借りるよ','うん、貸してくれる？'],a:0,
+ ex:'Ele pede para <b>pegar emprestado</b>; você é quem <b>empresta</b>. 借りるよ inverte os papéis e 貸してくれる？ devolve o pedido. O mesmo par 貸す／借りる das armadilhas, agora de ouvido.',
+ en:'He asks to <b>borrow</b>; you are the one <b>lending</b>. 借りるよ reverses the roles and 貸してくれる？ throws the request back. The same 貸す／借りる pair as in the traps, now by ear.'},
+{t:'即時応答',s:[['f','田中さん、もう帰っちゃった？']],q:'返事として最もよいものはどれですか。',o:['ええ、さっき帰りましたよ','ええ、帰ってください','ええ、帰りそうです'],a:0,
+ ex:'「帰っちゃった」= <b>帰ってしまった</b>. A forma ちゃう é a てしまう falada, e aparece em quase toda conversa do 聴解. Se você não a reconhecer na hora, perde a pergunta inteira.',
+ en:'「帰っちゃった」= <b>帰ってしまった</b>. The ちゃう form is spoken てしまう, and it turns up in nearly every 聴解 dialogue. If you do not catch it instantly, you lose the whole question.'},
+{t:'即時応答',s:[['m','今日は遅くまで、お疲れさまでした。']],q:'返事として最もよいものはどれですか。',o:['お疲れさまでした','いただきます','お待たせしました'],a:0,
+ ex:'Fórmulas fixas pedem resposta fixa: お疲れさまでした responde-se com a mesma frase. Não há o que traduzir aqui — só o que memorizar como par.',
+ en:'Set phrases take a set reply: お疲れさまでした is answered with the same phrase. There is nothing to translate here — only a pair to memorise.'},
+{t:'即時応答',s:[['f','この資料、コピーしておいてくれる？']],q:'返事として最もよいものはどれですか。',o:['はい、何部ですか','はい、コピーしました','はい、コピーされます'],a:0,
+ ex:'「〜ておいてくれる？」é um pedido para o <b>futuro</b>. コピーしました já estaria feito, e コピーされます é passiva sem sentido aqui. A resposta natural confirma e pede o detalhe que falta.',
+ en:'「〜ておいてくれる？」is a request for the <b>future</b>. コピーしました would already be done, and コピーされます is a passive that makes no sense here. The natural reply accepts and asks for the missing detail.'},
+{t:'即時応答',s:[['m','あれ、傘、持ってこなかったの？']],q:'返事として最もよいものはどれですか。',o:['うん、晴れると思って','うん、持ってきたよ','うん、雨が降るから'],a:0,
+ ex:'⚠ Pergunta negativa: 「うん」confirma que <b>não trouxe</b>. 持ってきたよ contradiz o próprio うん. E 雨が降るから seria motivo para trazer, não para esquecer.',
+ en:'⚠ A negative question: 「うん」confirms you <b>did not</b> bring it. 持ってきたよ contradicts its own うん. And 雨が降るから would be a reason to bring one, not to forget it.'},
+{t:'即時応答',s:[['f','手伝おうか？']],q:'返事として最もよいものはどれですか。',o:['ありがとう、じゃあお願い','ありがとう、手伝ってあげる','どういたしまして'],a:0,
+ ex:'Ela oferece ajuda <b>a você</b>. 手伝ってあげる inverteria quem ajuda quem, e どういたしまして responde a um agradecimento que não houve.',
+ en:'She is offering help <b>to you</b>. 手伝ってあげる would reverse who helps whom, and どういたしまして answers a thanks that never happened.'},
+{t:'即時応答',s:[['m','来週の出張、代わりに行ってもらえないかな。']],q:'返事として最もよいものはどれですか。',o:['来週はちょっと都合が悪くて','はい、行ってもらいます','はい、行ってくれます'],a:0,
+ ex:'「行ってもらえないかな」pede que <b>você</b> vá por ele. Recusar no japonês quase nunca é "não": é 「ちょっと都合が悪くて」, frase deixada em aberto. As duas outras trocam o sujeito de もらう／くれる.',
+ en:'「行ってもらえないかな」asks <b>you</b> to go in his place. A refusal in Japanese is almost never "no": it is 「ちょっと都合が悪くて」, left hanging. The other two scramble the subject of もらう／くれる.'},
+{t:'即時応答',s:[['f','すみません、お待たせしました。']],q:'返事として最もよいものはどれですか。',o:['いえ、今来たところです','いえ、待たせてください','はい、待ちませんでした'],a:0,
+ ex:'「<b>今来たところ</b>」= acabei de chegar — a ところ dos seus cartões de N3. É a resposta educada padrão, mesmo quando não é bem verdade.',
+ en:'「<b>今来たところ</b>」= I have only just arrived — the ところ from your N3 cards. It is the standard polite reply, even when it is not quite true.'},
+{t:'即時応答',s:[['m','この仕事、今日中に終わらせなきゃいけないんだ。']],q:'返事として最もよいものはどれですか。',o:['大変だね、手伝おうか','よかったね、終わって','じゃあ、明日やろうよ'],a:0,
+ ex:'「終わらせなきゃ」= <b>終わらせなければ</b>. A forma なきゃ é o なければならない falado. Ainda não terminou, então よかったね, 終わって não cabe, e 明日 contradiz 今日中.',
+ en:'「終わらせなきゃ」= <b>終わらせなければ</b>. なきゃ is spoken なければならない. It is not finished yet, so よかったね、終わって does not fit, and 明日 contradicts 今日中.'},
+
+/* ── 統合理解: 条件を重ねる ── */
+{t:'統合理解',s:[['m','会社の忘年会、どこにしようか。'],['f','駅前のイタリアンはどう？　料理がおいしいって評判だよ。'],['m','でも、二十人は入れないんじゃない？'],['f','そっか。じゃあホテルのレストランは？　広いけど、ちょっと高いかな。'],['m','予算は一人五千円だから、ホテルは無理だね。'],['f','居酒屋の「まつ」なら二十人でも大丈夫だし、五千円で飲み放題つきだよ。'],['m','いいね、そこにしよう。']],
+ q:'忘年会はどこでしますか。',o:['居酒屋「まつ」','駅前のイタリアン','ホテルのレストラン','会社の会議室'],a:0,
+ ex:'統合理解 é eliminação por condições: <b>20 pessoas</b> derruba a italiana, <b>5.000 ienes</b> derruba o hotel. Anote cada condição no momento em que ela aparece — não tente guardar tudo de cabeça.',
+ en:'統合理解 is elimination by conditions: <b>20 people</b> knocks out the Italian place, <b>¥5,000</b> knocks out the hotel. Write each condition down the moment it appears — do not try to hold it all in your head.'},
+{t:'統合理解',s:[['f','当館では三つのツアーをご用意しております。Aツアーは歴史を学ぶ二時間のコース、Bツアーは庭園を歩く一時間のコース、Cツアーは料理体験つきの三時間のコースです。'],['m','あまり時間がないから、一時間くらいのがいいな。'],['f','私は料理がしたいけど、三時間は長いなあ。じゃあ、あなたと同じのにする。']],
+ q:'二人はどのツアーに参加しますか。',o:['Bツアー','Aツアー','Cツアー','それぞれ別のツアー'],a:0,
+ ex:'Primeiro vem o anúncio com três opções — anote duração e conteúdo de cada uma. Depois cada pessoa dá uma condição. Ela quer cozinhar, mas cede: 「<b>あなたと同じのにする</b>」. A preferência dela é a armadilha.',
+ en:'First comes the announcement with three options — note the length and content of each. Then each person gives a condition. She wants to cook, but gives in: 「<b>あなたと同じのにする</b>」. Her preference is the trap.'}
+];
+
+/* ═══ 転職 · 就職活動の語彙 ═══ */
+const VOCAB_JOB=[
+{w:'てんしょく',r:'転職',pt:'mudança de emprego',en:'changing jobs',ex:'三十歳で転職を決めた。'},
+{w:'たいしょく',r:'退職',pt:'demissão, saída da empresa',en:'leaving a job, retirement',ex:'来月末で退職する予定です。'},
+{w:'きゅうじん',r:'求人',pt:'vaga de emprego',en:'job opening',ex:'建築関係の求人を探している。'},
+{w:'おうぼ',r:'応募',pt:'candidatura',en:'application',ex:'三社に応募した。'},
+{w:'りれきしょ',r:'履歴書',pt:'currículo (formato japonês)',en:'CV (Japanese format)',ex:'履歴書に写真を貼る。'},
+{w:'しょくむけいれきしょ',r:'職務経歴書',pt:'histórico profissional detalhado',en:'detailed work history',ex:'職務経歴書には担当した案件を書く。'},
+{w:'しぼうどうき',r:'志望動機',pt:'motivo da candidatura',en:'reason for applying',ex:'面接で志望動機を聞かれた。'},
+{w:'じこピーアール',r:'自己PR',pt:'autoapresentação (pontos fortes)',en:'self-promotion statement',ex:'自己PRは一分以内にまとめる。'},
+{w:'ないてい',r:'内定',pt:'oferta de emprego (informal)',en:'job offer',ex:'第一志望の会社から内定をもらった。'},
+{w:'さいよう',r:'採用',pt:'contratação',en:'hiring',ex:'今年は経験者を中心に採用する。'},
+{w:'ねんしゅう',r:'年収',pt:'renda anual',en:'annual income',ex:'転職して年収が上がった。'},
+{w:'げっきゅう',r:'月給',pt:'salário mensal',en:'monthly salary',ex:'月給は経験によって決まる。'},
+{w:'ふくりこうせい',r:'福利厚生',pt:'benefícios aos funcionários',en:'employee benefits',ex:'この会社は福利厚生が充実している。'},
+{w:'しようきかん',r:'試用期間',pt:'período de experiência',en:'probation period',ex:'試用期間は三か月です。'},
+{w:'せいしゃいん',r:'正社員',pt:'funcionário efetivo',en:'full-time permanent employee',ex:'正社員として採用された。'},
+{w:'けいやくしゃいん',r:'契約社員',pt:'funcionário contratado (prazo fixo)',en:'fixed-term contract employee',ex:'最初は契約社員として働く。'},
+{w:'はけんしゃいん',r:'派遣社員',pt:'funcionário terceirizado',en:'agency temp worker',ex:'派遣社員から正社員になった。'},
+{w:'こようけいたい',r:'雇用形態',pt:'tipo de vínculo empregatício',en:'employment type',ex:'雇用形態によって待遇が違う。'},
+{w:'しょるいせんこう',r:'書類選考',pt:'triagem de currículos',en:'document screening',ex:'書類選考を通過した。'},
+{w:'そくせんりょく',r:'即戦力',pt:'profissional pronto para atuar',en:'someone who can contribute immediately',ex:'即戦力になる人材を求めている。'},
+{w:'ぎょうむないよう',r:'業務内容',pt:'descrição das funções',en:'job duties',ex:'業務内容を詳しく教えてください。'},
+{w:'きんむち',r:'勤務地',pt:'local de trabalho',en:'place of work',ex:'勤務地は東京本社です。'},
+{w:'ざんぎょう',r:'残業',pt:'hora extra',en:'overtime',ex:'残業は月に二十時間程度です。'},
+{w:'ゆうきゅうきゅうか',r:'有給休暇',pt:'férias remuneradas',en:'paid leave',ex:'有給休暇を使って旅行する。'},
+{w:'たいしょくねがい',r:'退職願',pt:'pedido de demissão',en:'letter requesting resignation',ex:'上司に退職願を出した。'},
+{w:'ひきつぎ',r:'引き継ぎ',pt:'passagem de trabalho',en:'handover',ex:'辞める前に引き継ぎをしっかりする。'},
+{w:'ざいりゅうしかく',r:'在留資格',pt:'status de residência (visto)',en:'residence status',ex:'転職すると在留資格の確認が必要だ。'},
+{w:'しゅうろうビザ',r:'就労ビザ',pt:'visto de trabalho',en:'work visa',ex:'会社が就労ビザの手続きを手伝ってくれる。'},
+{w:'ぜんしょく',r:'前職',pt:'emprego anterior',en:'previous job',ex:'前職では設計を担当していました。'},
+{w:'げんしょく',r:'現職',pt:'emprego atual',en:'current job',ex:'現職を続けながら転職活動をする。'},
+{w:'しゃふう',r:'社風',pt:'cultura da empresa',en:'company culture',ex:'自由な社風に魅力を感じた。'},
+{w:'ねんこうじょれつ',r:'年功序列',pt:'promoção por tempo de casa',en:'seniority-based system',ex:'年功序列の会社は減っている。'},
+{w:'せいかしゅぎ',r:'成果主義',pt:'meritocracia por resultados',en:'performance-based system',ex:'成果主義で評価される。'},
+{w:'けいれき',r:'経歴',pt:'trajetória, histórico',en:'career history',ex:'これまでの経歴を簡単に話してください。'},
+{w:'たいぐう',r:'待遇',pt:'condições de trabalho',en:'terms and conditions',ex:'待遇について質問してもいいですか。'},
+{w:'しょうしん',r:'昇進',pt:'promoção',en:'promotion',ex:'三年で課長に昇進した。'},
+{w:'てんきん',r:'転勤',pt:'transferência de cidade',en:'relocation',ex:'転勤の可能性はありますか。'},
+{w:'じんじ',r:'人事',pt:'recursos humanos',en:'human resources',ex:'人事の担当者から連絡があった。'},
+{w:'けんしゅう',r:'研修',pt:'treinamento',en:'training',ex:'入社後に一か月の研修がある。'},
+{w:'じっせき',r:'実績',pt:'resultados comprovados',en:'track record',ex:'これまでの実績を具体的に示す。'},
+{w:'たずさわる',r:'携わる',pt:'estar envolvido em',en:'be involved in',ex:'住宅の設計に携わってきました。'},
+{w:'いかす',r:'活かす',pt:'aproveitar (experiência)',en:'make use of',ex:'前職の経験を活かせる仕事です。'},
+{w:'きしゃ',r:'貴社',pt:'sua empresa (por escrito)',en:'your company (written)',ex:'貴社を志望した理由は二つあります。'},
+{w:'おんしゃ',r:'御社',pt:'sua empresa (falado)',en:'your company (spoken)',ex:'御社の設計方針に共感しました。'},
+{w:'へいしゃ',r:'弊社',pt:'nossa empresa (humilde)',en:'our company (humble)',ex:'弊社の採用担当から改めてご連絡します。'}
+];
+
+/* ═══ 建築 · 設計・施工・法規の専門語 ═══ */
+const VOCAB_ARCH=[
+{w:'せこう',r:'施工',pt:'execução da obra',en:'construction work (execution)',ex:'設計どおりに施工されているか確認する。'},
+{w:'こうぞう',r:'構造',pt:'estrutura',en:'structure',ex:'この建物は木と鉄を組み合わせた構造だ。'},
+{w:'たいしん',r:'耐震',pt:'resistência sísmica',en:'earthquake resistance',ex:'古い校舎の耐震性を調べる。'},
+{w:'めんしん',r:'免震',pt:'isolamento sísmico',en:'seismic isolation',ex:'病院には免震構造が採用された。'},
+{w:'せいしん',r:'制震',pt:'amortecimento sísmico',en:'seismic damping',ex:'高層ビルに制震装置を入れる。'},
+{w:'ずめん',r:'図面',pt:'desenho técnico, planta',en:'drawings',ex:'図面を施主に説明した。'},
+{w:'へいめんず',r:'平面図',pt:'planta baixa',en:'floor plan',ex:'平面図で部屋の配置を確認する。'},
+{w:'りつめんず',r:'立面図',pt:'elevação (fachada)',en:'elevation',ex:'立面図を見ると窓の高さがわかる。'},
+{w:'だんめんず',r:'断面図',pt:'corte',en:'section',ex:'断面図で天井の高さを示す。'},
+{w:'はいちず',r:'配置図',pt:'planta de situação',en:'site plan',ex:'配置図に道路との関係を描く。'},
+{w:'しゅんこう',r:'竣工',pt:'conclusão da obra',en:'completion of construction',ex:'新しい図書館は来年春に竣工する。'},
+{w:'ちゃっこう',r:'着工',pt:'início da obra',en:'start of construction',ex:'確認がおりたので来月着工する。'},
+{w:'せしゅ',r:'施主',pt:'cliente, proprietário da obra',en:'client, building owner',ex:'施主の希望を聞いて間取りを考える。'},
+{w:'せっけいじむしょ',r:'設計事務所',pt:'escritório de arquitetura',en:'architectural design office',ex:'大学を出て設計事務所に入った。'},
+{w:'こうむてん',r:'工務店',pt:'construtora local',en:'local builder',ex:'地元の工務店に工事を頼む。'},
+{w:'ゼネコン',r:'—',pt:'grande construtora (general contractor)',en:'general contractor',ex:'大型の案件はゼネコンが施工する。'},
+{w:'けんちくきじゅんほう',r:'建築基準法',pt:'Lei de Normas de Construção',en:'Building Standards Act',ex:'計画が建築基準法に合っているか確認する。'},
+{w:'ようせきりつ',r:'容積率',pt:'coeficiente de aproveitamento',en:'floor area ratio',ex:'容積率の上限で建てられる階数が決まる。'},
+{w:'けんぺいりつ',r:'建ぺい率',pt:'taxa de ocupação',en:'building coverage ratio',ex:'この敷地は建ぺい率が六十パーセントだ。'},
+{w:'かくにんしんせい',r:'確認申請',pt:'pedido de aprovação do projeto',en:'building permit application',ex:'着工の前に確認申請を出す。'},
+{w:'てっきんコンクリート',r:'鉄筋コンクリート',pt:'concreto armado',en:'reinforced concrete',ex:'この学校は鉄筋コンクリート造だ。'},
+{w:'てっこつぞう',r:'鉄骨造',pt:'estrutura de aço',en:'steel frame construction',ex:'倉庫は鉄骨造で計画した。'},
+{w:'もくぞう',r:'木造',pt:'construção em madeira',en:'timber construction',ex:'日本の住宅の多くは木造だ。'},
+{w:'きそ',r:'基礎',pt:'fundação',en:'foundation',ex:'基礎の工事が終わった。'},
+{w:'はり',r:'梁',pt:'viga',en:'beam',ex:'天井の梁を見せるデザインにした。'},
+{w:'たいりょくへき',r:'耐力壁',pt:'parede estrutural',en:'load-bearing wall',ex:'耐力壁は動かせない。'},
+{w:'だんねつ',r:'断熱',pt:'isolamento térmico',en:'thermal insulation',ex:'断熱をしっかりすれば冬も暖かい。'},
+{w:'さいこう',r:'採光',pt:'iluminação natural',en:'daylighting',ex:'北側の部屋は採光に工夫が要る。'},
+{w:'かんき',r:'換気',pt:'ventilação',en:'ventilation',ex:'窓を二か所に設けて換気をよくする。'},
+{w:'どうせん',r:'動線',pt:'fluxo de circulação',en:'circulation path',ex:'台所と洗面所の動線を短くする。'},
+{w:'まどり',r:'間取り',pt:'distribuição dos cômodos',en:'room layout',ex:'家族が増えたので間取りを変えたい。'},
+{w:'のべゆかめんせき',r:'延床面積',pt:'área total construída',en:'total floor area',ex:'延床面積は約百二十平方メートルだ。'},
+{w:'しきち',r:'敷地',pt:'terreno, lote',en:'building site',ex:'敷地の形が細長い。'},
+{w:'ようとちいき',r:'用途地域',pt:'zoneamento',en:'zoning district',ex:'用途地域によって建てられる建物が違う。'},
+{w:'いっきゅうけんちくし',r:'一級建築士',pt:'arquiteto de 1ª classe (registro)',en:'first-class registered architect',ex:'一級建築士の資格を目指している。'},
+{w:'みつもり',r:'見積もり',pt:'orçamento',en:'estimate, quotation',ex:'三社から見積もりを取った。'},
+{w:'こうき',r:'工期',pt:'prazo de obra',en:'construction period',ex:'工期は八か月を予定している。'},
+{w:'げんば',r:'現場',pt:'canteiro de obras, local',en:'construction site',ex:'毎週一度、現場を見に行く。'},
+{w:'げんばかんとく',r:'現場監督',pt:'mestre de obras, supervisor',en:'site supervisor',ex:'現場監督と工程を確認した。'},
+{w:'もけい',r:'模型',pt:'maquete',en:'scale model',ex:'施主に模型を見せて説明した。'},
+{w:'かいしゅう',r:'改修',pt:'reforma',en:'renovation',ex:'古い建物を改修して店にする。'},
+{w:'たいようねんすう',r:'耐用年数',pt:'vida útil',en:'service life',ex:'木造住宅の耐用年数は法律で決まっている。'},
+{w:'いしょう',r:'意匠',pt:'projeto arquitetônico (design)',en:'architectural design',ex:'私は意匠設計を担当している。'},
+{w:'こうぞうせっけい',r:'構造設計',pt:'projeto estrutural',en:'structural design',ex:'構造設計の担当者と打ち合わせる。'},
+{w:'せつびせっけい',r:'設備設計',pt:'projeto de instalações',en:'building services design',ex:'空調は設備設計の担当だ。'},
+{w:'せこうず',r:'施工図',pt:'desenho de execução',en:'shop drawings',ex:'施工図をもとに工事を進める。'},
+{w:'ひきわたし',r:'引き渡し',pt:'entrega da obra',en:'handover',ex:'来月、施主への引き渡しがある。'},
+{w:'しあげ',r:'仕上げ',pt:'acabamento',en:'finish',ex:'壁の仕上げは白い漆喰にした。'},
+{w:'がいへき',r:'外壁',pt:'parede externa, fachada',en:'exterior wall',ex:'外壁の色を施主と相談する。'},
+{w:'のき',r:'軒',pt:'beiral',en:'eaves',ex:'深い軒が夏の日差しを遮る。'},
+{w:'かいこうぶ',r:'開口部',pt:'abertura (vãos)',en:'opening',ex:'南側に大きな開口部を設ける。'},
+{w:'ふきぬけ',r:'吹き抜け',pt:'pé-direito duplo',en:'double-height void',ex:'居間を吹き抜けにして明るくした。'},
+{w:'てんじょうだか',r:'天井高',pt:'altura do forro',en:'ceiling height',ex:'天井高を二メートル四十にした。'},
+{w:'すんぽう',r:'寸法',pt:'dimensões',en:'dimensions',ex:'図面に寸法を正確に書き込む。'},
+{w:'しゅくしゃく',r:'縮尺',pt:'escala',en:'scale',ex:'この図面の縮尺は百分の一だ。'},
+{w:'くたい',r:'躯体',pt:'estrutura principal (esqueleto)',en:'structural frame',ex:'躯体工事が終われば内装に入る。'}
+];
+
+/* ═══ 面接の表現 · 実際に使う言い回しと落とし穴 ═══ */
+const MENSETSU=[
+{g:'御社 / 貴社',f:'話す→御社・書く→貴社',pt:'"sua empresa" falado / escrito',en:'"your company" spoken / written',
+ ex:'御社の設計方針に共感いたしました。',tx:'Identifiquei-me com a linha de projeto da sua empresa.',
+ trap:'⚠ Erro nº1 de estrangeiros: 御社 (おんしゃ) na <b>fala</b>, 貴社 (きしゃ) na <b>escrita</b>. 貴社 dito em voz alta soa como 記者 (jornalista) e 帰社. Numa entrevista, sempre 御社.'},
+{g:'弊社 / 当社',f:'自分の会社をへりくだる',pt:'"nossa empresa" humilde / neutro',en:'"our company" humble / neutral',
+ ex:'弊社では現在、設計スタッフを募集しております。',tx:'Nossa empresa está recrutando equipe de projeto.',
+ trap:'Você só ouve 弊社 do lado de quem contrata. Ao falar da <b>sua empresa atual</b> numa entrevista, use 現職の会社 ou o nome — não 弊社, que soaria como se você ainda falasse por ela.'},
+{g:'～に携わる',f:'N + に携わる',pt:'participar de, trabalhar com',en:'be involved in',
+ ex:'前職では集合住宅の設計に携わってまいりました。',tx:'No emprego anterior trabalhei com projetos de habitação coletiva.',
+ trap:'Mais elegante que 「〜をしていました」para descrever experiência. Combina com 設計・開発・プロジェクト. Não use para tarefas triviais.'},
+{g:'～を活かす',f:'N + を活かす',pt:'aproveitar, pôr em uso',en:'make good use of',
+ ex:'これまでの経験を活かして、御社に貢献したいと考えております。',tx:'Quero contribuir com a empresa aproveitando minha experiência.',
+ trap:'活かす (aproveitar potencial) ≠ 生かす (manter vivo), embora a leitura seja a mesma. Em entrevista, sempre 活かす com 経験・知識・スキル.'},
+{g:'～を担当しておりました',f:'N + を担当しておりました',pt:'eu era responsável por',en:'I was in charge of',
+ ex:'主に住宅の意匠設計を担当しておりました。',tx:'Eu era responsável principalmente pelo projeto arquitetônico de residências.',
+ trap:'おりました = いました humilde. Fale do seu passado com おる, nunca com いらっしゃる — isso seria elevar a si mesmo.'},
+{g:'～と考えております',f:'普通形 + と考えております',pt:'eu penso que (formal)',en:'I believe that (formal)',
+ ex:'御社でなら、自分の強みを発揮できると考えております。',tx:'Acredito que na sua empresa posso mostrar meus pontos fortes.',
+ trap:'Soa mais firme que 思います. 「思います」demais parece opinião vaga; 「考えております」soa como conclusão pensada — exatamente o que o entrevistador quer ouvir.'},
+{g:'志望いたしました',f:'～ため、御社を志望いたしました',pt:'foi por isso que me candidatei',en:'that is why I applied',
+ ex:'地域に根ざした建築に関わりたいと考え、御社を志望いたしました。',tx:'Candidatei-me porque quero trabalhar com arquitetura enraizada na comunidade.',
+ trap:'Estrutura clássica do 志望動機: <b>motivo → と考え → 志望いたしました</b>. Comece pelo que você quer fazer, não pelos benefícios da empresa (salário e folgas nunca são o motivo declarado).'},
+{g:'前職を退職した理由',f:'前向きな理由で話す',pt:'motivo de saída — sempre positivo',en:'reason for leaving — always positive',
+ ex:'より大規模な案件に挑戦したいと考え、転職を決意いたしました。',tx:'Decidi mudar porque quero enfrentar projetos de maior escala.',
+ trap:'⚠ Nunca critique o emprego anterior (chefe, salário, horas extras). Mesmo que seja verdade, converta em objetivo: 「残業が多かった」→「より効率的な環境で成長したい」.'},
+{g:'至らない点',f:'至らない点もあるかと存じますが',pt:'embora eu tenha pontos a melhorar',en:'though I still have shortcomings',
+ ex:'日本語には至らない点もあるかと存じますが、日々努力しております。',tx:'Meu japonês ainda tem pontos a melhorar, mas me esforço todos os dias.',
+ trap:'Roberto: esta é a frase para quando perguntarem sobre o seu japonês. Admite a limitação e na mesma frase mostra esforço. Nunca diga só 「日本語が下手です」.'},
+{g:'逆質問',f:'何か質問はありますか',pt:'a pergunta ao contrário ("tem alguma dúvida?")',en:'the reverse question',
+ ex:'入社までに勉強しておくべきことはありますか。',tx:'Há algo que eu deva estudar antes de entrar?',
+ trap:'⚠ Responder 「特にありません」é visto como falta de interesse. Tenha sempre duas perguntas prontas — sobre trabalho e aprendizado, nunca sobre salário ou férias logo de cara.'},
+{g:'本日はお時間をいただき',f:'締めの挨拶',pt:'obrigado pelo seu tempo hoje',en:'thank you for your time today',
+ ex:'本日はお忙しいところお時間をいただき、ありがとうございました。',tx:'Muito obrigado por ceder seu tempo hoje, apesar de ocupado.',
+ trap:'お忙しいところ é quase obrigatório. Note o passado ございました — a entrevista já aconteceu.'},
+{g:'～させていただきたく',f:'Vさせていただきたく存じます',pt:'gostaria de ter a permissão de',en:'I would humbly like to',
+ ex:'ぜひ御社で働かせていただきたく存じます。',tx:'Gostaria muito de ter a oportunidade de trabalhar na sua empresa.',
+ trap:'Forma de 謙譲 muito alta, própria de fechamento de entrevista e e-mail. No meio da conversa soa excessivo — guarde para o final.'},
+{g:'ご縁があれば',f:'採用の可否に触れる婉曲',pt:'se houver oportunidade (eufemismo)',en:'should fate allow it',
+ ex:'ご縁があれば、ぜひよろしくお願いいたします。',tx:'Se houver oportunidade, conto com vocês.',
+ trap:'ご縁 (destino, laço) evita falar diretamente de "ser contratado". E-mails de recusa usam o oposto: 「今回はご縁がなかった」= não foi dessa vez.'},
+{g:'恐れ入りますが',f:'依頼・質問の前置き',pt:'desculpe incomodar, mas',en:'I am sorry to trouble you, but',
+ ex:'恐れ入りますが、もう一度おっしゃっていただけますか。',tx:'Desculpe, poderia repetir, por favor?',
+ trap:'A frase salva-vidas para quem não entendeu uma pergunta. Pedir para repetir é aceitável; responder algo errado por não ter entendido, não.'},
+{g:'～かねます',f:'Vます形 + かねます',pt:'não tenho como (recusa educada)',en:'I am unable to (polite)',
+ ex:'その点につきましては、現時点ではお答えいたしかねます。',tx:'Sobre esse ponto, no momento não tenho como responder.',
+ trap:'Útil se perguntarem algo que você não pode revelar (salário atual exato, projetos confidenciais). É uma recusa aceita, não evasiva.'},
+{g:'在留資格について',f:'外国人の転職で必ず確認される',pt:'sobre o status de residência',en:'about residence status',
+ ex:'現在は技術・人文知識・国際業務の在留資格を持っております。',tx:'Atualmente tenho o status de residência de Engenheiro/Especialista em Humanidades/Serviços Internacionais.',
+ trap:'⚠ Prepare esta resposta antes. Mudar de emprego exige que a nova função seja compatível com o visto — a empresa vai perguntar, e hesitar aqui preocupa o entrevistador.'},
+{g:'入社可能日',f:'いつから働けるか',pt:'quando pode começar',en:'earliest start date',
+ ex:'引き継ぎを考慮し、二か月後の入社が可能です。',tx:'Considerando a passagem de trabalho, posso começar em dois meses.',
+ trap:'Mencionar 引き継ぎ mostra responsabilidade com o emprego atual — o entrevistador interpreta isso como sinal de que você fará o mesmo com eles.'},
+{g:'退職願 / 退職届',f:'願＝お願い・届＝決定の通知',pt:'pedido de demissão / aviso de demissão',en:'resignation request / resignation notice',
+ ex:'まずは直属の上司に退職願を提出した。',tx:'Primeiro entreguei o pedido de demissão ao meu chefe direto.',
+ trap:'⚠ 退職<b>願</b> é um <b>pedido</b> (pode ser negociado). 退職<b>届</b> é a <b>notificação</b> depois de decidido (não se retira). Normalmente se entrega o 願 primeiro.'}
+];
+const EN_MENSETSU={
+'御社 / 貴社':['I identified with your company\u2019s design approach.','⚠ The foreigner\u2019s number-one slip: 御社 (おんしゃ) in <b>speech</b>, 貴社 (きしゃ) in <b>writing</b>. 貴社 said aloud sounds like 記者 (reporter) and 帰社. In an interview, always 御社.'],
+'弊社 / 当社':['Our company is currently recruiting design staff.','You only hear 弊社 from the hiring side. When talking about <b>your current employer</b> in an interview, use 現職の会社 or its name — not 弊社, which would sound as if you still spoke for it.'],
+'～に携わる':['In my previous job I worked on the design of multi-unit housing.','More polished than 「〜をしていました」for describing experience. It pairs with 設計・開発・プロジェクト. Do not use it for trivial tasks.'],
+'～を活かす':['I would like to contribute to your company by drawing on my experience.','活かす (to put potential to use) ≠ 生かす (to keep alive), though they read the same. In an interview, always 活かす with 経験・知識・スキル.'],
+'～を担当しておりました':['I was mainly in charge of the architectural design of houses.','おりました = humble いました. Talk about your own past with おる, never いらっしゃる — that would be raising yourself.'],
+'～と考えております':['I believe I can show my strengths at your company.','Sounds firmer than 思います. Too much 「思います」reads as vague opinion; 「考えております」reads as a considered conclusion — exactly what the interviewer wants.'],
+'志望いたしました':['I applied because I want to work on architecture rooted in its community.','The classic 志望動機 structure: <b>reason → と考え → 志望いたしました</b>. Lead with what you want to do, not with the company\u2019s perks (salary and holidays are never the stated reason).'],
+'前職を退職した理由':['I decided to change jobs because I want to take on larger-scale projects.','⚠ Never criticise your previous employer (boss, pay, overtime). Even if it is true, turn it into a goal: 「残業が多かった」→「より効率的な環境で成長したい」.'],
+'至らない点':['My Japanese still has room for improvement, but I work on it every day.','Roberto: this is the line for when they ask about your Japanese. It admits the limit and shows effort in the same breath. Never say just 「日本語が下手です」.'],
+'逆質問':['Is there anything I should study before joining?','⚠ Answering 「特にありません」reads as lack of interest. Always have two questions ready — about the work and learning, never about salary or holidays up front.'],
+'本日はお時間をいただき':['Thank you very much for making time for me today despite your busy schedule.','お忙しいところ is all but obligatory. Note the past tense ございました — the interview has already happened.'],
+'～させていただきたく':['I would very much like the opportunity to work at your company.','A very high humble form, typical of closing an interview or an email. Mid-conversation it sounds overdone — save it for the end.'],
+'ご縁があれば':['Should the opportunity arise, I would be grateful.','ご縁 (fate, bond) avoids speaking directly of "being hired". Rejection emails use the reverse: 「今回はご縁がなかった」= not this time.'],
+'恐れ入りますが':['I am sorry, could you say that once more?','The lifeline for when you did not catch a question. Asking for a repeat is fine; answering wrongly because you did not understand is not.'],
+'～かねます':['On that point, I am unable to answer at this time.','Useful if asked something you cannot disclose (exact current salary, confidential projects). It is an accepted refusal, not evasion.'],
+'在留資格について':['I currently hold the Engineer/Specialist in Humanities/International Services residence status.','⚠ Prepare this answer in advance. Changing jobs requires the new role to match your visa — the company will ask, and hesitating here worries the interviewer.'],
+'入社可能日':['Allowing for the handover, I can start in two months.','Mentioning 引き継ぎ shows responsibility towards your current employer — the interviewer reads it as a sign you will do the same for them.'],
+'退職願 / 退職届':['First I handed my resignation request to my direct manager.','⚠ 退職<b>願</b> is a <b>request</b> (can be negotiated). 退職<b>届</b> is the <b>notice</b> once it is decided (cannot be withdrawn). Normally you hand in the 願 first.']
+};
+
+/* ── 面接・現場の聴解（LISTEN 末尾に追加） ── */
+const LISTEN_JOB=[
+{t:'ポイント理解',s:[['m','では、当社を志望された理由を教えてください。'],['f','はい。前職では住宅の設計を担当しておりましたが、公共の建物に関わる機会がほとんどありませんでした。御社は図書館や学校を多く手がけていらっしゃるので、そうした仕事に挑戦したいと考えました。'],['m','なるほど。給与の面はいかがですか。'],['f','もちろん大切ですが、今回はそれよりも仕事の内容を重視しております。']],
+ q:'女の人がこの会社を志望した理由は何ですか。',o:['公共の建物の設計に関わりたいから','住宅の設計を続けたいから','給料が高いから','家から近いから'],a:0,
+ ex:'O salário é mencionado, mas ela o <b>subordina</b>: 「それよりも仕事の内容を重視」. 手がけていらっしゃる é o honorífico de 手がける (realizar obras) — ela fala da empresa em 尊敬語 e de si em 謙譲語 (担当しておりました).',
+ en:'Salary comes up, but she <b>subordinates</b> it: 「それよりも仕事の内容を重視」. 手がけていらっしゃる is the honorific of 手がける (to undertake projects) — she speaks of the company in 尊敬語 and of herself in 謙譲語 (担当しておりました).'},
+{t:'課題理解',s:[['f','来週の施主さんとの打ち合わせ、模型は間に合いそう？'],['m','はい、金曜には仕上がります。図面も一緒に印刷しておきますね。'],['f','図面は先方がデータでほしいそうだから、印刷はいらないわ。それより、見積もりが変わったから、その説明の資料を作っておいて。'],['m','わかりました。じゃあ、先にそっちをやります。']],
+ q:'男の人はこのあとまず何をしますか。',o:['見積もりの説明資料を作る','模型を仕上げる','図面を印刷する','施主に連絡する'],a:0,
+ ex:'Três tarefas: maquete (já em andamento), impressão (cancelada com 「印刷はいらない」) e o material do orçamento, que entra com 「<b>それより</b>」. Ele confirma com 「先にそっちを」.',
+ en:'Three tasks: the model (already underway), printing (cancelled by 「印刷はいらない」) and the estimate briefing, which enters with 「<b>それより</b>」. He confirms with 「先にそっちを」.'},
+{t:'即時応答',s:[['m','何か質問はありますか。']],q:'返事として最もよいものはどれですか。',
+ o:['はい、入社までに勉強しておくべきことはありますか','いいえ、特にありません','はい、お給料はいくらですか'],a:0,
+ ex:'Este é o 逆質問. 「特にありません」é gramaticalmente certo e estrategicamente errado — soa desinteresse. Perguntar o salário neste momento é precipitado.',
+ en:'This is the 逆質問. 「特にありません」is grammatically fine and strategically wrong — it reads as disinterest. Asking about pay at this point is premature.'},
+{t:'即時応答',s:[['f','日本語はどのくらいお話しになれますか。']],q:'返事として最もよいものはどれですか。',
+ o:['至らない点もございますが、業務に必要な会話はできます','はい、お話しになれます','日本語が下手です'],a:0,
+ ex:'⚠ 「お話しになれますか」é <b>honorífico sobre você</b> — responder 「お話しになれます」seria elevar a si mesmo. E 「下手です」sozinho fecha portas. A boa resposta admite o limite e afirma a capacidade na mesma frase.',
+ en:'⚠ 「お話しになれますか」is <b>honorific about you</b> — answering 「お話しになれます」would raise yourself. And 「下手です」alone closes doors. The good answer admits the limit and states the ability in one breath.'},
+{t:'概要理解',s:[['m','住宅の設計で大切なのは美しい形をつくることだと思われがちです。でも実際に住む人にとっては、台所から洗面所までの距離や、朝の光がどこに入るかといった、毎日の動きのほうがずっと大事なんです。形は、その暮らし方から決まるものだと私は考えています。']],
+ q:'話している人の考えはどれですか。',o:['住む人の生活を考えて設計するべきだ','住宅は美しい形が最も大切だ','光の入る部屋を多くするべきだ','台所は洗面所の近くに置くべきだ'],a:0,
+ ex:'「〜と思われがちです。でも〜」: senso comum, depois a posição dele. 台所・光 são <b>exemplos</b>; as opções que repetem um exemplo estão erradas. A tese é a regra: a forma vem do modo de viver. É 動線 por trás.',
+ en:'「〜と思われがちです。でも〜」: the common view, then his own. 台所・光 are <b>examples</b>; choices repeating one example are wrong. The thesis is the rule: form follows how people live. That is 動線 underneath.'},
+{t:'課題理解',s:[['f','面接の日程ですが、来週の火曜と木曜、どちらがご都合よろしいでしょうか。'],['m','火曜は現場に行く予定がありまして……木曜でしたら午後は空いております。'],['f','承知しました。では木曜の二時でいかがでしょう。'],['m','はい、お願いいたします。あの、作品集は印刷して持参したほうがよろしいですか。'],['f','データをすでにいただいておりますので、お持ちいただかなくて結構です。']],
+ q:'男の人は面接に何を持っていきますか。',o:['特に何も持っていかなくてよい','作品集を印刷して持っていく','図面のデータを持っていく','履歴書を持っていく'],a:0,
+ ex:'⚠ 「お持ちいただかなくて結構です」= não precisa trazer. 結構 aqui é recusa educada da oferta dele, não elogio. Em atendimento e RH, 結構です quase sempre significa "não é necessário".',
+ en:'⚠ 「お持ちいただかなくて結構です」= no need to bring it. 結構 here politely declines his offer, it is not praise. In service and HR Japanese, 結構です nearly always means "that will not be necessary".'},
+{t:'ポイント理解',s:[['m','この案、施主さんに反対されたんだって？'],['f','うん。吹き抜けは気に入ってくれたんだけど、冬に寒くなるんじゃないかって。'],['m','断熱をしっかりすれば大丈夫だと思うけどね。'],['f','そう説明したんだけど、前に住んでいた家がそうだったらしくて、なかなか納得してもらえなくて。']],
+ q:'施主が反対している理由は何ですか。',o:['以前住んだ家で寒い思いをしたから','吹き抜けのデザインが気に入らないから','工事の費用が高いから','断熱の効果を知らないから'],a:0,
+ ex:'A objeção não é técnica, é <b>experiência pessoal</b>: 「前に住んでいた家がそうだった」. Ela explicou a solução (断熱) e mesmo assim 「納得してもらえなくて」. Vocabulário do seu campo: 吹き抜け・断熱・施主.',
+ en:'The objection is not technical but <b>personal experience</b>: 「前に住んでいた家がそうだった」. She explained the fix (断熱) and still 「納得してもらえなくて」. Vocabulary from your field: 吹き抜け・断熱・施主.'},
+{t:'統合理解',s:[['f','三つの事務所から内定が出たんだって。どこにするか決めた？'],['m','まだ迷ってる。A社は住宅専門で給料はいちばんいいんだけど、残業が多いらしくて。'],['f','B社は？'],['m','公共建築が中心で、やりたい仕事に近い。給料はA社より少し低いけど、残業は月十時間くらい。'],['f','C社は？'],['m','海外の案件が多くて面白そうなんだけど、転勤があるんだ。妻の仕事もあるから、それは難しい。'],['f','じゃあ、答えは出てるんじゃない？'],['m','うん、やっぱり仕事の内容かな。']],
+ q:'男の人はどの会社を選びますか。',o:['B社','A社','C社','まだ決められない'],a:0,
+ ex:'Eliminação por condições: C sai pela 転勤 (a mulher trabalha), A sai pelo 残業. E o fecho 「やっぱり仕事の内容」confirma B, que é 「やりたい仕事に近い」. Em 統合理解, anote cada condição assim que aparecer.',
+ en:'Elimination by conditions: C is out because of 転勤 (his wife works), A is out because of 残業. The close 「やっぱり仕事の内容」confirms B, the one 「やりたい仕事に近い」. In 統合理解, note each condition the moment it lands.'}
+];
+
+/* ── 専門読解・語彙（MONDAI 末尾に追加） ── */
+const P_KYUJIN='【設計スタッフ募集】株式会社あおば建築設計\u3000▼職種：意匠設計（正社員）\u3000▼応募資格：一級建築士または二級建築士の資格をお持ちの方。実務経験三年以上。CAD操作必須。外国籍の方は、就労可能な在留資格をお持ちであること。\u3000▼給与：月給二十八万円〜四十万円（経験により決定）\u3000▼勤務時間：九時〜十八時（残業月平均十五時間）\u3000▼休日：土日祝、年末年始、夏季休暇\u3000▼試用期間：三か月（条件の変更なし）\u3000▼選考：書類選考 → 一次面接 → 作品のプレゼンテーション → 最終面接\u3000▼応募方法：履歴書・職務経歴書・作品集（PDF、十ページ以内）をメールでお送りください。書類選考の結果は十日以内にご連絡いたします。';
+const P_ARCH='日本の住宅は、平均で三十年ほどで建て替えられると言われる。ヨーロッパの住宅が百年以上使われることも珍しくないのに比べると、驚くほど短い。\u3000その理由として、木造が多いことがよく挙げられる。しかし、木造であっても適切に手入れをすれば、何百年も使われている寺がある。問題は材料そのものではない。\u3000日本では長い間、住宅を土地の上に一時的に置かれた「消費財」のように扱う考え方が続いてきた。中古住宅の価値が低く評価されるため、手を入れて使い続けるより、壊して新しく建てるほうが得だと判断されやすいのである。\u3000近年は、耐震改修や断熱改修を行って古い建物を長く使う動きが広がりつつある。①<u>建物の寿命を決めるのは、構造の強さだけではない</u>。それを使い続けようとする社会の仕組みなのだ。';
+const P_TENSHOKU='転職の面接で「前の会社を辞めた理由」を聞かれると、多くの人が答えに困る。本当の理由が不満であることが少なくないからだ。\u3000しかし、面接官が知りたいのは不満の中身ではない。同じ不満がこの会社でも起きたとき、その人がまた辞めるのかどうかである。\u3000だから、答えるべきなのは過去ではなく、これから何をしたいかだ。②<u>「残業が多かった」は事実であっても答えにならない</u>。「より短い時間で成果を出す働き方を身につけたい」と言い換えれば、同じ経験が前を向いた話になる。\u3000辞めた理由を話すというのは、実は志望動機をもう一度話すことなのである。';
+const MONDAI_PRO=[
+/* 情報検索 ×3 */
+{s:'読解',p:P_KYUJIN,q:'この求人に応募できるのはどの人か。',
+ o:['二級建築士で実務経験四年、CADが使え、就労可能な在留資格がある外国籍の人','一級建築士で実務経験二年、CADが使える人','資格はないが実務経験十年で、CADが使える人','一級建築士で実務経験五年、CADは使えない人'],a:0,
+ ex:'<b>情報検索</b>: quatro condições ao mesmo tempo — 資格（一級 <b>または</b> 二級）, 経験三年以上, CAD 必須, e para estrangeiros o 在留資格. Cada distrator quebra exatamente uma delas. Marque as condições numeradas antes de olhar as opções.'},
+{s:'読解',p:P_KYUJIN,q:'この求人の内容と合っているものはどれか。',
+ o:['試用期間中も給与などの条件は変わらない','応募書類は郵送で送る','書類選考の結果は一か月以内に届く','選考では面接が一回だけ行われる'],a:0,
+ ex:'Por eliminação: 「メールでお送りください」derruba o correio; 「十日以内」derruba o mês; há 一次面接 <b>e</b> 最終面接. A certa está entre parênteses: 「（条件の変更なし）」. No 情報検索, parênteses escondem respostas.'},
+{s:'読解',p:P_KYUJIN,q:'応募のときに送らなくてもよいものはどれか。',
+ o:['資格の証明書','履歴書','職務経歴書','作品集'],a:0,
+ ex:'⚠ Pergunta <b>negativa</b>: o que <b>não</b> é pedido. O anúncio lista três documentos; o certificado do registro não aparece. Em perguntas assim, cheque item por item contra a lista em vez de procurar a resposta certa.'},
+/* 建築 読解 ×3 */
+{s:'読解',p:P_ARCH,q:'筆者によると、日本の住宅が短い期間で建て替えられる主な理由は何か。',
+ o:['住宅を使い捨てのように考える見方が続いてきたから','木造の住宅が多いから','地震が多くて建物が傷みやすいから','中古住宅を直す技術がないから'],a:0,
+ ex:'「〜がよく挙げられる。しかし〜」: o motivo mais citado (木造) entra para ser <b>derrubado</b> — 「問題は材料そのものではない」. A causa real vem com 「〜のである」: a casa tratada como 消費財.'},
+{s:'読解',p:P_ARCH,q:'①建物の寿命を決めるのは、構造の強さだけではないとあるが、ほかに何が決めるのか。',
+ o:['建物を使い続けようとする社会の仕組み','建物に使われている材料の種類','建物を設計した建築家の技術','建物が建っている土地の価格'],a:0,
+ ex:'指示語 e complemento: a frase seguinte responde diretamente — 「それを使い続けようとする社会の仕組みなのだ」. Para 「〜だけではない」, o que falta está <b>sempre</b> na frase imediatamente seguinte.'},
+{s:'読解',p:P_ARCH,q:'この文章の内容と合っているものはどれか。',
+ o:['木造でも手入れをすれば長く使える','木造は百年以上もたない','中古住宅は日本で高く評価されている','古い建物を改修する動きは減っている'],a:0,
+ ex:'「何百年も使われている寺がある」é o contraexemplo que sustenta a certa. E 「広がりつつある」significa que o movimento <b>cresce</b> — a alternativa que diz o contrário inverte o 〜つつある dos seus cartões.'},
+/* 転職 読解 ×3 */
+{s:'読解',p:P_TENSHOKU,q:'面接官が「辞めた理由」から知りたいことは何か。',
+ o:['その人がこの会社でもまた辞めるかどうか','前の会社にどんな問題があったか','その人がどんな不満を持ちやすいか','前の会社での給料がいくらだったか'],a:0,
+ ex:'O texto nega o óbvio: 「知りたいのは不満の中身ではない」. O que segue essa negação é a resposta. Roberto, esta é literalmente a pergunta que você vai ouvir.'},
+{s:'読解',p:P_TENSHOKU,q:'②「残業が多かった」は事実であっても答えにならないとあるが、なぜか。',
+ o:['過去の話であって、これから何をしたいかを示していないから','事実かどうか面接官には確かめられないから','残業が多い会社はどこにでもあるから','前の会社を悪く言うことになるから'],a:0,
+ ex:'⚠ Duas alternativas parecem certas. Mas o texto dá o critério logo antes: 「答えるべきなのは過去ではなく、これから何をしたいかだ」. "Falar mal da empresa" é senso comum, não o argumento <b>deste</b> texto — responda pelo texto, não pelo tema.'},
+{s:'読解',p:P_TENSHOKU,q:'筆者が最も言いたいことは何か。',
+ o:['辞めた理由は志望動機として語るべきだ','面接では本当の理由を言わないほうがよい','残業の多い会社は避けるべきだ','面接官の質問には短く答えるべきだ'],a:0,
+ ex:'A última frase fecha com 「〜なのである」, o carimbo da tese: 辞めた理由 = 志望動機 revisitado. Em textos de opinião, leia o último período antes de olhar as opções.'},
+/* 専門語彙 文脈規定 ×6 */
+{s:'語彙',q:'着工の前に、市役所に（　）を出す必要がある。',o:['確認申請','見積もり','履歴書','引き渡し'],a:0,
+ ex:'<b>確認申請</b> = o pedido de aprovação do projeto, entregue <b>antes</b> de começar a obra. 見積もり é orçamento (vai ao cliente), 引き渡し é a entrega no fim, 履歴書 não é da obra.'},
+{s:'語彙',q:'この敷地は（　）が六十パーセントなので、建てられる面積が限られる。',o:['建ぺい率','天井高','縮尺','工期'],a:0,
+ ex:'<b>建ぺい率</b> limita a área <b>do térreo</b> em relação ao terreno; 容積率 limita a área <b>total</b>. Confundir os dois é o erro clássico — 建ぺい = cobertura do chão, 容積 = volume acumulado.'},
+{s:'語彙',q:'台所から洗面所までの（　）を短くすると、家事が楽になる。',o:['動線','寸法','仕上げ','躯体'],a:0,
+ ex:'<b>動線</b> é o caminho que a pessoa percorre — conceito central no projeto japonês. 寸法 seria só a distância medida; 動線 inclui o movimento diário.'},
+{s:'語彙',q:'前職では住宅の設計に（　）まいりました。',o:['携わって','基づいて','関して','応じて'],a:0,
+ ex:'<b>〜に携わる</b> = estar envolvido num trabalho. 〜に関して significa "a respeito de" (tema) e 〜に応じて "conforme". Em entrevista, 携わる é a palavra que soa profissional.'},
+{s:'語彙',q:'退職する前に、後任者への（　）をきちんと行う。',o:['引き継ぎ','引き渡し','受け取り','取り消し'],a:0,
+ ex:'<b>引き継ぎ</b> = passar o trabalho a quem fica. Cuidado: <b>引き渡し</b> é entregar a obra pronta ao cliente. Os dois começam com 引き e aparecem na sua área — separe agora.'},
+{s:'語彙',q:'面接では、これまでの（　）を具体的な数字で示すとよい。',o:['実績','経歴','履歴','資格'],a:0,
+ ex:'<b>実績</b> = resultados concretos já alcançados. 経歴 é a trajetória (onde você esteve), 履歴 o registro formal, 資格 a habilitação. A pergunta pede o que se mostra <b>com números</b>.'}
+];
+const EN_MEX_PRO=[
+'<b>情報検索</b>: four conditions at once — qualification (1st <b>or</b> 2nd class), three years of experience, CAD required, and for foreign nationals a valid residence status. Each distractor breaks exactly one. Number the conditions before you look at the options.',
+'By elimination: 「メールでお送りください」kills the postal option; 「十日以内」kills the month; there is a first interview <b>and</b> a final one. The right answer sits in brackets: 「（条件の変更なし）」. In 情報検索, brackets hide answers.',
+'⚠ A <b>negative</b> question: what is <b>not</b> asked for. The ad lists three documents; the registration certificate is not among them. For questions like this, check item by item against the list instead of hunting for the right answer.',
+'「〜がよく挙げられる。しかし〜」: the most-cited reason (timber) is raised in order to be <b>knocked down</b> — 「問題は材料そのものではない」. The real cause arrives with 「〜のである」: the house treated as a 消費財.',
+'A reference plus a completion: the next sentence answers directly — 「それを使い続けようとする社会の仕組みなのだ」. With 「〜だけではない」, the missing piece is <b>always</b> in the very next sentence.',
+'「何百年も使われている寺がある」is the counterexample that supports the right answer. And 「広がりつつある」means the movement is <b>growing</b> — the option saying the opposite inverts the 〜つつある on your cards.',
+'The text denies the obvious: 「知りたいのは不満の中身ではない」. What follows that denial is the answer. Roberto, this is literally the question you will be asked.',
+'⚠ Two options look right. But the text gives the criterion just before: 「答えるべきなのは過去ではなく、これから何をしたいかだ」. "Speaking ill of the company" is common sense, not <b>this</b> text\u2019s argument — answer from the passage, not from the topic.',
+'The final sentence closes with 「〜なのである」, the stamp of the thesis: the reason for leaving = the 志望動機 told again. In opinion pieces, read the last period before looking at the options.',
+'<b>確認申請</b> = the building permit application, filed <b>before</b> work starts. 見積もり is a quotation (goes to the client), 引き渡し is handover at the end, and 履歴書 has nothing to do with the site.',
+'<b>建ぺい率</b> caps the <b>ground-floor</b> footprint against the plot; 容積率 caps the <b>total</b> floor area. Mixing them up is the classic slip — 建ぺい = ground cover, 容積 = accumulated volume.',
+'<b>動線</b> is the path a person actually walks — a central concept in Japanese planning. 寸法 would be just the measured distance; 動線 includes the daily movement.',
+'<b>〜に携わる</b> = to be involved in a line of work. 〜に関して means "regarding" (a topic) and 〜に応じて "according to". In an interview, 携わる is the word that sounds professional.',
+'<b>引き継ぎ</b> = handing your work to whoever stays. Careful: <b>引き渡し</b> is handing the finished building to the client. Both start with 引き and both live in your field — separate them now.',
+'<b>実績</b> = concrete results already delivered. 経歴 is the trajectory (where you have been), 履歴 the formal record, 資格 the qualification. The question asks for what you show <b>with numbers</b>.'
+];
+
+/* ═══ 面接フレーズ集 · 流れの順に並べた実用文 ═══
+   g=場面, f=いつ使うか, ex=そのまま言える日本語, tx=葡語訳, trap=注意点 */
+const PHRASE_JOB_BASE=[
+{g:'入室・挨拶',f:'ドアを開けてから座るまで',pt:'entrada e cumprimento',en:'entering and greeting',
+ ex:'失礼いたします。本日は面接のお時間をいただき、ありがとうございます。ロベルトと申します。よろしくお願いいたします。',
+ tx:'Com licença. Obrigado por me conceder esta entrevista hoje. Meu nome é Roberto. Muito prazer.',
+ trap:'入る時＝失礼いたします、出る時＝失礼いたしました（過去形）。座るのは「どうぞ」と言われてから。名乗りは必ずフルネーム。'},
+{g:'自己紹介（一分）',f:'「簡単に自己紹介を」と言われたら',pt:'autoapresentação de um minuto',en:'one-minute self-introduction',
+ ex:'ロベルトと申します。ブラジル出身で、日本には五年おります。前職では住宅を中心に意匠設計を担当しておりました。現在は一級建築士の取得を目指して勉強しております。本日はよろしくお願いいたします。',
+ tx:'Meu nome é Roberto. Sou do Brasil e estou no Japão há cinco anos. No emprego anterior era responsável por projeto arquitetônico, sobretudo residencial. Atualmente estudo para obter o registro de arquiteto de 1ª classe.',
+ trap:'⚠ 自己紹介は「経歴の要約」で、志望動機ではない。出身→在日年数→職歴→今の取り組み、の順。一分で言い切る。趣味は聞かれてから。'},
+{g:'志望動機',f:'なぜ当社なのか',pt:'motivo da candidatura',en:'why this company',
+ ex:'御社が地域の公共建築を数多く手がけていらっしゃる点に強く惹かれました。前職で培った住宅設計の経験を活かしながら、より多くの人が使う建物に携わりたいと考え、志望いたしました。',
+ tx:'Atraiu-me muito o fato de a sua empresa realizar tantas obras públicas na comunidade. Quero aproveitar minha experiência em projeto residencial e trabalhar com edifícios usados por mais pessoas.',
+ trap:'構造は「御社の○○に惹かれた → 自分の△△を活かして → □□したい」。給与・休日は動機にしない。会社名は必ず入れる。'},
+{g:'転職理由',f:'なぜ辞めるのか（最重要）',pt:'motivo da mudança',en:'why you are leaving',
+ ex:'前職では住宅が中心で、公共建築に関わる機会がほとんどありませんでした。より大きな規模の設計に挑戦したいと考え、転職を決意いたしました。',
+ tx:'No emprego anterior o foco era residencial e quase não havia oportunidade de trabalhar com obras públicas. Decidi mudar porque quero enfrentar projetos de maior escala.',
+ trap:'⚠ 不満は一切言わない。「なかった」→「したい」に変換する。残業・給料・人間関係は口にした瞬間に評価が下がる。'},
+{g:'強み',f:'あなたの強みは',pt:'seus pontos fortes',en:'your strengths',
+ ex:'施主の方の言葉にならない要望を、図面と模型で形にすることが得意です。前職では、打ち合わせのたびに模型をお持ちし、三回の打ち合わせで合意に至った案件もございました。',
+ tx:'Meu forte é transformar em desenho e maquete aquilo que o cliente não consegue verbalizar. No emprego anterior eu levava uma maquete a cada reunião.',
+ trap:'強みは必ず「具体例＋数字」とセットで。抽象語だけ（責任感があります等）は印象に残らない。'},
+{g:'弱み',f:'あなたの短所は',pt:'seus pontos fracos',en:'your weaknesses',
+ ex:'細部にこだわりすぎて時間をかけてしまうことがあります。そのため、今は作業の前に優先順位と締め切りを決めてから取りかかるようにしております。',
+ tx:'Às vezes me prendo demais aos detalhes e gasto tempo. Por isso, agora defino prioridades e prazos antes de começar.',
+ trap:'⚠ 「短所はありません」は禁句。型は「短所 → だから今こうしている」。仕事に致命的な短所（時間を守れない等）は選ばない。'},
+{g:'日本語について',f:'日本語はどの程度か',pt:'sobre seu japonês',en:'about your Japanese',
+ ex:'至らない点もございますが、打ち合わせや図面の説明など、業務に必要な会話は問題なく行えます。専門用語は現場で覚えるようにしております。',
+ tx:'Ainda tenho pontos a melhorar, mas consigo conduzir sem problema as conversas necessárias ao trabalho, como reuniões e explicação de desenhos.',
+ trap:'Roberto、これは必ず聞かれる。「下手です」で終わらせない。①限界を認める ②できることを具体的に ③努力を示す、の三段。'},
+{g:'在留資格',f:'ビザの状況を聞かれたら',pt:'status de residência',en:'residence status',
+ ex:'現在は「技術・人文知識・国際業務」の在留資格を持っており、設計業務は資格の範囲内です。転職後の手続きにつきましても、必要な書類はすぐにご用意できます。',
+ tx:'Tenho o status "Engenheiro/Especialista em Humanidades/Serviços Internacionais", e o trabalho de projeto está dentro dele. Posso providenciar de imediato os documentos necessários.',
+ trap:'⚠ ここで迷うと不安を与える。資格名を正確に言えるよう暗記する。「会社に手続きの負担がかからない」と伝わる言い方にする。'},
+{g:'入社可能日',f:'いつから来られるか',pt:'quando pode começar',en:'earliest start date',
+ ex:'現職の引き継ぎを考慮いたしますと、内定をいただいてから二か月後には入社可能です。可能であれば、その範囲で調整させていただきます。',
+ tx:'Considerando a passagem de trabalho no emprego atual, posso começar dois meses após a oferta.',
+ trap:'「すぐ辞められます」は逆効果。引き継ぎに触れると「この人は責任感がある」と伝わる。'},
+{g:'逆質問①',f:'何か質問はありますか',pt:'pergunta ao entrevistador',en:'your question to them',
+ ex:'入社までに勉強しておいたほうがよいソフトや資格はございますか。',
+ tx:'Há algum software ou certificação que eu deva estudar antes de entrar?',
+ trap:'⚠ 「特にありません」は絶対に避ける。最低二つ用意する。給与・残業・休日は一次面接では聞かない。'},
+{g:'逆質問②',f:'もう一つ用意しておく',pt:'segunda pergunta',en:'a second question',
+ ex:'御社では、意匠と構造の担当者はどのように連携されているのでしょうか。',
+ tx:'Como se dá a colaboração entre a equipe de arquitetura e a de estruturas na sua empresa?',
+ trap:'仕事の進め方を聞く質問は「入社後を具体的に想像している」印象になる。専門的であるほど良い。'},
+{g:'退室',f:'面接の終わり',pt:'ao sair',en:'leaving the room',
+ ex:'本日はお忙しいところ、お時間をいただきありがとうございました。ぜひ御社で働かせていただきたく存じます。失礼いたします。',
+ tx:'Muito obrigado por seu tempo hoje, apesar de ocupado. Gostaria muito de trabalhar na sua empresa. Com licença.',
+ trap:'ドアの前で一礼してから出る。「失礼いたしました」と過去形にするのは部屋を出る瞬間。'},
+{g:'聞き取れない時',f:'質問が分からなかったら',pt:'quando não entendeu',en:'when you did not catch it',
+ ex:'恐れ入ります、もう一度おっしゃっていただけますでしょうか。',
+ tx:'Desculpe, poderia repetir, por favor?',
+ trap:'⚠ 分からないまま答えるのが最悪。聞き返すのは減点にならない。「○○というご質問でしょうか」と確認するのも有効。'},
+{g:'答えに詰まった時',f:'考える時間がほしい',pt:'quando precisa de um instante',en:'when you need a moment',
+ ex:'少しお時間をいただいてもよろしいでしょうか。……お待たせいたしました。',
+ tx:'Poderia me dar um instante? ... Obrigado pela espera.',
+ trap:'沈黙より「考えています」と伝えるほうが良い。三秒以上黙るなら、この一言を挟む。'},
+{g:'お礼メール',f:'面接の当日中に送る',pt:'e-mail de agradecimento',en:'thank-you email',
+ ex:'本日、面接のお時間をいただきましたロベルトでございます。御社の設計に対する考え方を伺い、ますます志望の気持ちが強くなりました。今後ともよろしくお願い申し上げます。',
+ tx:'Sou o Roberto, que teve a entrevista hoje. Ao ouvir a visão de projeto da empresa, meu desejo de ingressar só aumentou.',
+ trap:'メールでは「貴社」（話す時は御社）。当日中に送る。長くしない、五行程度で十分。'}
+];
+
+/* ═══ 建築の現場・打ち合わせフレーズ ═══ */
+const PHRASE_ARCH_BASE=[
+{g:'打ち合わせを始める',f:'施主との初回',pt:'abrindo a reunião',en:'opening the meeting',
+ ex:'本日はお時間をいただきありがとうございます。前回いただいたご要望をもとに、二案ご用意いたしました。',
+ tx:'Obrigado pelo seu tempo hoje. Com base nos pedidos da última vez, preparei duas propostas.',
+ trap:'施主には必ず敬語。「作ってきました」→「ご用意いたしました」。案は一つより二つ出すと比較で話が進む。'},
+{g:'図面を説明する',f:'平面図を見せながら',pt:'explicando a planta',en:'walking through the plan',
+ ex:'こちらが一階の平面図です。玄関からキッチンまでの動線を短くして、買い物のあとの動きを楽にしております。',
+ tx:'Esta é a planta do térreo. Encurtei o percurso da entrada até a cozinha para facilitar o movimento depois das compras.',
+ trap:'⚠ 専門用語は必ず「効果」とセットで言う。「動線を短く」だけでは伝わらない。「〜が楽になる」まで言う。'},
+{g:'要望を確認する',f:'聞き漏らしを防ぐ',pt:'confirmando os pedidos',en:'checking what they want',
+ ex:'確認させていただきますが、日当たりを優先し、収納は多少減っても構わない、ということでよろしいでしょうか。',
+ tx:'Deixe-me confirmar: a prioridade é a luz natural, e não há problema se o armazenamento diminuir um pouco. É isso?',
+ trap:'「確認させていただきますが」＋「〜ということでよろしいでしょうか」。この型を覚えると誤解が激減する。'},
+{g:'できないと伝える',f:'法規や構造で無理な時',pt:'dizendo que não é possível',en:'saying it cannot be done',
+ ex:'ご希望はよく分かるのですが、この壁は耐力壁でして、構造上、取り払うことができません。代わりに開口を広げるご提案をさせてください。',
+ tx:'Entendo bem o seu pedido, mas esta parede é estrutural e não pode ser removida. Em troca, permita-me propor ampliar a abertura.',
+ trap:'⚠ 「できません」で終わらせない。「理由 → 代案」まで一息で言う。日本の現場では代案のない否定は受け入れられにくい。'},
+{g:'費用の話',f:'予算を超える時',pt:'quando passa do orçamento',en:'when it goes over budget',
+ ex:'この仕様ですと、ご予算を二百万円ほど超える見込みです。仕上げを変更すれば調整が可能ですが、いかがいたしましょうか。',
+ tx:'Com esta especificação, a previsão ultrapassa o orçamento em cerca de dois milhões de ienes. Mudando o acabamento dá para ajustar.',
+ trap:'金額は必ず具体的な数字で。「高くなります」は不親切。「いかがいたしましょうか」で判断を施主に返す。'},
+{g:'工程を伝える',f:'いつ何が終わるか',pt:'informando o cronograma',en:'giving the schedule',
+ ex:'来月着工し、躯体工事が三か月、内装が二か月、竣工は来年の三月を予定しております。',
+ tx:'Início da obra no mês que vem, três meses de estrutura, dois de acabamento interno, com conclusão prevista para março.',
+ trap:'着工→躯体→内装→竣工→引き渡し、の順で言うと相手が時間を想像しやすい。'},
+{g:'遅れを報告する',f:'悪い知らせを伝える',pt:'reportando um atraso',en:'reporting a delay',
+ ex:'申し訳ございません。資材の入荷が遅れておりまして、工期が二週間ほど延びる見込みです。今後の予定を改めてご説明させてください。',
+ tx:'Peço desculpas. A entrega dos materiais atrasou e o prazo deve estender-se cerca de duas semanas.',
+ trap:'⚠ 順番が重要：謝罪 → 事実 → 見込み → 次の行動。言い訳を先に言うと信頼を失う。'},
+{g:'現場で確認する',f:'職人さんへの声かけ',pt:'no canteiro, com os trabalhadores',en:'on site, with the workers',
+ ex:'お疲れさまです。図面と違う箇所がありましたので、確認させていただけますか。',
+ tx:'Bom trabalho. Encontrei um ponto diferente do desenho, poderia verificar comigo?',
+ trap:'現場では「お疲れさまです」が挨拶。指摘は「間違っています」ではなく「確認させていただけますか」と柔らかく。'},
+{g:'変更を依頼する',f:'施工側にお願いする',pt:'pedindo uma alteração',en:'requesting a change',
+ ex:'恐れ入りますが、こちらの寸法を五センチ広げていただくことは可能でしょうか。',
+ tx:'Desculpe incomodar, mas seria possível ampliar esta dimensão em cinco centímetros?',
+ trap:'「〜していただくことは可能でしょうか」は最も角が立たない依頼形。命令形は現場でも使わない。'},
+{g:'社内の打ち合わせ',f:'構造・設備の担当者と',pt:'reunião interna',en:'internal coordination',
+ ex:'意匠側としては天井を高くしたいのですが、構造的に梁の位置を動かすことは難しいでしょうか。',
+ tx:'Do lado da arquitetura queremos um pé-direito maior. Estruturalmente, seria difícil mudar a posição da viga?',
+ trap:'社内でも「難しいでしょうか」と可能性を聞く形にする。意匠・構造・設備の三者の言葉を使い分けると信頼される。'},
+{g:'プレゼンで締める',f:'案の説明の最後',pt:'fechando a apresentação',en:'closing a presentation',
+ ex:'以上がご提案になります。ご不明な点やご要望がございましたら、遠慮なくおっしゃってください。',
+ tx:'Esta é a proposta. Se houver qualquer dúvida ou pedido, sinta-se à vontade para dizer.',
+ trap:'「以上が〜になります」でプレゼンを閉じるのは定型。最後に必ず相手に発言の場を渡す。'},
+{g:'意見が割れた時',f:'施主と考えが違う',pt:'quando discordam',en:'when you disagree',
+ ex:'おっしゃることはよく分かります。その上で、住み始めてからのことを考えますと、こちらの案のほうがご負担が少ないかと存じます。',
+ tx:'Entendo perfeitamente o que diz. Dito isso, pensando no dia a dia depois de morar, esta proposta traria menos ônus.',
+ trap:'⚠ 「その上で」が鍵。一度受け止めてから意見を言う。真っ向から否定すると日本の施主は黙ってしまう。'}
+];
+
+/* ═══ 面接フレーズ 第二集 · 実際に聞かれる質問への答え方 ═══ */
+const PHRASE_JOB2=[
+{g:'キャリアプラン',f:'五年後はどうなっていたいか',pt:'plano de carreira',en:'career plan',
+ ex:'三年以内に一級建築士を取得し、五年後には自分が主担当として案件を最初から最後まで見られるようになりたいと考えております。',
+ tx:'Quero obter o registro de arquiteto de 1ª classe em até três anos e, em cinco, conduzir projetos do início ao fim como responsável.',
+ trap:'⚠ 「独立したい」は避ける。すぐ辞めると思われる。社内で伸びる像を、年数つきで語る。'},
+{g:'失敗経験',f:'挫折した経験は',pt:'um fracasso que você teve',en:'a failure you had',
+ ex:'着工後に施主のご要望を取り違えていたことが分かり、工期を一週間遅らせてしまったことがあります。それ以来、打ち合わせの内容は必ず書面にして、その場で確認していただくようにしております。',
+ tx:'Descobri, após o início da obra, que havia entendido errado um pedido do cliente e atrasei o prazo em uma semana. Desde então registro tudo por escrito e confirmo na hora.',
+ trap:'型は「失敗 → 原因 → 今やっている対策」。対策まで言わないと、ただの失敗談で終わる。'},
+{g:'チームでの役割',f:'どう働く人か知りたい',pt:'seu papel numa equipe',en:'your role on a team',
+ ex:'意匠と構造で意見が分かれた際に、両方の条件を図面に落として比較する役をよく任されます。結論を急がず、判断材料を揃えるほうが得意です。',
+ tx:'Quando arquitetura e estrutura divergem, costumo ser encarregado de pôr as duas condições no desenho e comparar.',
+ trap:'「リーダーです」より、具体的な動き方を語るほうが信用される。自分の型を一つに絞る。'},
+{g:'残業について',f:'残業は大丈夫かと聞かれたら',pt:'sobre horas extras',en:'about overtime',
+ ex:'締め切り前に必要な残業でしたら問題ございません。ただ、日頃から段取りを工夫して、できるだけ時間内に終える進め方を心がけております。',
+ tx:'Não tenho problema com horas extras necessárias perto do prazo. Mas procuro organizar o trabalho para terminar dentro do horário.',
+ trap:'⚠ 「いくらでもできます」は言わない。無理をする人だと思われるか、後で自分が苦しむ。条件つきで受ける。'},
+{g:'給与の希望',f:'希望額を聞かれたら',pt:'expectativa salarial',en:'salary expectation',
+ ex:'御社の規定に従います。前職では年収四百五十万円でしたので、それを目安にしていただければ幸いです。',
+ tx:'Sigo o que a empresa determinar. No emprego anterior minha renda anual era de 4,5 milhões de ienes, se puder servir de referência.',
+ trap:'「規定に従います」＋前職の実額、が最も無難。高すぎる額を先に言うと選考から外れる。'},
+{g:'他社の選考状況',f:'他も受けていますか',pt:'outros processos',en:'other applications',
+ ex:'同じく公共建築を手がける二社を受けております。ただ、志望度としては御社が第一希望です。',
+ tx:'Estou em processo com duas outras empresas do mesmo ramo. Mas a sua é minha primeira opção.',
+ trap:'⚠ 「御社だけです」は不自然で嘘っぽい。受けていると正直に言い、そのうえで第一希望だと伝える。'},
+{g:'ブランク・空白期間',f:'働いていない時期があれば',pt:'período sem trabalhar',en:'a gap in your history',
+ ex:'半年間、資格の勉強に専念しておりました。その間に構造の知識を体系的に学び直せたことは、今の業務にも活きております。',
+ tx:'Passei seis meses dedicado ao estudo para a certificação. Nesse período revi sistematicamente estruturas, o que me ajuda hoje.',
+ trap:'空白は隠さない。「何をしていたか」と「それが今どう役立つか」をセットで言えば問題にならない。'},
+{g:'なぜ日本で働くのか',f:'外国人によく聞かれる',pt:'por que trabalhar no Japão',en:'why work in Japan',
+ ex:'木造建築の技術と、限られた敷地を丁寧に使う設計の考え方に惹かれ、日本で学びたいと考えました。今は、その方法を自分の仕事として身につけたいと思っております。',
+ tx:'Fui atraído pela técnica da construção em madeira e pelo modo japonês de usar com cuidado terrenos pequenos.',
+ trap:'「日本が好きだから」で止めない。仕事に結びつく理由にする。建築という専門と結びつけると説得力が出る。'},
+{g:'最後に一言',f:'何か言い残したことは',pt:'algo a acrescentar',en:'anything to add',
+ ex:'本日はありがとうございました。日本語にはまだ至らない点もございますが、設計の経験と現場での対応力で必ずお役に立てると考えております。ぜひよろしくお願いいたします。',
+ tx:'Obrigado por hoje. Meu japonês ainda tem limitações, mas acredito que posso ser útil com minha experiência de projeto.',
+ trap:'最後は必ず前向きに締める。弱点に触れるなら、必ず強みで上書きしてから終わる。'},
+{g:'電話がかかってきた',f:'選考結果の電話',pt:'atendendo a ligação',en:'taking their call',
+ ex:'お世話になっております、ロベルトでございます。ご連絡ありがとうございます。',
+ tx:'Olá, aqui é Roberto. Obrigado pelo contato.',
+ trap:'知らない番号でも、選考中は「お世話になっております」で出る。名乗りは必ず自分から。'},
+{g:'日程を調整する',f:'面接日の相談',pt:'marcando a data',en:'arranging the date',
+ ex:'ご連絡ありがとうございます。来週でしたら、火曜日と木曜日の午後が空いております。ご都合のよい日をお知らせいただけますでしょうか。',
+ tx:'Obrigado pelo contato. Na semana que vem tenho livre terça e quinta à tarde. Poderia me informar qual dia lhe convém?',
+ trap:'候補は二つ以上出す。「いつでもいいです」は相手に手間をかけるので避ける。'},
+{g:'内定を受ける',f:'承諾の返事',pt:'aceitando a oferta',en:'accepting the offer',
+ ex:'このたびは内定のご連絡をいただき、誠にありがとうございます。ぜひ入社させていただきたく存じます。今後の手続きについてご教示いただけますと幸いです。',
+ tx:'Muito obrigado pela oferta. Gostaria muito de ingressar. Agradeceria se pudesse me orientar sobre os próximos passos.',
+ trap:'承諾は早いほど印象が良い。保留したい場合は「○日までお時間をいただけますか」と期限を自分から切る。'},
+{g:'内定を断る',f:'他社に決めた時',pt:'recusando a oferta',en:'declining the offer',
+ ex:'このたびは内定をいただき、誠にありがとうございました。熟慮の結果、誠に恐縮ながら辞退させていただきたく、ご連絡いたしました。',
+ tx:'Agradeço muito pela oferta. Após muita reflexão, lamento informar que preciso recusar.',
+ trap:'⚠ 業界は狭い。断る時こそ丁寧に。理由は詳しく言わなくてよいが、必ず電話かメールで早めに伝える。'}
+];
+/* ═══ 建築フレーズ 第二集 ═══ */
+const PHRASE_ARCH2=[
+{g:'初回ヒアリング',f:'施主の要望を引き出す',pt:'levantando as necessidades',en:'first client hearing',
+ ex:'今のお住まいで、いちばん不便に感じていらっしゃるのはどこでしょうか。',
+ tx:'No lugar onde mora hoje, o que mais o incomoda?',
+ trap:'「どんな家がいいですか」は答えにくい。「今の不便」から聞くと具体的な要望が出てくる。'},
+{g:'予算を確認する',f:'最初に必ず聞く',pt:'confirmando o orçamento',en:'checking the budget',
+ ex:'差し支えなければ、ご予算のご希望を伺ってもよろしいでしょうか。',
+ tx:'Se não houver problema, posso perguntar qual é o orçamento pretendido?',
+ trap:'「差し支えなければ」を前に置くと、お金の話が聞きやすくなる。曖昧なまま進めると後で必ず揉める。'},
+{g:'法規の説明',f:'建てられない理由を伝える',pt:'explicando a lei',en:'explaining the regulations',
+ ex:'この地域は用途地域の制限がございまして、三階建てにすることができません。二階建てで広さを確保するご提案をいたします。',
+ tx:'Esta área tem restrição de zoneamento e não permite três pavimentos. Vou propor garantir a área em dois.',
+ trap:'法規は「決まりですから」で終わらせない。必ず代替案まで言う。施主は理由より解決策を聞きたい。'},
+{g:'素材を提案する',f:'仕上げを決める',pt:'propondo materiais',en:'proposing materials',
+ ex:'外壁には汚れの目立ちにくい素材をお勧めしております。初期費用は少し上がりますが、十年後のメンテナンス費用を抑えられます。',
+ tx:'Recomendo um material que não marca sujeira para a fachada. Custa um pouco mais no início, mas reduz manutenção em dez anos.',
+ trap:'素材の提案は「初期費用 vs 長期費用」で語ると納得されやすい。デザインの好みだけで押さない。'},
+{g:'見積もりを渡す',f:'金額を説明する',pt:'entregando o orçamento',en:'presenting the estimate',
+ ex:'お見積もりをお持ちいたしました。内訳を項目ごとにご説明いたしますので、ご不明な点はその都度おっしゃってください。',
+ tx:'Trouxe o orçamento. Vou explicar item por item, então me interrompa sempre que tiver dúvida.',
+ trap:'総額だけ見せない。内訳を先に説明すると「高い」ではなく「何にいくら」で話が進む。'},
+{g:'施工側と調整する',f:'現場監督との会話',pt:'coordenando com a obra',en:'coordinating with the site',
+ ex:'この納まりですと現場で難しいでしょうか。難しければ、こちらで図面を修正いたします。',
+ tx:'Este detalhe seria difícil de executar na obra? Se for, eu corrijo o desenho.',
+ trap:'⚠ 「図面どおりにやってください」は現場で最も嫌われる。先に「難しいか」と聞く姿勢が信頼を作る。'},
+{g:'検査に立ち会う',f:'竣工前の確認',pt:'na vistoria',en:'at the inspection',
+ ex:'図面と照らし合わせて確認いたしました。こちらの二か所だけ、手直しをお願いできますでしょうか。',
+ tx:'Verifiquei contra o desenho. Apenas nestes dois pontos, poderia pedir um retoque?',
+ trap:'指摘は数を絞って具体的に。「全体的に雑です」は改善につながらない。場所と内容を特定する。'},
+{g:'引き渡しの挨拶',f:'鍵を渡す時',pt:'na entrega da obra',en:'at handover',
+ ex:'本日、無事にお引き渡しとなりました。お住まいになってからお気づきの点がございましたら、遠慮なくご連絡ください。',
+ tx:'Hoje concluímos a entrega. Se notar qualquer coisa depois de morar, entre em contato sem hesitar.',
+ trap:'引き渡しは終わりではなく関係の始まり。アフターの窓口を明示すると紹介につながる。'},
+{g:'謝る',f:'こちらのミスだった時',pt:'quando o erro foi seu',en:'when it was your mistake',
+ ex:'このたびは私どもの確認不足により、ご迷惑をおかけいたしました。誠に申し訳ございません。再発を防ぐため、確認の手順を見直しております。',
+ tx:'Peço sinceras desculpas pelo transtorno causado por falha nossa de verificação. Já estamos revendo o processo.',
+ trap:'⚠ 謝罪 → 原因 → 再発防止。言い訳を先に置かない。「私どもの」と主語を自分側にする。'},
+{g:'図面を送る',f:'メールの文面',pt:'enviando os desenhos por e-mail',en:'emailing drawings',
+ ex:'お世話になっております。先日の打ち合わせを踏まえ、修正した平面図をお送りいたします。ご確認のうえ、ご意見をいただけますと幸いです。',
+ tx:'Olá. Com base na reunião, envio a planta revisada. Agradeceria se pudesse conferir e dar seu retorno.',
+ trap:'「〜を踏まえ」で前回との関係を示すと、相手はどこが変わったか探しやすい。添付忘れに注意。'},
+{g:'催促する',f:'返事が来ない時',pt:'cobrando uma resposta',en:'following up',
+ ex:'先日お送りした図面につきまして、その後いかがでしょうか。お忙しいところ恐れ入りますが、ご確認いただけますと幸いです。',
+ tx:'Sobre os desenhos que enviei outro dia, como está a situação? Desculpe incomodar, agradeceria a conferência.',
+ trap:'「まだですか」は使わない。「いかがでしょうか」＋「お忙しいところ恐れ入りますが」で角を立てずに催促できる。'},
+{g:'見学・視察',f:'他社の建物を見に行く',pt:'visitando uma obra',en:'visiting a building',
+ ex:'本日は見学の機会をいただきありがとうございます。写真を撮らせていただいてもよろしいでしょうか。',
+ tx:'Obrigado pela oportunidade da visita hoje. Posso tirar fotos?',
+ trap:'撮影は必ず許可を取る。日本の現場では無断撮影が大きな問題になる。'}
+];
+
+/* ═══ 意匠設計フレーズ · 提案する・守る・調整する ═══ */
+const PHRASE_ISHO=[
+/* ── 提案する ── */
+{g:'案の意図を語る',f:'プレゼンの冒頭',pt:'explicando a intenção do projeto',en:'stating the design intent',
+ ex:'この案では、敷地の南側に大きな開口を取り、一日を通して光が移動していくことを住まいの中心に据えました。',
+ tx:'Nesta proposta, abri um grande vão ao sul e coloquei no centro da casa o movimento da luz ao longo do dia.',
+ trap:'⚠ 意匠のプレゼンは「何をしたか」ではなく「なぜそうしたか」から入る。形の説明から始めると、ただの趣味に聞こえる。'},
+{g:'コンセプトを一言で',f:'最初に印象づける',pt:'o conceito em uma frase',en:'the concept in one line',
+ ex:'一言で申しますと、「外に開きながら、視線は閉じる家」です。',
+ tx:'Em uma frase: "uma casa aberta para fora, mas fechada aos olhares".',
+ trap:'長い説明の前に一行で言い切る。この一行を施主が他の人に説明できるかどうかが、案が通るかの分かれ目。'},
+{g:'二案を比較する',f:'選んでもらう',pt:'comparando duas propostas',en:'presenting two options',
+ ex:'A案は広さを優先し、B案は庭とのつながりを優先しております。暮らし方として、どちらがご希望に近いでしょうか。',
+ tx:'A opção A prioriza o espaço; a B, a relação com o jardim. Qual se aproxima mais do modo como querem viver?',
+ trap:'「どちらがお好きですか」ではなく「暮らし方としてどちらか」と聞く。好みではなく生活で選んでもらうと後で揺れない。'},
+{g:'模型で説明する',f:'図面が伝わらない時',pt:'usando a maquete',en:'using the model',
+ ex:'図面では分かりにくいので、模型でご覧ください。この高さの違いが、居間から庭を見たときの奥行きになります。',
+ tx:'Como é difícil de ver no desenho, veja na maquete. Esta diferença de altura vira profundidade ao olhar do estar para o jardim.',
+ trap:'Roberto の武器。施主は図面を読めないことが多い。模型・パースを先に見せ、図面は後から確認用に使う。'},
+{g:'素材の質感を語る',f:'仕上げの提案',pt:'falando de textura',en:'talking about materials',
+ ex:'床は少し節のある木を使い、時間が経つほど色が深くなる仕上げにしたいと考えております。',
+ tx:'Para o piso quero usar madeira com alguns nós, num acabamento que escurece com o tempo.',
+ trap:'意匠は「今の見た目」だけでなく「十年後どうなるか」を語ると説得力が出る。経年変化は日本の施主に響く言葉。'},
+/* ── 案を守る ── */
+{g:'減額に抵抗する',f:'コストカットを求められた時',pt:'defendendo o projeto num corte de custo',en:'defending the design in a cost cut',
+ ex:'ここを削りますと、この案の一番の特徴である光の入り方が失われてしまいます。代わりに、こちらの設備仕様で調整させていただけないでしょうか。',
+ tx:'Cortando aqui, perde-se a entrada de luz, que é a principal característica da proposta. Em troca, poderíamos ajustar na especificação das instalações?',
+ trap:'⚠ 「削れません」では通らない。「何が失われるか」を具体的に言い、必ず別の削り先を用意する。これが意匠の腕。'},
+{g:'構造の要求に応える',f:'柱を増やせと言われた',pt:'quando a estrutura pede mais apoios',en:'when structure wants more columns',
+ ex:'この位置に柱が入りますと、居間の抜けがなくなってしまいます。壁の厚みを増やすか、梁せいを大きくする方向で成立しないでしょうか。',
+ tx:'Um pilar nesta posição elimina a continuidade visual do estar. Não daria para resolver engrossando a parede ou aumentando a altura da viga?',
+ trap:'構造担当には「できない」ではなく「代わりにこの方向で」と技術的な選択肢を出す。意匠の希望だけを言うと相手にされない。'},
+{g:'設備との調整',f:'ダクトや配管が邪魔な時',pt:'negociando com instalações',en:'negotiating with services',
+ ex:'この天井高を確保したいので、ダクトのルートを変更できないか検討していただけますか。難しければ、下がり天井で処理する案も考えます。',
+ tx:'Quero garantir este pé-direito, poderiam estudar mudar a rota do duto? Se for difícil, penso em resolver com um rebaixo.',
+ trap:'⚠ 自分でも代案（下がり天井）を出しておく。丸投げの依頼は意匠のわがままと受け取られる。'},
+{g:'変更を受け入れる',f:'折れるべき時',pt:'aceitando a mudança',en:'conceding gracefully',
+ ex:'承知いたしました。ではこの部分は変更し、代わりに開口の位置だけは当初の案のまま残させてください。',
+ tx:'Entendido. Então altero esta parte, mas permitam-me manter a posição da abertura como na proposta original.',
+ trap:'全部守ろうとすると全部失う。譲る時に「これだけは残す」と一点を指定すると、案の核が生き残る。'},
+/* ── 施主とのやりとり ── */
+{g:'言葉にならない要望を引き出す',f:'「なんとなく違う」と言われた',pt:'quando o cliente não sabe explicar',en:'when the client cannot put it into words',
+ ex:'どのあたりが気になりますか。広さでしょうか、それとも天井の高さや明るさでしょうか。',
+ tx:'O que exatamente o incomoda? É a área, ou seria o pé-direito, a luminosidade?',
+ trap:'⚠ 「どこがですか」だけでは答えられない。選択肢を三つ出して選んでもらうと、施主自身も理由に気づく。'},
+{g:'好みの参考を聞く',f:'方向性を合わせる',pt:'alinhando o gosto',en:'aligning taste',
+ ex:'これまでにご覧になった建物や写真で、いいなと思われたものはございますか。雑誌の切り抜きでも構いません。',
+ tx:'Há algum edifício ou foto que tenham achado bonito? Pode ser até um recorte de revista.',
+ trap:'言葉より画像で合わせるほうが早い。「好きなもの」だけでなく「嫌いなもの」も聞くと外さなくなる。'},
+{g:'家族で意見が違う時',f:'夫婦で希望が割れた',pt:'quando o casal discorda',en:'when the couple disagrees',
+ ex:'お二人のご希望はどちらも大切ですので、両方を満たす形がないか、次回までに二案ご用意いたします。',
+ tx:'Os desejos de ambos são importantes, então até a próxima vez trago duas propostas que tentem atender aos dois.',
+ trap:'その場でどちらかに味方しない。持ち帰って案で答えるのが意匠の役割。'},
+{g:'変更の影響を伝える',f:'後戻りできない時',pt:'explicando o impacto de uma mudança',en:'explaining the knock-on effect',
+ ex:'この時期の変更ですと、構造の再計算と確認申請の変更が必要になり、工期が一か月ほど延びる可能性がございます。それでもご希望でしたら、進めさせていただきます。',
+ tx:'Uma mudança nesta fase exigiria recálculo estrutural e alteração da licença, podendo estender o prazo em um mês. Se ainda assim desejarem, seguimos.',
+ trap:'⚠ 止めるのではなく「代償を示して判断を返す」。決めるのは施主、説明するのは設計者。'},
+{g:'できあがりを想像してもらう',f:'不安がられた時',pt:'ajudando a imaginar o resultado',en:'helping them picture it',
+ ex:'実際に建った時のイメージが湧きにくいかと思いますので、似た規模の事例を次回お持ちいたします。',
+ tx:'Imagino que seja difícil visualizar como ficará, então na próxima trago exemplos de escala parecida.',
+ trap:'不安には資料で応える。「大丈夫です」と言葉で安心させようとすると、かえって信用されない。'},
+/* ── 社内・現場 ── */
+{g:'先輩に相談する',f:'案に迷った時',pt:'consultando um sênior',en:'asking a senior for advice',
+ ex:'この平面で二案迷っております。お時間のある時に、五分ほど見ていただけますでしょうか。',
+ tx:'Estou em dúvida entre duas plantas. Quando tiver tempo, poderia dar uma olhada de cinco minutos?',
+ trap:'「五分」と時間を区切ると相手が応じやすい。迷いを抱えたまま進めるほうが評価を落とす。'},
+{g:'指摘を受ける',f:'案を直された時',pt:'recebendo uma crítica',en:'taking feedback',
+ ex:'ありがとうございます。その視点はありませんでした。いただいたご意見を踏まえて、明日までに直してまいります。',
+ tx:'Obrigado. Não tinha pensado por esse ângulo. Vou corrigir até amanhã com base no que me disse.',
+ trap:'言い訳をせず、まず受け取る。「でも」で返すと次から意見をもらえなくなる。期限を自分から言うと信頼される。'},
+{g:'現場で納まりを確認する',f:'図面どおりにいかない時',pt:'checando o detalhe na obra',en:'checking a detail on site',
+ ex:'この取り合いですが、現場で見ると納まりが厳しそうです。どのように処理するのがよいか、ご相談させてください。',
+ tx:'Sobre este encontro, vendo na obra o detalhe parece apertado. Gostaria de consultá-lo sobre como resolver.',
+ trap:'意匠が現場に来て相談する姿勢は職人に喜ばれる。図面を送って終わりにしないことで仕上がりが変わる。'},
+{g:'仕上がりを評価する',f:'職人さんに伝える',pt:'elogiando o trabalho',en:'praising the work',
+ ex:'この納まり、きれいに仕上げていただいてありがとうございます。助かりました。',
+ tx:'Este detalhe ficou muito bem executado, obrigado. Foi uma grande ajuda.',
+ trap:'⚠ 指摘ばかりせず、良い仕事は必ず口に出す。次の現場での協力の質が変わる。'}
+];
+
+const PHRASE_JOB=[...PHRASE_JOB_BASE,...PHRASE_JOB2];
+const PHRASE_ARCH=[...PHRASE_ARCH_BASE,...PHRASE_ARCH2];
 /* ═══════════════ i18n ═══════════════ */
 const T={
  daysTo:{pt:'DIAS ATÉ DEZEMBRO',en:'DAYS UNTIL DECEMBER'},
@@ -3823,6 +4567,24 @@ const T={
  msHome:{pt:'誤答ノート · # em aberto',en:'誤答ノート · # open'},
  mgToday:{pt:'今日の一句',en:'今日の一句'},
  mgNote:{pt:'Por que isto importa',en:'Why this matters'},
+ proT:{pt:'専門 · sua área',en:'専門 · your field'},
+ phJob:{pt:'Entrevista — frases prontas',en:'Interview — ready phrases'},
+ phArch:{pt:'Arquitetura — reuniões e obra',en:'Architecture — meetings and site'},
+ phJobS:{pt:'Na ordem de uma entrevista real, da porta ao e-mail de agradecimento. Toque em 🔊 e repita em voz alta.',
+         en:'In the order of a real interview, from the door to the thank-you email. Tap 🔊 and repeat aloud.'},
+ phArchS:{pt:'O que dizer numa reunião com o cliente e no canteiro.',
+          en:'What to say in a client meeting and on site.'},
+ phWhy:{pt:'Ponto de atenção',en:'Watch out'},
+ phAll:{pt:'todas',en:'all'},
+ phIsho:{pt:'意匠設計 — o seu trabalho',en:'意匠設計 — your actual job'},
+ phIshoS:{pt:'Propor, defender o projeto e negociar com estrutura, instalações e o cliente.',
+          en:'Pitching, defending the design and negotiating with structure, services and the client.'},
+ phSearch:{pt:'# frases',en:'# phrases'},
+ proSub:{pt:'Vocabulário, expressões e questões do seu campo: mudança de emprego e arquitetura.',
+         en:'Vocabulary, expressions and questions from your field: changing jobs and architecture.'},
+ proQ:{pt:'Questões da sua área (#)',en:'Questions from your field (#)'},
+ proL:{pt:'🎧 Entrevistas e escritório (#)',en:'🎧 Interviews and the office (#)'},
+ proDecks:{pt:'Baralhos',en:'Decks'},
  a11yT:{pt:'Leitura — ajustes',en:'Reading — adjustments'},
  a11yNote:{pt:'Feito para dislexia. Mexa até o texto parar de cansar; nada aqui muda o conteúdo.',
            en:'Built for dyslexia. Adjust until the text stops tiring you; none of this changes the content.'},
@@ -3834,6 +4596,27 @@ const T={
  aRate:{pt:'Velocidade da voz',en:'Voice speed'},
  aTry:{pt:'Testar a voz',en:'Test the voice'},
  aOff:{pt:'nenhum',en:'none'},
+ lsT:{pt:'聴解 · Compreensão auditiva',en:'聴解 · Listening'},
+ lsSub:{pt:'Só o áudio, sem o texto. O roteiro aparece depois que você responde. Pode ouvir de novo quantas vezes quiser.',
+        en:'Audio only, no text. The script appears after you answer. Replay as often as you like.'},
+ lsGo:{pt:'Começar (5 questões)',en:'Start (5 questions)'},
+ lsPlay:{pt:'▶ Ouvir',en:'▶ Listen'},
+ lsAgain:{pt:'↻ Ouvir de novo',en:'↻ Listen again'},
+ lsScript:{pt:'Roteiro',en:'Script'},
+ lsHint:{pt:'Ouça primeiro. As opções aparecem depois.',en:'Listen first. The options appear afterwards.'},
+ lsShow:{pt:'Mostrar opções',en:'Show options'},
+ lsDone:{pt:'聴解: #/# certas',en:'聴解: #/# correct'},
+ lsNone:{pt:'Este aparelho não tem voz japonesa, então o 聴解 fica desligado. Veja Ajustes → Leitura para instalar.',
+         en:'This device has no Japanese voice, so 聴解 is switched off. See Settings → Reading to install one.'},
+ lsM:{pt:'男',en:'男'},lsF:{pt:'女',en:'女'},
+ noJP:{pt:'Sem voz japonesa neste aparelho — veja Ajustes',en:'No Japanese voice on this device — see Settings'},
+ vOK:{pt:'Voz japonesa: #',en:'Japanese voice: #'},
+ vBad:{pt:'Este aparelho não tem voz japonesa instalada. Sem ela o áudio leria o japonês com sotaque inglês, então ele fica desligado.',
+       en:'This device has no Japanese voice installed. Without it the audio would read Japanese with an English mouth, so it stays off.'},
+ vHow:{pt:'Android: Definições → Sistema → Idiomas → Saída de texto para voz → Google → Instalar dados de voz → 日本語. Depois recarregue esta página.',
+       en:'Android: Settings → System → Languages → Text-to-speech output → Google → Install voice data → 日本語. Then reload this page.'},
+ vTestJP:{pt:'Testar a voz japonesa',en:'Test the Japanese voice'},
+ sayEx:{pt:'Ler também a explicação em voz alta',en:'Also read the explanation aloud'},
  radT:{pt:'部首マップ · Mapa de radicais',en:'部首マップ · Radical map'},
  radSub:{pt:'Os kanji agrupados pela peça que têm em comum. Toque num radical para ver a família inteira.',
          en:'Kanji grouped by the piece they share. Tap a radical to see the whole family.'},
@@ -3855,13 +4638,17 @@ function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.r
 
 /* ═══════════════ 状態管理 ═══════════════ */
 const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossWins:0,
-           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8},levels:{z:true,y:true,v:true,w:true,x:true},glevels:{n:true,g:true,h:true,e:true,j:true,c:true,p:true},d50:null};
+           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8,sayEx:false},levels:{r:true,b:true,y:true,v:true,w:true,x:true,z:true},glevels:{i:true,g:true,h:true,n:true,e:true,j:true,c:true,p:true},d50:null};
 let S=JSON.parse(JSON.stringify(DEF));
 const KEY='n2sprint:v2';
 /* APPEND ONLY — the original 66 keep indices 0-65, so every k-record stays valid */
 VOCAB_REQ.push(...VOCAB_REQ2);   /* append only — existing z-indices unchanged */
 KANJI.push(...KANJI_B1,...KANJI_B2,...KANJI_B3,...KANJI_B4);
 Object.assign(EN_KMN,EN_KMN_B1,EN_KMN_B2,EN_KMN_B3,EN_KMN_B4);
+LISTEN_JOB.forEach(x=>x.pro=true);
+LISTEN.push(...LISTEN_JOB);
+MONDAI_PRO.forEach((q,k)=>{q.pro=true;MONDAI.push(q);EN_MEX.push(EN_MEX_PRO[k]);});
+Object.entries(EN_MENSETSU).forEach(([k,[tx,trap]])=>{EN_GTX[k]=tx;EN_GTRAP[k]=trap;});
 Object.assign(EN_GTRAP,EN_G3TRAP);Object.assign(EN_GTX,EN_G3TX);
 /* the four expression decks carry [translation, note] pairs — fold them into the same lookup */
 [EN_KEIGO,EN_JITA,EN_SETSU,EN_JOSHI,EN_REQ].forEach(o=>Object.entries(o).forEach(([k,[tx,trap]])=>{
@@ -3918,6 +4705,19 @@ const _REAL=new Set();                     /* 実在する読みは誤答に使�
 KANJI.forEach(k=>k.w.forEach(w=>_REAL.add(w[1])));
 [...VOCAB,...VOCAB_N3,...VOCAB_N4,...VOCAB_N2H].forEach(v=>_REAL.add(v.w));
 
+/* every example sentence in the app, indexed so any word can show its other appearances */
+const _ALLEX=[];
+[VOCAB,VOCAB_N3,VOCAB_N4,VOCAB_N2H,VOCAB_REQ].forEach(d=>d.forEach(v=>_ALLEX.push(v.ex)));
+[GRAMMAR,GRAMMAR_N3,GRAMMAR_REQ,KEIGO,JITA,SETSU,JOSHI].forEach(d=>d.forEach(g=>_ALLEX.push(g.ex)));
+TRAPS.forEach(t=>t.o.forEach(o=>_ALLEX.push(o)));
+MONDAI.forEach(q=>{if(q.s==='読解'&&q.p)q.p.split(/[。\u3000]/).forEach(s=>{if(s.length>8)_ALLEX.push(s+'。');});});
+function otherUses(word,exclude,n){
+  const out=[];
+  for(const s of _ALLEX){
+    if(out.length>=n)break;
+    if(s!==exclude&&s.includes(word)&&s.length<44&&!out.includes(s))out.push(s);}
+  return out;
+}
 const GEN=[],GEN_EN=[];
 /* the same sentence can arrive from two decks (e.g. 子供を育てる sits in JITA and in the N3 vocab).
    Keep the first, drop the rest, and never collide with a hand-written item either. */
@@ -3948,9 +4748,34 @@ KANJI.forEach((k,ki)=>k.w.forEach(([word,read,gloss],wi)=>{
   const a=Math.floor(_rng(seed+7)*4);
   [opts[0],opts[a]]=[opts[a],opts[0]];
   const g=gloss.split(' / ');
+  /* name the exact change in each wrong reading — that is the skill being trained */
+  const DAKU='がぎぐげござじずぜぞだぢづでどばびぶべぼ';
+  const diff=(x,lang)=>{
+    if(x.length>read.length)return lang==='pt'?'uma mora a mais':'one mora too many';
+    if(x.length<read.length)return lang==='pt'?'uma mora a menos':'one mora too few';
+    for(let i=0;i<read.length;i++){
+      if(read[i]===x[i])continue;
+      const a=read[i],b=x[i];
+      if(DAKU.includes(b)&&!DAKU.includes(a))
+        return lang==='pt'?('sonorizou '+a+'→'+b):('voiced '+a+'→'+b);
+      if(DAKU.includes(a)&&!DAKU.includes(b))
+        return lang==='pt'?('dessonorizou '+a+'→'+b):('unvoiced '+a+'→'+b);
+      return lang==='pt'?('trocou '+a+'→'+b):('swapped '+a+'→'+b);}
+    return lang==='pt'?'forma alterada':'altered form';};
+  const wlist=lang=>wrong.map(x=>'<b>'+x+'</b>（'+diff(x,lang)+'）').join(' ／ ');
+  const kanjiOf=[...word].filter(ch=>/[一-龥]/.test(ch));
+  const hint=lang=>{
+    const rows=kanjiOf.map(ch=>{const kk=KANJI.find(z=>z.c===ch);
+      return kk?ch+'＝'+(kk.on!=='—'?kk.on:kk.kun):null;}).filter(Boolean);
+    return rows.length?'<br><span style="color:var(--yama)">'+(lang==='pt'?'Leituras':'Readings')+':</span> '+rows.join('　')+'<br>':'';};
+  const more=otherUses(word,'',1);
+  const moreB=lang=>more.length?'<br><span style="color:var(--yama)">'+(lang==='pt'?'Em uso':'In use')+':</span> '+more[0]:'';
+  const brk='<br>';
   _add({s:'文字',q:'<u>'+word+'</u> の読み方として最もよいものはどれか。',o:opts,a,
-    ex:'<b>'+word+'</b>＝'+read+'（'+g[0]+'）。他の選択肢は清濁・長音・促音を入れ替えただけの形で、実在しません。本試験の問題1はこの作り方で誤答を並べます。'},
-   '<b>'+word+'</b> = '+read+' ('+(g[1]||g[0])+'). The other choices only flip voicing, vowel length or a small kana, and are not real readings. Question 1 on the real exam builds its distractors exactly this way.');
+    ex:'<b>'+word+'</b>＝'+read+'（'+g[0]+'）。'+hint('pt')
+      +'<span style="color:var(--coral)">Descartadas:</span> '+wlist('pt')+moreB('pt')},
+   '<b>'+word+'</b> = '+read+' ('+(g[1]||g[0])+').'+hint('en')
+      +'<span style="color:var(--coral)">Ruled out:</span> '+wlist('en')+moreB('en'));
 }));
 
 /* ── ② 自動詞・他動詞（助詞で答えが一意に決まる） ── */
@@ -3973,11 +4798,28 @@ JITA.forEach((p,pi)=>{
     if(opts.length<4)return;
     const a=Math.floor(_rng(seed+3)*4);
     [opts[0],opts[a]]=[opts[a],opts[0]];
+    const partner=par==='を'?iv:tv;
+    const foreign=opts.filter(o=>o!==ans&&o!==partner);
+    const JT_PT=['Troque a partícula e a resposta troca com ela.',
+      'O par muda só o final: '+tv+' pede を, '+iv+' pede が.',
+      'Pergunte quem age. Alguém age → を. Acontece sozinho → が.',
+      'Este é o padrão dos pares: quem faz leva を, o que acontece leva が.'];
+    const JT_EN=['Swap the particle and the answer swaps with it.',
+      'The pair differs only at the ending: '+tv+' takes を, '+iv+' takes が.',
+      'Ask who acts. Somebody acts → を. It happens by itself → が.',
+      'This is the pair pattern: the doer takes を, the event takes が.'];
+    const k=seed%JT_PT.length;
     _add({s:'文法',q:m[1]+par+'（　）。',o:opts,a,
-      ex:'助詞が答えを決めます。<b>'+par+'</b>なので'+(par==='を'?'他動詞':'自動詞')+'の<b>'+ans+'</b>。'+
-         'を＝他動詞（誰かがする）、が＝自動詞（ひとりでに起こる）。この対は '+p.g+'。'},
-     'The particle decides the answer. With <b>'+par+'</b> you need the '+(par==='を'?'transitive':'intransitive')+
-     ' form: <b>'+ans+'</b>. を = transitive (somebody does it), が = intransitive (it happens by itself). The pair is '+p.g+'.');
+      ex:'助詞「<b>'+par+'</b>」があるので、答えは<b>'+ans+'</b>（'+(par==='を'?'他動詞':'自動詞')+'）。'
+        +'<br><span style="color:var(--coral)">Descartadas:</span> <b>'+partner+'</b>＝o par '
+        +(par==='を'?'intransitivo, pede が':'transitivo, pede を')
+        +(foreign.length?'／<b>'+foreign.join('・')+'</b>＝outro par ('+twin.g+')':'')+'。'
+        +'<br>'+JT_PT[k]+'<br><span style="color:var(--yama)">例：</span>'+p.ex},
+     'The <b>'+par+'</b> forces <b>'+ans+'</b> ('+(par==='を'?'transitive':'intransitive')+').'
+      +'<br><span style="color:var(--coral)">Ruled out:</span> <b>'+partner+'</b> = its partner, '
+      +(par==='を'?'intransitive, needs が':'transitive, needs を')
+      +(foreign.length?'; <b>'+foreign.join(', ')+'</b> = a different pair ('+twin.g+')':'')+'.'
+      +'<br>'+JT_EN[k]+'<br><span style="color:var(--yama)">e.g. </span>'+p.ex);
   });
 });
 
@@ -4014,7 +4856,8 @@ Object.entries(_BASE).forEach(([base,kinds],bi)=>{
 });
 
 /* ── ④ 語彙の文脈規定（例文から語を抜く） ── */
-[['v',VOCAB],['w',VOCAB_N3],['x',VOCAB_N4],['y',VOCAB_N2H],['z',VOCAB_REQ]].forEach(([key,deck])=>{
+[['v',VOCAB],['w',VOCAB_N3],['x',VOCAB_N4],['y',VOCAB_N2H],['z',VOCAB_REQ],['r',VOCAB_JOB],['b',VOCAB_ARCH]].forEach(([key,deck])=>{
+  const isPro=key==='r'||key==='b';
   deck.forEach((v,vi)=>{
     /* most decks keep the word in w; the school deck keeps the kanji in r. Take whichever
        actually occurs in the sentence, preferring the longer (kanji) form. */
@@ -4053,9 +4896,38 @@ Object.entries(_BASE).forEach(([base,kinds],bi)=>{
     if(new Set(opts).size<4)return;
     const a=Math.floor(_rng(seed+11)*4);
     [opts[0],opts[a]]=[opts[a],opts[0]];
-    _add({s:'語彙',q,o:opts,a,
-      ex:'<b>'+target+'</b>＝'+v.pt+'。この文と結びつくのはこの語だけです。語彙は単語ではなく<b>共起する相手</b>ごと覚えること。'},
-     '<b>'+target+'</b> = '+v.en+'. It is the only choice that collocates with this sentence. Learn vocabulary together with <b>the words it goes with</b>, never in isolation.');
+    /* say what each wrong option actually means, so the elimination is learnable */
+    const meaning=s=>{const o=deck.find(d=>(d.ex.includes(d.w)?d.w:d.r)===s)
+        ||deck.find(d=>d.w===s||d.r===s);
+      return o?{pt:o.pt,en:o.en}:null;};
+    const wrongList=lang=>wrong.map(x=>{const m=meaning(x);
+      return m?'<b>'+x+'</b>＝'+(lang==='pt'?m.pt:m.en):'<b>'+x+'</b>';}).join(' ／ ');
+    const more=otherUses(target,v.ex,2);
+    const moreBlock=lang=>more.length
+      ?'<br><span style="color:var(--yama)">'+(lang==='pt'?'Mais usos':'More uses')+':</span> '+more.join('　')
+      :'';
+    const TIPS_PT=[
+      'Guarde a frase inteira, não a palavra solta — é a combinação que cai na prova.',
+      'Repare no que vem antes: a partícula já elimina metade das opções.',
+      'Se duas opções parecem possíveis, a que tem colocação fixa vence.',
+      'Leia a frase em voz alta com cada opção; a errada soa estranha antes de você saber explicar.',
+      'No exame esta seção é 文脈規定: o contexto decide, não o dicionário.',
+      'Aprenda pelo parceiro: o substantivo decide o verbo, e não o contrário.',
+      'Quando o sentido geral encaixa mas a frase soa torta, é colocação, não significado.'];
+    const TIPS_EN=[
+      'Store the whole sentence, not the bare word — the pairing is what the exam tests.',
+      'Look at what comes before it: the particle already rules out half the options.',
+      'When two options both seem possible, the one with a fixed collocation wins.',
+      'Read the sentence aloud with each option; the wrong one sounds off before you can explain why.',
+      'On the exam this is 文脈規定: context decides, not the dictionary.',
+      'Learn by partner: the noun picks the verb, not the other way round.',
+      'If the general meaning fits but the sentence sounds crooked, it is collocation, not meaning.'];
+    const tip=seed%TIPS_PT.length;
+    _add({s:'語彙',q,o:opts,a,pro:isPro,
+      ex:'<b>'+target+'</b>＝'+v.pt+'。<br><span style="color:var(--coral)">Descartadas:</span> '
+        +wrongList('pt')+'。'+moreBlock('pt')+'<br>'+TIPS_PT[tip]},
+     '<b>'+target+'</b> = '+v.en+'.<br><span style="color:var(--coral)">Ruled out:</span> '
+        +wrongList('en')+'.'+moreBlock('en')+'<br>'+TIPS_EN[tip]);
   });
 });
 
@@ -4163,10 +5035,10 @@ const QBYKEY={};
 MONDAI.forEach((q,i)=>{QBYKEY[q.id||('m'+i)]=i;});
 MONDAI.forEach((q,i)=>{const n=q.o.length,r=((i*7)+3)%n;
   q.o=q.o.slice(r).concat(q.o.slice(0,r));q.a=(q.a-r+n)%n;});
-const POOL={k:KANJI,v:VOCAB,w:VOCAB_N3,x:VOCAB_N4,y:VOCAB_N2H,z:VOCAB_REQ,
-  g:GRAMMAR,h:GRAMMAR_N3,n:GRAMMAR_REQ,e:KEIGO,j:JITA,c:SETSU,p:JOSHI};
-const VKEYS=['z','y','v','w','x'],GKEYS=['n','g','h','e','j','c','p'];
-const LVNAME={z:'school study',y:'N2+',v:'N2',w:'N3',x:'N4',n:'school study',g:'N2',h:'N3',e:'敬語',j:'自他',c:'接続',p:'助詞'};
+const POOL={k:KANJI,v:VOCAB,w:VOCAB_N3,x:VOCAB_N4,y:VOCAB_N2H,z:VOCAB_REQ,r:VOCAB_JOB,b:VOCAB_ARCH,
+  g:GRAMMAR,h:GRAMMAR_N3,n:GRAMMAR_REQ,e:KEIGO,j:JITA,c:SETSU,p:JOSHI,i:MENSETSU};
+const VKEYS=['r','b','y','v','w','x','z'],GKEYS=['i','g','h','n','e','j','c','p'];
+const LVNAME={z:'school study',y:'N2+',v:'N2',w:'N3',x:'N4',r:'転職',b:'建築',n:'school study',g:'N2',h:'N3',e:'敬語',j:'自他',c:'接続',p:'助詞',i:'面接'};
 const actV=()=>VKEYS.filter(k=>S.levels[k]),actG=()=>GKEYS.filter(k=>S.glevels[k]);
 
 const store={
@@ -4185,14 +5057,52 @@ function save(){clearTimeout(saveT);saveT=setTimeout(()=>store.set(S),350);}
 
 /* read anything aloud: Japanese in ja-JP, the explanation in his own language */
 function strip(s){return String(s).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();}
+/* A browser only *tries* to honour u.lang. With no Japanese voice installed, Android
+   happily reads 日本語 with an English mouth — noise. So pick the voice explicitly. */
+let _voices=[];
+function refreshVoices(){
+  try{const s=window.speechSynthesis;if(!s||!s.getVoices)return;_voices=s.getVoices()||[];}catch(e){}
+}
+function voiceFor(lang){
+  if(!_voices.length)refreshVoices();
+  const pre=String(lang||'ja-JP').slice(0,2).toLowerCase();
+  return _voices.find(v=>String(v.lang).toLowerCase().replace('_','-')===String(lang).toLowerCase())
+      || _voices.find(v=>String(v.lang).slice(0,2).toLowerCase()===pre)
+      || null;
+}
+const hasJP=()=>!!voiceFor('ja-JP');
+/* two speakers: two Japanese voices if the device has them, otherwise one voice at two pitches */
+function jpVoices(){if(!_voices.length)refreshVoices();
+  return _voices.filter(v=>String(v.lang).slice(0,2).toLowerCase()==='ja');}
+function speakScript(lines,onDone){
+  try{
+    const s=window.speechSynthesis;if(!s)return;
+    refreshVoices();
+    const vs=jpVoices();if(!vs.length){toast(L('noJP'));return;}
+    s.cancel();
+    const rate=(S.a11y&&S.a11y.rate)||0.8;
+    lines.forEach(([who,text],k)=>{
+      const u=new SpeechSynthesisUtterance(strip(text));
+      u.lang='ja-JP';
+      u.voice=(who==='m'&&vs[1])?vs[1]:vs[0];
+      u.pitch=who==='m'?0.78:1.18;          /* distinct even with a single voice */
+      u.rate=rate;
+      if(k===lines.length-1&&onDone)u.onend=onDone;
+      s.speak(u);});
+  }catch(e){}
+}
 function speak(text,lang){
   try{
-    const S2=window.speechSynthesis;if(!S2)return;
-    S2.cancel();
+    const s=window.speechSynthesis;if(!s)return;
+    refreshVoices();
+    const want=lang||'ja-JP';
+    const v=voiceFor(want);
+    if(!v&&want.slice(0,2)==='ja'){toast(L('noJP'));return;}   /* silence beats gibberish */
+    s.cancel();
     const u=new SpeechSynthesisUtterance(strip(text));
-    u.lang=lang||'ja-JP';
+    u.lang=want;if(v)u.voice=v;
     u.rate=(S.a11y&&S.a11y.rate)||0.8;
-    S2.speak(u);
+    s.speak(u);
   }catch(e){}
 }
 const uiLang=()=>S.lang==='pt'?'pt-BR':'en-US';
@@ -4248,13 +5158,14 @@ function addXP(n){S.xp+=n;paintTop();}
 const RETIRE=2;                      /* two clean answers and it leaves the notebook */
 function isOpen(c){return c&&c.miss>0&&(c.run||0)<RETIRE;}
 function openMistakes(){
-  const out={q:[],card:[],trap:[]};
+  const out={q:[],card:[],trap:[],listen:[]};
   Object.entries(S.srs).forEach(([k,c])=>{
     if(!isOpen(c))return;
     const p=k[0],i=+k.slice(1);
     if(p==='m'&&/^m\d+$/.test(k)){if(MONDAI[i])out.q.push({k,c,i});}
     else if(p==='q'&&QBYKEY[k]!==undefined){out.q.push({k,c,i:QBYKEY[k]});}
     else if(p==='t'){if(TRAPS[i])out.trap.push({k,c,i});}
+    else if(p==='l'){if(LISTEN[i])out.listen.push({k,c,i});}
     else if(POOL[p]&&POOL[p][i])out.card.push({k,c,i,pool:p});});
   const w=x=>-(x.c.miss*10+(x.c.last?1:0));
   Object.values(out).forEach(a=>a.sort((x,y)=>w(x)-w(y)));
@@ -4319,8 +5230,8 @@ function paintTop(){
   document.getElementById('xpFill').style.width=((S.xp%250)/250*100)+'%';
   const lb=document.getElementById('langBtn');
   if(lb)lb.textContent=S.lang==='pt'?'PT':'EN';
-  const nav=S.lang==='pt'?['HOJE','DOJO','EXAME','ARMAD.','ERROS','DADOS']
-                         :['TODAY','DOJO','EXAM','TRAPS','ERRORS','STATS'];
+  const nav=S.lang==='pt'?['HOJE','DOJO','EXAME','ARMAD.','ERROS','ÁREA','DADOS']
+                         :['TODAY','DOJO','EXAM','TRAPS','ERRORS','FIELD','STATS'];
   document.querySelectorAll('nav .lb').forEach((e,i)=>{if(nav[i])e.textContent=nav[i];});
 }
 function setLang(l){S.lang=l;save();paintTop();nav(cur);toast(l==='pt'?'Explicações em português':'Explanations in English');}
@@ -4330,7 +5241,7 @@ function nav(v){cur=v;
   document.getElementById('v-'+v).classList.add('on');
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
   window.scrollTo(0,0);
-  ({home:renderHome,dojo:renderDojo,mondai:renderMondai,trap:renderTrap,miss:renderMiss,stats:renderStats})[v]();
+  ({home:renderHome,dojo:renderDojo,mondai:renderMondai,trap:renderTrap,miss:renderMiss,pro:renderPro,stats:renderStats})[v]();
 }
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>nav(b.dataset.v));
 document.getElementById('langBtn').onclick=()=>setLang(S.lang==='pt'?'en':'pt');
@@ -4437,6 +5348,7 @@ function renderDojo(){
   ${box('自動詞・他動詞','自','j','var(--mura)')}
   ${box('接続表現','接','c','var(--mura)')}
   ${box('助詞の使い分け','助','p','var(--mura)')}
+
   <button class="btn shu" id="mixBtn" style="margin-top:6px">${L('mixBtn')}</button>
   <p class="muted" style="margin-top:16px">${L('howto')}</p>`;
   document.querySelectorAll('[data-deck]').forEach(b=>b.onclick=()=>startDeck(b.dataset.deck));
@@ -4564,7 +5476,7 @@ let mo=null;
 const SECS=['文字','語彙','文法','類義','並べ替え','読解'];
 const SECN=MONDAI.reduce((o,q)=>(o[q.s]=(o[q.s]||0)+1,o),{});
 function renderMondai(){
-  if(mo)return;
+  if(mo||ls)return;
   const seen=Object.keys(S.mondaiSeen).length;
   document.getElementById('v-mondai').innerHTML=`
   <div class="eyebrow">${L('moT')}</div>
@@ -4576,7 +5488,8 @@ function renderMondai(){
     <button class="btn shu" id="goM" style="margin-top:12px">${L('moGo')}</button>
   </div>
   <button class="btn teal" id="goRead">${L('readBtn',SECN['読解']||0)}</button>
-  <button class="btn" id="goBoss" style="border-color:var(--coral);color:var(--coral)">${L('moBoss')}</button>
+  <button class="btn" id="goListen" style="margin-top:10px;border-color:#7ED4EF;color:#7ED4EF">🎧 ${L('lsT')} · ${LISTEN.length}</button>
+  <button class="btn" id="goBoss" style="margin-top:10px;border-color:var(--coral);color:var(--coral)">${L('moBoss')}</button>
   <div class="stat" style="margin-top:14px">
     <div><b>${seen}</b><span>${L('seen')}</span></div>
     <div><b>${MONDAI.length}</b><span>${L('bank')}</span></div>
@@ -4588,6 +5501,7 @@ function renderMondai(){
     startMondai(on.length?on:SECS);};
   document.getElementById('goRead').onclick=()=>startMondai(['読解']);
   document.getElementById('goBoss').onclick=startBoss;
+  document.getElementById('goListen').onclick=()=>{mo=null;ls=null;renderListen();};
 }
 function pick(secs,n){
   let pool=MONDAI.map((q,i)=>({q,i})).filter(x=>!secs||secs.includes(x.q.s));
@@ -4634,9 +5548,9 @@ function answer(k){
   if(ok){mo.ok++;addXP(6);}else if(mo.boss)mo.hp--;
   document.querySelectorAll('#opts .opt').forEach(b=>{b.disabled=true;const n=+b.dataset.k;
     if(n===q.a)b.classList.add('right');else if(n===k)b.classList.add('wrong');});
-  const exSay=sayBtn(S.lang==='pt'?q.ex:EN_MEX[i],uiLang());
+  const exSay=S.a11y.sayEx?sayBtn(S.lang==='pt'?q.ex:EN_MEX[i],uiLang()):'';
   document.getElementById('ex').innerHTML=`
-    <div class="explain"><h4>${ok?L('right'):L('wrong')}${exSay}</h4>${S.lang==='pt'?q.ex:EN_MEX[i]}</div>
+    <div class="explain"><h4>${ok?L('right'):L('wrong')}${S.a11y.sayEx?exSay:''}</h4>${S.lang==='pt'?q.ex:EN_MEX[i]}</div>
     <button class="btn shu" id="nx" style="margin-top:12px">${mo.idx+1>=mo.q.length?L('result'):L('next')}</button>`;
   if(mo.from==='d50'&&S.d50){S.d50.pos=Math.min(S.d50.pos+1,S.d50.ids.length);
     if(ok)S.d50.ok++;save();if(cur==='home')renderHome();}
@@ -4660,9 +5574,9 @@ function endM(){
   <button class="btn ghost sm" id="back" style="margin-top:10px">${L('back')}</button>`;
   mo=null;
   document.getElementById('again').onclick=()=>from==='miss'?startMissQuiz()
-    :from==='d50'?startDaily(false):startMondai();
+    :from==='d50'?startDaily(false):from==='pro'?startPro():startMondai();
   document.getElementById('back').onclick=()=>from==='miss'?nav('miss')
-    :from==='d50'?nav('home'):renderMondai();
+    :from==='d50'?nav('home'):from==='pro'?nav('pro'):renderMondai();
   paintTop();
 }
 
@@ -4725,8 +5639,97 @@ function listTraps(){
   <button class="btn ghost sm" onclick="renderTrap()">${L('back')}</button>`;
 }
 
+/* ═══════════════ 聴解 ═══════════════ */
+let ls=null;
+/* same fixed rotation as the question bank, so the answer is not always first */
+LISTEN.forEach((x,i)=>{const n=x.o.length,r=((i*5)+2)%n;
+  x.o=x.o.slice(r).concat(x.o.slice(0,r));x.a=(x.a-r+n)%n;});
+const LS_TYPES=['課題理解','ポイント理解','概要理解','即時応答','統合理解'];
+/* the exam prints options for 課題・ポイント・統合 but not for 概要・即時 */
+const lsPrinted=t=>!['概要理解','即時応答'].includes(t);
+function lsLines(x){
+  const q=['f',x.q];
+  return lsPrinted(x.t)?[q,...x.s,q]:[...x.s,q];     /* question before and after, as on the exam */
+}
+function startListen(types){
+  if(!hasJP()){toast(L('noJP'));renderListen();return;}
+  const pool=LISTEN.map((x,i)=>({x,i})).filter(o=>!types||types.includes(o.x.t));
+  const seen=o=>S.srs['l'+o.i];
+  const fresh=pool.filter(o=>!seen(o)),old=pool.filter(o=>seen(o));
+  const shuf=a=>a.sort(()=>Math.random()-.5);
+  const q=[...shuf(fresh),...shuf(old)].slice(0,5);
+  if(!q.length){toast(L('pickSec'));return;}
+  ls={q,idx:0,ok:0,played:false,shown:false,done:false};nav('mondai');drawL();
+}
+function drawL(){
+  if(!ls)return;
+  if(ls.idx>=ls.q.length){const o=ls.ok,n=ls.q.length;ls=null;
+    toast(L('lsDone',o,n));renderListen();return;}
+  const {x}=ls.q[ls.idx];
+  const showOpts=ls.done||ls.shown||lsPrinted(x.t)&&ls.played||ls.played;
+  document.getElementById('v-mondai').innerHTML=`
+  <div class="counter"><span>聴解 · ${x.t}</span><span>${ls.idx+1} / ${ls.q.length}</span></div>
+  <div class="hp"><i style="width:${ls.idx/ls.q.length*100}%"></i></div>
+  <div class="card" style="margin-top:16px;text-align:center">
+    <div class="lswave" id="lsw">${'<i></i>'.repeat(7)}</div>
+    ${lsPrinted(x.t)?`<div class="qjp" style="font-size:17px;margin:8px 0 0">${x.q}</div>`:''}
+    <div class="lsplay"><button class="btn shu" id="lsP">${ls.played?L('lsAgain'):L('lsPlay')}</button></div>
+    ${!showOpts?`<p class="muted" style="margin:0;font-size:12.5px">${L('lsHint')}</p>`:''}
+  </div>
+  <div id="lsopts">${showOpts?x.o.map((o,k)=>`<button class="opt" data-lk="${k}"${ls.done?' disabled':''}>
+    <span class="num">${k+1}</span><span style="font-family:var(--jp);font-size:16px">${o}</span></button>`).join('')
+    :`<button class="btn ghost sm" id="lsShow">${L('lsShow')}</button>`}</div>
+  <div id="lsex"></div>`;
+  const w=document.getElementById('lsw');
+  document.getElementById('lsP').onclick=()=>{
+    if(w&&w.classList)w.classList.add('on');
+    speakScript(lsLines(x),()=>{if(w&&w.classList)w.classList.remove('on');});
+    if(!ls.played){ls.played=true;drawL();}};
+  const sb=document.getElementById('lsShow');if(sb)sb.onclick=()=>{ls.shown=true;drawL();};
+  document.querySelectorAll('[data-lk]').forEach(b=>b.onclick=()=>lAns(+b.dataset.lk));
+  if(ls.done)lReveal();
+}
+function lAns(k){
+  const {x,i}=ls.q[ls.idx],ok=k===x.a;
+  grade('l'+i,ok,ok?undefined:k);
+  if(ok){ls.ok++;addXP(6);}
+  ls.done=true;ls.pick=k;drawL();
+}
+function lReveal(){
+  const {x}=ls.q[ls.idx],k=ls.pick,ok=k===x.a;
+  document.querySelectorAll('[data-lk]').forEach(b=>{const n=+b.dataset.lk;
+    if(n===x.a)b.classList.add('right');else if(n===k)b.classList.add('wrong');});
+  document.getElementById('lsex').innerHTML=`
+    <div class="explain"><h4>${ok?L('right'):L('wrong')}</h4>${S.lang==='pt'?x.ex:x.en}</div>
+    <div class="card" style="margin-top:12px">
+      <div class="eyebrow">${L('lsScript')}</div>
+      ${x.s.map(([who,t])=>`<div class="lsline"><span class="who ${who}">${who==='m'?L('lsM'):L('lsF')}</span>
+        <span class="tx">${t}</span></div>`).join('')}
+    </div>
+    <button class="btn shu" id="lsN" style="margin-top:12px">${ls.idx+1>=ls.q.length?L('result'):L('next')}</button>`;
+  document.getElementById('lsN').onclick=()=>{
+    try{window.speechSynthesis&&window.speechSynthesis.cancel();}catch(e){}
+    ls.idx++;ls.played=false;ls.shown=false;ls.done=false;ls.pick=undefined;bump('m');drawL();};
+}
+function renderListen(){
+  const cnt={};LISTEN.forEach(x=>cnt[x.t]=(cnt[x.t]||0)+1);
+  document.getElementById('v-mondai').innerHTML=`
+  <div class="eyebrow">${L('lsT')}</div>
+  ${hasJP()?'':`<div class="trap" style="margin:0 0 14px"><b>⚠</b> ${L('lsNone')}</div>`}
+  <div class="card">
+    <p class="muted" style="margin:0 0 12px">${L('lsSub')}</p>
+    <div id="lsPills">${LS_TYPES.map(t=>`<span class="pill on" data-lt="${t}">${t} ${cnt[t]||0}</span>`).join('')}</div>
+    <button class="btn shu" id="lsGo" style="margin-top:12px"${hasJP()?'':' disabled'}>${L('lsGo')}</button>
+  </div>
+  <button class="btn ghost sm" id="lsBack" style="margin-top:4px">${L('back')}</button>`;
+  document.querySelectorAll('[data-lt]').forEach(p=>p.onclick=()=>p.classList.toggle('on'));
+  document.getElementById('lsGo').onclick=()=>{
+    const on=[...document.querySelectorAll('#lsPills .pill.on')].map(p=>p.dataset.lt);
+    startListen(on.length?on:LS_TYPES);};
+  document.getElementById('lsBack').onclick=()=>{ls=null;renderMondai();};
+}
 /* ═══════════════ 部首マップ ═══════════════ */
-let radOpen=null;
+let radOpen=null,proTab=0,archTab=0,ishoTab=0;
 function radFamilies(){
   const fam={};
   KANJI.forEach((k,i)=>{(PARTS[k.c]||[]).forEach(p=>{(fam[p]=fam[p]||[]).push(i);});});
@@ -4816,7 +5819,7 @@ function startDaily(reset){
 /* ═══════════════ 誤答ノート ═══════════════ */
 function renderMiss(){
   if(deck||mo||tr)return;
-  const m=openMistakes(),n=m.q.length+m.card.length+m.trap.length;
+  const m=openMistakes(),n=m.q.length+m.card.length+m.trap.length+m.listen.length;
   const label=(p,i)=>p==='m'?MONDAI[i].s+' #'+i
     :p==='t'?(S.lang==='pt'?TRAPS[i].pt:TRAPS[i].en)
     :p==='k'?'漢字 '+KANJI[i].c
@@ -4840,6 +5843,14 @@ function renderMiss(){
       <div class="msq">${face}</div>
       <div class="msans"><span class="o">${S.lang==='pt'?it.pt:it.en}</span></div>
       ${dots(c)}${serifuBox(serifuFor(pool,i))}</div>`);});
+  m.listen.forEach(({c,i})=>{const x=LISTEN[i];
+    rows.push(`<div class="msrow"><div class="mstag">🎧 聴解 ${x.t} · ${L('msMiss',c.miss)}</div>
+      <div class="msq" style="font-size:15px">${x.q}</div>
+      <div class="msans">${c.pick!==undefined?`<span class="x">✕ ${x.o[c.pick]}</span><br>`:''}
+        <span class="o">✓ ${x.o[x.a]}</span></div>
+      <div class="card" style="margin-top:9px;padding:10px 12px">${x.s.map(([w,t])=>
+        `<div class="lsline"><span class="who ${w}">${w==='m'?'男':'女'}</span><span class="tx" style="font-size:14px">${t}</span></div>`).join('')}</div>
+      ${dots(c)}</div>`);});
   m.trap.forEach(({c,i})=>{const t=TRAPS[i];
     rows.push(`<div class="msrow"><div class="mstag">罠 · ${L('msMiss',c.miss)}</div>
       <div class="msq" style="font-size:15px">${S.lang==='pt'?t.pt:t.en}</div>
@@ -4878,6 +5889,80 @@ function startMissTraps(){
   const q=openMistakes().trap.slice(0,8).map(({i})=>({t:TRAPS[i],i}));
   if(!q.length){toast(L('msNone'));return;}
   tr={q,idx:0,ok:0,from:'miss'};nav('trap');drawT();
+}
+/* ═══════════════ 専門 ═══════════════ */
+function proQuestions(){return MONDAI.map((q,i)=>({q,i})).filter(o=>o.q.pro);}
+function proListening(){return LISTEN.map((x,i)=>({x,i})).filter(o=>o.x.pro);}
+function startPro(){
+  const all=proQuestions();
+  if(!all.length){toast(L('pickSec'));return;}
+  const unseen=all.filter(o=>!S.mondaiSeen[o.i]),seen=all.filter(o=>S.mondaiSeen[o.i]);
+  const sh=a=>a.sort(()=>Math.random()-.5);
+  mo={q:[...sh(unseen),...sh(seen)].slice(0,10),idx:0,ok:0,boss:false,from:'pro'};
+  nav('mondai');drawQ();
+}
+function startProListen(){
+  if(!hasJP()){toast(L('noJP'));return;}
+  const all=proListening();
+  if(!all.length){toast(L('pickSec'));return;}
+  ls={q:all.sort(()=>Math.random()-.5).slice(0,5),idx:0,ok:0,played:false,shown:false,done:false};
+  nav('mondai');drawL();
+}
+function phraseCard(p){
+  return `<div class="phr">
+    <div class="sc">${p.g}</div>
+    <div class="wh">${S.lang==='pt'?p.pt:p.en} · ${p.f}</div>
+    <div class="jp">${p.ex}${sayBtn(p.ex,'ja-JP')}</div>
+    <div class="tr">${p.tx}</div>
+    <div class="tip"><b>${L('phWhy')}:</b> ${p.trap}</div>
+  </div>`;
+}
+function renderPro(){
+  if(deck||mo||tr||ls)return;
+  const learned=key=>POOL[key].filter((x,i)=>S.srs[key+i]&&S.srs[key+i].b>=4).length;
+  const box=(t,ic,k,col)=>{const p=POOL[k],done=learned(k);
+    return `<button class="deck" data-deck="${k}" style="border-color:${col}">
+      <span class="ic" style="color:${col}">${ic}</span>
+      <span class="nm">${t}</span>
+      <span class="ct">${done} / ${p.length}</span>
+      <span class="bar"><i style="width:${p.length?done/p.length*100:0}%;background:${col}"></i></span>
+    </button>`;};
+  document.getElementById('v-pro').innerHTML=`
+  <div class="eyebrow">${L('proT')}</div>
+  <p class="muted" style="margin:-4px 0 14px">${L('proSub')}</p>
+  <button class="btn shu" id="proQ">${L('proQ',proQuestions().length)}</button>
+  <button class="btn" id="proL" style="margin-top:10px;border-color:#7ED4EF;color:#7ED4EF"${hasJP()?'':' disabled'}>${L('proL',proListening().length)}</button>
+  <div class="eyebrow" style="margin-top:22px">${L('proDecks')}</div>
+  ${box('転職・就職','転','r','#7ED4EF')}
+  ${box('建築','築','b','#7ED4EF')}
+  ${box('面接の表現','面','i','#7ED4EF')}
+
+  <div class="eyebrow" style="margin-top:26px">${L('phJob')} · ${L('phSearch',PHRASE_JOB.length)}</div>
+  <p class="muted" style="margin:-4px 0 10px;font-size:12.5px">${L('phJobS')}</p>
+  <div style="margin-bottom:10px">${['当日','準備','やりとり'].map((t,i)=>
+    `<span class="pill ${proTab===i?'on':''}" data-phtab="${i}">${t}</span>`).join('')}</div>
+  ${PHRASE_JOB.filter((p,i)=>proTab===0?i<12:proTab===1?(i>=12&&i<20):i>=20).map(phraseCard).join('')}
+
+  <div class="eyebrow" style="margin-top:26px">${L('phIsho')} · ${L('phSearch',PHRASE_ISHO.length)}</div>
+  <p class="muted" style="margin:-4px 0 10px;font-size:12.5px">${L('phIshoS')}</p>
+  <div style="margin-bottom:10px">${['提案する','案を守る','施主と','社内・現場'].map((t,i)=>
+    `<span class="pill ${ishoTab===i?'on':''}" data-istab="${i}">${t}</span>`).join('')}</div>
+  ${PHRASE_ISHO.filter((p,i)=>ishoTab===0?i<5:ishoTab===1?(i>=5&&i<9):ishoTab===2?(i>=9&&i<14):i>=14)
+    .map(phraseCard).join('')}
+
+  <div class="eyebrow" style="margin-top:22px">${L('phArch')} · ${L('phSearch',PHRASE_ARCH.length)}</div>
+  <p class="muted" style="margin:-4px 0 10px;font-size:12.5px">${L('phArchS')}</p>
+  <div style="margin-bottom:10px">${['打ち合わせ','現場・書類'].map((t,i)=>
+    `<span class="pill ${archTab===i?'on':''}" data-artab="${i}">${t}</span>`).join('')}</div>
+  ${PHRASE_ARCH.filter((p,i)=>archTab===0?i<12:i>=12).map(phraseCard).join('')}`;
+  wireSay();
+  document.querySelectorAll('[data-phtab]').forEach(b=>b.onclick=()=>{proTab=+b.dataset.phtab;renderPro();});
+  document.querySelectorAll('[data-artab]').forEach(b=>b.onclick=()=>{archTab=+b.dataset.artab;renderPro();});
+  document.querySelectorAll('[data-istab]').forEach(b=>b.onclick=()=>{ishoTab=+b.dataset.istab;renderPro();});
+  document.getElementById('proQ').onclick=startPro;
+  document.getElementById('proL').onclick=startProListen;
+  document.querySelectorAll('#v-pro [data-deck]').forEach(b=>b.onclick=()=>{
+    startDeck(b.dataset.deck);nav('dojo');});
 }
 /* ═══════════════ 記録 ═══════════════ */
 function renderStats(){
@@ -4921,7 +6006,9 @@ function renderStats(){
       ['🔵','rgba(130,190,255,.14)'],['🟢','rgba(150,230,180,.13)'],['🟣','rgba(215,170,255,.14)']]
       .map(([t,val])=>`<span class="pill ${S.a11y.tint===val?'on':''}" data-a11y="tint" data-val="${val}">${t}</span>`).join('')}</div>
     <span class="pill ${S.a11y.dys?'on':''}" data-a11y="dys" data-val="toggle">${L('aDys')}</span>
-    <button class="btn ghost sm" id="sayTest" style="margin:12px 0 18px">🔊 ${L('aTry')}</button>
+    <span class="pill ${S.a11y.sayEx?'on':''}" data-a11y="sayEx" data-val="toggle">${L('sayEx')}</span>
+    <div id="vstat" style="margin:12px 0 0"></div>
+    <button class="btn ghost sm" id="sayTest" style="margin:10px 0 18px">🔊 ${L('vTestJP')}</button>
     <label class="msub">${L('langL')}</label>
     <div style="margin:8px 0 14px">
       <span class="pill ${S.lang==='pt'?'on':''}" data-lang="pt">Português</span>
@@ -4942,10 +6029,14 @@ function renderStats(){
     const k=p.dataset.a11y,v=p.dataset.val;
     S.a11y[k]=(v==='toggle')?!S.a11y[k]:(k==='tint'?v:parseFloat(v));
     save();applyA11y();renderStats();});
+  refreshVoices();
+  const vs=document.getElementById('vstat');
+  if(vs){const v=voiceFor('ja-JP');
+    vs.innerHTML=v
+      ? `<p class="muted" style="margin:0;color:var(--ok)">✓ ${L('vOK',v.name)}</p>`
+      : `<div class="trap" style="margin:0"><b>⚠</b> ${L('vBad')}<br><br>${L('vHow')}</div>`;}
   const st=document.getElementById('sayTest');
-  if(st)st.onclick=()=>speak(S.lang==='pt'
-    ?'Roberto, se você está ouvindo isto, a voz está funcionando. 日本語も読めます。'
-    :'Roberto, if you can hear this, the voice is working. 日本語も読めます。',uiLang());
+  if(st)st.onclick=()=>speak('日本語の音声です。今年こそ合格しましょう。','ja-JP');
   wireSay();
   document.querySelectorAll('[data-lang]').forEach(p=>p.onclick=()=>setLang(p.dataset.lang));
   document.querySelectorAll('[data-lv]').forEach(p=>p.onclick=()=>{
@@ -4971,6 +6062,9 @@ function renderStats(){
   if(!S.glevels)S.glevels={g:true,h:true};
   GKEYS.forEach(k=>{if(S.glevels[k]===undefined)S.glevels[k]=true;});  /* older saves gain the new decks */
   if(!S.a11y)S.a11y={font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8};
+  if(S.a11y.sayEx===undefined)S.a11y.sayEx=false;   /* Japanese first; the rest is optional */
+  refreshVoices();
+  try{if(window.speechSynthesis)window.speechSynthesis.onvoiceschanged=refreshVoices;}catch(e){}
   applyA11y();paintTop();renderHome();
   setInterval(paintTop,60000);
 })();
