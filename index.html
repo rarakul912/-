@@ -4152,9 +4152,9 @@ const PHRASE_JOB_BASE=[
  tx:'Com licença. Obrigado por me conceder esta entrevista hoje. Meu nome é Roberto. Muito prazer.',
  trap:'入る時＝失礼いたします、出る時＝失礼いたしました（過去形）。座るのは「どうぞ」と言われてから。名乗りは必ずフルネーム。'},
 {g:'自己紹介（一分）',f:'「簡単に自己紹介を」と言われたら',pt:'autoapresentação de um minuto',en:'one-minute self-introduction',
- ex:'ロベルトと申します。ブラジル出身で、日本には五年おります。前職では住宅を中心に意匠設計を担当しておりました。現在は一級建築士の取得を目指して勉強しております。本日はよろしくお願いいたします。',
- tx:'Meu nome é Roberto. Sou do Brasil e estou no Japão há cinco anos. No emprego anterior era responsável por projeto arquitetônico, sobretudo residencial. Atualmente estudo para obter o registro de arquiteto de 1ª classe.',
- trap:'⚠ 自己紹介は「経歴の要約」で、志望動機ではない。出身→在日年数→職歴→今の取り組み、の順。一分で言い切る。趣味は聞かれてから。'},
+ ex:'ロベルトと申します。ポルトガル出身で、現地では建築家として意匠設計に携わっておりました。日本に参りましてからは、木造や日本の法規を学びながら実務に当たっております。本日はよろしくお願いいたします。',
+ tx:'Meu nome é Roberto. Sou de Portugal, onde atuei como arquiteto em projeto arquitetônico. Desde que vim para o Japão, trabalho enquanto aprendo a construção em madeira e as normas japonesas.',
+ trap:'⚠ ポルトガルでの建築家経験は最大の武器。最初に出す。順番は 出身 → 現地での立場 → 来日後の取り組み。年数は正確に入れ替えて使う。趣味は聞かれてから。'},
 {g:'志望動機',f:'なぜ当社なのか',pt:'motivo da candidatura',en:'why this company',
  ex:'御社が地域の公共建築を数多く手がけていらっしゃる点に強く惹かれました。前職で培った住宅設計の経験を活かしながら、より多くの人が使う建物に携わりたいと考え、志望いたしました。',
  tx:'Atraiu-me muito o fato de a sua empresa realizar tantas obras públicas na comunidade. Quero aproveitar minha experiência em projeto residencial e trabalhar com edifícios usados por mais pessoas.',
@@ -4264,9 +4264,9 @@ const PHRASE_ARCH_BASE=[
 /* ═══ 面接フレーズ 第二集 · 実際に聞かれる質問への答え方 ═══ */
 const PHRASE_JOB2=[
 {g:'キャリアプラン',f:'五年後はどうなっていたいか',pt:'plano de carreira',en:'career plan',
- ex:'三年以内に一級建築士を取得し、五年後には自分が主担当として案件を最初から最後まで見られるようになりたいと考えております。',
- tx:'Quero obter o registro de arquiteto de 1ª classe em até três anos e, em cinco, conduzir projetos do início ao fim como responsável.',
- trap:'⚠ 「独立したい」は避ける。すぐ辞めると思われる。社内で伸びる像を、年数つきで語る。'},
+ ex:'ポルトガルでの実務経験を土台に、日本の建築士資格の取得を進めたいと考えております。五年後には、主担当として案件を最初から最後まで見られるようになりたいと思っております。',
+ tx:'Quero avançar no registro japonês com base na minha experiência em Portugal e, em cinco anos, conduzir projetos do início ao fim como responsável.',
+ trap:'⚠ 「独立したい」は避ける。すぐ辞めると思われる。海外資格は日本では自動的に通用しないので、「経験を土台に、日本の資格を取る」という言い方にすると前向きに伝わる。'},
 {g:'失敗経験',f:'挫折した経験は',pt:'um fracasso que você teve',en:'a failure you had',
  ex:'着工後に施主のご要望を取り違えていたことが分かり、工期を一週間遅らせてしまったことがあります。それ以来、打ち合わせの内容は必ず書面にして、その場で確認していただくようにしております。',
  tx:'Descobri, após o início da obra, que havia entendido errado um pedido do cliente e atrasei o prazo em uma semana. Desde então registro tudo por escrito e confirmo na hora.',
@@ -4448,7 +4448,43 @@ const PHRASE_ISHO=[
  trap:'⚠ 指摘ばかりせず、良い仕事は必ず口に出す。次の現場での協力の質が変わる。'}
 ];
 
-const PHRASE_JOB=[...PHRASE_JOB_BASE,...PHRASE_JOB2];
+/* ═══ ポルトガルの建築家として聞かれること ═══ */
+const PHRASE_PT=[
+{g:'海外の資格について',f:'日本の資格はあるのかと聞かれる',pt:'sobre seu registro estrangeiro',en:'about your foreign qualification',
+ ex:'ポルトガルでは建築家として登録しておりましたが、日本の建築士資格とは制度が異なりますので、現在は実務経験を積みながら取得を進めております。',
+ tx:'Em Portugal eu era arquiteto registado, mas o sistema difere do japonês, por isso agora acumulo experiência enquanto avanço no registro daqui.',
+ trap:'⚠ 「資格はありません」と言わない。「制度が違う」が事実。海外での登録は経験の裏づけとして必ず伝える。'},
+{g:'ポルトガルでの実績',f:'どんな仕事をしていたか',pt:'o que fazia em Portugal',en:'what you did back home',
+ ex:'主に住宅と小規模な公共施設の意匠設計を担当し、基本設計から現場監理まで一貫して関わっておりました。',
+ tx:'Fazia sobretudo projeto de habitação e pequenos equipamentos públicos, acompanhando desde o estudo prévio até a obra.',
+ trap:'日本では「どこまで担当したか」が重視される。基本設計・実施設計・監理のどこまでやったかを必ず言う。'},
+{g:'日欧の違いを語る',f:'違いをどう感じるか',pt:'diferenças entre Japão e Europa',en:'differences you notice',
+ ex:'ポルトガルでは石やコンクリートの建物が中心でしたので、日本の木造の考え方や、地震に対する設計の厳しさは新鮮でした。今はそこを重点的に学んでおります。',
+ tx:'Em Portugal predominavam pedra e betão, por isso a lógica da construção em madeira e o rigor sísmico japonês foram novidade. É nisso que me concentro agora.',
+ trap:'違いを「戸惑い」ではなく「学んでいること」として語る。批判的に聞こえる言い方は避ける。'},
+{g:'強みとしての視点',f:'あなたを採る理由',pt:'por que contratar você',en:'why hire you',
+ ex:'ヨーロッパでの設計経験があるため、日本では当たり前とされている納まりや進め方を、一度立ち止まって考えることができます。それが新しい提案につながると考えております。',
+ tx:'Por ter experiência de projeto na Europa, consigo questionar detalhes e processos que aqui se tomam como dados. Acredito que isso gera propostas novas.',
+ trap:'⚠ 外国人であることを弱みにしない。「違う目で見られる」は意匠設計では明確な価値。ここを言語化できると評価が変わる。'},
+{g:'日本で働く理由',f:'なぜ帰らないのか',pt:'por que ficar no Japão',en:'why stay in Japan',
+ ex:'限られた敷地を丁寧に使う日本の設計の考え方を、知識としてではなく実務として身につけたいと考えております。そのためには日本で続けて働くことが必要だと思っております。',
+ tx:'Quero incorporar como prática, e não só como conhecimento, o modo japonês de usar com cuidado terrenos pequenos. Para isso preciso continuar a trabalhar aqui.',
+ trap:'「日本が好き」では弱い。専門と結びつけ、「ここでしか学べない」という形にすると長く働く意思が伝わる。'},
+{g:'言語での不安に答える',f:'図面と言葉の両方',pt:'lidando com a barreira da língua',en:'answering the language worry',
+ ex:'打ち合わせの内容は必ず書面と図面で残すようにしております。言葉で足りない部分は図で補えるのが、意匠設計の利点だと考えております。',
+ tx:'Registro sempre as reuniões por escrito e em desenho. O que falta em palavras eu compenso no desenho — é uma vantagem do trabalho de projeto.',
+ trap:'Roberto — これは強い返し方。不安を否定せず、「対処している方法」を示す。図面は君の共通言語。'},
+{g:'家族・生活の質問',f:'長く働けるかの確認',pt:'perguntas sobre sua vida',en:'questions about your life here',
+ ex:'日本での生活にも慣れており、長く腰を据えて働きたいと考えております。',
+ tx:'Já estou habituado à vida no Japão e quero trabalhar aqui de forma estável e por muito tempo.',
+ trap:'家族構成や結婚の予定は本来聞いてはいけない質問だが、実際には聞かれることがある。詳しく答える義務はない。「長く働きたい」だけ伝えれば十分。'},
+{g:'ポートフォリオを見せる',f:'作品の説明',pt:'apresentando o portfólio',en:'presenting your portfolio',
+ ex:'こちらがポルトガルで担当した住宅です。斜面の敷地でしたので、地形に沿って床レベルを三段に分けております。',
+ tx:'Esta é uma casa que projetei em Portugal. Como o terreno era inclinado, dividi os níveis em três acompanhando a topografia.',
+ trap:'⚠ 作品説明は「条件 → 判断 → 結果」の順。敷地条件を先に言うと、設計判断の理由が伝わる。写真だけ見せて終わらない。'}
+];
+
+const PHRASE_JOB=[...PHRASE_JOB_BASE,...PHRASE_JOB2,...PHRASE_PT];
 const PHRASE_ARCH=[...PHRASE_ARCH_BASE,...PHRASE_ARCH2];
 /* ═══════════════ i18n ═══════════════ */
 const T={
@@ -5939,9 +5975,10 @@ function renderPro(){
 
   <div class="eyebrow" style="margin-top:26px">${L('phJob')} · ${L('phSearch',PHRASE_JOB.length)}</div>
   <p class="muted" style="margin:-4px 0 10px;font-size:12.5px">${L('phJobS')}</p>
-  <div style="margin-bottom:10px">${['当日','準備','やりとり'].map((t,i)=>
+  <div style="margin-bottom:10px">${['当日','準備','やりとり','ポルトガル'].map((t,i)=>
     `<span class="pill ${proTab===i?'on':''}" data-phtab="${i}">${t}</span>`).join('')}</div>
-  ${PHRASE_JOB.filter((p,i)=>proTab===0?i<12:proTab===1?(i>=12&&i<20):i>=20).map(phraseCard).join('')}
+  ${PHRASE_JOB.filter((p,i)=>proTab===0?i<12:proTab===1?(i>=12&&i<20):proTab===2?(i>=20&&i<28):i>=28)
+    .map(phraseCard).join('')}
 
   <div class="eyebrow" style="margin-top:26px">${L('phIsho')} · ${L('phSearch',PHRASE_ISHO.length)}</div>
   <p class="muted" style="margin:-4px 0 10px;font-size:12.5px">${L('phIshoS')}</p>
