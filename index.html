@@ -4642,6 +4642,158 @@ const BUILDER=[
  tip:'⚠ 順番を絶対に変えない：謝罪 → 事実 → 影響 → 対応。言い訳を先に置くと信用を失う。'}
 ];
 
+const VOCAB_NEW1=[
+{w:'とにかく',r:'—',pt:'de qualquer forma, o importante é',en:'anyway, in any case',ex:'理由はあとで聞く。とにかく今は急ごう。'},
+{w:'けっきょく',r:'結局',pt:'no fim das contas',en:'in the end',ex:'あれこれ迷ったが、結局もとの案にした。'},
+{w:'さんざん',r:'散々',pt:'à exaustão; terrivelmente',en:'thoroughly, badly',ex:'散々歩き回って、やっと店を見つけた。'},
+{w:'へらへら',r:'—',pt:'com um riso bobo e sem seriedade',en:'grinning foolishly',ex:'叱られているのにへらへら笑うな。'},
+{w:'もうける',r:'儲ける',pt:'lucrar',en:'make a profit',ex:'この商売で儲けるのは難しい。'},
+{w:'らくをする',r:'楽をする',pt:'facilitar as coisas para si',en:'take the easy way',ex:'ここで楽をすると、あとで困ることになる。'},
+{w:'ひきあげる',r:'引き上げる',pt:'elevar; retirar-se',en:'raise; withdraw',ex:'来月から価格を引き上げる。'},
+{w:'むだづかい',r:'無駄遣い',pt:'desperdício de dinheiro',en:'wasteful spending',ex:'無駄遣いをやめて貯金を始めた。'},
+{w:'あれこれ',r:'—',pt:'isso e aquilo, várias coisas',en:'this and that',ex:'あれこれ考えすぎて決められない。'},
+{w:'あそびまわる',r:'遊び回る',pt:'ficar só na farra',en:'gad about',ex:'試験前に遊び回るわけにはいかない。'},
+{w:'のりきる',r:'乗り切る',pt:'superar (um período difícil)',en:'get through',ex:'この忙しい時期を乗り切るしかない。'},
+{w:'こんなん',r:'困難',pt:'dificuldade, adversidade',en:'hardship, difficulty',ex:'困難な状況でも諦めなかった。'},
+{w:'ぎょうかい',r:'業界',pt:'setor, ramo de atividade',en:'industry, the trade',ex:'建築業界は人手が足りない。'},
+{w:'げじゅん',r:'下旬',pt:'última dezena do mês',en:'late in the month',ex:'来月の下旬に結果が出る。'},
+{w:'いきつけ',r:'行きつけ',pt:'lugar que se frequenta',en:'one\u2019s regular haunt',ex:'行きつけの店で昼食をとる。'},
+{w:'じつようか',r:'実用化',pt:'aplicação prática',en:'putting into practical use',ex:'この技術の実用化はまだ先だ。'},
+{w:'めいじる',r:'命じる',pt:'ordenar, determinar',en:'order, command',ex:'上司が部下に調査を命じる。'},
+{w:'かいぜん',r:'改善',pt:'melhoria',en:'improvement',ex:'作業手順の改善を提案した。'},
+{w:'におわれる',r:'に追われる',pt:'estar sufocado por',en:'be pressed by',ex:'毎日、締め切りに追われる生活だ。'},
+{w:'すっかり',r:'—',pt:'completamente, de todo',en:'completely',ex:'約束をすっかり忘れていた。'},
+{w:'だまる',r:'黙る',pt:'calar-se',en:'fall silent',ex:'都合が悪くなると黙る人だ。'},
+{w:'しんろ',r:'進路',pt:'rumo (carreira, estudos); trajetória',en:'career path; course',ex:'卒業後の進路を決めかねている。'},
+{w:'せっきん',r:'接近',pt:'aproximação',en:'approach',ex:'台風が接近している。'},
+{w:'えんがん',r:'沿岸',pt:'litoral, zona costeira',en:'coast, coastal area',ex:'沿岸の住民に避難が呼びかけられた。'},
+{w:'こうはんい',r:'広範囲',pt:'ampla extensão',en:'wide area',ex:'広範囲にわたって停電した。'},
+{w:'おわびする',r:'お詫びする',pt:'pedir desculpas (formal)',en:'apologise (formal)',ex:'ご迷惑をおかけしたことをお詫びする。'},
+{w:'おおはばに',r:'大幅に',pt:'em grande medida',en:'substantially',ex:'売上が大幅に伸びた。'},
+{w:'にちや',r:'日夜',pt:'dia e noite, sem parar',en:'day and night',ex:'日夜、研究に取り組んでいる。'},
+{w:'ととのえる',r:'整える',pt:'arrumar, preparar',en:'put in order, prepare',ex:'出発の準備を整える。'},
+{w:'なぞ',r:'謎',pt:'mistério, enigma',en:'mystery',ex:'事故の原因はいまだに謎だ。'},
+{w:'あきらかになる',r:'明らかになる',pt:'vir à tona, ficar claro',en:'come to light',ex:'調査が進めば原因が明らかになるだろう。'},
+{w:'はんざい',r:'犯罪',pt:'crime',en:'crime',ex:'この地域は犯罪が少ない。'},
+{w:'かくだい',r:'拡大',pt:'expansão, ampliação',en:'expansion',ex:'被害が拡大するおそれがある。'},
+{w:'はっせいする',r:'発生する',pt:'ocorrer, surgir',en:'occur, break out',ex:'どの現場でも事故は発生する。'},
+{w:'つながる',r:'繋がる',pt:'ligar-se, levar a',en:'lead to, be connected',ex:'小さな油断が事故に繋がる。'},
+{w:'じょうしょうする',r:'上昇する',pt:'subir, elevar-se',en:'rise',ex:'午後から気温が上昇するそうだ。'},
+{w:'しんぽする',r:'進歩する',pt:'progredir',en:'advance, progress',ex:'技術は日々進歩する。'},
+{w:'しょうじる',r:'生じる',pt:'surgir, originar-se',en:'arise, result',ex:'認識のずれから問題が生じる。'},
+{w:'はげます',r:'励ます',pt:'encorajar',en:'encourage',ex:'落ち込んでいる友人を励ます。'},
+{w:'けんとうする',r:'検討する',pt:'examinar, considerar',en:'consider, review',ex:'ご提案を前向きに検討する。'},
+{w:'かばう',r:'庇う',pt:'proteger, acobertar',en:'shield, stand up for',ex:'上司が部下を庇うこともある。'},
+{w:'おもいうかべる',r:'思い浮かべる',pt:'trazer à mente',en:'call to mind',ex:'故郷の風景を思い浮かべる。'},
+{w:'ひやけ',r:'日焼け',pt:'queimadura de sol, bronzeado',en:'sunburn, tan',ex:'海で日焼けしてしまった。'},
+{w:'ふきょう',r:'不況',pt:'recessão',en:'recession',ex:'不況で仕事が減っている。'},
+{w:'みのる',r:'実る',pt:'frutificar, dar resultado',en:'bear fruit',ex:'努力はいつか実ると信じている。'},
+{w:'ていでん',r:'停電',pt:'queda de energia',en:'power outage',ex:'台風で三時間停電した。'},
+{w:'ついきゅう',r:'追及',pt:'cobrança, apuração (de responsabilidade)',en:'pressing for answers',ex:'責任の追及が始まった。'},
+{w:'ふかい',r:'不快',pt:'desagradável, incômodo',en:'unpleasant',ex:'不快な思いをさせて申し訳ない。'},
+{w:'せいとう',r:'正当',pt:'legítimo, justo',en:'legitimate, justified',ex:'正当な理由があれば認められる。'},
+{w:'しょり',r:'処理',pt:'processamento, tratamento',en:'handling, processing',ex:'書類の処理に時間がかかった。'},
+{w:'くじょう',r:'苦情',pt:'reclamação',en:'complaint',ex:'騒音の苦情が寄せられた。'},
+{w:'こころがまえ',r:'心構え',pt:'preparo mental, postura',en:'mental readiness',ex:'社会に出る心構えができた。'},
+{w:'あまえる',r:'甘える',pt:'depender da boa vontade de alguém',en:'presume on someone\u2019s kindness',ex:'人の親切に甘えてばかりはいられない。'},
+{w:'しあげる',r:'仕上げる',pt:'concluir, dar acabamento',en:'finish off',ex:'図面を今日中に仕上げる。'},
+{w:'かつやく',r:'活躍',pt:'atuação destacada',en:'active role, success',ex:'若手の活躍が目立つ。'},
+{w:'にぎわう',r:'賑わう',pt:'ficar movimentado',en:'be bustling',ex:'商店街は休日になると賑わう。'},
+{w:'そんざい',r:'存在',pt:'existência, presença',en:'existence, presence',ex:'彼はチームに欠かせない存在だ。'},
+{w:'あっか',r:'悪化',pt:'agravamento',en:'deterioration',ex:'天候が悪化してきた。'},
+{w:'さぎ',r:'詐欺',pt:'fraude, golpe',en:'fraud, scam',ex:'電話を使った詐欺が増えている。'},
+{w:'あくよう',r:'悪用',pt:'uso indevido',en:'misuse, abuse',ex:'個人情報が悪用される危険がある。'},
+{w:'かんり',r:'管理',pt:'gestão, administração',en:'management',ex:'現場の安全管理を徹底する。'},
+{w:'とうさん',r:'倒産',pt:'falência',en:'bankruptcy',ex:'取引先が倒産した。'},
+{w:'ひがい',r:'被害',pt:'dano, prejuízo',en:'damage',ex:'地震の被害は大きかった。'},
+{w:'ふせぐ',r:'防ぐ',pt:'prevenir, impedir',en:'prevent',ex:'事故を防ぐために点検する。'},
+{w:'めぐまれた',r:'恵まれた',pt:'privilegiado, afortunado',en:'blessed, fortunate',ex:'恵まれた環境で育った。'},
+{w:'しゅうしょくなん',r:'就職難',pt:'dificuldade de conseguir emprego',en:'tough job market',ex:'就職難の時代を経験した。'},
+{w:'つく',r:'就く',pt:'assumir (um posto)',en:'take up (a post)',ex:'希望の職に就くことができた。'},
+{w:'やりがい',r:'—',pt:'sensação de propósito no trabalho',en:'sense of fulfilment',ex:'やりがいのある仕事を探している。'},
+{w:'みため',r:'見た目',pt:'aparência',en:'appearance',ex:'見た目より味が大事だ。'},
+{w:'にゅうかん',r:'入管',pt:'Imigração (órgão)',en:'Immigration Bureau',ex:'入管に在留資格の変更を申請する。'},
+{w:'しんせい',r:'申請',pt:'requerimento, solicitação',en:'application (official)',ex:'ビザの申請には時間がかかる。'},
+{w:'じっこうにうつす',r:'実行に移す',pt:'pôr em prática',en:'put into action',ex:'計画を実行に移す時が来た。'}
+];
+
+const VOCAB_NEW2=[
+{w:'こうれいしゃ',r:'高齢者',pt:'idoso',en:'elderly person',ex:'高齢者が住みやすい設計を考える。'},
+{w:'いためる',r:'痛める',pt:'machucar, lesionar',en:'hurt, injure',ex:'無理をすると腰を痛めることがある。'},
+{w:'したがう',r:'従う',pt:'seguir, obedecer',en:'follow, comply',ex:'現場では監督の指示に従う。'},
+{w:'めいれい',r:'命令',pt:'ordem, comando',en:'order, command',ex:'命令に従うだけでは成長しない。'},
+{w:'ていど',r:'程度',pt:'grau, nível',en:'degree, extent',ex:'ご希望の程度を教えてください。'},
+{w:'こうどう',r:'行動',pt:'ação, comportamento',en:'action, behaviour',ex:'言葉より行動で示したい。'},
+{w:'じかく',r:'自覚',pt:'consciência de si, noção',en:'self-awareness',ex:'責任者としての自覚を持つ。'},
+{w:'だいり',r:'代理',pt:'representação, substituto',en:'proxy, acting on behalf',ex:'課長の代理で会議に出た。'},
+{w:'こころづかい',r:'心遣い',pt:'consideração, gentileza atenciosa',en:'thoughtfulness',ex:'温かいお心遣いに感謝いたします。'},
+{w:'なれしたしむ',r:'慣れ親しむ',pt:'familiarizar-se com o tempo',en:'grow familiar with',ex:'この町に慣れ親しむまで時間がかかった。'},
+{w:'ちょうせん',r:'挑戦',pt:'desafio',en:'challenge',ex:'新しい分野に挑戦したい。'},
+{w:'あくてんこう',r:'悪天候',pt:'mau tempo',en:'bad weather',ex:'悪天候のため工事を中止した。'},
+{w:'しんじつ',r:'真実',pt:'verdade',en:'truth',ex:'真実を知る権利がある。'},
+{w:'ぎょうせき',r:'業績',pt:'desempenho, resultados',en:'performance, results',ex:'今年度の業績は好調だ。'},
+{w:'ゆうじょう',r:'友情',pt:'amizade',en:'friendship',ex:'国を超えた友情が生まれた。'},
+{w:'あふれる',r:'溢れる',pt:'transbordar',en:'overflow, brim with',ex:'開場すると人が溢れる。'},
+{w:'しょうがい',r:'生涯',pt:'a vida inteira',en:'lifetime',ex:'生涯忘れられない経験だった。'},
+{w:'かんぜんに',r:'完全に',pt:'completamente',en:'completely',ex:'完全に元どおりにはならない。'},
+{w:'ほこり',r:'誇り',pt:'orgulho',en:'pride',ex:'この仕事に誇りを持っている。'},
+{w:'わざわざ',r:'—',pt:'dar-se ao trabalho de',en:'go out of one\u2019s way to',ex:'わざわざお越しいただき恐縮です。'},
+{w:'かんしん',r:'関心',pt:'interesse',en:'interest',ex:'環境問題に関心がある。'},
+{w:'おもいきり',r:'思い切り',pt:'com toda a força, à vontade',en:'as hard as one can',ex:'休みの日は思い切り寝たい。'},
+{w:'てほん',r:'手本',pt:'modelo, exemplo a seguir',en:'model, example',ex:'先輩の仕事を手本にする。'},
+{w:'そしき',r:'組織',pt:'organização',en:'organisation',ex:'大きな組織ほど決定が遅い。'},
+{w:'しどう',r:'指導',pt:'orientação, instrução',en:'guidance, instruction',ex:'ご指導よろしくお願いいたします。'},
+{w:'ろくおん',r:'録音',pt:'gravação de áudio',en:'audio recording',ex:'会議の内容を録音しておく。'},
+{w:'てんじ',r:'展示',pt:'exposição, mostra',en:'exhibition, display',ex:'模型を展示して説明する。'},
+{w:'かのう',r:'可能',pt:'possível',en:'possible',ex:'変更は可能ですが費用がかかります。'},
+{w:'ちしき',r:'知識',pt:'conhecimento',en:'knowledge',ex:'法規の知識が欠かせない。'},
+{w:'かかせない',r:'欠かせない',pt:'indispensável',en:'indispensable',ex:'図面は打ち合わせに欠かせない。'},
+{w:'さける',r:'避ける',pt:'evitar',en:'avoid',ex:'混雑する時間を避けるようにしている。'},
+{w:'はんこう',r:'反抗',pt:'rebeldia, oposição',en:'defiance, rebellion',ex:'子どもが親に反抗する時期がある。'},
+{w:'かっぱつ',r:'活発',pt:'ativo, animado',en:'lively, active',ex:'活発な議論が交わされた。'},
+{w:'みにつける',r:'身につける',pt:'adquirir (habilidade)',en:'acquire, master',ex:'現場でしか身につけることのできない技術がある。'},
+{w:'ぼうし',r:'防止',pt:'prevenção',en:'prevention',ex:'再発防止に努めます。'},
+{w:'かくほ',r:'確保',pt:'garantir, assegurar',en:'securing',ex:'避難経路を確保する。'},
+{w:'どうい',r:'同意',pt:'concordância, consentimento',en:'consent, agreement',ex:'施主の同意を得てから進める。'},
+{w:'かいこ',r:'解雇',pt:'demissão (pela empresa)',en:'dismissal',ex:'不況で解雇が増えた。'},
+{w:'じゅうぎょういん',r:'従業員',pt:'funcionário',en:'employee',ex:'従業員は五十名ほどです。'},
+{w:'ごうりか',r:'合理化',pt:'racionalização, enxugamento',en:'streamlining',ex:'業務の合理化を進める。'},
+{w:'みなおし',r:'見直し',pt:'revisão, reavaliação',en:'review, reappraisal',ex:'計画の見直しが必要だ。'},
+{w:'きをつかう',r:'気を遣う',pt:'ter consideração, ficar atento a',en:'be considerate, watch oneself',ex:'言葉づかいに気を遣う。'},
+{w:'にっか',r:'日課',pt:'rotina diária',en:'daily routine',ex:'朝の散歩が日課になっている。'},
+{w:'きんむ',r:'勤務',pt:'trabalho, expediente',en:'work, duty',ex:'勤務時間は九時から六時までです。'},
+{w:'へんそう',r:'返送',pt:'devolução por correio',en:'sending back',ex:'書類を返送してください。'},
+{w:'ちゅうせん',r:'抽選',pt:'sorteio',en:'lottery, drawing lots',ex:'定員を超えた場合は抽選となる。'},
+{w:'せんちゃく',r:'先着',pt:'por ordem de chegada',en:'first come, first served',ex:'先着五十名に配布します。'},
+{w:'ちょうせい',r:'調整',pt:'ajuste, coordenação',en:'adjustment, coordination',ex:'日程を調整いたします。'},
+{w:'じさん',r:'持参',pt:'trazer consigo',en:'bringing with you',ex:'筆記用具をご持参ください。'},
+{w:'つうち',r:'通知',pt:'aviso, notificação',en:'notice',ex:'結果は郵送で通知します。'},
+{w:'こうりょする',r:'考慮する',pt:'levar em conta',en:'take into account',ex:'ご事情を考慮する必要がある。'},
+{w:'せっきゃく',r:'接客',pt:'atendimento ao cliente',en:'customer service',ex:'接客の経験が役に立った。'},
+{w:'もとめる',r:'求める',pt:'buscar, exigir',en:'seek, demand',ex:'会社が求めるのは即戦力だ。'},
+{w:'じんざい',r:'人材',pt:'talento humano, pessoal qualificado',en:'human resources, talent',ex:'優秀な人材を採用したい。'},
+{w:'げんしゅ',r:'厳守',pt:'cumprimento rigoroso',en:'strict observance',ex:'締め切りは厳守でお願いします。'},
+{w:'ふんしつ',r:'紛失',pt:'extravio, perda',en:'loss, misplacing',ex:'書類を紛失しないよう注意する。'},
+{w:'せいど',r:'制度',pt:'sistema, regime',en:'system, scheme',ex:'この会社には研修制度がある。'},
+{w:'しつぎょう',r:'失業',pt:'desemprego',en:'unemployment',ex:'失業率が上がっている。'},
+{w:'きふ',r:'寄付',pt:'doação',en:'donation',ex:'被災地に寄付を送った。'},
+{w:'はつげん',r:'発言',pt:'fala, declaração',en:'remark, statement',ex:'会議での発言を求められた。'},
+{w:'へんぴん',r:'返品',pt:'devolução de mercadoria',en:'returning goods',ex:'未使用に限り返品できます。'},
+{w:'ひっちゃく',r:'必着',pt:'deve chegar até (prazo de recebimento)',en:'must arrive by',ex:'十日必着でお送りください。'},
+{w:'ようぼう',r:'要望',pt:'pedido, solicitação',en:'request, demand',ex:'住民の要望を取り入れた。'},
+{w:'こころがける',r:'心がける',pt:'procurar fazer sempre',en:'make a point of',ex:'分かりやすい説明を心がける。'},
+{w:'よさん',r:'予算',pt:'orçamento',en:'budget',ex:'予算の範囲で提案する。'},
+{w:'うわき',r:'浮気',pt:'infidelidade',en:'infidelity',ex:'浮気が原因で別れたらしい。'},
+{w:'まんびき',r:'万引き',pt:'furto em loja',en:'shoplifting',ex:'万引きの防止にカメラを設置した。'},
+{w:'ていきょう',r:'提供',pt:'fornecimento, oferta',en:'provision, supply',ex:'資料を無料で提供します。'},
+{w:'つうじょう',r:'通常',pt:'normalmente, o habitual',en:'usually, normal',ex:'通常は三日で届きます。'},
+{w:'うむ',r:'有無',pt:'a presença ou ausência',en:'presence or absence',ex:'経験の有無は問いません。'},
+{w:'ちゅうや',r:'昼夜',pt:'dia e noite',en:'day and night',ex:'昼夜を問わず対応する。'},
+{w:'りんじ',r:'臨時',pt:'temporário, extraordinário',en:'temporary, special',ex:'臨時の会議が開かれた。'},
+{w:'ぼしゅう',r:'募集',pt:'recrutamento, chamada',en:'recruitment, call for',ex:'設計スタッフを募集している。'}
+];
+
+const VOCAB_PLUS=[...VOCAB_NEW1,...VOCAB_NEW2];
 /* ═══════════════ i18n ═══════════════ */
 const T={
  daysTo:{pt:'DIAS ATÉ DEZEMBRO',en:'DAYS UNTIL DECEMBER'},
@@ -4835,7 +4987,7 @@ function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.r
 
 /* ═══════════════ 状態管理 ═══════════════ */
 const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossWins:0,
-           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8,sayEx:false},bd:{},levels:{r:true,b:true,y:true,v:true,w:true,x:true,z:true},glevels:{i:true,g:true,h:true,n:true,e:true,j:true,c:true,p:true},d50:null};
+           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8,sayEx:false},bd:{},levels:{r:true,b:true,y:true,v:true,w:true,x:true,z:true,u:true},glevels:{i:true,g:true,h:true,n:true,e:true,j:true,c:true,p:true},d50:null};
 let S=JSON.parse(JSON.stringify(DEF));
 const KEY='n2sprint:v2';
 /* APPEND ONLY — the original 66 keep indices 0-65, so every k-record stays valid */
@@ -5053,7 +5205,7 @@ Object.entries(_BASE).forEach(([base,kinds],bi)=>{
 });
 
 /* ── ④ 語彙の文脈規定（例文から語を抜く） ── */
-[['v',VOCAB],['w',VOCAB_N3],['x',VOCAB_N4],['y',VOCAB_N2H],['z',VOCAB_REQ],['r',VOCAB_JOB],['b',VOCAB_ARCH]].forEach(([key,deck])=>{
+[['v',VOCAB],['w',VOCAB_N3],['x',VOCAB_N4],['y',VOCAB_N2H],['z',VOCAB_REQ],['r',VOCAB_JOB],['b',VOCAB_ARCH],['u',VOCAB_PLUS]].forEach(([key,deck])=>{
   const isPro=key==='r'||key==='b';
   deck.forEach((v,vi)=>{
     /* most decks keep the word in w; the school deck keeps the kanji in r. Take whichever
@@ -5233,9 +5385,9 @@ MONDAI.forEach((q,i)=>{QBYKEY[q.id||('m'+i)]=i;});
 MONDAI.forEach((q,i)=>{const n=q.o.length,r=((i*7)+3)%n;
   q.o=q.o.slice(r).concat(q.o.slice(0,r));q.a=(q.a-r+n)%n;});
 const POOL={k:KANJI,v:VOCAB,w:VOCAB_N3,x:VOCAB_N4,y:VOCAB_N2H,z:VOCAB_REQ,r:VOCAB_JOB,b:VOCAB_ARCH,
-  g:GRAMMAR,h:GRAMMAR_N3,n:GRAMMAR_REQ,e:KEIGO,j:JITA,c:SETSU,p:JOSHI,i:MENSETSU};
-const VKEYS=['r','b','y','v','w','x','z'],GKEYS=['i','g','h','n','e','j','c','p'];
-const LVNAME={z:'school study',y:'N2+',v:'N2',w:'N3',x:'N4',r:'転職',b:'建築',n:'school study',g:'N2',h:'N3',e:'敬語',j:'自他',c:'接続',p:'助詞',i:'面接'};
+  g:GRAMMAR,h:GRAMMAR_N3,n:GRAMMAR_REQ,e:KEIGO,j:JITA,c:SETSU,p:JOSHI,i:MENSETSU,u:VOCAB_PLUS};
+const VKEYS=['u','r','b','y','v','w','x','z'],GKEYS=['i','g','h','n','e','j','c','p'];
+const LVNAME={z:'school study',y:'N2+',v:'N2',w:'N3',x:'N4',r:'転職',b:'建築',n:'school study',g:'N2',h:'N3',e:'敬語',j:'自他',c:'接続',p:'助詞',i:'面接',u:'N2 追加'};
 const actV=()=>VKEYS.filter(k=>S.levels[k]),actG=()=>GKEYS.filter(k=>S.glevels[k]);
 
 const store={
@@ -5531,6 +5683,7 @@ function renderDojo(){
   <div class="eyebrow" style="font-size:9px;margin:2px 0 6px">漢字</div>
   ${box(L('dKanji'),'漢','k','var(--mura)')}
   <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">語彙</div>
+  ${box(L('dVocab')+' 追加','語','u','var(--yama)')}
   ${box(L('dSchool')+' · '+L('dVocab'),'学','z','var(--yama)')}
   ${box(L('dVocab')+' N2+','語','y','var(--yama)')}
   ${box(L('dVocab')+' N2','語','v','var(--yama)')}
@@ -5545,6 +5698,10 @@ function renderDojo(){
   ${box('自動詞・他動詞','自','j','var(--mura)')}
   ${box('接続表現','接','c','var(--mura)')}
   ${box('助詞の使い分け','助','p','var(--mura)')}
+  <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">専門 · Roberto</div>
+  ${box('転職・就職','転','r','#7ED4EF')}
+  ${box('建築','築','b','#7ED4EF')}
+  ${box('面接の表現','面','i','#7ED4EF')}
 
   <button class="btn shu" id="mixBtn" style="margin-top:6px">${L('mixBtn')}</button>
   <p class="muted" style="margin-top:16px">${L('howto')}</p>`;
