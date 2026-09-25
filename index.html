@@ -4805,6 +4805,16 @@ const VOCAB_NEW2=[
 ];
 
 const VOCAB_PLUS=[...VOCAB_NEW1,...VOCAB_NEW2];
+/* ═══ 副詞・擬態語 + 言い換え + 形の似た文型（2026-09 追加 · 原文オリジナル） ═══
+   APPEND ONLY. Every question carries its own id, so its record never depends on position. */
+const VOCAB_ADV=[{"w": "あいかわらず", "r": "相変わらず", "pt": "como sempre, continua igual", "en": "as usual, still the same", "ex": "駅前は相変わらず人が多い。"}, {"w": "いよいよ", "r": "—", "pt": "finalmente chegou a hora; cada vez mais", "en": "the moment has come; more and more", "ex": "いよいよ明日から工事が始まる。", "npt": "いよいよ = o momento está logo à frente. ついに = fim de uma longa espera.", "nen": "いよいよ = the moment is right ahead. ついに = the end of a long wait."}, {"w": "ついに", "r": "遂に", "pt": "finalmente (depois de muito tempo)", "en": "finally, in the end", "ex": "三年かけて、ついに校舎が完成した。", "npt": "Também serve para resultado ruim: ついに来なかった (no fim, não veio).", "nen": "Works for bad outcomes too: ついに来なかった (in the end, never came)."}, {"w": "ようやく", "r": "漸く", "pt": "finalmente (com esforço e alívio)", "en": "at last (after effort)", "ex": "図面がようやく完成した。", "npt": "= やっと, mas mais escrito.", "nen": "= やっと, but more written."}, {"w": "やがて", "r": "—", "pt": "com o tempo, em breve", "en": "before long, eventually", "ex": "雨はやがて雪に変わった。", "npt": "Sinônimo de prova: そのうちに.", "nen": "Exam synonym: そのうちに."}, {"w": "いずれ", "r": "—", "pt": "mais cedo ou mais tarde, um dia", "en": "sooner or later, someday", "ex": "この問題はいずれ解決しなければならない。"}, {"w": "そのうち", "r": "—", "pt": "um dia desses, logo", "en": "one of these days", "ex": "そのうち連絡が来るでしょう。"}, {"w": "そろそろ", "r": "—", "pt": "já está na hora; daqui a pouco", "en": "it's about time; soon", "ex": "そろそろ会議を始めましょう。"}, {"w": "しだいに", "r": "次第に", "pt": "gradualmente", "en": "gradually", "ex": "空が次第に暗くなってきた。", "npt": "Escrito. Falado = だんだん. Combina com ～てくる／～ていく.", "nen": "Written. Spoken = だんだん. Pairs with ～てくる／～ていく."}, {"w": "じょじょに", "r": "徐々に", "pt": "pouco a pouco", "en": "little by little", "ex": "体力が徐々に回復している。"}, {"w": "ただちに", "r": "直ちに", "pt": "imediatamente (formal)", "en": "immediately (formal)", "ex": "異常があれば、直ちに報告すること。", "npt": "Tom de regulamento. Falado = すぐに.", "nen": "Rulebook tone. Spoken = すぐに."}, {"w": "たちまち", "r": "忽ち", "pt": "num instante", "en": "in an instant", "ex": "新しい店はたちまち人気になった。"}, {"w": "にわかに", "r": "俄かに", "pt": "de repente", "en": "suddenly", "ex": "空がにわかに曇ってきた。"}, {"w": "とたんに", "r": "途端に", "pt": "no exato instante em que", "en": "the very moment that", "ex": "外に出たとたんに雨が降り出した。", "npt": "Forma fixa: V-た + とたん(に).", "nen": "Fixed form: V-た + とたん(に)."}, {"w": "ふと", "r": "—", "pt": "de repente, sem querer (pensamento)", "en": "suddenly, out of nowhere (a thought)", "ex": "窓の外を見て、ふと故郷を思い出した。", "npt": "Sinônimo de prova: なんとなく／不意に.", "nen": "Exam synonym: なんとなく／不意に."}, {"w": "つい", "r": "—", "pt": "sem querer, acabei...", "en": "without meaning to", "ex": "甘いものを見ると、つい食べてしまう。", "npt": "Quase sempre com ～てしまう.", "nen": "Almost always with ～てしまう."}, {"w": "わざと", "r": "—", "pt": "de propósito", "en": "on purpose", "ex": "彼はわざと遅れて来た。", "npt": "わざと = intenção (muitas vezes ruim). わざわざ = dar-se ao trabalho (por alguém).", "nen": "わざと = intent (often bad). わざわざ = going to the trouble (for someone)."}, {"w": "せっかく", "r": "—", "pt": "já que (houve esforço); que desperdício", "en": "since (effort went in); what a waste", "ex": "せっかく作ったのに、誰も食べなかった。", "npt": "Dois padrões: せっかく～のに (pena) ／ せっかく～から (aproveitar).", "nen": "Two patterns: せっかく～のに (shame) ／ せっかく～から (make use of it)."}, {"w": "せめて", "r": "—", "pt": "pelo menos (o mínimo que se deseja)", "en": "at least (the minimum you hope for)", "ex": "せめて一日だけでも休みたい。", "npt": "せめて = desejo. 少なくとも = fato ou estimativa.", "nen": "せめて = a wish. 少なくとも = a fact or estimate."}, {"w": "すくなくとも", "r": "少なくとも", "pt": "no mínimo", "en": "at least (at minimum)", "ex": "完成までに少なくとも半年はかかる。"}, {"w": "たった", "r": "—", "pt": "apenas (número pequeno)", "en": "only, just (a small number)", "ex": "たった一日で全部読んだ。", "npt": "Sempre antes de número: たった三人.", "nen": "Always before a number: たった三人."}, {"w": "わずか", "r": "僅か", "pt": "só, muito pouco", "en": "only, very little", "ex": "残り時間はわずか五分だ。", "npt": "Sinônimo de prova: 少ししかない.", "nen": "Exam synonym: 少ししかない."}, {"w": "よほど", "r": "余程", "pt": "muito; deve ter sido muito", "en": "very; must have been very", "ex": "一日中寝ているなんて、よほど疲れていたのだろう。", "npt": "Muitas vezes com ～のだろう／～らしい (suposição).", "nen": "Often with ～のだろう／～らしい (a guess)."}, {"w": "よけいに", "r": "余計に", "pt": "ainda mais (ao contrário do esperado)", "en": "all the more (the opposite of what you wanted)", "ex": "説明を聞いたら、余計にわからなくなった。"}, {"w": "さらに", "r": "更に", "pt": "ainda mais; além disso", "en": "further; moreover", "ex": "来年は料金がさらに上がるそうだ。"}, {"w": "ぐっと", "r": "—", "pt": "bem mais, de uma vez; com força", "en": "noticeably; firmly", "ex": "照明を変えたら、部屋の印象がぐっと良くなった。"}, {"w": "めっきり", "r": "—", "pt": "visivelmente (mudança de estado)", "en": "noticeably (a change)", "ex": "朝晩めっきり寒くなりましたね。", "npt": "Só para mudanças: めっきり＋なる／増える／減る.", "nen": "Only for change: めっきり + なる／増える／減る."}, {"w": "ちっとも", "r": "—", "pt": "nem um pouco (+ない)", "en": "not at all (+ない)", "ex": "説明を聞いても、ちっともわからない。", "npt": "Exige negativo.", "nen": "Needs a negative."}, {"w": "さっぱり", "r": "—", "pt": "nada (+ない); refrescante", "en": "not at all (+ない); refreshing", "ex": "この書類の意味がさっぱりわからない。", "npt": "Com negativo = nada. Sem negativo = sensação limpa, leve.", "nen": "With a negative = not at all. Without = clean, light feeling."}, {"w": "それほど", "r": "—", "pt": "não tanto (+ない)", "en": "not that much (+ない)", "ex": "今回の試験はそれほど難しくなかった。"}, {"w": "なかなか", "r": "—", "pt": "bastante; (+ない) não consegue", "en": "quite; (+ない) just won't", "ex": "バスがなかなか来ない。", "npt": "Positivo = bastante bom. Negativo = demora, não acontece.", "nen": "Positive = quite good. Negative = it just won't happen."}, {"w": "なにぶん", "r": "何分", "pt": "afinal (como desculpa educada)", "en": "after all (a polite excuse)", "ex": "なにぶん初めての仕事なので、よろしくお願いします。"}, {"w": "どうせ", "r": "—", "pt": "de qualquer jeito (resignado)", "en": "anyway (resigned)", "ex": "どうせ間に合わないなら、ゆっくり行こう。", "npt": "Tom de resignação. Nunca em pedidos.", "nen": "Resigned tone. Never in requests."}, {"w": "いっそ", "r": "—", "pt": "melhor seria de uma vez", "en": "might as well, rather", "ex": "何度も直すより、いっそ建て替えたほうが安い。"}, {"w": "いわば", "r": "言わば", "pt": "por assim dizer", "en": "so to speak", "ex": "この広場は、いわば町のリビングだ。"}, {"w": "まるで", "r": "—", "pt": "como se fosse, igualzinho", "en": "just like, as if", "ex": "まるで夢を見ているようだ。", "npt": "Forma fixa: まるで～ようだ／みたいだ.", "nen": "Fixed form: まるで～ようだ／みたいだ."}, {"w": "まさに", "r": "正に", "pt": "exatamente, justamente", "en": "exactly, precisely", "ex": "これこそまさに私が探していた家だ。"}, {"w": "たとえ", "r": "—", "pt": "mesmo que", "en": "even if", "ex": "たとえ雨が降っても、工事は続ける。", "npt": "Forma fixa: たとえ～ても.", "nen": "Fixed form: たとえ～ても."}, {"w": "もしも", "r": "—", "pt": "se por acaso", "en": "if by any chance", "ex": "もしも地震が起きたら、机の下に入ってください。"}, {"w": "ぜひ", "r": "是非", "pt": "sem falta (pedido, desejo)", "en": "by all means (request, wish)", "ex": "完成したら、ぜひ見に来てください。", "npt": "Só com pedido/desejo: ～てください／～たい. Nunca com suposição.", "nen": "Only with a request or wish: ～てください／～たい. Never with a guess."}, {"w": "きっと", "r": "—", "pt": "com certeza (suposição de quem fala)", "en": "surely (the speaker's guess)", "ex": "彼ならきっと合格するよ。", "npt": "きっと = palpite confiante. 必ず = sem exceção, regra.", "nen": "きっと = a confident guess. 必ず = no exceptions, a rule."}, {"w": "けっして", "r": "決して", "pt": "de jeito nenhum (+ない)", "en": "never (+ない)", "ex": "この書類は決して外に出さないでください。", "npt": "Exige negativo.", "nen": "Needs a negative."}, {"w": "べつに", "r": "別に", "pt": "não particularmente (+ない)", "en": "not particularly (+ない)", "ex": "別に怒っているわけではない。"}, {"w": "どうも", "r": "—", "pt": "de algum modo; parece que", "en": "somehow; it seems", "ex": "どうも道を間違えたらしい。"}, {"w": "どこか", "r": "—", "pt": "de certo modo, um quê de", "en": "somehow, something about it", "ex": "この建物は、どこか懐かしい感じがする。"}, {"w": "なんとなく", "r": "何となく", "pt": "sem saber bem por quê", "en": "somehow, vaguely", "ex": "なんとなく元気が出ない日もある。"}, {"w": "しきりに", "r": "頻りに", "pt": "insistentemente, repetidas vezes", "en": "persistently, over and over", "ex": "彼はしきりに時計を見ていた。"}, {"w": "たびたび", "r": "度々", "pt": "repetidas vezes", "en": "often, repeatedly", "ex": "同じミスをたびたび繰り返す。"}, {"w": "しょっちゅう", "r": "—", "pt": "toda hora (coloquial)", "en": "all the time (casual)", "ex": "彼はしょっちゅう遅刻する。", "npt": "Sinônimo de prova: 度々／よく.", "nen": "Exam synonym: 度々／よく."}, {"w": "つねに", "r": "常に", "pt": "sempre (formal)", "en": "always (formal)", "ex": "安全を常に第一に考える。", "npt": "Sinônimo de prova: いつも.", "nen": "Exam synonym: いつも."}, {"w": "いっせいに", "r": "一斉に", "pt": "todos ao mesmo tempo", "en": "all at once, together", "ex": "合図で全員が一斉に立ち上がった。"}, {"w": "つぎつぎと", "r": "次々と", "pt": "um após o outro", "en": "one after another", "ex": "駅前に新しい店が次々とできた。"}, {"w": "ぞくぞくと", "r": "続々と", "pt": "em sequência (vão chegando)", "en": "in a steady stream", "ex": "会場に客が続々と集まってきた。", "npt": "Não confundir com ぞくぞく (arrepio de frio ou emoção).", "nen": "Don't mix up with ぞくぞく (a shiver of cold or thrill)."}, {"w": "どんどん", "r": "—", "pt": "rápido e sem parar", "en": "rapidly, steadily", "ex": "質問があれば、どんどん聞いてください。"}, {"w": "ちゃくちゃくと", "r": "着々と", "pt": "firmemente, passo a passo", "en": "steadily, step by step", "ex": "新しい校舎の工事が着々と進んでいる。"}, {"w": "ひとりでに", "r": "独りでに", "pt": "sozinho, por si só", "en": "by itself", "ex": "ドアがひとりでに閉まった。"}, {"w": "あらかじめ", "r": "予め", "pt": "de antemão", "en": "in advance", "ex": "必要な書類はあらかじめ準備しておいてください。"}, {"w": "とりあえず", "r": "取り敢えず", "pt": "por enquanto, primeiro", "en": "for now, first of all", "ex": "とりあえず、ビールをください。"}, {"w": "もともと", "r": "元々", "pt": "originalmente, desde o início", "en": "originally", "ex": "この建物はもともと倉庫だった。"}, {"w": "おおいに", "r": "大いに", "pt": "muito, bastante", "en": "greatly", "ex": "彼の意見は大いに参考になった。"}, {"w": "やたらに", "r": "—", "pt": "em excesso, à toa", "en": "excessively, indiscriminately", "ex": "やたらに薬を飲むのはよくない。"}, {"w": "ひっしに", "r": "必死に", "pt": "desesperadamente, com tudo", "en": "desperately, all out", "ex": "締め切りに間に合うように必死に働いた。"}, {"w": "まっさきに", "r": "真っ先に", "pt": "antes de tudo", "en": "first of all, before anything", "ex": "家に帰ると、真っ先に猫にえさをやる。"}, {"w": "じっくり", "r": "—", "pt": "com calma e atenção", "en": "carefully, taking time", "ex": "契約書はじっくり読んでからサインしてください。"}, {"w": "しっかり", "r": "—", "pt": "firmemente, direito", "en": "firmly, properly", "ex": "階段では手すりをしっかり持ってください。"}, {"w": "ぼんやり", "r": "—", "pt": "distraído; pouco nítido", "en": "absent-minded; dim, blurry", "ex": "疲れて一日中ぼんやりしていた。", "npt": "Sinônimo de prova: はっきりしない.", "nen": "Exam synonym: はっきりしない."}, {"w": "すっきり", "r": "—", "pt": "aliviado, leve; arrumado", "en": "refreshed; neat", "ex": "部屋を片付けたら、気分がすっきりした。"}, {"w": "がっかり", "r": "—", "pt": "desapontado", "en": "disappointed", "ex": "楽しみにしていた展覧会が中止になって、がっかりした。"}, {"w": "いらいら", "r": "—", "pt": "irritado, impaciente", "en": "irritated, impatient", "ex": "電車が動かなくて、いらいらした。"}, {"w": "はらはら", "r": "—", "pt": "aflito (vendo alguém em perigo)", "en": "on edge (watching someone at risk)", "ex": "子供が高い所に登るのを見て、はらはらした。"}, {"w": "わくわく", "r": "—", "pt": "animado (expectativa boa)", "en": "excited (looking forward)", "ex": "新しいプロジェクトが始まるので、わくわくしている。"}, {"w": "どきどき", "r": "—", "pt": "coração acelerado", "en": "heart pounding", "ex": "面接の前は、どきどきする。"}, {"w": "びくびく", "r": "—", "pt": "com medo, assustadiço", "en": "jumpy, fearful", "ex": "叱られるのではないかと、びくびくしていた。"}, {"w": "ほっと", "r": "—", "pt": "aliviado", "en": "relieved", "ex": "無事に着いたと聞いて、ほっとした。", "npt": "ほっと = alívio. はっと = susto, perceber de repente. ぞっと = horror.", "nen": "ほっと = relief. はっと = startled, sudden realisation. ぞっと = horror."}, {"w": "こっそり", "r": "—", "pt": "às escondidas", "en": "secretly, sneakily", "ex": "会議中にこっそりメールを見た。", "npt": "こっそり = ação escondida. ひっそり = lugar silencioso.", "nen": "こっそり = a hidden action. ひっそり = a quiet place."}, {"w": "そっと", "r": "—", "pt": "delicadamente, sem barulho", "en": "gently, quietly", "ex": "赤ちゃんが寝ているので、そっとドアを閉めた。"}, {"w": "ひっそり", "r": "—", "pt": "silencioso, deserto", "en": "hushed, deserted", "ex": "夜の商店街はひっそりとしていた。"}, {"w": "ぎっしり", "r": "—", "pt": "abarrotado (por dentro)", "en": "packed tight (inside)", "ex": "手帳には予定がぎっしり詰まっている。", "npt": "ぎっしり = cheio por dentro. びっしり = superfície coberta.", "nen": "ぎっしり = full inside. びっしり = a surface covered."}, {"w": "びっしり", "r": "—", "pt": "coberto densamente", "en": "densely covered", "ex": "窓にはびっしりと水滴がついていた。"}, {"w": "ぐっすり", "r": "—", "pt": "(dormir) profundamente", "en": "(sleep) soundly", "ex": "昨夜はぐっすり眠れた。", "npt": "Quase só com 眠る／寝る.", "nen": "Almost only with 眠る／寝る."}, {"w": "きっかり", "r": "—", "pt": "exatamente (hora, número)", "en": "exactly (time, amount)", "ex": "会議は九時きっかりに始まった。"}, {"w": "ぴったり", "r": "—", "pt": "perfeitamente, sob medida", "en": "exactly, a perfect fit", "ex": "この棚は壁の幅にぴったり合う。"}, {"w": "ぎりぎり", "r": "—", "pt": "no limite, por pouco", "en": "just barely, at the limit", "ex": "締め切りぎりぎりに提出した。"}, {"w": "ばらばら", "r": "—", "pt": "desencontrado, separado", "en": "scattered, all over the place", "ex": "みんなの意見がばらばらで、まとまらない。"}, {"w": "ざっと", "r": "—", "pt": "por alto, aproximadamente", "en": "roughly, briefly", "ex": "資料にざっと目を通した。"}, {"w": "ずらりと", "r": "—", "pt": "em fileira", "en": "lined up in a row", "ex": "棚に新しい本がずらりと並んでいる。"}, {"w": "ふらふら", "r": "—", "pt": "cambaleante", "en": "unsteady, dizzy", "ex": "熱があって、ふらふらする。"}, {"w": "くたくた", "r": "—", "pt": "exausto", "en": "worn out", "ex": "一日中歩いて、くたくただ。"}, {"w": "ぶらぶら", "r": "—", "pt": "passear à toa", "en": "stroll aimlessly", "ex": "休みの日は町をぶらぶらする。"}, {"w": "ごろごろ", "r": "—", "pt": "à toa em casa; rolar", "en": "lounging around; rolling", "ex": "日曜日は家でごろごろしていた。"}, {"w": "うろうろ", "r": "—", "pt": "andar sem rumo", "en": "wander around", "ex": "道がわからず、駅の前をうろうろした。"}, {"w": "のろのろ", "r": "—", "pt": "lentamente", "en": "sluggishly", "ex": "渋滞で車がのろのろ進んでいる。"}, {"w": "はきはき", "r": "—", "pt": "de forma clara e viva", "en": "crisply, clearly", "ex": "面接では、はきはきと答えましょう。"}, {"w": "つるつる", "r": "—", "pt": "liso, escorregadio", "en": "smooth, slippery", "ex": "雪で道がつるつるしている。"}, {"w": "ざらざら", "r": "—", "pt": "áspero", "en": "rough, gritty", "ex": "この壁は表面がざらざらしている。"}, {"w": "がらがら", "r": "—", "pt": "vazio (lugar); rouco", "en": "empty (a place); hoarse", "ex": "平日の昼間なので、電車はがらがらだった。"}, {"w": "からから", "r": "—", "pt": "seco", "en": "parched, bone-dry", "ex": "暑くて喉がからからだ。"}, {"w": "めちゃくちゃ", "r": "—", "pt": "bagunçado, caótico", "en": "a total mess", "ex": "台風で庭がめちゃくちゃになった。"}, {"w": "しとしと", "r": "—", "pt": "(chuva) fina e mansa", "en": "(rain) gently", "ex": "朝から雨がしとしと降っている。"}, {"w": "ざあざあ", "r": "—", "pt": "(chuva) forte", "en": "(rain) pouring", "ex": "急に雨がざあざあ降ってきた。"}, {"w": "にこにこ", "r": "—", "pt": "sorridente", "en": "smiling", "ex": "店の人はいつもにこにこしている。"}, {"w": "ぴかぴか", "r": "—", "pt": "brilhando de limpo", "en": "sparkling clean", "ex": "床をぴかぴかに磨いた。"}, {"w": "でこぼこ", "r": "—", "pt": "irregular, esburacado", "en": "bumpy, uneven", "ex": "でこぼこの道を自転車で走った。"}, {"w": "ちらっと", "r": "—", "pt": "de relance", "en": "at a glance", "ex": "時計をちらっと見た。"}];
+const MONDAI_ADVG=[{"id": "adv_g01", "s": "語彙", "q": "楽しみにしていた旅行が中止になり、（　）した。", "o": ["がっかり", "すっきり", "ぐっすり", "はっきり"], "a": 0, "ex": "<b>がっかり</b>＝desapontado. すっきり＝aliviado; ぐっすり＝dormir fundo; はっきり＝claro."}, {"id": "adv_g02", "s": "語彙", "q": "昨日は疲れていたので、朝まで（　）眠った。", "o": ["ぐっすり", "ぎっしり", "ひっそり", "さっぱり"], "a": 0, "ex": "<b>ぐっすり</b> anda com 眠る. ぎっしり＝abarrotado; ひっそり＝silencioso (lugar); さっぱり＝nada / refrescante."}, {"id": "adv_g03", "s": "語彙", "q": "箱の中には古い資料が（　）詰まっていた。", "o": ["ぎっしり", "ぐっすり", "うっかり", "がっかり"], "a": 0, "ex": "<b>ぎっしり</b>＋詰まる = cheio por dentro. Os outros não descrevem quantidade."}, {"id": "adv_g04", "s": "語彙", "q": "説明を三回聞いたが、（　）わからない。", "o": ["さっぱり", "すっかり", "しっかり", "じっくり"], "a": 0, "ex": "<b>さっぱり＋ない</b> = não entendo nada. すっかり＝completamente (afirmativo); しっかり＝firme; じっくり＝com calma."}, {"id": "adv_g05", "s": "語彙", "q": "契約の前に、条件を（　）検討したい。", "o": ["じっくり", "こっそり", "ぎっしり", "がっかり"], "a": 0, "ex": "<b>じっくり</b>＋検討する/考える = com calma e atenção."}, {"id": "adv_g06", "s": "語彙", "q": "父の病気が治ったと聞いて、家族みんな（　）した。", "o": ["ほっと", "ぞっと", "はっと", "そっと"], "a": 0, "ex": "Notícia boa → alívio = <b>ほっと</b>. ぞっと＝horror; はっと＝susto; そっと＝com delicadeza."}, {"id": "adv_g07", "s": "語彙", "q": "会議中に（　）スマホを見ていたら、部長に気づかれた。", "o": ["こっそり", "ひっそり", "ぐっすり", "はっきり"], "a": 0, "ex": "Ação escondida = <b>こっそり</b>. ひっそり é para lugar silencioso."}, {"id": "adv_g08", "s": "語彙", "q": "山の奥に、小さな村が（　）とある。", "o": ["ひっそり", "こっそり", "ぎっしり", "がっかり"], "a": 0, "ex": "Lugar quieto e isolado = <b>ひっそり</b>. こっそり precisa de alguém agindo escondido."}, {"id": "adv_g09", "s": "語彙", "q": "外に出た（　）、雨が降り出した。", "o": ["とたんに", "やがて", "いよいよ", "ようやく"], "a": 0, "ex": "Forma fixa <b>V-た＋とたんに</b> = no exato instante. Os outros não se ligam a V-た."}, {"id": "adv_g10", "s": "語彙", "q": "三年かかった工事が、（　）完成した。", "o": ["ようやく", "たちまち", "いきなり", "とっさに"], "a": 0, "ex": "Espera longa + fim = <b>ようやく</b> (= やっと). たちまち/いきなり = de repente, contradiz 三年."}, {"id": "adv_g11", "s": "語彙", "q": "新しい駅ができてから、町の人口が（　）増えてきた。", "o": ["次第に", "直ちに", "とっさに", "一斉に"], "a": 0, "ex": "～てきた = mudança gradual → <b>次第に</b>. 直ちに = imediatamente (ordem); とっさに = reflexo."}, {"id": "adv_g12", "s": "語彙", "q": "異常を発見した場合は、（　）責任者に報告してください。", "o": ["直ちに", "次第に", "徐々に", "ようやく"], "a": 0, "ex": "Regra/ordem → <b>直ちに</b> (= すぐに, formal)."}, {"id": "adv_g13", "s": "語彙", "q": "（　）間に合わないのだから、走っても意味がない。", "o": ["どうせ", "せっかく", "せめて", "まさか"], "a": 0, "ex": "Resignação = <b>どうせ</b>. せっかく = esforço que não se quer perder; せめて = pelo menos."}, {"id": "adv_g14", "s": "語彙", "q": "（　）ここまで来たのだから、頂上まで登ろう。", "o": ["せっかく", "せめて", "たとえ", "まるで"], "a": 0, "ex": "<b>せっかく～から</b> = já que houve esforço, vamos aproveitar."}, {"id": "adv_g15", "s": "語彙", "q": "全部は無理でも、（　）半分は終わらせたい。", "o": ["せめて", "たとえ", "まさか", "いっそ"], "a": 0, "ex": "Mínimo desejado (～たい) = <b>せめて</b>."}, {"id": "adv_g16", "s": "語彙", "q": "（　）失敗しても、もう一度挑戦するつもりだ。", "o": ["たとえ", "せめて", "まさか", "なにぶん"], "a": 0, "ex": "Forma fixa <b>たとえ～ても</b> = mesmo que."}, {"id": "adv_g17", "s": "語彙", "q": "彼の家は、（　）美術館のように広い。", "o": ["まるで", "たとえ", "せめて", "いっそ"], "a": 0, "ex": "Forma fixa <b>まるで～ようだ</b> = como se fosse."}, {"id": "adv_g18", "s": "語彙", "q": "何度も直すくらいなら、（　）新しく買ったほうが安い。", "o": ["いっそ", "せめて", "たとえ", "なにぶん"], "a": 0, "ex": "Solução radical = <b>いっそ</b> (melhor de uma vez)."}, {"id": "adv_g19", "s": "語彙", "q": "日本に来たら、（　）京都を訪ねてみてください。", "o": ["ぜひ", "必ずしも", "まさか", "決して"], "a": 0, "ex": "Pedido (～てください) = <b>ぜひ</b>. 必ずしも e 決して exigem negativo."}, {"id": "adv_g20", "s": "語彙", "q": "高い材料を使えば、（　）いい建物になるというわけではない。", "o": ["必ずしも", "ぜひ", "きっと", "まさに"], "a": 0, "ex": "<b>必ずしも～わけではない</b> = nem sempre. ぜひ não combina com negação."}, {"id": "adv_g21", "s": "語彙", "q": "一日中寝ているなんて、（　）疲れていたのだろう。", "o": ["よほど", "せめて", "わざと", "いっそ"], "a": 0, "ex": "Suposição forte (～のだろう) = <b>よほど</b> (deve ter sido muito)."}, {"id": "adv_g22", "s": "語彙", "q": "答えを知っているのに、彼は（　）間違えてみせた。", "o": ["わざと", "せっかく", "うっかり", "ようやく"], "a": 0, "ex": "～てみせた = intenção → <b>わざと</b>. うっかり = sem querer, contradiz."}, {"id": "adv_g23", "s": "語彙", "q": "ダイエット中なのに、ケーキを見ると（　）食べてしまう。", "o": ["つい", "わざと", "ぜひ", "いっそ"], "a": 0, "ex": "<b>つい～てしまう</b> = sem querer, acabo fazendo."}, {"id": "adv_g24", "s": "語彙", "q": "今回の試験は（　）難しくなかった。", "o": ["それほど", "よほど", "ますます", "さらに"], "a": 0, "ex": "<b>それほど＋ない</b> = não tanto. Os outros intensificam."}, {"id": "adv_g25", "s": "語彙", "q": "朝晩（　）涼しくなりましたね。", "o": ["めっきり", "ぎっしり", "ちっとも", "わざと"], "a": 0, "ex": "Mudança de estação (～なる) = <b>めっきり</b>. ちっとも exige negativo."}, {"id": "adv_g26", "s": "語彙", "q": "バスが（　）来ない。もう三十分も待っている。", "o": ["なかなか", "たちまち", "いよいよ", "ぐっすり"], "a": 0, "ex": "<b>なかなか＋ない</b> = não vem nunca."}, {"id": "adv_g27", "s": "語彙", "q": "来週から（　）本番だ。準備はできているか。", "o": ["いよいよ", "たちまち", "ひとりでに", "いっそ"], "a": 0, "ex": "Momento chegando = <b>いよいよ</b>."}, {"id": "adv_g28", "s": "語彙", "q": "風もないのに、ドアが（　）開いた。", "o": ["ひとりでに", "わざと", "せっかく", "どうせ"], "a": 0, "ex": "Sem ninguém agir = <b>ひとりでに</b>. わざと precisa de uma pessoa."}, {"id": "adv_g29", "s": "語彙", "q": "試験開始の合図で、受験者は（　）問題用紙を開いた。", "o": ["一斉に", "ひとりでに", "いっそ", "せめて"], "a": 0, "ex": "Todos juntos ao sinal = <b>一斉に</b>."}, {"id": "adv_g30", "s": "語彙", "q": "駅の周りに、高層マンションが（　）建てられている。", "o": ["次々と", "とっさに", "うっかり", "せめて"], "a": 0, "ex": "Um após outro = <b>次々と</b>."}, {"id": "adv_g31", "s": "語彙", "q": "締め切り（　）に書類を出した。", "o": ["ぎりぎり", "ぐっすり", "がらがら", "のろのろ"], "a": 0, "ex": "No limite = <b>ぎりぎり</b>. Cola direto no substantivo: 締め切りぎりぎり."}, {"id": "adv_g32", "s": "語彙", "q": "平日の昼の映画館は（　）だった。", "o": ["がらがら", "からから", "ざらざら", "ぴかぴか"], "a": 0, "ex": "Lugar vazio = <b>がらがら</b>. からから = seco; ざらざら = áspero."}, {"id": "adv_g33", "s": "語彙", "q": "面接では、質問に（　）と答えることが大切だ。", "o": ["はきはき", "のろのろ", "ごろごろ", "ぶらぶら"], "a": 0, "ex": "Resposta clara e viva = <b>はきはき</b>. Útil no 就活!"}, {"id": "adv_g34", "s": "語彙", "q": "渋滞で、車は（　）としか進まなかった。", "o": ["のろのろ", "はきはき", "ぴかぴか", "ぎっしり"], "a": 0, "ex": "Devagar = <b>のろのろ</b>."}, {"id": "adv_g35", "s": "語彙", "q": "会議の日程について、みんなの意見が（　）で決まらない。", "o": ["ばらばら", "ぎりぎり", "ぴったり", "がらがら"], "a": 0, "ex": "Opiniões desencontradas = <b>ばらばら</b>."}, {"id": "adv_g36", "s": "語彙", "q": "この家具は、部屋の広さに（　）だ。", "o": ["ぴったり", "ばらばら", "からから", "のろのろ"], "a": 0, "ex": "Encaixe perfeito = <b>ぴったり</b>."}, {"id": "adv_g37", "s": "語彙", "q": "窓の外を見ていたら、（　）子供のころを思い出した。", "o": ["ふと", "わざと", "一斉に", "いっそ"], "a": 0, "ex": "Pensamento que surge = <b>ふと</b>."}, {"id": "adv_g38", "s": "語彙", "q": "この広場は、（　）町の居間のような場所だ。", "o": ["いわば", "たとえ", "せめて", "もしも"], "a": 0, "ex": "Comparação \"por assim dizer\" = <b>いわば</b>."}, {"id": "adv_g39", "s": "語彙", "q": "地図を見ずに歩いていたら、同じ場所を（　）してしまった。", "o": ["うろうろ", "にこにこ", "はきはき", "ぴかぴか"], "a": 0, "ex": "Andar sem rumo = <b>うろうろ</b>."}, {"id": "adv_g40", "s": "語彙", "q": "一晩で雪が積もり、町は（　）白くなった。", "o": ["すっかり", "ちっとも", "めったに", "せめて"], "a": 0, "ex": "Mudança completa = <b>すっかり</b>. ちっとも/めったに exigem negativo."}, {"id": "adv_g41", "s": "語彙", "q": "熱があるので、立つと（　）する。", "o": ["ふらふら", "ぴかぴか", "はきはき", "にこにこ"], "a": 0, "ex": "Tontura = <b>ふらふら</b>."}, {"id": "adv_g42", "s": "語彙", "q": "開場前から、客が（　）と集まってきた。", "o": ["続々", "ぐっすり", "ぴったり", "がっかり"], "a": 0, "ex": "Chegando em sequência = <b>続々と</b>."}, {"id": "adv_g43", "s": "語彙", "q": "雨の音で目が覚めた。外は（　）降っている。", "o": ["ざあざあ", "ぴかぴか", "ごろごろ", "からから"], "a": 0, "ex": "Chuva forte = <b>ざあざあ</b>. (fina = しとしと)"}, {"id": "adv_g44", "s": "語彙", "q": "この仕事は、（　）来月までに終わらせる必要がある。", "o": ["少なくとも", "せめて", "たとえ", "まるで"], "a": 0, "ex": "Fato/prazo (必要がある) = <b>少なくとも</b>. せめて é para desejo (～たい)."}];
+const EN_MEX_ADVG=["<b>がっかり</b> = disappointed. すっきり = refreshed; ぐっすり = sleep soundly; はっきり = clearly.", "<b>ぐっすり</b> goes with 眠る. ぎっしり = packed; ひっそり = hushed (a place); さっぱり = not at all / refreshing.", "<b>ぎっしり</b> + 詰まる = packed inside. The others don't describe amount.", "<b>さっぱり + ない</b> = don't get it at all. すっかり = completely (positive); しっかり = firmly; じっくり = carefully.", "<b>じっくり</b> + 検討する/考える = carefully, taking time.", "Good news → relief = <b>ほっと</b>. ぞっと = horror; はっと = startled; そっと = gently.", "A hidden action = <b>こっそり</b>. ひっそり is for a quiet place.", "A quiet, secluded place = <b>ひっそり</b>. こっそり needs someone acting in secret.", "Fixed form <b>V-た + とたんに</b> = the very moment. The others can't attach to V-た.", "Long wait + completion = <b>ようやく</b> (= やっと). たちまち/いきなり mean suddenly, which clashes with 三年.", "～てきた = gradual change → <b>次第に</b>. 直ちに = immediately (an order); とっさに = on reflex.", "A rule or instruction → <b>直ちに</b> (= すぐに, formal).", "Resignation = <b>どうせ</b>. せっかく = effort you don't want to waste; せめて = at least.", "<b>せっかく～から</b> = since we made the effort, let's make use of it.", "The minimum you wish for (～たい) = <b>せめて</b>.", "Fixed form <b>たとえ～ても</b> = even if.", "Fixed form <b>まるで～ようだ</b> = just like.", "A drastic choice = <b>いっそ</b> (might as well).", "A request (～てください) = <b>ぜひ</b>. 必ずしも and 決して need a negative.", "<b>必ずしも～わけではない</b> = not necessarily. ぜひ can't go with a negative.", "A strong guess (～のだろう) = <b>よほど</b> (must have been very).", "～てみせた = intent → <b>わざと</b>. うっかり = by accident, which contradicts.", "<b>つい～てしまう</b> = I end up doing it without meaning to.", "<b>それほど + ない</b> = not that much. The others intensify.", "A seasonal change (～なる) = <b>めっきり</b>. ちっとも needs a negative.", "<b>なかなか + ない</b> = it just won't come.", "The moment is arriving = <b>いよいよ</b>.", "Nobody acts = <b>ひとりでに</b>. わざと needs a person.", "Everyone together on the signal = <b>一斉に</b>.", "One after another = <b>次々と</b>.", "At the limit = <b>ぎりぎり</b>. It sits right after the noun: 締め切りぎりぎり.", "An empty place = <b>がらがら</b>. からから = dry; ざらざら = rough.", "A clear, lively answer = <b>はきはき</b>. Useful in job interviews!", "Slowly = <b>のろのろ</b>.", "Opinions all over the place = <b>ばらばら</b>.", "A perfect fit = <b>ぴったり</b>.", "A thought that pops up = <b>ふと</b>.", "A \"so to speak\" comparison = <b>いわば</b>.", "Wandering around = <b>うろうろ</b>.", "A complete change = <b>すっかり</b>. ちっとも/めったに need a negative.", "Dizziness = <b>ふらふら</b>.", "Arriving in a stream = <b>続々と</b>.", "Heavy rain = <b>ざあざあ</b>. (light = しとしと)", "A fact or deadline (必要がある) = <b>少なくとも</b>. せめて is for a wish (～たい)."];
+const MONDAI_IIKAE=[{"id": "adv_r01", "s": "類義", "q": "駅の周りに新しい店が<u>続々と</u>できている。", "o": ["次々と", "少しずつ", "急に", "静かに"], "a": 0, "ex": "<b>続々と＝次々と</b>: um após outro."}, {"id": "adv_r02", "s": "類義", "q": "彼はテストの結果を<u>気にしている</u>。", "o": ["心配している", "喜んでいる", "忘れている", "隠している"], "a": 0, "ex": "<b>気にする＝心配する</b>."}, {"id": "adv_r03", "s": "類義", "q": "彼は<u>常に</u>冷静だ。", "o": ["いつも", "たまに", "急に", "最近"], "a": 0, "ex": "<b>常に＝いつも</b>."}, {"id": "adv_r04", "s": "類義", "q": "残りの予算は<u>わずか</u>だ。", "o": ["少ししかない", "まだ十分ある", "正確にわからない", "急に増えた"], "a": 0, "ex": "<b>わずか＝少ししかない</b>."}, {"id": "adv_r05", "s": "類義", "q": "今日はどうも<u>気が進まない</u>。", "o": ["やりたくない", "体調が悪い", "時間がない", "よくわからない"], "a": 0, "ex": "<b>気が進まない＝やりたくない</b> (sem vontade)."}, {"id": "adv_r06", "s": "類義", "q": "隣の部屋が<u>騒がしい</u>。", "o": ["うるさい", "暗い", "狭い", "寒い"], "a": 0, "ex": "<b>騒がしい＝うるさい</b>."}, {"id": "adv_r07", "s": "類義", "q": "この町には<u>これといった</u>観光地がない。", "o": ["特別な", "古い", "大きな", "近い"], "a": 0, "ex": "<b>これといった～ない＝特に～ない</b>: nada de especial."}, {"id": "adv_r08", "s": "類義", "q": "<u>平凡な</u>毎日だが、それなりに楽しい。", "o": ["普通の", "特別な", "大変な", "規則正しい"], "a": 0, "ex": "<b>平凡＝普通</b>."}, {"id": "adv_r09", "s": "類義", "q": "学生時代は<u>貧しかった</u>。", "o": ["お金がなかった", "友達が少なかった", "時間がなかった", "体が弱かった"], "a": 0, "ex": "<b>貧しい＝お金がない</b>."}, {"id": "adv_r10", "s": "類義", "q": "店員に飲み物を<u>オーダーした</u>。", "o": ["注文した", "運ばせた", "温めさせた", "取り替えさせた"], "a": 0, "ex": "<b>オーダーする＝注文する</b>."}, {"id": "adv_r11", "s": "類義", "q": "<u>やがて</u>雨もやむだろう。", "o": ["そのうちに", "もう一度", "突然", "やはり"], "a": 0, "ex": "<b>やがて＝そのうちに</b>."}, {"id": "adv_r12", "s": "類義", "q": "遠くの山が<u>ぼんやりと</u>見える。", "o": ["はっきりしない様子で", "大きく", "近くに", "美しく"], "a": 0, "ex": "<b>ぼんやり＝はっきりしない</b>."}, {"id": "adv_r13", "s": "類義", "q": "父は古い切手を<u>コレクションしている</u>。", "o": ["集めている", "売っている", "探している", "捨てている"], "a": 0, "ex": "<b>コレクションする＝集める</b>."}, {"id": "adv_r14", "s": "類義", "q": "彼は動作が<u>鈍い</u>。", "o": ["のろい", "速い", "丁寧だ", "乱暴だ"], "a": 0, "ex": "<b>鈍い＝のろい</b> (lento)."}, {"id": "adv_r15", "s": "類義", "q": "今日中に報告書を<u>仕上げる</u>つもりだ。", "o": ["終わらせる", "読み直す", "書き始める", "印刷する"], "a": 0, "ex": "<b>仕上げる＝終わらせる</b> (terminar, dar acabamento)."}, {"id": "adv_r16", "s": "類義", "q": "母は<u>しょっちゅう</u>電話をかけてくる。", "o": ["度々", "夜遅く", "急に", "一度だけ"], "a": 0, "ex": "<b>しょっちゅう＝度々</b> (toda hora)."}, {"id": "adv_r17", "s": "類義", "q": "この店は<u>年中</u>混んでいる。", "o": ["いつも", "週末だけ", "昼だけ", "最近"], "a": 0, "ex": "<b>年中＝いつも</b> (o ano todo)."}, {"id": "adv_r18", "s": "類義", "q": "<u>至急</u>連絡してください。", "o": ["すぐに", "必ず", "丁寧に", "あとで"], "a": 0, "ex": "<b>至急＝すぐに</b>."}, {"id": "adv_r19", "s": "類義", "q": "彼は<u>しばしば</u>会議に遅れる。", "o": ["よく", "一度も", "少しだけ", "わざと"], "a": 0, "ex": "<b>しばしば＝よく</b> (com frequência)."}, {"id": "adv_r20", "s": "類義", "q": "<u>ただの</u>風邪だから、心配いらない。", "o": ["普通の", "ひどい", "新しい", "長い"], "a": 0, "ex": "<b>ただの＝普通の</b>."}, {"id": "adv_r21", "s": "類義", "q": "部屋の電気が<u>ぱっと</u>ついた。", "o": ["急に", "ゆっくり", "何度も", "静かに"], "a": 0, "ex": "<b>ぱっと＝急に</b>."}, {"id": "adv_r22", "s": "類義", "q": "<u>あらゆる</u>方法を試した。", "o": ["全ての", "新しい", "簡単な", "二つの"], "a": 0, "ex": "<b>あらゆる＝全ての</b>."}, {"id": "adv_r23", "s": "類義", "q": "この寮には<u>決まり</u>が多い。", "o": ["規則", "部屋", "行事", "問題"], "a": 0, "ex": "<b>決まり＝規則</b>."}, {"id": "adv_r24", "s": "類義", "q": "会議の資料を<u>プリントアウトして</u>ください。", "o": ["印刷して", "保存して", "送って", "確認して"], "a": 0, "ex": "<b>プリントアウト＝印刷</b>."}, {"id": "adv_r25", "s": "類義", "q": "夜の公園は<u>ひっそりしていた</u>。", "o": ["静かだった", "暗かった", "寒かった", "危なかった"], "a": 0, "ex": "<b>ひっそり＝静か</b>."}, {"id": "adv_r26", "s": "類義", "q": "厳しい練習になることは<u>覚悟している</u>。", "o": ["心の準備をしている", "楽しみにしている", "反対している", "忘れている"], "a": 0, "ex": "<b>覚悟する＝心の準備をする</b>."}, {"id": "adv_r27", "s": "類義", "q": "彼は本当に<u>図々しい</u>。", "o": ["厚かましい", "恥ずかしがりだ", "真面目だ", "気が弱い"], "a": 0, "ex": "<b>図々しい＝厚かましい</b> (cara de pau)."}, {"id": "adv_r28", "s": "類義", "q": "<u>ふと</u>空を見上げた。", "o": ["何となく", "急いで", "何度も", "注意深く"], "a": 0, "ex": "<b>ふと＝何となく</b>."}, {"id": "adv_r29", "s": "類義", "q": "同じ注意を<u>再三</u>受けた。", "o": ["何度も", "初めて", "一度", "厳しく"], "a": 0, "ex": "<b>再三＝何度も</b>."}, {"id": "adv_r30", "s": "類義", "q": "彼女は多くの仕事を<u>こなしている</u>。", "o": ["上手に処理している", "断っている", "人に頼んでいる", "増やしている"], "a": 0, "ex": "<b>こなす＝上手に処理する</b>."}, {"id": "adv_r31", "s": "類義", "q": "その仕事は<u>とっくに</u>終わっている。", "o": ["ずっと前に", "ちょうど今", "もうすぐ", "一応"], "a": 0, "ex": "<b>とっくに＝ずっと前に</b>."}, {"id": "adv_r32", "s": "類義", "q": "彼は<u>いきなり</u>立ち上がった。", "o": ["突然", "ゆっくり", "何度も", "静かに"], "a": 0, "ex": "<b>いきなり＝突然</b>."}, {"id": "adv_r33", "s": "類義", "q": "この件は<u>改めて</u>連絡します。", "o": ["もう一度", "すぐに", "直接", "必ず"], "a": 0, "ex": "<b>改めて＝もう一度</b> (outra vez, em outro momento)."}, {"id": "adv_r34", "s": "類義", "q": "家族には<u>ひとまず</u>知らせておいた。", "o": ["とりあえず", "すでに", "詳しく", "最後に"], "a": 0, "ex": "<b>ひとまず＝とりあえず</b>."}, {"id": "adv_r35", "s": "類義", "q": "新商品は<u>たちまち</u>売り切れた。", "o": ["すぐに", "少しずつ", "結局", "意外にも"], "a": 0, "ex": "<b>たちまち＝すぐに</b>."}, {"id": "adv_r36", "s": "類義", "q": "雨が<u>次第に</u>強くなってきた。", "o": ["だんだん", "急に", "少し", "ずっと"], "a": 0, "ex": "<b>次第に＝だんだん</b>."}, {"id": "adv_r37", "s": "類義", "q": "<u>ようやく</u>論文が書き上がった。", "o": ["やっと", "すでに", "急に", "一度に"], "a": 0, "ex": "<b>ようやく＝やっと</b>."}, {"id": "adv_r38", "s": "類義", "q": "<u>いずれ</u>わかることだ。", "o": ["いつか", "今すぐ", "誰にでも", "本当は"], "a": 0, "ex": "<b>いずれ＝いつか</b>."}, {"id": "adv_r39", "s": "類義", "q": "彼は<u>わざと</u>負けた。", "o": ["故意に", "簡単に", "悔しそうに", "最後に"], "a": 0, "ex": "<b>わざと＝故意に</b>."}, {"id": "adv_r40", "s": "類義", "q": "新しい橋の工事が<u>着々と</u>進んでいる。", "o": ["順調に", "急に", "遅れて", "静かに"], "a": 0, "ex": "<b>着々と＝順調に</b> (passo a passo, sem problemas)."}, {"id": "adv_r41", "s": "類義", "q": "工事の<u>おおよその</u>費用を教えてください。", "o": ["だいたいの", "正確な", "最低の", "追加の"], "a": 0, "ex": "<b>おおよそ＝だいたい</b>."}, {"id": "adv_r42", "s": "類義", "q": "<u>めったに</u>外食しない。", "o": ["ほとんど", "いつも", "絶対に", "たまに"], "a": 0, "ex": "<b>めったに～ない＝ほとんど～ない</b>. Cuidado: たまに＋しない é outra coisa."}];
+const EN_MEX_IIKAE=["<b>続々と = 次々と</b>: one after another.", "<b>気にする = 心配する</b> (to worry about).", "<b>常に = いつも</b> (always).", "<b>わずか = 少ししかない</b> (only a little).", "<b>気が進まない = やりたくない</b> (not in the mood).", "<b>騒がしい = うるさい</b> (noisy).", "<b>これといった～ない = 特に～ない</b>: nothing special.", "<b>平凡 = 普通</b> (ordinary).", "<b>貧しい = お金がない</b> (poor).", "<b>オーダーする = 注文する</b> (to order).", "<b>やがて = そのうちに</b> (before long).", "<b>ぼんやり = はっきりしない</b> (blurry).", "<b>コレクションする = 集める</b> (to collect).", "<b>鈍い = のろい</b> (slow).", "<b>仕上げる = 終わらせる</b> (to finish off).", "<b>しょっちゅう = 度々</b> (all the time).", "<b>年中 = いつも</b> (all year round).", "<b>至急 = すぐに</b> (urgently).", "<b>しばしば = よく</b> (often).", "<b>ただの = 普通の</b> (just an ordinary).", "<b>ぱっと = 急に</b> (suddenly).", "<b>あらゆる = 全ての</b> (every).", "<b>決まり = 規則</b> (rules).", "<b>プリントアウト = 印刷</b> (print).", "<b>ひっそり = 静か</b> (quiet).", "<b>覚悟する = 心の準備をする</b> (to be ready for it).", "<b>図々しい = 厚かましい</b> (shameless).", "<b>ふと = 何となく</b> (idly, on a whim).", "<b>再三 = 何度も</b> (again and again).", "<b>こなす = 上手に処理する</b> (to handle well).", "<b>とっくに = ずっと前に</b> (long ago).", "<b>いきなり = 突然</b> (suddenly).", "<b>改めて = もう一度</b> (again, another time).", "<b>ひとまず = とりあえず</b> (for now).", "<b>たちまち = すぐに</b> (in no time).", "<b>次第に = だんだん</b> (gradually).", "<b>ようやく = やっと</b> (at last).", "<b>いずれ = いつか</b> (someday).", "<b>わざと = 故意に</b> (deliberately).", "<b>着々と = 順調に</b> (steadily, smoothly).", "<b>おおよそ = だいたい</b> (approximate).", "<b>めったに～ない = ほとんど～ない</b> (hardly ever). Watch out: たまに + しない means something else."];
+const MONDAI_MAGI=[{"id": "adv_b01", "s": "文法", "q": "五時（　）この書類を出してください。", "o": ["までに", "まで", "しか", "だけ"], "a": 0, "ex": "Prazo (um ponto no tempo) = <b>までに</b>. まで = ação contínua até lá."}, {"id": "adv_b02", "s": "文法", "q": "昨日は夜中（　）図面を描いていた。", "o": ["まで", "までに", "しか", "ばかり"], "a": 0, "ex": "Ação contínua (～ていた) = <b>まで</b>."}, {"id": "adv_b03", "s": "文法", "q": "この本は、建築を学ぶ人（　）必読の一冊だ。", "o": ["にとって", "に対して", "について", "によって"], "a": 0, "ex": "Ponto de vista = <b>にとって</b> (para quem...)."}, {"id": "adv_b04", "s": "文法", "q": "お客様（　）失礼な態度をとってはいけない。", "o": ["に対して", "にとって", "について", "によって"], "a": 0, "ex": "Alvo da atitude = <b>に対して</b>."}, {"id": "adv_b05", "s": "文法", "q": "考え方は人（　）違う。", "o": ["によって", "にとって", "に対して", "について"], "a": 0, "ex": "<b>Nによって違う</b> = varia conforme N."}, {"id": "adv_b06", "s": "文法", "q": "飲み物は、コーヒー（　）。", "o": ["にします", "とします", "をします", "でします"], "a": 0, "ex": "Escolha = <b>にする</b>. とする = supor, considerar como."}, {"id": "adv_b07", "s": "文法", "q": "弟は新しいゲームを買い（　）。", "o": ["たがっている", "たい", "たくない", "てほしい"], "a": 0, "ex": "Desejo de 3ª pessoa = <b>～たがっている</b>. ～たい é só para eu/você."}, {"id": "adv_b08", "s": "文法", "q": "忙しいので、誰かに手伝って（　）。", "o": ["ほしい", "たい", "たがる", "おく"], "a": 0, "ex": "Querer que OUTRO faça = <b>～てほしい</b>."}, {"id": "adv_b09", "s": "文法", "q": "子供が外で遊びたいと言うので、遊ば（　）。", "o": ["せてやった", "れてやった", "せられた", "れた"], "a": 0, "ex": "Deixar alguém fazer = causativo + やる: <b>～させてやる</b>."}, {"id": "adv_b10", "s": "文法", "q": "知識（　）、現場の仕事はできない。", "o": ["だけでは", "だけで", "ばかりで", "しか"], "a": 0, "ex": "<b>だけでは～ない</b> = só com isso não basta."}, {"id": "adv_b11", "s": "文法", "q": "疲れているなら、今日は早く寝る（　）。", "o": ["がいい", "でいい", "のでいい", "にいい"], "a": 0, "ex": "Conselho: V-る＋<b>がいい</b>. でいい vem depois de substantivo."}, {"id": "adv_b12", "s": "文法", "q": "電車に乗り遅れた。もっと早く家を出れ（　）。", "o": ["ばよかった", "ばいい", "たらいい", "ようと思う"], "a": 0, "ex": "Arrependimento sobre o passado = <b>～ばよかった</b>."}, {"id": "adv_b13", "s": "文法", "q": "電車が止まってしまったので、歩いて帰る（　）。", "o": ["ほかない", "にほかならない", "わけではない", "ことになっている"], "a": 0, "ex": "Sem alternativa = V-る＋<b>ほかない</b>. にほかならない = \"não é outra coisa senão\"."}, {"id": "adv_b14", "s": "文法", "q": "彼の成功は、毎日の努力の結果（　）。", "o": ["にほかならない", "ほかない", "ことになっている", "ずにいる"], "a": 0, "ex": "N＋<b>にほかならない</b> = é justamente, nada mais que."}, {"id": "adv_b15", "s": "文法", "q": "この会社では、毎朝九時に朝礼をする（　）。", "o": ["ことになっている", "ほかない", "ずにおく", "たがる"], "a": 0, "ex": "Regra estabelecida = <b>ことになっている</b>."}, {"id": "adv_b16", "s": "文法", "q": "急に、来月から大阪に転勤する（　）。", "o": ["ことになった", "ことになっている", "にほかならない", "というものだ"], "a": 0, "ex": "急に = decisão nova → <b>ことになった</b>. ことになっている = regra já existente."}, {"id": "adv_b17", "s": "文法", "q": "時間（　）、あっという間に過ぎてしまう。", "o": ["というものは", "ということは", "というのに", "というより"], "a": 0, "ex": "Verdade geral sobre algo = <b>Nというものは</b>."}, {"id": "adv_b18", "s": "文法", "q": "試験は来週だ。（　）、今週はもう遊べないということだ。", "o": ["ということは", "というものは", "といえば", "かといって"], "a": 0, "ex": "Conclusão = <b>ということは</b> (ou seja)."}, {"id": "adv_b19", "s": "文法", "q": "天気予報によると、明日は雪が降る（　）。", "o": ["ということだ", "というものだ", "ものだ", "ことだ"], "a": 0, "ex": "Ouvi dizer (～によると) = <b>ということだ</b>."}, {"id": "adv_b20", "s": "文法", "q": "困っている人を助けるのが、友達（　）。", "o": ["というものだ", "ということだ", "によるものだ", "にすぎない"], "a": 0, "ex": "Natureza/essência = <b>というものだ</b> (é isso que é um amigo)."}, {"id": "adv_b21", "s": "文法", "q": "日本の秋（　）、やはり紅葉だ。", "o": ["といえば", "ということは", "とすれば", "かといえば"], "a": 0, "ex": "Associação = <b>Nといえば</b> (falando em N...)."}, {"id": "adv_b22", "s": "文法", "q": "今さら泣い（　）、結果は変わらない。", "o": ["たって", "てから", "たら", "ながら"], "a": 0, "ex": "<b>～たって</b> = ～ても (coloquial): mesmo que. ～たら não combina com 変わらない aqui."}, {"id": "adv_b23", "s": "文法", "q": "心配で、昨日から何も食べ（　）。", "o": ["ずにいる", "ずにおく", "ないでおく", "てある"], "a": 0, "ex": "Estado contínuo de não fazer = <b>～ずにいる</b>. ～ずにおく = não fazer de propósito."}, {"id": "adv_b24", "s": "文法", "q": "本人が自分で気づくまで、答えは言わ（　）。", "o": ["ないでおこう", "なくなった", "ずにはいられない", "ないことはない"], "a": 0, "ex": "Não fazer de propósito = <b>～ないでおく</b>."}, {"id": "adv_b25", "s": "文法", "q": "値段が高い（　）、品質がいいとは限らない。", "o": ["からといって", "からいって", "からには", "からこそ"], "a": 0, "ex": "<b>からといって～とは限らない</b> = só porque... não significa."}, {"id": "adv_b26", "s": "文法", "q": "あの顔色（　）、試験はうまくいったようだ。", "o": ["からいって", "からといって", "からには", "からこそ"], "a": 0, "ex": "N＋<b>からいって</b> = a julgar por."}, {"id": "adv_b27", "s": "文法", "q": "散歩の途中、（　）喫茶店に入った。", "o": ["とある", "がある", "にある", "である"], "a": 0, "ex": "<b>とある＋N</b> = um certo N."}, {"id": "adv_b28", "s": "文法", "q": "会議室はこちらに（　）。", "o": ["ございます", "でございます", "いたします", "まいります"], "a": 0, "ex": "Existência/lugar (ある) = <b>ございます</b>. でございます = です."}, {"id": "adv_b29", "s": "文法", "q": "本日の担当は、わたくし田中（　）。", "o": ["でございます", "ございます", "いたします", "まいります"], "a": 0, "ex": "= です → <b>でございます</b>."}];
+const EN_MEX_MAGI=["A deadline (one point in time) = <b>までに</b>. まで = an action that lasts until then.", "A continuing action (～ていた) = <b>まで</b>.", "Point of view = <b>にとって</b> (for someone).", "The target of an attitude = <b>に対して</b>.", "<b>Nによって違う</b> = differs depending on N.", "A choice = <b>にする</b>. とする = to assume, to treat as.", "Third-person desire = <b>～たがっている</b>. ～たい is only for I/you.", "Wanting SOMEONE ELSE to do it = <b>～てほしい</b>.", "Letting someone do it = causative + やる: <b>～させてやる</b>.", "<b>だけでは～ない</b> = that alone isn't enough.", "Advice: V-る + <b>がいい</b>. でいい follows a noun.", "Regret about the past = <b>～ばよかった</b>.", "No other option = V-る + <b>ほかない</b>. にほかならない = \"is nothing but\".", "N + <b>にほかならない</b> = is nothing other than.", "An established rule = <b>ことになっている</b>.", "急に = a new decision → <b>ことになった</b>. ことになっている = a rule already in place.", "A general truth about something = <b>Nというものは</b>.", "Drawing a conclusion = <b>ということは</b> (which means).", "Hearsay (～によると) = <b>ということだ</b>.", "The essence = <b>というものだ</b> (that's what a friend is).", "Association = <b>Nといえば</b> (speaking of N).", "<b>～たって</b> = ～ても (casual): even if. ～たら doesn't fit with 変わらない here.", "A continuing state of not doing = <b>～ずにいる</b>. ～ずにおく = not doing it on purpose.", "Deliberately not doing = <b>～ないでおく</b>.", "<b>からといって～とは限らない</b> = just because... doesn't mean.", "N + <b>からいって</b> = judging from.", "<b>とある + N</b> = a certain N.", "Existence/location (ある) = <b>ございます</b>. でございます = です.", "= です → <b>でございます</b>."];
+
 /* ═══ 長文読解 第一集 · 本試験 問題12 形式（一文に三問） ═══ */
 const L1='「失敗を恐れるな」とよく言われる。だが、この言葉は使われ方を間違えると、かえって人を追い詰めることがある。\u3000失敗を恐れるなと言われて素直に挑戦できる人は、多くの場合、失敗してもやり直せる環境にいる。もう一度受けられる試験、次がある仕事、支えてくれる家族。そうした条件がそろっているからこそ、失敗は経験になる。\u3000一方、次がない人にとって、失敗は経験ではなく損失である。①<u>同じ言葉が、立場によってまったく違う意味を持つ</u>のはそのためだ。挑戦を勧める側は、自分がどちら側に立っているかを考えたほうがいい。\u3000では、次がない人はどうすればいいのか。私は、失敗の大きさを自分で調整することだと考えている。全部を賭けるのではなく、失っても致命的でない範囲で試す。小さく失敗して、その情報をもとにもう一度組み立て直す。\u3000実際、うまくいっている人ほど、大きな賭けをしていないことが多い。外から見れば大胆な挑戦に見えても、本人は失敗したときの退路を用意している。②<u>それは臆病なのではなく、続けるための技術である</u>。\u3000失敗を恐れるな、ではなく、失敗しても続けられる形を先に作れ。私が若い人に言いたいのは、そちらのほうだ。';
 const L2='駅の案内表示を作る仕事をしている。長年やってきて分かったのは、この仕事が「情報を伝える」ものではないということだ。\u3000必要な情報を全部書けば伝わる、というのは思い込みである。急いでいる人が歩きながら見る表示に、文字が十行あっても、読まれるのはせいぜい二行だ。残りの八行は、その二行を見つけにくくしているだけである。\u3000だから私たちの仕事は、書くことより①<u>消すこと</u>に時間をかける。この駅で迷う人は何を知りたいのか。乗り換えか、出口か、トイレか。調べてみると、駅によって答えはまるで違う。乗換駅では出口を探す人は少なく、終点の駅では逆になる。\u3000その駅で最も多く探されているものだけを大きく出し、それ以外は一段小さくする。全部を同じ大きさで並べるのは、何も決めていないのと同じだ。\u3000最近、多言語表示が増えた。四つの言語を並べると、当然ながら一つあたりの文字は小さくなる。親切のつもりが、②<u>どの言語の利用者にとっても読みにくい表示</u>になってしまう。数を増やすより、日本語を読めない人が本当に必要とする情報だけを選んで大きく示すほうがいい。\u3000案内とは、情報を渡すことではなく、迷いを減らすことなのだと思う。';
@@ -5411,6 +5421,794 @@ const NATURAL=[
  en:'日曜も adds "as well". 日曜に働く is fine but carries no sense of "other days too".'}
 ];
 
+/* ═══ 言い換え類義（問題5）＆ 並べ替え（問題8） ═══ */
+const MONDAI_RUI=[
+{s:'類義',q:'この仕事は<u>骨が折れる</u>。',o:['大変だ','危険だ','楽しい','単純だ'],a:0,
+ ex:'骨が折れる＝手間がかかって大変。⚠ 体の骨とは無関係。慣用句は字面から離れて覚える。'},
+{s:'類義',q:'彼の説明は<u>回りくどい</u>。',o:['遠回しで分かりにくい','短すぎる','声が小さい','間違っている'],a:0,
+ ex:'回りくどい＝まっすぐ言わず遠回し。「くどい」だけなら「しつこい」だが、回り＋くどいで遠回しの意味になる。'},
+{s:'類義',q:'その案は<u>妥当</u>だと思う。',o:['適切だ','珍しい','大胆だ','必要だ'],a:0,
+ ex:'妥当＝無理がなく適切。⚠「必要」とは違う。妥当でも不要なことはある。'},
+{s:'類義',q:'彼女は<u>めったに</u>怒らない。',o:['ほとんど','よく','すぐに','必ず'],a:0,
+ ex:'めったに＋否定＝ほとんど〜ない。⚠ 単独では使えず、必ず否定とセット。'},
+{s:'類義',q:'計画を<u>見直す</u>必要がある。',o:['もう一度検討する','中止する','発表する','早める'],a:0,
+ ex:'見直す＝改めて検討する。⚠「中止」ではない。見直した結果、続けることもある。'},
+{s:'類義',q:'<u>とっさに</u>手が出た。',o:['瞬間的に','ゆっくり','わざと','あとで'],a:0,
+ ex:'とっさに＝考える間もなく瞬間的に。意図しない反射的な動作に使う。'},
+{s:'類義',q:'この機械は<u>おそらく</u>故障している。',o:['たぶん','確かに','まったく','決して'],a:0,
+ ex:'おそらく＝推量。⚠「確かに」は確信で、程度が違う。おそらくは断定を避ける語。'},
+{s:'類義',q:'彼は<u>すみやかに</u>対応した。',o:['すぐに','丁寧に','慎重に','一人で'],a:0,
+ ex:'すみやかに＝速やかに、遅れずに。書き言葉・公式文書でよく使う。'},
+{s:'類義',q:'この資料は<u>おおむね</u>正しい。',o:['だいたい','完全に','まったく','少しだけ'],a:0,
+ ex:'おおむね＝大部分は。⚠「完全に」ではない。細かい誤りの余地を残す語。'},
+{s:'類義',q:'約束を<u>反故にする</u>のはよくない。',o:['守らない','忘れる','変更する','延ばす'],a:0,
+ ex:'反故（ほご）にする＝約束や契約を無効にする、破る。硬い言い方。'},
+{s:'類義',q:'彼の態度は<u>あいまい</u>だ。',o:['はっきりしない','厳しい','礼儀正しい','冷たい'],a:0,
+ ex:'あいまい＝どちらとも決まらない。態度・返事・表現に使う。'},
+{s:'類義',q:'<u>ひとまず</u>これで終わりにしよう。',o:['とりあえず','完全に','二度と','ようやく'],a:0,
+ ex:'ひとまず＝完全ではないが一旦。⚠ 完了を表す「ようやく」とは違う。'},
+{s:'類義',q:'その説明には<u>無理がある</u>。',o:['筋が通らない','長すぎる','難しすぎる','古い'],a:0,
+ ex:'無理がある＝理屈が通らない、不自然。⚠「難しい」ではなく「おかしい」の意味。'},
+{s:'類義',q:'費用を<u>負担する</u>。',o:['支払う','計算する','減らす','請求する'],a:0,
+ ex:'負担する＝自分が費用や責任を引き受ける。⚠「請求する」は逆の立場。'},
+{s:'類義',q:'彼は<u>抜け目がない</u>。',o:['ぬかりがなく要領がいい','不注意だ','正直だ','おとなしい'],a:0,
+ ex:'抜け目がない＝損をしないよう十分に気を配る。悪い意味ではないが、褒め方にはやや注意。'},
+{s:'類義',q:'この件は<u>差し支えない</u>。',o:['問題ない','急がない','重要でない','決まっていない'],a:0,
+ ex:'差し支えない＝支障がない、構わない。「差し支える」は邪魔になるの意味。'},
+{s:'類義',q:'彼女は<u>てきぱきと</u>働く。',o:['手際よく速く','静かに','長時間','楽しそうに'],a:0,
+ ex:'てきぱき＝動作に無駄がなく速い。副詞のオノマトペは N2 頻出。'},
+{s:'類義',q:'その意見に<u>異議はない</u>。',o:['反対しない','興味がない','賛成できない','分からない'],a:0,
+ ex:'異議＝反対の意見。異議がない＝反対しない。⚠「積極的に賛成」までは意味しない。'},
+{s:'類義',q:'新しい方法を<u>取り入れる</u>。',o:['採用する','説明する','やめる','比較する'],a:0,
+ ex:'取り入れる＝外から自分のところに入れて使う。意見・技術・制度に使う。'},
+{s:'類義',q:'この問題は<u>厄介</u>だ。',o:['面倒だ','簡単だ','重要だ','珍しい'],a:0,
+ ex:'厄介＝手間がかかって面倒。人にも使える（厄介な客）。'},
+{s:'類義',q:'<u>かろうじて</u>間に合った。',o:['なんとか','余裕で','偶然','結局'],a:0,
+ ex:'かろうじて＝ぎりぎりでなんとか。⚠「余裕で」は正反対。'},
+{s:'類義',q:'彼は<u>もっぱら</u>研究に打ち込んでいる。',o:['それだけに','ときどき','いやいや','一緒に'],a:0,
+ ex:'もっぱら＝他のことはせず、それだけに。行動が一つに集中している状態。'},
+/* ── 並べ替え（★の位置を選ぶ） ── */
+{s:'並べ替え',q:'彼は忙しい　＿＿　＿★＿　＿＿　＿＿　手伝ってくれた。',
+ o:['のに','わざわざ','来て','時間を作って'],a:0,
+ ex:'正しい順：忙しい<b>のに</b>／時間を作って／わざわざ／来て。★は二番目なので「のに」。⚠ 並べ替えは全文を組んでから★の位置を数える。'},
+{s:'並べ替え',q:'この資料を　＿＿　＿＿　＿★＿　＿＿　説明いたします。',
+ o:['それに','ご覧','いただき','基づいて'],a:0,
+ ex:'正しい順：ご覧／いただき／それに／基づいて。★は三番目なので「それに」。まず文末から逆算して組むのがコツ。'},
+{s:'並べ替え',q:'年を　＿＿　＿★＿　＿＿　＿＿　なってきた。',
+ o:['とともに','取る','体力が','落ちるように'],a:0,
+ ex:'正しい順：取る／とともに／体力が／落ちるように。★は二番目で「とともに」。文型「〜とともに」は動詞辞書形に付く。'},
+{s:'並べ替え',q:'こんなに　＿＿　＿＿　＿★＿　＿＿　思わなかった。',
+ o:['とは','ことに','なる','大変に'],a:0,
+ ex:'正しい順：大変に／なる／とは／思わなかった。★は三番目で「とは」。「〜とは思わなかった」は驚きの型。'},
+{s:'並べ替え',q:'先生の　＿＿　＿★＿　＿＿　＿＿　合格できた。',
+ o:['おかげで','説明が','分かりやすかった','試験に'],a:0,
+ ex:'正しい順：説明が／分かりやすかった／おかげで／試験に。★は二番目で「分かりやすかった」。〜おかげで は原因＋良い結果。'},
+{s:'並べ替え',q:'雨が　＿＿　＿＿　＿★＿　＿＿　中止になった。',
+ o:['ことに','ひどくなった','試合は','ため'],a:0,
+ ex:'正しい順：ひどくなった／ため／試合は／中止になった。★は三番目で「試合は」。「ため」は原因を表す硬い接続。'},
+{s:'並べ替え',q:'彼女は　＿＿　＿★＿　＿＿　＿＿　黙っていた。',
+ o:['何も','聞かれても','言わずに','ただ'],a:0,
+ ex:'正しい順：聞かれても／何も／言わずに／ただ。★は二番目で「何も」。「〜ても〜ない」の呼応に注意。'}
+];
+const EN_MEX_RUI=[
+'骨が折れる = laborious. ⚠ Nothing to do with actual bones. Idioms have to be learned away from their literal parts.',
+'回りくどい = roundabout and hard to follow. くどい alone means "insistent"; with 回り it becomes indirect.',
+'妥当 = reasonable and fitting. ⚠ Not the same as necessary — something can be reasonable and still unnecessary.',
+'めったに + negative = hardly ever. ⚠ It cannot stand alone; it always pairs with a negative.',
+'見直す = to review afresh. ⚠ Not "cancel". A review may well end in carrying on.',
+'とっさに = instantly, before you can think. Used for unintended, reflexive actions.',
+'おそらく = probably, a guess. ⚠ 確かに is certainty — a different degree. おそらく avoids asserting.',
+'すみやかに = promptly, without delay. Common in written and official Japanese.',
+'おおむね = for the most part. ⚠ Not "completely" — it leaves room for small errors.',
+'反故（ほご）にする = to void a promise or contract, to break it. A stiff, formal expression.',
+'あいまい = neither one thing nor the other. Used of attitudes, answers and wording.',
+'ひとまず = for now, though not finished. ⚠ Different from ようやく, which marks completion.',
+'無理がある = the logic does not hold, it is unnatural. ⚠ It means "off", not "difficult".',
+'負担する = to take on a cost or responsibility yourself. ⚠ 請求する is the opposite side.',
+'抜け目がない = shrewd, missing no advantage. Not negative as such, but use it carefully as praise.',
+'差し支えない = no objection, no problem. 差し支える means to get in the way.',
+'てきぱき = briskly and efficiently. Onomatopoeic adverbs like this are N2 staples.',
+'異議 = an objection. 異議がない = no objection. ⚠ It stops short of active agreement.',
+'取り入れる = to adopt something from outside. Used with opinions, techniques, systems.',
+'厄介 = troublesome, a nuisance. It can describe people too (厄介な客).',
+'かろうじて = barely, only just. ⚠ "With room to spare" is the exact opposite.',
+'もっぱら = solely, to the exclusion of other things. The activity is concentrated on one thing.',
+'Correct order: 忙しい<b>のに</b>／時間を作って／わざわざ／来て. The star is second, so 「のに」. ⚠ Build the whole sentence first, then count to the star.',
+'Correct order: ご覧／いただき／それに／基づいて. Work backwards from the sentence ending — that is the reliable way in.',
+'Correct order: 取る／とともに／体力が／落ちるように. The star is second: 「とともに」, which attaches to the dictionary form.',
+'Correct order: 大変に／なる／とは／思わなかった. The star is third: 「とは」. 「〜とは思わなかった」is the surprise pattern.',
+'Correct order: 説明が／分かりやすかった／おかげで／試験に. The star is second. 〜おかげで links a cause to a good outcome.',
+'Correct order: ひどくなった／ため／試合は／中止になった. The star is third. ため is a formal causal connective.',
+'Correct order: 聞かれても／何も／言わずに／ただ. The star is second: 「何も」. Watch the 〜ても〜ない agreement.'
+];
+
+/* ═══ 類義 追加（問題5は毎回5問出る＝最も在庫が要る） ═══ */
+const MONDAI_RUI2=[
+{s:'類義',q:'彼の判断は<u>賢明</u>だった。',o:['適切で賢い','思い切った','珍しい','遅すぎた'],a:0,
+ ex:'賢明＝状況をよく見た上での賢い判断。「大胆」とは違い、無理のなさを含む。'},
+{s:'類義',q:'その話は<u>大げさ</u>だ。',o:['実際より誇張している','面白い','長すぎる','古い'],a:0,
+ ex:'大げさ＝実態より大きく言う。人にも使える（大げさな人）。'},
+{s:'類義',q:'彼は<u>のんきな</u>性格だ。',o:['あまり心配しない','怠け者だ','明るい','わがままだ'],a:0,
+ ex:'のんき＝細かいことを気にしない。⚠「怠け者」とは違い、働かないという意味はない。'},
+{s:'類義',q:'この機会を<u>生かす</u>べきだ。',o:['うまく利用する','捨てる','待つ','探す'],a:0,
+ ex:'生かす＝持っているものを役立てる。経験・能力・機会に使う。'},
+{s:'類義',q:'彼女は<u>一目置かれて</u>いる。',o:['実力を認められている','注目されている','嫌われている','恐れられている'],a:0,
+ ex:'一目置く＝相手が上だと認めること。囲碁が語源。⚠ 単なる「注目」より敬意が強い。'},
+{s:'類義',q:'説明が<u>くどい</u>。',o:['しつこくて長い','分かりにくい','短すぎる','間違っている'],a:0,
+ ex:'くどい＝同じことを繰り返して嫌になる。味にも使う（味がくどい）。'},
+{s:'類義',q:'<u>あえて</u>厳しいことを言う。',o:['わざわざ承知の上で','うっかり','遠慮して','冗談で'],a:0,
+ ex:'あえて＝言いにくいと分かった上で。⚠「うっかり」は無意識で正反対。'},
+{s:'類義',q:'彼は<u>腕が立つ</u>。',o:['技術が優れている','力が強い','よく怒る','背が高い'],a:0,
+ ex:'腕＝技術・能力。腕が立つ＝腕前がよい。⚠ 体の腕力ではない。'},
+{s:'類義',q:'この制度は<u>形骸化</u>している。',o:['中身がなくなっている','新しくなっている','広まっている','廃止された'],a:0,
+ ex:'形骸化＝形だけ残り実質が失われる。⚠「廃止」ではなく、残ってはいる。'},
+{s:'類義',q:'今日は<u>あいにく</u>の天気だ。',o:['都合の悪い','珍しい','暖かい','はっきりしない'],a:0,
+ ex:'あいにく＝都合が悪いことに。断る時にも使う（あいにく予定がありまして）。'},
+{s:'類義',q:'彼は<u>根気</u>がある。',o:['最後まで続ける力','体力','やる気','才能'],a:0,
+ ex:'根気＝地味なことを続ける力。⚠「やる気」は始める力で、続ける力とは違う。'},
+{s:'類義',q:'説明を<u>省く</u>。',o:['省略する','付け加える','繰り返す','書き直す'],a:0,
+ ex:'省く＝取り除いて短くする。手間を省く、説明を省く。'},
+{s:'類義',q:'<u>いずれ</u>分かることだ。',o:['そのうち','絶対に','今すぐ','たぶん'],a:0,
+ ex:'いずれ＝時期は未定だがそのうち。⚠「絶対に」は確信の強さで、時間の話ではない。'},
+{s:'類義',q:'彼の言葉に<u>救われた</u>。',o:['気持ちが楽になった','驚かされた','傷つけられた','納得させられた'],a:0,
+ ex:'救われる＝つらい状況から気持ちが助けられる。物理的な救助とは限らない。'},
+{s:'類義',q:'その案は<u>却下</u>された。',o:['受け入れられなかった','採用された','検討中だ','修正された'],a:0,
+ ex:'却下＝申し出や案を退ける。硬い言葉で、会議や裁判で使う。'},
+{s:'類義',q:'<u>ひたすら</u>待った。',o:['ただそれだけを','しかたなく','短い時間','何度も'],a:0,
+ ex:'ひたすら＝他のことをせず一心に。程度ではなく集中の度合いを表す。'},
+{s:'類義',q:'彼女は<u>物覚えがいい</u>。',o:['覚えるのが早い','記憶力が悪い','忘れっぽい','慎重だ'],a:0,
+ ex:'物覚え＝新しいことを覚える能力。反対は「物覚えが悪い」。⚠「記憶力」と近いが、物覚えは習得の速さに重点がある。'},
+{s:'類義',q:'計画が<u>頓挫</u>した。',o:['途中で行き詰まった','完成した','始まった','変更された'],a:0,
+ ex:'頓挫＝進んでいたものが途中で止まる。⚠ 最初から失敗したのではなく、途中まで進んでいた含み。'},
+{s:'類義',q:'<u>うかつ</u>だった。',o:['不注意だった','運が悪かった','正直だった','急いでいた'],a:0,
+ ex:'うかつ＝注意が足りない。自分の失敗を認める時によく使う。'},
+{s:'類義',q:'彼は<u>顔が利く</u>。',o:['影響力があり通用する','よく知られている','美しい','正直だ'],a:0,
+ ex:'顔が利く＝その世界で信用があり、頼みが通る。⚠「顔が広い」は知り合いが多い意味で、少し違う。'},
+{s:'類義',q:'話を<u>切り出す</u>。',o:['言い始める','途中でやめる','短くする','断る'],a:0,
+ ex:'切り出す＝言いにくい話を始める。「そろそろ切り出そう」のように使う。'},
+{s:'類義',q:'その判断は<u>早計</u>だ。',o:['結論を急ぎすぎている','正しい','遅すぎる','慎重すぎる'],a:0,
+ ex:'早計＝十分考えずに急いで決めること。「早計に過ぎる」とも言う。'},
+{s:'類義',q:'<u>ひとかたならぬ</u>お世話になりました。',o:['たいへん','少し','急に','長い間'],a:0,
+ ex:'ひとかたならぬ＝並々ならぬ、たいへんな。手紙や挨拶で使う硬い表現。'},
+{s:'類義',q:'彼は<u>実直</u>な人だ。',o:['まじめで正直な','気難しい','おもしろい','厳しい'],a:0,
+ ex:'実直＝まじめで裏表がない。人物評価の語として面接でも出る。'},
+{s:'類義',q:'議論が<u>紛糾</u>した。',o:['もつれて混乱した','静かに終わった','盛り上がった','中止された'],a:0,
+ ex:'紛糾＝意見が対立してまとまらない。会議・交渉に使う硬い語。'}
+];
+
+const EN_MEX_RUI2=['賢明 = a wise judgement made after looking at the situation. Unlike 大胆, it implies nothing reckless.',
+'大げさ = exaggerated beyond the facts. It works for people too (大げさな人).',
+'のんき = untroubled by small things. ⚠ Not "lazy" — it says nothing about not working.',
+'生かす = to put what you have to good use. Used with experience, ability, opportunity.',
+'一目置く = to acknowledge someone is above you. From the game of go. ⚠ Stronger than mere attention — it carries respect.',
+'くどい = repetitive to the point of irritation. Also used of flavour (味がくどい).',
+'あえて = deliberately, knowing it is hard to say. ⚠ うっかり is unintentional, the exact opposite.',
+'腕 = skill or ability. 腕が立つ = highly skilled. ⚠ Not physical arm strength.',
+'形骸化 = the form remains but the substance is gone. ⚠ Not abolished — it is still there.',
+'あいにく = unfortunately, at an inconvenient moment. Also used when declining (あいにく予定がありまして).',
+'根気 = the staying power for unglamorous work. ⚠ やる気 is the drive to start, which is different.',
+'省く = to cut out and shorten. 手間を省く, 説明を省く.',
+'いずれ = eventually, at some unspecified time. ⚠ 絶対に is about certainty, not timing.',
+'救われる = to be relieved of a weight on your mind. Not necessarily a physical rescue.',
+'却下 = to reject a proposal or request. A formal word, used in meetings and courts.',
+'ひたすら = single-mindedly, to the exclusion of all else. It marks concentration, not degree.',
+'物覚え = the ability to pick things up. The opposite is 物覚えが悪い. ⚠ Close to 記憶力 but weighted towards speed of learning.',
+'頓挫 = to stall partway through. ⚠ Not a failure from the start — it implies real progress was made first.',
+'うかつ = careless, not paying enough attention. Often used when admitting your own slip.',
+'顔が利く = to have enough standing that your requests go through. ⚠ 顔が広い means knowing many people — slightly different.',
+'切り出す = to broach a difficult subject. As in 「そろそろ切り出そう」.',
+'早計 = jumping to a conclusion without enough thought. Also 早計に過ぎる.',
+'ひとかたならぬ = exceptional, considerable. A stiff expression for letters and formal greetings.',
+'実直 = honest and straightforward, no hidden sides. A character word that comes up in interviews too.',
+'紛糾 = to become tangled and confused. A formal word for meetings and negotiations.'];
+/* ═══ 文の文法1（問題7）· 文型を四つから選ぶ ═══ */
+const MONDAI_G1=[
+{s:'文法',q:'雨が降り出した。天気予報を見てこなかった（　）、傘を持っていない。',
+ o:['ばかりに','おかげで','とともに','につけ'],a:0,
+ ex:'⚠ 悪い結果には<b>ばかりに</b>、良い結果には<b>おかげで</b>。「傘がない」は困った結果なので ばかりに。'},
+{s:'文法',q:'部長に相談した（　）、話が大きくなってしまった。',
+ o:['ばかりに','ところ','うえで','かぎり'],a:0,
+ ex:'相談が原因で悪い結果に。<b>〜たところ</b>も「〜したら」の意味で使えるが、ここは後悔が入るので ばかりに が自然。'},
+{s:'文法',q:'この資料は、専門家（　）読むのが難しい。',
+ o:['でさえ','ばかり','こそ','ながら'],a:0,
+ ex:'<b>〜でさえ</b>は極端な例。「専門家ですら難しい」＝まして素人には無理、という含み。'},
+{s:'文法',q:'彼は忙しい（　）、必ず返事をくれる。',
+ o:['にもかかわらず','にしたがって','をもとに','どころか'],a:0,
+ ex:'忙しさと返事は逆の関係なので逆接。<b>にもかかわらず</b>は「〜なのに」の硬い形。'},
+{s:'文法',q:'新製品の発売（　）、記者会見が開かれた。',
+ o:['に先立ち','に沿って','をめぐって','に限って'],a:0,
+ ex:'<b>に先立ち</b>＝〜の前に。発表会は発売より前の行為。「をめぐって」は論争の対象に使う。'},
+{s:'文法',q:'経験の有無（　）、応募できます。',
+ o:['を問わず','に応じて','にわたって','をこめて'],a:0,
+ ex:'<b>を問わず</b>＝関係なく。求人票の定型。⚠「に応じて」は条件によって変わる意味で正反対。'},
+{s:'文法',q:'この道は狭い（　）、車の通りも多い。',
+ o:['うえに','かわりに','わりに','もとに'],a:0,
+ ex:'<b>うえに</b>＝そのうえ。良いことは良いことと、悪いことは悪いことと重ねる。⚠「わりに」は予想とのずれ。'},
+{s:'文法',q:'社長の話を聞いている（　）、涙が出てきた。',
+ o:['うちに','あいだ','とたん','うえで'],a:0,
+ ex:'<b>〜ているうちに</b>＝その間に自然に変化が起きる。⚠「とたん」は瞬間で、継続の意味がない。'},
+{s:'文法',q:'彼女は医者である（　）、作家でもある。',
+ o:['とともに','にしては','ばかりに','うえは'],a:0,
+ ex:'<b>とともに</b>＝〜と同時に、両方の面を持つ。名詞＋である に接続する形に注意。'},
+{s:'文法',q:'返事は明日まで（　）、今日中でも構いません。',
+ o:['でいいが','しかなく','だけに','ばかりで'],a:0,
+ ex:'許容の範囲を示す。⚠ この形は文脈で決まるので、前後の「でも構いません」から逆算する。'},
+{s:'文法',q:'締め切りが近い。今から始めた（　）、間に合わないだろう。',
+ o:['ところで','ことで','うえで','かぎり'],a:0,
+ ex:'<b>〜たところで</b>＝〜しても無駄だ。⚠「〜たところ」（〜したら）と形が似ているが意味が全く違う。'},
+{s:'文法',q:'この計画は、彼の協力（　）成功しなかっただろう。',
+ o:['なしには','のもとに','をめぐって','に沿って'],a:0,
+ ex:'<b>なしには〜ない</b>＝それがなければ不可能。「なくしては」も同じ。'},
+{s:'文法',q:'あの人の実力（　）、この程度の仕事は簡単だ。',
+ o:['からすれば','につけ','をこめて','といえば'],a:0,
+ ex:'<b>からすれば</b>＝〜の立場や基準で考えると。判断の根拠を示す。'},
+{s:'文法',q:'子どもの成長は早い。会う（　）大きくなっている。',
+ o:['たびに','うちに','とおりに','かぎり'],a:0,
+ ex:'<b>たびに</b>＝そのつど毎回。⚠「うちに」は期間内の変化で、繰り返しの意味はない。'},
+{s:'文法',q:'今回の結果は、努力の（　）だと思う。',
+ o:['賜物','おかげ','ばかり','とおり'],a:0,
+ ex:'名詞で受ける形。⚠ 空欄の前が「努力<b>の</b>」なので、接続できるのは名詞のみ。品詞から絞る。'},
+{s:'文法',q:'雨が降ろうが降る（　）、試合は行われる。',
+ o:['まいが','ないが','ものが','わけが'],a:0,
+ ex:'<b>〜うが〜まいが</b>＝どちらでも関係ない。動詞の意志形＋が、否定は まい。'},
+{s:'文法',q:'言われてみれば、確かにその（　）だ。',
+ o:['とおり','ため','うえ','まま'],a:0,
+ ex:'<b>そのとおり</b>＝おっしゃる通り。会話で頻出の固定表現。'},
+{s:'文法',q:'彼は反対する（　）か、むしろ賛成していた。',
+ o:['どころ','ばかり','わけ','はず'],a:0,
+ ex:'<b>〜どころか</b>＝それどころではなく、逆に。後ろに「むしろ」が来ることが多い。'},
+{s:'文法',q:'新人（　）、彼の判断は的確だった。',
+ o:['にしては','として','につき','をもって'],a:0,
+ ex:'<b>にしては</b>＝〜の割には（予想とのずれ）。⚠「として」は資格・立場で、評価の含みがない。'},
+{s:'文法',q:'この問題は、簡単な（　）見えて、実は難しい。',
+ o:['ようで','ように','ようが','ようは'],a:0,
+ ex:'<b>〜ようで（実は）</b>＝見かけと実態が違う。読解の逆接の型としても頻出。'},
+{s:'文法',q:'工事中（　）、しばらくご利用いただけません。',
+ o:['につき','にして','にとって','において'],a:0,
+ ex:'<b>につき</b>＝〜のため（掲示・案内の硬い言い方）。⚠ 数量に付くと「〜あたり」の意味になる。'},
+{s:'文法',q:'今日は日曜だから、店は開いている（　）がない。',
+ o:['はず','べき','よう','こと'],a:0,
+ ex:'⚠ 日曜なので開いていないと考える文脈。<b>はずがない</b>＝ありえない。'},
+{s:'文法',q:'彼は来ると言った（　）、まだ姿が見えない。',
+ o:['ものの','ところ','とたん','かぎり'],a:0,
+ ex:'<b>ものの</b>＝〜したが、期待通りにならない。⚠ 逆接で、後ろには予想外の事実が来る。'},
+{s:'文法',q:'書類に不備がある場合は、受理し（　）ます。',
+ o:['かね','がち','きれ','ぬき'],a:0,
+ ex:'<b>〜かねる</b>＝できない（丁寧な拒否）。⚠「〜かねない」は「〜するおそれがある」で正反対の意味。'},
+{s:'文法',q:'油断すると、大きな事故につながり（　）。',
+ o:['かねない','かねる','がたい','づらい'],a:0,
+ ex:'<b>〜かねない</b>＝悪いことが起こる可能性がある。前問の「かねる」と必ずセットで覚える。'},
+{s:'文法',q:'彼の努力は、誰もが認める（　）だ。',
+ o:['ところ','こと','もの','わけ'],a:0,
+ ex:'<b>〜ところだ</b>はここでは「〜する点だ」の意味。名詞的に使われる用法。'},
+{s:'文法',q:'今年（　）、必ず合格してみせる。',
+ o:['こそ','さえ','しか','だけ'],a:0,
+ ex:'<b>こそ</b>＝他ではなく今年。過去に失敗した含みが出る。Roberto の一問。'},
+{s:'文法',q:'部屋を片づけた（　）、探し物が見つかった。',
+ o:['ところ','ばかりに','うえは','かぎり'],a:0,
+ ex:'<b>〜たところ</b>＝〜したら（その結果）。偶然の発見に使う。⚠「ばかりに」は悪い結果専用。'},
+{s:'文法',q:'留学するか（　）、まだ決めていない。',
+ o:['どうか','ように','ものか','ことか'],a:0,
+ ex:'<b>かどうか</b>＝はい・いいえの疑問を埋め込む形。疑問詞がある場合は「か」だけになる。'},
+{s:'文法',q:'せっかく来た（　）、ゆっくりしていってください。',
+ o:['のだから','ものの','ところで','とはいえ'],a:0,
+ ex:'<b>せっかく〜のだから</b>＝理由。せっかく は「機会を無駄にしたくない」気持ちを添える。'}
+];
+const EN_MEX_G1=[
+'⚠ <b>ばかりに</b> takes a bad outcome, <b>おかげで</b> a good one. Having no umbrella is a bad outcome.',
+'The consultation caused a bad result. <b>〜たところ</b> also means "when I did", but the regret here makes ばかりに natural.',
+'<b>〜でさえ</b> marks an extreme case: if even a specialist struggles, an amateur has no chance.',
+'Being busy and replying anyway are in opposition, so a concessive is needed. <b>にもかかわらず</b> is the formal 〜のに.',
+'<b>に先立ち</b> = ahead of. The press conference precedes the launch. をめぐって marks a subject of dispute.',
+'<b>を問わず</b> = regardless of. Standard on job ads. ⚠ に応じて means "varying according to" — the opposite.',
+'<b>うえに</b> = and on top of that. Good stacks with good, bad with bad. ⚠ わりに marks a gap with expectation.',
+'<b>〜ているうちに</b> = a change occurs naturally during that time. ⚠ とたん is a single instant, with no duration.',
+'<b>とともに</b> = at the same time as, holding both sides. Note how it attaches after 名詞＋である.',
+'This shows the range of what is acceptable. ⚠ Work backwards from 「でも構いません」at the end.',
+'<b>〜たところで</b> = even if you do, it is pointless. ⚠ Nearly identical in shape to 〜たところ but opposite in meaning.',
+'<b>なしには〜ない</b> = impossible without it. なくしては works the same way.',
+'<b>からすれば</b> = judging by that standard or standpoint. It marks the basis of a judgement.',
+'<b>たびに</b> = every single time. ⚠ うちに is change within a period, with no repetition.',
+'A noun is required. ⚠ The blank follows 「努力<b>の</b>」, so only a noun can attach. Narrow it by part of speech.',
+'<b>〜うが〜まいが</b> = it makes no difference either way. Volitional + が, with まい for the negative.',
+'<b>そのとおり</b> = exactly so. A fixed conversational phrase.',
+'<b>〜どころか</b> = far from it, quite the reverse. むしろ often follows.',
+'<b>にしては</b> = considering he is only. ⚠ として states a role or capacity and carries no evaluation.',
+'<b>〜ようで（実は）</b> = it looks one way but is another. A frequent concessive shape in reading passages too.',
+'<b>につき</b> = owing to (formal, on notices). ⚠ After a quantity it means "per".',
+'⚠ The Sunday context means it should not be open. <b>はずがない</b> = there is no way.',
+'<b>ものの</b> = although he said so, it has not happened. A concessive followed by an unexpected fact.',
+'<b>〜かねる</b> = cannot (a polite refusal). ⚠ 〜かねない means "there is a risk that" — the opposite.',
+'<b>〜かねない</b> = something bad may well happen. Always learn it together with かねる from the previous item.',
+'<b>〜ところだ</b> here means "the point that". A nominal use of ところ.',
+'<b>こそ</b> = this year and not another. It implies earlier failures. Roberto\u2019s item.',
+'<b>〜たところ</b> = when I did it, this happened. Used for chance discoveries. ⚠ ばかりに is for bad outcomes only.',
+'<b>かどうか</b> embeds a yes-or-no question. With a question word, plain か is used instead.',
+'<b>せっかく〜のだから</b> gives a reason. せっかく adds the feeling of not wanting to waste the chance.'
+];
+
+/* ═══ 読解 追加 · 短文（問題10 形式） ═══ */
+const MONDAI_R5=[
+{s:'読解',p:'メモを取る習慣がある人は、記憶力がいいと思われがちだ。しかし実際は逆で、忘れることを前提にしているから書くのである。\u3000覚えていられると思っている人ほど、書かない。そして忘れる。記憶を信用しないという態度が、結果として記憶を助けている。',
+ q:'筆者によると、メモを取る人はどのような人か。',
+ o:['自分の記憶を信用していない人','記憶力が優れている人','忙しくて余裕のない人','書くことが好きな人'],a:0,
+ ex:'「〜と思われがちだ。しかし実際は」で常識を覆す型。最終文が答えの言い換え。'},
+{s:'読解',p:'部屋の照明を少し暗くすると、人は声を小さくする。明るい店ほど客の話し声が大きくなるのは、そのためだ。\u3000落ち着いた雰囲気を作りたいなら、椅子や音楽より先に、明るさを見直したほうがいい。人の振る舞いは、自分で決めているようで、案外まわりの条件に従っている。',
+ q:'筆者が最も言いたいことは何か。',
+ o:['人の振る舞いは環境の条件に左右される','店は暗くしたほうがよい','音楽より照明のほうが重要だ','客は声を小さくするべきだ'],a:0,
+ ex:'⚠ 照明は<b>例</b>。最終文の「人の振る舞いは〜まわりの条件に従っている」が主張。例と主張を取り違えない。'},
+{s:'読解',p:'以下は、ある会社のメールである。\u3000お疲れさまです。来週の全体会議ですが、会場の都合により、火曜十四時から水曜十時に変更となりました。すでに火曜でご調整いただいた方には申し訳ありません。\u3000なお、資料は前日までに各自ご確認ください。当日の配布はいたしません。印刷が必要な方は各自でお願いします。',
+ q:'このメールの内容と合っているものはどれか。',
+ o:['資料は当日配られない','会議は火曜に行われる','資料は会社が印刷する','変更は参加者の希望による'],a:0,
+ ex:'情報検索の型。「当日の配布はいたしません」が根拠。⚠ 変更の理由は「会場の都合」で、参加者の希望ではない。'},
+{s:'読解',p:'子どものころ、祖父に「急ぐときほど、ゆっくり歩け」と言われた。意味が分からなかったが、大人になって分かった。\u3000急いでいるときは視野が狭くなる。走れば早く着くが、その代わり途中の情報を落とす。忘れ物に気づくのも、道の異変に気づくのも、たいてい歩いているときだ。',
+ q:'祖父の言葉はどういう意味だと筆者は考えているか。',
+ o:['急ぐと周りが見えなくなり、かえって失敗するということ','歩いたほうが健康にいいということ','時間に余裕を持つべきだということ','年長者の言うことを聞くべきだということ'],a:0,
+ ex:'第二段落が解釈。「視野が狭くなる」「情報を落とす」が根拠。⚠「余裕を持て」は一般論で、本文の焦点ではない。'},
+{s:'読解',p:'新入社員に「分からないことがあったら聞いて」と言う上司は多い。しかし、新人には何が分からないかが分からない。\u3000聞けるようになるのは、全体の形がある程度見えてからだ。それまでは、上司のほうから「ここは迷いやすいよ」と先に言ってやるしかない。',
+ q:'筆者は上司がどうすべきだと述べているか。',
+ o:['迷いやすい点を先に伝える','質問しやすい雰囲気を作る','新人に全体像を説明させる','分かるまで待つ'],a:0,
+ ex:'最終文の「〜しかない」が主張。⚠「雰囲気を作る」はよくある一般論だが、本文には書かれていない。'},
+{s:'読解',p:'道具は、上手な人が使うと簡単に見える。だから初心者は、自分にもできると思って同じ道具を買う。\u3000しかし上手な人は、その道具の癖を知った上で補正している。見えているのは結果だけで、補正している部分は見えない。初心者が最初に買うべきなのは、癖の少ない道具のほうだ。',
+ q:'筆者は初心者にどのような道具を勧めているか。',
+ o:['癖が少なく扱いやすいもの','上級者と同じもの','値段の高いもの','見た目のよいもの'],a:0,
+ ex:'最終文が結論。上級者の道具は「補正」が前提なので初心者には向かない、という論理。'},
+{s:'読解',p:'注意されたとき、すぐに「すみません」と言う人がいる。謝るのが早いのは一見よさそうだが、内容を理解する前に謝っていることも多い。\u3000本当に必要なのは、何が問題だったかを確かめることだ。謝罪はそのあとでいい。早い謝罪は、話を終わらせてしまう働きを持つ。',
+ q:'筆者は早く謝ることの何を問題だと考えているか。',
+ o:['内容を理解する前に話が終わってしまうこと','相手を不快にさせること','謝る回数が増えること','責任の所在が不明になること'],a:0,
+ ex:'最終文「話を終わらせてしまう」が答え。⚠「不快にさせる」「責任」は本文にない。'},
+{s:'読解',p:'以下は、市民センターの掲示である。\u3000【一時保育のご案内】講座受講中のお子様を、無料でお預かりします。対象は一歳から就学前まで。定員は各回五名で、先着順です。\u3000ご利用の三日前までにお申し込みください。当日のお申し込みは受け付けておりません。持ち物は、飲み物・着替え・おむつです。昼食は出ませんので、必要な方はご持参ください。',
+ q:'この案内の内容と合っているものはどれか。',
+ o:['昼食が必要な人は持ってくる','当日でも申し込める','定員を超えた場合は抽選になる','利用には料金がかかる'],a:0,
+ ex:'⚠ 情報検索は条件を一つずつ照合する。「先着順」であって抽選ではない、「無料」、「当日は受け付けない」——三つとも本文に明記。'},
+{s:'読解',p:'ある人に道を聞かれて、うまく説明できなかったことがある。知っている道なのに、言葉にすると途端に自信がなくなった。\u3000体で覚えていることと、人に伝えられることは別の能力だ。自分が分かっていることと、分かっていると説明できることの間には、思ったより距離がある。',
+ q:'筆者が気づいたことは何か。',
+ o:['知っていることと説明できることは別の能力だということ','道をよく覚えていなかったということ','説明には練習が必要だということ','人に聞かれると緊張するということ'],a:0,
+ ex:'最終段落が結論。「別の能力だ」「距離がある」が二重の言い換え。⚠「練習が必要」までは述べていない。'},
+{s:'読解',p:'会社で新しい仕組みを入れるとき、最初に反対するのは、たいていその仕事をよく知っている人だ。\u3000これを「抵抗」と見るか「情報」と見るかで、その後が変わる。詳しい人ほど、うまくいかない場面を具体的に想像できる。その想像を聞かずに進めれば、あとで同じ問題にぶつかる。',
+ q:'筆者は反対意見をどう捉えるべきだと述べているか。',
+ o:['実務を知る人からの有用な情報として扱う','変化を嫌う抵抗として無視する','多数決で判断する','時間をかけて説得する'],a:0,
+ ex:'「抵抗と見るか情報と見るか」の二択を示し、後者を支持している。⚠「説得する」は抵抗と見た場合の対応。'}
+];
+const EN_MEX_R5=[
+'The frame 「〜と思われがちだ。しかし実際は」overturns the received view. The last sentence restates the answer.',
+'⚠ Lighting is the <b>example</b>. The thesis is the final line: behaviour follows the surrounding conditions. Do not mistake example for argument.',
+'An information-retrieval item. The grounds: 「当日の配布はいたしません」. ⚠ The change was due to the venue, not participant requests.',
+'The second paragraph interprets it: the field of view narrows, information is dropped. ⚠ "Leave yourself time" is a generality, not this text\u2019s point.',
+'The closing 「〜しかない」carries the argument. ⚠ "Create an approachable atmosphere" is the usual platitude and is not in the text.',
+'The last sentence is the conclusion. An expert\u2019s tool presupposes correction, so it does not suit a beginner.',
+'The final line — it shuts the conversation down — is the answer. ⚠ Discomfort and責任 are not in the text.',
+'⚠ Information retrieval means checking each condition in turn. First come first served rather than a draw, free of charge, no same-day applications — all three stated outright.',
+'The last paragraph is the conclusion, restating the point twice: a different ability, a real distance. ⚠ It never goes as far as "you need practice".',
+'It sets up a choice — resistance or information — and backs the latter. ⚠ "Persuade them" is what you do if you read it as resistance.'
+];
+
+const MONDAI_NA=[
+{s:'並べ替え',q:'この仕事は　＿＿　＿★＿　＿＿　＿＿　やりがいがある。',
+ o:['きつい','ものの','体力的に','その分'],a:0,
+ ex:'正しい順：体力的に／きつい／ものの／その分。★は二番目で「きつい」。⚠ 並べ替えは必ず全文を組んでから★を数える。'},
+{s:'並べ替え',q:'留学の　＿＿　＿＿　＿★＿　＿＿　考えています。',
+ o:['活かせる','経験を','仕事に就きたいと','就職活動では'],a:0,
+ ex:'正しい順：就職活動では／留学の経験を／活かせる／仕事に就きたいと。★は三番目で「活かせる」。文末から逆算する。'},
+{s:'並べ替え',q:'部長　＿＿　＿★＿　＿＿　＿＿　進めてよろしいでしょうか。',
+ o:['いただいた','ご確認','とおりに','に'],a:0,
+ ex:'正しい順：部長に／ご確認／いただいた／とおりに。★は二番目で「ご確認」。敬語は「ご〜いただく」の形を崩さない。'},
+{s:'並べ替え',q:'天気が　＿＿　＿＿　＿★＿　＿＿　中止します。',
+ o:['場合は','悪化した','イベントを','当日'],a:0,
+ ex:'正しい順：当日／天気が悪化した／場合は／イベントを。★は三番目で「場合は」。条件節は必ず主節の前。'},
+{s:'並べ替え',q:'彼は　＿＿　＿★＿　＿＿　＿＿　やり遂げた。',
+ o:['最後まで','反対を','押し切って','周囲の'],a:0,
+ ex:'正しい順：周囲の／反対を／押し切って／最後まで。★は二番目で「反対を」。「〜を押し切る」は固定の組み合わせ。'},
+{s:'並べ替え',q:'図面は　＿＿　＿＿　＿★＿　＿＿　お送りします。',
+ o:['次第','でき','メールで','修正が'],a:0,
+ ex:'正しい順：修正が／でき／次第／メールで。★は三番目で「次第」。〜次第 は ます形に接続する。'},
+{s:'並べ替え',q:'この案は　＿＿　＿★＿　＿＿　＿＿　採用されなかった。',
+ o:['面白い','ものの','予算の','都合で'],a:0,
+ ex:'正しい順：面白い／ものの／予算の／都合で。★は二番目で「ものの」。逆接のあとに理由が続く形。'},
+{s:'並べ替え',q:'お忙しい　＿＿　＿＿　＿★＿　＿＿　ありがとうございました。',
+ o:['お時間を','ところ','いただき','わざわざ'],a:0,
+ ex:'正しい順：ところ／わざわざ／お時間を／いただき。★は三番目で「お時間を」。面接のお礼の定型。'},
+{s:'並べ替え',q:'経験が　＿＿　＿★＿　＿＿　＿＿　応募できます。',
+ o:['なくても','どなたでも','やる気さえ','あれば'],a:0,
+ ex:'正しい順：なくても／やる気さえ／あれば／どなたでも。★は二番目で「やる気さえ」。〜さえ〜ば の呼応。'},
+{s:'並べ替え',q:'この街は　＿＿　＿＿　＿★＿　＿＿　住みやすい。',
+ o:['便利な','駅から','近くて','うえに'],a:0,
+ ex:'正しい順：駅から／近くて／便利な／うえに。★は三番目で「便利な」。⚠ うえに は名詞修飾形に接続する。'}
+];
+const EN_MEX_NA=[
+'Correct order: 体力的に／きつい／ものの／その分. The star is second. ⚠ Always assemble the whole sentence before counting to the star.',
+'Correct order: 就職活動では／留学の経験を／活かせる／仕事に就きたいと. The star is third. Work backwards from the ending.',
+'Correct order: 部長に／ご確認／いただいた／とおりに. The star is second. Keep the ご〜いただく frame intact.',
+'Correct order: 当日／天気が悪化した／場合は／イベントを. The star is third. A conditional clause always precedes the main clause.',
+'Correct order: 周囲の／反対を／押し切って／最後まで. The star is second. 〜を押し切る is a fixed collocation.',
+'Correct order: 修正が／でき／次第／メールで. The star is third. 〜次第 attaches to the ます-stem.',
+'Correct order: 面白い／ものの／予算の／都合で. The star is second. A concessive followed by the reason.',
+'Correct order: ところ／わざわざ／お時間を／いただき. The star is third. The set phrase for thanking after an interview.',
+'Correct order: なくても／やる気さえ／あれば／どなたでも. The star is second. The 〜さえ〜ば pairing.',
+'Correct order: 駅から／近くて／便利な／うえに. The star is third. ⚠ うえに attaches to the noun-modifying form.'
+];
+
+/* ═══ 機能別文型 ① 結果・経過 / 比較・対照 / 様子・傾向 ═══ */
+const FN_A=[
+/* 結果・経過・起点・終点 */
+{g:'～以上（は）',f:'普通形 + 以上（は）',pt:'já que, uma vez que',en:'now that, since',
+ ex:'引き受けた以上、最後までやります。',tx:'Já que aceitei, levo até o fim.',
+ trap:'⚠ 「〜上は」も同じ意味。決意・義務が後ろに来る。数量の「以上」（〜より多い）とは別物。'},
+{g:'～上は',f:'た形 + 上は',pt:'uma vez que se decidiu',en:'now that it is decided',
+ ex:'目標を決めた上は、迷わず進む。',tx:'Uma vez definida a meta, sigo sem hesitar.',
+ trap:'以上（は）より硬い。後ろには必ず話し手の決意や覚悟が来る。'},
+{g:'～かけだ / かけの',f:'Vます形 + かけ',pt:'a meio fazer',en:'half-done',
+ ex:'食べかけのパンが置いてある。',tx:'Há um pão mordido pela metade sobre a mesa.',
+ trap:'途中で止まっている状態。⚠「〜かける」は動詞形（しかける＝começar a）。'},
+{g:'～きる / きれない',f:'Vます形 + きる',pt:'fazer até o fim / não conseguir terminar',en:'do completely / cannot finish',
+ ex:'この本は長くて一日では読みきれない。',tx:'O livro é longo demais para ler num dia.',
+ trap:'完了の強調。⚠ 可能の否定は「きれない」。「食べきる」＝全部食べる。'},
+{g:'～末（に）',f:'た形 / Nの + 末に',pt:'após muito... acabou por',en:'after much..., finally',
+ ex:'悩んだ末に、転職を決めた。',tx:'Depois de muito hesitar, decidi mudar de emprego.',
+ trap:'長い経過のあとの結論。⚠ 短い時間には使わない。結果は良くも悪くもよい。'},
+{g:'～ずにすむ',f:'Vない形（ず）+ にすむ',pt:'acabar não precisando',en:'end up not having to',
+ ex:'症状が軽く、入院せずにすんだ。',tx:'Os sintomas eram leves e não precisei internar-me.',
+ trap:'⚠ 自分の努力ではなく状況のおかげで避けられた含み。「〜ないで済む」も同じ。'},
+{g:'～ぬく',f:'Vます形 + ぬく',pt:'levar até o fim apesar de tudo',en:'see it through',
+ ex:'悩みぬいて出した結論です。',tx:'É uma conclusão a que cheguei após muito agonizar.',
+ trap:'⚠「〜きる」は完了、「〜ぬく」は<b>困難を越えて</b>やり通す。感情がこもる。'},
+{g:'～も当然だ',f:'普通形 + のも当然だ',pt:'é natural que',en:'no wonder that',
+ ex:'あんなことを言われては、怒るのも当然だ。',tx:'Depois de ouvir aquilo, é natural que se zangue.',
+ trap:'話し手が相手の反応に理解を示す型。「〜のも無理はない」も近い。'},
+/* 比較・対照・比例 */
+{g:'～代わりに',f:'Nの / 普通形 + 代わりに',pt:'em vez de; em troca de',en:'instead of; in exchange',
+ ex:'課長の代わりに私が出席します。',tx:'Vou eu em vez do chefe de seção.',
+ trap:'二つの意味：①代理 ②交換（給料は高いが、代わりに忙しい）。文脈で判断する。'},
+{g:'～に反して',f:'N + に反して',pt:'contrariamente a',en:'contrary to',
+ ex:'予想に反して、売上が伸びた。',tx:'Contrariamente ao previsto, as vendas subiram.',
+ trap:'予想・期待・意図など<b>心の中の見込み</b>に付く。⚠ 事実には付かない。'},
+/* 様子・傾向・状態 */
+{g:'～一方だ',f:'V辞書形 + 一方だ',pt:'só faz aumentar/piorar',en:'keeps on getting',
+ ex:'就職状況は厳しくなる一方だ。',tx:'A situação do emprego só piora.',
+ trap:'⚠「一方で」（対比）と混同しない。こちらは<b>一方向の変化</b>で、良い方にも悪い方にも使える。'},
+{g:'～がちだ',f:'Vます形 / N + がち',pt:'tende a, com frequência (negativo)',en:'tend to, be prone to',
+ ex:'彼は体が弱くて、授業を休みがちだ。',tx:'Ele é frágil e falta às aulas com frequência.',
+ trap:'⚠ 望ましくないことに使う。忘れがち・遅れがち・曇りがち。「〜やすい」は中立。'},
+{g:'～気味',f:'Vます形 / N + 気味',pt:'com um leve toque de',en:'a touch of, slightly',
+ ex:'今日はちょっと風邪気味だ。',tx:'Hoje estou um pouco resfriado.',
+ trap:'程度は軽い。疲れ気味・太り気味・遅れ気味。⚠ 強い状態には使わない。'},
+{g:'～だらけ',f:'N + だらけ',pt:'cheio de (sujo, negativo)',en:'covered in, full of',
+ ex:'この文章は間違いだらけだ。',tx:'Este texto está cheio de erros.',
+ trap:'⚠ 汚い・望ましくないものに限る。泥だらけ・傷だらけ。「〜まみれ」は液体や粉。'},
+{g:'～っぽい',f:'N / Vます形 + っぽい',pt:'com jeito de, meio',en:'-ish, tends to',
+ ex:'大人なのに、話し方が子どもっぽい。',tx:'É adulto mas fala de um jeito infantil.',
+ trap:'話し言葉。忘れっぽい・怒りっぽい＝すぐ怒る性格。⚠ 性質を表すので一時的な状態には使わない。'},
+{g:'～まま（に）',f:'た形 / Nの + まま',pt:'deixando como está',en:'as it is, leaving it',
+ ex:'電気をつけたまま寝てしまった。',tx:'Adormeci com a luz acesa.',
+ trap:'変化せず同じ状態が続く。⚠ 動作の<b>結果の状態</b>なので、た形に付くのが基本。'}
+];
+
+/* ═══ 機能別文型 ② 範囲・時間・義務・原因・条件 ═══ */
+const FN_B=[
+/* 範囲・限界・限定 */
+{g:'～上',f:'N + 上（じょう）',pt:'do ponto de vista de',en:'from the standpoint of',
+ ex:'このような行為は法律上認められていない。',tx:'Um ato destes não é admitido do ponto de vista legal.',
+ trap:'⚠ 読みは「じょう」。法律上・仕事上・健康上。「〜の上で」（うえで）とは別物。'},
+{g:'～にかけては',f:'N + にかけては',pt:'quando se trata de (e nisso é o melhor)',en:'when it comes to',
+ ex:'味の良さにかけては、この店が一番だ。',tx:'Em matéria de sabor, esta casa é a melhor.',
+ trap:'⚠ 後ろには必ず<b>高い評価</b>が来る。悪い評価には使えない。'},
+{g:'～に越したことはない',f:'普通形 + に越したことはない',pt:'nada melhor que, o ideal é',en:'nothing beats',
+ ex:'レポートは早めに出すに越したことはない。',tx:'Nada melhor que entregar o relatório cedo.',
+ trap:'常識的に「そのほうがいい」という控えめな推奨。強制ではない。'},
+{g:'～うちは',f:'普通形 + うちは',pt:'enquanto (ainda não)',en:'while, as long as',
+ ex:'けがが治らないうちは、家で休んでください。',tx:'Enquanto a lesão não sarar, descanse em casa.',
+ trap:'⚠「うちに」は期間内に何かをする、「うちは」は<b>その期間の状態</b>が続く。'},
+/* 時間・場合・継起 */
+{g:'～か～ないかのうちに',f:'V辞書形 + か + Vない + かのうちに',pt:'mal tinha... e já',en:'no sooner than',
+ ex:'夕飯を食べ終わるか終わらないかのうちに、またゲームを始めた。',tx:'Mal acabara de jantar e já voltou ao jogo.',
+ trap:'⚠ ほぼ同時。「〜たとたん」より<b>さらに速い</b>。同じ動詞を肯定と否定で繰り返す形。'},
+{g:'～際（に）',f:'V辞書形 / た形 / Nの + 際',pt:'na ocasião de (formal)',en:'on the occasion of',
+ ex:'外出する際は、鍵をかけてください。',tx:'Ao sair, tranque a porta.',
+ trap:'「〜時」の硬い言い方。案内・規則で多用。⚠ 日常の小さな出来事には使わない。'},
+{g:'～最中（に）',f:'Vている + 最中に',pt:'bem no meio de',en:'right in the middle of',
+ ex:'あの件は、今、検討している最中だ。',tx:'Esse assunto está agora mesmo em análise.',
+ trap:'⚠ 進行中の真っ只中。点ではなく<b>まさにその時</b>。邪魔が入る文脈が多い。'},
+{g:'～て以来',f:'て形 + 以来',pt:'desde que',en:'ever since',
+ ex:'十年前に会って以来、一度も連絡していない。',tx:'Desde que nos vimos há dez anos, nunca mais falámos.',
+ trap:'⚠ 過去のある時点から現在まで続く。短い期間には使わない。'},
+{g:'～ところだった',f:'V辞書形 + ところだった',pt:'quase aconteceu (mas não)',en:'nearly happened',
+ ex:'もう少しで階段を落ちるところだった。',tx:'Por pouco não caí da escada.',
+ trap:'⚠ 実際には<b>起きていない</b>。「〜そうになった」も同じ。危なかった時の定型。'},
+{g:'～ところに / ところへ',f:'Vている + ところに',pt:'justo quando',en:'just as',
+ ex:'財布を落として困っているところに、知人が通りかかった。',tx:'Justo quando eu estava aflito por ter perdido a carteira, passou um conhecido.',
+ trap:'⚠ ちょうどその場面に<b>外から何かが来る</b>。「ところを」は見られる・捕まる場面。'},
+{g:'～ところを',f:'Vている + ところを',pt:'no momento em que (foi visto/apanhado)',en:'caught in the act of',
+ ex:'授業中マンガを読んでいるところを先生に見つかった。',tx:'Fui apanhado pelo professor a ler banda desenhada na aula.',
+ trap:'後ろは見つかる・捕まる・助けられるなど、<b>他人の行為</b>が来る。'},
+{g:'～にあたって',f:'V辞書形 / N + にあたって',pt:'por ocasião de (algo importante)',en:'on the occasion of',
+ ex:'新年を迎えるにあたって、一年の計画を立てた。',tx:'Ao entrar no ano novo, tracei os planos do ano.',
+ trap:'⚠ 特別な場面の前に使う硬い表現。日常の行為には付かない。'},
+{g:'～に従って',f:'V辞書形 / N + に従って',pt:'à medida que; conforme',en:'as; in accordance with',
+ ex:'経済の発展に従って、生活もよくなる。',tx:'À medida que a economia se desenvolve, a vida melhora.',
+ trap:'二つの意味：①変化の並行 ②指示に従う。⚠「に伴って」は変化のみ。'},
+{g:'～につけ',f:'V辞書形 + につけ',pt:'sempre que (emoção)',en:'whenever (with feeling)',
+ ex:'この写真を見るにつけ、子どもの頃を思い出す。',tx:'Sempre que vejo esta foto, lembro-me da infância.',
+ trap:'⚠ 後ろには<b>感情や思考</b>が来る。行動には使わない。見る・聞く・考えるが典型。'},
+/* 勧誘・注意・義務・可能 */
+{g:'～（よ）うではないか',f:'意志形 + ではないか',pt:'vamos (formal, discurso)',en:'let us (formal)',
+ ex:'一緒に頑張ろうではないか。',tx:'Vamos esforçar-nos juntos.',
+ trap:'演説・文章の硬い呼びかけ。日常会話では「〜よう」で十分。'},
+{g:'～恐れがある',f:'V辞書形 / Nの + 恐れがある',pt:'há risco de',en:'there is a risk that',
+ ex:'台風が今晩上陸する恐れがある。',tx:'Há risco de o tufão atingir a costa esta noite.',
+ trap:'⚠ 悪いことにしか使わない。ニュースの定型。「〜かねない」は動作主がいる場合。'},
+{g:'～がたい',f:'Vます形 + がたい',pt:'difícil de (psicologicamente)',en:'hard to (emotionally)',
+ ex:'あの正直な彼がうそをつくとは、信じがたい。',tx:'Que ele, tão honesto, minta, custa a acreditar.',
+ trap:'⚠ 心理的な困難。信じがたい・理解しがたい。物理的な難しさは「〜にくい」。'},
+{g:'～ことだ',f:'V辞書形 + ことだ',pt:'o que se deve fazer é',en:'you should',
+ ex:'読解力をつけたいなら、毎日新聞を読むことだ。',tx:'Se quer ganhar compreensão de leitura, leia jornal todos os dias.',
+ trap:'⚠ 助言の型。「〜べきだ」より柔らかい。「〜ことか」（感嘆）と混同しない。'},
+{g:'～ことはない',f:'V辞書形 + ことはない',pt:'não é preciso',en:'there is no need to',
+ ex:'わざわざ迎えに来ることはないよ。',tx:'Não é preciso vir buscar-me de propósito.',
+ trap:'⚠ 不要の意味。「た形＋ことはない」＝経験がない。<b>形で意味が変わる</b>。'},
+{g:'～ずにはいられない',f:'Vない形（ず）+ にはいられない',pt:'não consigo deixar de',en:'cannot help but',
+ ex:'苦境にいる友達を助けずにはいられない。',tx:'Não consigo deixar de ajudar um amigo em apuros.',
+ trap:'感情が抑えられない。「〜ないではいられない」も同じ。⚠ 意志ではなく衝動。'},
+{g:'～てばかりはいられない',f:'て形 + ばかりはいられない',pt:'não posso ficar só a',en:'cannot just keep',
+ ex:'このまま会社を休んでばかりはいられない。',tx:'Não posso continuar só a faltar ao trabalho.',
+ trap:'今の状態を続けられないという焦り。⚠「てはいられない」は単に「もう無理」。'},
+{g:'～ないことはない',f:'Vない形 + ことはない',pt:'não é que não dê',en:'it is not that I cannot',
+ ex:'この服、大きいけど着れないこともないよ。',tx:'A roupa é grande, mas não é que não dê para usar.',
+ trap:'⚠ 二重否定の控えめな肯定。積極的ではない。「〜ないでもない」も同じ。'},
+{g:'～べき / べきではない',f:'V辞書形 + べき',pt:'deve / não deve',en:'should / should not',
+ ex:'この問題は自分で解決するべきだ。',tx:'Este problema deve ser resolvido por si próprio.',
+ trap:'⚠ する→すべき（するべきも可）。「べきだった」＝すべきだったのにしなかった後悔。'}
+];
+
+/* ═══ 機能別文型 ③ 原因・条件・逆接・強調・主張 ═══ */
+const FN_C=[
+/* 原因・契機 */
+{g:'～あまり（に）',f:'Nの / 普通形 + あまり',pt:'de tanto que',en:'out of sheer',
+ ex:'うれしさのあまりに、涙が出てきた。',tx:'De tanta alegria, vieram-me as lágrimas.',
+ trap:'⚠ 程度が過ぎて予想外の結果に。感情の名詞と結びつきやすい。心配のあまり・驚きのあまり。'},
+{g:'～ことから',f:'普通形 + ことから',pt:'a partir do facto de',en:'from the fact that',
+ ex:'指紋が一致したことから、彼は犯人に特定された。',tx:'A partir da coincidência das impressões digitais, identificaram-no como autor.',
+ trap:'⚠ 根拠から結論を導く。ニュース・説明文で多い。理由というより<b>判断材料</b>。'},
+{g:'～ことだから',f:'Nの + ことだから',pt:'conhecendo-o como conheço',en:'knowing him as I do',
+ ex:'時間にルーズな彼のことだから、今日も遅れてくるだろう。',tx:'Conhecendo-o e o seu descuido com horas, hoje também chega atrasado.',
+ trap:'⚠ 人の性格を根拠にした推測。必ず<b>人</b>に付く。「ことから」と混同しない。'},
+{g:'～たいばかりに',f:'たい形 + ばかりに',pt:'só porque queria tanto',en:'just because I wanted so much',
+ ex:'仕事を早く終わらせたいばかりに、昼休みも取らずに頑張った。',tx:'Só porque queria acabar cedo, nem parei para almoçar.',
+ trap:'強い願望が無理な行動を生む。⚠「ばかりに」単独は悪い結果の原因。'},
+/* 条件・仮定 */
+{g:'～としたら / とすれば',f:'普通形 + としたら',pt:'supondo que',en:'supposing that',
+ ex:'一年間の休暇がとれたとしたら、何がしたいですか。',tx:'Supondo que tivesse um ano de férias, o que gostaria de fazer?',
+ trap:'⚠ 仮定の話。現実味は問わない。「〜とすると」は論理的な帰結を導く。'},
+{g:'～ものなら',f:'可能形 + ものなら',pt:'se ao menos fosse possível',en:'if only it were possible',
+ ex:'人生はやり直せるものならやり直したい。',tx:'Se fosse possível refazer a vida, eu refazia.',
+ trap:'⚠ 実現が難しいことへの願望。必ず<b>可能形</b>に付く。後ろに同じ動詞を繰り返す形が多い。'},
+{g:'～ようなら',f:'普通形 + ようなら',pt:'se parecer que',en:'if it seems that',
+ ex:'分からないところがあるようなら、先生に聞いてください。',tx:'Se houver algo que não perceba, pergunte ao professor.',
+ trap:'様子を見て判断する条件。⚠「ようでは」は批判、「ようなら」は<b>助言</b>。'},
+/* 例示・列挙 */
+{g:'～かというと',f:'普通形 + かというと',pt:'quanto a se... na verdade não',en:'as to whether... not really',
+ ex:'歌を聞くのは好きだが、歌うのが上手なのかといえば、そうでもない。',tx:'Gosto de ouvir música, mas quanto a cantar bem, nem por isso.',
+ trap:'⚠ 後ろはほぼ必ず<b>否定</b>。「そうでもない」がセットで来る。'},
+{g:'～かと思えば',f:'た形 + かと思えば',pt:'ora isto, ora aquilo; mal tinha... e já',en:'one moment... the next',
+ ex:'涼しくなったかと思えば、また急に暑くなった。',tx:'Mal tinha arrefecido e já voltou o calor.',
+ trap:'二つの用法：①意外な連続 ②対照的な並列。⚠ 文脈でどちらか判断する。'},
+{g:'～ならともかく',f:'N / 普通形 + ならともかく',pt:'se fosse... ainda vá, mas',en:'if it were... but',
+ ex:'大勢で行くならともかく、一人であんなところに行くのは危険だ。',tx:'Em grupo ainda vá, mas ir ali sozinho é perigoso.',
+ trap:'⚠ 前は許容できる場合、後ろが<b>問題のある場合</b>。順番を逆にしない。'},
+{g:'～は別として',f:'N / かどうか + は別として',pt:'pondo de lado a questão de',en:'setting aside whether',
+ ex:'得意かどうかは別として、サッカーが大好きだ。',tx:'Pondo de lado se sou bom, adoro futebol.',
+ trap:'一旦その論点を棚上げする。「〜はともかく」も同じ働き。'},
+{g:'～はもちろん',f:'N + はもちろん',pt:'não só... como também',en:'not only... but also',
+ ex:'この製品は国内はもちろん、海外でも高い評価を得ている。',tx:'O produto é bem avaliado não só no país como no estrangeiro.',
+ trap:'⚠ 前は当然のこと、後ろが<b>意外な範囲</b>。「はもとより」は硬い同義語。'},
+{g:'～やら～やら',f:'N + やら + N + やら',pt:'isto, aquilo e mais não sei quê',en:'what with... and...',
+ ex:'ポケットにはハンカチやらガムやらが入っている。',tx:'No bolso tenho lenço, pastilhas e mais não sei quê.',
+ trap:'雑多なものを並べる。⚠ 整理されていない印象を与えるので、公式文書には使わない。'},
+/* 逆接・譲歩 */
+{g:'～からいいようなものの',f:'た形 + からいいようなものの',pt:'ainda bem que..., mas',en:'luckily..., but still',
+ ex:'事故が起こらなかったからいいようなものの、これからは注意しないといけない。',tx:'Ainda bem que não houve acidente, mas é preciso cuidado daqui em diante.',
+ trap:'⚠ 結果は幸運だったが、<b>反省や警告</b>が後ろに来る。'},
+{g:'～からといって',f:'普通形 + からといって',pt:'só porque... não quer dizer que',en:'just because... does not mean',
+ ex:'熱が下がったからといって、油断できない。',tx:'Só porque a febre baixou não se pode descuidar.',
+ trap:'⚠ 後ろは必ず<b>否定</b>。「〜わけではない」とセットで出ることが多い。'},
+{g:'～くせに',f:'普通形 + くせに',pt:'apesar de (com censura)',en:'even though (critical)',
+ ex:'何も知らないくせに、勝手なことを言わないでください。',tx:'Não diga o que lhe apetece, se não sabe de nada.',
+ trap:'⚠ 非難や軽蔑がこもる。目上には使わない。「のに」は中立。'},
+{g:'～ことは～が',f:'同じ語を繰り返す + ことは〜が',pt:'é verdade que... mas',en:'it is true that... but',
+ ex:'今朝の新聞は読んだことは読んだんですが、目を通しただけだ。',tx:'Li o jornal, li, mas só passei os olhos.',
+ trap:'⚠ 同じ動詞を二度繰り返す独特の形。限定的に認めて、あとで限界を言う。'},
+{g:'～たところが',f:'た形 + ところが',pt:'fiz... mas então',en:'I did... but then',
+ ex:'今朝は早めに出かけたところが、事故に巻き込まれ遅刻してしまった。',tx:'Saí cedo de manhã, mas apanhei um acidente e cheguei atrasado.',
+ trap:'⚠「〜たところ」（結果）と一字違いで<b>逆接</b>になる。期待外れの結果が来る。'},
+{g:'～つつも',f:'Vます形 + つつも',pt:'ainda que soubesse',en:'even while',
+ ex:'体に悪いと知りつつも、つい吸ってしまう。',tx:'Mesmo sabendo que faz mal, acabo por fumar.',
+ trap:'⚠ 自分の矛盾を認める型。「ながらも」と同じだが、より硬い書き言葉。'},
+{g:'～といっても',f:'普通形 + といっても',pt:'embora se diga... na verdade',en:'although I say...',
+ ex:'日本語ができるといっても、挨拶しかできない。',tx:'Digo que falo japonês, mas só sei cumprimentar.',
+ trap:'⚠ 前の言葉の<b>程度を下げる</b>。期待させてから実態を明かす型。'},
+{g:'～ながらも',f:'Vます形 / い形 + ながらも',pt:'embora, apesar de',en:'although',
+ ex:'狭いながらも楽しい我が家。',tx:'Pequena, mas alegre, a minha casa.',
+ trap:'⚠ 並行の「ながら」と同形。後ろが逆接なら譲歩の用法。'},
+/* 評価・視点 */
+{g:'～甲斐がある',f:'Vた形 / Nの + 甲斐がある',pt:'valeu a pena',en:'it was worth it',
+ ex:'努力したかいがあって、志望校に合格した。',tx:'Valeu a pena o esforço: entrei na escola que queria.',
+ trap:'⚠ 良い結果が出たときだけ。出なければ「甲斐がなかった」。'},
+{g:'～から見ると',f:'N + から見ると',pt:'visto de, do ângulo de',en:'seen from',
+ ex:'プロから見ると、この作品にはまだ未熟なところがある。',tx:'Visto por um profissional, o trabalho ainda tem imaturidades.',
+ trap:'⚠ 判断する<b>人や立場</b>に付く。「からすると」は根拠にも使える。'},
+{g:'～にしたら',f:'N（人）+ にしたら',pt:'do ponto de vista dele',en:'from his standpoint',
+ ex:'学生にしたら、宿題は少なければ少ないほどいいだろう。',tx:'Do ponto de vista do aluno, quantos menos trabalhos, melhor.',
+ trap:'⚠ 必ず<b>人</b>に付き、その人の気持ちを想像する。「にとって」は利害、「にしたら」は心情。'},
+{g:'～ものがある',f:'い形 / 連体形 + ものがある',pt:'tem algo de',en:'there is something about',
+ ex:'彼の演奏には、すばらしいものがある。',tx:'Há algo de notável na interpretação dele.',
+ trap:'⚠ 直感的な評価。はっきり説明できない良さや問題に使う。'},
+/* 強調・程度・感嘆 */
+{g:'～からこそ',f:'普通形 + からこそ',pt:'justamente porque',en:'precisely because',
+ ex:'あなたのことを思うからこそ厳しく言ったのです。',tx:'Fui duro precisamente porque me importo consigo.',
+ trap:'⚠ 理由の強調。後ろには「〜のです」が来ることが多い。'},
+{g:'～っこない',f:'Vます形 + っこない',pt:'não há hipótese de',en:'there is no way',
+ ex:'そんな難しい問題は、私にはできっこない。',tx:'Um problema assim não há hipótese de eu resolver.',
+ trap:'⚠ 話し言葉の強い否定。「〜わけがない」の口語版。目上には使わない。'},
+{g:'～てでも',f:'て形 + でも',pt:'nem que seja preciso',en:'even if it means',
+ ex:'家を売ってでも子どもの手術の費用を用意したい。',tx:'Nem que tenha de vender a casa, arranjo o dinheiro da cirurgia.',
+ trap:'⚠ 極端な手段を挙げて決意を示す。「〜ても」より強い。'},
+{g:'～てならない',f:'て形 + ならない',pt:'não consigo deixar de sentir',en:'cannot help feeling',
+ ex:'電話が通じないから、心配でならない。',tx:'Como não consigo ligar, não paro de me preocupar.',
+ trap:'⚠ 自然にわいてくる感情に限る。「てたまらない」は身体感覚にも使える。'},
+{g:'～としか言いようがない',f:'N + としか言いようがない',pt:'só se pode chamar de',en:'can only be called',
+ ex:'この病気が治ったことは奇跡としか言いようがない。',tx:'A cura desta doença só se pode chamar milagre.',
+ trap:'他に表現が見つからないという強調。驚き・呆れの両方に使える。'},
+{g:'～にほかならない',f:'N + にほかならない',pt:'não é senão, é precisamente',en:'is nothing other than',
+ ex:'今回の失敗の原因は、準備不足にほかならない。',tx:'A causa do fracasso não foi senão a falta de preparação.',
+ trap:'⚠ 断定の強調。論説文の主張でよく使う。「〜に過ぎない」は逆に価値を下げる。'},
+{g:'～矢先に',f:'た形 / Vようとする + 矢先に',pt:'justo no momento em que ia',en:'just as I was about to',
+ ex:'出かけようとする矢先に友だちがやって来た。',tx:'Justo quando ia sair, chegou um amigo.',
+ trap:'⚠ 何かを始めようとした<b>直前</b>。予定が狂う文脈で使う。'},
+/* 基準・根拠・手段 */
+{g:'～からして',f:'N + からして',pt:'a julgar já por',en:'judging even by',
+ ex:'このレストラン、雰囲気からして結構高そうだね。',tx:'Este restaurante, só pelo ambiente, já parece caro.',
+ trap:'⚠ 一つの例を挙げて全体を推測する。「〜からすると」は根拠全体から判断。'},
+{g:'～に応えて',f:'N + に応えて',pt:'correspondendo a',en:'in response to',
+ ex:'両親の期待に応えて、外国へ留学に行った。',tx:'Correspondendo às expectativas dos pais, fui estudar no estrangeiro.',
+ trap:'⚠ 期待・要望・声援など<b>向けられたもの</b>に応じる。「に応じて」は条件に合わせる。'},
+{g:'～に沿って',f:'N + に沿って',pt:'ao longo de; conforme',en:'along; in line with',
+ ex:'会社の経営方針に沿って、来年度の計画を立てる。',tx:'Traço o plano do próximo ano em linha com a política da empresa.',
+ trap:'二つの意味：①物理的に沿う（川に沿って）②方針に従う。⚠「に従って」より柔らかい。'},
+{g:'～を踏まえて',f:'N + を踏まえて',pt:'com base em, levando em conta',en:'taking into account',
+ ex:'現状を踏まえて、新しい方針を打ち出す。',tx:'Levando em conta a situação atual, lançamos uma nova diretriz.',
+ trap:'⚠ ビジネス・論文で頻出。「をもとに」は材料、「を踏まえて」は<b>前提として考慮</b>。'},
+{g:'～をもとに',f:'N + をもとに',pt:'com base em (material)',en:'based on (source material)',
+ ex:'この映画は実際にあったことをもとに作られた。',tx:'Este filme foi feito com base em factos reais.',
+ trap:'材料・原案として使う。⚠「に基づいて」は規則や根拠に厳密に従う場合。'},
+/* 否定・関連・添加 */
+{g:'～に加えて',f:'N + に加えて',pt:'além de, somado a',en:'in addition to',
+ ex:'のどの痛みに加えて、咳や熱も出てきた。',tx:'Além da dor de garganta, vieram tosse e febre.',
+ trap:'⚠ 同じ方向のものを足す。良いことには良いこと、悪いことには悪いこと。'},
+{g:'～はおろか',f:'N + はおろか',pt:'quanto mais... nem sequer',en:'let alone',
+ ex:'腰を痛めてしまい、歩くことはおろか、立つことも難しい。',tx:'Magoei a lombar: nem falar de andar, até estar de pé é difícil.',
+ trap:'⚠ 後ろには<b>より基本的なこと</b>が来て、それすら無理だと示す。順序を逆にしない。'},
+{g:'～もかまわず',f:'N + もかまわず',pt:'sem se importar com',en:'without caring about',
+ ex:'電車の中で人目もかまわず化粧する人がいる。',tx:'Há quem se maquilhe no comboio sem se importar com os olhares.',
+ trap:'⚠ 普通なら気にすべきことを無視する。批判的な響きを持つ。'},
+{g:'～を中心に',f:'N + を中心に',pt:'tendo como centro',en:'centred on',
+ ex:'この作者の作品は、若い女性を中心に読まれている。',tx:'As obras deste autor são lidas sobretudo por mulheres jovens.',
+ trap:'範囲の中心を示す。⚠ その外にも広がっている含みがある。'},
+{g:'～を除いて',f:'N + を除いて',pt:'exceto, com exceção de',en:'except for',
+ ex:'日曜日を除いて、毎日働いている。',tx:'Exceto aos domingos, trabalho todos os dias.',
+ trap:'例外を一つだけ取り出す。⚠「〜以外」は口語的、「を除いて」は書き言葉。'},
+{g:'～をめぐって',f:'N + をめぐって',pt:'em torno de (disputa)',en:'concerning (a dispute)',
+ ex:'税制改革をめぐって、激しい議論が起こる。',tx:'Em torno da reforma fiscal, eclode um debate aceso.',
+ trap:'⚠ 後ろには<b>対立・議論・争い</b>が来る。単なる話題なら「について」。'},
+/* 主張・推量・伝聞 */
+{g:'～つもりで',f:'た形 / Nの + つもりで',pt:'fazendo de conta que',en:'acting as if',
+ ex:'旅行に行ったつもりでお金をためる。',tx:'Poupo fazendo de conta que fui viajar.',
+ trap:'⚠「つもりだ」（意図）と全く違う。た形に付くと<b>仮定の気持ち</b>になる。'},
+{g:'～ということだ',f:'普通形 + ということだ',pt:'consta que; ou seja',en:'I hear that; that is to say',
+ ex:'田中さんは交通事故に巻き込まれたということだ。',tx:'Consta que o Tanaka se viu envolvido num acidente.',
+ trap:'二つの意味：①伝聞 ②結論の言い換え。⚠ 文末なら伝聞、まとめの文脈なら言い換え。'},
+{g:'～とは限らない',f:'普通形 + とは限らない',pt:'não necessariamente',en:'not necessarily',
+ ex:'値段の高いものが、必ずしもいいものだとは限らない。',tx:'O que é caro não é necessariamente bom.',
+ trap:'⚠ 部分否定。「必ずしも」とセットで出ることが多い。全否定ではない。'},
+{g:'～に決まっている',f:'普通形 + に決まっている',pt:'é claro que, de certeza',en:'is bound to be',
+ ex:'今度の試合は、鈴木さんが勝つに決まっている。',tx:'No próximo jogo, o Suzuki ganha de certeza.',
+ trap:'⚠ 話し言葉の強い確信。根拠は主観的。「に違いない」はやや客観的。'},
+{g:'～ようで',f:'普通形 + ようで',pt:'parece... mas na verdade',en:'seems... but',
+ ex:'この単語の意味は分かっているようで分からない。',tx:'O sentido desta palavra parece claro, mas não é.',
+ trap:'⚠ 同じ語を肯定と否定で繰り返す形が典型。見かけと実態のずれ。'},
+{g:'～ものか',f:'V辞書形 + ものか',pt:'de maneira nenhuma',en:'as if I ever would',
+ ex:'あんなまずい店、二度と行くものか。',tx:'Voltar àquele restaurante horrível? Nunca.',
+ trap:'⚠ 強い否定の意志。話し言葉で「もんか」。反語なので<b>形は疑問、意味は否定</b>。'}
+];
+
+const EN_FN={
+'～以上（は）':'⚠ 〜上は means the same. What follows is resolve or obligation. Not the 以上 of quantity.',
+'～上は':'Stiffer than 以上（は）. What follows is always the speaker\'s resolve.',
+'～かけだ / かけの':'A state stopped halfway. ⚠ 〜かける is the verb form (しかける = to start doing).',
+'～きる / きれない':'Emphasises completion. ⚠ The potential negative is きれない. 食べきる = eat it all.',
+'～末（に）':'A conclusion after a long process. ⚠ Not for short spans. The outcome may be good or bad.',
+'～ずにすむ':'⚠ Avoided thanks to circumstances rather than your own effort. 〜ないで済む is the same.',
+'～ぬく':'⚠ 〜きる is completion; 〜ぬく is seeing it through <b>against difficulty</b>. It carries feeling.',
+'～も当然だ':'The speaker shows understanding of the reaction. 〜のも無理はない is close.',
+'～代わりに':'Two senses: standing in for someone, or a trade-off. Context decides.',
+'～に反して':'Attaches to expectations and intentions — things held <b>in the mind</b>. ⚠ Not to plain facts.',
+'～一方だ':'⚠ Do not confuse with 一方で (contrast). This is a <b>one-way trend</b>, for better or worse.',
+'～がちだ':'⚠ For undesirable tendencies: 忘れがち, 遅れがち. 〜やすい is neutral.',
+'～気味':'A slight degree: 疲れ気味, 太り気味. ⚠ Not for strong states.',
+'～だらけ':'⚠ Only for dirty or unwanted things: 泥だらけ, 傷だらけ. 〜まみれ is for liquids and powders.',
+'～っぽい':'Spoken. 忘れっぽい, 怒りっぽい = quick to anger. ⚠ It describes a trait, not a passing state.',
+'～まま（に）':'An unchanged state persists. ⚠ It marks the <b>resulting state</b>, so it follows the た form.',
+'～上':'⚠ Read じょう. 法律上, 仕事上, 健康上. Different from 〜の上で (うえで).',
+'～にかけては':'⚠ What follows is always <b>high praise</b>. It cannot introduce criticism.',
+'～に越したことはない':'A mild recommendation: common sense says this is better. Not an obligation.',
+'～うちは':'⚠ うちに means doing something within a period; うちは means <b>the state itself</b> continues.',
+'～か～ないかのうちに':'⚠ All but simultaneous, <b>faster</b> than 〜たとたん. The same verb repeated, positive then negative.',
+'～際（に）':'The formal form of 〜時. Common in notices and rules. ⚠ Not for small everyday events.',
+'～最中（に）':'⚠ Right in the thick of something ongoing. Usually an interruption follows.',
+'～て以来':'⚠ From a past point up to now. Not for short spans.',
+'～ところだった':'⚠ It did <b>not</b> actually happen. The set phrase for a near miss.',
+'～ところに / ところへ':'⚠ Something arrives <b>from outside</b> at that moment. ところを is for being seen or caught.',
+'～ところを':'What follows is someone else\'s action: being spotted, caught, or rescued.',
+'～にあたって':'⚠ A formal expression before a significant occasion. Not for everyday acts.',
+'～に従って':'Two senses: parallel change, or obeying instructions. ⚠ に伴って covers change only.',
+'～につけ':'⚠ What follows is an <b>emotion or thought</b>, never an action.',
+'～（よ）うではないか':'A formal call to action in speeches and writing. In conversation plain 〜よう is enough.',
+'～恐れがある':'⚠ Only for bad outcomes. A news staple. 〜かねない is used when there is an agent.',
+'～がたい':'⚠ Psychological difficulty: 信じがたい, 理解しがたい. Physical difficulty takes 〜にくい.',
+'～ことだ':'⚠ The advice pattern, softer than 〜べきだ. Do not confuse with 〜ことか (exclamation).',
+'～ことはない':'⚠ "No need to". With the た form it means "have never". <b>The form changes the meaning</b>.',
+'～ずにはいられない':'An impulse you cannot suppress. ⚠ Not a decision but a compulsion.',
+'～てばかりはいられない':'Impatience at a state that cannot continue. ⚠ てはいられない simply means "I cannot stand it".',
+'～ないことはない':'⚠ A double negative, a reluctant yes. Not enthusiastic.',
+'～べき / べきではない':'⚠ する becomes すべき. べきだった = should have, but did not.',
+'～あまり（に）':'⚠ An excess of feeling produces an unexpected result. Pairs with emotion nouns.',
+'～ことから':'⚠ Drawing a conclusion from evidence — grounds rather than cause.',
+'～ことだから':'⚠ A guess based on someone\'s character. Always attaches to a <b>person</b>.',
+'～たいばかりに':'A strong wish drives unreasonable behaviour. ⚠ Bare ばかりに gives the cause of a bad outcome.',
+'～としたら / とすれば':'⚠ A hypothesis, plausible or not. 〜とすると draws a logical consequence.',
+'～ものなら':'⚠ A wish for something barely possible. Attaches to the <b>potential form</b>.',
+'～ようなら':'A condition judged by appearances. ⚠ ようでは criticises; ようなら <b>advises</b>.',
+'～かというと':'⚠ What follows is almost always a <b>denial</b>, typically そうでもない.',
+'～かと思えば':'Two uses: an unexpected sequence, or a contrasting pair. ⚠ Context decides.',
+'～ならともかく':'⚠ The first case is acceptable, the second is <b>the problem</b>. Do not reverse it.',
+'～は別として':'Setting an issue aside for now. 〜はともかく does the same work.',
+'～はもちろん':'⚠ The first is obvious, the second is the <b>surprising extent</b>. はもとより is the formal twin.',
+'～やら～やら':'Listing assorted things. ⚠ It sounds untidy; avoid it in formal documents.',
+'～からいいようなものの':'⚠ The outcome was lucky, but <b>a warning</b> follows.',
+'～からといって':'⚠ What follows is always a <b>negative</b>, often with 〜わけではない.',
+'～くせに':'⚠ Carries reproach. Never use it to a superior. のに is neutral.',
+'～ことは～が':'⚠ The same verb appears twice. You grant the point, then state its limits.',
+'～たところが':'⚠ One character from 〜たところ and it flips to <b>concession</b>.',
+'～つつも':'⚠ Admitting your own contradiction. Same as ながらも but stiffer.',
+'～といっても':'⚠ It <b>scales down</b> what was just said: raise an expectation, then reveal reality.',
+'～ながらも':'⚠ Identical in shape to parallel ながら. If what follows is contrary, it is concessive.',
+'～甲斐がある':'⚠ Only when the result was good. If not, 甲斐がなかった.',
+'～から見ると':'⚠ Attaches to a <b>person or standpoint</b>. からすると can also take evidence.',
+'～にしたら':'⚠ Always a <b>person</b>, imagining their feelings. にとって is interests; にしたら is sentiment.',
+'～ものがある':'⚠ An intuitive judgement, for something you cannot quite spell out.',
+'～からこそ':'⚠ Emphasises the reason. 〜のです often closes the sentence.',
+'～っこない':'⚠ Strong spoken denial, the colloquial 〜わけがない. Not for superiors.',
+'～てでも':'⚠ Naming an extreme measure to show resolve. Stronger than 〜ても.',
+'～てならない':'⚠ Only for feelings that well up by themselves.',
+'～としか言いようがない':'Emphasis through having no other words. Fits amazement and exasperation alike.',
+'～にほかならない':'⚠ Emphatic assertion, common in a thesis. 〜に過ぎない does the reverse.',
+'～矢先に':'⚠ Right <b>before</b> starting something. Used when a plan gets derailed.',
+'～からして':'⚠ Judging the whole from a single instance.',
+'～に応えて':'⚠ Responding to something <b>directed at you</b>. に応じて adapts to conditions.',
+'～に沿って':'Two senses: physically along, or in line with a policy. ⚠ Softer than に従って.',
+'～を踏まえて':'⚠ をもとに is raw material; を踏まえて is <b>taking into account</b>.',
+'～をもとに':'Used as material or a starting draft. ⚠ に基づいて follows a rule strictly.',
+'～に加えて':'⚠ It adds something of the same polarity: good to good, bad to bad.',
+'～はおろか':'⚠ What follows is <b>more basic</b>, and even that is impossible. Do not reverse the order.',
+'～もかまわず':'⚠ Ignoring what one normally ought to mind. It carries criticism.',
+'～を中心に':'Marks the centre of a range. ⚠ It implies the range reaches beyond that centre.',
+'～を除いて':'Singling out one exception. ⚠ 〜以外 is colloquial; を除いて is written.',
+'～をめぐって':'⚠ What follows is <b>conflict or debate</b>. For a mere topic use について.',
+'～つもりで':'⚠ Completely different from つもりだ. After the た form it means <b>pretending</b>.',
+'～ということだ':'Two senses: hearsay, or restating a conclusion. ⚠ At a sentence end it is hearsay.',
+'～とは限らない':'⚠ Partial negation, often with 必ずしも. Not a blanket denial.',
+'～に決まっている':'⚠ Strong spoken conviction on subjective grounds. に違いない is more objective.',
+'～ようで':'⚠ Typically the same word repeated, positive then negative. Appearance against reality.',
+'～ものか':'⚠ A forceful refusal. A rhetorical question: <b>interrogative in form, negative in meaning</b>.'};
+const GRAMMAR_FN=[...FN_A,...FN_B,...FN_C];
 /* ═══════════════ i18n ═══════════════ */
 const T={
  daysTo:{pt:'DIAS ATÉ DEZEMBRO',en:'DAYS UNTIL DECEMBER'},
@@ -5630,7 +6428,7 @@ function L(k,...a){let s=(T[k]||{})[S.lang]||(T[k]||{}).en||k;a.forEach(v=>s=s.r
 
 /* ═══════════════ 状態管理 ═══════════════ */
 const DEF={xp:0,streak:0,lastActive:'',srs:{},day:{},examDate:'2026-12-06',bossWins:0,
-           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8,sayEx:false},bd:{},timer:false,levels:{r:true,b:true,y:true,v:true,w:true,x:true,z:true,u:true},glevels:{i:true,g:true,h:true,n:true,e:true,j:true,c:true,p:true},d50:null};
+           mondaiSeen:{},lang:'pt',a11y:{font:1,lead:1,track:0,dys:false,tint:'transparent',rate:0.8,sayEx:false},bd:{},timer:false,levels:{r:true,b:true,y:true,v:true,w:true,x:true,z:true,u:true,a:true},glevels:{i:true,g:true,h:true,n:true,e:true,j:true,c:true,p:true,f:true},d50:null};
 let S=JSON.parse(JSON.stringify(DEF));
 const KEY='n2sprint:v2';
 /* APPEND ONLY — the original 66 keep indices 0-65, so every k-record stays valid */
@@ -5643,10 +6441,17 @@ MONDAI_LONG2.forEach((q,k)=>{MONDAI.push(q);EN_MEX.push(EN_MEX_LONG2[k]);});
 MONDAI_LONG3.forEach((q,k)=>{q.long=true;MONDAI.push(q);EN_MEX.push(EN_MEX_LONG3[k]);});
 MONDAI_LONG4.forEach((q,k)=>{q.long=true;MONDAI.push(q);EN_MEX.push(EN_MEX_LONG4[k]);});
 MONDAI_AB.forEach((q,k)=>{q.ab=true;MONDAI.push(q);EN_MEX.push(EN_MEX_AB[k]);});
+MONDAI_RUI.forEach((q,k)=>{MONDAI.push(q);EN_MEX.push(EN_MEX_RUI[k]);});
+MONDAI_RUI2.forEach((q,k)=>{MONDAI.push(q);EN_MEX.push(EN_MEX_RUI2[k]);});
+MONDAI_G1.forEach((q,k)=>{MONDAI.push(q);EN_MEX.push(EN_MEX_G1[k]);});
+MONDAI_R5.forEach((q,k)=>{MONDAI.push(q);EN_MEX.push(EN_MEX_R5[k]);});
+MONDAI_NA.forEach((q,k)=>{MONDAI.push(q);EN_MEX.push(EN_MEX_NA[k]);});
 LISTEN_JOB.forEach(x=>x.pro=true);
 LISTEN.push(...LISTEN_JOB,...LISTEN_A,...LISTEN_B);
 MONDAI_PRO.forEach((q,k)=>{q.pro=true;MONDAI.push(q);EN_MEX.push(EN_MEX_PRO[k]);});
 Object.entries(EN_MENSETSU).forEach(([k,[tx,trap]])=>{EN_GTX[k]=tx;EN_GTRAP[k]=trap;});
+GRAMMAR_FN.forEach(g=>{if(!EN_GTX[g.g])EN_GTX[g.g]=g.tx;
+  if(!EN_GTRAP[g.g])EN_GTRAP[g.g]=EN_FN[g.g]||g.trap;});
 Object.assign(EN_GTRAP,EN_G3TRAP);Object.assign(EN_GTX,EN_G3TX);
 /* the four expression decks carry [translation, note] pairs — fold them into the same lookup */
 [EN_KEIGO,EN_JITA,EN_SETSU,EN_JOSHI,EN_REQ].forEach(o=>Object.entries(o).forEach(([k,[tx,trap]])=>{
@@ -6026,6 +6831,9 @@ KEIGO.forEach((k,ki)=>{
 
 MONDAI.push(...MONDAI_N3,...MONDAI_READ,...MONDAI_R2,...MONDAI_MOJI,...MONDAI_GOI,...MONDAI_BUNPO2,...MONDAI_RUIGI2,...MONDAI_R3A,...MONDAI_R3B,...MONDAI_R3C,...MONDAI_R3D,...MONDAI_R3E,...GEN);
 EN_MEX.push(...EN_MEX_N3,...EN_MEX_READ,...EN_MEX_R2,...EN_MEX_MOJI,...EN_MEX_GOI,...EN_MEX_BUNPO2,...EN_MEX_RUIGI2,...EN_MEX_R3A,...EN_MEX_R3B,...EN_MEX_R3C,...EN_MEX_R3D,...EN_MEX_R3E,...GEN_EN);
+/* new banks go strictly after everything above, so no older index moves */
+[[MONDAI_ADVG,EN_MEX_ADVG],[MONDAI_IIKAE,EN_MEX_IIKAE],[MONDAI_MAGI,EN_MEX_MAGI]].forEach(([m,e])=>
+  m.forEach((q,k)=>{MONDAI.push(q);EN_MEX.push(e[k]);}));
 /* Kill answer-position bias: every item gets a fixed rotation of its options.
    Deterministic, so the layout is stable across sessions, and question indices never move. */
 const QKEY=q=>q.id||('m'+MONDAI.indexOf(q));
@@ -6034,9 +6842,9 @@ MONDAI.forEach((q,i)=>{QBYKEY[q.id||('m'+i)]=i;});
 MONDAI.forEach((q,i)=>{const n=q.o.length,r=((i*7)+3)%n;
   q.o=q.o.slice(r).concat(q.o.slice(0,r));q.a=(q.a-r+n)%n;});
 const POOL={k:KANJI,v:VOCAB,w:VOCAB_N3,x:VOCAB_N4,y:VOCAB_N2H,z:VOCAB_REQ,r:VOCAB_JOB,b:VOCAB_ARCH,
-  g:GRAMMAR,h:GRAMMAR_N3,n:GRAMMAR_REQ,e:KEIGO,j:JITA,c:SETSU,p:JOSHI,i:MENSETSU,u:VOCAB_PLUS};
-const VKEYS=['u','r','b','y','v','w','x','z'],GKEYS=['i','g','h','n','e','j','c','p'];
-const LVNAME={z:'school study',y:'N2+',v:'N2',w:'N3',x:'N4',r:'転職',b:'建築',n:'school study',g:'N2',h:'N3',e:'敬語',j:'自他',c:'接続',p:'助詞',i:'面接',u:'N2 追加'};
+  g:GRAMMAR,h:GRAMMAR_N3,n:GRAMMAR_REQ,e:KEIGO,j:JITA,c:SETSU,p:JOSHI,i:MENSETSU,u:VOCAB_PLUS,f:GRAMMAR_FN,a:VOCAB_ADV};
+const VKEYS=['u','a','r','b','y','v','w','x','z'],GKEYS=['f','i','g','h','n','e','j','c','p'];
+const LVNAME={z:'school study',y:'N2+',v:'N2',w:'N3',x:'N4',r:'転職',b:'建築',n:'school study',g:'N2',h:'N3',e:'敬語',j:'自他',c:'接続',p:'助詞',i:'面接',u:'N2 追加',f:'機能別',a:'副詞'};
 const actV=()=>VKEYS.filter(k=>S.levels[k]),actG=()=>GKEYS.filter(k=>S.glevels[k]);
 
 const store={
@@ -6333,6 +7141,7 @@ function renderDojo(){
   ${box(L('dKanji'),'漢','k','var(--mura)')}
   <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">語彙</div>
   ${box(L('dVocab')+' 追加','語','u','var(--yama)')}
+  ${box('副詞・擬態語','副','a','var(--yama)')}
   ${box(L('dSchool')+' · '+L('dVocab'),'学','z','var(--yama)')}
   ${box(L('dVocab')+' N2+','語','y','var(--yama)')}
   ${box(L('dVocab')+' N2','語','v','var(--yama)')}
@@ -6340,6 +7149,7 @@ function renderDojo(){
   ${box(L('dVocab')+' N4','語','x','var(--yama)')}
   <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">文法</div>
   ${box(L('dSchool')+' · '+L('dGram'),'学','n','var(--yama)')}
+  ${box('機能別文型','機','f','var(--yama)')}
   ${box(L('dGram')+' N2','文','g','var(--yama)')}
   ${box(L('dGram')+' N3','文','h','var(--yama)')}
   <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">表現・文型</div>
@@ -6463,7 +7273,8 @@ const vFront=v=>`<div class="jpbig">${v.w}</div>${v.r!=='—'?`<div class="readi
 const vBack=v=>`<div class="jpbig">${v.w}</div>${v.r!=='—'?`<div class="reading">${v.r}</div>`:''}
   <div class="saywrap">${sayBtn(v.r!=='—'&&/[一-龥]/.test(v.r)?v.r:v.w,'ja-JP')}${sayBtn(v.ex,'ja-JP')}</div>
   <div class="gloss"><span class="pt">${gl(v)}</span><span class="en">${S.lang==='pt'?v.en:v.pt}</span></div>
-  <div class="mnemo" style="font-family:var(--jp);font-size:18px;border-color:var(--yama);background:var(--yama-dim)">${v.ex}</div>`;
+  <div class="mnemo" style="font-family:var(--jp);font-size:18px;border-color:var(--yama);background:var(--yama-dim)">${v.ex}</div>
+  ${v.npt?`<div class="msub" style="margin-top:10px;text-align:left">⚠ ${S.lang==='pt'?v.npt:v.nen}</div>`:''}`;
 const gFront=g=>`<div class="jpbig" style="font-size:32px">${g.g}</div>
   <p class="muted" style="margin-top:12px">${L('gAsk')}</p>`;
 const gBack=g=>`<div class="jpbig" style="font-size:30px">${g.g}</div>
@@ -6812,12 +7623,13 @@ function shadowPool(){
   const out=[];
   [VOCAB,VOCAB_N3,VOCAB_N4,VOCAB_N2H,VOCAB_REQ,VOCAB_JOB,VOCAB_ARCH,VOCAB_PLUS].forEach(d=>
     d.forEach(v=>{if(v.ex&&v.ex.length>=8&&v.ex.length<=38)out.push(v.ex);}));
-  [GRAMMAR,GRAMMAR_N3,GRAMMAR_REQ,KEIGO,JITA,SETSU,JOSHI,MENSETSU].forEach(d=>
+  [GRAMMAR,GRAMMAR_N3,GRAMMAR_REQ,GRAMMAR_FN,KEIGO,JITA,SETSU,JOSHI,MENSETSU].forEach(d=>
     d.forEach(g=>{if(g.ex&&g.ex.length>=8&&g.ex.length<=38&&!g.ex.includes('／'))out.push(g.ex);}));
   NATURAL.forEach(x=>{const s=x.s.replace('（　）',x.ok);
     if(s.length>=8&&s.length<=38)out.push(s);});
   PHRASE_JOB.concat(PHRASE_ISHO,PHRASE_ARCH).forEach(p=>{
     if(p.ex.length<=44)out.push(p.ex);});
+  VOCAB_ADV.forEach(v=>{if(v.ex.length>=8&&v.ex.length<=38)out.push(v.ex);});
   return [...new Set(out)];
 }
 function startShadow(){
@@ -6901,6 +7713,9 @@ function fmtT(ms){const s=Math.round(ms/1000);
 function studyDay(){const d=new Date(Date.now()-4*3600*1000);return d.toISOString().slice(0,10);}
 function _dseed(){const d=studyDay();let x=0;for(let i=0;i<d.length;i++)x=((x*31)+d.charCodeAt(i))>>>0;return x;}
 /* 60% never seen · 25% seen-and-passed (spaced review) · 15% still open in the notebook */
+/* the real paper's section weights — the daily set mirrors them instead of
+   following whatever the generator happened to produce most of */
+const EXAM_MIX={'文字':11,'語彙':15,'類義':5,'文法':23,'並べ替え':5,'読解':16};
 function dailySet(){
   const seed=_dseed(),t=today();
   const open=[],due=[],fresh=[];
@@ -6909,18 +7724,37 @@ function dailySet(){
     if(!c){fresh.push(i);return;}
     if(isOpen(c)){open.push(i);return;}
     if(!c.due||c.due<=t)due.push(i);});
-  const take=(arr,n,salt)=>{
-    const a=arr.slice().sort((x,y)=>_rng(seed+salt+x)-_rng(seed+salt+y));
-    return a.slice(0,n);};
-  let pick=[...take(open,Math.round(D50*0.15),11),
-            ...take(due,Math.round(D50*0.25),29),
-            ...take(fresh,D50,7)];
-  pick=[...new Set(pick)].slice(0,D50);
-  if(pick.length<D50){                       /* bank exhausted: top up with anything */
-    const rest=MONDAI.map((q,i)=>i).filter(i=>!pick.includes(i));
-    pick=pick.concat(take(rest,D50-pick.length,53));}
-  return {ids:pick.sort((a,b)=>_rng(seed+a)-_rng(seed+b)),
-          open:open.length,due:due.length,fresh:fresh.length};
+  const shuf=(arr,salt)=>arr.slice().sort((x,y)=>_rng(seed+salt+x)-_rng(seed+salt+y));
+  const secOf=i=>MONDAI[i].s;
+
+  /* how many of each section a 50-question set should hold */
+  const total=Object.values(EXAM_MIX).reduce((a,b)=>a+b,0);
+  const quota={};Object.entries(EXAM_MIX).forEach(([s,w])=>{quota[s]=Math.round(w/total*D50);});
+
+  const pick=[],used=new Set();
+  const add=i=>{if(used.has(i))return false;used.add(i);pick.push(i);return true;};
+  /* mistakes first, then due review, then new — but always inside the section quota */
+  const pools=[shuf(open,11),shuf(due,29),shuf(fresh,7)];
+  Object.entries(quota).forEach(([s,n])=>{
+    let got=0;
+    for(const pool of pools){
+      for(const i of pool){
+        if(got>=n)break;
+        if(secOf(i)===s&&add(i))got++;}
+      if(got>=n)break;}});
+  /* top up if a section ran dry, keeping the mistake-first order */
+  if(pick.length<D50){
+    for(const pool of pools){
+      for(const i of pool){if(pick.length>=D50)break;add(i);}
+      if(pick.length>=D50)break;}}
+  if(pick.length<D50){
+    for(const i of shuf(MONDAI.map((q,k)=>k),53)){if(pick.length>=D50)break;add(i);}}
+  const ids=pick.slice(0,D50);
+  const inSet=new Set(ids);
+  return {ids:ids.sort((a,b)=>_rng(seed+a)-_rng(seed+b)),
+          open:open.filter(i=>inSet.has(i)).length,
+          due:due.filter(i=>inSet.has(i)).length,
+          fresh:fresh.filter(i=>inSet.has(i)).length};
 }
 function d50State(){
   const d=studyDay();
