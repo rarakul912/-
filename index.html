@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#191231">
+<meta name="color-scheme" content="dark">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -57,7 +58,7 @@ main p,main .msub,main .muted,main .explain,main .trap,main .mnemo,main .gloss,m
   font-size:15px;margin-left:8px;vertical-align:middle;flex:0 0 auto}
 .say:active{background:var(--mura-btn);border-color:var(--mura-btn)}
 .saywrap{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+html,body{margin:0;padding:0;background:var(--bg)!important;color:var(--txt);color-scheme:dark;
   font-family:var(--ui);overscroll-behavior-y:none}
 body{padding-bottom:calc(72px + var(--safe-b))}
 button{font-family:inherit;color:inherit;border:0;background:none;cursor:pointer}
@@ -65,6 +66,7 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.01em}
 
 /* ── halftone atmosphere ───────────────────────────── */
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-color:var(--bg);   /* own opaque layer: text stays on dark even if the host paints body light */
   background-image:radial-gradient(circle at 1px 1px,rgba(185,140,255,.075) 1px,transparent 0);
   background-size:6px 6px}
 
@@ -73,7 +75,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   border-bottom:2px solid var(--bord);padding:10px 14px 8px;
   display:flex;align-items:center;gap:12px}
 .days{font-family:var(--disp);font-weight:800;font-size:30px;line-height:.9;color:var(--yama)}
-.days small{display:block;font-size:9px;letter-spacing:.22em;color:var(--dim);
+.days small{display:block;font-size:10.5px;letter-spacing:.22em;color:var(--dim);
   font-weight:600;margin-top:4px}
 .topmeta{margin-left:auto;text-align:right;font-size:11px;color:var(--dim);line-height:1.5}
 .langtog{border:1.5px solid var(--bord);border-radius:8px;padding:7px 10px;
@@ -88,7 +90,7 @@ main{position:relative;z-index:1;padding:16px 14px 24px;max-width:620px;margin:0
 .view{display:none}.view.on{display:block;animation:fade .25s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-.eyebrow{font-size:10px;letter-spacing:.24em;color:var(--dim);font-weight:700;
+.eyebrow{font-size:12px;letter-spacing:.24em;color:var(--dim);font-weight:700;
   text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .eyebrow::after{content:"";flex:1;height:1px;background:var(--bord)}
 
@@ -169,9 +171,14 @@ main{position:relative;z-index:1;padding:16px 14px 24px;max-width:620px;margin:0
 .opt.right::after{content:"\2713";color:var(--ok)}
 .opt.wrong::after{content:"\2715";color:var(--coral)}
 .qjp{font-family:var(--jp);font-size:20px;line-height:1.85;margin-bottom:18px}
+.qjp u,.qctx u{text-decoration-thickness:2.5px;text-underline-offset:6px;text-decoration-color:var(--yama)}
+.qctx{font-family:var(--jp);font-size:17px;line-height:2;background:var(--surf);border-left:3px solid var(--yama);
+  border-radius:10px;padding:10px 14px;margin:-6px 0 18px}
+.explain b{display:inline-block;max-width:100%}
+body.a11y{--jp:"Zen Kaku Gothic New","Noto Serif JP",sans-serif}   /* dyslexia mode: even-stroke gothic for Japanese too */
 .qjp .blank{color:var(--yama);border-bottom:2px solid var(--yama);padding:0 20px}
-.qtag{display:inline-block;font-size:10px;letter-spacing:.14em;font-weight:800;
-  padding:4px 9px;border-radius:20px;background:var(--bord);color:var(--dim);margin-bottom:12px}
+.qtag{display:inline-block;font-size:12px;letter-spacing:.14em;font-weight:800;
+  padding:4px 9px;border-radius:20px;background:var(--bord);color:var(--txt);margin-bottom:12px}
 
 .explain{margin-top:14px;background:var(--surf);border:1px solid var(--bord);
   border-radius:11px;padding:15px;font-size:14px;line-height:1.7}
@@ -182,7 +189,7 @@ main{position:relative;z-index:1;padding:16px 14px 24px;max-width:620px;margin:0
   overflow:hidden;display:flex}
 .hp i{display:block;height:100%;background:var(--mura);transition:width .35s}
 .hp.boss i{background:var(--coral)}
-.counter{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);
+.counter{display:flex;justify-content:space-between;font-size:12.5px;color:var(--dim);
   margin-bottom:7px;font-weight:700;letter-spacing:.1em}
 
 /* ── mastery wall (grid of genkoyoshi cells) ───────── */
@@ -210,7 +217,7 @@ nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
   padding:5px 2px;color:var(--dim);border-radius:10px}
 nav button .ic{font-family:var(--jp);font-size:19px;font-weight:700;line-height:1;
   padding:5px 14px;border-radius:10px;transition:background .2s}
-nav button .lb{font-size:8px;letter-spacing:.02em;font-size:9px;letter-spacing:.08em;font-weight:700}
+nav button .lb{font-size:10px;letter-spacing:.04em;font-weight:700}
 nav button.on{color:var(--mura)}
 nav button.on .ic{background:var(--mura-dim)}
 
@@ -304,7 +311,7 @@ nav button.on .ic{background:var(--mura-dim)}
 .famcell{background:var(--surf);border:1px solid var(--bord);border-radius:9px;padding:9px 4px;
   text-align:center}
 .famcell .gl{font-family:var(--jp);font-size:24px;display:block;line-height:1.1}
-.famcell .nm{font-size:9px;color:var(--dim);display:block;margin-top:4px;line-height:1.2}
+.famcell .nm{font-size:11px;color:var(--dim);display:block;margin-top:4px;line-height:1.2}
 .d50{background:var(--surf);border:2px solid var(--yama);border-radius:16px;
   padding:18px;margin-bottom:14px}
 .d50 h2{font-size:19px;color:var(--yama)}
@@ -6534,6 +6541,48 @@ function _add(item,en){
   item.id='q'+_hash(item.q+'|'+item.o[item.a]);   /* stable across future additions */
   GEN.push(item);GEN_EN.push(en);}
 
+/* a real exam distractor is a reading a learner could believe: long/short vowel, voicing, small っ.
+   'ひがいう', 'しょんがい', 'おさないん' are not — nobody would pick them, so they train nothing. */
+const _O='おこごそぞとどのほぼぽもよろょゅ',_AR='あかがさざただなはばぱまやらわゃ';
+/* only the kanji part may change — okurigana (幼<b>い</b>, 補<b>う</b>) is printed, so warping it is a free point */
+function _okuri(word,read){const m=word.match(/[ぁ-ん]+$/);return m&&read.endsWith(m[0])?m[0].length:0;}
+function _plausible(x,read,ok){
+  ok=ok||0;
+  if(ok&&x.slice(-ok)!==read.slice(-ok))return false;
+  if(x.length===read.length+1&&x.startsWith(read)){if(ok)return false;const add=x.slice(-1),prev=read.slice(-1);
+    if(add==='う')return _O.includes(prev);
+    if(add==='ん')return _AR.includes(prev)&&read.length>=3;
+    return false;}
+  if(x.length===read.length){let d=[];for(let i=0;i<x.length;i++)if(x[i]!==read[i])d.push(x[i]+read[i]);
+    if(d.length===1&&(d[0]==='んう'||d[0]==='うん'))return false;}
+  if(x.length===read.length-1){for(let i=0;i<read.length;i++)if(read[i]!==x[i]){
+    if('ゃゅょ'.includes(read[i])&&read[i+1]==='う')return false;   /* りょう→りう reads as nothing */
+    break;}}
+  return true;
+}
+/* the other confusions N2 really tests: は/ぱ, 学校型の く⇄っ, a long vowel or a ょ inside the word */
+const _HA='はひふへほ',_PA='ぱぴぷぺぽ',_KST='かきくけこさしすせそたちつてとぱぴぷぺぽ';
+function _variants2(r,ok){
+  const v=new Set(),end=r.length-(ok||0);
+  for(let i=0;i<end;i++){const c=r[i],nx=r[i+1]||'';
+    const h=_HA.indexOf(c),p=_PA.indexOf(c);
+    if(h>=0&&i>0)v.add(r.slice(0,i)+_PA[h]+r.slice(i+1));
+    if(p>=0)v.add(r.slice(0,i)+_HA[p]+r.slice(i+1));
+    if(i>0&&i<end&&_KST.includes(c)&&!'んっゃゅょー'.includes(r[i-1]))v.add(r.slice(0,i)+'っ'+r.slice(i));   /* さそく→さっそく型 */
+    if('くつち'.includes(c)&&i>0&&_KST.includes(nx)&&i+1<end)v.add(r.slice(0,i)+'っ'+r.slice(i+1));
+    if(c==='っ'&&'かきくけこ'.includes(nx))v.add(r.slice(0,i)+'く'+r.slice(i+1));
+    if(c==='っ'&&'さしすせそたちつてと'.includes(nx))v.add(r.slice(0,i)+'つ'+r.slice(i+1));
+    if(_O.includes(c)&&nx!=='う'&&nx!=='ん'&&i+1<=end&&!'ゃゅょ'.includes(nx))v.add(r.slice(0,i+1)+'う'+r.slice(i+1));
+    const E='えけげせぜてでねへべぺめれ';
+    if(E.includes(c)&&nx==='い'&&i+1<end)v.add(r.slice(0,i+1)+r.slice(i+2));          /* ていねい→てねい */
+    if(E.includes(c)&&nx!=='い'&&i+1<=end)v.add(r.slice(0,i+1)+'い'+r.slice(i+1));      /* せ→せい */
+    if(c==='ん'&&i>0)v.add(r.slice(0,i)+r.slice(i+1));                                  /* かんぶ→かぶ */
+    if(c==='ゅ')v.add(r.slice(0,i)+'ょ'+r.slice(i+1));
+    if(c==='ょ')v.add(r.slice(0,i)+'ゅ'+r.slice(i+1));
+    if('きしちにひみりぎじび'.includes(c)&&!'ゃゅょ'.includes(nx)&&i+1<end)v.add(r.slice(0,i+1)+'ょ'+r.slice(i+1));
+  }
+  v.delete(r);return [...v];
+}
 /* ── ① 漢字の読み（KANJIの熟語から） ── */
 KANJI.forEach((k,ki)=>k.w.forEach(([word,read,gloss],wi)=>{
   const seed=ki*31+wi;
@@ -6543,9 +6592,15 @@ KANJI.forEach((k,ki)=>k.w.forEach(([word,read,gloss],wi)=>{
   const cand=_variants(read)
     .filter(x=>x!==read&&!truth.includes(x)&&!_REAL.has(x)&&_kanaOK(x));
   if(cand.length<3)return;
-  const wrong=cand
-    .map(x=>[x,_dist(x,read)*10+(x.length===read.length?0:3)+_rng(seed*13+x.length)])
-    .sort((a,b)=>a[1]-b[1]).slice(0,3).map(x=>x[0]);
+  const rank=l=>l.map(x=>[x,_dist(x,read)*10+(x.length===read.length?0:3)+_rng(seed*13+x.length)])
+    .sort((a,b)=>a[1]-b[1]).map(x=>x[0]);
+  const ok=_okuri(word,read);
+  const good=[...new Set([...cand,..._variants2(read,ok)])]
+    .filter(x=>x!==read&&!truth.includes(x)&&!_REAL.has(x)&&_kanaOK(x)&&_plausible(x,read,ok));
+  /* leave an item alone if its original three were already believable — only weak sets are rebuilt */
+  const orig=rank(cand).slice(0,3);
+  const wrong=orig.every(x=>_plausible(x,read,ok))?orig
+    :[...rank(good),...rank(cand.filter(x=>!good.includes(x)))].slice(0,3);
   if(wrong.length<3)return;
   const opts=[read,...wrong];
   const a=Math.floor(_rng(seed+7)*4);
@@ -6554,8 +6609,13 @@ KANJI.forEach((k,ki)=>k.w.forEach(([word,read,gloss],wi)=>{
   /* name the exact change in each wrong reading — that is the skill being trained */
   const DAKU='がぎぐげござじずぜぞだぢづでどばびぶべぼ';
   const diff=(x,lang)=>{
-    if(x.length>read.length)return lang==='pt'?'uma mora a mais':'one mora too many';
-    if(x.length<read.length)return lang==='pt'?'uma mora a menos':'one mora too few';
+    const odd=(l,s)=>{for(let i=0;i<l.length;i++)if(l[i]!==s[i])return l[i];return l[l.length-1];};
+    const NAME={'ょ':['som contraído ょ','contracted ょ'],'ゅ':['som contraído ゅ','contracted ゅ'],'ゃ':['som contraído ゃ','contracted ゃ'],
+      'っ':['っ pequeno','small っ'],'う':['vogal longa','long vowel'],'い':['vogal longa','long vowel'],'ん':['ん','ん']};
+    if(x.length>read.length){const c=odd(x,read),n=NAME[c];
+      return n?(lang==='pt'?n[0]+' a mais':'extra '+n[1]):(lang==='pt'?'uma mora a mais':'one mora too many');}
+    if(x.length<read.length){const c=odd(read,x),n=NAME[c];
+      return n?(lang==='pt'?'sem '+n[0]:'missing '+n[1]):(lang==='pt'?'uma mora a menos':'one mora too few');}
     for(let i=0;i<read.length;i++){
       if(read[i]===x[i])continue;
       const a=read[i],b=x[i];
@@ -6572,9 +6632,10 @@ KANJI.forEach((k,ki)=>k.w.forEach(([word,read,gloss],wi)=>{
       return kk?ch+'＝'+(kk.on!=='—'?kk.on:kk.kun):null;}).filter(Boolean);
     return rows.length?'<br><span style="color:var(--yama)">'+(lang==='pt'?'Leituras':'Readings')+':</span> '+rows.join('　')+'<br>':'';};
   const more=otherUses(word,'',1);
-  const moreB=lang=>more.length?'<br><span style="color:var(--yama)">'+(lang==='pt'?'Em uso':'In use')+':</span> '+more[0]:'';
+  const ctx=more.length?more[0].replace(word,'<u>'+word+'</u>'):null;
+  const moreB=lang=>more.length&&!ctx?'<br><span style="color:var(--yama)">'+(lang==='pt'?'Em uso':'In use')+':</span> '+more[0]:'';
   const brk='<br>';
-  _add({s:'文字',q:'<u>'+word+'</u> の読み方として最もよいものはどれか。',o:opts,a,
+  _add({s:'文字',q:'<u>'+word+'</u> の読み方として最もよいものはどれか。',o:opts,a,ctx,
     ex:'<b>'+word+'</b>＝'+read+'（'+g[0]+'）。'+hint('pt')
       +'<span style="color:var(--coral)">Descartadas:</span> '+wlist('pt')+moreB('pt')},
    '<b>'+word+'</b> = '+read+' ('+(g[1]||g[0])+').'+hint('en')
@@ -7137,9 +7198,9 @@ function renderDojo(){
     </button>`;};
   document.getElementById('v-dojo').innerHTML=`
   <div class="eyebrow">${L('dojoT')}</div>
-  <div class="eyebrow" style="font-size:9px;margin:2px 0 6px">漢字</div>
+  <div class="eyebrow" style="font-size:11.5px;margin:2px 0 6px">漢字</div>
   ${box(L('dKanji'),'漢','k','var(--mura)')}
-  <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">語彙</div>
+  <div class="eyebrow" style="font-size:11.5px;margin:16px 0 6px">語彙</div>
   ${box(L('dVocab')+' 追加','語','u','var(--yama)')}
   ${box('副詞・擬態語','副','a','var(--yama)')}
   ${box(L('dSchool')+' · '+L('dVocab'),'学','z','var(--yama)')}
@@ -7147,17 +7208,17 @@ function renderDojo(){
   ${box(L('dVocab')+' N2','語','v','var(--yama)')}
   ${box(L('dVocab')+' N3','語','w','var(--yama)')}
   ${box(L('dVocab')+' N4','語','x','var(--yama)')}
-  <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">文法</div>
+  <div class="eyebrow" style="font-size:11.5px;margin:16px 0 6px">文法</div>
   ${box(L('dSchool')+' · '+L('dGram'),'学','n','var(--yama)')}
   ${box('機能別文型','機','f','var(--yama)')}
   ${box(L('dGram')+' N2','文','g','var(--yama)')}
   ${box(L('dGram')+' N3','文','h','var(--yama)')}
-  <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">表現・文型</div>
+  <div class="eyebrow" style="font-size:11.5px;margin:16px 0 6px">表現・文型</div>
   ${box('敬語','敬','e','var(--mura)')}
   ${box('自動詞・他動詞','自','j','var(--mura)')}
   ${box('接続表現','接','c','var(--mura)')}
   ${box('助詞の使い分け','助','p','var(--mura)')}
-  <div class="eyebrow" style="font-size:9px;margin:16px 0 6px">専門 · Roberto</div>
+  <div class="eyebrow" style="font-size:11.5px;margin:16px 0 6px">専門 · Roberto</div>
   ${box('転職・就職','転','r','#7ED4EF')}
   ${box('建築','築','b','#7ED4EF')}
   ${box('面接の表現','面','i','#7ED4EF')}
@@ -7357,8 +7418,8 @@ function drawQ(){
     <span>${mo.boss?'❤'.repeat(mo.hp):''} ${mo.idx+1} / ${mo.q.length}</span></div>
   <div class="hp ${mo.boss?'boss':''}"><i style="width:${mo.idx/mo.q.length*100}%"></i></div>
   ${S.timer?`<div class="tmr" id="tmr"><b>0s</b><span class="tgt">${L('tmPace',Math.round(paceFor(q)))}</span></div>`:''}
-  <div style="margin-top:16px"><span class="qtag">${q.s}</span>${sayBtn(q.s==='読解'?q.p+' '+q.q:q.q,'ja-JP')}</div>
-  ${body}
+  <div style="margin-top:16px"><span class="qtag">${q.s}</span>${q.s==='文字'&&/読み方/.test(q.q)?'':sayBtn(q.s==='読解'?q.p+' '+q.q:q.q,'ja-JP')}</div>
+  ${body}${q.ctx?`<div class="qctx">${q.ctx}</div>`:''}
   <div id="opts">${q.o.map((o,k)=>`<button class="opt" data-k="${k}">
     <span class="num">${k+1}</span><span>${o}</span></button>`).join('')}</div>
   <div id="ex"></div>`;
