@@ -350,6 +350,33 @@ select,input[type=date]{background:var(--surf);border:1.5px solid var(--bord);co
   padding:11px;border-radius:10px;font-family:inherit;font-size:14px;width:100%}
 button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--yama);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── 誕生日サプライズ ─────────────────────────────── */
+#bd{position:fixed;inset:0;z-index:90;display:none;place-items:center;
+  background:rgba(12,8,28,.86);backdrop-filter:blur(4px);padding:18px}
+#bd.on{display:grid}
+#bdfx{position:fixed;inset:0;pointer-events:none;z-index:91}
+.bdcard{position:relative;z-index:92;background:var(--surf);border:2px solid var(--yama);border-radius:24px;
+  padding:26px 22px 22px;max-width:min(380px,92vw);width:100%;text-align:center;
+  max-height:calc(100dvh - 36px);overflow-y:auto;
+  box-shadow:0 18px 60px rgba(0,0,0,.6);animation:pop .35s cubic-bezier(.2,1.5,.4,1)}
+.bdgift{background:none;border:0;cursor:pointer;display:block;margin:6px auto 4px;animation:bdwig 1.6s ease-in-out infinite}
+@keyframes bdwig{0%,100%{transform:rotate(0)}10%{transform:rotate(-6deg)}20%{transform:rotate(6deg)}30%{transform:rotate(0)}}
+.bdhint{font-size:17px;font-weight:800;color:var(--yama);margin:10px 0 0}
+.bdjp{font-family:var(--jp);font-size:30px;font-weight:700;line-height:1.5;margin:6px 0 0;color:var(--txt)}
+.bdjp rt{font-size:12px;color:var(--mura);font-weight:500}
+.bdpt{font-family:var(--disp);font-size:24px;font-weight:800;color:var(--yama);margin:10px 0 14px;line-height:1.25}
+.bdmsg{font-size:17px;line-height:1.75;color:var(--txt);text-align:left;margin:0 0 16px;white-space:pre-line}
+.bdlove{background:var(--paper);color:var(--ink);border-radius:16px;padding:16px 16px 12px;margin:0 0 16px;text-align:left}
+.bdlovejp{font-family:var(--jp);font-size:19px;line-height:2.15;font-weight:700}
+.bdlovejp rt{font-size:10.5px;color:#6D3FC4;font-weight:500}
+.bdlove .say{background:#fff;border-color:var(--paper-line)}
+.bdgiftline{background:var(--yama-dim);border:1px solid var(--yama);border-radius:14px;padding:12px 14px;
+  font-size:15.5px;font-weight:700;color:var(--txt);margin-bottom:16px;line-height:1.5}
+#bdAgain{position:fixed;right:14px;bottom:calc(84px + var(--safe-b));z-index:60;width:52px;height:52px;border-radius:50%;
+  background:var(--surf);border:2px solid var(--yama);font-size:26px;display:none;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+#bdAgain.on{display:block}
+@media(prefers-reduced-motion:reduce){.bdgift{animation:none}}
 </style>
 </head>
 <body>
@@ -386,6 +413,8 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
 
 <div id="tint"></div>
 <div id="cheer"></div>
+<div id="bd"><canvas id="bdfx"></canvas><div class="bdcard" id="bdcard"></div></div>
+<button id="bdAgain" aria-label="birthday">🎂</button>
 <div class="toast" id="toast"></div>
 <script>
 /* ═══════════════ 漢字 · KANJI N2 ═══════════════ */
@@ -7036,7 +7065,7 @@ function dueList(prefix){
     if(!c)fresh.push(i);else if(c.due<=t)due.push(i);});
   return {fresh,due};
 }
-function addXP(n){S.xp+=n;paintTop();}
+function addXP(n){if(isBday()&&location.hash!=='#bday')n*=2;S.xp+=n;paintTop();}
 const RETIRE=2;                      /* two clean answers and it leaves the notebook */
 function isOpen(c){return c&&c.miss>0&&(c.run||0)<RETIRE;}
 function openMistakes(){
@@ -8156,6 +8185,87 @@ function renderStats(){
     S=JSON.parse(JSON.stringify(DEF));save();paintTop();renderStats();toast(L('tZero'));}};
 }
 
+
+/* ═══════════════ 誕生日サプライズ ═══════════════
+   ▼▼ 可以改的地方 ▼▼
+   BDAY：他的生日（月、日）。当天第一次打开网站会自动弹出，当天右下角一直有 🎂 可以再打开。
+   BDAY_MSG：你想对他说的话，葡萄牙语写在 pt，英语写在 en（界面切到 EN 时显示 en）。换行就直接换行。
+   想提前预览：在网址后面加上 #bday 再打开。 */
+const BDAY={m:9,d:28};
+const BDAY_MSG={
+/* jp：你写给他的日语原话（可以加 <ruby>汉字<rt>读音</rt></ruby> 注音） */
+jp:`わがままで、<ruby>大人<rt>おとな</rt></ruby>しくて、<ruby>数学<rt>すうがく</rt></ruby>が<ruby>得意<rt>とくい</rt></ruby>で、スケベな、<ruby>私<rt>わたし</rt></ruby>の<ruby>一番<rt>いちばん</rt></ruby><ruby>好<rt>す</rt></ruby>きなロベルトさん。
+お<ruby>誕生日<rt>たんじょうび</rt></ruby>おめでとう！
+これからもよろしくね。`,
+jpSay:'わがままで、おとなしくて、数学が得意で、スケベな、私の一番好きなロベルトさん。お誕生日おめでとう！これからもよろしくね。',
+pt:`Para o meu Roberto preferido: teimoso, calado, ótimo a matemática… e um bocadinho maroto 😏
+
+Feliz aniversário!
+Que venham muitos mais anos juntos.
+
+— com amor`,
+en:`To my favourite Roberto: stubborn, quiet, great at maths… and a little bit naughty 😏
+
+Happy birthday!
+Here's to many more years together.
+
+— with love`};
+/* ▲▲ 可以改的地方 ▲▲ */
+function isBday(){const n=new Date();return (n.getMonth()+1===BDAY.m&&n.getDate()===BDAY.d)||location.hash==='#bday';}
+function bdConfetti(){
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const c=document.getElementById('bdfx'),x=c.getContext('2d');if(!x)return;
+  c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;x.scale(devicePixelRatio,devicePixelRatio);
+  const col=['#FFC93C','#B98CFF','#FF6B76','#5FD68F','#F0EAFA'],P=[];
+  for(let i=0;i<150;i++)P.push({x:innerWidth/2,y:innerHeight*.42,vx:(Math.random()-.5)*11,vy:-Math.random()*13-3,
+    w:5+Math.random()*6,h:8+Math.random()*8,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:col[i%col.length]});
+  const t0=performance.now();
+  (function f(t){x.clearRect(0,0,innerWidth,innerHeight);const age=t-t0;
+    P.forEach(p=>{p.vy+=.28;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+      x.save();x.globalAlpha=Math.max(0,1-age/4200);x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.c;
+      x.fillRect(-p.w/2,-p.h/2,p.w,p.h);x.restore();});
+    if(age<4200)requestAnimationFrame(f);else x.clearRect(0,0,innerWidth,innerHeight);})(t0);
+}
+const GIFT_SVG=`<svg width="150" height="150" viewBox="0 0 150 150" aria-hidden="true">
+  <rect x="22" y="62" width="106" height="74" rx="8" fill="#6D3FC4"/>
+  <rect x="14" y="44" width="122" height="26" rx="7" fill="#B98CFF"/>
+  <rect x="66" y="44" width="18" height="92" fill="#FFC93C"/>
+  <path d="M75 44 C55 18 30 26 44 40 C50 46 64 45 75 44 Z" fill="#FFC93C"/>
+  <path d="M75 44 C95 18 120 26 106 40 C100 46 86 45 75 44 Z" fill="#FFC93C"/>
+  <circle cx="75" cy="44" r="7" fill="#FF6B76"/></svg>`;
+function bdOpen(){
+  const bd=document.getElementById('bd'),card=document.getElementById('bdcard');
+  const pt=S.lang!=='en';
+  card.innerHTML=`<button class="bdgift" id="bdGift" aria-label="open">${GIFT_SVG}</button>
+    <p class="bdhint">${pt?'Roberto, tem um presente para você 🎁':'Roberto, there is a gift for you 🎁'}</p>
+    <p class="muted" style="margin:6px 0 0">${pt?'Toque na caixa para abrir':'Tap the box to open it'}</p>`;
+  bd.classList.add('on');
+  document.getElementById('bdGift').onclick=bdReveal;
+}
+function bdReveal(){
+  const pt=S.lang!=='en',card=document.getElementById('bdcard');
+  const first=!S.bdGift||S.bdGift!==new Date().getFullYear();
+  if(first){S.bdGift=new Date().getFullYear();S.xp+=200;save();paintTop();}
+  card.innerHTML=`
+    <div class="bdjp">お<ruby>誕生日<rt>たんじょうび</rt></ruby>おめでとう！</div>
+    <div style="margin-top:6px">${sayBtn('お誕生日おめでとう、ロベルト！','ja-JP')}</div>
+    <div class="bdpt">${pt?'Feliz aniversário, Roberto! 🎂':'Happy birthday, Roberto! 🎂'}</div>
+    ${BDAY_MSG.jp?`<div class="bdlove"><div class="bdlovejp">${BDAY_MSG.jp.replace(/\n/g,'<br>')}</div>
+      <div style="margin-top:8px">${sayBtn(BDAY_MSG.jpSay||BDAY_MSG.jp,'ja-JP')}</div></div>`:''}
+    <p class="bdmsg">${esc(pt?BDAY_MSG.pt:BDAY_MSG.en)}</p>
+    <div class="bdgiftline">🎁 ${pt?'Presente: <b>+200 XP</b> agora, e <b>XP em dobro</b> o dia todo hoje.':'Gift: <b>+200 XP</b> now, and <b>double XP</b> all day today.'}</div>
+    <button class="btn shu" id="bdClose">${pt?'Obrigado ❤':'Thank you ❤'}</button>`;
+  wireSay();bdConfetti();
+  document.getElementById('bdClose').onclick=()=>{document.getElementById('bd').classList.remove('on');renderHome();};
+}
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function maybeBirthday(){
+  if(!isBday())return;
+  const again=document.getElementById('bdAgain');again.classList.add('on');again.onclick=bdOpen;
+  const key=new Date().getFullYear();
+  if(S.bdSeen!==key||location.hash==='#bday'){S.bdSeen=key;save();setTimeout(bdOpen,450);}
+}
+
 /* ═══════════════ 起動 ═══════════════ */
 (async()=>{
   const saved=await store.get();
@@ -8168,7 +8278,7 @@ function renderStats(){
   if(S.a11y.sayEx===undefined)S.a11y.sayEx=false;   /* Japanese first; the rest is optional */
   refreshVoices();
   try{if(window.speechSynthesis)window.speechSynthesis.onvoiceschanged=refreshVoices;}catch(e){}
-  applyA11y();paintTop();renderHome();
+  applyA11y();paintTop();renderHome();maybeBirthday();
   setInterval(paintTop,60000);
 })();
 
